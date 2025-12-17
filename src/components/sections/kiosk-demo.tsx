@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Minus, Plus, ShoppingCart, Beef, Salad, IceCream2, CreditCard, Landmark } from 'lucide-react';
+import { Minus, Plus, ShoppingCart, Beef, Salad, IceCream, CreditCard, Landmark } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
@@ -37,9 +37,9 @@ const menuItems = [
   { id: 5, name: 'Onion Rings', price: 4.99, imageId: 'kiosk-onion-rings', category: 'Sides' },
   { id: 6, name: 'Cola', price: 1.99, imageId: 'kiosk-cola', category: 'Drinks' },
   { id: 7, name: 'Lemonade', price: 1.99, imageId: 'kiosk-lemonade', category: 'Drinks' },
-  { id: 8, name: 'B&J Cookie Dough', price: 6.00, imageId: 'kiosk-icecream-cookie', category: 'Desserts' },
-  { id: 9, name: 'B&J Chocolate Fudge Brownie', price: 6.00, imageId: 'kiosk-icecream-fudge', category: 'Desserts' },
-  { id: 10, name: 'B&J Phish Food', price: 6.00, imageId: 'kiosk-icecream-phish', category: 'Desserts' },
+  { id: 8, name: 'Cookie Dough Ice Cream', price: 6.00, imageId: 'kiosk-icecream-cookie', category: 'Desserts' },
+  { id: 9, name: 'Choc Fudge Brownie Ice Cream', price: 6.00, imageId: 'kiosk-icecream-fudge', category: 'Desserts' },
+  { id: 10, name: 'Phish Food Ice Cream', price: 6.00, imageId: 'kiosk-icecream-phish', category: 'Desserts' },
 ];
 
 type Addon = typeof addons[0];
@@ -430,5 +430,3 @@ export function KioskDemo() {
     </section>
   );
 }
-
-    

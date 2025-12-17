@@ -9,7 +9,7 @@
     {
       "id": "avatar-1",
       "description": "Headshot of a smiling person.",
-      "imageUrl": "https://images.unsplash.com/photo-1607529378676-a20456ee2f6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8MTc2NTg3MjczNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1607529378676-a20456ee2f6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8fDE3NjU4NzI3MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "person smiling"
     },
     {
@@ -86,21 +86,21 @@
     },
     {
       "id": "kiosk-icecream-cookie",
-      "description": "Ben & Jerry's Cookie Dough ice cream.",
-      "imageUrl": "https://images.unsplash.com/photo-1626202479421-a4a356073836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb29raWUlMjBkb3VnaCUyMGljZSUyMGNyZWFtfGVufDB8fHx8MTc2NTk5NjM3N3ww&ixlibrb-4.1.0&q=80&w=1080",
-      "imageHint": "cookie dough"
+      "description": "A scoop of cookie dough ice cream.",
+      "imageUrl": "https://images.unsplash.com/photo-1560008581-22960b7a053c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "imageHint": "ice cream"
     },
     {
       "id": "kiosk-icecream-fudge",
-      "description": "Ben & Jerry's Chocolate Fudge Brownie ice cream.",
-      "imageUrl": "https://images.unsplash.com/photo-1623595304624-d53de319d906?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBmdWRnZSUyMGJyb3duaWUlMjBpY2UlMjBjcmVhbXxlbnwwfHx8fDE3NjU5OTYzNzd8MA&ixlibrb-4.1.0&q=80&w=1080",
-      "imageHint": "chocolate fudge"
+      "description": "A scoop of chocolate fudge brownie ice cream.",
+      "imageUrl": "https://images.unsplash.com/photo-1580982548983-3453883a2c53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "imageHint": "chocolate icecream"
     },
     {
       "id": "kiosk-icecream-phish",
-      "description": "Ben & Jerry's Phish Food ice cream.",
-      "imageUrl": "https://images.unsplash.com/photo-1580915411954-2824916c5952?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBtYXJzaG1hbGxvdyUyMGljZSUyMGNyZWFtfGVufDB8fHx8fDE3NjU5OTYzNzd8MA&ixlibrb-4.1.0&q=80&w=1080",
-      "imageHint": "phish food"
+      "description": "A scoop of chocolate and marshmallow ice cream.",
+      "imageUrl": "https://images.unsplash.com/photo-1567197786919-d48895f6756a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "imageHint": "chocolate icecream"
     }
   ]
 }
