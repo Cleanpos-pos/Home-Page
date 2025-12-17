@@ -7,22 +7,30 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from '@/components/ui/dialog';
-import { Calendar } from 'lucide-react';
+import { Calendar, X } from 'lucide-react';
 
 export function ContactDialog({ children }: { children: React.ReactNode }) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] h-[80vh] p-0">
-        <DialogHeader className="sr-only">
+      <DialogContent className="sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] h-[80vh] p-0 flex flex-col">
+        <DialogHeader className="p-4 border-b flex-row flex items-center justify-between">
           <DialogTitle>Book a Demo</DialogTitle>
+          <DialogClose asChild>
+            <Button variant="ghost" size="icon">
+              <X className="h-4 w-4" />
+            </Button>
+          </DialogClose>
         </DialogHeader>
-        <iframe
-          src="https://calendly.com/delivrr/15min"
-          className="w-full h-full border-0 rounded-lg"
-          title="Book a Demo"
-        />
+        <div className="flex-1">
+          <iframe
+            src="https://calendly.com/delivrr/15min"
+            className="w-full h-full border-0"
+            title="Book a Demo"
+          />
+        </div>
       </DialogContent>
     </Dialog>
   );
