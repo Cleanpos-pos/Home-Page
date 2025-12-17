@@ -31,9 +31,9 @@ export function Hero() {
                 </ContactDialog>
 
                 <div className="mt-8 w-full flex items-center justify-center md:justify-start gap-8">
-                    <p className="text-slate-500 font-code tracking-widest text-sm">BURGER.CO</p>
-                    <p className="text-slate-500 font-code tracking-widest text-sm">FRESH_EATS</p>
-                    <p className="text-slate-500 font-code tracking-widest text-sm">TACO_LAB</p>
+                    <p className="text-slate-500 font-code tracking-widest text-sm">WINGSTAR</p>
+                    <p className="text-slate-500 font-code tracking-widest text-sm">LOVE_CHICKEN</p>
+                    <p className="text-slate-500 font-code tracking-widest text-sm">MILKSHA</p>
                 </div>
             </div>
 

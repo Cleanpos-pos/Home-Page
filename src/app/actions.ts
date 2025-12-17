@@ -46,13 +46,13 @@ export async function submitContactForm(
 
 export async function analyzeSentimentAction(testimonial: string): Promise<AnalyzeTestimonialSentimentOutput | { error: string }> {
     if (!testimonial || testimonial.trim().length < 10) {
-        return { error: 'Testimonial is too short to analyze.' };
+        return { error: 'Testimonial is too short to analyse.' };
     }
     try {
         const result = await analyzeTestimonialSentiment({ testimonial });
         return result;
     } catch (e) {
         console.error(e);
-        return { error: 'Failed to analyze sentiment.' };
+        return { error: 'Failed to analyse sentiment.' };
     }
 }

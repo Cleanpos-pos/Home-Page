@@ -35,7 +35,7 @@ export function Contact() {
           Ready to Upgrade?
         </h2>
         <p className="mx-auto mt-4 max-w-[700px] text-lg text-slate-300 md:text-xl">
-          Let's talk about how Posso can revolutionize your restaurant. Book a
+          Let's talk about how Posso can revolutionise your restaurant. Book a
           free, no-obligation demo with our team today.
         </p>
       </div>

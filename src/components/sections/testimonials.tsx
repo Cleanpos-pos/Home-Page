@@ -31,23 +31,35 @@ type Testimonial = {
 
 const initialTestimonials: Testimonial[] = [
   {
-    name: 'Jane Doe',
-    role: 'Owner, The Burger Joint',
+    name: 'Flava25',
+    role: 'Owner, Flava25',
     avatarId: 'avatar-1',
-    text: 'Posso\'s ePOS system revolutionized our workflow. Orders are faster, mistakes are down, and our revenue is up 20%!',
+    text: "Posso's complete range of services has been a revelation for our business. From the ePOS to the online ordering system, everything works in perfect harmony.",
   },
   {
-    name: 'John Smith',
-    role: 'Manager, Pizza Palace',
+    name: 'Wingstar',
+    role: 'Manager, Wingstar',
     avatarId: 'avatar-2',
-    text: 'The self-order kiosks were a huge hit with our customers. The setup had a few bumps, but the support team was helpful and the result is fantastic.',
+    text: 'The kiosks and POS systems are brilliant, but the integrated online ordering has truly expanded our reach. Our takeaway orders have soared!',
   },
   {
-    name: 'Emily White',
-    role: 'Founder, Quick Tacos',
+    name: 'Love Chicken',
+    role: 'Founder, Love Chicken',
     avatarId: 'avatar-3',
-    text: "Working with Posso was a game-changer. Their kitchen display system has made our service so much more efficient. I can't recommend them enough!",
+    text: "The self-service kiosks have been a massive hit with our regulars. It's streamlined our entire ordering process, especially during the lunch rush.",
   },
+  {
+    name: 'Stonehenge Inn',
+    role: 'Proprietor, Stonehenge Inn',
+    avatarId: 'avatar-4',
+    text: "Implementing the Posso POS and kiosk system was seamless. Our staff love how intuitive it is, and our customers appreciate the quicker service.",
+  },
+  {
+    name: 'Milksha',
+    role: 'Franchisee, Milksha',
+    avatarId: 'avatar-5',
+    text: 'For a busy bubble tea shop, speed and accuracy are key. The Posso kiosks and POS have delivered on both fronts, reducing queues and errors significantly.',
+  }
 ];
 
 export function Testimonials() {
@@ -129,7 +141,7 @@ export function Testimonials() {
       </Carousel>
 
       <div className="mx-auto mt-20 max-w-2xl text-center glass-card p-8 rounded-2xl">
-        <h3 className="text-2xl font-bold text-slate-50">Try Our Sentiment Analyzer</h3>
+        <h3 className="text-2xl font-bold text-slate-50">Try Our Sentiment Analyser</h3>
         <p className="mt-2 text-slate-300">Enter a testimonial below to see our AI evaluate its sentiment in real-time.</p>
         <div className="mt-6 space-y-4">
           <div className="space-y-2 text-left">
@@ -145,7 +157,7 @@ export function Testimonials() {
           </div>
           <Button onClick={handleAnalyze} disabled={isPending || newTestimonial.length < 10} className="w-full sm:w-auto">
             {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Wand2 className="mr-2 h-4 w-4" />}
-            Analyze Sentiment
+            Analyse Sentiment
           </Button>
         </div>
 
