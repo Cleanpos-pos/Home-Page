@@ -326,7 +326,10 @@ export function KioskDemo() {
                 <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text mt-8">Thank You!</h2>
                 <p className="text-2xl font-bold text-white mt-4">Your order number is #{orderNumber}</p>
                 <p className="text-lg text-slate-400 mt-2">Please collect at the counter.</p>
-                <Button variant="outline" className="mt-8" onClick={handleCancelOrder}>Cancel Order</Button>
+                <Button variant="outline" className="mt-8" onClick={handleCancelOrder}>
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Start Again
+                </Button>
             </Card>
         );
       case 'ordering':
