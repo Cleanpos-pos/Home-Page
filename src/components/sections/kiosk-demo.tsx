@@ -275,7 +275,7 @@ export function KioskDemo() {
                 <div className="flex items-center justify-between mb-6">
                     <Button variant="outline" onClick={() => setScreen('ordering')}>
                         <ArrowLeft className="h-5 w-5 mr-2" />
-                        Go Back
+                        Start Again
                     </Button>
                     <div className="text-center">
                         <h2 className="text-3xl font-bold tracking-tighter gradient-text">Confirm & Pay</h2>
@@ -440,7 +440,7 @@ export function KioskDemo() {
           Experience Our Kiosk UI
         </h2>
         <p className="mx-auto mt-4 max-w-[700px] text-lg text-slate-300 md:text-xl">
-          Interact with a live demo of our intuitive self-order kiosk interface. Add items to the cart and see the total update in real-time.
+          Interact with a live demo of our intuitive self-order kiosk interface. Add items to the cart and see the total update in real-time. <br /> <b>Did you just spend £6 more?</b>
         </p>
       </div>
 
