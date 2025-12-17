@@ -1,5 +1,9 @@
+
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { ContactDialog } from './contact';
 
 export function Hero() {
   return (
@@ -16,11 +20,11 @@ export function Hero() {
           Posso Ltd specializes in state-of-the-art restaurant ePOS systems and self-order kiosks, empowering fast food and takeaway restaurants to boost efficiency and enhance the customer experience.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Button size="lg" asChild>
-            <a href="#contact">
+          <ContactDialog>
+            <Button size="lg">
               Get a Demo <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-          </Button>
+            </Button>
+          </ContactDialog>
           <Button size="lg" variant="outline" className="border-slate-700 bg-transparent text-slate-50 hover:bg-slate-800 hover:text-slate-50" asChild>
              <a href="#services">View Products</a>
           </Button>
