@@ -273,14 +273,15 @@ export function KioskDemo() {
         return (
             <Card className="glass-card overflow-hidden h-[700px] flex flex-col p-8">
                 <div className="flex items-center justify-between mb-6">
-                    <Button variant="outline" size="icon" onClick={() => setScreen('ordering')}>
-                        <ArrowLeft className="h-5 w-5" />
+                    <Button variant="outline" onClick={() => setScreen('ordering')}>
+                        <ArrowLeft className="h-5 w-5 mr-2" />
+                        Go Back
                     </Button>
                     <div className="text-center">
                         <h2 className="text-3xl font-bold tracking-tighter gradient-text">Confirm & Pay</h2>
                         <p className="text-slate-400">Order #{orderNumber}</p>
                     </div>
-                    <div className="w-10"></div>
+                    <div className="w-24"></div>
                 </div>
 
                 <ScrollArea className="flex-grow my-4 h-[350px]">
