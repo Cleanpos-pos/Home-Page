@@ -1,59 +1,68 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 import { ContactDialog } from './contact';
+import { ArrowRight, Cog, MonitorCheck, Zap } from 'lucide-react';
+import { Badge } from '../ui/badge';
 
 export function Hero() {
   return (
-    <section className="container mx-auto flex min-h-[90vh] flex-col items-center justify-center px-4 py-20 text-center md:px-6">
-      <div className="relative max-w-4xl">
-        <div className="absolute -top-20 -left-20 h-40 w-40 animate-pulse-slow rounded-full bg-primary/20 blur-3xl" />
-        <div className="absolute -bottom-20 -right-20 h-40 w-40 animate-pulse-slow rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -z-10 h-72 w-72 animate-spin-slow rounded-full bg-gradient-to-br from-primary/10 to-accent/10" />
+    <section className="relative w-full h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-slate-950 opacity-90" />
+        <div className="absolute inset-0 grid-bg opacity-40" />
         
-        <h1 className="text-5xl font-headline font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl gradient-text">
-          The Future of Fast Food Ordering
-        </h1>
-        <p className="mx-auto mt-6 max-w-[700px] text-lg text-slate-300 md:text-xl">
-          Posso Ltd specializes in state-of-the-art restaurant ePOS systems and self-order kiosks, empowering fast food and takeaway restaurants to boost efficiency and enhance the customer experience.
-        </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <ContactDialog>
-            <Button size="lg">
-              Get a Demo <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </ContactDialog>
-          <Button size="lg" variant="outline" className="border-slate-700 bg-transparent text-slate-50 hover:bg-slate-800 hover:text-slate-50" asChild>
-             <a href="#services">View Products</a>
-          </Button>
-        </div>
-      </div>
-      <div className="relative mt-20 w-full max-w-2xl animate-float">
-        <div className="absolute inset-0 h-full w-full scale-105 rounded-full bg-primary/20 blur-3xl"></div>
-        <div className="glass-panel p-4 rounded-xl shadow-2xl shadow-black/50">
-          <div className="flex items-center justify-between px-4 py-2 bg-slate-900/80 rounded-t-lg">
-            <div className="flex items-center gap-2">
-              <span className="h-3 w-3 rounded-full bg-red-500"></span>
-              <span className="h-3 w-3 rounded-full bg-yellow-500"></span>
-              <span className="h-3 w-3 rounded-full bg-green-500"></span>
+        <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 items-center relative z-10">
+            <div className="flex flex-col gap-6 text-center md:text-left items-center md:items-start">
+                <Badge variant="outline" className="border-primary/50 text-primary/80 bg-primary/10 py-1 px-3">
+                    <Zap className="w-3 h-3 mr-2" />
+                    NEXT-GEN RESTAURANT TECH
+                </Badge>
+                <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl lg:text-7xl !leading-tight bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
+                    ePOS Systems & <br />
+                    <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Self-Order Kiosks</span>
+                </h1>
+                <p className="max-w-md text-lg text-slate-400">
+                    Posso Ltd is a pioneering company specialising in state-of-the-art restaurant ePOS systems and self-order kiosks. Our mission is to empower fast food and takeaway restaurants with innovative technology.
+                </p>
+                <ContactDialog>
+                    <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                        Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                </ContactDialog>
+
+                <div className="mt-8 w-full flex items-center justify-center md:justify-start gap-8">
+                    <p className="text-slate-500 font-code tracking-widest text-sm">BURGER.CO</p>
+                    <p className="text-slate-500 font-code tracking-widest text-sm">FRESH_EATS</p>
+                    <p className="text-slate-500 font-code tracking-widest text-sm">TACO_LAB</p>
+                </div>
             </div>
-            <p className="text-sm text-slate-400 font-code">/services/order-service.ts</p>
-          </div>
-          <div className="p-4 bg-slate-850/50 text-left font-code text-sm text-slate-300 rounded-b-lg overflow-x-auto">
-            <pre><code>
-<span className="text-cyan-400">export class </span><span className="text-indigo-400">OrderService </span><span>&#123;</span>
-  <span className="text-slate-500">// Streamline your restaurant's workflow.</span>
-  <span className="text-purple-400">async </span><span className="text-cyan-400">placeOrder</span><span>(</span><span className="text-orange-400">items</span>: <span className="text-green-400">OrderItem</span>[]<span>): </span><span className="text-green-400">Promise&lt;Order&gt;</span><span> &#123;</span>
-    <span className="text-purple-400">const </span><span className="text-orange-400">newOrder</span> = <span className="text-purple-400">await</span> <span className="text-cyan-400">this.api.create</span>(items);
-    <span className="text-purple-400">return </span><span className="text-orange-400">newOrder</span>;
-  <span>&#125;</span>
-<span>&#125;</span>
-            </code></pre>
-          </div>
+
+            <div className="relative flex items-center justify-center h-[500px]">
+                <div className="absolute w-full h-full animate-spin-slow" style={{ animationDuration: '20s' }}>
+                    <div className="absolute w-[400px] h-[400px] border-2 border-dashed border-primary/20 rounded-full" />
+                    <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 border border-dashed border-primary/10 rounded-full" />
+                </div>
+                <div className="relative w-48 h-48 bg-slate-900/80 rounded-2xl shadow-2xl shadow-primary/20 flex items-center justify-center backdrop-blur-md border border-primary/20">
+                    <MonitorCheck className="w-20 h-20 text-primary" />
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-primary/20 to-transparent" />
+                </div>
+
+                <div className="absolute top-1/4 left-10 animate-float" style={{ animationDelay: '0s' }}>
+                    <div className="w-16 h-16 bg-slate-800/60 rounded-full flex items-center justify-center backdrop-blur-md border border-white/10">
+                        <Cog className="w-8 h-8 text-accent animate-spin-slow" />
+                    </div>
+                </div>
+
+                <div className="absolute bottom-1/4 right-10 animate-float" style={{ animationDelay: '2s' }}>
+                    <div className="w-16 h-16 bg-slate-800/60 rounded-full flex items-center justify-center backdrop-blur-md border border-white/10">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent"><path d="m12 19-7-7 7-7"/><path d="m19 19-7-7 7-7"/></svg>
+                    </div>
+                </div>
+
+                <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-accent/20 blur-3xl" />
+                <div className="absolute -top-20 -left-20 h-60 w-60 rounded-full bg-primary/20 blur-3xl" />
+            </div>
         </div>
-      </div>
     </section>
   );
 }
