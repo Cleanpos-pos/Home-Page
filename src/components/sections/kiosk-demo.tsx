@@ -93,6 +93,39 @@ const KioskStartScreen = ({ onStart }: { onStart: () => void }) => {
   );
 };
 
+const QrCode = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+      <path fill="none" d="M0 0h256v256H0z" />
+      <path
+        d="M108 108h40v40h-40zM108 52H52v56h56zm-48 8v40H52m48 0v-40"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <path
+        d="M108 160v-8m40 8v-8m-40-104v-8m40 8v-8"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <path
+        d="M52 108h-8m8 40h-8m152 8h8v-8m-8-40h8v-8m-48-48h56v56h-56zm-8 48v-40h48m8 8h-48"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <path
+        d="M52 152H40v12H28v12H16v12h12v12h12v12h12v-12h12v-12h12v-12H64v-12H52zm128-48h24v12h12v12h-12v12h-12v12h-12v-12h-12v-12h12v-12h-12v-12h12zm-48 48h12v12h-12zm-12 12h-12v12h-12v12h12v12h12v-12h12v-12h-12v-12h-12v12zm-48 0h12v12h-12zm36-12h12v12h-12zm-12-12h12v12h-12zm-12-12h12v12h-12zm36 24h12v12h-12z"
+        fill="currentColor"
+      />
+    </svg>
+  );
 
 export function KioskDemo() {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -207,7 +240,7 @@ export function KioskDemo() {
     if (iceCream) {
       addToCart(iceCream, 1);
     }
-    setScreen('payment');
+    setScreen('ordering');
   };
 
   const handlePayment = () => {
@@ -215,7 +248,7 @@ export function KioskDemo() {
     setTimeout(() => {
       setCart([]);
       setScreen('start');
-    }, 5000);
+    }, 8000);
   };
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -251,7 +284,7 @@ export function KioskDemo() {
               })}
             </div>
             <div className="text-center mt-8">
-                <Button variant="ghost" onClick={() => handleUpsellChoice(null)}>No thanks, take me to payment</Button>
+                <Button variant="ghost" onClick={() => handleUpsellChoice(null)}>No thanks, take me back</Button>
             </div>
           </Card>
         );
@@ -276,10 +309,9 @@ export function KioskDemo() {
       case 'thankyou':
         return (
             <Card className="glass-card overflow-hidden h-[700px] flex flex-col items-center justify-center p-8 text-center">
-                <div className="animate-bounce mb-6">
-                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary"><path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </div>
-                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text">Thank You!</h2>
+                <QrCode className="w-40 h-40 text-white" />
+                <p className="text-lg text-slate-300 mt-4">Scan me for your ticket</p>
+                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text mt-8">Thank You!</h2>
                 <p className="text-xl text-slate-300 mt-4">Your order is being prepared.</p>
                 <p className="text-lg text-slate-400 mt-2">Please collect at the counter.</p>
             </Card>
@@ -374,7 +406,7 @@ export function KioskDemo() {
                         <span>£{total.toFixed(2)}</span>
                         </div>
                         <Button size="lg" className="w-full mt-4" disabled={cart.length === 0} onClick={() => setScreen('upsell')}>
-                          Proceed to Checkout
+                          Review and Pay
                         </Button>
                     </div>
                     </div>
@@ -430,3 +462,5 @@ export function KioskDemo() {
     </section>
   );
 }
+
+    
