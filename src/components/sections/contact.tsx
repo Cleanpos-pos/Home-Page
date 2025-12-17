@@ -17,7 +17,7 @@ export function ContactDialog({ children }: { children: React.ReactNode }) {
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] h-[80vh] p-0 flex flex-col">
         <DialogHeader className="p-4 border-b flex-row flex items-center justify-between">
-          <DialogTitle>Book a Demo</DialogTitle>
+          <DialogTitle>Book a call back</DialogTitle>
           <DialogClose asChild>
             <Button variant="ghost" size="icon">
               <X className="h-4 w-4" />
@@ -28,7 +28,7 @@ export function ContactDialog({ children }: { children: React.ReactNode }) {
           <iframe
             src="https://calendly.com/delivrr/15min"
             className="w-full h-full border-0"
-            title="Book a Demo"
+            title="Book a call back"
           />
         </div>
       </DialogContent>
@@ -45,7 +45,7 @@ export function Contact() {
         </h2>
         <p className="mx-auto mt-4 max-w-[700px] text-lg text-slate-300 md:text-xl">
           Let's talk about how Posso can revolutionise your restaurant. Book a
-          free, no-obligation demo with our team today.
+          free, no-obligation call back with our team today.
         </p>
       </div>
 
@@ -53,7 +53,7 @@ export function Contact() {
         <ContactDialog>
           <Button size="lg">
             <Calendar className="mr-2 h-5 w-5" />
-            Book a Demo
+            Book a call back
           </Button>
         </ContactDialog>
       </div>
