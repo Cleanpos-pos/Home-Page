@@ -95,35 +95,9 @@ const KioskStartScreen = ({ onStart }: { onStart: () => void }) => {
 
 const QrCode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
-      <path fill="none" d="M0 0h256v256H0z" />
-      <path
-        d="M108 108h40v40h-40zM108 52H52v56h56zm-48 8v40H52m48 0v-40"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <path
-        d="M108 160v-8m40 8v-8m-40-104v-8m40 8v-8"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <path
-        d="M52 108h-8m8 40h-8m152 8h8v-8m-8-40h8v-8m-48-48h56v56h-56zm-8 48v-40h48m8 8h-48"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <path
-        d="M52 152H40v12H28v12H16v12h12v12h12v12h12v-12h12v-12h12v-12H64v-12H52zm128-48h24v12h12v12h-12v12h-12v12h-12v-12h-12v-12h12v-12h-12v-12h12zm-48 48h12v12h-12zm-12 12h-12v12h-12v12h12v12h12v-12h12v-12h-12v-12h-12v12zm-48 0h12v12h-12zm36-12h12v12h-12zm-12-12h12v12h-12zm-12-12h12v12h-12zm36 24h12v12h-12z"
-        fill="currentColor"
-      />
+        <path fill="none" d="M0 0h256v256H0z" />
+        <path d="M176 176v-16h-16v-16h16v-16h16v16h16v16h-16v16zm-48-8a8 8 0 1 1-8-8 8 8 0 0 1 8 8zm-8-32a8 8 0 1 1-8-8 8 8 0 0 1 8 8zm-32 8a8 8 0 1 1-8-8 8 8 0 0 1 8 8zm-8 32a8 8 0 1 1-8-8 8 8 0 0 1 8 8zM88 40H40v48h48zm-8 40H48V48h32zM40 168h48v48H40zm8 8v32h32v-32zm120-128h48v48h-48zm8 8v32h32V48z" fill="currentColor"/>
+        <path d="M104 104v16h16v-16zm-16 0H72v16h16zm32 0v16h16v-16zm-16-16v-16h16v16zm-16 0H72v16h16zm-16-16H40v16h16zm32 32h16v16h-16v-16zm16 16v16h16v-16zm32 16h16v16h-16zm-16 16v16h16v-16zm32 16h16v16h-16zm-16 16v16h16v-16zm32 16h16v16h-16zm-48-48h16v16h-16zm16 16v16h16v-16zm-32 0h-16v16h16zm0 16v16h16v-16zm-16 0h-16v16h16zm-16-16H72v16h16zm0-16V88H72v16zm16 0V88h16v16zM40 120v16h16v-16zm0-16V88h16v16zm16-32H40v16h16zm128 32h16v16h-16zm16-16v-16h16v16zM40 224h16v16H40zm32 0h16v16H72zm32 0h16v16h-16zm32 0h16v16h-16z" fill="currentColor"/>
     </svg>
   );
 
@@ -249,10 +223,14 @@ export function KioskDemo() {
   const handlePayment = () => {
     setScreen('thankyou');
     setTimeout(() => {
-      setCart([]);
-      setScreen('start');
+        handleCancelOrder();
     }, 8000);
   };
+
+  const handleCancelOrder = () => {
+    setCart([]);
+    setScreen('start');
+  }
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const categories = [...new Set(menuItems.map(item => item.category))];
@@ -348,6 +326,7 @@ export function KioskDemo() {
                 <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text mt-8">Thank You!</h2>
                 <p className="text-2xl font-bold text-white mt-4">Your order number is #{orderNumber}</p>
                 <p className="text-lg text-slate-400 mt-2">Please collect at the counter.</p>
+                <Button variant="outline" className="mt-8" onClick={handleCancelOrder}>Cancel Order</Button>
             </Card>
         );
       case 'ordering':
