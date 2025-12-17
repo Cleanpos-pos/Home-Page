@@ -17,20 +17,6 @@ export function Header() {
           <Logo />
           <span className="text-xl font-bold text-slate-50 tracking-wide">POSSO</span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-          <Link href="#services" className="text-slate-300 hover:text-primary transition-colors" prefetch={false}>
-            Services
-          </Link>
-          <Link href="#about" className="text-slate-300 hover:text-primary transition-colors" prefetch={false}>
-            About
-          </Link>
-          <Link href="#testimonials" className="text-slate-300 hover:text-primary transition-colors" prefetch={false}>
-            Testimonials
-          </Link>
-          <Link href="#contact" className="text-slate-300 hover:text-primary transition-colors" prefetch={false}>
-            Contact
-          </Link>
-        </nav>
         <div className="flex items-center gap-4">
             <Badge variant="outline" className="border-primary/50 text-primary/80 bg-primary/10">
                 <span className="relative flex h-2 w-2 mr-2">
