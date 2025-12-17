@@ -4,18 +4,19 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Minus, Plus, ShoppingCart, X } from 'lucide-react';
+import { Minus, Plus, ShoppingCart } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const menuItems = [
-  { id: 1, name: 'Classic Burger', price: 8.99, image: 'https://picsum.photos/seed/kiosk1/200/200', category: 'Burgers' },
-  { id: 2, name: 'Cheeseburger', price: 9.99, image: 'https://picsum.photos/seed/kiosk2/200/200', category: 'Burgers' },
-  { id: 3, name: 'Bacon Burger', price: 10.99, image: 'https://picsum.photos/seed/kiosk3/200/200', category: 'Burgers' },
-  { id: 4, name: 'Fries', price: 3.99, image: 'https://picsum.photos/seed/kiosk4/200/200', category: 'Sides' },
-  { id: 5, name: 'Onion Rings', price: 4.99, image: 'https://picsum.photos/seed/kiosk5/200/200', category: 'Sides' },
-  { id: 6, name: 'Cola', price: 1.99, image: 'https://picsum.photos/seed/kiosk6/200/200', category: 'Drinks' },
-  { id: 7, name: 'Lemonade', price: 1.99, image: 'https://picsum.photos/seed/kiosk7/200/200', category: 'Drinks' },
+  { id: 1, name: 'Classic Burger', price: 8.99, imageId: 'kiosk-burger-classic', category: 'Burgers' },
+  { id: 2, name: 'Cheeseburger', price: 9.99, imageId: 'kiosk-burger-cheese', category: 'Burgers' },
+  { id: 3, name: 'Bacon Burger', price: 10.99, imageId: 'kiosk-burger-bacon', category: 'Burgers' },
+  { id: 4, name: 'Fries', price: 3.99, imageId: 'kiosk-fries', category: 'Sides' },
+  { id: 5, name: 'Onion Rings', price: 4.99, imageId: 'kiosk-onion-rings', category: 'Sides' },
+  { id: 6, name: 'Cola', price: 1.99, imageId: 'kiosk-cola', category: 'Drinks' },
+  { id: 7, name: 'Lemonade', price: 1.99, imageId: 'kiosk-lemonade', category: 'Drinks' },
 ];
 
 type CartItem = {
@@ -23,6 +24,7 @@ type CartItem = {
   name: string;
   price: number;
   quantity: number;
+  imageId: string;
 };
 
 export function KioskDemo() {
@@ -86,15 +88,20 @@ export function KioskDemo() {
               </div>
               <ScrollArea className="h-[500px]">
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 pr-6">
-                  {menuItems.filter(item => item.category === activeCategory).map((item) => (
+                  {menuItems.filter(item => item.category === activeCategory).map((item) => {
+                    const image = PlaceHolderImages.find(p => p.id === item.imageId);
+                    return (
                     <Card key={item.id} className="glass-card overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        width={200}
-                        height={200}
-                        className="w-full h-32 object-cover"
-                      />
+                      {image && (
+                        <Image
+                            src={image.imageUrl}
+                            alt={item.name}
+                            data-ai-hint={image.imageHint}
+                            width={200}
+                            height={200}
+                            className="w-full h-32 object-cover"
+                        />
+                      )}
                       <CardContent className="p-4">
                         <h3 className="font-bold text-slate-50">{item.name}</h3>
                         <p className="text-slate-300">${item.price.toFixed(2)}</p>
@@ -107,7 +114,7 @@ export function KioskDemo() {
                         </Button>
                       </CardContent>
                     </Card>
-                  ))}
+                  )})}
                 </div>
               </ScrollArea>
             </div>
@@ -122,9 +129,11 @@ export function KioskDemo() {
                   <div className="text-slate-400 text-center py-16">Your cart is empty.</div>
                 ) : (
                   <div className="space-y-4 pr-4">
-                    {cart.map((item) => (
+                    {cart.map((item) => {
+                      const image = PlaceHolderImages.find(p => p.id === item.imageId);
+                      return (
                       <div key={item.id} className="flex items-center gap-4 text-slate-200">
-                        <Image src={menuItems.find(mi => mi.id === item.id)?.image || ''} alt={item.name} width={48} height={48} className="rounded-md" />
+                        {image && <Image src={image.imageUrl} alt={item.name} width={48} height={48} className="rounded-md" />}
                         <div className="flex-grow">
                           <p className="font-bold">{item.name}</p>
                           <p className="text-sm text-slate-400">${item.price.toFixed(2)}</p>
@@ -136,7 +145,7 @@ export function KioskDemo() {
                         </div>
                         <p className="font-bold w-16 text-right">${(item.price * item.quantity).toFixed(2)}</p>
                       </div>
-                    ))}
+                    )})}
                   </div>
                 )}
               </ScrollArea>
