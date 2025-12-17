@@ -87,19 +87,19 @@
     {
       "id": "kiosk-icecream-cookie",
       "description": "A scoop of cookie dough ice cream.",
-      "imageUrl": "https://images.unsplash.com/photo-1560008581-22960b7a053c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzk5ODR8MHwxfHNlYXJjaHwxfHxjb29raWUlMjBkb3VnaCUyMGljZSUyMGNyZWFtfGVufDB8fHx8MTcxODQ5NjM2MHww&ixlib=rb-4.0.3&q=80&w=800",
+      "imageUrl": "https://images.unsplash.com/photo-1629385744299-74b9cf013f52?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "ice cream"
     },
     {
       "id": "kiosk-icecream-fudge",
       "description": "A scoop of chocolate fudge brownie ice cream.",
-      "imageUrl": "https://images.unsplash.com/photo-1580982548983-3453883a2c53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzk5ODR8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBmdWRnZSUyMGJyb3duaWUlMjBpY2UlMjBjcmVhbXxlbnwwfHx8fDE3MTg0OTYzODB8MA&ixlib=rb-4.0.3&q=80&w=800",
+      "imageUrl": "https://images.unsplash.com/photo-1629385744299-74b9cf013f52?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "chocolate icecream"
     },
     {
       "id": "kiosk-icecream-phish",
       "description": "A scoop of chocolate and marshmallow ice cream.",
-      "imageUrl": "https://images.unsplash.com/photo-1567197786919-d48895f6756a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzk5ODR8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBtYXJzaG1hbGxvdyUyMGljZSUyMGNyZWFtfGVufDB8fHx8fDE3MTg0OTY0MTB8MA&ixlib=rb-4.0.3&q=80&w=800",
+      "imageUrl": "https://images.unsplash.com/photo-1629385744299-74b9cf013f52?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "chocolate icecream"
     }
   ]
