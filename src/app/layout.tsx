@@ -3,8 +3,8 @@ import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Posso | Make it Possible',
-  description: 'We turn your ideas into reality. High-performance solutions for the modern web.',
+  title: 'Posso | Restaurant ePOS & Self-Order Kiosks',
+  description: 'State-of-the-art ePOS systems and self-order kiosks for fast food and takeaway restaurants.',
 };
 
 export default function RootLayout({

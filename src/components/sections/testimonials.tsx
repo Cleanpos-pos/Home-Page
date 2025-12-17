@@ -32,21 +32,21 @@ type Testimonial = {
 const initialTestimonials: Testimonial[] = [
   {
     name: 'Jane Doe',
-    role: 'CEO, Innovate Inc.',
+    role: 'Owner, The Burger Joint',
     avatarId: 'avatar-1',
-    text: 'Posso Ltd delivered beyond our wildest expectations. Their team is professional, brilliant, and an absolute pleasure to work with. Our new platform is a masterpiece of engineering.',
+    text: 'Posso\'s ePOS system revolutionized our workflow. Orders are faster, mistakes are down, and our revenue is up 20%!',
   },
   {
     name: 'John Smith',
-    role: 'CTO, Future Forward',
+    role: 'Manager, Pizza Palace',
     avatarId: 'avatar-2',
-    text: 'The project had some challenges and timeline adjustments, but the final product was solid. The communication was okay, but could have been more proactive. Overall, a satisfactory result.',
+    text: 'The self-order kiosks were a huge hit with our customers. The setup had a few bumps, but the support team was helpful and the result is fantastic.',
   },
   {
     name: 'Emily White',
-    role: 'Founder, StartupX',
+    role: 'Founder, Quick Tacos',
     avatarId: 'avatar-3',
-    text: "Working with Posso was a game-changer. They understood our vision from day one and executed it flawlessly. I can't recommend them enough!",
+    text: "Working with Posso was a game-changer. Their kitchen display system has made our service so much more efficient. I can't recommend them enough!",
   },
 ];
 
@@ -91,7 +91,7 @@ export function Testimonials() {
       <div className="text-center">
         <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl gradient-text">What Our Clients Say</h2>
         <p className="mx-auto mt-4 max-w-[700px] text-lg text-slate-300 md:text-xl">
-          Real stories from partners we&apos;ve helped empower.
+          Real stories from restaurant owners we've helped empower.
         </p>
       </div>
 

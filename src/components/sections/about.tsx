@@ -23,10 +23,10 @@ export function About() {
         <div className="space-y-6">
           <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl gradient-text">About Posso</h2>
           <p className="text-lg text-slate-300">
-            Posso was founded on a simple principle: technology should be an enabler, not a barrier. We are a collective of passionate engineers, designers, and strategists dedicated to solving complex problems with elegant and effective code. Our mission is to partner with visionaries and build the digital tools that will shape tomorrow.
+            Posso Ltd is a pioneering company specialising in state-of-the-art restaurant ePOS systems and self-order kiosks. Our mission is to empower fast food and takeaway restaurants with innovative technology that simplifies operations, boosts efficiency, and enhances the customer experience.
           </p>
           <p className="text-lg text-slate-300">
-            We value craftsmanship, collaboration, and relentless curiosity. By fostering a culture of continuous learning and transparent communication, we ensure that our team and our clients are always aligned and moving towards a shared goal: making great ideas possible.
+            We are a collective of passionate engineers, designers, and strategists dedicated to solving the unique challenges of the restaurant industry with elegant and effective technology.
           </p>
         </div>
       </div>

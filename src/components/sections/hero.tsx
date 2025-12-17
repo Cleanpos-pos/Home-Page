@@ -10,19 +10,19 @@ export function Hero() {
         <div className="absolute top-1/2 left-1/2 -z-10 h-72 w-72 animate-spin-slow rounded-full bg-gradient-to-br from-primary/10 to-accent/10" />
         
         <h1 className="text-5xl font-headline font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl gradient-text">
-          Make it Possible
+          The Future of Fast Food Ordering
         </h1>
         <p className="mx-auto mt-6 max-w-[700px] text-lg text-slate-300 md:text-xl">
-          Posso Ltd. transforms your complex challenges into elegant, high-performance digital solutions. We architect, build, and scale applications that drive growth and define industries.
+          Posso Ltd specializes in state-of-the-art restaurant ePOS systems and self-order kiosks, empowering fast food and takeaway restaurants to boost efficiency and enhance the customer experience.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Button size="lg" asChild>
             <a href="#contact">
-              Start a Project <ArrowRight className="ml-2 h-5 w-5" />
+              Get a Demo <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
           <Button size="lg" variant="outline" className="border-slate-700 bg-transparent text-slate-50 hover:bg-slate-800 hover:text-slate-50" asChild>
-             <a href="#services">View Services</a>
+             <a href="#services">View Products</a>
           </Button>
         </div>
       </div>
@@ -35,14 +35,15 @@ export function Hero() {
               <span className="h-3 w-3 rounded-full bg-yellow-500"></span>
               <span className="h-3 w-3 rounded-full bg-green-500"></span>
             </div>
-            <p className="text-sm text-slate-400 font-code">/components/core/engine.ts</p>
+            <p className="text-sm text-slate-400 font-code">/services/order-service.ts</p>
           </div>
           <div className="p-4 bg-slate-850/50 text-left font-code text-sm text-slate-300 rounded-b-lg overflow-x-auto">
             <pre><code>
-<span className="text-cyan-400">export class </span><span className="text-indigo-400">PossibilityEngine </span><span>&#123;</span>
-  <span className="text-slate-500">// Your vision, our code.</span>
-  <span className="text-purple-400">static </span><span className="text-cyan-400">create</span><span>(</span><span className="text-orange-400">idea</span>: <span className="text-green-400">Concept</span><span>): </span><span className="text-green-400">Reality</span><span> &#123;</span>
-    <span className="text-purple-400">return new </span><span className="text-green-400">Reality</span><span>(</span><span className="text-orange-400">idea</span><span>);</span>
+<span className="text-cyan-400">export class </span><span className="text-indigo-400">OrderService </span><span>&#123;</span>
+  <span className="text-slate-500">// Streamline your restaurant's workflow.</span>
+  <span className="text-purple-400">async </span><span className="text-cyan-400">placeOrder</span><span>(</span><span className="text-orange-400">items</span>: <span className="text-green-400">OrderItem</span>[]<span>): </span><span className="text-green-400">Promise&lt;Order&gt;</span><span> &#123;</span>
+    <span className="text-purple-400">const </span><span className="text-orange-400">newOrder</span> = <span className="text-purple-400">await</span> <span className="text-cyan-400">this.api.create</span>(items);
+    <span className="text-purple-400">return </span><span className="text-orange-400">newOrder</span>;
   <span>&#125;</span>
 <span>&#125;</span>
             </code></pre>
