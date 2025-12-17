@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -108,8 +108,20 @@ export function KioskDemo() {
   const [selectedItemForAddons, setSelectedItemForAddons] = useState<typeof menuItems[0] | null>(null);
   const [editingCartItem, setEditingCartItem] = useState<CartItem | null>(null);
   const [selectedAddons, setSelectedAddons] = useState<Addon[]>([]);
+  const [totalFlash, setTotalFlash] = useState(false);
 
   const orderNumber = useMemo(() => Math.floor(1000 + Math.random() * 9000), [screen]);
+
+  const triggerTotalFlash = () => {
+    setTotalFlash(true);
+    setTimeout(() => setTotalFlash(false), 300);
+  };
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      triggerTotalFlash();
+    }
+  }, [cart]);
 
 
   const openAddonModal = (item: typeof menuItems[0]) => {
@@ -302,7 +314,7 @@ export function KioskDemo() {
                 </ScrollArea>
                 
                 <div className="border-t border-slate-700 pt-4 mt-auto space-y-6">
-                    <div className="flex justify-between text-2xl font-bold text-slate-50">
+                    <div className={`flex justify-between text-2xl font-bold text-slate-50 transition-all duration-300 ${totalFlash ? 'text-primary scale-105' : ''}`}>
                         <span>Total to Pay:</span>
                         <span>£{total.toFixed(2)}</span>
                     </div>
@@ -418,7 +430,7 @@ export function KioskDemo() {
                         )}
                     </ScrollArea>
                     <div className="border-t border-slate-700 pt-4 mt-auto">
-                        <div className="flex justify-between text-lg font-bold text-slate-50">
+                        <div className={`flex justify-between text-lg font-bold text-slate-50 transition-all duration-300 ${totalFlash ? 'text-primary scale-105' : ''}`}>
                         <span>Total:</span>
                         <span>£{total.toFixed(2)}</span>
                         </div>
@@ -440,7 +452,7 @@ export function KioskDemo() {
           Experience Our Kiosk UI
         </h2>
         <p className="mx-auto mt-4 max-w-[700px] text-lg text-slate-300 md:text-xl">
-          Interact with a live demo of our intuitive self-order kiosk interface. Add items to the cart and see the total update in real-time. <br /> <b>Did you just spend £6 more?</b>
+          Interact with a live demo of our intuitive self-order kiosk interface. Add items to the cart and see the total update in real-time. <br /> <b>Did you just spend £6 - £8 more without even knowing?</b>
         </p>
       </div>
 
