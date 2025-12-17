@@ -1,14 +1,12 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Minus, Plus, ShoppingCart, Beef, Salad } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { Minus, Plus, ShoppingCart, Beef, Salad, IceCream2, CreditCard, Landmark } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { cn } from '@/lib/utils';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 import { Checkbox } from '../ui/checkbox';
 import { Label } from '../ui/label';
@@ -39,6 +37,9 @@ const menuItems = [
   { id: 5, name: 'Onion Rings', price: 4.99, imageId: 'kiosk-onion-rings', category: 'Sides' },
   { id: 6, name: 'Cola', price: 1.99, imageId: 'kiosk-cola', category: 'Drinks' },
   { id: 7, name: 'Lemonade', price: 1.99, imageId: 'kiosk-lemonade', category: 'Drinks' },
+  { id: 8, name: 'B&J Cookie Dough', price: 6.00, imageId: 'kiosk-icecream-cookie', category: 'Desserts' },
+  { id: 9, name: 'B&J Chocolate Fudge Brownie', price: 6.00, imageId: 'kiosk-icecream-fudge', category: 'Desserts' },
+  { id: 10, name: 'B&J Phish Food', price: 6.00, imageId: 'kiosk-icecream-phish', category: 'Desserts' },
 ];
 
 type Addon = typeof addons[0];
@@ -52,6 +53,8 @@ type CartItem = {
   imageId: string;
   addons: Addon[];
 };
+
+type KioskScreen = 'start' | 'ordering' | 'upsell' | 'payment' | 'thankyou';
 
 const KioskStartScreen = ({ onStart }: { onStart: () => void }) => {
   const bgImage = PlaceHolderImages.find(p => p.id === 'kiosk-background');
@@ -94,7 +97,7 @@ const KioskStartScreen = ({ onStart }: { onStart: () => void }) => {
 export function KioskDemo() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [activeCategory, setActiveCategory] = useState('Burgers');
-  const [isStarted, setIsStarted] = useState(false);
+  const [screen, setScreen] = useState<KioskScreen>('start');
   const [selectedItemForAddons, setSelectedItemForAddons] = useState<typeof menuItems[0] | null>(null);
   const [editingCartItem, setEditingCartItem] = useState<CartItem | null>(null);
   const [selectedAddons, setSelectedAddons] = useState<Addon[]>([]);
@@ -117,7 +120,6 @@ export function KioskDemo() {
     if (!selectedItemForAddons) return;
 
     if (editingCartItem) {
-      // Update existing cart item
       setCart(currentCart => currentCart.map(item => {
         if (item.cartItemId === editingCartItem.cartItemId) {
           const addonPrice = selectedAddons.reduce((sum, addon) => sum + addon.price, 0);
@@ -131,9 +133,7 @@ export function KioskDemo() {
         }
         return item;
       }));
-
     } else {
-      // Add new item to cart
       const cartItemId = `${selectedItemForAddons.id}-${selectedAddons.map(a => a.id).sort().join('-')}`;
       const existingItem = cart.find(item => item.cartItemId === cartItemId);
 
@@ -170,20 +170,21 @@ export function KioskDemo() {
     );
   };
 
-  const addToCart = (item: typeof menuItems[0]) => {
+  const addToCart = (item: (typeof menuItems)[0], quantity: number = 1) => {
     if (item.addons && item.addons.length > 0) {
       openAddonModal(item);
       return;
     }
-
+  
     const cartItemId = `${item.id}-`;
     const existingItem = cart.find(i => i.cartItemId === cartItemId);
     if (existingItem) {
-      updateQuantity(existingItem.cartItemId, 1);
+      updateQuantity(existingItem.cartItemId, quantity);
     } else {
-      setCart((currentCart) => {
-        return [...currentCart, { ...item, quantity: 1, cartItemId, addons: [] }];
-      });
+      setCart(currentCart => [
+        ...currentCart,
+        { ...item, quantity: quantity, cartItemId, addons: [] },
+      ]);
     }
   };
 
@@ -200,30 +201,97 @@ export function KioskDemo() {
     });
   };
 
+  const handleStart = () => setScreen('ordering');
+
+  const handleUpsellChoice = (iceCream: typeof menuItems[0] | null) => {
+    if (iceCream) {
+      addToCart(iceCream, 1);
+    }
+    setScreen('payment');
+  };
+
+  const handlePayment = () => {
+    setScreen('thankyou');
+    setTimeout(() => {
+      setCart([]);
+      setScreen('start');
+    }, 5000);
+  };
+
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
   const categories = [...new Set(menuItems.map(item => item.category))];
+  const iceCreams = menuItems.filter(item => item.category === 'Desserts');
 
-  return (
-    <section id="kiosk-demo" className="container mx-auto px-4 py-20 md:px-6">
-      <div className="text-center">
-        <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl gradient-text">
-          Experience Our Kiosk UI
-        </h2>
-        <p className="mx-auto mt-4 max-w-[700px] text-lg text-slate-300 md:text-xl">
-          Interact with a live demo of our intuitive self-order kiosk interface. Add items to the cart and see the total update in real-time.
-        </p>
-      </div>
-
-      <div className="mt-12 max-w-6xl mx-auto">
-        {!isStarted ? (
-          <KioskStartScreen onStart={() => setIsStarted(true)} />
-        ) : (
+  const renderScreen = () => {
+    switch (screen) {
+      case 'start':
+        return <KioskStartScreen onStart={handleStart} />;
+      case 'upsell':
+        return (
+          <Card className="glass-card overflow-hidden p-8 h-[700px]">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text mb-2">Fancy some ice cream?</h2>
+              <p className="text-lg text-slate-300">A perfect treat to finish your meal.</p>
+            </div>
+            <div className="grid grid-cols-3 gap-6 mt-8">
+              {iceCreams.map(iceCream => {
+                const image = PlaceHolderImages.find(p => p.id === iceCream.imageId);
+                return (
+                  <Card key={iceCream.id} className="glass-card overflow-hidden text-center cursor-pointer" onClick={() => handleUpsellChoice(iceCream)}>
+                    {image && (
+                      <Image src={image.imageUrl} alt={iceCream.name} data-ai-hint={image.imageHint} width={300} height={300} className="w-full h-48 object-cover" />
+                    )}
+                    <CardContent className="p-4">
+                      <h3 className="font-bold text-slate-50">{iceCream.name}</h3>
+                      <p className="text-slate-300">£{iceCream.price.toFixed(2)}</p>
+                      <Button size="sm" className="w-full mt-2">Add to Order</Button>
+                    </CardContent>
+                  </Card>
+                )
+              })}
+            </div>
+            <div className="text-center mt-8">
+                <Button variant="ghost" onClick={() => handleUpsellChoice(null)}>No thanks, take me to payment</Button>
+            </div>
+          </Card>
+        );
+      case 'payment':
+        return (
+            <Card className="glass-card overflow-hidden h-[700px] flex flex-col items-center justify-center p-8 text-center">
+                <ShoppingCart className="w-16 h-16 text-primary mb-4" />
+                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text">Total to Pay</h2>
+                <p className="text-8xl font-bold text-white my-8">£{total.toFixed(2)}</p>
+                <p className="text-lg text-slate-300 mb-8">Please choose your payment method.</p>
+                <div className="flex gap-8">
+                    <Button size="lg" className="h-24 w-48 text-2xl" onClick={handlePayment}>
+                        <CreditCard className="mr-4 h-8 w-8"/> Card
+                    </Button>
+                    <Button size="lg" variant="outline" className="h-24 w-48 text-2xl" onClick={handlePayment}>
+                        <Landmark className="mr-4 h-8 w-8"/> Cash
+                    </Button>
+                </div>
+                <Button variant="link" className="mt-8" onClick={() => setScreen('ordering')}>&lt; Back to order</Button>
+          </Card>
+        );
+      case 'thankyou':
+        return (
+            <Card className="glass-card overflow-hidden h-[700px] flex flex-col items-center justify-center p-8 text-center">
+                <div className="animate-bounce mb-6">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary"><path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text">Thank You!</h2>
+                <p className="text-xl text-slate-300 mt-4">Your order is being prepared.</p>
+                <p className="text-lg text-slate-400 mt-2">Please collect at the counter.</p>
+            </Card>
+        );
+      case 'ordering':
+      default:
+        return (
             <Card className="glass-card overflow-hidden">
-                <div className="grid grid-cols-1 md:grid-cols-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 h-[700px]">
                     <div className="md:col-span-2 p-6">
                     <div className="flex gap-2 mb-6">
-                        {categories.map(category => (
+                        {categories.filter(c => c !== 'Desserts').map(category => (
                             <Button 
                                 key={category} 
                                 variant={activeCategory === category ? 'default' : 'outline'}
@@ -233,7 +301,7 @@ export function KioskDemo() {
                             </Button>
                         ))}
                     </div>
-                    <ScrollArea className="h-[500px]">
+                    <ScrollArea className="h-[550px]">
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 pr-6">
                         {menuItems.filter(item => item.category === activeCategory).map((item) => {
                             const image = PlaceHolderImages.find(p => p.id === item.imageId);
@@ -271,7 +339,7 @@ export function KioskDemo() {
                         <ShoppingCart className="text-primary" />
                         Your Order
                     </h3>
-                    <ScrollArea className="flex-grow my-4 h-[350px]">
+                    <ScrollArea className="flex-grow my-4 h-[470px]">
                         {cart.length === 0 ? (
                         <div className="text-slate-400 text-center py-16">Your cart is empty.</div>
                         ) : (
@@ -305,15 +373,32 @@ export function KioskDemo() {
                         <span>Total:</span>
                         <span>£{total.toFixed(2)}</span>
                         </div>
-                        <Button size="lg" className="w-full mt-4" disabled={cart.length === 0}>
-                        Proceed to Checkout
+                        <Button size="lg" className="w-full mt-4" disabled={cart.length === 0} onClick={() => setScreen('upsell')}>
+                          Proceed to Checkout
                         </Button>
                     </div>
                     </div>
                 </div>
             </Card>
-        )}
+        );
+    }
+  };
+
+  return (
+    <section id="kiosk-demo" className="container mx-auto px-4 py-20 md:px-6">
+      <div className="text-center">
+        <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl gradient-text">
+          Experience Our Kiosk UI
+        </h2>
+        <p className="mx-auto mt-4 max-w-[700px] text-lg text-slate-300 md:text-xl">
+          Interact with a live demo of our intuitive self-order kiosk interface. Add items to the cart and see the total update in real-time.
+        </p>
       </div>
+
+      <div className="mt-12 max-w-6xl mx-auto">
+        {renderScreen()}
+      </div>
+
       <Dialog open={!!selectedItemForAddons} onOpenChange={(open) => !open && closeAddonModal()}>
           <DialogContent>
             <DialogHeader>
@@ -345,3 +430,5 @@ export function KioskDemo() {
     </section>
   );
 }
+
+    

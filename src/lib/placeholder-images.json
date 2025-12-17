@@ -51,38 +51,56 @@
     {
       "id": "kiosk-burger-bacon",
       "description": "A burger with crispy bacon.",
-      "imageUrl": "https://images.unsplash.com/photo-1724352476668-6cbd99da2d6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiYWNvbiUyMGJ1cmdlcnxlbnwwfHx8fDE3NjU5MTgzMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1724352476668-6cbd99da2d6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiYWNvbiUyMGJ1cmdlcnxlbnwwfHx8fDE3NjU5MTgzMTJ8MA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "bacon burger"
     },
     {
       "id": "kiosk-fries",
       "description": "A portion of french fries.",
-      "imageUrl": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmcmVuY2glMjBmcmllc3xlbnwwfHx8fDE3NjU5NzQ5MzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmcmVuY2glMjBmcmllc3xlbnwwfHx8fDE3NjU5NzQ5MzZ8MA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "french fries"
     },
     {
       "id": "kiosk-onion-rings",
       "description": "A portion of onion rings.",
-      "imageUrl": "https://images.unsplash.com/photo-1625938146369-adc83368bda7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxvbmlvbiUyMHJpbmdzfGVufDB8fHx8MTc2NTg5ODIzNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1625938146369-adc83368bda7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxvbmlvbiUyMHJpbmdzfGVufDB8fHx8MTc2NTg5ODIzNnww&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "onion rings"
     },
     {
       "id": "kiosk-cola",
       "description": "A glass of cola with ice.",
-      "imageUrl": "https://images.unsplash.com/photo-1640751819565-260a39de71f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2xhJTIwZHJpbmt8ZW58MHx8fHwxNzY1OTg0NTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1640751819565-260a39de71f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2xhJTIwZHJpbmt8ZW58MHx8fHwxNzY1OTg0NTY0fDA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "cola drink"
     },
     {
       "id": "kiosk-lemonade",
       "description": "A glass of fresh lemonade.",
-      "imageUrl": "https://images.unsplash.com/photo-1629380072258-3d0d04a6f65a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsZW1vbmFkZSUyMGRyaW5rfGVufDB8fHx8MTc2NTk4MTcwM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1629380072258-3d0d04a6f65a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsZW1vbmFkZSUyMGRyaW5rfGVufDB8fHx8MTc2NTk4MTcwM3ww&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "lemonade drink"
     },
     {
       "id": "kiosk-background",
       "description": "A blurry background of a restaurant setting.",
-      "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZXN0YXVyYW50fGVufDB8fHx8MTc2NTk5NjM3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZXN0YXVyYW50fGVufDB8fHx8MTc2NTk5NjM3N3ww&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "restaurant background"
+    },
+    {
+      "id": "kiosk-icecream-cookie",
+      "description": "Ben & Jerry's Cookie Dough ice cream.",
+      "imageUrl": "https://images.unsplash.com/photo-1626202479421-a4a356073836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb29raWUlMjBkb3VnaCUyMGljZSUyMGNyZWFtfGVufDB8fHx8MTc2NTk5NjM3N3ww&ixlibrb-4.1.0&q=80&w=1080",
+      "imageHint": "cookie dough"
+    },
+    {
+      "id": "kiosk-icecream-fudge",
+      "description": "Ben & Jerry's Chocolate Fudge Brownie ice cream.",
+      "imageUrl": "https://images.unsplash.com/photo-1623595304624-d53de319d906?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBmdWRnZSUyMGJyb3duaWUlMjBpY2UlMjBjcmVhbXxlbnwwfHx8fDE3NjU5OTYzNzd8MA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageHint": "chocolate fudge"
+    },
+    {
+      "id": "kiosk-icecream-phish",
+      "description": "Ben & Jerry's Phish Food ice cream.",
+      "imageUrl": "https://images.unsplash.com/photo-1580915411954-2824916c5952?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBtYXJzaG1hbGxvdyUyMGljZSUyMGNyZWFtfGVufDB8fHx8fDE3NjU5OTYzNzd8MA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageHint": "phish food"
     }
   ]
 }
