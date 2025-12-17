@@ -1,31 +1,56 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Minus, Plus, ShoppingCart } from 'lucide-react';
+import { Minus, Plus, ShoppingCart, Beef, Salad } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
+import { Checkbox } from '../ui/checkbox';
+import { Label } from '../ui/label';
+
+const CheeseIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <path d="M5.9 4.2L2 10.3c-1.3 2.4.2 5.5 2.9 5.5h14.2c2.7 0 4.2-3.1 2.9-5.5L18.1 4.2c-1.3-2.4-4.9-2.4-6.2 0z"/>
+        <path d="M12 12h.01"/>
+        <path d="M16 8h.01"/>
+        <path d="M8 8h.01"/>
+        <path d="M10 16h.01"/>
+        <path d="M14 16h.01"/>
+    </svg>
+);
+
+
+const addons = [
+  { id: 'double_patty', name: 'Double Patty', price: 2.50, icon: <Beef className="w-5 h-5" /> },
+  { id: 'extra_cheese', name: 'Extra Cheese', price: 1.00, icon: <CheeseIcon className="w-5 h-5" /> },
+  { id: 'extra_salad', name: 'Extra Salad', price: 0.50, icon: <Salad className="w-5 h-5" /> },
+];
 
 const menuItems = [
-  { id: 1, name: 'Classic Burger', price: 8.99, imageId: 'kiosk-burger-classic', category: 'Burgers' },
-  { id: 2, name: 'Cheeseburger', price: 9.99, imageId: 'kiosk-burger-cheese', category: 'Burgers' },
-  { id: 3, name: 'Bacon Burger', price: 10.99, imageId: 'kiosk-burger-bacon', category: 'Burgers' },
+  { id: 1, name: 'Classic Burger', price: 8.99, imageId: 'kiosk-burger-classic', category: 'Burgers', addons: addons },
+  { id: 2, name: 'Cheeseburger', price: 9.99, imageId: 'kiosk-burger-cheese', category: 'Burgers', addons: addons },
+  { id: 3, name: 'Bacon Burger', price: 10.99, imageId: 'kiosk-burger-bacon', category: 'Burgers', addons: addons },
   { id: 4, name: 'Fries', price: 3.99, imageId: 'kiosk-fries', category: 'Sides' },
   { id: 5, name: 'Onion Rings', price: 4.99, imageId: 'kiosk-onion-rings', category: 'Sides' },
   { id: 6, name: 'Cola', price: 1.99, imageId: 'kiosk-cola', category: 'Drinks' },
   { id: 7, name: 'Lemonade', price: 1.99, imageId: 'kiosk-lemonade', category: 'Drinks' },
 ];
 
+type Addon = typeof addons[0];
+
 type CartItem = {
   id: number;
+  cartItemId: string;
   name: string;
   price: number;
   quantity: number;
   imageId: string;
+  addons: Addon[];
 };
 
 const KioskStartScreen = ({ onStart }: { onStart: () => void }) => {
@@ -70,24 +95,103 @@ export function KioskDemo() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [activeCategory, setActiveCategory] = useState('Burgers');
   const [isStarted, setIsStarted] = useState(false);
+  const [selectedItemForAddons, setSelectedItemForAddons] = useState<typeof menuItems[0] | null>(null);
+  const [editingCartItem, setEditingCartItem] = useState<CartItem | null>(null);
+  const [selectedAddons, setSelectedAddons] = useState<Addon[]>([]);
 
-  const addToCart = (item: typeof menuItems[0]) => {
-    setCart((currentCart) => {
-      const existingItem = currentCart.find((cartItem) => cartItem.id === item.id);
-      if (existingItem) {
-        return currentCart.map((cartItem) =>
-          cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
-        );
-      }
-      return [...currentCart, { ...item, quantity: 1 }];
-    });
+  const openAddonModal = (item: typeof menuItems[0]) => {
+    setSelectedItemForAddons(item);
+    setSelectedAddons([]);
   };
 
-  const updateQuantity = (id: number, delta: number) => {
+  const openEditAddonModal = (cartItem: CartItem) => {
+    const menuItem = menuItems.find(mi => mi.id === cartItem.id);
+    if(menuItem) {
+      setEditingCartItem(cartItem);
+      setSelectedItemForAddons(menuItem);
+      setSelectedAddons(cartItem.addons);
+    }
+  };
+
+  const handleAddonConfirm = () => {
+    if (!selectedItemForAddons) return;
+
+    if (editingCartItem) {
+      // Update existing cart item
+      setCart(currentCart => currentCart.map(item => {
+        if (item.cartItemId === editingCartItem.cartItemId) {
+          const addonPrice = selectedAddons.reduce((sum, addon) => sum + addon.price, 0);
+          const addonNames = selectedAddons.map(a => a.name).join(', ');
+          return {
+            ...item,
+            price: selectedItemForAddons.price + addonPrice,
+            name: `${selectedItemForAddons.name}${addonNames ? ` (${addonNames})` : ''}`,
+            addons: selectedAddons,
+          };
+        }
+        return item;
+      }));
+
+    } else {
+      // Add new item to cart
+      const cartItemId = `${selectedItemForAddons.id}-${selectedAddons.map(a => a.id).sort().join('-')}`;
+      const existingItem = cart.find(item => item.cartItemId === cartItemId);
+
+      if (existingItem) {
+        updateQuantity(existingItem.cartItemId, 1);
+      } else {
+        const addonPrice = selectedAddons.reduce((sum, addon) => sum + addon.price, 0);
+        const addonNames = selectedAddons.map(a => a.name).join(', ');
+        const newItem: CartItem = {
+          id: selectedItemForAddons.id,
+          cartItemId,
+          name: `${selectedItemForAddons.name}${addonNames ? ` (${addonNames})` : ''}`,
+          price: selectedItemForAddons.price + addonPrice,
+          quantity: 1,
+          imageId: selectedItemForAddons.imageId,
+          addons: selectedAddons,
+        };
+        setCart(currentCart => [...currentCart, newItem]);
+      }
+    }
+    
+    closeAddonModal();
+  };
+
+  const closeAddonModal = () => {
+    setSelectedItemForAddons(null);
+    setEditingCartItem(null);
+    setSelectedAddons([]);
+  };
+
+  const handleAddonSelect = (addon: Addon, checked: boolean) => {
+    setSelectedAddons(current => 
+      checked ? [...current, addon] : current.filter(a => a.id !== addon.id)
+    );
+  };
+
+  const addToCart = (item: typeof menuItems[0]) => {
+    if (item.addons && item.addons.length > 0) {
+      openAddonModal(item);
+      return;
+    }
+
+    const cartItemId = `${item.id}-`;
+    const existingItem = cart.find(i => i.cartItemId === cartItemId);
+    if (existingItem) {
+      updateQuantity(existingItem.cartItemId, 1);
+    } else {
+      setCart((currentCart) => {
+        return [...currentCart, { ...item, quantity: 1, cartItemId, addons: [] }];
+      });
+    }
+  };
+
+  const updateQuantity = (cartItemId: string, delta: number) => {
     setCart((currentCart) => {
       return currentCart
         .map((item) => {
-          if (item.id === id) {
+          if (item.cartItemId === cartItemId) {
             return { ...item, quantity: item.quantity + delta };
           }
           return item;
@@ -174,17 +278,21 @@ export function KioskDemo() {
                         <div className="space-y-4 pr-4">
                             {cart.map((item) => {
                             const image = PlaceHolderImages.find(p => p.id === item.imageId);
+                            const menuItem = menuItems.find(mi => mi.id === item.id);
                             return (
-                            <div key={item.id} className="flex items-center gap-4 text-slate-200">
+                            <div key={item.cartItemId} className="flex items-center gap-4 text-slate-200">
                                 {image && <Image src={image.imageUrl} alt={item.name} width={48} height={48} className="rounded-md" />}
                                 <div className="flex-grow">
-                                <p className="font-bold">{item.name}</p>
-                                <p className="text-sm text-slate-400">£{item.price.toFixed(2)}</p>
+                                  <p className="font-bold text-sm">{item.name}</p>
+                                  <p className="text-xs text-slate-400">£{item.price.toFixed(2)}</p>
+                                  {menuItem?.addons && menuItem.addons.length > 0 && (
+                                    <Button variant="link" className="h-auto p-0 text-xs text-primary" onClick={() => openEditAddonModal(item)}>Customise</Button>
+                                  )}
                                 </div>
                                 <div className="flex items-center gap-2">
-                                <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => updateQuantity(item.id, -1)}><Minus className="h-4 w-4" /></Button>
+                                <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => updateQuantity(item.cartItemId, -1)}><Minus className="h-4 w-4" /></Button>
                                 <span className="font-bold w-4 text-center">{item.quantity}</span>
-                                <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => updateQuantity(item.id, 1)}><Plus className="h-4 w-4" /></Button>
+                                <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => updateQuantity(item.cartItemId, 1)}><Plus className="h-4 w-4" /></Button>
                                 </div>
                                 <p className="font-bold w-16 text-right">£{(item.price * item.quantity).toFixed(2)}</p>
                             </div>
@@ -206,6 +314,34 @@ export function KioskDemo() {
             </Card>
         )}
       </div>
+      <Dialog open={!!selectedItemForAddons} onOpenChange={(open) => !open && closeAddonModal()}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Customise your {selectedItemForAddons?.name}</DialogTitle>
+            </DialogHeader>
+            <div className="space-y-4 py-4">
+              {selectedItemForAddons?.addons?.map(addon => (
+                <div key={addon.id} className="flex items-center space-x-3">
+                  <Checkbox 
+                    id={addon.id} 
+                    onCheckedChange={(checked) => handleAddonSelect(addon, !!checked)}
+                    checked={selectedAddons.some(sa => sa.id === addon.id)}
+                  />
+                  <Label htmlFor={addon.id} className="flex-grow flex items-center justify-between text-base">
+                    <div className="flex items-center gap-2">
+                      {addon.icon}
+                      <span>{addon.name}</span>
+                    </div>
+                    <span>+£{addon.price.toFixed(2)}</span>
+                  </Label>
+                </div>
+              ))}
+            </div>
+            <DialogFooter>
+              <Button onClick={handleAddonConfirm}>{editingCartItem ? 'Update Item' : 'Add to Order'}</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
     </section>
   );
 }
