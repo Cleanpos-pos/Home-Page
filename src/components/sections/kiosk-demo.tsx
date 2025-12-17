@@ -1,0 +1,158 @@
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Minus, Plus, ShoppingCart, X } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { ScrollArea } from '@/components/ui/scroll-area';
+
+const menuItems = [
+  { id: 1, name: 'Classic Burger', price: 8.99, image: 'https://picsum.photos/seed/kiosk1/200/200', category: 'Burgers' },
+  { id: 2, name: 'Cheeseburger', price: 9.99, image: 'https://picsum.photos/seed/kiosk2/200/200', category: 'Burgers' },
+  { id: 3, name: 'Bacon Burger', price: 10.99, image: 'https://picsum.photos/seed/kiosk3/200/200', category: 'Burgers' },
+  { id: 4, name: 'Fries', price: 3.99, image: 'https://picsum.photos/seed/kiosk4/200/200', category: 'Sides' },
+  { id: 5, name: 'Onion Rings', price: 4.99, image: 'https://picsum.photos/seed/kiosk5/200/200', category: 'Sides' },
+  { id: 6, name: 'Cola', price: 1.99, image: 'https://picsum.photos/seed/kiosk6/200/200', category: 'Drinks' },
+  { id: 7, name: 'Lemonade', price: 1.99, image: 'https://picsum.photos/seed/kiosk7/200/200', category: 'Drinks' },
+];
+
+type CartItem = {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+};
+
+export function KioskDemo() {
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [activeCategory, setActiveCategory] = useState('Burgers');
+
+  const addToCart = (item: typeof menuItems[0]) => {
+    setCart((currentCart) => {
+      const existingItem = currentCart.find((cartItem) => cartItem.id === item.id);
+      if (existingItem) {
+        return currentCart.map((cartItem) =>
+          cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+        );
+      }
+      return [...currentCart, { ...item, quantity: 1 }];
+    });
+  };
+
+  const updateQuantity = (id: number, delta: number) => {
+    setCart((currentCart) => {
+      return currentCart
+        .map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + delta };
+          }
+          return item;
+        })
+        .filter((item) => item.quantity > 0);
+    });
+  };
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const categories = [...new Set(menuItems.map(item => item.category))];
+
+  return (
+    <section id="kiosk-demo" className="container mx-auto px-4 py-20 md:px-6">
+      <div className="text-center">
+        <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl gradient-text">
+          Experience Our Kiosk UI
+        </h2>
+        <p className="mx-auto mt-4 max-w-[700px] text-lg text-slate-300 md:text-xl">
+          Interact with a live demo of our intuitive self-order kiosk interface. Add items to the cart and see the total update in real-time.
+        </p>
+      </div>
+
+      <div className="mt-12 max-w-6xl mx-auto">
+        <Card className="glass-card overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3">
+            <div className="md:col-span-2 p-6">
+              <div className="flex gap-2 mb-6">
+                {categories.map(category => (
+                    <Button 
+                        key={category} 
+                        variant={activeCategory === category ? 'default' : 'outline'}
+                        onClick={() => setActiveCategory(category)}
+                    >
+                        {category}
+                    </Button>
+                ))}
+              </div>
+              <ScrollArea className="h-[500px]">
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 pr-6">
+                  {menuItems.filter(item => item.category === activeCategory).map((item) => (
+                    <Card key={item.id} className="glass-card overflow-hidden">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        width={200}
+                        height={200}
+                        className="w-full h-32 object-cover"
+                      />
+                      <CardContent className="p-4">
+                        <h3 className="font-bold text-slate-50">{item.name}</h3>
+                        <p className="text-slate-300">${item.price.toFixed(2)}</p>
+                        <Button
+                          size="sm"
+                          className="w-full mt-2"
+                          onClick={() => addToCart(item)}
+                        >
+                          Add to Order
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </ScrollArea>
+            </div>
+
+            <div className="md:col-span-1 bg-slate-900/50 p-6 flex flex-col">
+              <h3 className="text-2xl font-bold text-slate-50 flex items-center gap-2">
+                <ShoppingCart className="text-primary" />
+                Your Order
+              </h3>
+              <ScrollArea className="flex-grow my-4 h-[350px]">
+                {cart.length === 0 ? (
+                  <div className="text-slate-400 text-center py-16">Your cart is empty.</div>
+                ) : (
+                  <div className="space-y-4 pr-4">
+                    {cart.map((item) => (
+                      <div key={item.id} className="flex items-center gap-4 text-slate-200">
+                        <Image src={menuItems.find(mi => mi.id === item.id)?.image || ''} alt={item.name} width={48} height={48} className="rounded-md" />
+                        <div className="flex-grow">
+                          <p className="font-bold">{item.name}</p>
+                          <p className="text-sm text-slate-400">${item.price.toFixed(2)}</p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => updateQuantity(item.id, -1)}><Minus className="h-4 w-4" /></Button>
+                          <span className="font-bold w-4 text-center">{item.quantity}</span>
+                          <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => updateQuantity(item.id, 1)}><Plus className="h-4 w-4" /></Button>
+                        </div>
+                        <p className="font-bold w-16 text-right">${(item.price * item.quantity).toFixed(2)}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </ScrollArea>
+              <div className="border-t border-slate-700 pt-4 mt-auto">
+                <div className="flex justify-between text-lg font-bold text-slate-50">
+                  <span>Total:</span>
+                  <span>${total.toFixed(2)}</span>
+                </div>
+                <Button size="lg" className="w-full mt-4" disabled={cart.length === 0}>
+                  Proceed to Checkout
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </section>
+  );
+}
