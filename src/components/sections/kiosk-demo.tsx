@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Minus, Plus, ShoppingCart, Beef, Salad, IceCream, CreditCard, Landmark } from 'lucide-react';
+import { Minus, Plus, ShoppingCart, Beef, Salad, IceCream, CreditCard, Landmark, ArrowLeft } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
@@ -135,6 +135,9 @@ export function KioskDemo() {
   const [editingCartItem, setEditingCartItem] = useState<CartItem | null>(null);
   const [selectedAddons, setSelectedAddons] = useState<Addon[]>([]);
 
+  const orderNumber = useMemo(() => Math.floor(1000 + Math.random() * 9000), [screen]);
+
+
   const openAddonModal = (item: typeof menuItems[0]) => {
     setSelectedItemForAddons(item);
     setSelectedAddons([]);
@@ -240,7 +243,7 @@ export function KioskDemo() {
     if (iceCream) {
       addToCart(iceCream, 1);
     }
-    setScreen('ordering');
+    setScreen('payment');
   };
 
   const handlePayment = () => {
@@ -284,26 +287,57 @@ export function KioskDemo() {
               })}
             </div>
             <div className="text-center mt-8">
-                <Button variant="ghost" onClick={() => handleUpsellChoice(null)}>No thanks, take me back</Button>
+                <Button variant="ghost" onClick={() => handleUpsellChoice(null)}>No thanks, go to payment</Button>
             </div>
           </Card>
         );
       case 'payment':
         return (
-            <Card className="glass-card overflow-hidden h-[700px] flex flex-col items-center justify-center p-8 text-center">
-                <ShoppingCart className="w-16 h-16 text-primary mb-4" />
-                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text">Total to Pay</h2>
-                <p className="text-8xl font-bold text-white my-8">£{total.toFixed(2)}</p>
-                <p className="text-lg text-slate-300 mb-8">Please choose your payment method.</p>
-                <div className="flex gap-8">
-                    <Button size="lg" className="h-24 w-48 text-2xl" onClick={handlePayment}>
-                        <CreditCard className="mr-4 h-8 w-8"/> Card
+            <Card className="glass-card overflow-hidden h-[700px] flex flex-col p-8">
+                <div className="flex items-center justify-between mb-6">
+                    <Button variant="outline" size="icon" onClick={() => setScreen('ordering')}>
+                        <ArrowLeft className="h-5 w-5" />
                     </Button>
-                    <Button size="lg" variant="outline" className="h-24 w-48 text-2xl" onClick={handlePayment}>
-                        <Landmark className="mr-4 h-8 w-8"/> Cash
-                    </Button>
+                    <div className="text-center">
+                        <h2 className="text-3xl font-bold tracking-tighter gradient-text">Confirm & Pay</h2>
+                        <p className="text-slate-400">Order #{orderNumber}</p>
+                    </div>
+                    <div className="w-10"></div>
                 </div>
-                <Button variant="link" className="mt-8" onClick={() => setScreen('ordering')}>&lt; Back to order</Button>
+
+                <ScrollArea className="flex-grow my-4 h-[350px]">
+                    <div className="space-y-4 pr-4">
+                        {cart.map((item) => {
+                        const image = PlaceHolderImages.find(p => p.id === item.imageId);
+                        return (
+                        <div key={item.cartItemId} className="flex items-center gap-4 text-slate-200">
+                            {image && <Image src={image.imageUrl} alt={item.name} width={48} height={48} className="rounded-md" />}
+                            <div className="flex-grow">
+                                <p className="font-bold text-sm">{item.name}</p>
+                                <p className="text-xs text-slate-400">{item.quantity} x £{item.price.toFixed(2)}</p>
+                            </div>
+                            <p className="font-bold w-16 text-right">£{(item.price * item.quantity).toFixed(2)}</p>
+                        </div>
+                        )})}
+                    </div>
+                </ScrollArea>
+                
+                <div className="border-t border-slate-700 pt-4 mt-auto space-y-6">
+                    <div className="flex justify-between text-2xl font-bold text-slate-50">
+                        <span>Total to Pay:</span>
+                        <span>£{total.toFixed(2)}</span>
+                    </div>
+
+                    <p className="text-lg text-slate-300 text-center">Please choose your payment method.</p>
+                    <div className="flex gap-8 justify-center">
+                        <Button size="lg" className="h-24 w-48 text-2xl" onClick={handlePayment}>
+                            <CreditCard className="mr-4 h-8 w-8"/> Card
+                        </Button>
+                        <Button size="lg" variant="outline" className="h-24 w-48 text-2xl" onClick={handlePayment}>
+                            <Landmark className="mr-4 h-8 w-8"/> Cash
+                        </Button>
+                    </div>
+                </div>
           </Card>
         );
       case 'thankyou':
@@ -312,7 +346,7 @@ export function KioskDemo() {
                 <QrCode className="w-40 h-40 text-white" />
                 <p className="text-lg text-slate-300 mt-4">Scan me for your ticket</p>
                 <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text mt-8">Thank You!</h2>
-                <p className="text-xl text-slate-300 mt-4">Your order is being prepared.</p>
+                <p className="text-2xl font-bold text-white mt-4">Your order number is #{orderNumber}</p>
                 <p className="text-lg text-slate-400 mt-2">Please collect at the counter.</p>
             </Card>
         );
@@ -462,5 +496,3 @@ export function KioskDemo() {
     </section>
   );
 }
-
-    
