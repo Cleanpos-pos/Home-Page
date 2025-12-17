@@ -1,11 +1,9 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -17,6 +15,9 @@ export function ContactDialog({ children }: { children: React.ReactNode }) {
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] h-[80vh] p-0">
+        <DialogHeader className="sr-only">
+          <DialogTitle>Book a Demo</DialogTitle>
+        </DialogHeader>
         <iframe
           src="https://calendly.com/delivrr/15min"
           className="w-full h-full border-0 rounded-lg"
