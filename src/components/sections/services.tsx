@@ -1,26 +1,37 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Cog, Cloud, ShieldCheck, BarChart, Code, Smartphone, MonitorPlay, ShoppingCart } from 'lucide-react';
+import { CreditCard, MonitorPlay, Smartphone, ShoppingCart, Ticket } from 'lucide-react';
+import Link from 'next/link';
 
 const services = [
   {
     icon: <ShoppingCart className="h-8 w-8 text-accent" />,
     title: 'ePOS Systems',
     description: 'Powerful, intuitive, and reliable point-of-sale systems designed for the fast-paced restaurant environment.',
+    href: '/pos'
   },
   {
     icon: <Smartphone className="h-8 w-8 text-accent" />,
     title: 'Self-Order Kiosks',
     description: 'Reduce queues and increase order accuracy with our sleek, user-friendly self-order kiosks.',
+    href: '/kiosks'
+  },
+  {
+    icon: <Ticket className="h-8 w-8 text-accent" />,
+    title: 'Ticketing',
+    description: 'All-in-one platform for venues and events. Sell tickets, manage memberships, and streamline check-ins.',
+    href: '/ticketing'
   },
   {
     icon: <MonitorPlay className="h-8 w-8 text-accent" />,
-    title: 'Kitchen Display Systems',
-    description: 'Streamline your kitchen workflow, improve communication, and reduce ticket times with our KDS solutions.',
+    title: 'Digital Signage',
+    description: 'Captivate your audience with stunning, easy-to-manage digital displays for menus and promotions.',
+    href: '/digital-signage'
   },
   {
-    icon: <Cloud className="h-8 w-8 text-accent" />,
-    title: 'Online Ordering Platforms',
-    description: 'Expand your reach with a seamlessly integrated online and mobile ordering system for your customers.',
+    icon: <CreditCard className="h-8 w-8 text-accent" />,
+    title: 'Card Machines',
+    description: 'Fast, secure, and reliable payment terminals from industry leaders like Clover, Teya, and Dojo.',
+    href: '/credit-card-machines'
   },
 ];
 
@@ -33,17 +44,19 @@ export function Services() {
           A complete ecosystem of tools to revolutionise your restaurant operations.
         </p>
       </div>
-      <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <Card key={service.title} className="glass-card">
-            <CardHeader>
-              {service.icon}
-              <CardTitle className="mt-4 text-xl font-bold text-slate-50">{service.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-slate-300">{service.description}</p>
-            </CardContent>
-          </Card>
+          <Link href={service.href} key={service.title}>
+            <Card className="glass-card h-full">
+              <CardHeader>
+                {service.icon}
+                <CardTitle className="mt-4 text-xl font-bold text-slate-50">{service.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-300">{service.description}</p>
+              </CardContent>
+            </Card>
+          </Link>
         ))}
       </div>
     </section>
