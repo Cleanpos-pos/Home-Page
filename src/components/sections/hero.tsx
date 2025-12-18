@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 export function Hero() {
   return (
-    <section className="relative w-full h-screen flex items-center overflow-hidden pt-20">
+    <section className="relative w-full h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-slate-950 opacity-90" />
         <div className="absolute inset-0 grid-bg opacity-40" />
         
