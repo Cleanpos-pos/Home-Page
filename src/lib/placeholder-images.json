@@ -125,6 +125,18 @@
       "description": "The Dojo Go portable card machine.",
       "imageUrl": "https://posso.uk/wp-content/uploads/2021/11/dj5.jpg",
       "imageHint": "Dojo payment"
+    },
+    {
+      "id": "pos-system-hero",
+      "description": "A modern EPOS system on a counter in a cafe.",
+      "imageUrl": "https://images.unsplash.com/photo-1593813354415-888a2b5d4f1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "EPOS system"
+    },
+    {
+      "id": "kiosk-hero",
+      "description": "A customer using a self-service kiosk in a restaurant.",
+      "imageUrl": "https://images.unsplash.com/photo-1633511091543-a912156a4232?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "self-service kiosk"
     }
   ]
 }
