@@ -59,6 +59,12 @@ export function Header() {
               Kiosks
             </Button>
           </Link>
+          <Link href="/ticketing">
+            <Button variant="outline">
+              <Ticket className="mr-2 h-4 w-4" />
+              Ticketing
+            </Button>
+          </Link>
           <Link href="/digital-signage">
             <Button variant="outline">
               <MonitorPlay className="mr-2 h-4 w-4" />
@@ -69,12 +75,6 @@ export function Header() {
             <Button variant="outline">
               <CreditCard className="mr-2 h-4 w-4" />
               Card Machines
-            </Button>
-          </Link>
-          <Link href="/ticketing">
-            <Button variant="outline">
-              <Ticket className="mr-2 h-4 w-4" />
-              Ticketing
             </Button>
           </Link>
           <a
