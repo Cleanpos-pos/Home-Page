@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { DownloadCloud, ExternalLink } from 'lucide-react';
+import { DownloadCloud, MonitorPlay } from 'lucide-react';
 
 const Logo = () => (
   <svg
@@ -30,7 +30,7 @@ export function Header() {
   return (
     <header className="absolute top-0 z-50 w-full">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="#" className="flex items-center gap-3" prefetch={false}>
+        <Link href="/" className="flex items-center gap-3" prefetch={false}>
           <Logo />
           <span className="text-xl font-bold text-slate-50 tracking-wide">
             POSSO
@@ -47,16 +47,12 @@ export function Header() {
             </span>
             Accepting New Projects Now
           </Badge>
-          <a
-            href="http://my-signage.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="/digital-signage">
             <Button variant="outline">
-              <ExternalLink className="mr-2 h-4 w-4" />
+              <MonitorPlay className="mr-2 h-4 w-4" />
               Digital Signage
             </Button>
-          </a>
+          </Link>
           <a
             href="https://download.anydesk.com/AnyDesk.exe?_ga=2.228450974.220224143.1581947022-1619378576.1575561389"
             download
