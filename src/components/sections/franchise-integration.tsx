@@ -42,7 +42,7 @@ export function FranchiseIntegration() {
       <div className="text-center">
         <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl gradient-text">Built to Play Nice.</h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-300 md:text-xl">
-          Your franchise ecosystem is complex. Posso fits right in. We integrate seamlessly with major delivery aggregators (UberEats, Deliveroo, JustEat), accounting software (Xero, QuickBooks), and staff management tools.
+          Your franchise ecosystem is complex. Posso fits right in. We integrate seamlessly with major delivery aggregators (UberEats, Deliveroo, JustEat), accounting software (QuickBooks), and staff management tools.
         </p>
       </div>
       <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
