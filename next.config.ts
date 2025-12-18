@@ -39,6 +39,12 @@ const nextConfig: NextConfig = {
         hostname: 'sp-ao.shortpixel.ai',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'allguardweb.on-forge.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

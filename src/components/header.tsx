@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { DownloadCloud, MonitorPlay, CreditCard, ShoppingCart, Smartphone } from 'lucide-react';
+import { DownloadCloud, MonitorPlay, CreditCard, ShoppingCart, Smartphone, Ticket } from 'lucide-react';
 
 const Logo = () => (
   <svg
@@ -71,8 +71,14 @@ export function Header() {
               Card Machines
             </Button>
           </Link>
+          <Link href="/ticketing">
+            <Button variant="outline">
+              <Ticket className="mr-2 h-4 w-4" />
+              Ticketing
+            </Button>
+          </Link>
           <a
-            href="https://download.anydesk.com/AnyDesk.exe?_ga=2.228450974.220224143.1581947022-1619378576.1575561389"
+            href="https://download.anydesk.com/AnyDesk.exe?_ga=2.228450974.22024143.1581947022-1619378576.1575561389"
             download
             target="_blank"
             rel="noopener noreferrer"
