@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { DownloadCloud, MonitorPlay } from 'lucide-react';
+import { DownloadCloud, MonitorPlay, CreditCard } from 'lucide-react';
 
 const Logo = () => (
   <svg
@@ -47,6 +47,12 @@ export function Header() {
             </span>
             Accepting New Projects Now
           </Badge>
+          <Link href="/credit-card-machines">
+            <Button variant="outline">
+              <CreditCard className="mr-2 h-4 w-4" />
+              Card Machines
+            </Button>
+          </Link>
           <Link href="/digital-signage">
             <Button variant="outline">
               <MonitorPlay className="mr-2 h-4 w-4" />
