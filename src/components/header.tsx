@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 import {
@@ -104,6 +106,9 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-slate-950">
+                <SheetHeader>
+                  <SheetTitle className="sr-only">Navigation</SheetTitle>
+                </SheetHeader>
                 <div className="flex flex-col h-full p-6">
                     <Link href="/" className="flex items-center gap-3 mb-8" prefetch={false} onClick={() => setIsSheetOpen(false)}>
                         <Logo />
