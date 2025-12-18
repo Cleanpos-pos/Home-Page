@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
         hostname: 'posso.uk',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'sp-ao.shortpixel.ai',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
