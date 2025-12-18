@@ -4,6 +4,7 @@ import { Contact } from '@/components/sections/contact';
 import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Lightbulb, PenTool, Gem } from 'lucide-react';
+import { ShopFitOut } from '@/components/sections/shop-fit-out';
 
 export const metadata: Metadata = {
   title: 'Custom Shop Signage | Indoor & Outdoor Signs',
@@ -61,6 +62,7 @@ export default function ShopSignagePage() {
                 </div>
             </div>
         </section>
+        <ShopFitOut />
         <Contact />
       </main>
       <Footer />
