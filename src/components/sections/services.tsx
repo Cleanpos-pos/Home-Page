@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CreditCard, MonitorPlay, Smartphone, ShoppingCart, Ticket, DownloadCloud } from 'lucide-react';
+import { CreditCard, MonitorPlay, Smartphone, ShoppingCart, Ticket, DownloadCloud, AppWindow, ScreenShare, Tv2 } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
@@ -32,6 +32,24 @@ const services = [
     title: 'Card Machines',
     description: 'Fast, secure, and reliable payment terminals from industry leaders like Clover, Teya, and Dojo.',
     href: '/credit-card-machines'
+  },
+  {
+    icon: <Tv2 className="h-8 w-8 text-accent" />,
+    title: 'Kitchen Display Screens',
+    description: 'Streamline your kitchen workflow with our robust and easy-to-read display systems.',
+    href: '#'
+  },
+  {
+    icon: <ScreenShare className="h-8 w-8 text-accent" />,
+    title: 'Customer Screens',
+    description: 'Engage customers at the point of sale with order details and promotional content.',
+    href: '#'
+  },
+  {
+    icon: <AppWindow className="h-8 w-8 text-accent" />,
+    title: 'Online-Ordering & Apps',
+    description: 'Reach more customers with a branded online ordering website and mobile app.',
+    href: '#'
   },
   {
     icon: <DownloadCloud className="h-8 w-8 text-accent" />,
