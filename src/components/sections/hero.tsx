@@ -31,11 +31,14 @@ export function Hero() {
                     </Button>
                 </ContactDialog>
 
-                <div className="mt-8 w-full flex items-center justify-center md:justify-start gap-8 opacity-60 grayscale">
+                <div className="mt-8 w-full flex items-center justify-center md:justify-start gap-8 opacity-60 grayscale flex-wrap">
                     <Image src="https://posso.uk/wp-content/uploads/2025/12/flava-logo.png" alt="Flava Logo" width={100} height={40} className="object-contain" />
                     <Image src="https://posso.uk/wp-content/uploads/2025/12/wingstar-logo-scaled.png" alt="Wingstar Logo" width={100} height={40} className="object-contain" />
                     <Image src="https://posso.uk/wp-content/uploads/2024/09/love-eatz-top-banner.jpg" alt="Love Eatz Logo" width={100} height={40} className="object-contain" />
                     <Image src="https://posso.uk/wp-content/uploads/2024/09/casbas-logo-web.png" alt="Casbas Logo" width={100} height={40} className="object-contain" />
+                    <Image src="https://posso.uk/wp-content/uploads/2025/12/milksha-logo@3x.png" alt="Milksha Logo" width={100} height={40} className="object-contain" />
+                    <Image src="https://posso.uk/wp-content/uploads/2024/12/allsee.png" alt="Allsee Logo" width={100} height={40} className="object-contain" />
+                    <Image src="https://posso.uk/wp-content/uploads/2024/12/avitor-logo.png" alt="Avitor Logo" width={100} height={40} className="object-contain" />
                 </div>
             </div>
 
