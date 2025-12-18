@@ -1,5 +1,7 @@
 import { Code, Twitter, Github, Linkedin, Instagram, Facebook } from 'lucide-react';
 import Link from 'next/link';
+import { ContactDialog } from './sections/contact';
+import { Button } from './ui/button';
 
 const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -79,7 +81,11 @@ export function Footer() {
                 <h4 className="font-bold text-slate-50 mb-4">Company</h4>
                 <ul className="space-y-2 text-sm text-slate-400">
                     <li><Link href="/#about" className="hover:text-primary transition-colors">About Us</Link></li>
-                    <li><Link href="/#contact" className="hover:text-primary transition-colors">Contact</Link></li>
+                    <li>
+                        <ContactDialog>
+                            <button className="hover:text-primary transition-colors">Contact</button>
+                        </ContactDialog>
+                    </li>
                     <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
                     <li><Link href="/cookie-policy" className="hover:text-primary transition-colors">Cookie Policy</Link></li>
                 </ul>
