@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CreditCard, MonitorPlay, Smartphone, ShoppingCart, Ticket } from 'lucide-react';
+import { CreditCard, MonitorPlay, Smartphone, ShoppingCart, Ticket, DownloadCloud } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
@@ -32,6 +32,12 @@ const services = [
     title: 'Card Machines',
     description: 'Fast, secure, and reliable payment terminals from industry leaders like Clover, Teya, and Dojo.',
     href: '/credit-card-machines'
+  },
+  {
+    icon: <DownloadCloud className="h-8 w-8 text-accent" />,
+    title: 'Support',
+    description: 'Get remote assistance from our dedicated support team to resolve any issues quickly.',
+    href: 'https://download.anydesk.com/AnyDesk.exe?_ga=2.228450974.22024143.1581947022-1619378576.1575561389'
   },
 ];
 
