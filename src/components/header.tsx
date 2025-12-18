@@ -16,6 +16,7 @@ import {
   Smartphone,
   Ticket,
   Menu,
+  Home,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -116,6 +117,12 @@ export function Header() {
                         </span>
                     </Link>
                     <div className="flex flex-col gap-4">
+                        <Link href="/" onClick={() => setIsSheetOpen(false)}>
+                          <Button variant="outline" className="w-full justify-start">
+                            <Home className="mr-2 h-4 w-4" />
+                            Home
+                          </Button>
+                        </Link>
                         {navLinks.map(({ href, icon, label, isExternal }) => (
                              isExternal ? (
                                 <a
