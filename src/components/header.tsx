@@ -17,6 +17,8 @@ import {
   Ticket,
   Menu,
   Home,
+  Store,
+  Wallet,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -47,6 +49,8 @@ const navLinks = [
   { href: '/ticketing', icon: <Ticket className="mr-2 h-4 w-4" />, label: 'Ticketing' },
   { href: '/digital-signage', icon: <MonitorPlay className="mr-2 h-4 w-4" />, label: 'Digital Signage' },
   { href: '/credit-card-machines', icon: <CreditCard className="mr-2 h-4 w-4" />, label: 'Card Machines' },
+  { href: '/shop-fitting', icon: <Store className="mr-2 h-4 w-4" />, label: 'Shop Fitting' },
+  { href: '/finance', icon: <Wallet className="mr-2 h-4 w-4" />, label: 'Finance' },
   { href: 'https://download.anydesk.com/AnyDesk.exe?_ga=2.228450974.22024143.1581947022-1619378576.1575561389', icon: <DownloadCloud className="mr-2 h-4 w-4" />, label: 'Support', isExternal: true },
 ];
 
@@ -64,7 +68,7 @@ export function Header() {
         </Link>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-2">
           <Badge
             variant="outline"
             className="border-primary/50 text-primary/80 bg-primary/10"
@@ -84,14 +88,14 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline">
+                <Button variant="outline" size="sm">
                   {icon}
                   {label}
                 </Button>
               </a>
             ) : (
               <Link href={href} key={href}>
-                <Button variant="outline">
+                <Button variant="outline" size="sm">
                   {icon}
                   {label}
                 </Button>

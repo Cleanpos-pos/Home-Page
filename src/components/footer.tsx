@@ -15,7 +15,7 @@ export function Footer() {
   return (
     <footer className="w-full py-12 mt-20 border-t border-slate-800">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {/* Logo and About */}
             <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-2">
@@ -76,6 +76,15 @@ export function Footer() {
                 </ul>
             </div>
 
+            {/* Retail Solutions */}
+            <div>
+                <h4 className="font-bold text-slate-50 mb-4">Retail Solutions</h4>
+                <ul className="space-y-2 text-sm text-slate-400">
+                    <li><Link href="/shop-fitting" className="hover:text-primary transition-colors">Shop Fitting</Link></li>
+                    <li><Link href="/shop-signage" className="hover:text-primary transition-colors">Shop Signage</Link></li>
+                </ul>
+            </div>
+
             {/* Company Links */}
             <div>
                 <h4 className="font-bold text-slate-50 mb-4">Company</h4>
@@ -86,6 +95,7 @@ export function Footer() {
                             <button className="hover:text-primary transition-colors">Contact</button>
                         </ContactDialog>
                     </li>
+                    <li><Link href="/finance" className="hover:text-primary transition-colors">Finance Calculator</Link></li>
                     <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
                     <li><Link href="/cookie-policy" className="hover:text-primary transition-colors">Cookie Policy</Link></li>
                 </ul>
