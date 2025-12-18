@@ -1,5 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Ticket, Users, CheckSquare, HardDrive, BarChart } from 'lucide-react';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const features = [
   {
@@ -30,6 +32,7 @@ const features = [
 ];
 
 export function TicketingFeatures() {
+    const ticketingImage = PlaceHolderImages.find(p => p.id === 'ticketing-hero');
   return (
     <section id="features" className="container mx-auto px-4 py-20 md:px-6">
       <div className="text-center">
@@ -50,7 +53,18 @@ export function TicketingFeatures() {
             </CardContent>
           </Card>
         ))}
-         <Card className="md:col-span-2 lg:col-span-1 glass-card" />
+         <Card className="md:col-span-2 lg:col-span-1 glass-card p-2">
+            {ticketingImage && (
+                <Image
+                    src={ticketingImage.imageUrl}
+                    alt={ticketingImage.description}
+                    data-ai-hint={ticketingImage.imageHint}
+                    width={400}
+                    height={300}
+                    className="object-cover w-full h-full rounded-md"
+                />
+            )}
+         </Card>
       </div>
     </section>
   );
