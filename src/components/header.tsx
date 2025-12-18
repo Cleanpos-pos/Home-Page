@@ -3,7 +3,21 @@
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { DownloadCloud, MonitorPlay, CreditCard, ShoppingCart, Smartphone, Ticket } from 'lucide-react';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from '@/components/ui/sheet';
+import {
+  DownloadCloud,
+  MonitorPlay,
+  CreditCard,
+  ShoppingCart,
+  Smartphone,
+  Ticket,
+  Menu,
+} from 'lucide-react';
+import { useState } from 'react';
 
 const Logo = () => (
   <svg
@@ -26,7 +40,18 @@ const Logo = () => (
   </svg>
 );
 
+const navLinks = [
+  { href: '/pos', icon: <ShoppingCart className="mr-2 h-4 w-4" />, label: 'POS' },
+  { href: '/kiosks', icon: <Smartphone className="mr-2 h-4 w-4" />, label: 'Kiosks' },
+  { href: '/ticketing', icon: <Ticket className="mr-2 h-4 w-4" />, label: 'Ticketing' },
+  { href: '/digital-signage', icon: <MonitorPlay className="mr-2 h-4 w-4" />, label: 'Digital Signage' },
+  { href: '/credit-card-machines', icon: <CreditCard className="mr-2 h-4 w-4" />, label: 'Card Machines' },
+  { href: 'https://download.anydesk.com/AnyDesk.exe?_ga=2.228450974.22024143.1581947022-1619378576.1575561389', icon: <DownloadCloud className="mr-2 h-4 w-4" />, label: 'Support', isExternal: true },
+];
+
 export function Header() {
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
   return (
     <header className="absolute top-0 z-50 w-full">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
@@ -36,7 +61,9 @@ export function Header() {
             POSSO
           </span>
         </Link>
-        <div className="flex items-center gap-4">
+        
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-4">
           <Badge
             variant="outline"
             className="border-primary/50 text-primary/80 bg-primary/10"
@@ -47,47 +74,86 @@ export function Header() {
             </span>
             Accepting New Projects Now
           </Badge>
-          <Link href="/pos">
-            <Button variant="outline">
-              <ShoppingCart className="mr-2 h-4 w-4" />
-              POS
-            </Button>
-          </Link>
-          <Link href="/kiosks">
-            <Button variant="outline">
-              <Smartphone className="mr-2 h-4 w-4" />
-              Kiosks
-            </Button>
-          </Link>
-          <Link href="/ticketing">
-            <Button variant="outline">
-              <Ticket className="mr-2 h-4 w-4" />
-              Ticketing
-            </Button>
-          </Link>
-          <Link href="/digital-signage">
-            <Button variant="outline">
-              <MonitorPlay className="mr-2 h-4 w-4" />
-              Digital Signage
-            </Button>
-          </Link>
-          <Link href="/credit-card-machines">
-            <Button variant="outline">
-              <CreditCard className="mr-2 h-4 w-4" />
-              Card Machines
-            </Button>
-          </Link>
-          <a
-            href="https://download.anydesk.com/AnyDesk.exe?_ga=2.228450974.22024143.1581947022-1619378576.1575561389"
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button variant="outline">
-              <DownloadCloud className="mr-2 h-4 w-4" />
-              Support
-            </Button>
-          </a>
+          {navLinks.map(({ href, icon, label, isExternal }) => (
+            isExternal ? (
+              <a
+                key={href}
+                href={href}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline">
+                  {icon}
+                  {label}
+                </Button>
+              </a>
+            ) : (
+              <Link href={href} key={href}>
+                <Button variant="outline">
+                  {icon}
+                  {label}
+                </Button>
+              </Link>
+            )
+          ))}
+        </div>
+
+        {/* Mobile Navigation */}
+        <div className="md:hidden">
+           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-slate-950">
+                <div className="flex flex-col h-full p-6">
+                    <Link href="/" className="flex items-center gap-3 mb-8" prefetch={false} onClick={() => setIsSheetOpen(false)}>
+                        <Logo />
+                        <span className="text-xl font-bold text-slate-50 tracking-wide">
+                            POSSO
+                        </span>
+                    </Link>
+                    <div className="flex flex-col gap-4">
+                        {navLinks.map(({ href, icon, label, isExternal }) => (
+                             isExternal ? (
+                                <a
+                                    key={href}
+                                    href={href}
+                                    download
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => setIsSheetOpen(false)}
+                                >
+                                    <Button variant="outline" className="w-full justify-start">
+                                    {icon}
+                                    {label}
+                                    </Button>
+                                </a>
+                                ) : (
+                                <Link href={href} key={href} onClick={() => setIsSheetOpen(false)}>
+                                    <Button variant="outline" className="w-full justify-start">
+                                    {icon}
+                                    {label}
+                                    </Button>
+                                </Link>
+                                )
+                        ))}
+                    </div>
+                     <Badge
+                        variant="outline"
+                        className="mt-auto border-primary/50 text-primary/80 bg-primary/10"
+                    >
+                        <span className="relative flex h-2 w-2 mr-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                        </span>
+                        Accepting New Projects Now
+                    </Badge>
+                </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
