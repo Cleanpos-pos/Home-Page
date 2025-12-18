@@ -2,6 +2,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { DigitalSignageHero } from '@/components/sections/digital-signage-hero';
 import { DigitalSignageFeatures } from '@/components/sections/digital-signage-features';
+import { DigitalSignageBrochure } from '@/components/sections/digital-signage-brochure';
 import { Contact } from '@/components/sections/contact';
 import type { Metadata } from 'next';
 
@@ -20,6 +21,7 @@ export default function DigitalSignagePage() {
       <main className="flex-1">
         <DigitalSignageHero />
         <DigitalSignageFeatures />
+        <DigitalSignageBrochure />
         <Contact />
       </main>
       <Footer />
