@@ -3,6 +3,20 @@ import { Footer } from '@/components/footer';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'Read the privacy policy for Posso Ltd to understand how we collect, use, and protect your personal information.',
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/privacy-policy',
+  },
+};
+
 
 export default function PrivacyPolicyPage() {
   return (

@@ -3,6 +3,19 @@ import { Footer } from '@/components/footer';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Cookie Policy',
+  description: 'Learn about how Posso Ltd uses cookies on its website to enhance user experience and provide our services.',
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/cookie-policy',
+  },
+};
 
 export default function CookiePolicyPage() {
   return (

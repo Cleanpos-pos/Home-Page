@@ -3,6 +3,15 @@ import { Footer } from '@/components/footer';
 import { CreditCardMachinesHero } from '@/components/sections/credit-card-machines-hero';
 import { CreditCardMachinesContent } from '@/components/sections/credit-card-machines-content';
 import { Contact } from '@/components/sections/contact';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Integrated Credit Card Machines | Teya, Dojo, Clover',
+  description: 'Supply and integration of industry-leading credit card machines from Teya, Dojo, and Clover. Fast, secure, and fully integrated with your Posso EPOS system.',
+  alternates: {
+    canonical: '/credit-card-machines',
+  },
+};
 
 export default function CreditCardMachinesPage() {
   return (

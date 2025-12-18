@@ -5,6 +5,12 @@ import { About } from '@/components/sections/about';
 import { Testimonials } from '@/components/sections/testimonials';
 import { Contact } from '@/components/sections/contact';
 import { Footer } from '@/components/footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Posso | Restaurant ePOS, Self-Order Kiosks, and Venue Management',
+  description: 'Pioneering ePOS systems, self-order kiosks, ticketing, and digital signage for restaurants, venues, and events. Boost efficiency and enhance customer experience with Posso.',
+}
 
 export default function Home() {
   return (
