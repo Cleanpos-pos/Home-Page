@@ -176,15 +176,27 @@
     },
     {
       "id": "logo-stonehenge-inn",
-      "description": "Placeholder for Stonehenge Inn logo",
-      "imageUrl": "https://images.unsplash.com/photo-1531384441138-2736e62e0919?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8cHJvZmVzc2lvbmFsJTIwaGVhZHNob3R8ZW58MHx8fHwxNzY1OTEyMDE3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "professional headshot"
+      "description": "The logo for the Stonehenge Inn, a historic pub and restaurant.",
+      "imageUrl": "https://allguardweb.on-forge.com/wp-content/uploads/2024/05/cropped-New-Project-2024-05-22T133649.957.png",
+      "imageHint": "Stonehenge Inn"
     },
     {
       "id": "logo-milksha",
-      "description": "Placeholder for Milksha logo",
-      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjU5MTIwMTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "casual headshot"
+      "description": "The logo for Milksha, a bubble tea brand.",
+      "imageUrl": "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1024/https://milksha.co.uk/wp-content/uploads/2021/10/Logo-1024x1024.png",
+      "imageHint": "Milksha logo"
+    },
+    {
+      "id": "franchise-hero",
+      "description": "A world map with interconnected points, representing a global franchise network.",
+      "imageUrl": "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "global network"
+    },
+    {
+      "id": "franchise-dashboard",
+      "description": "A tablet showing a complex data analytics dashboard for a business.",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "analytics dashboard"
     }
   ]
 }
