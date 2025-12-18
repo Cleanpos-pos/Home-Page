@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -69,16 +68,6 @@ export function Header() {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-2">
-          <Badge
-            variant="outline"
-            className="border-primary/50 text-primary/80 bg-primary/10"
-          >
-            <span className="relative flex h-2 w-2 mr-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Accepting New Projects Now
-          </Badge>
           {navLinks.map(({ href, icon, label, isExternal }) => (
             isExternal ? (
               <a
@@ -152,16 +141,6 @@ export function Header() {
                                 )
                         ))}
                     </div>
-                     <Badge
-                        variant="outline"
-                        className="mt-auto border-primary/50 text-primary/80 bg-primary/10"
-                    >
-                        <span className="relative flex h-2 w-2 mr-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                        </span>
-                        Accepting New Projects Now
-                    </Badge>
                 </div>
             </SheetContent>
           </Sheet>
