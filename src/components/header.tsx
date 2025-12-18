@@ -18,6 +18,7 @@ import {
   Home,
   Store,
   Wallet,
+  Globe,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -45,6 +46,7 @@ const Logo = () => (
 const navLinks = [
   { href: '/pos', icon: <ShoppingCart className="mr-2 h-4 w-4" />, label: 'POS' },
   { href: '/kiosks', icon: <Smartphone className="mr-2 h-4 w-4" />, label: 'Kiosks' },
+  { href: '/online-ordering', icon: <Globe className="mr-2 h-4 w-4" />, label: 'Online Ordering' },
   { href: '/ticketing', icon: <Ticket className="mr-2 h-4 w-4" />, label: 'Ticketing' },
   { href: '/digital-signage', icon: <MonitorPlay className="mr-2 h-4 w-4" />, label: 'Digital Signage' },
   { href: '/credit-card-machines', icon: <CreditCard className="mr-2 h-4 w-4" />, label: 'Card Machines' },

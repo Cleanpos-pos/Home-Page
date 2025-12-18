@@ -59,15 +59,15 @@ export function Footer() {
                 <ul className="space-y-2 text-sm text-slate-400">
                     <li><Link href="/pos" className="hover:text-primary transition-colors">ePOS Systems</Link></li>
                     <li><Link href="/kiosks" className="hover:text-primary transition-colors">Self-Order Kiosks</Link></li>
-                    <li><Link href="#" className="hover:text-primary transition-colors">Kitchen Displays</Link></li>
-                    <li><Link href="#" className="hover:text-primary transition-colors">Online Ordering</Link></li>
+                    <li><Link href="/credit-card-machines" className="hover:text-primary transition-colors">Kitchen Displays</Link></li>
+                    <li><Link href="/online-ordering" className="hover:text-primary transition-colors">Online Ordering</Link></li>
                      <li><Link href="/franchise" className="hover:text-primary transition-colors">Franchise Solutions</Link></li>
                 </ul>
             </div>
 
             {/* Venues Links */}
             <div>
-                <h4 className="font-bold text-slate-50 mb-4">Venues & Events</h4>
+                <h4 className="font-bold text-slate-50 mb-4">Venues &amp; Events</h4>
                 <ul className="space-y-2 text-sm text-slate-400">
                     <li><Link href="/ticketing" className="hover:text-primary transition-colors">Ticketing</Link></li>
                     <li><Link href="/ticketing" className="hover:text-primary transition-colors">Memberships</Link></li>

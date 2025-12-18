@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CreditCard, MonitorPlay, Smartphone, ShoppingCart, Ticket, DownloadCloud, AppWindow, ScreenShare, Tv2 } from 'lucide-react';
+import { CreditCard, MonitorPlay, Smartphone, ShoppingCart, Ticket, DownloadCloud, AppWindow, ScreenShare, Tv2, Globe } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
@@ -46,10 +46,10 @@ const services = [
     href: '#'
   },
   {
-    icon: <AppWindow className="h-8 w-8 text-accent" />,
+    icon: <Globe className="h-8 w-8 text-accent" />,
     title: 'Online-Ordering & Apps',
     description: 'Reach more customers with a branded online ordering website and mobile app.',
-    href: '#'
+    href: '/online-ordering'
   },
   {
     icon: <DownloadCloud className="h-8 w-8 text-accent" />,
