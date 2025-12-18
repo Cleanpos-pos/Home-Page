@@ -143,6 +143,18 @@
       "description": "Ticketing hardware and insights.",
       "imageUrl": "https://allguardweb.on-forge.com/wp-content/uploads/2025/12/hardware-insights-B74QkSsj.jpg",
       "imageHint": "ticketing hardware"
+    },
+    {
+      "id": "ticketing-hero-2",
+      "description": "Ticketing hardware and insights.",
+      "imageUrl": "https://allguardweb.on-forge.com/wp-content/uploads/2025/12/hardware-insights-B74QkSsj.jpg",
+      "imageHint": "ticketing hardware"
+    },
+    {
+      "id": "ticketing-hero-3",
+      "description": "Ticketing hardware and insights.",
+      "imageUrl": "https://allguardweb.on-forge.com/wp-content/uploads/2025/12/hardware-insights-B74QkSsj.jpg",
+      "imageHint": "ticketing hardware"
     }
   ]
 }

@@ -19,17 +19,22 @@ const features = [
     title: 'Everything Runs Smoother',
     description: 'Check people in with a quick scan, take payments at the bar, rent out lockers, and monitor live activity on your dashboard. It all just works together.',
   },
-  {
-    icon: <HardDrive className="h-8 w-8 text-accent" />,
-    title: 'Hardware That Helps',
-    description: 'Let guests check themselves in at sleek kiosks, run your café with modern tills, show session times on screens, and offer secure smart lockers.',
-  },
-  {
-    icon: <BarChart className="h-8 w-8 text-accent" />,
-    title: 'Grow with Confidence',
-    description: 'See what’s working with clear insights and run promotions that drive bookings. Our system scales with you, from one site to ten.',
-  },
 ];
+
+const featuresWithImages = [
+    {
+        icon: <HardDrive className="h-8 w-8 text-accent" />,
+        title: 'Hardware That Helps',
+        description: 'Let guests check themselves in at sleek kiosks, run your café with modern tills, show session times on screens, and offer secure smart lockers.',
+        imageId: 'ticketing-hero-2',
+    },
+    {
+        icon: <BarChart className="h-8 w-8 text-accent" />,
+        title: 'Grow with Confidence',
+        description: 'See what’s working with clear insights and run promotions that drive bookings. Our system scales with you, from one site to ten.',
+        imageId: 'ticketing-hero-3',
+    },
+]
 
 export function TicketingFeatures() {
     const ticketingImage = PlaceHolderImages.find(p => p.id === 'ticketing-hero');
@@ -53,7 +58,7 @@ export function TicketingFeatures() {
             </CardContent>
           </Card>
         ))}
-         <Card className="md:col-span-2 lg:col-span-1 glass-card p-2">
+         <Card className="glass-card p-2">
             {ticketingImage && (
                 <Image
                     src={ticketingImage.imageUrl}
@@ -65,6 +70,32 @@ export function TicketingFeatures() {
                 />
             )}
          </Card>
+        {featuresWithImages.map((feature) => {
+            const featureImage = PlaceHolderImages.find(p => p.id === feature.imageId);
+            return (
+                <Card key={feature.title} className="glass-card">
+                    <CardHeader>
+                    {feature.icon}
+                    <CardTitle className="mt-4 text-xl font-bold text-slate-50">{feature.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <p className="text-slate-300">{feature.description}</p>
+                    {featureImage && (
+                        <div className="mt-4 rounded-lg overflow-hidden">
+                            <Image
+                                src={featureImage.imageUrl}
+                                alt={featureImage.description}
+                                data-ai-hint={featureImage.imageHint}
+                                width={400}
+                                height={200}
+                                className="object-cover w-full h-full"
+                            />
+                        </div>
+                    )}
+                    </CardContent>
+                </Card>
+            )
+        })}
       </div>
     </section>
   );
