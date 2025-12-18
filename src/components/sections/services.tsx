@@ -30,7 +30,7 @@ export function Services() {
       <div className="text-center">
         <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl gradient-text">Our Products</h2>
         <p className="mx-auto mt-4 max-w-[700px] text-lg text-slate-300 md:text-xl">
-          A complete ecosystem of tools to revolutionize your restaurant operations.
+          A complete ecosystem of tools to revolutionise your restaurant operations.
         </p>
       </div>
       <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">

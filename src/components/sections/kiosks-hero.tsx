@@ -22,7 +22,7 @@ export function KiosksHero() {
                     SELF-SERVICE ORDERING
                 </Badge>
                 <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl lg:text-7xl !leading-tight bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
-                    Revolutionize Your Service with <br />
+                    Revolutionise Your Service with <br />
                     <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Self-Order Kiosks</span>
                 </h1>
                 <p className="max-w-xl text-lg text-slate-400">
