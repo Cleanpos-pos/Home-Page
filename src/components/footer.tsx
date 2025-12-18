@@ -17,7 +17,11 @@ export function Footer() {
           <Code className="h-6 w-6 text-primary" />
           <span className="text-lg font-bold text-slate-50">Posso</span>
         </div>
-        <p className="text-sm text-slate-400">&copy; 2025/2026 Posso Ltd. All rights reserved.</p>
+        <div className="text-sm text-slate-400 flex gap-4">
+          <span>&copy; 2025/2026 Posso Ltd. All rights reserved.</span>
+          <Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+          <Link href="/cookie-policy" className="hover:text-primary transition-colors">Cookie Policy</Link>
+        </div>
         <div className="flex items-center gap-4">
           <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
             <Twitter className="h-5 w-5" />
