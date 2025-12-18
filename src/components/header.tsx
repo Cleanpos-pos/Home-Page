@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { DownloadCloud } from 'lucide-react';
+import { DownloadCloud, ExternalLink } from 'lucide-react';
 
 const Logo = () => (
   <svg
@@ -47,6 +47,16 @@ export function Header() {
             </span>
             Accepting New Projects Now
           </Badge>
+          <a
+            href="http://my-signage.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="outline">
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Digital Signage
+            </Button>
+          </a>
           <a
             href="https://download.anydesk.com/AnyDesk.exe?_ga=2.228450974.220224143.1581947022-1619378576.1575561389"
             download
