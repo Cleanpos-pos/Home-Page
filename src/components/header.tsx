@@ -85,7 +85,7 @@ export function Header() {
           >
             <Button variant="outline">
               <DownloadCloud className="mr-2 h-4 w-4" />
-              Support App
+              Support
             </Button>
           </a>
         </div>
