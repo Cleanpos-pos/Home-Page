@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ContactDialog } from './contact';
 import { ArrowRight, Cog, MonitorCheck, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
+import Image from 'next/image';
 
 export function Hero() {
   return (
@@ -30,10 +31,11 @@ export function Hero() {
                     </Button>
                 </ContactDialog>
 
-                <div className="mt-8 w-full flex items-center justify-center md:justify-start gap-8">
-                    <p className="text-slate-500 font-code tracking-widest text-sm">WINGSTAR</p>
-                    <p className="text-slate-500 font-code tracking-widest text-sm">LOVE_CHICKEN</p>
-                    <p className="text-slate-500 font-code tracking-widest text-sm">MILKSHA</p>
+                <div className="mt-8 w-full flex items-center justify-center md:justify-start gap-8 opacity-60 grayscale">
+                    <Image src="https://posso.uk/wp-content/uploads/2025/12/flava-logo.png" alt="Flava Logo" width={100} height={40} className="object-contain" />
+                    <Image src="https://posso.uk/wp-content/uploads/2025/12/wingstar-logo-scaled.png" alt="Wingstar Logo" width={100} height={40} className="object-contain" />
+                    <Image src="https://posso.uk/wp-content/uploads/2024/09/love-eatz-top-banner.jpg" alt="Love Eatz Logo" width={100} height={40} className="object-contain" />
+                    <Image src="https://posso.uk/wp-content/uploads/2024/09/casbas-logo-web.png" alt="Casbas Logo" width={100} height={40} className="object-contain" />
                 </div>
             </div>
 
