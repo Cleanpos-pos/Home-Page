@@ -44,7 +44,7 @@ export function CreditCardMachinesContent() {
                 <div className="relative glass-card p-6 rounded-lg border-primary/50">
                     <div className="absolute -top-4 -left-4 bg-primary text-primary-foreground rounded-full px-4 py-2 text-lg font-bold shadow-lg transform -rotate-12">
                         <Tag className="inline-block mr-2"/>
-                        15% Off
+                        % discounts
                     </div>
                     <p className="text-center text-xl font-semibold text-slate-200">with Posso EPOS Solutions</p>
                 </div>
