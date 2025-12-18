@@ -26,31 +26,31 @@ const initialTestimonials: Testimonial[] = [
   {
     name: 'Flava25',
     role: 'Owner, Flava25',
-    avatarId: 'avatar-1',
+    avatarId: 'logo-flava',
     text: "Posso's complete range of services has been a revelation for our business. From the ePOS to the online ordering system, everything works in perfect harmony.",
   },
   {
     name: 'Wingstar',
     role: 'Manager, Wingstar',
-    avatarId: 'avatar-2',
+    avatarId: 'logo-wingstar',
     text: 'The kiosks and POS systems are brilliant, but the integrated online ordering has truly expanded our reach. Our takeaway orders have soared!',
   },
   {
     name: 'Love Chicken',
     role: 'Founder, Love Chicken',
-    avatarId: 'avatar-3',
+    avatarId: 'logo-love-chicken',
     text: "The self-service kiosks have been a massive hit with our regulars. It's streamlined our entire ordering process, especially during the lunch rush.",
   },
   {
     name: 'Stonehenge Inn',
     role: 'Proprietor, Stonehenge Inn',
-    avatarId: 'avatar-4',
+    avatarId: 'logo-stonehenge-inn',
     text: "Implementing the Posso POS and kiosk system was seamless. Our staff love how intuitive it is, and our customers appreciate the quicker service.",
   },
   {
     name: 'Milksha',
     role: 'Franchisee, Milksha',
-    avatarId: 'avatar-5',
+    avatarId: 'logo-milksha',
     text: 'For a busy bubble tea shop, speed and accuracy are key. The Posso kiosks and POS have delivered on both fronts, reducing queues and errors significantly.',
   }
 ];
@@ -81,9 +81,9 @@ export function Testimonials() {
                           src={avatar.imageUrl}
                           alt={testimonial.name}
                           data-ai-hint={avatar.imageHint}
-                          width={80}
-                          height={80}
-                          className="rounded-full"
+                          width={120}
+                          height={60}
+                          className="object-contain h-16 w-32"
                         />
                       )}
                       <p className="mt-6 text-lg italic text-slate-200">&quot;{testimonial.text}&quot;</p>
@@ -102,3 +102,5 @@ export function Testimonials() {
     </section>
   );
 }
+
+    

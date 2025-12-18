@@ -155,6 +155,36 @@
       "description": "Ticketing hardware and insights.",
       "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/icesk.png",
       "imageHint": "ticketing hardware"
+    },
+    {
+      "id": "logo-flava",
+      "description": "Flava25 logo",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/flava-logo.png",
+      "imageHint": "Flava logo"
+    },
+    {
+      "id": "logo-wingstar",
+      "description": "Wingstar logo",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/wingstar-logo-scaled.png",
+      "imageHint": "Wingstar logo"
+    },
+    {
+      "id": "logo-love-chicken",
+      "description": "Love Chicken logo",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2024/09/love-eatz-top-banner.jpg",
+      "imageHint": "Love Chicken"
+    },
+    {
+      "id": "logo-stonehenge-inn",
+      "description": "Placeholder for Stonehenge Inn logo",
+      "imageUrl": "https://images.unsplash.com/photo-1531384441138-2736e62e0919?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8cHJvZmVzc2lvbmFsJTIwaGVhZHNob3R8ZW58MHx8fHwxNzY1OTEyMDE3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional headshot"
+    },
+    {
+      "id": "logo-milksha",
+      "description": "Placeholder for Milksha logo",
+      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjU5MTIwMTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "casual headshot"
     }
   ]
 }
