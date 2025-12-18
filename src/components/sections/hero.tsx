@@ -36,8 +36,6 @@ export function Hero() {
                     <Image src="https://posso.uk/wp-content/uploads/2025/12/wingstar-logo-scaled.png" alt="Wingstar Logo" width={100} height={40} className="object-contain" />
                     <Image src="https://posso.uk/wp-content/uploads/2024/09/love-eatz-top-banner.jpg" alt="Love Eatz Logo" width={100} height={40} className="object-contain" />
                     <Image src="https://posso.uk/wp-content/uploads/2024/09/casbas-logo-web.png" alt="Casbas Logo" width={100} height={40} className="object-contain" />
-                    <Image src="https://posso.uk/wp-content/uploads/2024/12/allsee.png" alt="Allsee Logo" width={100} height={40} className="object-contain" />
-                    <Image src="https://posso.uk/wp-content/uploads/2024/12/avitor-logo.png" alt="Avitor Logo" width={100} height={40} className="object-contain" />
                 </div>
             </div>
 
