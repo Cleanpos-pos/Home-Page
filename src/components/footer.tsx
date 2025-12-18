@@ -1,5 +1,13 @@
-import { Code, Twitter, Github, Linkedin } from 'lucide-react';
+import { Code, Twitter, Github, Linkedin, Instagram, Facebook } from 'lucide-react';
 import Link from 'next/link';
+
+const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <path d="M16 8.8c-2.3.2-4.1 2-4.3 4.3-.2 2.3 1.5 4.3 3.8 4.5 2.3.2 4.3-1.5 4.5-3.8.2-2.3-1.5-4.3-3.8-4.5z"/>
+        <path d="M12 4v11"/>
+    </svg>
+);
+
 
 export function Footer() {
   return (
@@ -13,7 +21,15 @@ export function Footer() {
         <div className="flex items-center gap-4">
           <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
             <Twitter className="h-5 w-5" />
-            <span className="sr-only">Twitter</span>
+            <span className="sr-only">X</span>
+          </Link>
+           <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
+            <Instagram className="h-5 w-5" />
+            <span className="sr-only">Instagram</span>
+          </Link>
+           <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
+            <Facebook className="h-5 w-5" />
+            <span className="sr-only">Facebook</span>
           </Link>
           <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
             <Github className="h-5 w-5" />
@@ -22,6 +38,10 @@ export function Footer() {
           <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
             <Linkedin className="h-5 w-5" />
             <span className="sr-only">LinkedIn</span>
+          </Link>
+           <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
+            <TikTokIcon className="h-5 w-5" />
+            <span className="sr-only">TikTok</span>
           </Link>
         </div>
       </div>
