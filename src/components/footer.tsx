@@ -9,7 +9,7 @@ export function Footer() {
           <Code className="h-6 w-6 text-primary" />
           <span className="text-lg font-bold text-slate-50">Posso</span>
         </div>
-        <p className="text-sm text-slate-400">&copy; 2024 Posso Ltd. All rights reserved.</p>
+        <p className="text-sm text-slate-400">&copy; 2025/2026 Posso Ltd. All rights reserved.</p>
         <div className="flex items-center gap-4">
           <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
             <Twitter className="h-5 w-5" />
