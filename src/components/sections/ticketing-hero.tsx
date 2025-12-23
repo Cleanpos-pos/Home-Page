@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function TicketingHero() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'ticketing-hero');
+  const heroImage = PlaceHolderImages.find(p => p.id === 'ticketing-hero-2');
 
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">

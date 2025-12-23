@@ -36,13 +36,13 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'sp-ao.shortpixel.ai',
+        hostname: 'allguardweb.on-forge.com',
         port: '',
         pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'allguardweb.on-forge.com',
+        hostname: 'sp-ao.shortpixel.ai',
         port: '',
         pathname: '/**',
       },
@@ -51,7 +51,7 @@ const nextConfig: NextConfig = {
         hostname: 'uk.clover.com',
         port: '',
         pathname: '/**',
-      }
+      },
     ],
   },
 };
