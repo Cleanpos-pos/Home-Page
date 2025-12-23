@@ -11,7 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { AnimatePresence, motion } from 'framer-motion';
 import { submitCardMachineEnquiry } from '@/app/actions';
-import { CheckCircle, PartyPopper } from 'lucide-react';
+import { PartyPopper } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -97,7 +97,7 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
     }
   };
 
-  const totalSteps = 5;
+  const totalSteps = 4;
   const progress = ((step + 1) / totalSteps) * 100;
 
   const steps = [
@@ -118,7 +118,7 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
                         htmlFor={option.id}
                         className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
                     >
-                        {image && <Image src={image.imageUrl} alt={option.label} width={80} height={80} className="object-contain h-20 w-20 mb-2" />}
+                        {image ? <Image src={image.imageUrl} alt={option.label} width={80} height={80} className="object-contain h-20 w-20 mb-2" /> : <div className="h-20 w-20 bg-slate-700 rounded-md mb-2" />}
                         <span className="font-semibold text-slate-100">{option.label}</span>
                         <Checkbox
                         id={option.id}
@@ -158,7 +158,7 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
                         htmlFor={option.id}
                         className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all h-full ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
                     >
-                        {image && <Image src={image.imageUrl} alt={option.label} width={120} height={90} className="object-cover h-24 w-full rounded-md mb-2" />}
+                        {image ? <Image src={image.imageUrl} alt={option.label} width={120} height={90} className="object-cover h-24 w-full rounded-md mb-2" /> : <div className="h-24 w-full bg-slate-700 rounded-md mb-2" />}
                         <span className="font-semibold text-slate-100 text-center text-sm">{option.label}</span>
                         <Checkbox
                         id={option.id}
@@ -267,5 +267,3 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
     </div>
   );
 }
-
-    
