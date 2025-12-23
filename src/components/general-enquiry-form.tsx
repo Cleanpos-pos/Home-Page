@@ -10,15 +10,14 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { AnimatePresence, motion } from 'framer-motion';
-import { submitCardMachineEnquiry } from '@/app/actions';
+import { submitGeneralEnquiry } from '@/app/actions';
 import { PartyPopper } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Textarea } from './ui/textarea';
 
-const cardMachineEnquirySchema = z.object({
-  machines: z.array(z.string()).min(1, { message: 'Please select at least one machine.' }),
-  otherProducts: z.array(z.string()).optional(),
+const generalEnquirySchema = z.object({
+  products: z.array(z.string()).min(1, { message: 'Please select at least one product or service.' }),
   name: z.string().min(2, 'Name is required.'),
   company: z.string().min(2, 'Company name is required.'),
   email: z.string().email('A valid email is required.'),
@@ -26,21 +25,19 @@ const cardMachineEnquirySchema = z.object({
   message: z.string().optional(),
 });
 
-type EnquiryFormValues = z.infer<typeof cardMachineEnquirySchema>;
+type EnquiryFormValues = z.infer<typeof generalEnquirySchema>;
 
-const machineOptions = [
-  { id: 'teya', label: 'Teya', imageId: 'teya-terminal' },
-  { id: 'dojo', label: 'Dojo', imageId: 'dojo-go' },
-  { id: 'clover', label: 'Clover', imageId: 'clover-flex' },
+const productOptions = [
+    { id: 'pos', label: 'ePOS Systems', imageId: 'pos-system-hero' },
+    { id: 'kiosks', label: 'Self-Order Kiosks', imageId: 'kiosk-hero' },
+    { id: 'online-ordering', label: 'Online Ordering', imageId: 'online-ordering-hero' },
+    { id: 'digital-signage', label: 'Digital Signage', imageId: 'digital-signage-display' },
+    { id: 'shop-fitting', label: 'Shop Fitting', imageId: 'shop-fitting' },
+    { id: 'web-design', label: 'Web Design', imageId: 'web-design' },
+    { id: 'marketing', label: 'Marketing', imageId: 'marketing' },
 ];
 
-const otherProductOptions = [
-    { id: 'epos', label: 'ePOS Systems', imageId: 'pos-system-hero' },
-    { id: 'kiosks', label: 'Self-Order Kiosks', imageId: 'kiosk-hero' },
-    { id: 'signage', label: 'Digital Signage', imageId: 'digital-signage-display' },
-]
-
-export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void }) {
+export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void }) {
   const [step, setStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
@@ -52,10 +49,9 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
     getValues,
     formState: { errors },
   } = useForm<EnquiryFormValues>({
-    resolver: zodResolver(cardMachineEnquirySchema),
+    resolver: zodResolver(generalEnquirySchema),
     defaultValues: {
-      machines: [],
-      otherProducts: [],
+      products: [],
       name: '',
       company: '',
       email: '',
@@ -67,13 +63,11 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
   const nextStep = async () => {
     let isValid = false;
     if (step === 0) {
-      isValid = await trigger('machines');
+      isValid = await trigger('products');
     } else if (step === 1) {
-      isValid = true; // Optional step
+      isValid = await trigger(['name', 'company', 'email', 'phone']);
     } else if (step === 2) {
-       isValid = await trigger(['name', 'company', 'email', 'phone']);
-    } else if (step === 3) {
-        isValid = true; // Optional step
+      isValid = true; // Optional step
     }
 
     if (isValid) {
@@ -88,11 +82,11 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
   const onSubmit = async (data: EnquiryFormValues) => {
     setIsSubmitting(true);
     setServerError(null);
-    const result = await submitCardMachineEnquiry(data);
+    const result = await submitGeneralEnquiry(data);
     setIsSubmitting(false);
 
     if (result.success) {
-      setStep(5);
+      setStep(4);
       setTimeout(onFormSubmit, 4000);
     } else {
         setServerError(result.message);
@@ -102,71 +96,31 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
     }
   };
 
-  const totalSteps = 5;
+  const totalSteps = 4;
   const progress = ((step + 1) / totalSteps) * 100;
 
   const steps = [
-    // Step 1: Machine Selection
+    // Step 1: Product Selection
     <motion.div key={0} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
-        <h3 className="text-lg font-semibold mb-4 text-slate-100">Which card machines are you interested in?</h3>
+        <h3 className="text-lg font-semibold mb-4 text-slate-100">What are you interested in today?</h3>
         <Controller
-            name="machines"
+            name="products"
             control={control}
             render={({ field }) => (
-                <div className="grid grid-cols-3 gap-4">
-                {machineOptions.map((option) => {
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {productOptions.map((option) => {
                     const image = PlaceHolderImages.find(p => p.id === option.imageId);
                     const isChecked = field.value?.includes(option.id);
                     return (
                     <Label
                         key={option.id}
-                        htmlFor={option.id}
-                        className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
-                    >
-                        {image ? <Image src={image.imageUrl} alt={option.label} width={80} height={80} className="object-contain h-20 w-20 mb-2" /> : <div className="h-20 w-20 bg-slate-700 rounded-md mb-2" />}
-                        <span className="font-semibold text-slate-100">{option.label}</span>
-                        <Checkbox
-                        id={option.id}
-                        checked={isChecked}
-                        onCheckedChange={(checked) => {
-                            const newValue = checked
-                            ? [...(field.value || []), option.id]
-                            : (field.value || []).filter((v) => v !== option.id);
-                            field.onChange(newValue);
-                        }}
-                        className="hidden"
-                        />
-                    </Label>
-                    );
-                })}
-                </div>
-            )}
-        />
-        {errors.machines && <p className="text-destructive text-sm mt-2">{errors.machines.message}</p>}
-    </motion.div>,
-
-    // Step 2: Other Products
-    <motion.div key={1} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
-        <h3 className="text-lg font-semibold mb-4 text-slate-100">Are you interested in any of our other products?</h3>
-        <p className="text-sm text-slate-400 mb-4">Select any that apply. This is optional.</p>
-        <Controller
-            name="otherProducts"
-            control={control}
-            render={({ field }) => (
-                <div className="grid grid-cols-3 gap-4">
-                {otherProductOptions.map((option) => {
-                    const image = PlaceHolderImages.find(p => p.id === option.imageId);
-                    const isChecked = field.value?.includes(option.id);
-                    return (
-                    <Label
-                        key={option.id}
-                        htmlFor={`other_${option.id}`}
-                        className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all h-full ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
+                        htmlFor={`gen_${option.id}`}
+                        className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all h-full text-center ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
                     >
                         {image ? <Image src={image.imageUrl} alt={option.label} width={120} height={90} className="object-cover h-24 w-full rounded-md mb-2" data-ai-hint={image.imageHint} /> : <div className="h-24 w-full bg-slate-700 rounded-md mb-2" />}
-                        <span className="font-semibold text-slate-100 text-center text-sm">{option.label}</span>
+                        <span className="font-semibold text-slate-100 text-sm">{option.label}</span>
                         <Checkbox
-                        id={`other_${option.id}`}
+                        id={`gen_${option.id}`}
                         checked={isChecked}
                         onCheckedChange={(checked) => {
                             const newValue = checked
@@ -182,10 +136,11 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
                 </div>
             )}
         />
+        {errors.products && <p className="text-destructive text-sm mt-2">{errors.products.message}</p>}
     </motion.div>,
     
-    // Step 3: Contact Information
-    <motion.div key={2} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
+    // Step 2: Contact Information
+    <motion.div key={1} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
         <h3 className="text-lg font-semibold mb-4 text-slate-100">Please enter your contact details.</h3>
         <div className="space-y-4">
             <Controller name="name" control={control} render={({ field }) => <Input placeholder="Full Name" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
@@ -199,29 +154,23 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
         </div>
     </motion.div>,
 
-    // Step 4: Message
-    <motion.div key={3} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
+    // Step 3: Message
+    <motion.div key={2} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
         <h3 className="text-lg font-semibold mb-4 text-slate-100">Anything else we should know?</h3>
         <p className="text-sm text-slate-400 mb-4">Leave a message if you have specific requirements (optional).</p>
-        <Controller name="message" control={control} render={({ field }) => <Textarea placeholder="Your message..." {...field} className="bg-slate-800 border-slate-700 text-white h-32" />} />
+        <Controller name="message" control={control} render={({ field }) => <Textarea placeholder="Your message..." {...field} className="bg-slate-800 border-slate-700 text-white h-48" />} />
         {errors.message && <p className="text-destructive text-sm mt-2">{errors.message.message}</p>}
     </motion.div>,
 
 
-    // Step 5: Confirmation
-    <motion.div key={4} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
+    // Step 4: Confirmation
+    <motion.div key={3} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
         <h3 className="text-lg font-semibold mb-4 text-slate-100">Please confirm your enquiry.</h3>
         <div className="space-y-4 rounded-lg bg-slate-800/50 p-4 border border-slate-700 max-h-80 overflow-y-auto">
             <div>
-                <h4 className="font-semibold text-slate-400">Selected Machines:</h4>
-                <p className="text-slate-100 capitalize">{getValues('machines').join(', ')}</p>
+                <h4 className="font-semibold text-slate-400">Interested In:</h4>
+                <p className="text-slate-100 capitalize">{getValues('products').join(', ')}</p>
             </div>
-             {getValues('otherProducts') && getValues('otherProducts')!.length > 0 && (
-                <div>
-                    <h4 className="font-semibold text-slate-400">Other Interested Products:</h4>
-                    <p className="text-slate-100 capitalize">{getValues('otherProducts')?.join(', ')}</p>
-                </div>
-            )}
             <div>
                 <h4 className="font-semibold text-slate-400">Name:</h4>
                 <p className="text-slate-100">{getValues('name')}</p>
@@ -248,8 +197,8 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
         {serverError && <p className="text-destructive text-center mt-4">{serverError}</p>}
     </motion.div>,
 
-    // Step 6: Success
-    <motion.div key={5} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
+    // Step 5: Success
+    <motion.div key={4} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
         <PartyPopper className="w-16 h-16 text-primary mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-slate-50 mb-2">Thank You!</h3>
         <p className="text-slate-300">Your enquiry has been sent. We'll be in touch shortly.</p>

@@ -65,6 +65,7 @@ const cardMachineEnquirySchema = z.object({
     company: z.string().min(2, 'Company name must be at least 2 characters.'),
     email: z.string().email('Please enter a valid email address.'),
     phone: z.string().min(10, 'Please enter a valid phone number.'),
+    message: z.string().optional(),
 });
 
 
@@ -83,11 +84,12 @@ export async function submitCardMachineEnquiry(formData: unknown) {
                 company: fieldErrors.company?.[0],
                 email: fieldErrors.email?.[0],
                 phone: fieldErrors.phone?.[0],
+                message: fieldErrors.message?.[0],
             },
         };
     }
     
-    const { machines, otherProducts, name, company, email, phone } = validatedFields.data;
+    const { machines, otherProducts, name, company, email, phone, message } = validatedFields.data;
 
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
@@ -117,6 +119,7 @@ export async function submitCardMachineEnquiry(formData: unknown) {
             ${otherProducts.map(p => `<li>${p}</li>`).join('')}
         </ul>
         ` : ''}
+        ${message ? `<p><strong>Message:</strong><br/>${message.replace(/\n/g, '<br>')}</p>` : ''}
     `;
 
     const mailOptions = {
@@ -135,6 +138,85 @@ export async function submitCardMachineEnquiry(formData: unknown) {
             message: 'Thank you for your enquiry! We have received your details and will be in touch shortly.' 
         };
 
+    } catch (error) {
+        console.error('SMTP Error:', error);
+        return {
+            success: false,
+            message: 'There was an error sending your enquiry. Please try again later.',
+            errors: null,
+        }
+    }
+}
+
+
+const generalEnquirySchema = z.object({
+    products: z.array(z.string()).min(1, { message: 'Please select at least one product or service.' }),
+    name: z.string().min(2, 'Name must be at least 2 characters.'),
+    company: z.string().min(2, 'Company name must be at least 2 characters.'),
+    email: z.string().email('Please enter a valid email address.'),
+    phone: z.string().min(10, 'Please enter a valid phone number.'),
+    message: z.string().optional(),
+});
+
+export async function submitGeneralEnquiry(formData: unknown) {
+    const validatedFields = generalEnquirySchema.safeParse(formData);
+
+    if (!validatedFields.success) {
+        const fieldErrors = validatedFields.error.flatten().fieldErrors;
+        return {
+            success: false,
+            message: 'Please check your input and try again.',
+            errors: {
+                products: fieldErrors.products?.[0],
+                name: fieldErrors.name?.[0],
+                company: fieldErrors.company?.[0],
+                email: fieldErrors.email?.[0],
+                phone: fieldErrors.phone?.[0],
+                message: fieldErrors.message?.[0],
+            },
+        };
+    }
+    
+    const { products, name, company, email, phone, message } = validatedFields.data;
+
+    const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT),
+        secure: Number(process.env.SMTP_PORT) === 465,
+        auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+        },
+    });
+
+    const emailBody = `
+        <h1>New General Enquiry</h1>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Company:</strong> ${company}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <hr>
+        <h2>Enquiry Details</h2>
+        <p><strong>Interested Products/Services:</strong></p>
+        <ul>
+            ${products.map(p => `<li>${p}</li>`).join('')}
+        </ul>
+        ${message ? `<p><strong>Message:</strong><br/>${message.replace(/\n/g, '<br>')}</p>` : ''}
+    `;
+
+    const mailOptions = {
+        from: '"Posso General Enquiry" <enquiry@posso.uk>',
+        to: 'info@posso.uk',
+        subject: 'New General Enquiry from Website',
+        html: emailBody,
+    };
+
+    try {
+        await transporter.sendMail(mailOptions);
+        return { 
+            success: true,
+            message: 'Thank you for your enquiry! We will be in touch shortly.' 
+        };
     } catch (error) {
         console.error('SMTP Error:', error);
         return {
