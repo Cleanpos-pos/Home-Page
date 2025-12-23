@@ -17,6 +17,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const cardMachineEnquirySchema = z.object({
   machines: z.array(z.string()).min(1, { message: 'Please select at least one machine.' }),
+  otherProducts: z.array(z.string()).optional(),
   name: z.string().min(2, 'Name is required.'),
   company: z.string().min(2, 'Company name is required.'),
   email: z.string().email('A valid email is required.'),
@@ -30,6 +31,12 @@ const machineOptions = [
   { id: 'dojo', label: 'Dojo', imageId: 'dojo-go' },
   { id: 'clover', label: 'Clover', imageId: 'clover-flex' },
 ];
+
+const otherProductOptions = [
+    { id: 'epos', label: 'ePOS Systems', imageId: 'pos-system-hero' },
+    { id: 'kiosks', label: 'Self-Order Kiosks', imageId: 'kiosk-hero' },
+    { id: 'signage', label: 'Digital Signage', imageId: 'digital-signage-display' },
+]
 
 export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void }) {
   const [step, setStep] = useState(0);
@@ -46,6 +53,7 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
     resolver: zodResolver(cardMachineEnquirySchema),
     defaultValues: {
       machines: [],
+      otherProducts: [],
       name: '',
       company: '',
       email: '',
@@ -59,6 +67,8 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
       isValid = await trigger('machines');
     } else if (step === 1) {
       isValid = await trigger(['name', 'company', 'email', 'phone']);
+    } else if (step === 2) {
+      isValid = true; // Optional step
     }
 
     if (isValid) {
@@ -77,7 +87,7 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
     setIsSubmitting(false);
 
     if (result.success) {
-      setStep(3);
+      setStep(4);
       setTimeout(onFormSubmit, 4000);
     } else {
         setServerError(result.message);
@@ -87,7 +97,8 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
     }
   };
 
-  const progress = ((step + 1) / 4) * 100;
+  const totalSteps = 5;
+  const progress = ((step + 1) / totalSteps) * 100;
 
   const steps = [
     // Step 1: Machine Selection
@@ -144,14 +155,59 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
         </div>
     </motion.div>,
 
-    // Step 3: Confirmation
+    // Step 3: Other Products
     <motion.div key={2} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
+        <h3 className="text-lg font-semibold mb-4 text-slate-100">Are you interested in any of our other products?</h3>
+        <p className="text-sm text-slate-400 mb-4">Select any that apply. This is optional.</p>
+        <Controller
+            name="otherProducts"
+            control={control}
+            render={({ field }) => (
+                <div className="grid grid-cols-3 gap-4">
+                {otherProductOptions.map((option) => {
+                    const image = PlaceHolderImages.find(p => p.id === option.imageId);
+                    const isChecked = field.value?.includes(option.id);
+                    return (
+                    <Label
+                        key={option.id}
+                        htmlFor={option.id}
+                        className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all h-full ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
+                    >
+                        {image && <Image src={image.imageUrl} alt={option.label} width={120} height={90} className="object-cover h-24 w-full rounded-md mb-2" />}
+                        <span className="font-semibold text-slate-100 text-center text-sm">{option.label}</span>
+                        <Checkbox
+                        id={option.id}
+                        checked={isChecked}
+                        onCheckedChange={(checked) => {
+                            const newValue = checked
+                            ? [...(field.value || []), option.id]
+                            : (field.value || []).filter((v) => v !== option.id);
+                            field.onChange(newValue);
+                        }}
+                        className="hidden"
+                        />
+                    </Label>
+                    );
+                })}
+                </div>
+            )}
+        />
+    </motion.div>,
+
+    // Step 4: Confirmation
+    <motion.div key={3} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
         <h3 className="text-lg font-semibold mb-4 text-slate-100">Please confirm your enquiry.</h3>
         <div className="space-y-4 rounded-lg bg-slate-800/50 p-4 border border-slate-700">
             <div>
                 <h4 className="font-semibold text-slate-400">Selected Machines:</h4>
-                <p className="text-slate-100">{getValues('machines').join(', ') || 'None'}</p>
+                <p className="text-slate-100 capitalize">{getValues('machines').join(', ')}</p>
             </div>
+             {getValues('otherProducts') && getValues('otherProducts')!.length > 0 && (
+                <div>
+                    <h4 className="font-semibold text-slate-400">Other Interested Products:</h4>
+                    <p className="text-slate-100 capitalize">{getValues('otherProducts')?.join(', ')}</p>
+                </div>
+            )}
             <div>
                 <h4 className="font-semibold text-slate-400">Name:</h4>
                 <p className="text-slate-100">{getValues('name')}</p>
@@ -172,8 +228,8 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
         {serverError && <p className="text-destructive text-center mt-4">{serverError}</p>}
     </motion.div>,
 
-    // Step 4: Success
-    <motion.div key={3} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
+    // Step 5: Success
+    <motion.div key={4} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
         <PartyPopper className="w-16 h-16 text-primary mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-slate-50 mb-2">Thank You!</h3>
         <p className="text-slate-300">Your enquiry has been sent. We'll be in touch shortly.</p>
@@ -182,21 +238,21 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
 
   return (
     <div className="p-1">
-      <Progress value={progress} className="mb-6" />
+      <Progress value={progress} className="mb-6 h-2" />
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="min-h-[320px]">
+        <div className="min-h-[350px]">
           <AnimatePresence mode="wait">
             {steps[step]}
           </AnimatePresence>
         </div>
 
-        {step < 3 && (
+        {step < totalSteps - 1 && (
             <div className="flex justify-between mt-8">
             <Button type="button" variant="outline" onClick={prevStep} disabled={step === 0}>
                 Back
             </Button>
             
-            {step < 2 ? (
+            {step < totalSteps - 2 ? (
                 <Button type="button" onClick={nextStep}>
                 Next
                 </Button>

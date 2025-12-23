@@ -59,6 +59,7 @@ export async function analyzeSentimentAction(testimonial: string): Promise<Analy
 
 const cardMachineEnquirySchema = z.object({
     machines: z.array(z.string()).min(1, { message: 'Please select at least one machine.' }),
+    otherProducts: z.array(z.string()).optional(),
     name: z.string().min(2, 'Name must be at least 2 characters.'),
     company: z.string().min(2, 'Company name must be at least 2 characters.'),
     email: z.string().email('Please enter a valid email address.'),
@@ -76,6 +77,7 @@ export async function submitCardMachineEnquiry(formData: unknown) {
             message: 'Please check your input and try again.',
             errors: {
                 machines: fieldErrors.machines?.[0],
+                otherProducts: fieldErrors.otherProducts?.[0],
                 name: fieldErrors.name?.[0],
                 company: fieldErrors.company?.[0],
                 email: fieldErrors.email?.[0],
@@ -89,6 +91,9 @@ export async function submitCardMachineEnquiry(formData: unknown) {
     console.log('--- New Card Machine Enquiry ---');
     console.log('Date:', new Date().toISOString());
     console.log('Selected Machines:', validatedFields.data.machines.join(', '));
+    if (validatedFields.data.otherProducts && validatedFields.data.otherProducts.length > 0) {
+        console.log('Other Interested Products:', validatedFields.data.otherProducts.join(', '));
+    }
     console.log('Name:', validatedFields.data.name);
     console.log('Company:', validatedFields.data.company);
     console.log('Email:', validatedFields.data.email);
