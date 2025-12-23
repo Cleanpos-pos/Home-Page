@@ -4,7 +4,7 @@
 import { z } from 'zod';
 import { analyzeTestimonialSentiment } from '@/ai/flows/analyze-testimonial-sentiment';
 import type { AnalyzeTestimonialSentimentOutput } from '@/ai/flows/analyze-testimonial-sentiment';
-const SibApiV3Sdk = require('sib-api-v3-sdk');
+import nodemailer from 'nodemailer';
 
 export type FormState = {
   message: string;
@@ -89,12 +89,15 @@ export async function submitCardMachineEnquiry(formData: unknown) {
     
     const { machines, otherProducts, name, company, email, phone } = validatedFields.data;
 
-    const defaultClient = SibApiV3Sdk.ApiClient.instance;
-    const apiKey = defaultClient.authentications['api-key'];
-    apiKey.apiKey = process.env.BREVO_API_KEY!;
-
-    const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
-
+    const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT),
+        secure: Number(process.env.SMTP_PORT) === 465, // true for 465, false for other ports
+        auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+        },
+    });
 
     const emailBody = `
         <h1>New Card Machine Enquiry</h1>
@@ -116,14 +119,16 @@ export async function submitCardMachineEnquiry(formData: unknown) {
         ` : ''}
     `;
 
-    const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
-    sendSmtpEmail.sender = { email: 'enquiry@posso.uk', name: 'Posso Enquiry' };
-    sendSmtpEmail.to = [{ email: 'info@posso.uk' }];
-    sendSmtpEmail.subject = 'New Card Machine Enquiry';
-    sendSmtpEmail.htmlContent = emailBody;
+    const mailOptions = {
+        from: '"Posso Enquiry" <enquiry@posso.uk>',
+        to: 'info@posso.uk',
+        subject: 'New Card Machine Enquiry',
+        html: emailBody,
+    };
+
 
     try {
-        await apiInstance.sendTransacEmail(sendSmtpEmail);
+        await transporter.sendMail(mailOptions);
 
         return { 
             success: true,
@@ -131,7 +136,7 @@ export async function submitCardMachineEnquiry(formData: unknown) {
         };
 
     } catch (error) {
-        console.error('Brevo API Error:', error);
+        console.error('SMTP Error:', error);
         return {
             success: false,
             message: 'There was an error sending your enquiry. Please try again later.',
