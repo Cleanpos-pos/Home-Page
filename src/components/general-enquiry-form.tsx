@@ -117,8 +117,8 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void 
                         htmlFor={`gen_${option.id}`}
                         className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all h-full text-center ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
                     >
-                        {image ? <Image src={image.imageUrl} alt={option.label} width={120} height={90} className="object-cover h-24 w-full rounded-md mb-2" data-ai-hint={image.imageHint} /> : <div className="h-24 w-full bg-slate-700 rounded-md mb-2" />}
-                        <span className="font-semibold text-slate-100 text-sm">{option.label}</span>
+                        {image ? <Image src={image.imageUrl} alt={option.label} width={120} height={90} className="object-cover h-24 w-full rounded-md mb-2" data-ai-hint={image.imageHint} /> : <div className="h-24 w-full bg-slate-700 rounded-md mb-2 flex items-center justify-center text-slate-400 text-xs">Image not found</div>}
+                        <span className="font-semibold text-slate-100 text-sm mt-auto pt-2">{option.label}</span>
                         <Checkbox
                         id={`gen_${option.id}`}
                         checked={isChecked}
@@ -236,3 +236,5 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void 
     </div>
   );
 }
+
+    
