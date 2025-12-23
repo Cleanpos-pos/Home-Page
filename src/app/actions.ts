@@ -56,3 +56,48 @@ export async function analyzeSentimentAction(testimonial: string): Promise<Analy
         return { error: 'Failed to analyse sentiment.' };
     }
 }
+
+const cardMachineEnquirySchema = z.object({
+    machines: z.array(z.string()).min(1, { message: 'Please select at least one machine.' }),
+    name: z.string().min(2, 'Name must be at least 2 characters.'),
+    company: z.string().min(2, 'Company name must be at least 2 characters.'),
+    email: z.string().email('Please enter a valid email address.'),
+    phone: z.string().min(10, 'Please enter a valid phone number.'),
+});
+
+
+export async function submitCardMachineEnquiry(formData: unknown) {
+    const validatedFields = cardMachineEnquirySchema.safeParse(formData);
+
+    if (!validatedFields.success) {
+        const fieldErrors = validatedFields.error.flatten().fieldErrors;
+        return {
+            success: false,
+            message: 'Please check your input and try again.',
+            errors: {
+                machines: fieldErrors.machines?.[0],
+                name: fieldErrors.name?.[0],
+                company: fieldErrors.company?.[0],
+                email: fieldErrors.email?.[0],
+                phone: fieldErrors.phone?.[0],
+            },
+        };
+    }
+
+    // In a real application, this would send an email to info@posso.uk
+    console.log('New Card Machine Enquiry:', validatedFields.data);
+
+    // This is where you would integrate with an email service like Resend, SendGrid, etc.
+    // For example:
+    // await resend.emails.send({
+    //   from: 'enquiry@yourdomain.com',
+    //   to: 'info@posso.uk',
+    //   subject: 'New Card Machine Enquiry',
+    //   html: `<p>Name: ${validatedFields.data.name}</p>...`
+    // });
+
+    return { 
+        success: true,
+        message: 'Thank you for your enquiry! We will be in touch shortly.' 
+    };
+}
