@@ -11,7 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { AnimatePresence, motion } from 'framer-motion';
 import { submitCardMachineEnquiry } from '@/app/actions';
-import { PartyPopper } from 'lucide-react';
+import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Lock, Code, LineChart } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Textarea } from './ui/textarea';
@@ -35,10 +35,15 @@ const machineOptions = [
 ];
 
 const otherProductOptions = [
-    { id: 'epos', label: 'ePOS Systems', imageId: 'pos-system-hero' },
-    { id: 'kiosks', label: 'Self-Order Kiosks', imageId: 'kiosk-hero' },
-    { id: 'signage', label: 'Digital Signage', imageId: 'digital-signage-display' },
-]
+    { id: 'pos', label: 'ePOS Systems', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
+    { id: 'kiosks', label: 'Self-Order Kiosks', icon: <Smartphone className="w-8 h-8 text-primary" /> },
+    { id: 'online-ordering', label: 'Online Ordering', icon: <Globe className="w-8 h-8 text-primary" /> },
+    { id: 'digital-signage', label: 'Digital Signage', icon: <MonitorPlay className="w-8 h-8 text-primary" /> },
+    { id: 'shop-fitting', label: 'Shop Fitting', icon: <Store className="w-8 h-8 text-primary" /> },
+    { id: 'digital-lockers', label: 'Digital Lockers', icon: <Lock className="w-8 h-8 text-primary" /> },
+    { id: 'web-design', label: 'Web Design', icon: <Code className="w-8 h-8 text-primary" /> },
+    { id: 'marketing', label: 'Marketing', icon: <LineChart className="w-8 h-8 text-primary" /> },
+];
 
 export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void }) {
   const [step, setStep] = useState(0);
@@ -147,24 +152,25 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
 
     // Step 2: Other Products
     <motion.div key={1} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
-        <h3 className="text-lg font-semibold mb-4 text-slate-100">Are you interested in any of our other products?</h3>
-        <p className="text-sm text-slate-400 mb-4">Select any that apply. This is optional.</p>
+        <h3 className="text-lg font-semibold mb-4 text-slate-100">Are you interested in any other services?</h3>
+        <p className="text-sm text-slate-400 mb-4">Select any that apply (optional).</p>
         <Controller
             name="otherProducts"
             control={control}
             render={({ field }) => (
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {otherProductOptions.map((option) => {
-                    const image = PlaceHolderImages.find(p => p.id === option.imageId);
                     const isChecked = field.value?.includes(option.id);
                     return (
                     <Label
                         key={option.id}
                         htmlFor={`other_${option.id}`}
-                        className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all h-full ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
+                        className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all h-32 text-center ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
                     >
-                        {image ? <Image src={image.imageUrl} alt={option.label} width={120} height={90} className="object-cover h-24 w-full rounded-md mb-2" data-ai-hint={image.imageHint} /> : <div className="h-24 w-full bg-slate-700 rounded-md mb-2" />}
-                        <span className="font-semibold text-slate-100 text-center text-sm">{option.label}</span>
+                       <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+                          {option.icon}
+                        </div>
+                        <span className="font-semibold text-slate-100 text-sm mt-auto pt-1">{option.label}</span>
                         <Checkbox
                         id={`other_${option.id}`}
                         checked={isChecked}
