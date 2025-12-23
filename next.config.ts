@@ -45,6 +45,12 @@ const nextConfig: NextConfig = {
         hostname: 'allguardweb.on-forge.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'uk.clover.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
