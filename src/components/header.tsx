@@ -22,7 +22,7 @@ import {
   Wallet,
   Globe,
 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Logo = () => (
   <svg
@@ -59,6 +59,12 @@ const navLinks = [
 
 export function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
 
   return (
     <header className="absolute top-0 z-50 w-full">
@@ -99,58 +105,60 @@ export function Header() {
 
         {/* Mobile Navigation */}
         <div className="md:hidden">
-           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-slate-950">
-                <SheetHeader>
-                  <SheetTitle className="sr-only">Navigation</SheetTitle>
-                </SheetHeader>
-                <div className="flex flex-col h-full p-6">
-                    <Link href="/" className="flex items-center gap-3 mb-8" prefetch={false} onClick={() => setIsSheetOpen(false)}>
-                        <Logo />
-                        <span className="text-xl font-bold text-slate-50 tracking-wide">
-                            POSSO
-                        </span>
-                    </Link>
-                    <div className="flex flex-col gap-4">
-                        <Link href="/" onClick={() => setIsSheetOpen(false)}>
-                          <Button variant="outline" className="w-full justify-start">
-                            <Home className="mr-2 h-4 w-4" />
-                            Home
-                          </Button>
-                        </Link>
-                        {navLinks.map(({ href, icon, label, isExternal }) => (
-                             isExternal ? (
-                                <a
-                                    key={href}
-                                    href={href}
-                                    download
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={() => setIsSheetOpen(false)}
-                                >
-                                    <Button variant="outline" className="w-full justify-start">
-                                    {icon}
-                                    {label}
-                                    </Button>
-                                </a>
-                                ) : (
-                                <Link href={href} key={href} onClick={() => setIsSheetOpen(false)}>
-                                    <Button variant="outline" className="w-full justify-start">
-                                    {icon}
-                                    {label}
-                                    </Button>
+            {isClient && (
+                <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+                    <SheetTrigger asChild>
+                    <Button variant="outline" size="icon">
+                        <Menu className="h-6 w-6" />
+                    </Button>
+                    </SheetTrigger>
+                    <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-slate-950">
+                        <SheetHeader>
+                        <SheetTitle className="sr-only">Navigation</SheetTitle>
+                        </SheetHeader>
+                        <div className="flex flex-col h-full p-6">
+                            <Link href="/" className="flex items-center gap-3 mb-8" prefetch={false} onClick={() => setIsSheetOpen(false)}>
+                                <Logo />
+                                <span className="text-xl font-bold text-slate-50 tracking-wide">
+                                    POSSO
+                                </span>
+                            </Link>
+                            <div className="flex flex-col gap-4">
+                                <Link href="/" onClick={() => setIsSheetOpen(false)}>
+                                <Button variant="outline" className="w-full justify-start">
+                                    <Home className="mr-2 h-4 w-4" />
+                                    Home
+                                </Button>
                                 </Link>
-                                )
-                        ))}
-                    </div>
-                </div>
-            </SheetContent>
-          </Sheet>
+                                {navLinks.map(({ href, icon, label, isExternal }) => (
+                                    isExternal ? (
+                                        <a
+                                            key={href}
+                                            href={href}
+                                            download
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={() => setIsSheetOpen(false)}
+                                        >
+                                            <Button variant="outline" className="w-full justify-start">
+                                            {icon}
+                                            {label}
+                                            </Button>
+                                        </a>
+                                        ) : (
+                                        <Link href={href} key={href} onClick={() => setIsSheetOpen(false)}>
+                                            <Button variant="outline" className="w-full justify-start">
+                                            {icon}
+                                            {label}
+                                            </Button>
+                                        </Link>
+                                        )
+                                ))}
+                            </div>
+                        </div>
+                    </SheetContent>
+                </Sheet>
+            )}
         </div>
       </div>
     </header>
