@@ -4,6 +4,7 @@
 import { z } from 'zod';
 import { analyzeTestimonialSentiment } from '@/ai/flows/analyze-testimonial-sentiment';
 import type { AnalyzeTestimonialSentimentOutput } from '@/ai/flows/analyze-testimonial-sentiment';
+import * as brevo from 'sib-api-v3-sdk';
 
 export type FormState = {
   message: string;
@@ -85,23 +86,56 @@ export async function submitCardMachineEnquiry(formData: unknown) {
             },
         };
     }
+    
+    const { machines, otherProducts, name, company, email, phone } = validatedFields.data;
 
-    // In a real application, this would send an email to info@posso.uk
-    // For now, we will log the enquiry to the server console.
-    console.log('--- New Card Machine Enquiry ---');
-    console.log('Date:', new Date().toISOString());
-    console.log('Selected Machines:', validatedFields.data.machines.join(', '));
-    if (validatedFields.data.otherProducts && validatedFields.data.otherProducts.length > 0) {
-        console.log('Other Interested Products:', validatedFields.data.otherProducts.join(', '));
+    const defaultClient = brevo.ApiClient.instance;
+    const apiKey = defaultClient.authentications['api-key'];
+    apiKey.apiKey = process.env.BREVO_API_KEY!;
+
+    const apiInstance = new brevo.TransactionalEmailsApi();
+
+
+    const emailBody = `
+        <h1>New Card Machine Enquiry</h1>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Company:</strong> ${company}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <hr>
+        <h2>Enquiry Details</h2>
+        <p><strong>Selected Machines:</strong></p>
+        <ul>
+            ${machines.map(m => `<li>${m}</li>`).join('')}
+        </ul>
+        ${otherProducts && otherProducts.length > 0 ? `
+        <p><strong>Also interested in:</strong></p>
+        <ul>
+            ${otherProducts.map(p => `<li>${p}</li>`).join('')}
+        </ul>
+        ` : ''}
+    `;
+
+    const sendSmtpEmail = new brevo.SendSmtpEmail();
+    sendSmtpEmail.sender = { email: 'enquiry@posso.uk', name: 'Posso Enquiry' };
+    sendSmtpEmail.to = [{ email: 'info@posso.uk' }];
+    sendSmtpEmail.subject = 'New Card Machine Enquiry';
+    sendSmtpEmail.htmlContent = emailBody;
+
+    try {
+        await apiInstance.sendTransacEmail(sendSmtpEmail);
+
+        return { 
+            success: true,
+            message: 'Thank you for your enquiry! We have received your details and will be in touch shortly.' 
+        };
+
+    } catch (error) {
+        console.error('Brevo API Error:', error);
+        return {
+            success: false,
+            message: 'There was an error sending your enquiry. Please try again later.',
+            errors: null,
+        }
     }
-    console.log('Name:', validatedFields.data.name);
-    console.log('Company:', validatedFields.data.company);
-    console.log('Email:', validatedFields.data.email);
-    console.log('Phone:', validatedFields.data.phone);
-    console.log('---------------------------------');
-
-    return { 
-        success: true,
-        message: 'Thank you for your enquiry! We have received your details and will be in touch shortly.' 
-    };
 }
