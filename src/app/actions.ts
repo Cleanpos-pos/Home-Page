@@ -4,7 +4,7 @@
 import { z } from 'zod';
 import { analyzeTestimonialSentiment } from '@/ai/flows/analyze-testimonial-sentiment';
 import type { AnalyzeTestimonialSentimentOutput } from '@/ai/flows/analyze-testimonial-sentiment';
-import * as brevo from 'sib-api-v3-sdk';
+const SibApiV3Sdk = require('sib-api-v3-sdk');
 
 export type FormState = {
   message: string;
@@ -89,11 +89,11 @@ export async function submitCardMachineEnquiry(formData: unknown) {
     
     const { machines, otherProducts, name, company, email, phone } = validatedFields.data;
 
-    const defaultClient = brevo.ApiClient.instance;
+    const defaultClient = SibApiV3Sdk.ApiClient.instance;
     const apiKey = defaultClient.authentications['api-key'];
     apiKey.apiKey = process.env.BREVO_API_KEY!;
 
-    const apiInstance = new brevo.TransactionalEmailsApi();
+    const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
 
     const emailBody = `
@@ -116,7 +116,7 @@ export async function submitCardMachineEnquiry(formData: unknown) {
         ` : ''}
     `;
 
-    const sendSmtpEmail = new brevo.SendSmtpEmail();
+    const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
     sendSmtpEmail.sender = { email: 'enquiry@posso.uk', name: 'Posso Enquiry' };
     sendSmtpEmail.to = [{ email: 'info@posso.uk' }];
     sendSmtpEmail.subject = 'New Card Machine Enquiry';
