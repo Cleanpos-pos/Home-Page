@@ -1,11 +1,11 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ContactDialog } from './contact';
-import { ArrowRight, CreditCard, Zap } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { IframeDialog } from '../iframe-dialog';
 
 export function CreditCardMachinesHero() {
   const teyaImage = PlaceHolderImages.find(p => p.id === 'teya-terminal');
@@ -31,11 +31,14 @@ export function CreditCardMachinesHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                    We supply and integrate industry-leading payment solutions from Teya, Dojo, and Clover. Faster, more secure, and fully integrated with your Posso EPOS system.
                 </p>
-                <ContactDialog>
+                <IframeDialog
+                    url="https://partners.teya.com/isc?owner_partner_id=e03ebd7c-9bca-4857-a615-fa8bdb5c20b2&owner_identifier=bed39c88-5bff-11f0-a70d-49c393d57737"
+                    title="Teya Partner Portal"
+                >
                     <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                         Enquire Now <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
-                </ContactDialog>
+                </IframeDialog>
             </div>
 
             <div className="relative flex items-center justify-center h-[500px]">
