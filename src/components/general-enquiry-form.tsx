@@ -33,6 +33,7 @@ const productOptions = [
     { id: 'online-ordering', label: 'Online Ordering', imageId: 'online-ordering-hero' },
     { id: 'digital-signage', label: 'Digital Signage', imageId: 'digital-signage-display' },
     { id: 'shop-fitting', label: 'Shop Fitting', imageId: 'shop-fitting' },
+    { id: 'digital-lockers', label: 'Digital Lockers', imageId: 'digital-lockers' },
     { id: 'web-design', label: 'Web Design', imageId: 'web-design' },
     { id: 'marketing', label: 'Marketing', imageId: 'marketing' },
 ];
@@ -107,7 +108,7 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void 
             name="products"
             control={control}
             render={({ field }) => (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {productOptions.map((option) => {
                     const image = PlaceHolderImages.find(p => p.id === option.imageId);
                     const isChecked = field.value?.includes(option.id);

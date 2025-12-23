@@ -105,7 +105,7 @@
     {
       "id": "digital-signage-display",
       "description": "A digital signage screen showing a happy hour special.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2024/09/wingstar.jpg",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2024/09/Digital-Menu-Boards-UK.jpg",
       "imageHint": "digital signage"
     },
     {
@@ -129,13 +129,13 @@
     {
       "id": "pos-system-hero",
       "description": "A modern EPOS system on a counter in a cafe.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2024/04/RESTAURANTEPOSSYSTEM.png",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/pc.jpeg",
       "imageHint": "EPOS system"
     },
     {
       "id": "kiosk-hero",
       "description": "A customer using a self-service kiosk in a restaurant.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2022/07/pcap-self-service-ordering-qsr-touch-screen-01.jpg",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2022/07/table-kiosk-2.jpg",
       "imageHint": "self-service kiosk"
     },
     {
@@ -201,7 +201,7 @@
     {
       "id": "online-ordering-hero",
       "description": "A smartphone displaying a restaurant's online ordering interface.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/app-scaled.png",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2021/11/LOW-RATES-GREAT-SERVICE.gif",
       "imageHint": "online ordering"
     },
     {
@@ -213,7 +213,7 @@
     {
       "id": "shop-fitting",
       "description": "Interior of a modern, well-lit retail store or restaurant.",
-      "imageUrl": "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2024/09/wingstar.jpg",
       "imageHint": "shop interior"
     },
     {
@@ -227,6 +227,12 @@
       "description": "A digital marketing strategy diagram or concept.",
       "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1115&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "digital marketing"
+    },
+    {
+      "id": "digital-lockers",
+      "description": "A bank of secure digital lockers.",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/lockers.png",
+      "imageHint": "digital lockers"
     }
   ]
 }

@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CreditCard, MonitorPlay, Smartphone, ShoppingCart, Ticket, DownloadCloud, AppWindow, ScreenShare, Tv2, Globe } from 'lucide-react';
+import { CreditCard, MonitorPlay, Smartphone, ShoppingCart, Ticket, DownloadCloud, AppWindow, ScreenShare, Tv2, Globe, Lock } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
@@ -34,15 +34,15 @@ const services = [
     href: '/credit-card-machines'
   },
   {
+    icon: <Lock className="h-8 w-8 text-accent" />,
+    title: 'Smart Lockers',
+    description: 'Secure, automated locker solutions for venues, events, and public spaces.',
+    href: '/ticketing'
+  },
+  {
     icon: <Tv2 className="h-8 w-8 text-accent" />,
     title: 'Kitchen Display Screens',
     description: 'Streamline your kitchen workflow with our robust and easy-to-read display systems.',
-    href: '#'
-  },
-  {
-    icon: <ScreenShare className="h-8 w-8 text-accent" />,
-    title: 'Customer Screens',
-    description: 'Engage customers at the point of sale with order details and promotional content.',
     href: '#'
   },
   {

@@ -1,4 +1,4 @@
-import { Code, Twitter, Github, Linkedin, Instagram, Facebook } from 'lucide-react';
+import { Code, Twitter, Github, Linkedin, Instagram, Facebook, Lock } from 'lucide-react';
 import Link from 'next/link';
 import { ContactDialog } from './sections/contact';
 import { Button } from './ui/button';
