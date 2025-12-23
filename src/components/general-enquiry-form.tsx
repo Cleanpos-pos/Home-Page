@@ -11,9 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { AnimatePresence, motion } from 'framer-motion';
 import { submitGeneralEnquiry } from '@/app/actions';
-import { PartyPopper } from 'lucide-react';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Lock, Code, LineChart } from 'lucide-react';
 import { Textarea } from './ui/textarea';
 
 const generalEnquirySchema = z.object({
@@ -28,14 +26,14 @@ const generalEnquirySchema = z.object({
 type EnquiryFormValues = z.infer<typeof generalEnquirySchema>;
 
 const productOptions = [
-    { id: 'pos', label: 'ePOS Systems', imageId: 'pos-system-hero' },
-    { id: 'kiosks', label: 'Self-Order Kiosks', imageId: 'kiosk-hero' },
-    { id: 'online-ordering', label: 'Online Ordering', imageId: 'online-ordering-hero' },
-    { id: 'digital-signage', label: 'Digital Signage', imageId: 'digital-signage-display' },
-    { id: 'shop-fitting', label: 'Shop Fitting', imageId: 'shop-fitting' },
-    { id: 'digital-lockers', label: 'Digital Lockers', imageId: 'digital-lockers' },
-    { id: 'web-design', label: 'Web Design', imageId: 'web-design' },
-    { id: 'marketing', label: 'Marketing', imageId: 'marketing' },
+    { id: 'pos', label: 'ePOS Systems', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
+    { id: 'kiosks', label: 'Self-Order Kiosks', icon: <Smartphone className="w-8 h-8 text-primary" /> },
+    { id: 'online-ordering', label: 'Online Ordering', icon: <Globe className="w-8 h-8 text-primary" /> },
+    { id: 'digital-signage', label: 'Digital Signage', icon: <MonitorPlay className="w-8 h-8 text-primary" /> },
+    { id: 'shop-fitting', label: 'Shop Fitting', icon: <Store className="w-8 h-8 text-primary" /> },
+    { id: 'digital-lockers', label: 'Digital Lockers', icon: <Lock className="w-8 h-8 text-primary" /> },
+    { id: 'web-design', label: 'Web Design', icon: <Code className="w-8 h-8 text-primary" /> },
+    { id: 'marketing', label: 'Marketing', icon: <LineChart className="w-8 h-8 text-primary" /> },
 ];
 
 export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void }) {
@@ -110,16 +108,17 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void 
             render={({ field }) => (
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {productOptions.map((option) => {
-                    const image = PlaceHolderImages.find(p => p.id === option.imageId);
                     const isChecked = field.value?.includes(option.id);
                     return (
                     <Label
                         key={option.id}
                         htmlFor={`gen_${option.id}`}
-                        className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all h-full text-center ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
+                        className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all h-32 text-center ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
                     >
-                        {image ? <Image src={image.imageUrl} alt={option.label} width={120} height={90} className="object-cover h-24 w-full rounded-md mb-2" data-ai-hint={image.imageHint} /> : <div className="h-24 w-full bg-slate-700 rounded-md mb-2 flex items-center justify-center text-slate-400 text-xs">Image not found</div>}
-                        <span className="font-semibold text-slate-100 text-sm mt-auto pt-2">{option.label}</span>
+                        <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+                          {option.icon}
+                        </div>
+                        <span className="font-semibold text-slate-100 text-sm mt-auto pt-1">{option.label}</span>
                         <Checkbox
                         id={`gen_${option.id}`}
                         checked={isChecked}
