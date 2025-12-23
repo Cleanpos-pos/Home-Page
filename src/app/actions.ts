@@ -85,19 +85,18 @@ export async function submitCardMachineEnquiry(formData: unknown) {
     }
 
     // In a real application, this would send an email to info@posso.uk
-    console.log('New Card Machine Enquiry:', validatedFields.data);
-
-    // This is where you would integrate with an email service like Resend, SendGrid, etc.
-    // For example:
-    // await resend.emails.send({
-    //   from: 'enquiry@yourdomain.com',
-    //   to: 'info@posso.uk',
-    //   subject: 'New Card Machine Enquiry',
-    //   html: `<p>Name: ${validatedFields.data.name}</p>...`
-    // });
+    // For now, we will log the enquiry to the server console.
+    console.log('--- New Card Machine Enquiry ---');
+    console.log('Date:', new Date().toISOString());
+    console.log('Selected Machines:', validatedFields.data.machines.join(', '));
+    console.log('Name:', validatedFields.data.name);
+    console.log('Company:', validatedFields.data.company);
+    console.log('Email:', validatedFields.data.email);
+    console.log('Phone:', validatedFields.data.phone);
+    console.log('---------------------------------');
 
     return { 
         success: true,
-        message: 'Thank you for your enquiry! We will be in touch shortly.' 
+        message: 'Thank you for your enquiry! We have received your details and will be in touch shortly.' 
     };
 }
