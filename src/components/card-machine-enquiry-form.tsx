@@ -66,9 +66,9 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
     if (step === 0) {
       isValid = await trigger('machines');
     } else if (step === 1) {
-      isValid = await trigger(['name', 'company', 'email', 'phone']);
-    } else if (step === 2) {
       isValid = true; // Optional step
+    } else if (step === 2) {
+      isValid = await trigger(['name', 'company', 'email', 'phone']);
     }
 
     if (isValid) {
@@ -140,23 +140,8 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
         {errors.machines && <p className="text-destructive text-sm mt-2">{errors.machines.message}</p>}
     </motion.div>,
 
-    // Step 2: Contact Information
+    // Step 2: Other Products
     <motion.div key={1} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
-        <h3 className="text-lg font-semibold mb-4 text-slate-100">Please enter your contact details.</h3>
-        <div className="space-y-4">
-            <Controller name="name" control={control} render={({ field }) => <Input placeholder="Full Name" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
-            {errors.name && <p className="text-destructive text-sm">{errors.name.message}</p>}
-            <Controller name="company" control={control} render={({ field }) => <Input placeholder="Company Name" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
-            {errors.company && <p className="text-destructive text-sm">{errors.company.message}</p>}
-            <Controller name="email" control={control} render={({ field }) => <Input type="email" placeholder="Email Address" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
-            {errors.email && <p className="text-destructive text-sm">{errors.email.message}</p>}
-            <Controller name="phone" control={control} render={({ field }) => <Input type="tel" placeholder="Phone Number" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
-            {errors.phone && <p className="text-destructive text-sm">{errors.phone.message}</p>}
-        </div>
-    </motion.div>,
-
-    // Step 3: Other Products
-    <motion.div key={2} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
         <h3 className="text-lg font-semibold mb-4 text-slate-100">Are you interested in any of our other products?</h3>
         <p className="text-sm text-slate-400 mb-4">Select any that apply. This is optional.</p>
         <Controller
@@ -192,6 +177,21 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
                 </div>
             )}
         />
+    </motion.div>,
+    
+    // Step 3: Contact Information
+    <motion.div key={2} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
+        <h3 className="text-lg font-semibold mb-4 text-slate-100">Please enter your contact details.</h3>
+        <div className="space-y-4">
+            <Controller name="name" control={control} render={({ field }) => <Input placeholder="Full Name" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
+            {errors.name && <p className="text-destructive text-sm">{errors.name.message}</p>}
+            <Controller name="company" control={control} render={({ field }) => <Input placeholder="Company Name" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
+            {errors.company && <p className="text-destructive text-sm">{errors.company.message}</p>}
+            <Controller name="email" control={control} render={({ field }) => <Input type="email" placeholder="Email Address" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
+            {errors.email && <p className="text-destructive text-sm">{errors.email.message}</p>}
+            <Controller name="phone" control={control} render={({ field }) => <Input type="tel" placeholder="Phone Number" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
+            {errors.phone && <p className="text-destructive text-sm">{errors.phone.message}</p>}
+        </div>
     </motion.div>,
 
     // Step 4: Confirmation
@@ -267,3 +267,5 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
     </div>
   );
 }
+
+    
