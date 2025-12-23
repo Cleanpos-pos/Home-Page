@@ -236,5 +236,3 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void 
     </div>
   );
 }
-
-    
