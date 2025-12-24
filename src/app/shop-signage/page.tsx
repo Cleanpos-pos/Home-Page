@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Contact } from '@/components/sections/contact';
@@ -5,6 +8,8 @@ import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Lightbulb, PenTool, Gem } from 'lucide-react';
 import { ShopFitOut } from '@/components/sections/shop-fit-out';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { GeneralEnquiryForm } from '@/components/general-enquiry-form';
 
 export const metadata: Metadata = {
   title: 'Custom Shop Signage | Indoor & Outdoor Signs',
@@ -15,6 +20,7 @@ export const metadata: Metadata = {
 };
 
 export default function ShopSignagePage() {
+  const [open, setOpen] = useState(false);
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
@@ -31,9 +37,19 @@ export default function ShopSignagePage() {
                    Make a lasting first impression. We create eye-catching, durable custom signage for your shop front, interior, and promotional needs.
                 </p>
                 <div className="mt-8">
-                    <Button size="lg">
-                        Discuss Your Signage <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
+                    <Dialog open={open} onOpenChange={setOpen}>
+                        <DialogTrigger asChild>
+                            <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                                Discuss Your Signage <ArrowRight className="ml-2 h-5 w-5" />
+                            </Button>
+                        </DialogTrigger>
+                        <DialogContent className="sm:max-w-[625px]">
+                            <DialogHeader>
+                                <DialogTitle>Make an Enquiry</DialogTitle>
+                            </DialogHeader>
+                            <GeneralEnquiryForm onFormSubmit={() => setOpen(false)} />
+                        </DialogContent>
+                    </Dialog>
                 </div>
             </div>
         </section>
