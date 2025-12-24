@@ -44,7 +44,7 @@ const otherProductOptions = [
     { id: 'retail-kiosks', label: 'Retail Kiosks', icon: <Smartphone className="w-8 h-8 text-primary" /> },
     { id: 'retail-pos', label: 'Retail POS', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
     { id: 'dry-cleaning-pos', label: 'Dry Cleaning POS', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
-    { id: 'call-me-back', label: 'Call Me Back', icon: <Phone className="w-8 h-8 text-primary" /> },
+    { id: 'call-me-back', label: 'Call Me Back', icon: <Phone className="w-8 h-8 text-green-500" /> },
 ];
 
 export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void }) {
