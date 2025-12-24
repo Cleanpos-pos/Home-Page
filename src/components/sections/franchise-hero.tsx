@@ -1,14 +1,17 @@
 'use client';
 
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ContactDialog } from './contact';
-import { ArrowRight, View, Zap } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { ArrowRight, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { GeneralEnquiryForm } from '../general-enquiry-form';
 
 export function FranchiseHero() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'franchise-hero');
+  const [open, setOpen] = useState(false);
 
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
@@ -28,17 +31,19 @@ export function FranchiseHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                    The enterprise ePOS ecosystem built for modern food franchises. Centralise control, standardise operations, and visualize data across your entire estate from a single dashboard.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                    <ContactDialog>
+                 <Dialog open={open} onOpenChange={setOpen}>
+                    <DialogTrigger asChild>
                         <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                             Book a Franchise Demo <ArrowRight className="ml-2 h-5 w-5" />
                         </Button>
-                    </ContactDialog>
-                     <Button size="lg" variant="outline">
-                        <View className="mr-2 h-5 w-5" />
-                        View Architecture
-                    </Button>
-                </div>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[625px]">
+                        <DialogHeader>
+                            <DialogTitle>Make an Enquiry</DialogTitle>
+                        </DialogHeader>
+                        <GeneralEnquiryForm onFormSubmit={() => setOpen(false)} />
+                    </DialogContent>
+                </Dialog>
             </div>
 
             <div className="relative flex items-center justify-center h-[500px]">
