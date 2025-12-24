@@ -81,9 +81,8 @@ export function Header() {
           {navLinks.map(({ href, icon, label, isExternal }) => (
             isExternal ? (
               <a
-                key={href}
+                key={label}
                 href={href}
-                download
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -93,7 +92,7 @@ export function Header() {
                 </Button>
               </a>
             ) : (
-              <Link href={href} key={href}>
+              <Link href={href} key={label}>
                 <Button variant="outline" size="sm">
                   {icon}
                   {label}
@@ -133,9 +132,8 @@ export function Header() {
                                 {navLinks.map(({ href, icon, label, isExternal }) => (
                                     isExternal ? (
                                         <a
-                                            key={href}
+                                            key={label}
                                             href={href}
-                                            download
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             onClick={() => setIsSheetOpen(false)}
@@ -146,7 +144,7 @@ export function Header() {
                                             </Button>
                                         </a>
                                         ) : (
-                                        <Link href={href} key={href} onClick={() => setIsSheetOpen(false)}>
+                                        <Link href={href} key={label} onClick={() => setIsSheetOpen(false)}>
                                             <Button variant="outline" className="w-full justify-start">
                                             {icon}
                                             {label}
