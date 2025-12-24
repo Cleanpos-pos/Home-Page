@@ -11,9 +11,16 @@ import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { AnimatePresence, motion } from 'framer-motion';
 import { submitCardMachineEnquiry } from '@/app/actions';
-import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Lock, Code, LineChart, Ticket, GitBranch, Phone } from 'lucide-react';
+import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Ticket, GitBranch, Phone } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Textarea } from './ui/textarea';
+
+const HangerIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <path d="M9.5 7.7c0-2.3 1.5-4.2 3.3-4.2 1.8 0 3.3 1.9 3.3 4.2V9m-6.6 0H20c1.7 0 3 1.3 3 3v1c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1v-1c0-1.7 1.3-3 3-3h1.5"/>
+    </svg>
+);
+
 
 const cardMachineEnquirySchema = z.object({
   machines: z.array(z.string()).min(1, { message: 'Please select at least one machine.' }),
@@ -43,7 +50,7 @@ const otherProductOptions = [
     { id: 'franchise-systems', label: 'Franchise Systems', icon: <GitBranch className="w-8 h-8 text-primary" /> },
     { id: 'retail-kiosks', label: 'Retail Kiosks', icon: <Smartphone className="w-8 h-8 text-primary" /> },
     { id: 'retail-pos', label: 'Retail POS', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
-    { id: 'dry-cleaning-pos', label: 'Dry Cleaning POS', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
+    { id: 'dry-cleaning-pos', label: 'Dry Cleaning POS', icon: <HangerIcon className="w-8 h-8 text-primary" /> },
     { id: 'call-me-back', label: 'Call Me Back', icon: <Phone className="w-8 h-8 text-green-500" /> },
 ];
 
