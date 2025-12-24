@@ -5,6 +5,7 @@ import { ContactDialog } from './contact';
 import { ArrowRight, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Image from 'next/image';
 
 export function PosHero() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'pos-system-hero');
@@ -36,11 +37,12 @@ export function PosHero() {
 
             <div className="relative flex items-center justify-center h-[500px]">
               {heroImage && (
-                <img
+                <Image
                   src={heroImage.imageUrl}
                   alt={heroImage.description}
                   width={800}
                   height={600}
+                  data-ai-hint={heroImage.imageHint}
                   className="rounded-lg object-cover w-full h-full max-h-[500px] max-w-2xl glass-card p-2"
                 />
               )}
