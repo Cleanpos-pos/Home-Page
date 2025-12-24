@@ -1,14 +1,17 @@
 'use client';
 
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ContactDialog } from './contact';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { ArrowRight, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
+import { GeneralEnquiryForm } from '../general-enquiry-form';
 
 export function PosHero() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'pos-system-hero');
+  const [open, setOpen] = useState(false);
 
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
@@ -28,11 +31,19 @@ export function PosHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                     Our state-of-the-art Electronic Point of Sale systems are designed to simplify your restaurant's workflow, increase efficiency, and provide a seamless experience for both your staff and customers.
                 </p>
-                <ContactDialog>
-                    <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
-                        Enquire Now <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                </ContactDialog>
+                <Dialog open={open} onOpenChange={setOpen}>
+                    <DialogTrigger asChild>
+                        <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                            Enquire Now <ArrowRight className="ml-2 h-5 w-5" />
+                        </Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[625px]">
+                        <DialogHeader>
+                            <DialogTitle>Make an Enquiry</DialogTitle>
+                        </DialogHeader>
+                        <GeneralEnquiryForm onFormSubmit={() => setOpen(false)} />
+                    </DialogContent>
+                </Dialog>
             </div>
 
             <div className="relative flex items-center justify-center h-[500px]">
@@ -40,10 +51,9 @@ export function PosHero() {
                 <Image
                   src={heroImage.imageUrl}
                   alt={heroImage.description}
-                  width={800}
-                  height={600}
+                  fill
                   data-ai-hint={heroImage.imageHint}
-                  className="rounded-lg object-cover w-full h-full max-h-[500px] max-w-2xl glass-card p-2"
+                  className="rounded-lg object-contain w-full h-full max-h-[500px] max-w-2xl glass-card p-2"
                 />
               )}
             </div>
