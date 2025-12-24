@@ -47,7 +47,7 @@ const productOptions = [
     { id: 'dry-cleaning-pos', label: 'Dry Cleaning POS', icon: <HangerIcon className="w-8 h-8 text-primary" /> },
 ];
 
-export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void }) {
+export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit?: () => void }) {
   const [step, setStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
@@ -98,7 +98,7 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void 
 
     if (result.success) {
       setStep(4);
-      onFormSubmit();
+      onFormSubmit?.();
       setTimeout(() => router.push('/'), 4000);
     } else {
         setServerError(result.message);
@@ -249,5 +249,3 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void 
     </div>
   );
 }
-
-    
