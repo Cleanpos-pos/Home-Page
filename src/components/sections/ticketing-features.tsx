@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Ticket, Users, CheckSquare, HardDrive, BarChart } from 'lucide-react';
+import { Ticket, Users, CheckSquare, HardDrive, BarChart, Lock } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -37,7 +37,7 @@ const featuresWithImages = [
 ]
 
 export function TicketingFeatures() {
-    const ticketingImage = PlaceHolderImages.find(p => p.id === 'ticketing-hero');
+    const ticketingImage = PlaceHolderImages.find(p => p.id === 'digital-lockers');
   return (
     <section id="features" className="container mx-auto px-4 py-20 md:px-6">
       <div className="text-center">
@@ -58,17 +58,14 @@ export function TicketingFeatures() {
             </CardContent>
           </Card>
         ))}
-         <Card className="glass-card p-2">
-            {ticketingImage && (
-                <Image
-                    src={ticketingImage.imageUrl}
-                    alt={ticketingImage.description}
-                    data-ai-hint={ticketingImage.imageHint}
-                    width={400}
-                    height={300}
-                    className="object-cover w-full h-full rounded-md"
-                />
-            )}
+         <Card className="glass-card">
+            <CardHeader>
+                <Lock className="h-8 w-8 text-accent" />
+                <CardTitle className="mt-4 text-xl font-bold text-slate-50">Smart Lockers</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <p className="text-slate-300">Secure, automated locker solutions for venues, events, and public spaces, fully integrated with your ticketing system.</p>
+            </CardContent>
          </Card>
         {featuresWithImages.map((feature) => {
             const featureImage = PlaceHolderImages.find(p => p.id === feature.imageId);
