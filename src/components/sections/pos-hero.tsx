@@ -51,7 +51,8 @@ export function PosHero() {
                 <Image
                   src={heroImage.imageUrl}
                   alt={heroImage.description}
-                  fill
+                  width={600}
+                  height={500}
                   data-ai-hint={heroImage.imageHint}
                   className="rounded-lg object-contain w-full h-full max-h-[500px] max-w-2xl glass-card p-2"
                 />
