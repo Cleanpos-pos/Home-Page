@@ -35,7 +35,7 @@ export default function ContactPage() {
                         <CardDescription>Select the products you're interested in and provide your details.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                       <GeneralEnquiryForm onFormSubmit={() => {}} />
+                       <GeneralEnquiryForm />
                     </CardContent>
                 </Card>
             </div>
