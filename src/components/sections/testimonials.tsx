@@ -74,19 +74,21 @@ export function Testimonials() {
               <CarouselItem key={index}>
                 <div className="p-1">
                   <Card className="glass-card border-none">
-                    <CardContent className="flex flex-col items-center justify-center p-8 text-center">
+                    <CardContent className="flex flex-col items-center justify-center p-8 text-center min-h-[300px]">
                       {avatar && (
                         <img
                           src={avatar.imageUrl}
-                          alt={testimonial.name}
+                          alt={`${testimonial.name} logo`}
                           width={120}
                           height={60}
-                          className="object-contain h-16 w-32"
+                          className="object-contain h-16 w-32 mb-4"
                         />
                       )}
-                      <p className="mt-6 text-lg italic text-slate-200">&quot;{testimonial.text}&quot;</p>
-                      <p className="mt-4 font-bold text-slate-50">{testimonial.name}</p>
-                      <p className="text-sm text-slate-400">{testimonial.role}</p>
+                      <p className="mt-6 text-lg italic text-slate-200 flex-grow">&quot;{testimonial.text}&quot;</p>
+                      <div className="mt-4">
+                        <p className="font-bold text-slate-50">{testimonial.name}</p>
+                        <p className="text-sm text-slate-400">{testimonial.role}</p>
+                      </div>
                     </CardContent>
                   </Card>
                 </div>
