@@ -11,6 +11,7 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { AnalyzeTestimonialSentimentOutput } from '@/ai/flows/analyze-testimonial-sentiment';
+import { Quote } from 'lucide-react';
 
 type Testimonial = {
   name: string;
@@ -69,23 +70,14 @@ export function Testimonials() {
       <Carousel opts={{ loop: true }} className="mt-12 w-full max-w-4xl mx-auto">
         <CarouselContent>
           {testimonials.map((testimonial, index) => {
-            const avatar = PlaceHolderImages.find(p => p.id === testimonial.avatarId);
             return (
               <CarouselItem key={index}>
                 <div className="p-1">
                   <Card className="glass-card border-none">
                     <CardContent className="flex flex-col items-center justify-center p-8 text-center min-h-[300px]">
-                      {avatar && (
-                        <img
-                          src={avatar.imageUrl}
-                          alt={`${testimonial.name} logo`}
-                          width={120}
-                          height={60}
-                          className="object-contain h-16 w-32 mb-4"
-                        />
-                      )}
-                      <p className="mt-6 text-lg italic text-slate-200 flex-grow">&quot;{testimonial.text}&quot;</p>
-                      <div className="mt-4">
+                      <Quote className="w-10 h-10 text-primary/50 mb-4" />
+                      <p className="mt-4 text-lg italic text-slate-200 flex-grow">&quot;{testimonial.text}&quot;</p>
+                      <div className="mt-6">
                         <p className="font-bold text-slate-50">{testimonial.name}</p>
                         <p className="text-sm text-slate-400">{testimonial.role}</p>
                       </div>

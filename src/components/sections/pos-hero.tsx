@@ -3,14 +3,11 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight, MonitorCheck, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import Image from 'next/image';
 import { GeneralEnquiryForm } from '../general-enquiry-form';
 
 export function PosHero() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'pos-system-hero');
   const [open, setOpen] = useState(false);
 
   return (
@@ -47,16 +44,12 @@ export function PosHero() {
             </div>
 
             <div className="relative flex items-center justify-center h-[500px]">
-              {heroImage && (
-                <Image
-                  src={heroImage.imageUrl}
-                  alt={heroImage.description}
-                  width={600}
-                  height={500}
-                  data-ai-hint={heroImage.imageHint}
-                  className="rounded-lg object-contain w-full h-full max-h-[500px] max-w-2xl glass-card p-2"
-                />
-              )}
+                <div className="relative w-64 h-64 bg-slate-900/80 rounded-2xl shadow-2xl shadow-primary/20 flex items-center justify-center backdrop-blur-md border border-primary/20">
+                    <MonitorCheck className="w-32 h-32 text-primary" />
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-primary/20 to-transparent" />
+                </div>
+                 <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-accent/20 blur-3xl" />
+                <div className="absolute -top-20 -left-20 h-60 w-60 rounded-full bg-primary/20 blur-3xl" />
             </div>
         </div>
     </section>

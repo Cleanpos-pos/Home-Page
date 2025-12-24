@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Contact } from '@/components/sections/contact';
-import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Store, Hammer, Paintbrush, Check, Lightbulb, DraftingCompass, Handshake } from 'lucide-react';
 import Image from 'next/image';
@@ -13,13 +12,6 @@ import Link from 'next/link';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { GeneralEnquiryForm } from '@/components/general-enquiry-form';
 
-export const metadata: Metadata = {
-  title: 'Complete Shop Fitting & Design Services',
-  description: 'Transform your retail or restaurant space with our professional shop fitting services. From initial design to final installation, we create functional and beautiful environments.',
-  alternates: {
-    canonical: '/shop-fitting',
-  },
-};
 
 const galleryImages = [
     { id: 'digital-signage-display', alt: 'Modern restaurant interior with digital signage' },
