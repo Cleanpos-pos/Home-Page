@@ -11,7 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { AnimatePresence, motion } from 'framer-motion';
 import { submitGeneralEnquiry } from '@/app/actions';
-import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Ticket, GitBranch, Phone } from 'lucide-react';
+import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Ticket, GitBranch, Phone, CreditCard } from 'lucide-react';
 import { Textarea } from './ui/textarea';
 
 const HangerIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -32,6 +32,8 @@ const generalEnquirySchema = z.object({
 type EnquiryFormValues = z.infer<typeof generalEnquirySchema>;
 
 const productOptions = [
+    { id: 'call-me-back', label: 'Call Me Back', icon: <Phone className="w-8 h-8 text-green-500" /> },
+    { id: 'credit-card-machine', label: 'Credit Card Machines', icon: <CreditCard className="w-8 h-8 text-primary" /> },
     { id: 'pos', label: 'ePOS Systems', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
     { id: 'kiosks', label: 'Self-Order Kiosks', icon: <Smartphone className="w-8 h-8 text-primary" /> },
     { id: 'online-ordering', label: 'Online Ordering', icon: <Globe className="w-8 h-8 text-primary" /> },
@@ -42,7 +44,6 @@ const productOptions = [
     { id: 'retail-kiosks', label: 'Retail Kiosks', icon: <Smartphone className="w-8 h-8 text-primary" /> },
     { id: 'retail-pos', label: 'Retail POS', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
     { id: 'dry-cleaning-pos', label: 'Dry Cleaning POS', icon: <HangerIcon className="w-8 h-8 text-primary" /> },
-    { id: 'call-me-back', label: 'Call Me Back', icon: <Phone className="w-8 h-8 text-green-500" /> },
 ];
 
 export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void }) {
@@ -245,3 +246,5 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void 
     </div>
   );
 }
+
+    
