@@ -57,6 +57,7 @@ const processSteps = [
 ];
 
 export default function ShopFittingPage() {
+  const heroImage = PlaceHolderImages.find(p => p.id === 'shop-fitting');
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
@@ -116,14 +117,16 @@ export default function ShopFittingPage() {
                 </div>
             </div>
              <div className="relative rounded-2xl overflow-hidden glass-card p-2">
-                <Image
-                    src="https://posso.uk/wp-content/uploads/2024/09/wingstar.jpg"
-                    alt="Wingstar shop fit out"
-                    data-ai-hint="shop interior"
-                    width={800}
-                    height={600}
-                    className="rounded-lg object-cover"
-                />
+                {heroImage && (
+                    <Image
+                        src={heroImage.imageUrl}
+                        alt={heroImage.description}
+                        data-ai-hint={heroImage.imageHint}
+                        width={800}
+                        height={600}
+                        className="rounded-lg object-cover"
+                    />
+                )}
             </div>
         </section>
 
