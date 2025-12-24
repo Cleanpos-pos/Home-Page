@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/shop-fitting',
     '/shop-signage',
     '/finance',
+    '/contact',
     '/privacy-policy',
     '/cookie-policy',
   ];

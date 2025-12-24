@@ -14,6 +14,7 @@ import { submitCardMachineEnquiry } from '@/app/actions';
 import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Ticket, GitBranch, Phone, CreditCard } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Textarea } from './ui/textarea';
+import Link from 'next/link';
 
 const HangerIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -274,7 +275,7 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
 
   return (
     <div className="p-1">
-      <Progress value={progress} className="mb-6 h-2" />
+       {step < 5 && <Progress value={progress} className="mb-6 h-2" />}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="min-h-[350px]">
           <AnimatePresence mode="wait">

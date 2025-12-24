@@ -1,17 +1,14 @@
 'use client';
 
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { ArrowRight, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { GeneralEnquiryForm } from '../general-enquiry-form';
+import Link from 'next/link';
 
 export function FranchiseHero() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'franchise-hero');
-  const [open, setOpen] = useState(false);
 
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
@@ -31,19 +28,11 @@ export function FranchiseHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                    The enterprise ePOS ecosystem built for modern food franchises. Centralise control, standardise operations, and visualize data across your entire estate from a single dashboard.
                 </p>
-                 <Dialog open={open} onOpenChange={setOpen}>
-                    <DialogTrigger asChild>
-                        <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
-                            Book a Franchise Demo <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-[625px]">
-                        <DialogHeader>
-                            <DialogTitle>Make an Enquiry</DialogTitle>
-                        </DialogHeader>
-                        <GeneralEnquiryForm onFormSubmit={() => setOpen(false)} />
-                    </DialogContent>
-                </Dialog>
+                <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                    <Link href="/contact">
+                        Book a Franchise Demo <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                </Button>
             </div>
 
             <div className="relative flex items-center justify-center h-[500px]">

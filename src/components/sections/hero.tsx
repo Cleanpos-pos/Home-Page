@@ -1,16 +1,11 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ContactDialog } from './contact';
 import { ArrowRight, Cog, MonitorCheck, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
-import Image from 'next/image';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
-import { useState } from 'react';
-import { GeneralEnquiryForm } from '../general-enquiry-form';
+import Link from 'next/link';
 
 export function Hero() {
-    const [open, setOpen] = useState(false);
 
   return (
     <section className="relative w-full h-screen flex items-center overflow-hidden">
@@ -30,19 +25,11 @@ export function Hero() {
                 <p className="max-w-md text-lg text-slate-400">
                     Posso Ltd is a pioneering company specialising in state-of-the-art restaurant ePOS systems and self-order kiosks. Our mission is to empower fast food and takeaway restaurants with innovative technology.
                 </p>
-                <Dialog open={open} onOpenChange={setOpen}>
-                    <DialogTrigger asChild>
-                        <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
-                            Make an enquiry <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-[625px]">
-                        <DialogHeader>
-                            <DialogTitle>Make an Enquiry</DialogTitle>
-                        </DialogHeader>
-                        <GeneralEnquiryForm onFormSubmit={() => setOpen(false)} />
-                    </DialogContent>
-                </Dialog>
+                <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                    <Link href="/contact">
+                        Make an enquiry <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                </Button>
 
                 <div className="mt-8 w-full flex items-center justify-center md:justify-start gap-8 opacity-60 grayscale flex-wrap">
                     <img src="https://posso.uk/wp-content/uploads/2025/12/flava-logo.png" alt="Flava Logo" width={100} height={40} className="object-contain" />

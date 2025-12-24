@@ -4,14 +4,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { useState } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
-import { GeneralEnquiryForm } from '../general-enquiry-form';
+import Link from 'next/link';
 import Image from 'next/image';
 
 export function KiosksHero() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'kiosk-hero');
-  const [open, setOpen] = useState(false);
 
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
@@ -31,19 +28,11 @@ export function KiosksHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                     Reduce queues, increase order accuracy, and empower your customers with our intuitive and sleek self-order kiosks. Perfect for fast-paced environments.
                 </p>
-                <Dialog open={open} onOpenChange={setOpen}>
-                    <DialogTrigger asChild>
-                        <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
-                            Enquire Now <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-[625px]">
-                        <DialogHeader>
-                            <DialogTitle>Make an Enquiry</DialogTitle>
-                        </DialogHeader>
-                        <GeneralEnquiryForm onFormSubmit={() => setOpen(false)} />
-                    </DialogContent>
-                </Dialog>
+                <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                   <Link href="/contact">
+                        Enquire Now <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                </Button>
             </div>
 
             <div className="relative flex items-center justify-center h-[500px]">

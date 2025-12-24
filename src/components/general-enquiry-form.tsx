@@ -13,6 +13,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { submitGeneralEnquiry } from '@/app/actions';
 import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Ticket, GitBranch, Phone, CreditCard } from 'lucide-react';
 import { Textarea } from './ui/textarea';
+import { useRouter } from 'next/navigation';
 
 const HangerIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -50,6 +51,7 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void 
   const [step, setStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
+  const router = useRouter();
 
   const {
     control,
@@ -96,7 +98,8 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void 
 
     if (result.success) {
       setStep(4);
-      setTimeout(onFormSubmit, 4000);
+      onFormSubmit();
+      setTimeout(() => router.push('/'), 4000);
     } else {
         setServerError(result.message);
         if (result.errors) {
@@ -217,7 +220,7 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void 
 
   return (
     <div className="p-1">
-      <Progress value={progress} className="mb-6 h-2" />
+      {step < 4 && <Progress value={progress} className="mb-6 h-2" />}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="min-h-[350px]">
           <AnimatePresence mode="wait">

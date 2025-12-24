@@ -1,13 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Lightbulb, PenTool, Gem } from 'lucide-react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { GeneralEnquiryForm } from '@/components/general-enquiry-form';
+import Link from 'next/link';
 
 export function ShopSignageContent() {
-  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -23,19 +20,11 @@ export function ShopSignageContent() {
                  Make a lasting first impression. We create eye-catching, durable custom signage for your shop front, interior, and promotional needs.
               </p>
               <div className="mt-8">
-                  <Dialog open={open} onOpenChange={setOpen}>
-                      <DialogTrigger asChild>
-                          <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
-                              Discuss Your Signage <ArrowRight className="ml-2 h-5 w-5" />
-                          </Button>
-                      </DialogTrigger>
-                      <DialogContent className="sm:max-w-[625px]">
-                          <DialogHeader>
-                              <DialogTitle>Make an Enquiry</DialogTitle>
-                          </DialogHeader>
-                          <GeneralEnquiryForm onFormSubmit={() => setOpen(false)} />
-                      </DialogContent>
-                  </Dialog>
+                  <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                      <Link href="/contact">
+                          Discuss Your Signage <ArrowRight className="ml-2 h-5 w-5" />
+                      </Link>
+                  </Button>
               </div>
           </div>
       </section>

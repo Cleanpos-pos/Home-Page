@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Contact } from '@/components/sections/contact';
@@ -9,9 +8,6 @@ import { ArrowRight, Store, Hammer, Paintbrush, Check, Lightbulb, DraftingCompas
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { GeneralEnquiryForm } from '@/components/general-enquiry-form';
-
 
 const galleryImages = [
     { id: 'digital-signage-display', alt: 'Modern restaurant interior with digital signage' },
@@ -55,7 +51,6 @@ const processSteps = [
 
 export default function ShopFittingPage() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'shop-fitting');
-  const [open, setOpen] = useState(false);
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -73,19 +68,11 @@ export default function ShopFittingPage() {
                     From concept to completion, we design and build stunning, functional spaces for restaurants and retail stores that captivate customers and streamline operations.
                 </p>
                 <div className="mt-8">
-                     <Dialog open={open} onOpenChange={setOpen}>
-                        <DialogTrigger asChild>
-                            <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
-                                Get a Fitting Quote <ArrowRight className="ml-2 h-5 w-5" />
-                            </Button>
-                        </DialogTrigger>
-                        <DialogContent className="sm:max-w-[625px]">
-                            <DialogHeader>
-                                <DialogTitle>Make an Enquiry</DialogTitle>
-                            </DialogHeader>
-                            <GeneralEnquiryForm onFormSubmit={() => setOpen(false)} />
-                        </DialogContent>
-                    </Dialog>
+                     <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                        <Link href="/contact">
+                            Get a Fitting Quote <ArrowRight className="ml-2 h-5 w-5" />
+                        </Link>
+                    </Button>
                 </div>
             </div>
         </section>
