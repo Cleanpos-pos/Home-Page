@@ -140,9 +140,9 @@
     },
     {
       "id": "ticketing-hero-2",
-      "description": "Ticketing hardware and insights.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/lockers.png",
-      "imageHint": "ticketing hardware"
+      "description": "A person scanning a QR code ticket on their phone at a venue entrance.",
+      "imageUrl": "https://images.unsplash.com/photo-1519424187790-2a93372227f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxldmVudCUyMHRpY2tldGluZ3xlbnwwfHx8fDE3NjU5MzA5MjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "event ticketing"
     },
     {
       "id": "ticketing-hero-3",
