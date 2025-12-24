@@ -103,12 +103,6 @@
       "imageHint": "chocolate icecream"
     },
     {
-      "id": "digital-signage-display",
-      "description": "Digital menu boards in a restaurant setting.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2024/09/Digital-Menu-Boards-UK.jpg",
-      "imageHint": "digital signage"
-    },
-    {
       "id": "clover-flex",
       "description": "A Clover Flex card machine.",
       "imageUrl": "https://uk.clover.com/content/dam/firstdata/clover-uk/en/assets/hardware/flex/clover-flex-details-2.png",
@@ -215,6 +209,12 @@
       "description": "Interior of a modern, well-lit retail store or restaurant.",
       "imageUrl": "https://posso.uk/wp-content/uploads/2024/09/wingstar.jpg",
       "imageHint": "shop interior"
+    },
+    {
+      "id": "digital-signage-display",
+      "description": "Digital menu boards in a restaurant setting.",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2024/09/Digital-Menu-Boards-UK.jpg",
+      "imageHint": "digital signage"
     },
     {
       "id": "web-design",
