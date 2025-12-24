@@ -9,7 +9,7 @@ import {
   DialogTrigger,
   DialogClose,
 } from '@/components/ui/dialog';
-import { Calendar, X } from 'lucide-react';
+import { Calendar, Phone, X } from 'lucide-react';
 
 export function ContactDialog({ children }: { children: React.ReactNode }) {
   return (
@@ -44,18 +44,24 @@ export function Contact() {
           Ready to Upgrade?
         </h2>
         <p className="mx-auto mt-4 max-w-[700px] text-lg text-slate-300 md:text-xl">
-          Let's talk about how Posso can revolutionise your restaurant. Book a
-          free, no-obligation call back with our team today.
+          Let's talk about how Posso can revolutionise your business. Schedule a
+          free consultation or give us a call today.
         </p>
       </div>
 
-      <div className="mx-auto mt-12 max-w-xl text-center">
+      <div className="mx-auto mt-12 max-w-xl text-center flex flex-col sm:flex-row gap-4 justify-center">
         <ContactDialog>
           <Button size="lg">
             <Calendar className="mr-2 h-5 w-5" />
             Book a call back
           </Button>
         </ContactDialog>
+        <Button size="lg" variant="outline" asChild>
+          <a href="tel:+448081753956">
+            <Phone className="mr-2 h-5 w-5" />
+            Call Us Now
+          </a>
+        </Button>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { Code, Twitter, Github, Linkedin, Instagram, Facebook, Lock, Phone } from 'lucide-react';
+import { Code, Twitter, Linkedin, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { ContactDialog } from './sections/contact';
 import { Button } from './ui/button';
@@ -67,17 +67,15 @@ export function Footer() {
                 </ul>
             </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-slate-800 text-center">
-            <Button size="lg" asChild>
-                <a href="tel:+448081753956">
-                <Phone className="mr-2 h-5 w-5" />
-                Call Us Now
-                </a>
-            </Button>
-            <p className="text-slate-400 mt-2 text-lg">0808 175 3956</p>
-        </div>
-        <div className="mt-8 border-t border-slate-800 pt-6 text-center text-sm text-slate-400">
-          <span>&copy; 2025/2026 Posso Ltd. All rights reserved.</span>
+        <div className="mt-12 pt-8 border-t border-slate-800 flex items-center justify-between">
+            <div className="text-center md:text-left">
+                <p className="text-sm text-slate-400">&copy; 2025/2026 Posso Ltd. All rights reserved.</p>
+                <p className="text-sm text-slate-400">Call Us: 0808 175 3956</p>
+            </div>
+            <div className="flex gap-4">
+                <a href="https://x.com/posso_uk" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter className="h-5 w-5 hover:text-primary transition-colors" /></a>
+                <a href="https://www.linkedin.com/company/posso-uk" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin className="h-5 w-5 hover:text-primary transition-colors" /></a>
+            </div>
         </div>
       </div>
     </footer>
