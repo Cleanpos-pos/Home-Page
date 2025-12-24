@@ -5,9 +5,6 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     remotePatterns: [
       {
@@ -31,6 +28,12 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'posso.uk',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.posso.uk',
         port: '',
         pathname: '/**',
       },

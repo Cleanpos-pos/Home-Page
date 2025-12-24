@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import {
   Carousel,
   CarouselContent,
@@ -77,10 +76,9 @@ export function Testimonials() {
                   <Card className="glass-card border-none">
                     <CardContent className="flex flex-col items-center justify-center p-8 text-center">
                       {avatar && (
-                        <Image
+                        <img
                           src={avatar.imageUrl}
                           alt={testimonial.name}
-                          data-ai-hint={avatar.imageHint}
                           width={120}
                           height={60}
                           className="object-contain h-16 w-32"
@@ -102,5 +100,3 @@ export function Testimonials() {
     </section>
   );
 }
-
-    

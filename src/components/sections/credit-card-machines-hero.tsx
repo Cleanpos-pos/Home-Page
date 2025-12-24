@@ -3,7 +3,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
-import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { CardMachineEnquiryForm } from '../card-machine-enquiry-form';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
@@ -54,10 +53,9 @@ export function CreditCardMachinesHero() {
                 <div className="relative w-full h-full flex items-center justify-center">
                     {cloverImage && (
                         <div className="absolute animate-float z-20" style={{ animationDelay: '0s'}}>
-                            <Image
+                            <img
                                 src={cloverImage.imageUrl}
                                 alt={cloverImage.description}
-                                data-ai-hint={cloverImage.imageHint}
                                 width={250}
                                 height={250}
                                 className="object-contain glass-card p-2 rounded-lg"
@@ -66,10 +64,9 @@ export function CreditCardMachinesHero() {
                     )}
                      {teyaImage && (
                         <div className="absolute animate-float z-10 top-10 left-10" style={{ animationDelay: '1s'}}>
-                            <Image
+                            <img
                                 src={teyaImage.imageUrl}
                                 alt={teyaImage.description}
-                                data-ai-hint={teyaImage.imageHint}
                                 width={200}
                                 height={200}
                                 className="object-contain glass-card p-2 rounded-lg"
@@ -78,10 +75,9 @@ export function CreditCardMachinesHero() {
                     )}
                      {dojoImage && (
                         <div className="absolute animate-float bottom-10 right-10" style={{ animationDelay: '2s'}}>
-                            <Image
+                            <img
                                 src={dojoImage.imageUrl}
                                 alt={dojoImage.description}
-                                data-ai-hint={dojoImage.imageHint}
                                 width={200}
                                 height={200}
                                 className="object-contain glass-card p-2 rounded-lg"

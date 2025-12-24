@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { ContactDialog } from './contact';
 import { ArrowRight, Clapperboard, MonitorPlay, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
-import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function DigitalSignageHero() {
@@ -37,10 +36,9 @@ export function DigitalSignageHero() {
 
             <div className="relative flex items-center justify-center h-[500px]">
               {signageImage && (
-                <Image
+                <img
                   src={signageImage.imageUrl}
                   alt={signageImage.description}
-                  data-ai-hint={signageImage.imageHint}
                   width={800}
                   height={600}
                   className="rounded-lg object-cover w-full h-full max-h-[500px] max-w-2xl glass-card p-2"

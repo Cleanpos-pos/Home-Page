@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { ContactDialog } from './contact';
 import { ArrowRight, Globe, Smartphone, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
-import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function OnlineOrderingHero() {
@@ -37,10 +36,9 @@ export function OnlineOrderingHero() {
 
             <div className="relative flex items-center justify-center h-[500px]">
               {heroImage && (
-                <Image
+                <img
                   src={heroImage.imageUrl}
                   alt={heroImage.description}
-                  data-ai-hint={heroImage.imageHint}
                   width={400}
                   height={600}
                   className="rounded-lg object-contain w-full h-full max-h-[500px] glass-card p-2"

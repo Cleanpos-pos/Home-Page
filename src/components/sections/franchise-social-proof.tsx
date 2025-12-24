@@ -2,8 +2,6 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 
 export function FranchiseSocialProof() {
-    const testimonialAvatar = PlaceHolderImages.find(p => p.id === 'avatar-4');
-
     return (
         <section id="social-proof" className="container mx-auto px-4 py-20 md:px-6">
             <div className="text-center">

@@ -111,61 +111,61 @@
     {
       "id": "teya-terminal",
       "description": "The Teya card payment terminal on a store counter.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2024/08/teya-card-machine.png",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2024/08/teya-card-machine.png",
       "imageHint": "Teya payment"
     },
     {
       "id": "dojo-go",
       "description": "The Dojo Go portable card machine.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2021/11/dj5.jpg",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2021/11/dj5.jpg",
       "imageHint": "Dojo payment"
     },
     {
       "id": "pos-system-hero",
       "description": "A modern EPOS system on a counter in a cafe.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2021/12/pc.jpeg",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2021/12/pc.jpeg",
       "imageHint": "EPOS system"
     },
     {
       "id": "kiosk-hero",
       "description": "A customer using a self-service kiosk in a restaurant.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2022/07/table-kiosk-2.jpg",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/07/table-kiosk-2.jpg",
       "imageHint": "self-service kiosk"
     },
     {
       "id": "ticketing-hero",
       "description": "Smart lockers for ticketing and venue management.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/lockers.png",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/lockers.png",
       "imageHint": "ticketing lockers"
     },
     {
       "id": "ticketing-hero-2",
       "description": "Ticketing hardware and insights.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/lockers-2.png",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/lockers-2.png",
       "imageHint": "ticketing hardware"
     },
     {
       "id": "ticketing-hero-3",
       "description": "Ticketing hardware and insights.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/icesk.png",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/icesk.png",
       "imageHint": "ticketing hardware"
     },
     {
       "id": "logo-flava",
       "description": "Flava25 logo",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/flava-logo.png",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/flava-logo.png",
       "imageHint": "Flava logo"
     },
     {
       "id": "logo-wingstar",
       "description": "Wingstar logo",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/wingstar-logo-scaled.png",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/wingstar-logo-scaled.png",
       "imageHint": "Wingstar logo"
     },
     {
       "id": "logo-love-chicken",
       "description": "Love Chicken logo",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2024/09/love-eatz-top-banner.jpg",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2024/09/love-eatz-top-banner.jpg",
       "imageHint": "Love Chicken"
     },
     {
@@ -195,25 +195,25 @@
     {
       "id": "online-ordering-hero",
       "description": "A smartphone displaying a restaurant's online ordering interface.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2021/11/LOW-RATES-GREAT-SERVICE.gif",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2021/11/LOW-RATES-GREAT-SERVICE.gif",
       "imageHint": "online ordering"
     },
     {
       "id": "food-booking-app",
       "description": "The FoodBooking mobile app interface showing a list of local restaurants.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/app-scaled.png",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/app-scaled.png",
       "imageHint": "food app"
     },
     {
       "id": "shop-fitting",
       "description": "Interior of a modern, well-lit retail store or restaurant.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2024/09/wingstar.jpg",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2024/09/wingstar.jpg",
       "imageHint": "shop interior"
     },
     {
       "id": "digital-signage-display",
       "description": "Digital menu boards in a restaurant setting.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2024/09/Digital-Menu-Boards-UK.jpg",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2024/09/Digital-Menu-Boards-UK.jpg",
       "imageHint": "digital signage"
     },
     {
@@ -231,7 +231,7 @@
     {
       "id": "digital-lockers",
       "description": "A bank of secure digital lockers.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/lockers.png",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/lockers.png",
       "imageHint": "digital lockers"
     }
   ]

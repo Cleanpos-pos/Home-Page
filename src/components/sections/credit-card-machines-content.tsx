@@ -1,8 +1,7 @@
-import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { Button } from '../ui/button';
-import { CheckCircle, Zap, ShieldCheck, Smartphone, Wallet, Clock, Tag, Phone } from 'lucide-react';
+import { Smartphone, Wallet, Clock, Tag, Phone, ShieldCheck } from 'lucide-react';
 
 const cloverFeatures = [
     {
@@ -57,10 +56,9 @@ export function CreditCardMachinesContent() {
             </div>
              <div className="relative rounded-2xl overflow-hidden glass-card p-2">
                 {cloverImage && (
-                    <Image
+                    <img
                         src={cloverImage.imageUrl}
                         alt={cloverImage.description}
-                        data-ai-hint={cloverImage.imageHint}
                         width={600}
                         height={600}
                         className="rounded-lg object-contain w-full h-full"
@@ -97,10 +95,9 @@ export function CreditCardMachinesContent() {
         <Card className="glass-card p-6 flex flex-col md:flex-row items-center gap-6">
             <div className="flex-shrink-0">
                 {teyaImage && (
-                    <Image
+                    <img
                         src={teyaImage.imageUrl}
                         alt={teyaImage.description}
-                        data-ai-hint={teyaImage.imageHint}
                         width={150}
                         height={150}
                         className="rounded-lg object-contain"
@@ -117,10 +114,9 @@ export function CreditCardMachinesContent() {
         <Card className="glass-card p-6 flex flex-col md:flex-row items-center gap-6">
             <div className="flex-shrink-0">
                 {dojoImage && (
-                    <Image
+                    <img
                         src={dojoImage.imageUrl}
                         alt={dojoImage.description}
-                        data-ai-hint={dojoImage.imageHint}
                         width={150}
                         height={150}
                         className="rounded-lg object-contain"
