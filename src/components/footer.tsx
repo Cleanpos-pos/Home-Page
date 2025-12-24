@@ -3,14 +3,6 @@ import Link from 'next/link';
 import { ContactDialog } from './sections/contact';
 import { Button } from './ui/button';
 
-const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d="M16 8.8c-2.3.2-4.1 2-4.3 4.3-.2 2.3 1.5 4.3 3.8 4.5 2.3.2 4.3-1.5 4.5-3.8.2-2.3-1.5-4.3-3.8-4.5z"/>
-        <path d="M12 4v11"/>
-    </svg>
-);
-
-
 export function Footer() {
   return (
     <footer className="w-full py-12 mt-20 border-t border-slate-800">
@@ -25,32 +17,6 @@ export function Footer() {
                 <p className="text-sm text-slate-400">
                     Pioneering technology for restaurants, venues, and events.
                 </p>
-                <div className="flex items-center gap-4 mt-4">
-                    <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
-                        <Twitter className="h-5 w-5" />
-                        <span className="sr-only">X</span>
-                    </Link>
-                    <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
-                        <Instagram className="h-5 w-5" />
-                        <span className="sr-only">Instagram</span>
-                    </Link>
-                    <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
-                        <Facebook className="h-5 w-5" />
-                        <span className="sr-only">Facebook</span>
-                    </Link>
-                    <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
-                        <Github className="h-5 w-5" />
-                        <span className="sr-only">Github</span>
-                    </Link>
-                    <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
-                        <Linkedin className="h-5 w-5" />
-                        <span className="sr-only">LinkedIn</span>
-                    </Link>
-                    <Link href="#" prefetch={false} className="text-slate-400 hover:text-primary transition-colors">
-                        <TikTokIcon className="h-5 w-5" />
-                        <span className="sr-only">TikTok</span>
-                    </Link>
-                </div>
             </div>
 
             {/* Hospitality Links */}
@@ -59,7 +25,7 @@ export function Footer() {
                 <ul className="space-y-2 text-sm text-slate-400">
                     <li><Link href="/pos" className="hover:text-primary transition-colors">ePOS Systems</Link></li>
                     <li><Link href="/kiosks" className="hover:text-primary transition-colors">Self-Order Kiosks</Link></li>
-                    <li><Link href="/credit-card-machines" className="hover:text-primary transition-colors">Kitchen Displays</Link></li>
+                    <li><Link href="/digital-signage" className="hover:text-primary transition-colors">Kitchen Displays</Link></li>
                     <li><Link href="/online-ordering" className="hover:text-primary transition-colors">Online Ordering</Link></li>
                      <li><Link href="/franchise" className="hover:text-primary transition-colors">Franchise Solutions</Link></li>
                 </ul>
@@ -97,7 +63,7 @@ export function Footer() {
                     </li>
                     <li><Link href="/finance" className="hover:text-primary transition-colors">Finance Calculator</Link></li>
                     <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-                    <li><Link href="/cookie-policy" className="hover:text-primary transition-colors">Cookie Policy</Link></li>
+                    <li><Link href="/cookie-policy" className="hovertext-primary transition-colors">Cookie Policy</Link></li>
                 </ul>
             </div>
         </div>
