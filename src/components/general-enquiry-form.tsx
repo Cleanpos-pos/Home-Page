@@ -11,7 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { AnimatePresence, motion } from 'framer-motion';
 import { submitGeneralEnquiry } from '@/app/actions';
-import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Lock, Code, LineChart } from 'lucide-react';
+import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Lock, Code, LineChart, Ticket, GitBranch, Phone } from 'lucide-react';
 import { Textarea } from './ui/textarea';
 
 const generalEnquirySchema = z.object({
@@ -31,9 +31,12 @@ const productOptions = [
     { id: 'online-ordering', label: 'Online Ordering', icon: <Globe className="w-8 h-8 text-primary" /> },
     { id: 'digital-signage', label: 'Digital Signage', icon: <MonitorPlay className="w-8 h-8 text-primary" /> },
     { id: 'shop-fitting', label: 'Shop Fitting', icon: <Store className="w-8 h-8 text-primary" /> },
-    { id: 'digital-lockers', label: 'Digital Lockers', icon: <Lock className="w-8 h-8 text-primary" /> },
-    { id: 'web-design', label: 'Web Design', icon: <Code className="w-8 h-8 text-primary" /> },
-    { id: 'marketing', label: 'Marketing', icon: <LineChart className="w-8 h-8 text-primary" /> },
+    { id: 'ticketing-solutions', label: 'Ticketing Solutions', icon: <Ticket className="w-8 h-8 text-primary" /> },
+    { id: 'franchise-systems', label: 'Franchise Systems', icon: <GitBranch className="w-8 h-8 text-primary" /> },
+    { id: 'retail-kiosks', label: 'Retail Kiosks', icon: <Smartphone className="w-8 h-8 text-primary" /> },
+    { id: 'retail-pos', label: 'Retail POS', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
+    { id: 'dry-cleaning-pos', label: 'Dry Cleaning POS', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
+    { id: 'call-me-back', label: 'Call Me Back', icon: <Phone className="w-8 h-8 text-primary" /> },
 ];
 
 export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit: () => void }) {
