@@ -12,7 +12,6 @@ import { Progress } from '@/components/ui/progress';
 import { AnimatePresence, motion } from 'framer-motion';
 import { submitCardMachineEnquiry } from '@/app/actions';
 import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Lock, Code, LineChart } from 'lucide-react';
-import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Textarea } from './ui/textarea';
 
@@ -128,7 +127,7 @@ export function CardMachineEnquiryForm({ onFormSubmit }: { onFormSubmit: () => v
                         htmlFor={option.id}
                         className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
                     >
-                        {image ? <Image src={image.imageUrl} alt={option.label} width={80} height={80} className="object-contain h-20 w-20 mb-2" /> : <div className="h-20 w-20 bg-slate-700 rounded-md mb-2" />}
+                        {image ? <img src={image.imageUrl} alt={option.label} width="80" height="80" className="object-contain h-20 w-20 mb-2" /> : <div className="h-20 w-20 bg-slate-700 rounded-md mb-2" />}
                         <span className="font-semibold text-slate-100">{option.label}</span>
                         <Checkbox
                         id={option.id}

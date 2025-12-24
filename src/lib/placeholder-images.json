@@ -51,37 +51,37 @@
     {
       "id": "kiosk-burger-bacon",
       "description": "A burger with crispy bacon.",
-      "imageUrl": "https://images.unsplash.com/photo-1724352476668-6cbd99da2d6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiYWNvbiUyMGJ1cmdlcnxlbnwwfHx8fDE3NjU5MTgzMTJ8MA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1724352476668-6cbd99da2d6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiYWNvbiUyMGJ1cmdlcnxlbnwwfHx8fDE3NjU5MTgzMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "bacon burger"
     },
     {
       "id": "kiosk-fries",
       "description": "A portion of french fries.",
-      "imageUrl": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmcmVuY2glMjBmcmllc3xlbnwwfHx8fDE3NjU5NzQ5MzZ8MA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmcmVuY2glMjBmcmllc3xlbnwwfHx8fDE3NjU5NzQ5MzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "french fries"
     },
     {
       "id": "kiosk-onion-rings",
       "description": "A portion of onion rings.",
-      "imageUrl": "https://images.unsplash.com/photo-1625938146369-adc83368bda7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxvbmlvbiUyMHJpbmdzfGVufDB8fHx8MTc2NTg5ODIzNnww&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1625938146369-adc83368bda7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxvbmlvbiUyMHJpbmdzfGVufDB8fHx8MTc2NTg5ODIzNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "onion rings"
     },
     {
       "id": "kiosk-cola",
       "description": "A glass of cola with ice.",
-      "imageUrl": "https://images.unsplash.com/photo-1640751819565-260a39de71f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2xhJTIwZHJpbmt8ZW58MHx8fHwxNzY1OTg0NTY0fDA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1640751819565-260a39de71f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2xhJTIwZHJpbmt8ZW58MHx8fHwxNzY1OTg0NTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "cola drink"
     },
     {
       "id": "kiosk-lemonade",
       "description": "A glass of fresh lemonade.",
-      "imageUrl": "https://images.unsplash.com/photo-1629380072258-3d0d04a6f65a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsZW1vbmFkZSUyMGRyaW5rfGVufDB8fHx8MTc2NTk4MTcwM3ww&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1629380072258-3d0d04a6f65a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsZW1vbmFkZSUyMGRyaW5rfGVufDB8fHx8MTc2NTk4MTcwM3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "lemonade drink"
     },
     {
       "id": "kiosk-background",
       "description": "A blurry background of a restaurant setting.",
-      "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZXN0YXVyYW50fGVufDB8fHx8MTc2NTk5NjM3N3ww&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZXN0YXVyYW50fGVufDB8fHx8MTc2NTk5NjM3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "restaurant background"
     },
     {
@@ -129,7 +129,7 @@
     {
       "id": "pos-system-hero",
       "description": "A modern EPOS system on a counter in a cafe.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/pc.jpeg",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2021/12/pc.jpeg",
       "imageHint": "EPOS system"
     },
     {
@@ -147,25 +147,25 @@
     {
       "id": "ticketing-hero-2",
       "description": "Ticketing hardware and insights.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/lockers-2.png",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/lockers-2.png",
       "imageHint": "ticketing hardware"
     },
     {
       "id": "ticketing-hero-3",
       "description": "Ticketing hardware and insights.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/icesk.png",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/icesk.png",
       "imageHint": "ticketing hardware"
     },
     {
       "id": "logo-flava",
       "description": "Flava25 logo",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/flava-logo.png",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/flava-logo.png",
       "imageHint": "Flava logo"
     },
     {
       "id": "logo-wingstar",
       "description": "Wingstar logo",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/wingstar-logo-scaled.png",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/wingstar-logo-scaled.png",
       "imageHint": "Wingstar logo"
     },
     {
@@ -207,7 +207,7 @@
     {
       "id": "food-booking-app",
       "description": "The FoodBooking mobile app interface showing a list of local restaurants.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/app-scaled.png",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/app-scaled.png",
       "imageHint": "food app"
     },
     {
@@ -231,7 +231,7 @@
     {
       "id": "digital-lockers",
       "description": "A bank of secure digital lockers.",
-      "imageUrl": "https://posso.uk/wp-content/uploads/2025/12/lockers.png",
+      "imageUrl": "https://posso.uk/wp-content/uploads/2022/12/lockers.png",
       "imageHint": "digital lockers"
     }
   ]
