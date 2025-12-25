@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Cog, MonitorCheck, Phone, Zap } from 'lucide-react';
-import { Badge } from '../ui/badge';
+import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { IframeDialog } from '../iframe-dialog';
 
@@ -10,7 +10,7 @@ import { IframeDialog } from '../iframe-dialog';
 export function Hero() {
 
   return (
-    <section className="relative w-full h-screen flex items-center overflow-hidden">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-slate-950 opacity-90" />
         <div className="absolute inset-0 grid-bg opacity-40" />
         
@@ -27,7 +27,7 @@ export function Hero() {
                 <p className="max-w-md text-lg text-slate-400">
                     Posso Ltd is a pioneering company specialising in state-of-the-art restaurant ePOS systems and self-order kiosks. Our mission is to empower fast food and takeaway restaurants with innovative technology.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                         <Link href="/contact">
                             Make an enquiry <ArrowRight className="ml-2 h-5 w-5" />
