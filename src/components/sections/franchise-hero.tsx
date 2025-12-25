@@ -29,7 +29,7 @@ export function FranchiseHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                    The enterprise ePOS ecosystem built for modern food franchises. Centralise control, standardise operations, and visualize data across your entire estate from a single dashboard.
                 </p>
-                 <div className="flex gap-4">
+                 <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                         <Link href="/contact">
                             Book a Franchise Demo <ArrowRight className="ml-2 h-5 w-5" />

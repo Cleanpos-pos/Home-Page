@@ -68,7 +68,7 @@ export default function ShopFittingPage() {
                 <p className="max-w-2xl mx-auto mt-6 text-lg text-slate-400">
                     From concept to completion, we design and build stunning, functional spaces for restaurants and retail stores that captivate customers and streamline operations.
                 </p>
-                <div className="mt-8 flex gap-4 justify-center">
+                <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                      <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                         <Link href="/contact">
                             Get a Fitting Quote <ArrowRight className="ml-2 h-5 w-5" />

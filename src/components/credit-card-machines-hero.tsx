@@ -30,7 +30,7 @@ export function CreditCardMachinesHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                    We supply and integrate industry-leading payment solutions from Teya, Dojo, and Clover. Faster, more secure, and fully integrated with your Posso EPOS system.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                         <Link href="/credit-card-machines-enquiry">
                             Enquire Now <ArrowRight className="ml-2 h-5 w-5" />

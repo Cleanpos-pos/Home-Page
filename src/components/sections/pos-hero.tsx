@@ -26,7 +26,7 @@ export function PosHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                     Our state-of-the-art Electronic Point of Sale systems are designed to simplify your restaurant's workflow, increase efficiency, and provide a seamless experience for both your staff and customers.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                         <Link href="/contact">
                             Enquire Now <ArrowRight className="ml-2 h-5 w-5" />

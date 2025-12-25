@@ -27,7 +27,7 @@ export function Hero() {
                 <p className="max-w-md text-lg text-slate-400">
                     Posso Ltd is a pioneering company specialising in state-of-the-art restaurant ePOS systems and self-order kiosks. Our mission is to empower fast food and takeaway restaurants with innovative technology.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                         <Link href="/contact">
                             Make an enquiry <ArrowRight className="ml-2 h-5 w-5" />
