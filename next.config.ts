@@ -6,14 +6,6 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  experimental: {
-    // This allows the Next.js dev server to accept requests from the
-    // Firebase Studio preview URLs.
-    allowedDevOrigins: [
-      '*.cloudworkstations.dev',
-      '*.firebase.studio',
-    ],
-  },
   images: {
     remotePatterns: [
       {
@@ -53,7 +45,7 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'https',
+        protocol: 'https' ,
         hostname: 'sp-ao.shortpixel.ai',
         port: '',
         pathname: '/**',

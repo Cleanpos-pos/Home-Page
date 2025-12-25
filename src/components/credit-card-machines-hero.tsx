@@ -2,10 +2,10 @@
 
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, Zap } from 'lucide-react';
-import { Badge } from '../ui/badge';
+import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
-import { IframeDialog } from '../iframe-dialog';
+import { IframeDialog } from '@/components/iframe-dialog';
 
 export function CreditCardMachinesHero() {
   const teyaImage = PlaceHolderImages.find(p => p.id === 'teya-terminal');
