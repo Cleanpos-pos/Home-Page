@@ -24,7 +24,7 @@ export function IframeDialog({
   return (
     <Dialog>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[50vw] h-[80vh] p-0 flex flex-col">
+      <DialogContent className="sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[50vw] h-[90vh] p-0 flex flex-col">
         <DialogHeader className="p-4 border-b flex-row flex items-center justify-between">
           <DialogTitle>{title}</DialogTitle>
           <DialogClose asChild>
