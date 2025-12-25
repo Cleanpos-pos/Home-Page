@@ -1,9 +1,18 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
+  },
+  experimental: {
+    // This allows the Next.js dev server to accept requests from the
+    // Firebase Studio preview URLs.
+    allowedDevOrigins: [
+      '*.cloudworkstations.dev',
+      '*.firebase.studio',
+    ],
   },
   images: {
     remotePatterns: [
