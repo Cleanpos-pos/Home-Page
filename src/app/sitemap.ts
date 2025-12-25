@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ticketing',
     '/digital-signage',
     '/credit-card-machines',
+    '/credit-card-machines-enquiry',
     '/franchise',
     '/online-ordering',
     '/shop-fitting',

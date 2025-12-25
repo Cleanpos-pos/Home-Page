@@ -1,20 +1,16 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight, Phone, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { CardMachineEnquiryForm } from '../card-machine-enquiry-form';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
-import { useState } from 'react';
 import Link from 'next/link';
+import { IframeDialog } from '../iframe-dialog';
 
 export function CreditCardMachinesHero() {
   const teyaImage = PlaceHolderImages.find(p => p.id === 'teya-terminal');
   const dojoImage = PlaceHolderImages.find(p => p.id === 'dojo-go');
   const cloverImage = PlaceHolderImages.find(p => p.id === 'clover-flex');
-  const [open, setOpen] = useState(false);
-
 
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
@@ -34,20 +30,23 @@ export function CreditCardMachinesHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                    We supply and integrate industry-leading payment solutions from Teya, Dojo, and Clover. Faster, more secure, and fully integrated with your Posso EPOS system.
                 </p>
-                <Dialog open={open} onOpenChange={setOpen}>
-                    <DialogTrigger asChild>
-                        <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                <div className="flex gap-4">
+                    <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                        <Link href="/credit-card-machines-enquiry">
                             Enquire Now <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-[625px]">
-                        <DialogHeader>
-                            <DialogTitle>Card Machine Enquiry</DialogTitle>
-                        </DialogHeader>
-                        <CardMachineEnquiryForm onFormSubmit={() => setOpen(false)} />
-                    </DialogContent>
-                </Dialog>
-
+                        </Link>
+                    </Button>
+                    <IframeDialog
+                        title="AI Voice Assistant"
+                        url="https://posso-ltd-ai-voice-assistant-365092986942.us-west1.run.app/"
+                        trigger={
+                            <Button size="lg" variant="outline" className="bg-green-600 hover:bg-green-700 text-white border-green-700 hover:border-green-800">
+                                <Phone className="mr-2 h-5 w-5" />
+                                Click to Talk Now
+                            </Button>
+                        }
+                    />
+                </div>
             </div>
 
             <div className="relative flex items-center justify-center h-[500px]">

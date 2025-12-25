@@ -1,10 +1,11 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Globe, Smartphone, Zap } from 'lucide-react';
+import { ArrowRight, Globe, Phone, Smartphone, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
+import { IframeDialog } from '../iframe-dialog';
 
 export function OnlineOrderingHero() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'online-ordering-hero');
@@ -27,11 +28,23 @@ export function OnlineOrderingHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                    Launch a commission-free online ordering website and branded mobile app. Plus, get listed on the FoodBooking marketplace to attract thousands of new local customers.
                 </p>
-                <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
-                    <Link href="/contact">
-                        Start Selling Online <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                </Button>
+                <div className="flex gap-4">
+                    <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                        <Link href="/contact">
+                            Start Selling Online <ArrowRight className="ml-2 h-5 w-5" />
+                        </Link>
+                    </Button>
+                    <IframeDialog
+                        title="AI Voice Assistant"
+                        url="https://posso-ltd-ai-voice-assistant-365092986942.us-west1.run.app/"
+                        trigger={
+                            <Button size="lg" variant="outline" className="bg-green-600 hover:bg-green-700 text-white border-green-700 hover:border-green-800">
+                                <Phone className="mr-2 h-5 w-5" />
+                                Click to Talk Now
+                            </Button>
+                        }
+                    />
+                </div>
             </div>
 
             <div className="relative flex items-center justify-center h-[500px]">

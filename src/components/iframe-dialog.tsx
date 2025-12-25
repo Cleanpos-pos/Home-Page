@@ -13,23 +13,23 @@ import {
 import { X } from 'lucide-react';
 
 export function IframeDialog({
-  children,
+  trigger,
   url,
   title,
 }: {
-  children: React.ReactNode;
+  trigger: React.ReactNode;
   url: string;
   title: string;
 }) {
   return (
     <Dialog>
-      <DialogTrigger asChild>{children}</DialogTrigger>
+      <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className="sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[50vw] h-[80vh] p-0 flex flex-col">
         <DialogHeader className="p-4 border-b flex-row flex items-center justify-between">
           <DialogTitle>{title}</DialogTitle>
           <DialogClose asChild>
             <Button variant="ghost" size="icon">
-              <X className="h-4 w-4" />
+              <X className="h-6 w-6" />
             </Button>
           </DialogClose>
         </DialogHeader>
@@ -38,6 +38,7 @@ export function IframeDialog({
             src={url}
             className="w-full h-full border-0"
             title={title}
+            allow="microphone"
           />
         </div>
       </DialogContent>

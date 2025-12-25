@@ -14,6 +14,8 @@ import { submitGeneralEnquiry } from '@/app/actions';
 import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Ticket, GitBranch, Phone, CreditCard } from 'lucide-react';
 import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
+import { IframeDialog } from './iframe-dialog';
+
 
 const HangerIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -33,7 +35,6 @@ const generalEnquirySchema = z.object({
 type EnquiryFormValues = z.infer<typeof generalEnquirySchema>;
 
 const productOptions = [
-    { id: 'call-me-back', label: 'Call Me Back', icon: <Phone className="w-8 h-8 text-green-500" /> },
     { id: 'credit-card-machine', label: 'Credit Card Machines', icon: <CreditCard className="w-8 h-8 text-primary" /> },
     { id: 'pos', label: 'ePOS Systems', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
     { id: 'kiosks', label: 'Self-Order Kiosks', icon: <Smartphone className="w-8 h-8 text-primary" /> },
@@ -47,7 +48,7 @@ const productOptions = [
     { id: 'dry-cleaning-pos', label: 'Dry Cleaning POS', icon: <HangerIcon className="w-8 h-8 text-primary" /> },
 ];
 
-export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit?: () => void }) {
+export function GeneralEnquiryForm() {
   const [step, setStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
@@ -98,7 +99,6 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit?: () => void
 
     if (result.success) {
       setStep(4);
-      onFormSubmit?.();
       setTimeout(() => router.push('/'), 4000);
     } else {
         setServerError(result.message);
@@ -229,10 +229,21 @@ export function GeneralEnquiryForm({ onFormSubmit }: { onFormSubmit?: () => void
         </div>
 
         {step < totalSteps && (
-            <div className="flex justify-between mt-8">
+            <div className="flex justify-between items-center mt-8">
             <Button type="button" variant="outline" onClick={prevStep} disabled={step === 0}>
                 Back
             </Button>
+            
+            <IframeDialog
+                title="AI Voice Assistant"
+                url="https://posso-ltd-ai-voice-assistant-365092986942.us-west1.run.app/"
+                trigger={
+                    <Button type="button" variant="outline" className="bg-green-600 hover:bg-green-700 text-white border-green-700 hover:border-green-800">
+                        <Phone className="mr-2 h-5 w-5" />
+                        Click to Talk Now
+                    </Button>
+                }
+            />
             
             {step < totalSteps - 1 ? (
                 <Button type="button" onClick={nextStep}>

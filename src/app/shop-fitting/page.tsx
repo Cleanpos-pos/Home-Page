@@ -4,10 +4,11 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Contact } from '@/components/sections/contact';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Store, Hammer, Paintbrush, Check, Lightbulb, DraftingCompass, Handshake } from 'lucide-react';
+import { ArrowRight, Store, Hammer, Paintbrush, Check, Lightbulb, DraftingCompass, Handshake, Phone } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
+import { IframeDialog } from '@/components/iframe-dialog';
 
 const galleryImages = [
     { id: 'digital-signage-display', alt: 'Modern restaurant interior with digital signage' },
@@ -67,12 +68,22 @@ export default function ShopFittingPage() {
                 <p className="max-w-2xl mx-auto mt-6 text-lg text-slate-400">
                     From concept to completion, we design and build stunning, functional spaces for restaurants and retail stores that captivate customers and streamline operations.
                 </p>
-                <div className="mt-8">
+                <div className="mt-8 flex gap-4 justify-center">
                      <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                         <Link href="/contact">
                             Get a Fitting Quote <ArrowRight className="ml-2 h-5 w-5" />
                         </Link>
                     </Button>
+                    <IframeDialog
+                        title="AI Voice Assistant"
+                        url="https://posso-ltd-ai-voice-assistant-365092986942.us-west1.run.app/"
+                        trigger={
+                            <Button size="lg" variant="outline" className="bg-green-600 hover:bg-green-700 text-white border-green-700 hover:border-green-800">
+                                <Phone className="mr-2 h-5 w-5" />
+                                Click to Talk Now
+                            </Button>
+                        }
+                    />
                 </div>
             </div>
         </section>

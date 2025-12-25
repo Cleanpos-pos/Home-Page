@@ -1,6 +1,6 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { CreditCardMachinesHero } from '@/components/sections/credit-card-machines-hero';
+import { CreditCardMachinesHero } from '@/components/credit-card-machines-hero';
 import { CreditCardMachinesContent } from '@/components/sections/credit-card-machines-content';
 import { Contact } from '@/components/sections/contact';
 import type { Metadata } from 'next';

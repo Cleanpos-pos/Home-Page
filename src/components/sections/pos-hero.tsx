@@ -1,9 +1,10 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, MonitorCheck, Zap } from 'lucide-react';
+import { ArrowRight, MonitorCheck, Phone, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import Link from 'next/link';
+import { IframeDialog } from '../iframe-dialog';
 
 export function PosHero() {
 
@@ -25,11 +26,23 @@ export function PosHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                     Our state-of-the-art Electronic Point of Sale systems are designed to simplify your restaurant's workflow, increase efficiency, and provide a seamless experience for both your staff and customers.
                 </p>
-                <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
-                    <Link href="/contact">
-                        Enquire Now <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                </Button>
+                <div className="flex gap-4">
+                    <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                        <Link href="/contact">
+                            Enquire Now <ArrowRight className="ml-2 h-5 w-5" />
+                        </Link>
+                    </Button>
+                    <IframeDialog
+                        title="AI Voice Assistant"
+                        url="https://posso-ltd-ai-voice-assistant-365092986942.us-west1.run.app/"
+                        trigger={
+                            <Button size="lg" variant="outline" className="bg-green-600 hover:bg-green-700 text-white border-green-700 hover:border-green-800">
+                                <Phone className="mr-2 h-5 w-5" />
+                                Click to Talk Now
+                            </Button>
+                        }
+                    />
+                </div>
             </div>
 
             <div className="relative flex items-center justify-center h-[500px]">

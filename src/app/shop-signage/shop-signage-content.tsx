@@ -1,8 +1,9 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Lightbulb, PenTool, Gem } from 'lucide-react';
+import { ArrowRight, Lightbulb, PenTool, Gem, Phone } from 'lucide-react';
 import Link from 'next/link';
+import { IframeDialog } from '@/components/iframe-dialog';
 
 export function ShopSignageContent() {
 
@@ -19,12 +20,22 @@ export function ShopSignageContent() {
               <p className="max-w-2xl mx-auto mt-6 text-lg text-slate-400">
                  Make a lasting first impression. We create eye-catching, durable custom signage for your shop front, interior, and promotional needs.
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex gap-4 justify-center">
                   <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                       <Link href="/contact">
                           Discuss Your Signage <ArrowRight className="ml-2 h-5 w-5" />
                       </Link>
                   </Button>
+                    <IframeDialog
+                        title="AI Voice Assistant"
+                        url="https://posso-ltd-ai-voice-assistant-365092986942.us-west1.run.app/"
+                        trigger={
+                            <Button size="lg" variant="outline" className="bg-green-600 hover:bg-green-700 text-white border-green-700 hover:border-green-800">
+                                <Phone className="mr-2 h-5 w-5" />
+                                Click to Talk Now
+                            </Button>
+                        }
+                    />
               </div>
           </div>
       </section>
