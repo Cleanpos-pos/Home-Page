@@ -27,19 +27,20 @@ export function IframeDialog({
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className="sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[50vw] h-[90vh] p-0 flex flex-col">
         <DialogHeader className="p-4 border-b flex-row flex items-center justify-between">
+          <DialogTitle>{title}</DialogTitle>
           <div className="flex items-center gap-4">
-            <DialogTitle>{title}</DialogTitle>
-            <Button variant="ghost" size="icon" asChild>
-                <Link href={url} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="h-5 w-5" />
+             <Button variant="ghost" size="sm" asChild>
+                <Link href={url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    <ExternalLink className="h-4 w-4" />
+                    <span>Open full screen</span>
                 </Link>
             </Button>
+            <DialogClose asChild>
+                <Button variant="ghost" size="icon">
+                <X className="h-8 w-8" />
+                </Button>
+            </DialogClose>
           </div>
-          <DialogClose asChild>
-            <Button variant="ghost" size="icon">
-              <X className="h-8 w-8" />
-            </Button>
-          </DialogClose>
         </DialogHeader>
         <div className="flex-1">
           <iframe
