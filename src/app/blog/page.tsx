@@ -57,8 +57,8 @@ export default function BlogPage() {
               return (
                 <Link href={post.href} key={post.title} className="block group">
                   <Card className="glass-card h-full flex flex-col">
-                     {image && (
-                        <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
+                     <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
+                        {image ? (
                             <Image
                                 src={image.imageUrl}
                                 alt={post.title}
@@ -66,8 +66,12 @@ export default function BlogPage() {
                                 fill
                                 className="object-cover transition-transform duration-300 group-hover:scale-105"
                             />
-                        </div>
-                    )}
+                        ) : (
+                            <div className="w-full h-full bg-slate-800 flex items-center justify-center">
+                                <span className="text-slate-500">Image not found</span>
+                            </div>
+                        )}
+                    </div>
                     <CardHeader>
                       <CardTitle className="text-xl font-bold text-slate-50 group-hover:text-primary transition-colors">{post.title}</CardTitle>
                     </CardHeader>
