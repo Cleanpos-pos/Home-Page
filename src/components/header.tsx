@@ -21,6 +21,7 @@ import {
   Store,
   Wallet,
   Globe,
+  Newspaper,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -54,6 +55,7 @@ const navLinks = [
   { href: '/credit-card-machines', icon: <CreditCard className="mr-2 h-4 w-4" />, label: 'Card Machines' },
   { href: '/shop-fitting', icon: <Store className="mr-2 h-4 w-4" />, label: 'Shop Fitting' },
   { href: '/finance', icon: <Wallet className="mr-2 h-4 w-4" />, label: 'Finance' },
+  { href: '/blog', icon: <Newspaper className="mr-2 h-4 w-4" />, label: 'Blog' },
   { href: 'https://download.anydesk.com/AnyDesk.exe?_ga=2.228450974.22024143.1581947022-1619378576.1575561389', icon: <DownloadCloud className="mr-2 h-4 w-4" />, label: 'Support', isExternal: true },
 ];
 

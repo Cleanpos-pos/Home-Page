@@ -17,6 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/shop-signage',
     '/finance',
     '/contact',
+    '/blog',
+    '/blog/pos-systems-for-restaurants-and-takeaways',
+    '/blog/self-order-kiosks',
+    '/blog/online-ordering-and-mobile-apps',
     '/privacy-policy',
     '/cookie-policy',
   ];
