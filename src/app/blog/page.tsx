@@ -1,11 +1,9 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Globe, ShoppingCart, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const metadata: Metadata = {
   title: 'Posso Blog | Insights on Restaurant & Hospitality Tech',
@@ -20,19 +18,19 @@ const blogPosts = [
     title: 'POSSO POS Systems for Restaurants & Takeaways – Fast, Modern & Commission-Free Ordering',
     description: 'Discover POSSO POS – the UK’s modern EPOS system for restaurants & takeaways. Faster service, menu control, split payments and real reporting.',
     href: '/blog/pos-systems-for-restaurants-and-takeaways',
-    imageId: 'pos-system-hero'
+    icon: <ShoppingCart className="w-12 h-12 text-primary" />,
   },
   {
     title: 'POSSO Self-Order Kiosks – Reduce Queues & Increase Order Value in Minutes',
     description: 'Learn how POSSO Self-Order Kiosks boost sales, cut queue time and reduce staff pressure. Perfect for UK takeaways and fast-food restaurants.',
     href: '/blog/self-order-kiosks',
-    imageId: 'kiosk-hero'
+    icon: <Smartphone className="w-12 h-12 text-primary" />,
   },
   {
     title: 'POSSO Online Ordering & Mobile Apps – Commission-Free Food Ordering System',
     description: 'Launch your own online ordering website or mobile app with POSSO. Keep 100% of your profit with zero commission.',
     href: '/blog/online-ordering-and-mobile-apps',
-    imageId: 'online-ordering-hero'
+    icon: <Globe className="w-12 h-12 text-primary" />,
   },
 ];
 
@@ -52,25 +50,11 @@ export default function BlogPage() {
           </div>
 
           <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {blogPosts.map((post) => {
-              const image = PlaceHolderImages.find(p => p.id === post.imageId);
-              return (
+            {blogPosts.map((post) => (
                 <Link href={post.href} key={post.title} className="block group">
                   <Card className="glass-card h-full flex flex-col">
-                     <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
-                        {image ? (
-                            <Image
-                                src={image.imageUrl}
-                                alt={post.title}
-                                data-ai-hint={image.imageHint}
-                                fill
-                                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                            />
-                        ) : (
-                            <div className="w-full h-full bg-slate-800 flex items-center justify-center">
-                                <span className="text-slate-500">Image not found</span>
-                            </div>
-                        )}
+                     <div className="relative w-full h-48 flex items-center justify-center rounded-t-lg bg-slate-900/50">
+                        {post.icon}
                     </div>
                     <CardHeader>
                       <CardTitle className="text-xl font-bold text-slate-50 group-hover:text-primary transition-colors">{post.title}</CardTitle>
@@ -83,8 +67,7 @@ export default function BlogPage() {
                     </CardContent>
                   </Card>
                 </Link>
-              );
-            })}
+            ))}
           </div>
         </section>
       </main>
