@@ -6,8 +6,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'POSSO Online Ordering & Mobile Apps – Commission-Free Food Ordering System',
-  description: 'Launch your own online ordering website or mobile app with POSSO. Keep 100% of your profit with zero commission.',
+  title: 'POSSO Online Ordering & Apps UK – 0% Commission Food Ordering',
+  description: 'Launch your own online ordering system or takeaway app with POSSO. Keep 100% of your profits and build loyal customers.',
   alternates: {
     canonical: '/blog/online-ordering-and-mobile-apps',
   },
@@ -45,39 +45,64 @@ export default function OnlineOrderingBlogPage() {
           <div className="mx-auto max-w-3xl">
             <article className="prose prose-invert prose-lg mx-auto">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text">
-                POSSO Online Ordering & Mobile Apps – Your Own Commission-Free Ordering System
+                Stop Paying Commission — Own Your Online Orders
               </h1>
               <p>
-                Just Eat, Deliveroo and Uber Eats charge high fees that cut into profits. With POSSO Online Ordering & Apps, customers order directly from you with 0% commission – keeping your margin where it belongs.
+                Delivery platforms take a large slice of each sale. A £25 order becomes £18.75 after commission. Multiply that daily, weekly, yearly — it’s thousands lost.
+              </p>
+              <p>
+                POSSO Online Ordering & Apps give you full ownership of your customers and revenue.
+              </p>
+              <p>You get:</p>
+              <ul>
+                <li>Your own ordering website</li>
+                <li>Branded apps for iOS and Android</li>
+                <li>0% commission permanently</li>
+                <li>Direct payments & customer data</li>
+              </ul>
+              <p>Your customers order from you, not through a marketplace.</p>
+
+              <h2>Built for Click & Collect and Delivery Operations</h2>
+              <p>
+                Whether customers dine at home, pick up in-store, or order ahead for later, POSSO handles it all.
+              </p>
+              <p>
+                Orders flow straight to the EPOS or KDS so nothing is missed. You control delivery areas, time slots, preparation times and minimum order thresholds.
+              </p>
+              <p>
+                The experience is designed to feel seamless and professional.
               </p>
 
-              <h2>Click & Collect and Delivery Built In</h2>
+              <h2>A Mobile App With Your Name On It</h2>
+              <p>
+                This isn’t a shared marketplace. It’s your shop in your customer’s pocket.
+              </p>
+              <p>Your app includes:</p>
               <ul>
-                <li>Orders through your own website or app</li>
-                <li>Accept card or cash payments</li>
-                <li>Smart time-slot and pre-order scheduling</li>
-                <li>Direct integration with EPOS & KDS</li>
+                  <li>Branding, images and menu items</li>
+                  <li>Push notifications for promotions</li>
+                  <li>Loyalty functions</li>
+                  <li>Reorder buttons for regulars</li>
+                  <li>Card or cash payments</li>
               </ul>
-              <p>You own the customer relationship – not a marketplace.</p>
-
-              <h2>Mobile Apps for iOS & Android with Your Branding</h2>
-              <p>Customers see your brand, not a list of competitors. Push notifications bring customers back for:</p>
-              <ul>
-                  <li>Special offers</li>
-                  <li>New menu items</li>
-                  <li>Loyalty rewards</li>
-                  <li>Seasonal campaigns</li>
-              </ul>
-              <p>Apps strengthen loyalty and increase repeat orders.</p>
+              <p>Returning customers convert at a far higher rate through direct apps than through delivery sites.</p>
               
-              <h2>SEO and Google Visibility Included</h2>
+              <h2>Built with SEO in Mind From Day One</h2>
               <p>
-                POSSO ordering websites are fast, mobile-friendly and built for local SEO visibility, helping you rank on Google for takeaway-related searches in your area. Add schema, menus and pages for each dish for even greater ranking strength.
+                Unlike third-party platforms, your site can rank locally for food searches such as:
+              </p>
+              <p className="italic text-slate-400">
+                pizza delivery Leicester, <br/>
+                Chinese takeaway near me, <br/>
+                best curry delivery in Manchester
+              </p>
+              <p>
+                With proper SEO structure, menu descriptions, alt-tagged images and internal links, your Google visibility increases month by month.
               </p>
 
-              <h2>Take Back Control of Your Online Orders</h2>
+              <h2>Ready to Take Control of Your Online Orders?</h2>
               <p>
-                Keep your profit instead of paying commission to delivery platforms.
+                Let POSSO launch your online ordering system and start keeping 100% of every sale.
               </p>
 
               <div className="not-prose mt-8 space-y-4">
