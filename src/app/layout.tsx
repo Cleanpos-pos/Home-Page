@@ -2,8 +2,6 @@ import type { Metadata, Viewport } from 'next';
 import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 import { CookieConsent } from '@/components/cookie-consent';
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const title = 'Posso | Restaurant ePOS & Self-Order Kiosks';
 const description = 'State-of-the-art ePOS systems and self-order kiosks for fast food and takeaway restaurants. We offer ticketing, digital signage, and integrated payment solutions.';
@@ -111,8 +109,6 @@ export default function RootLayout({
         {children}
         <Toaster />
         <CookieConsent />
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
