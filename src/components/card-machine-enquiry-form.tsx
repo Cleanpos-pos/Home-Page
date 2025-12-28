@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -11,23 +12,14 @@ import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { AnimatePresence, motion } from 'framer-motion';
 import { submitCardMachineEnquiry } from '@/app/actions';
-import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Ticket, GitBranch, Phone, CreditCard } from 'lucide-react';
+import { PartyPopper, Phone } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
 import { IframeDialog } from './iframe-dialog';
 
-
-const HangerIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d="M9.5 7.7c0-2.3 1.5-4.2 3.3-4.2 1.8 0 3.3 1.9 3.3 4.2V9m-6.6 0H20c1.7 0 3 1.3 3 3v1c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1v-1c0-1.7 1.3-3 3-3h1.5"/>
-    </svg>
-);
-
-
 const cardMachineEnquirySchema = z.object({
   machines: z.array(z.string()).min(1, { message: 'Please select at least one machine.' }),
-  otherProducts: z.array(z.string()).optional(),
   name: z.string().min(2, 'Name is required.'),
   company: z.string().min(2, 'Company name is required.'),
   email: z.string().email('A valid email is required.'),
@@ -41,19 +33,6 @@ const machineOptions = [
   { id: 'teya', label: 'Teya', imageId: 'teya-terminal' },
   { id: 'dojo', label: 'Dojo', imageId: 'dojo-go' },
   { id: 'clover', label: 'Clover', imageId: 'clover-flex' },
-];
-
-const otherProductOptions = [
-    { id: 'pos', label: 'ePOS Systems', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
-    { id: 'kiosks', label: 'Self-Order Kiosks', icon: <Smartphone className="w-8 h-8 text-primary" /> },
-    { id: 'online-ordering', label: 'Online Ordering', icon: <Globe className="w-8 h-8 text-primary" /> },
-    { id: 'digital-signage', label: 'Digital Signage', icon: <MonitorPlay className="w-8 h-8 text-primary" /> },
-    { id: 'shop-fitting', label: 'Shop Fitting', icon: <Store className="w-8 h-8 text-primary" /> },
-    { id: 'ticketing-solutions', label: 'Ticketing Solutions', icon: <Ticket className="w-8 h-8 text-primary" /> },
-    { id: 'franchise-systems', label: 'Franchise Systems', icon: <GitBranch className="w-8 h-8 text-primary" /> },
-    { id: 'retail-kiosks', label: 'Retail Kiosks', icon: <Smartphone className="w-8 h-8 text-primary" /> },
-    { id: 'retail-pos', label: 'Retail POS', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
-    { id: 'dry-cleaning-pos', label: 'Dry Cleaning POS', icon: <HangerIcon className="w-8 h-8 text-primary" /> },
 ];
 
 export function CardMachineEnquiryForm() {
@@ -73,7 +52,6 @@ export function CardMachineEnquiryForm() {
     resolver: zodResolver(cardMachineEnquirySchema),
     defaultValues: {
       machines: [],
-      otherProducts: [],
       name: '',
       company: '',
       email: '',
@@ -87,10 +65,8 @@ export function CardMachineEnquiryForm() {
     if (step === 0) {
       isValid = await trigger('machines');
     } else if (step === 1) {
-      isValid = true; // Optional step
-    } else if (step === 2) {
        isValid = await trigger(['name', 'company', 'email', 'phone']);
-    } else if (step === 3) {
+    } else if (step === 2) {
         isValid = true; // Optional step
     }
 
@@ -110,7 +86,7 @@ export function CardMachineEnquiryForm() {
     setIsSubmitting(false);
 
     if (result.success) {
-      setStep(5);
+      setStep(4); // Success step
       setTimeout(() => router.push('/'), 4000);
     } else {
         setServerError(result.message);
@@ -120,11 +96,11 @@ export function CardMachineEnquiryForm() {
     }
   };
 
-  const totalSteps = 5;
+  const totalSteps = 4;
   const progress = ((step + 1) / totalSteps) * 100;
 
   const steps = [
-    // Step 1: Machine Selection
+    // Step 0: Machine Selection
     <motion.div key={0} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
         <h3 className="text-lg font-semibold mb-4 text-slate-100">Which card machines are you interested in?</h3>
         <Controller
@@ -162,49 +138,9 @@ export function CardMachineEnquiryForm() {
         />
         {errors.machines && <p className="text-destructive text-sm mt-2">{errors.machines.message}</p>}
     </motion.div>,
-
-    // Step 2: Other Products
-    <motion.div key={1} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
-        <h3 className="text-lg font-semibold mb-4 text-slate-100">Are you interested in any other services?</h3>
-        <p className="text-sm text-slate-400 mb-4">Select any that apply (optional).</p>
-        <Controller
-            name="otherProducts"
-            control={control}
-            render={({ field }) => (
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {otherProductOptions.map((option) => {
-                    const isChecked = field.value?.includes(option.id);
-                    return (
-                    <Label
-                        key={option.id}
-                        htmlFor={`other_${option.id}`}
-                        className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all h-32 text-center ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
-                    >
-                       <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
-                          {option.icon}
-                        </div>
-                        <span className="font-semibold text-slate-100 text-sm mt-auto pt-1">{option.label}</span>
-                        <Checkbox
-                        id={`other_${option.id}`}
-                        checked={isChecked}
-                        onCheckedChange={(checked) => {
-                            const newValue = checked
-                            ? [...(field.value || []), option.id]
-                            : (field.value || []).filter((v) => v !== option.id);
-                            field.onChange(newValue);
-                        }}
-                        className="hidden"
-                        />
-                    </Label>
-                    );
-                })}
-                </div>
-            )}
-        />
-    </motion.div>,
     
-    // Step 3: Contact Information
-    <motion.div key={2} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
+    // Step 1: Contact Information
+    <motion.div key={1} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
         <h3 className="text-lg font-semibold mb-4 text-slate-100">Please enter your contact details.</h3>
         <div className="space-y-4">
             <Controller name="name" control={control} render={({ field }) => <Input placeholder="Full Name" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
@@ -218,8 +154,8 @@ export function CardMachineEnquiryForm() {
         </div>
     </motion.div>,
 
-    // Step 4: Message
-    <motion.div key={3} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
+    // Step 2: Message
+    <motion.div key={2} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
         <h3 className="text-lg font-semibold mb-4 text-slate-100">Anything else we should know?</h3>
         <p className="text-sm text-slate-400 mb-4">Leave a message if you have specific requirements (optional).</p>
         <Controller name="message" control={control} render={({ field }) => <Textarea placeholder="Your message..." {...field} className="bg-slate-800 border-slate-700 text-white h-32" />} />
@@ -227,20 +163,14 @@ export function CardMachineEnquiryForm() {
     </motion.div>,
 
 
-    // Step 5: Confirmation
-    <motion.div key={4} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
+    // Step 3: Confirmation
+    <motion.div key={3} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
         <h3 className="text-lg font-semibold mb-4 text-slate-100">Please confirm your enquiry.</h3>
         <div className="space-y-4 rounded-lg bg-slate-800/50 p-4 border border-slate-700 max-h-80 overflow-y-auto">
             <div>
                 <h4 className="font-semibold text-slate-400">Selected Machines:</h4>
                 <p className="text-slate-100 capitalize">{getValues('machines').join(', ')}</p>
             </div>
-             {getValues('otherProducts') && getValues('otherProducts')!.length > 0 && (
-                <div>
-                    <h4 className="font-semibold text-slate-400">Other Interested Products:</h4>
-                    <p className="text-slate-100 capitalize">{getValues('otherProducts')?.join(', ')}</p>
-                </div>
-            )}
             <div>
                 <h4 className="font-semibold text-slate-400">Name:</h4>
                 <p className="text-slate-100">{getValues('name')}</p>
@@ -267,8 +197,8 @@ export function CardMachineEnquiryForm() {
         {serverError && <p className="text-destructive text-center mt-4">{serverError}</p>}
     </motion.div>,
 
-    // Step 6: Success
-    <motion.div key={5} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
+    // Step 4: Success
+    <motion.div key={4} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
         <PartyPopper className="w-16 h-16 text-primary mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-slate-50 mb-2">Thank You!</h3>
         <p className="text-slate-300">Your enquiry has been sent. We'll be in touch shortly.</p>
@@ -277,7 +207,7 @@ export function CardMachineEnquiryForm() {
 
   return (
     <div className="p-1">
-       {step < 5 && <Progress value={progress} className="mb-6 h-2" />}
+       {step < 4 && <Progress value={progress} className="mb-6 h-2" />}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="min-h-[350px]">
           <AnimatePresence mode="wait">

@@ -60,7 +60,6 @@ export async function analyzeSentimentAction(testimonial: string): Promise<Analy
 
 const cardMachineEnquirySchema = z.object({
     machines: z.array(z.string()).min(1, { message: 'Please select at least one machine.' }),
-    otherProducts: z.array(z.string()).optional(),
     name: z.string().min(2, 'Name must be at least 2 characters.'),
     company: z.string().min(2, 'Company name must be at least 2 characters.'),
     email: z.string().email('Please enter a valid email address.'),
@@ -79,7 +78,6 @@ export async function submitCardMachineEnquiry(formData: unknown) {
             message: 'Please check your input and try again.',
             errors: {
                 machines: fieldErrors.machines?.[0],
-                otherProducts: fieldErrors.otherProducts?.[0],
                 name: fieldErrors.name?.[0],
                 company: fieldErrors.company?.[0],
                 email: fieldErrors.email?.[0],
@@ -89,7 +87,7 @@ export async function submitCardMachineEnquiry(formData: unknown) {
         };
     }
     
-    const { machines, otherProducts, name, company, email, phone, message } = validatedFields.data;
+    const { machines, name, company, email, phone, message } = validatedFields.data;
 
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
@@ -113,12 +111,6 @@ export async function submitCardMachineEnquiry(formData: unknown) {
         <ul>
             ${machines.map(m => `<li>${m}</li>`).join('')}
         </ul>
-        ${otherProducts && otherProducts.length > 0 ? `
-        <p><strong>Also interested in:</strong></p>
-        <ul>
-            ${otherProducts.map(p => `<li>${p}</li>`).join('')}
-        </ul>
-        ` : ''}
         ${message ? `<p><strong>Message:</strong><br/>${message.replace(/\n/g, '<br>')}</p>` : ''}
     `;
 
@@ -151,10 +143,10 @@ export async function submitCardMachineEnquiry(formData: unknown) {
 
 const generalEnquirySchema = z.object({
     products: z.array(z.string()).min(1, { message: 'Please select at least one product or service.' }),
-    name: z.string().min(2, 'Name must be at least 2 characters.'),
-    company: z.string().min(2, 'Company name must be at least 2 characters.'),
-    email: z.string().email('Please enter a valid email address.'),
-    phone: z.string().min(10, 'Please enter a valid phone number.'),
+    name: z.string().min(2, 'Name is required.'),
+    company: z.string().min(2, 'Company name is required.'),
+    email: z.string().email('A valid email is required.'),
+    phone: z.string().min(10, 'A valid phone number is required.'),
     message: z.string().optional(),
 });
 
@@ -226,3 +218,5 @@ export async function submitGeneralEnquiry(formData: unknown) {
         }
     }
 }
+
+    
