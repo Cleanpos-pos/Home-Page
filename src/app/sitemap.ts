@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/pos-systems-for-restaurants-and-takeaways',
     '/blog/self-order-kiosks',
     '/blog/online-ordering-and-mobile-apps',
+    '/blog/best-card-machine-for-small-business',
     '/privacy-policy',
     '/cookie-policy',
   ];

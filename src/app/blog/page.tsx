@@ -1,7 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight, Globe, ShoppingCart, Smartphone } from 'lucide-react';
+import { ArrowRight, Globe, ShoppingCart, Smartphone, CreditCard } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -31,6 +31,12 @@ const blogPosts = [
     description: 'Launch your own online ordering website or mobile app with POSSO. Keep 100% of your profit with zero commission.',
     href: '/blog/online-ordering-and-mobile-apps',
     icon: <Globe className="w-12 h-12 text-primary" />,
+  },
+   {
+    title: 'Best Card Machine for Small Business UK – Teya vs SumUp vs Dojo',
+    description: 'Compare the best card payment machines for UK small businesses. We review Teya, SumUp, and Dojo to help you find the lowest fees and fastest payouts.',
+    href: '/blog/best-card-machine-for-small-business',
+    icon: <CreditCard className="w-12 h-12 text-primary" />,
   },
 ];
 
