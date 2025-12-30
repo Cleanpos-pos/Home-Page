@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/agents',
     '/privacy-policy',
     '/cookie-policy',
+    '/software-terms',
   ];
 
   return routes.map((route) => ({
