@@ -1,4 +1,3 @@
-
 'use server';
 
 import { z } from 'zod';
@@ -219,4 +218,85 @@ export async function submitGeneralEnquiry(formData: unknown) {
     }
 }
 
+const agentEnquirySchema = z.object({
+  name: z.string().min(2, 'Name is required.'),
+  email: z.string().email('A valid email is required.'),
+  phone: z.string().min(10, 'A valid phone number is required.'),
+  location: z.string().min(2, 'Location is required.'),
+  experience: z.string().min(20, 'Please provide more detail about your experience.'),
+  interest: z.array(z.string()).min(1, { message: 'Please select at least one product.' }),
+});
+
+export async function submitAgentEnquiry(formData: unknown) {
+    const validatedFields = agentEnquirySchema.safeParse(formData);
+
+    if (!validatedFields.success) {
+        const fieldErrors = validatedFields.error.flatten().fieldErrors;
+        return {
+            success: false,
+            message: 'Please check your input and try again.',
+            errors: {
+                name: fieldErrors.name?.[0],
+                email: fieldErrors.email?.[0],
+                phone: fieldErrors.phone?.[0],
+                location: fieldErrors.location?.[0],
+                experience: fieldErrors.experience?.[0],
+                interest: fieldErrors.interest?.[0],
+            },
+        };
+    }
+    
+    const { name, email, phone, location, experience, interest } = validatedFields.data;
+
+    // For now, we'll just log it. You can add email sending logic here later.
+    console.log("New Agent Enquiry Received:", { name, email, phone, location, experience, interest });
+
+    const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT),
+        secure: Number(process.env.SMTP_PORT) === 465,
+        auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+        },
+    });
+
+    const emailBody = `
+        <h1>New Independent Sales Agent Enquiry</h1>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Location:</strong> ${location}</p>
+        <hr>
+        <h2>Sales Experience</h2>
+        <p>${experience.replace(/\n/g, '<br>')}</p>
+        <hr>
+        <h2>Primary Interest</h2>
+        <ul>
+            ${interest.map(p => `<li>${p}</li>`).join('')}
+        </ul>
+    `;
+
+    const mailOptions = {
+        from: '"Posso Agent Enquiry" <agents@posso.uk>',
+        to: 'info@posso.uk',
+        subject: 'New Independent Sales Agent Enquiry',
+        html: emailBody,
+    };
+
+    try {
+        await transporter.sendMail(mailOptions);
+        return { 
+            success: true,
+            message: 'Thank you for your interest! We have received your details and will be in touch if your profile matches our requirements.' 
+        };
+    } catch (error) {
+        console.error('SMTP Error:', error);
+        return {
+            success: false,
+            message: 'There was an error sending your enquiry. Please try again later.',
+            errors: null,
+        }
+    }
+}
     
