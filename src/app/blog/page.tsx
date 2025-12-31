@@ -1,7 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight, Globe, ShoppingCart, Smartphone, CreditCard } from 'lucide-react';
+import { ArrowRight, Globe, ShoppingCart, Smartphone, CreditCard, Bot } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -37,6 +37,12 @@ const blogPosts = [
     description: 'Compare the best card payment machines for UK small businesses. We review Teya, SumUp, and Dojo to help you find the lowest fees and fastest payouts.',
     href: '/blog/best-card-machine-for-small-business',
     icon: <CreditCard className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'The UK Self-Service Revolution: Trends, Benefits & The Future of Kiosks',
+    description: 'A deep dive into the rise of self-service kiosks in the UK, from QSRs to healthcare, and what it means for your business.',
+    href: '/blog/self-service-revolution',
+    icon: <Bot className="w-12 h-12 text-primary" />,
   },
 ];
 

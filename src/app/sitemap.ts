@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/self-order-kiosks',
     '/blog/online-ordering-and-mobile-apps',
     '/blog/best-card-machine-for-small-business',
+    '/blog/self-service-revolution',
     '/agents',
     '/privacy-policy',
     '/cookie-policy',
