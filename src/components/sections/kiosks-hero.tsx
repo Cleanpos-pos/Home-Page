@@ -4,9 +4,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import Link from 'next/link';
-import Image from 'next/image';
 import { IframeDialog } from '../iframe-dialog';
+import { SolutionEnquiryModal } from '../solution-enquiry-modal';
 
 
 export function KiosksHero() {
@@ -31,11 +30,14 @@ export function KiosksHero() {
                     Reduce queues, increase order accuracy, and empower your customers with our intuitive and sleek self-order kiosks. Perfect for fast-paced environments.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
-                       <Link href="/contact">
-                            Enquire Now <ArrowRight className="ml-2 h-5 w-5" />
-                        </Link>
-                    </Button>
+                    <SolutionEnquiryModal 
+                        defaultSolutionId="kiosks" 
+                        trigger={
+                            <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
+                                Enquire Now <ArrowRight className="ml-2 h-5 w-5" />
+                            </Button>
+                        }
+                    />
                      <IframeDialog
                         title="AI Voice Assistant"
                         url="https://posso-ltd-ai-voice-assistant-365092986942.us-west1.run.app/"
@@ -51,7 +53,7 @@ export function KiosksHero() {
 
             <div className="relative flex items-center justify-center h-[500px]">
               {heroImage && (
-                <Image
+                <img
                   src={heroImage.imageUrl}
                   alt={heroImage.description}
                   width={800}

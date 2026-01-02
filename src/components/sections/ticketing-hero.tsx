@@ -1,12 +1,13 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Zap, Ticket, Phone } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
-import Link from 'next/link';
-import { IframeDialog } from '../iframe-dialog';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { SolutionEnquiryModal } from '../solution-enquiry-modal';
 
 export function TicketingHero() {
+  const heroImage = PlaceHolderImages.find(p => p.id === 'ticketing-hero-2');
 
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
@@ -26,32 +27,26 @@ export function TicketingHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                     From simple online ticket sales to comprehensive membership plans and seamless on-site check-ins, our all-in-one platform helps you run things smoother.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
-                        <Link href="/contact">
+                <SolutionEnquiryModal 
+                    defaultSolutionId="ticketing-solutions" 
+                    trigger={
+                        <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                             Get Started <ArrowRight className="ml-2 h-5 w-5" />
-                        </Link>
-                    </Button>
-                    <IframeDialog
-                        title="AI Voice Assistant"
-                        url="https://posso-ltd-ai-voice-assistant-365092986942.us-west1.run.app/"
-                        trigger={
-                            <Button size="lg" variant="outline" className="bg-green-600 hover:bg-green-700 text-white border-green-700 hover:border-green-800">
-                                <Phone className="mr-2 h-5 w-5" />
-                                Click to Talk Now
-                            </Button>
-                        }
-                    />
-                </div>
+                        </Button>
+                    }
+                />
             </div>
 
             <div className="relative flex items-center justify-center h-[500px]">
-                <div className="relative w-64 h-64 bg-slate-900/80 rounded-2xl shadow-2xl shadow-primary/20 flex items-center justify-center backdrop-blur-md border border-primary/20">
-                    <Ticket className="w-32 h-32 text-primary" />
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-primary/20 to-transparent" />
-                </div>
-                 <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-accent/20 blur-3xl" />
-                <div className="absolute -top-20 -left-20 h-60 w-60 rounded-full bg-primary/20 blur-3xl" />
+              {heroImage && (
+                <img
+                  src={heroImage.imageUrl}
+                  alt={heroImage.description}
+                  width={800}
+                  height={600}
+                  className="rounded-lg object-cover w-full h-full max-h-[500px] max-w-2xl glass-card p-2"
+                />
+              )}
             </div>
         </div>
     </section>

@@ -1,11 +1,10 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Clapperboard, MonitorPlay, Phone, Zap } from 'lucide-react';
+import { ArrowRight, Clapperboard, MonitorPlay, Zap } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import Link from 'next/link';
-import { IframeDialog } from '../iframe-dialog';
+import { SolutionEnquiryModal } from '../solution-enquiry-modal';
 
 export function DigitalSignageHero() {
   const signageImage = PlaceHolderImages.find(p => p.id === 'digital-signage-display');
@@ -28,23 +27,14 @@ export function DigitalSignageHero() {
                 <p className="max-w-xl text-lg text-slate-400">
                     Transform your space and engage your customers with our powerful and easy-to-use digital signage solutions. From menu boards to promotional displays, Posso has you covered.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
-                        <Link href="/contact">
+                <SolutionEnquiryModal 
+                    defaultSolutionId="digital-signage" 
+                    trigger={
+                        <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                             Request a Demo <ArrowRight className="ml-2 h-5 w-5" />
-                        </Link>
-                    </Button>
-                    <IframeDialog
-                        title="AI Voice Assistant"
-                        url="https://posso-ltd-ai-voice-assistant-365092986942.us-west1.run.app/"
-                        trigger={
-                            <Button size="lg" variant="outline" className="bg-green-600 hover:bg-green-700 text-white border-green-700 hover:border-green-800">
-                                <Phone className="mr-2 h-5 w-5" />
-                                Click to Talk Now
-                            </Button>
-                        }
-                    />
-                </div>
+                        </Button>
+                    }
+                />
             </div>
 
             <div className="relative flex items-center justify-center h-[500px]">

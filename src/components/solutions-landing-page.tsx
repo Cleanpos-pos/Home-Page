@@ -4,6 +4,7 @@ import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Check } from 'lucide-react';
 import { Contact } from './sections/contact';
+import { SolutionEnquiryModal } from './solution-enquiry-modal';
 
 type SolutionsLandingPageProps = {
   headline: string;
@@ -13,6 +14,8 @@ type SolutionsLandingPageProps = {
 };
 
 export function SolutionsLandingPage({ headline, subheadline, benefits, ctaText }: SolutionsLandingPageProps) {
+  const solutionId = ctaText.toLowerCase().replace(/ /g, '-');
+  
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
@@ -48,9 +51,14 @@ export function SolutionsLandingPage({ headline, subheadline, benefits, ctaText 
                     ))}
                 </div>
                 <div className="mt-10 text-center">
-                    <Button size="lg">
-                        {ctaText} <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
+                    <SolutionEnquiryModal
+                        defaultSolutionId={solutionId}
+                        trigger={
+                            <Button size="lg">
+                                {ctaText} <ArrowRight className="ml-2 h-5 w-5" />
+                            </Button>
+                        }
+                    />
                 </div>
             </div>
         </section>
