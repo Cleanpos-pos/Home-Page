@@ -120,56 +120,57 @@ export function Header() {
   return (
     <header className="absolute top-0 z-50 w-full">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-3" prefetch={false}>
-          <Logo />
-          <span className="text-xl font-bold text-slate-50 tracking-wide">
-            POSSO
-          </span>
-        </Link>
-        
-        <div className="hidden md:flex items-center gap-2">
-          {navLinks.map((navLink) => (
-            <DropdownMenu key={navLink.label}>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm">
-                  {navLink.icon}
-                  {navLink.label}
-                  <ChevronDown className="ml-2 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                {navLink.links.map((link) => (
-                  <DropdownMenuItem key={link.href} asChild>
-                    <Link href={link.href}>{link.label}</Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          ))}
-           {companyLinks.map(({ href, icon, label, isExternal }) => (
-            isExternal ? (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outline" size="sm">
-                  {icon}
-                  {label}
-                </Button>
-              </a>
-            ) : (
-              <Link href={href} key={label}>
-                <Button variant="outline" size="sm">
-                  {icon}
-                  {label}
-                </Button>
-              </Link>
-            )
-          ))}
+        <div className="flex items-center gap-6">
+          <Link href="/" className="flex items-center gap-3" prefetch={false}>
+            <Logo />
+            <span className="text-xl font-bold text-slate-50 tracking-wide">
+              POSSO
+            </span>
+          </Link>
+          <div className="hidden md:flex items-center gap-2">
+            {navLinks.map((navLink) => (
+              <DropdownMenu key={navLink.label}>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="sm">
+                    {navLink.icon}
+                    {navLink.label}
+                    <ChevronDown className="ml-2 h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {navLink.links.map((link) => (
+                    <DropdownMenuItem key={link.href} asChild>
+                      <Link href={link.href}>{link.label}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ))}
+            {companyLinks.map(({ href, icon, label, isExternal }) => (
+              isExternal ? (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" size="sm">
+                    {icon}
+                    {label}
+                  </Button>
+                </a>
+              ) : (
+                <Link href={href} key={label}>
+                  <Button variant="outline" size="sm">
+                    {icon}
+                    {label}
+                  </Button>
+                </Link>
+              )
+            ))}
+          </div>
         </div>
-
+        
         {/* Mobile Navigation */}
         <div className="md:hidden">
             {isClient && (
