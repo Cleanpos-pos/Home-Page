@@ -35,10 +35,13 @@ export function Footer() {
             <div>
                 <h4 className="font-bold text-slate-50 mb-4">Venues &amp; Events</h4>
                 <ul className="space-y-2 text-sm text-slate-400">
-                    <li><Link href="/ticketing" className="hover:text-primary transition-colors">Ticketing</Link></li>
-                    <li><Link href="/ticketing" className="hover:text-primary transition-colors">Memberships</Link></li>
-                    <li><Link href="/ticketing" className="hover:text-primary transition-colors">Smart Lockers</Link></li>
-                    <li><Link href="/digital-signage" className="hover:text-primary transition-colors">Digital Signage</Link></li>
+                    <li><Link href="/solutions/trampoline-parks" className="hover:text-primary transition-colors">Trampoline Parks</Link></li>
+                    <li><Link href="/solutions/family-entertainment-centers" className="hover:text-primary transition-colors">Family Entertainment</Link></li>
+                    <li><Link href="/solutions/amusement-parks" className="hover:text-primary transition-colors">Amusement Parks</Link></li>
+                    <li><Link href="/solutions/water-parks" className="hover:text-primary transition-colors">Water Parks</Link></li>
+                    <li><Link href="/solutions/museums" className="hover:text-primary transition-colors">Museums</Link></li>
+                    <li><Link href="/solutions/zoos-aquariums" className="hover:text-primary transition-colors">Zoos & Aquariums</Link></li>
+                    <li><Link href="/solutions/festivals-events" className="hover:text-primary transition-colors">Festivals & Events</Link></li>
                 </ul>
             </div>
 
@@ -46,6 +49,7 @@ export function Footer() {
             <div>
                 <h4 className="font-bold text-slate-50 mb-4">Retail Solutions</h4>
                 <ul className="space-y-2 text-sm text-slate-400">
+                    <li><Link href="/digital-signage" className="hover:text-primary transition-colors">Digital Signage</Link></li>
                     <li><Link href="/shop-fitting" className="hover:text-primary transition-colors">Shop Fitting</Link></li>
                     <li><Link href="/shop-signage" className="hover:text-primary transition-colors">Shop Signage</Link></li>
                 </ul>

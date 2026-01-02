@@ -27,6 +27,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy-policy',
     '/cookie-policy',
     '/software-terms',
+    '/solutions/trampoline-parks',
+    '/solutions/family-entertainment-centers',
+    '/solutions/amusement-parks',
+    '/solutions/water-parks',
+    '/solutions/museums',
+    '/solutions/zoos-aquariums',
+    '/solutions/wake-parks',
+    '/solutions/rock-climbing-gyms',
+    '/solutions/playcenters-softplay',
+    '/solutions/roller-skating-rinks',
+    '/solutions/ice-skating-rinks',
+    '/solutions/ski-resorts',
+    '/solutions/spas-wellness-centers',
+    '/solutions/festivals-events'
   ];
 
   return routes.map((route) => ({

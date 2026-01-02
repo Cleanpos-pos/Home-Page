@@ -22,7 +22,15 @@ import {
   Wallet,
   Globe,
   Newspaper,
+  ChevronDown,
+  Building,
 } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { useState, useEffect } from 'react';
 
 const Logo = () => (
@@ -46,18 +54,42 @@ const Logo = () => (
   </svg>
 );
 
-const navLinks = [
-  { href: '/pos', icon: <ShoppingCart className="mr-2 h-4 w-4" />, label: 'POS' },
-  { href: '/kiosks', icon: <Smartphone className="mr-2 h-4 w-4" />, label: 'Kiosks' },
-  { href: '/online-ordering', icon: <Globe className="mr-2 h-4 w-4" />, label: 'Online Ordering' },
-  { href: '/ticketing', icon: <Ticket className="mr-2 h-4 w-4" />, label: 'Ticketing' },
-  { href: '/digital-signage', icon: <MonitorPlay className="mr-2 h-4 w-4" />, label: 'Digital Signage' },
-  { href: '/credit-card-machines', icon: <CreditCard className="mr-2 h-4 w-4" />, label: 'Card Machines' },
-  { href: '/shop-fitting', icon: <Store className="mr-2 h-4 w-4" />, label: 'Shop Fitting' },
+const hospitalityLinks = [
+  { href: '/pos', label: 'ePOS Systems' },
+  { href: '/kiosks', label: 'Self-Order Kiosks' },
+  { href: '/online-ordering', label: 'Online Ordering' },
+  { href: '/credit-card-machines', label: 'Card Machines' },
+  { href: '/franchise', label: 'Franchise Solutions' },
+];
+
+const solutionsLinks = [
+    { href: '/solutions/trampoline-parks', label: 'Trampoline Parks' },
+    { href: '/solutions/family-entertainment-centers', label: 'Family Entertainment' },
+    { href: '/solutions/amusement-parks', label: 'Amusement Parks' },
+    { href: '/solutions/water-parks', label: 'Water Parks' },
+    { href: '/solutions/museums', label: 'Museums' },
+    { href: '/solutions/zoos-aquariums', label: 'Zoos & Aquariums' },
+    { href: '/solutions/wake-parks', label: 'Wake & Aqua Parks' },
+    { href: '/solutions/rock-climbing-gyms', label: 'Rock Climbing Gyms' },
+    { href: '/solutions/playcenters-softplay', label: 'Soft Play & Playcenters' },
+    { href: '/solutions/roller-skating-rinks', label: 'Roller Skating Rinks' },
+    { href: '/solutions/ice-skating-rinks', label: 'Ice Skating Rinks' },
+    { href: '/solutions/ski-resorts', label: 'Ski Resorts' },
+    { href: '/solutions/spas-wellness-centers', label: 'Spas & Wellness' },
+    { href: '/solutions/festivals-events', label: 'Festivals & Events' },
+]
+
+const retailLinks = [
+  { href: '/digital-signage', label: 'Digital Signage' },
+  { href: '/shop-fitting', label: 'Shop Fitting' },
+  { href: '/shop-signage', label: 'Shop Signage' },
+];
+
+const companyLinks = [
   { href: '/finance', icon: <Wallet className="mr-2 h-4 w-4" />, label: 'Finance' },
   { href: '/blog', icon: <Newspaper className="mr-2 h-4 w-4" />, label: 'Blog' },
   { href: 'https://download.anydesk.com/AnyDesk.exe?_ga=2.228450974.22024143.1581947022-1619378576.1575561389', icon: <DownloadCloud className="mr-2 h-4 w-4" />, label: 'Support', isExternal: true },
-];
+]
 
 export function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -67,6 +99,23 @@ export function Header() {
     setIsClient(true);
   }, []);
 
+  const navLinks = [
+    {
+      label: 'Hospitality',
+      icon: <ShoppingCart className="mr-2 h-4 w-4" />,
+      links: hospitalityLinks,
+    },
+    {
+      label: 'Solutions',
+      icon: <Building className="mr-2 h-4 w-4" />,
+      links: solutionsLinks,
+    },
+     {
+      label: 'Retail',
+      icon: <Store className="mr-2 h-4 w-4" />,
+      links: retailLinks,
+    },
+  ];
 
   return (
     <header className="absolute top-0 z-50 w-full">
@@ -78,9 +127,26 @@ export function Header() {
           </span>
         </Link>
         
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-2">
-          {navLinks.map(({ href, icon, label, isExternal }) => (
+          {navLinks.map((navLink) => (
+            <DropdownMenu key={navLink.label}>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm">
+                  {navLink.icon}
+                  {navLink.label}
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {navLink.links.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link href={link.href}>{link.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ))}
+           {companyLinks.map(({ href, icon, label, isExternal }) => (
             isExternal ? (
               <a
                 key={label}
@@ -131,7 +197,14 @@ export function Header() {
                                     Home
                                 </Button>
                                 </Link>
-                                {navLinks.map(({ href, icon, label, isExternal }) => (
+                                {navLinks.flatMap(section => section.links).map(({ href, label }) => (
+                                  <Link href={href} key={label} onClick={() => setIsSheetOpen(false)}>
+                                      <Button variant="outline" className="w-full justify-start">
+                                      {label}
+                                      </Button>
+                                  </Link>
+                                ))}
+                                {companyLinks.map(({ href, icon, label, isExternal }) => (
                                     isExternal ? (
                                         <a
                                             key={label}
