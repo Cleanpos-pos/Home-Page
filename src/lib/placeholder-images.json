@@ -111,13 +111,13 @@
     {
       "id": "teya-terminal",
       "description": "The Teya card payment terminal on a store counter.",
-      "imageUrl": "https://www.posso.uk/wp-content/uploads/2024/08/teya-card-machine.png",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2024/09/teya-card-machine.png",
       "imageHint": "Teya payment"
     },
     {
       "id": "dojo-go",
       "description": "The Dojo Go portable card machine.",
-      "imageUrl": "https://www.posso.uk/wp-content/uploads/2021/11/dj5.jpg",
+      "imageUrl": "https://www.posso.uk/wp-content/uploads/2024/09/dojo-go-card-machine.png",
       "imageHint": "Dojo payment"
     },
     {
