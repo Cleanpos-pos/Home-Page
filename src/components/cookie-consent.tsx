@@ -16,7 +16,7 @@ export function CookieConsent() {
         setShowConsent(true);
       }
     } catch (e) {
-      // localStorage is not available
+      // localStorage is not available, but we can assume consent is not given.
       setShowConsent(true);
     }
   }, []);
