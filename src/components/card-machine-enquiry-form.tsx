@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -9,8 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
-import { Progress } from '@/components/ui/progress';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { submitCardMachineEnquiry } from '@/app/actions';
 import { PartyPopper, Phone } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -36,17 +34,15 @@ const machineOptions = [
 ];
 
 export function CardMachineEnquiryForm() {
-  const [step, setStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
+  const [isSuccess, setIsSuccess] = useState(false);
   const router = useRouter();
 
 
   const {
     control,
     handleSubmit,
-    trigger,
-    getValues,
     formState: { errors },
   } = useForm<EnquiryFormValues>({
     resolver: zodResolver(cardMachineEnquirySchema),
@@ -60,25 +56,6 @@ export function CardMachineEnquiryForm() {
     },
   });
 
-  const nextStep = async () => {
-    let isValid = false;
-    if (step === 0) {
-      isValid = await trigger('machines');
-    } else if (step === 1) {
-       isValid = await trigger(['name', 'company', 'email', 'phone']);
-    } else if (step === 2) {
-        isValid = true; // Optional step
-    }
-
-    if (isValid) {
-      setStep(s => s + 1);
-    }
-  };
-
-  const prevStep = () => {
-    setStep(s => s - 1);
-  };
-
   const onSubmit = async (data: EnquiryFormValues) => {
     setIsSubmitting(true);
     setServerError(null);
@@ -86,7 +63,7 @@ export function CardMachineEnquiryForm() {
     setIsSubmitting(false);
 
     if (result.success) {
-      setStep(4); // Success step
+      setIsSuccess(true);
       setTimeout(() => router.push('/'), 4000);
     } else {
         setServerError(result.message);
@@ -96,131 +73,80 @@ export function CardMachineEnquiryForm() {
     }
   };
 
-  const totalSteps = 4;
-  const progress = ((step + 1) / totalSteps) * 100;
-
-  const steps = [
-    // Step 0: Machine Selection
-    <motion.div key={0} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
-        <h3 className="text-lg font-semibold mb-4 text-slate-100">Which card machines are you interested in?</h3>
-        <Controller
-            name="machines"
-            control={control}
-            render={({ field }) => (
-                <div className="grid grid-cols-3 gap-4">
-                {machineOptions.map((option) => {
-                    const image = PlaceHolderImages.find(p => p.id === option.imageId);
-                    const isChecked = field.value?.includes(option.id);
-                    return (
-                    <Label
-                        key={option.id}
-                        htmlFor={option.id}
-                        className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
-                    >
-                        {image ? <img src={image.imageUrl} alt={option.label} width="80" height="80" className="object-contain h-20 w-20 mb-2" /> : <div className="h-20 w-20 bg-slate-700 rounded-md mb-2" />}
-                        <span className="font-semibold text-slate-100">{option.label}</span>
-                        <Checkbox
-                        id={option.id}
-                        checked={isChecked}
-                        onCheckedChange={(checked) => {
-                            const newValue = checked
-                            ? [...(field.value || []), option.id]
-                            : (field.value || []).filter((v) => v !== option.id);
-                            field.onChange(newValue);
-                        }}
-                        className="hidden"
-                        />
-                    </Label>
-                    );
-                })}
-                </div>
-            )}
-        />
-        {errors.machines && <p className="text-destructive text-sm mt-2">{errors.machines.message}</p>}
-    </motion.div>,
-    
-    // Step 1: Contact Information
-    <motion.div key={1} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
-        <h3 className="text-lg font-semibold mb-4 text-slate-100">Please enter your contact details.</h3>
-        <div className="space-y-4">
-            <Controller name="name" control={control} render={({ field }) => <Input placeholder="Full Name" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
-            {errors.name && <p className="text-destructive text-sm">{errors.name.message}</p>}
-            <Controller name="company" control={control} render={({ field }) => <Input placeholder="Company Name" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
-            {errors.company && <p className="text-destructive text-sm">{errors.company.message}</p>}
-            <Controller name="email" control={control} render={({ field }) => <Input type="email" placeholder="Email Address" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
-            {errors.email && <p className="text-destructive text-sm">{errors.email.message}</p>}
-            <Controller name="phone" control={control} render={({ field }) => <Input type="tel" placeholder="Phone Number" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
-            {errors.phone && <p className="text-destructive text-sm">{errors.phone.message}</p>}
-        </div>
-    </motion.div>,
-
-    // Step 2: Message
-    <motion.div key={2} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
-        <h3 className="text-lg font-semibold mb-4 text-slate-100">Anything else we should know?</h3>
-        <p className="text-sm text-slate-400 mb-4">Leave a message if you have specific requirements (optional).</p>
-        <Controller name="message" control={control} render={({ field }) => <Textarea placeholder="Your message..." {...field} className="bg-slate-800 border-slate-700 text-white h-32" />} />
-        {errors.message && <p className="text-destructive text-sm mt-2">{errors.message.message}</p>}
-    </motion.div>,
-
-
-    // Step 3: Confirmation
-    <motion.div key={3} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }}>
-        <h3 className="text-lg font-semibold mb-4 text-slate-100">Please confirm your enquiry.</h3>
-        <div className="space-y-4 rounded-lg bg-slate-800/50 p-4 border border-slate-700 max-h-80 overflow-y-auto">
-            <div>
-                <h4 className="font-semibold text-slate-400">Selected Machines:</h4>
-                <p className="text-slate-100 capitalize">{getValues('machines').join(', ')}</p>
-            </div>
-            <div>
-                <h4 className="font-semibold text-slate-400">Name:</h4>
-                <p className="text-slate-100">{getValues('name')}</p>
-            </div>
-            <div>
-                <h4 className="font-semibold text-slate-400">Company:</h4>
-                <p className="text-slate-100">{getValues('company')}</p>
-            </div>
-            <div>
-                <h4 className="font-semibold text-slate-400">Email:</h4>
-                <p className="text-slate-100">{getValues('email')}</p>
-            </div>
-            <div>
-                <h4 className="font-semibold text-slate-400">Phone:</h4>
-                <p className="text-slate-100">{getValues('phone')}</p>
-            </div>
-             {getValues('message') && (
-                <div>
-                    <h4 className="font-semibold text-slate-400">Message:</h4>
-                    <p className="text-slate-100 whitespace-pre-wrap">{getValues('message')}</p>
-                </div>
-            )}
-        </div>
-        {serverError && <p className="text-destructive text-center mt-4">{serverError}</p>}
-    </motion.div>,
-
-    // Step 4: Success
-    <motion.div key={4} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
-        <PartyPopper className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h3 className="text-2xl font-bold text-slate-50 mb-2">Thank You!</h3>
-        <p className="text-slate-300">Your enquiry has been sent. We'll be in touch shortly.</p>
-    </motion.div>
-  ];
+  if (isSuccess) {
+    return (
+        <motion.div key="success" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8 min-h-[450px] flex flex-col justify-center">
+            <PartyPopper className="w-16 h-16 text-primary mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-slate-50 mb-2">Thank You!</h3>
+            <p className="text-slate-300">Your enquiry has been sent. We'll be in touch shortly.</p>
+        </motion.div>
+    );
+  }
 
   return (
     <div className="p-1">
-       {step < 4 && <Progress value={progress} className="mb-6 h-2" />}
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="min-h-[350px]">
-          <AnimatePresence mode="wait">
-            {steps[step]}
-          </AnimatePresence>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <div>
+            <h3 className="text-lg font-semibold mb-4 text-slate-100">Which card machines are you interested in?</h3>
+            <Controller
+                name="machines"
+                control={control}
+                render={({ field }) => (
+                    <div className="grid grid-cols-3 gap-4">
+                    {machineOptions.map((option) => {
+                        const image = PlaceHolderImages.find(p => p.id === option.imageId);
+                        const isChecked = field.value?.includes(option.id);
+                        return (
+                        <Label
+                            key={option.id}
+                            htmlFor={option.id}
+                            className={`cursor-pointer rounded-lg border-2 p-4 flex flex-col items-center justify-center transition-all ${isChecked ? 'border-primary bg-primary/10' : 'border-slate-700 bg-slate-800/50'}`}
+                        >
+                            {image ? <img src={image.imageUrl} alt={option.label} width="80" height="80" className="object-contain h-20 w-20 mb-2" /> : <div className="h-20 w-20 bg-slate-700 rounded-md mb-2" />}
+                            <span className="font-semibold text-slate-100">{option.label}</span>
+                            <Checkbox
+                            id={option.id}
+                            checked={isChecked}
+                            onCheckedChange={(checked) => {
+                                const newValue = checked
+                                ? [...(field.value || []), option.id]
+                                : (field.value || []).filter((v) => v !== option.id);
+                                field.onChange(newValue);
+                            }}
+                            className="hidden"
+                            />
+                        </Label>
+                        );
+                    })}
+                    </div>
+                )}
+            />
+            {errors.machines && <p className="text-destructive text-sm mt-2">{errors.machines.message}</p>}
         </div>
 
-        {step < totalSteps && (
-            <div className="flex justify-between items-center mt-8">
-            <Button type="button" variant="outline" onClick={prevStep} disabled={step === 0}>
-                Back
-            </Button>
-            
+        <div>
+            <h3 className="text-lg font-semibold mb-4 text-slate-100">Please enter your contact details.</h3>
+            <div className="space-y-4">
+                <Controller name="name" control={control} render={({ field }) => <Input placeholder="Full Name" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
+                {errors.name && <p className="text-destructive text-sm">{errors.name.message}</p>}
+                <Controller name="company" control={control} render={({ field }) => <Input placeholder="Company Name" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
+                {errors.company && <p className="text-destructive text-sm">{errors.company.message}</p>}
+                <Controller name="email" control={control} render={({ field }) => <Input type="email" placeholder="Email Address" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
+                {errors.email && <p className="text-destructive text-sm">{errors.email.message}</p>}
+                <Controller name="phone" control={control} render={({ field }) => <Input type="tel" placeholder="Phone Number" {...field} className="bg-slate-800 border-slate-700 text-white" />} />
+                {errors.phone && <p className="text-destructive text-sm">{errors.phone.message}</p>}
+            </div>
+        </div>
+
+        <div>
+            <h3 className="text-lg font-semibold mb-4 text-slate-100">Anything else we should know? (Optional)</h3>
+            <Controller name="message" control={control} render={({ field }) => <Textarea placeholder="Your message..." {...field} className="bg-slate-800 border-slate-700 text-white h-24" />} />
+            {errors.message && <p className="text-destructive text-sm mt-2">{errors.message.message}</p>}
+        </div>
+
+        {serverError && <p className="text-destructive text-center mt-4">{serverError}</p>}
+        
+        <div className="flex justify-between items-center pt-4">
             <IframeDialog
                 title="AI Voice Assistant"
                 url="https://posso-ltd-ai-voice-assistant-365092986942.us-west1.run.app/"
@@ -231,21 +157,11 @@ export function CardMachineEnquiryForm() {
                     </Button>
                 }
             />
-            
-            {step < totalSteps - 1 ? (
-                <Button type="button" onClick={nextStep}>
-                Next
-                </Button>
-            ) : (
-                <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
-                </Button>
-            )}
-            </div>
-        )}
+            <Button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
+            </Button>
+        </div>
       </form>
     </div>
   );
 }
-
-    
