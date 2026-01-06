@@ -10,12 +10,14 @@ const port = process.env.PORT || 9002;
 app.prepare().then(() => {
   const server = express();
 
+  server.use(express.static('public'));
+
   server.all('*', (req, res) => {
     return handle(req, res);
   });
 
   server.listen(port, (err) => {
     if (err) throw err;
-    console.log(`> Ready on http://localhost:${port}`);
+    console.log(`> Ready on port ${port} | Mode: ${dev ? 'Development' : 'Production'}`);
   });
 });
