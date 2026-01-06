@@ -32,6 +32,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useState } from 'react';
+import { ScrollArea } from './ui/scroll-area';
 
 const Logo = () => (
   <svg
@@ -177,18 +178,19 @@ export function Header() {
                     <Menu className="h-6 w-6" />
                 </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-slate-950">
-                    <SheetHeader>
-                    <SheetTitle className="sr-only">Navigation</SheetTitle>
-                    </SheetHeader>
-                    <div className="flex flex-col h-full p-6">
-                        <Link href="/" className="flex items-center gap-3 mb-8" prefetch={false} onClick={() => setIsSheetOpen(false)}>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-slate-950 p-0 flex flex-col">
+                    <SheetHeader className="p-6 pb-0">
+                      <SheetTitle>
+                        <Link href="/" className="flex items-center gap-3" prefetch={false} onClick={() => setIsSheetOpen(false)}>
                             <Logo />
                             <span className="text-xl font-bold text-slate-50 tracking-wide">
                                 POSSO
                             </span>
                         </Link>
-                        <div className="flex flex-col gap-4">
+                      </SheetTitle>
+                    </SheetHeader>
+                    <ScrollArea className="flex-1 px-6">
+                        <div className="flex flex-col gap-4 py-6">
                             <Link href="/" onClick={() => setIsSheetOpen(false)}>
                             <Button variant="outline" className="w-full justify-start">
                                 <Home className="mr-2 h-4 w-4" />
@@ -226,7 +228,7 @@ export function Header() {
                                     )
                             ))}
                         </div>
-                    </div>
+                    </ScrollArea>
                 </SheetContent>
             </Sheet>
         </div>
