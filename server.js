@@ -14,9 +14,6 @@ app.prepare().then(() => {
 
   // Explicitly serve the public folder for assets like favicon
   server.use(express.static(path.join(__dirname, 'public')));
-  
-  // Explicitly serve Next.js static assets
-  server.use('/_next', express.static(path.join(__dirname, '.next')));
 
   // Handle all other requests with Next.js
   server.all('*', (req, res) => {
