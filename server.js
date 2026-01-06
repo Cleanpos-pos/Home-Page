@@ -1,5 +1,6 @@
 const express = require('express');
 const next = require('next');
+const path = require('path');
 require('dotenv').config();
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -10,7 +11,8 @@ const port = process.env.PORT || 9002;
 app.prepare().then(() => {
   const server = express();
 
-  server.use(express.static('public'));
+  // Explicitly serve the public folder
+  server.use(express.static(path.join(__dirname, 'public')));
 
   server.all('*', (req, res) => {
     return handle(req, res);
@@ -18,6 +20,7 @@ app.prepare().then(() => {
 
   server.listen(port, (err) => {
     if (err) throw err;
-    console.log(`> Ready on port ${port} | Mode: ${dev ? 'Development' : 'Production'}`);
+    console.log(`> Ready on http://localhost:${port}`);
+    console.log(`> Environment: ${dev ? 'Development' : 'Production'}`);
   });
 });
