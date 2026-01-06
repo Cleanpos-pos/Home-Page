@@ -1,18 +1,21 @@
+const express = require('express');
+const next = require('next');
 require('dotenv').config();
-const { https } = require('firebase-functions');
-const { default: next } = require('next');
 
-const isDev = process.env.NODE_ENV !== 'production';
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
+const port = process.env.PORT || 9002;
 
-const server = next({
-  dev: isDev,
-  //location of .next generated after running -> yarn build
-  conf: { distDir: '.next' },
-});
+app.prepare().then(() => {
+  const server = express();
 
-const nextjsHandle = server.getRequestHandler();
-exports.nextServer = https.onRequest((req, res) => {
-  return server.prepare().then(() => {
-    return nextjsHandle(req, res);
+  server.all('*', (req, res) => {
+    return handle(req, res);
+  });
+
+  server.listen(port, (err) => {
+    if (err) throw err;
+    console.log(`> Ready on http://localhost:${port}`);
   });
 });
