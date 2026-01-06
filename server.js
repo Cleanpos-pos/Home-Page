@@ -12,6 +12,9 @@ const port = process.env.PORT || 9002;
 app.prepare().then(() => {
   const server = express();
 
+  // Serve static files from the .next/static directory
+  server.use('/_next/static', express.static(path.join(__dirname, '.next/static')));
+  
   // Explicitly serve the public folder for assets like favicon
   server.use(express.static(path.join(__dirname, 'public')));
 
