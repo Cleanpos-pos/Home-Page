@@ -111,6 +111,9 @@ export function Header() {
       links: retailLinks,
     },
   ];
+  
+  const allMobileLinks = navLinks.flatMap(section => section.links);
+
 
   return (
     <header className="absolute top-0 z-50 w-full">
@@ -192,7 +195,7 @@ export function Header() {
                                 Home
                             </Button>
                             </Link>
-                            {navLinks.flatMap(section => section.links).map(({ href, label }) => (
+                            {allMobileLinks.map(({ href, label }) => (
                               <Link href={href} key={label} onClick={() => setIsSheetOpen(false)}>
                                   <Button variant="outline" className="w-full justify-start">
                                   {label}
