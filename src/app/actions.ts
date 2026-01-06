@@ -93,7 +93,7 @@ export async function submitCardMachineEnquiry(formData: unknown) {
         port: Number(process.env.SMTP_PORT),
         secure: Number(process.env.SMTP_PORT) === 465, // true for 465, false for other ports
         auth: {
-            user: process.env.SMTP_USER,
+            user: "api-key",
             pass: process.env.SMTP_PASS,
         },
     });
@@ -175,7 +175,7 @@ export async function submitGeneralEnquiry(formData: unknown) {
         port: Number(process.env.SMTP_PORT),
         secure: Number(process.env.SMTP_PORT) === 465,
         auth: {
-            user: process.env.SMTP_USER,
+            user: "api-key",
             pass: process.env.SMTP_PASS,
         },
     });
@@ -256,7 +256,7 @@ export async function submitAgentEnquiry(formData: unknown) {
         port: Number(process.env.SMTP_PORT),
         secure: Number(process.env.SMTP_PORT) === 465,
         auth: {
-            user: process.env.SMTP_USER,
+            user: "api-key",
             pass: process.env.SMTP_PASS,
         },
     });
