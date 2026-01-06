@@ -1,3 +1,4 @@
+
 const express = require('express');
 const next = require('next');
 const path = require('path');
@@ -11,9 +12,13 @@ const port = process.env.PORT || 9002;
 app.prepare().then(() => {
   const server = express();
 
-  // Explicitly serve the public folder
+  // Explicitly serve the public folder for assets like favicon
   server.use(express.static(path.join(__dirname, 'public')));
+  
+  // Explicitly serve Next.js static assets
+  server.use('/_next', express.static(path.join(__dirname, '.next')));
 
+  // Handle all other requests with Next.js
   server.all('*', (req, res) => {
     return handle(req, res);
   });
