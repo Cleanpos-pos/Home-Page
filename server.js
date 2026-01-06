@@ -1,5 +1,6 @@
 const express = require('express');
 const next = require('next');
+const path = require('path');
 require('dotenv').config();
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -10,8 +11,13 @@ const port = process.env.PORT || 9002;
 app.prepare().then(() => {
   const server = express();
 
-  // Let Next.js handle all requests, including serving its own static files.
-  // This is the simplest and most reliable setup for a custom server.
+  // Explicitly serve the Next.js static assets (like JS and CSS chunks)
+  server.use('/_next/static', express.static(path.join(__dirname, '.next/static')));
+  
+  // Explicitly serve the public folder (for icons, manifest.json, etc.)
+  server.use(express.static(path.join(__dirname, 'public')));
+
+  // Let Next.js handle all other requests (pages, etc.)
   server.all('*', (req, res) => {
     return handle(req, res);
   });
