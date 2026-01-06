@@ -1,7 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight, Globe, ShoppingCart, Smartphone, CreditCard, Bot } from 'lucide-react';
+import { ArrowRight, Globe, ShoppingCart, Smartphone, CreditCard, Bot, Ticket, Zap, Snowflake } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -14,6 +14,24 @@ export const metadata: Metadata = {
 };
 
 const blogPosts = [
+  {
+    title: 'Why Posso? The Operating System for High-Volume Amusement Parks',
+    description: 'Discover how we optimise guest flow and season pass ecosystems for 2026. High-speed turnstile integration and ride-side smart storage.',
+    href: '/blog/why-posso-amusement-park-efficiency-2026',
+    icon: <Ticket className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'Why Posso? Engineering the Frictionless Trampoline Park',
+    description: 'Revolutionise your trampoline park management with integrated digital waivers, RFID wristbands, and automated session timing.',
+    href: '/blog/why-posso-trampoline-park-tech-stack',
+    icon: <Zap className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'Why Posso? The Bespoke Solution for Modern Ice Rinks',
+    description: 'Optimise your ice rink or winter festival with Posso. Manage skate hire, session access, and secure storage in one unified system.',
+    href: '/blog/why-posso-ice-rink-management-software',
+    icon: <Snowflake className="w-12 h-12 text-primary" />,
+  },
   {
     title: 'POSSO POS Systems for Restaurants & Takeaways – Fast, Modern & Commission-Free Ordering',
     description: 'Discover POSSO POS – the UK’s modern EPOS system for restaurants & takeaways. Faster service, menu control, split payments and real reporting.',
@@ -72,7 +90,7 @@ export default function BlogPage() {
                       <CardTitle className="text-xl font-bold text-slate-50 group-hover:text-primary transition-colors">{post.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow flex flex-col">
-                      <CardDescription className="flex-grow">{post.description}</CardDescription>
+                      <CardDescription className="flex-grow line-clamp-3">{post.description}</CardDescription>
                       <div className="mt-4 text-primary flex items-center gap-2 font-semibold">
                         Read More <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </div>
