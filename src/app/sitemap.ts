@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/digital-signage',
     '/credit-card-machines',
     '/credit-card-machines-enquiry',
+    '/teya-card-machine-application-form',
     '/franchise',
     '/online-ordering',
     '/shop-fitting',
