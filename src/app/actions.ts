@@ -3,7 +3,6 @@
 import { z } from 'zod';
 import { analyzeTestimonialSentiment } from '@/ai/flows/analyze-testimonial-sentiment';
 import type { AnalyzeTestimonialSentimentOutput } from '@/ai/flows/analyze-testimonial-sentiment';
-import nodemailer from 'nodemailer';
 
 export type FormState = {
   message: string;
@@ -57,6 +56,36 @@ export async function analyzeSentimentAction(testimonial: string): Promise<Analy
     }
 }
 
+async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }: { subject: string; htmlContent: string; senderName: string, senderEmail: string }) {
+    const apiKey = process.env.BREVO_API_KEY;
+    if (!apiKey) {
+        console.error('Brevo API key is not configured.');
+        throw new Error('Email service is not configured.');
+    }
+
+    const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'api-key': apiKey,
+        },
+        body: JSON.stringify({
+            sender: { name: senderName, email: senderEmail },
+            to: [{ email: 'info@posso.uk', name: 'Posso Enquiries' }],
+            subject: subject,
+            htmlContent: htmlContent,
+        }),
+    });
+
+    if (!response.ok) {
+        const errorBody = await response.text();
+        console.error('Brevo API Error:', response.status, errorBody);
+        throw new Error('Failed to send email via Brevo API.');
+    }
+
+    return await response.json();
+}
+
 const cardMachineEnquirySchema = z.object({
     machines: z.array(z.string()).min(1, { message: 'Please select at least one machine.' }),
     name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -88,16 +117,6 @@ export async function submitCardMachineEnquiry(formData: unknown) {
     
     const { machines, name, company, email, phone, message } = validatedFields.data;
 
-    const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: Number(process.env.SMTP_PORT),
-        secure: false, // true for 465, false for other ports
-        auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS,
-        },
-    });
-
     const emailBody = `
         <h1>New Card Machine Enquiry</h1>
         <p><strong>Name:</strong> ${name}</p>
@@ -113,16 +132,13 @@ export async function submitCardMachineEnquiry(formData: unknown) {
         ${message ? `<p><strong>Message:</strong><br/>${message.replace(/\n/g, '<br>')}</p>` : ''}
     `;
 
-    const mailOptions = {
-        from: `"Posso Enquiry" <${process.env.SMTP_USER}>`,
-        to: 'info@posso.uk',
-        subject: 'New Card Machine Enquiry',
-        html: emailBody,
-    };
-
-
     try {
-        await transporter.sendMail(mailOptions);
+        await sendBrevoEmail({
+            subject: 'New Card Machine Enquiry',
+            htmlContent: emailBody,
+            senderName: 'Posso Enquiry',
+            senderEmail: 'info@posso.uk'
+        });
 
         return { 
             success: true,
@@ -170,16 +186,6 @@ export async function submitGeneralEnquiry(formData: unknown) {
     
     const { products, name, company, email, phone, message } = validatedFields.data;
 
-    const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: Number(process.env.SMTP_PORT),
-        secure: false,
-        auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS,
-        },
-    });
-
     const emailBody = `
         <h1>New General Enquiry</h1>
         <p><strong>Name:</strong> ${name}</p>
@@ -195,15 +201,13 @@ export async function submitGeneralEnquiry(formData: unknown) {
         ${message ? `<p><strong>Message:</strong><br/>${message.replace(/\n/g, '<br>')}</p>` : ''}
     `;
 
-    const mailOptions = {
-        from: `"Posso General Enquiry" <${process.env.SMTP_USER}>`,
-        to: 'info@posso.uk',
-        subject: 'New General Enquiry from Website',
-        html: emailBody,
-    };
-
     try {
-        await transporter.sendMail(mailOptions);
+        await sendBrevoEmail({
+            subject: 'New General Enquiry from Website',
+            htmlContent: emailBody,
+            senderName: 'Posso General Enquiry',
+            senderEmail: 'info@posso.uk'
+        });
         return { 
             success: true,
             message: 'Thank you for your enquiry! We will be in touch shortly.' 
@@ -248,16 +252,6 @@ export async function submitAgentEnquiry(formData: unknown) {
     
     const { name, email, phone, location, experience, interest } = validatedFields.data;
 
-    const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: Number(process.env.SMTP_PORT),
-        secure: false,
-        auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS,
-        },
-    });
-
     const emailBody = `
         <h1>New Independent Sales Agent Enquiry</h1>
         <p><strong>Name:</strong> ${name}</p>
@@ -274,15 +268,13 @@ export async function submitAgentEnquiry(formData: unknown) {
         </ul>
     `;
 
-    const mailOptions = {
-        from: `"Posso Agent Enquiry" <${process.env.SMTP_USER}>`,
-        to: 'info@posso.uk',
-        subject: 'New Independent Sales Agent Enquiry',
-        html: emailBody,
-    };
-
     try {
-        await transporter.sendMail(mailOptions);
+        await sendBrevoEmail({
+            subject: 'New Independent Sales Agent Enquiry',
+            htmlContent: emailBody,
+            senderName: 'Posso Agent Enquiry',
+            senderEmail: 'info@posso.uk'
+        });
         return { 
             success: true,
             message: 'Thank you for your interest! We have received your details and will be in touch if your profile matches our requirements.' 
