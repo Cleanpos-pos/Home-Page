@@ -248,9 +248,6 @@ export async function submitAgentEnquiry(formData: unknown) {
     
     const { name, email, phone, location, experience, interest } = validatedFields.data;
 
-    // For now, we'll just log it. You can add email sending logic here later.
-    console.log("New Agent Enquiry Received:", { name, email, phone, location, experience, interest });
-
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: Number(process.env.SMTP_PORT),
