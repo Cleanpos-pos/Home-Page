@@ -1,7 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight, Globe, ShoppingCart, Smartphone, CreditCard, Bot, Ticket, Zap, Snowflake } from 'lucide-react';
+import { ArrowRight, Globe, ShoppingCart, Smartphone, CreditCard, Bot, Ticket, Zap, Snowflake, Pizza, Coffee, Wifi } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -61,6 +61,30 @@ const blogPosts = [
     description: 'A deep dive into the rise of self-service kiosks in the UK, from QSRs to healthcare, and what it means for your business.',
     href: '/blog/self-service-revolution',
     icon: <Bot className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'Top Benefits of a Mobile POS Device for Restaurants',
+    description: 'Discover how mobile POS devices can revolutionise your restaurant, from faster service and tableside ordering to improved staff efficiency and sales.',
+    href: '/blog/benefits-of-a-mobile-pos-device-for-restaurants',
+    icon: <Wifi className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'The Best Food Delivery App is the One You Own',
+    description: 'Tired of high commissions? Discover why owning your online presence with a branded app is the best food delivery solution for UK takeaways.',
+    href: '/blog/best-food-delivery-app-uk',
+    icon: <Globe className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'The Best ePOS System for a Pizza Restaurant or Takeaway',
+    description: 'Find the best ePOS system for your pizza shop. Our guide covers essential features like custom toppings, delivery management, and online ordering.',
+    href: '/blog/pos-for-pizza-restaurant-best-system-for-pizza-shops',
+    icon: <Pizza className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'Choosing the Best ePOS System for Your Coffee Shop or Cafe',
+    description: 'Looking for an ePOS for your cafe? Our guide covers essential features like loyalty schemes, speedy payments, and multi-location management for UK coffee shops.',
+    href: '/blog/cafe-coffee-shop-epos-systems-uk',
+    icon: <Coffee className="w-12 h-12 text-primary" />,
   },
 ];
 

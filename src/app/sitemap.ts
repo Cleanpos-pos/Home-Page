@@ -27,6 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/why-posso-amusement-park-efficiency-2026',
     '/blog/why-posso-trampoline-park-tech-stack',
     '/blog/why-posso-ice-rink-management-software',
+    '/blog/benefits-of-a-mobile-pos-device-for-restaurants',
+    '/blog/best-food-delivery-app-uk',
+    '/blog/pos-for-pizza-restaurant-best-system-for-pizza-shops',
+    '/blog/cafe-coffee-shop-epos-systems-uk',
     '/agents',
     '/privacy-policy',
     '/cookie-policy',
@@ -45,7 +49,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/solutions/ski-resorts',
     '/solutions/spas-wellness-centers',
     '/solutions/festivals-events',
-    '/web-design'
+    '/web-design',
+    '/digital-menu-boards-uk-my-signage',
+    '/contact-posso-ltd',
+    '/self-order-kiosk-uk-2',
+    '/self-order-kiosks-uk',
+    '/book-a-call',
+    '/credit-card-machine-clover-flex-uk',
+    '/digital-menu-boards-4',
+    '/hospitality-epos-systems-by-posso-uk-epos-systems',
+    '/food-order-app-comparison-tool',
+    '/restaurant-epos-system-3',
+    '/android-epos-systems-from-posso',
+    '/small-pos-magic-the-tiny-marvels-transforming-our-lives',
+    '/dry-cleaning-epos-systems-uk',
+    '/portable-card-machines',
+    '/skegness-pos-systems',
+    '/cobways-tell-a-friend-scheme',
+    '/franchise-epos',
+    '/posso-epos'
   ];
 
   return routes.map((route) => ({
