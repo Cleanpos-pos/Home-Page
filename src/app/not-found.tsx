@@ -1,24 +1,35 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Hourglass, ArrowLeft, Home, ShoppingCart, Smartphone, Ticket, CreditCard, Building } from 'lucide-react';
+import { Hourglass, ArrowLeft, Building, ShoppingCart, Users, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const siteLinks = [
-  { href: '/', title: 'Homepage', description: 'Return to the main page.', icon: <Home className="w-8 h-8 text-primary" /> },
-  { href: '/pos', title: 'ePOS Systems', description: 'Explore our restaurant ePOS solutions.', icon: <ShoppingCart className="w-8 h-8 text-primary" /> },
-  { href: '/kiosks', title: 'Self-Order Kiosks', description: 'Learn about our self-service kiosks.', icon: <Smartphone className="w-8 h-8 text-primary" /> },
-  { href: '/ticketing', title: 'Ticketing Solutions', description: 'Discover our venue management platform.', icon: <Ticket className="w-8 h-8 text-primary" /> },
-  { href: '/credit-card-machines', title: 'Card Machines', description: 'Find the right payment terminal.', icon: <CreditCard className="w-8 h-8 text-primary" /> },
-  { href: '/franchise', title: 'Franchise Systems', description: 'Scale your brand with our ecosystem.', icon: <Building className="w-8 h-8 text-primary" /> },
-]
+const hospitalityLinks = [
+  { href: '/pos', title: 'ePOS Systems' },
+  { href: '/kiosks', title: 'Self-Order Kiosks' },
+  { href: '/digital-signage', title: 'Kitchen Displays' },
+  { href: '/online-ordering', title: 'Online Ordering' },
+  { href: '/franchise', title: 'Franchise Solutions' },
+];
+
+const retailLinks = [
+  { href: '/digital-signage', title: 'Digital Signage' },
+  { href: '/shop-fitting', title: 'Shop Fitting' },
+  { href: '/shop-signage', title: 'Shop Signage' },
+];
+
+const companyLinks = [
+  { href: '/#about', title: 'About Us' },
+  { href: '/blog', title: 'Blog' },
+  { href: '/contact', title: 'Contact' },
+  { href: '/agents', title: 'Become an Agent' },
+  { href: '/finance', title: 'Finance Calculator' },
+];
 
 export default function NotFound() {
-  const router = useRouter();
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -35,26 +46,59 @@ export default function NotFound() {
             </p>
           </div>
 
-          <div className="mt-16">
-            <h2 className="text-2xl font-bold text-slate-100 mb-6">Perhaps you were looking for...</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {siteLinks.map((link) => (
-                <Link href={link.href} key={link.href}>
-                  <Card className="glass-card text-left h-full">
-                    <CardHeader className="flex-row items-center gap-4">
-                      {link.icon}
-                      <CardTitle className="text-xl text-slate-100">{link.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-slate-300">{link.description}</p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
+          <div className="mt-16 max-w-5xl mx-auto">
+            <h2 className="text-2xl font-bold text-slate-100 mb-8">Perhaps you were looking for one of these pages?</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+              
+              {/* Hospitality Section */}
+              <div className="space-y-4">
+                <h3 className="flex items-center gap-3 text-xl font-semibold text-primary">
+                  <ShoppingCart className="w-6 h-6" />
+                  Hospitality
+                </h3>
+                <div className="flex flex-col gap-2">
+                  {hospitalityLinks.map(link => (
+                    <Link href={link.href} key={link.href} className="text-slate-300 hover:text-primary hover:underline underline-offset-4 transition-colors">
+                      {link.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Retail Section */}
+              <div className="space-y-4">
+                <h3 className="flex items-center gap-3 text-xl font-semibold text-primary">
+                  <Briefcase className="w-6 h-6" />
+                  Retail Solutions
+                </h3>
+                 <div className="flex flex-col gap-2">
+                  {retailLinks.map(link => (
+                    <Link href={link.href} key={link.href} className="text-slate-300 hover:text-primary hover:underline underline-offset-4 transition-colors">
+                      {link.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Company Section */}
+              <div className="space-y-4">
+                <h3 className="flex items-center gap-3 text-xl font-semibold text-primary">
+                  <Building className="w-6 h-6" />
+                  Company
+                </h3>
+                 <div className="flex flex-col gap-2">
+                  {companyLinks.map(link => (
+                    <Link href={link.href} key={link.href} className="text-slate-300 hover:text-primary hover:underline underline-offset-4 transition-colors">
+                      {link.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
           
-          <div className="mt-12">
+          <div className="mt-16">
             <Button asChild>
                 <Link href="/">
                     <ArrowLeft className="mr-2 h-4 w-4" />
