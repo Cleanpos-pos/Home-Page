@@ -2,9 +2,10 @@
 
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Hourglass, ArrowLeft, Building, ShoppingCart, Users, Briefcase } from 'lucide-react';
+import { Hourglass, ArrowLeft, Building, ShoppingCart, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 const hospitalityLinks = [
   { href: '/pos', title: 'ePOS Systems' },
@@ -28,7 +29,37 @@ const companyLinks = [
   { href: '/finance', title: 'Finance Calculator' },
 ];
 
+// Function to shuffle an array
+const shuffle = <T,>(array: T[]): T[] => {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex !== 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
 export default function NotFound() {
+  const [shuffledHospitality, setShuffledHospitality] = useState(hospitalityLinks);
+  const [shuffledRetail, setShuffledRetail] = useState(retailLinks);
+  const [shuffledCompany, setShuffledCompany] = useState(companyLinks);
+
+  useEffect(() => {
+    // This code runs only on the client, after the initial render.
+    // This prevents the hydration mismatch error.
+    setShuffledHospitality(shuffle([...hospitalityLinks]));
+    setShuffledRetail(shuffle([...retailLinks]));
+    setShuffledCompany(shuffle([...companyLinks]));
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -57,7 +88,7 @@ export default function NotFound() {
                   Hospitality
                 </h3>
                 <div className="flex flex-col gap-2">
-                  {hospitalityLinks.map(link => (
+                  {shuffledHospitality.map(link => (
                     <Link href={link.href} key={link.href} className="text-slate-300 hover:text-primary hover:underline underline-offset-4 transition-colors">
                       {link.title}
                     </Link>
@@ -72,7 +103,7 @@ export default function NotFound() {
                   Retail Solutions
                 </h3>
                  <div className="flex flex-col gap-2">
-                  {retailLinks.map(link => (
+                  {shuffledRetail.map(link => (
                     <Link href={link.href} key={link.href} className="text-slate-300 hover:text-primary hover:underline underline-offset-4 transition-colors">
                       {link.title}
                     </Link>
@@ -87,7 +118,7 @@ export default function NotFound() {
                   Company
                 </h3>
                  <div className="flex flex-col gap-2">
-                  {companyLinks.map(link => (
+                  {shuffledCompany.map(link => (
                     <Link href={link.href} key={link.href} className="text-slate-300 hover:text-primary hover:underline underline-offset-4 transition-colors">
                       {link.title}
                     </Link>
