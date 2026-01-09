@@ -43,7 +43,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/solutions/ice-skating-rinks',
     '/solutions/ski-resorts',
     '/solutions/spas-wellness-centers',
-    '/solutions/festivals-events'
+    '/solutions/festivals-events',
+    '/web-design'
   ];
 
   return routes.map((route) => ({
