@@ -275,7 +275,7 @@ export async function submitAgentEnquiry(formData: unknown) {
     `;
 
     const mailOptions = {
-        from: '"Posso Agent Enquiry" <enquiry@posso.uk>',
+        from: '"Posso Agent Enquiry" <info@posso.uk>',
         to: 'info@posso.uk',
         subject: 'New Independent Sales Agent Enquiry',
         html: emailBody,
