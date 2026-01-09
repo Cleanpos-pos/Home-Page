@@ -91,9 +91,9 @@ export async function submitCardMachineEnquiry(formData: unknown) {
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: Number(process.env.SMTP_PORT),
-        secure: Number(process.env.SMTP_PORT) === 465, // true for 465, false for other ports
+        secure: false, // true for 465, false for other ports
         auth: {
-            user: "api-key",
+            user: process.env.SMTP_USER,
             pass: process.env.SMTP_PASS,
         },
     });
@@ -114,7 +114,7 @@ export async function submitCardMachineEnquiry(formData: unknown) {
     `;
 
     const mailOptions = {
-        from: '"Posso Enquiry" <enquiry@posso.uk>',
+        from: `"Posso Enquiry" <${process.env.SMTP_USER}>`,
         to: 'info@posso.uk',
         subject: 'New Card Machine Enquiry',
         html: emailBody,
@@ -173,9 +173,9 @@ export async function submitGeneralEnquiry(formData: unknown) {
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: Number(process.env.SMTP_PORT),
-        secure: Number(process.env.SMTP_PORT) === 465,
+        secure: false,
         auth: {
-            user: "api-key",
+            user: process.env.SMTP_USER,
             pass: process.env.SMTP_PASS,
         },
     });
@@ -196,7 +196,7 @@ export async function submitGeneralEnquiry(formData: unknown) {
     `;
 
     const mailOptions = {
-        from: '"Posso General Enquiry" <enquiry@posso.uk>',
+        from: `"Posso General Enquiry" <${process.env.SMTP_USER}>`,
         to: 'info@posso.uk',
         subject: 'New General Enquiry from Website',
         html: emailBody,
@@ -251,9 +251,9 @@ export async function submitAgentEnquiry(formData: unknown) {
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: Number(process.env.SMTP_PORT),
-        secure: Number(process.env.SMTP_PORT) === 465,
+        secure: false,
         auth: {
-            user: "api-key",
+            user: process.env.SMTP_USER,
             pass: process.env.SMTP_PASS,
         },
     });
@@ -275,7 +275,7 @@ export async function submitAgentEnquiry(formData: unknown) {
     `;
 
     const mailOptions = {
-        from: '"Posso Agent Enquiry" <info@posso.uk>',
+        from: `"Posso Agent Enquiry" <${process.env.SMTP_USER}>`,
         to: 'info@posso.uk',
         subject: 'New Independent Sales Agent Enquiry',
         html: emailBody,
