@@ -78,36 +78,56 @@ export async function analyzeSentimentAction(testimonial: string): Promise<Analy
 }
 
 async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }: { subject: string; htmlContent: string; senderName: string, senderEmail: string }) {
+    console.log(`> [Brevo] Attempting to send email: ${subject}`);
     const apiKey = process.env.BREVO_API_KEY;
     if (!apiKey) {
-        console.error('CRITICAL: BREVO_API_KEY is missing from environment variables.');
-        throw new Error('Email service configuration missing. Please ensure BREVO_API_KEY is set in the server environment.');
+        console.error('> [Brevo] CRITICAL: BREVO_API_KEY is missing.');
+        throw new Error('Email service configuration missing. Please ensure BREVO_API_KEY is set.');
     }
 
     const recipientEmail = process.env.RECIPIENT_EMAIL || 'info@posso.uk';
     const finalSenderEmail = process.env.SENDER_EMAIL || 'info@posso.uk';
 
-    const response = await fetch('https://api.brevo.com/v3/smtp/email', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'api-key': apiKey,
-        },
-        body: JSON.stringify({
-            sender: { name: senderName, email: finalSenderEmail },
-            to: [{ email: recipientEmail, name: 'Posso Enquiries' }],
-            subject: subject,
-            htmlContent: htmlContent,
-        }),
-    });
+    console.log(`> [Brevo] Recipient: ${recipientEmail}, Sender: ${finalSenderEmail}`);
 
-    if (!response.ok) {
-        const errorBody = await response.text();
-        console.error('Brevo API Error:', response.status, errorBody);
-        throw new Error(`Brevo API Error (${response.status}): ${errorBody}`);
+    try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
+        const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'api-key': apiKey,
+            },
+            body: JSON.stringify({
+                sender: { name: senderName, email: finalSenderEmail },
+                to: [{ email: recipientEmail, name: 'Posso Enquiries' }],
+                subject: subject,
+                htmlContent: htmlContent,
+            }),
+            signal: controller.signal
+        });
+
+        clearTimeout(timeoutId);
+
+        if (!response.ok) {
+            const errorBody = await response.text();
+            console.error(`> [Brevo] API Error (${response.status}):`, errorBody);
+            throw new Error(`Brevo API Error (${response.status})`);
+        }
+
+        const resData = await response.json();
+        console.log('> [Brevo] Email sent successfully:', resData.messageId);
+        return resData;
+    } catch (error: any) {
+        if (error.name === 'AbortError') {
+            console.error('> [Brevo] Error: Request timed out after 10 seconds.');
+            throw new Error('Email service timed out. Please check server connectivity.');
+        }
+        console.error('> [Brevo] Fetch Error:', error);
+        throw error;
     }
-
-    return await response.json();
 }
 
 const cardMachineEnquirySchema = z.object({
@@ -190,9 +210,11 @@ const generalEnquirySchema = z.object({
 });
 
 export async function submitGeneralEnquiry(formData: unknown) {
+    console.log('> [Action] submitGeneralEnquiry started');
     const validatedFields = generalEnquirySchema.safeParse(formData);
 
     if (!validatedFields.success) {
+        console.warn('> [Action] Validation failed:', validatedFields.error.flatten().fieldErrors);
         const fieldErrors = validatedFields.error.flatten().fieldErrors;
         return {
             success: false,
