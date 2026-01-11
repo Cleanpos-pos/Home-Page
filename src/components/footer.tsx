@@ -24,6 +24,7 @@ export function Footer() {
                         <h4 className="font-bold text-slate-50 mb-4">Hospitality</h4>
                         <ul className="space-y-2 text-sm text-slate-400">
                             <li><Link href="/pos" className="hover:text-primary transition-colors">ePOS Systems</Link></li>
+                            <li><Link href="/tablemaestro" className="hover:text-primary transition-colors">TableMaestro Booking</Link></li>
                             <li><Link href="/kiosks" className="hover:text-primary transition-colors">Self-Order Kiosks</Link></li>
                             <li><Link href="/digital-signage" className="hover:text-primary transition-colors">Kitchen Displays</Link></li>
                             <li><Link href="/online-ordering" className="hover:text-primary transition-colors">Online Ordering</Link></li>
