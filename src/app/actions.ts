@@ -103,7 +103,7 @@ async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }:
     if (!response.ok) {
         const errorBody = await response.text();
         console.error('Brevo API Error:', response.status, errorBody);
-        throw new Error('Failed to send email via Brevo API.');
+        throw new Error(`Brevo API Error (${response.status}): ${errorBody}`);
     }
 
     return await response.json();
@@ -172,7 +172,7 @@ export async function submitCardMachineEnquiry(formData: unknown) {
         console.error('SMTP Error:', error);
         return {
             success: false,
-            message: 'There was an error sending your enquiry. Please try again later.',
+            message: error instanceof Error ? `Error: ${error.message}` : 'There was an error sending your enquiry. Please try again later.',
             errors: null,
         }
     }
@@ -239,7 +239,7 @@ export async function submitGeneralEnquiry(formData: unknown) {
         console.error('SMTP Error:', error);
         return {
             success: false,
-            message: 'There was an error sending your enquiry. Please try again later.',
+            message: error instanceof Error ? `Error: ${error.message}` : 'There was an error sending your enquiry. Please try again later.',
             errors: null,
         }
     }
@@ -306,7 +306,7 @@ export async function submitAgentEnquiry(formData: unknown) {
         console.error('SMTP Error:', error);
         return {
             success: false,
-            message: 'There was an error sending your enquiry. Please try again later.',
+            message: error instanceof Error ? `Error: ${error.message}` : 'There was an error sending your enquiry. Please try again later.',
             errors: null,
         }
     }
