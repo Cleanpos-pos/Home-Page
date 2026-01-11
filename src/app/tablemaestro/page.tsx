@@ -100,10 +100,9 @@ export default function TableMaestroPage() {
                                     {[
                                         "Zero commissions on bookings - keep all your profit.",
                                         "Fully branded booking widget that fits your website.",
-                                        "Automated email and SMS reminders to reduce no-shows.",
+                                        "Automated email reminders to reduce no-shows.",
                                         "Powerful promotion engine to fill empty tables during quiet hours.",
                                         "Mobile-optimized for your customers and your staff.",
-                                        "Seamless integration with Posso ePOS systems."
                                     ].map((benefit, i) => (
                                         <div key={i} className="flex items-start gap-4">
                                             <div className="mt-1 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
