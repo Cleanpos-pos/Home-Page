@@ -91,9 +91,11 @@ async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }:
     console.log(`> [Brevo] Recipient: ${recipientEmail}, Sender: ${finalSenderEmail}`);
 
     try {
+        console.log(`> [Brevo] Sending request to Brevo API...`);
         const fetchPromise = fetch('https://api.brevo.com/v3/smtp/email', {
             method: 'POST',
             headers: {
+                'Accept': 'application/json',
                 'Content-Type': 'application/json',
                 'api-key': apiKey,
             },
@@ -106,7 +108,7 @@ async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }:
         });
 
         const timeoutPromise = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error('TIMEOUT_EXCEEDED')), 10000)
+            setTimeout(() => reject(new Error('TIMEOUT_EXCEEDED')), 12000)
         );
 
         const response = await (Promise.race([fetchPromise, timeoutPromise]) as Promise<Response>);

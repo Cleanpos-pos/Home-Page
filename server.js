@@ -2,7 +2,7 @@ const express = require('express');
 const next = require('next');
 const path = require('path');
 const fs = require('fs');
-require('dotenv').config();
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const dev = process.env.NODE_ENV === 'development';
 const app = next({ dev });
@@ -35,6 +35,18 @@ app.prepare().then(() => {
     console.log(`> [Posso] Serving static assets from ${staticPath}`);
     server.use('/_next/static', express.static(staticPath));
   }
+
+  // Health Check
+  server.get('/health', (req, res) => {
+    res.status(200).json({
+      status: 'OK',
+      timestamp: new Date().toISOString(),
+      env: {
+        brevo: !!process.env.BREVO_API_KEY,
+        recipient: process.env.RECIPIENT_EMAIL || 'default'
+      }
+    });
+  });
 
   // Serve the public folder
   const publicPath = path.join(__dirname, 'public');
