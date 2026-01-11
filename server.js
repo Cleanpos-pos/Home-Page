@@ -38,13 +38,24 @@ app.prepare().then(() => {
 
   // Health Check
   server.get('/health', (req, res) => {
+    const envStatus = {};
+    // Check for common keys without revealing values
+    ['BREVO_API_KEY', 'RECIPIENT_EMAIL', 'SENDER_EMAIL', 'NODE_ENV', 'PORT'].forEach(key => {
+      envStatus[key] = process.env[key] ? `SET (${process.env[key].length} chars)` : 'MISSING';
+    });
+
     res.status(200).json({
       status: 'OK',
       timestamp: new Date().toISOString(),
-      env: {
-        brevo: !!process.env.BREVO_API_KEY,
-        recipient: process.env.RECIPIENT_EMAIL || 'default'
-      }
+      node_version: process.version,
+      dir: __dirname,
+      environment_variables: envStatus,
+      all_non_secret_keys: Object.keys(process.env).filter(k =>
+        !k.includes('SECRET') &&
+        !k.includes('PASSWORD') &&
+        !k.includes('KEY') &&
+        !k.includes('AUTH')
+      )
     });
   });
 
