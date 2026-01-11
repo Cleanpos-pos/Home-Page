@@ -5,41 +5,61 @@ import { analyzeTestimonialSentiment } from '@/ai/flows/analyze-testimonial-sent
 import type { AnalyzeTestimonialSentimentOutput } from '@/ai/flows/analyze-testimonial-sentiment';
 
 export type FormState = {
-  message: string;
-  fields?: Record<string, string>;
-  issues?: string[];
+    message: string;
+    fields?: Record<string, string>;
+    issues?: string[];
 };
 
 const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters.'),
-  email: z.string().email('Please enter a valid email address.'),
-  message: z.string().min(10, 'Message must be at least 10 characters.'),
+    name: z.string().min(2, 'Name must be at least 2 characters.'),
+    email: z.string().email('Please enter a valid email address.'),
+    message: z.string().min(10, 'Message must be at least 10 characters.'),
 });
 
 export async function submitContactForm(
-  prevState: FormState,
-  formData: FormData
+    prevState: FormState,
+    formData: FormData
 ): Promise<FormState> {
-  const validatedFields = contactSchema.safeParse(
-    Object.fromEntries(formData.entries())
-  );
+    const validatedFields = contactSchema.safeParse(
+        Object.fromEntries(formData.entries())
+    );
 
-  if (!validatedFields.success) {
-    const { fieldErrors } = validatedFields.error.flatten();
-    return {
-      message: 'Please check your input and try again.',
-      fields: {
-        name: fieldErrors.name?.[0] ?? '',
-        email: fieldErrors.email?.[0] ?? '',
-        message: fieldErrors.message?.[0] ?? '',
-      },
-    };
-  }
+    if (!validatedFields.success) {
+        const { fieldErrors } = validatedFields.error.flatten();
+        return {
+            message: 'Please check your input and try again.',
+            fields: {
+                name: fieldErrors.name?.[0] ?? '',
+                email: fieldErrors.email?.[0] ?? '',
+                message: fieldErrors.message?.[0] ?? '',
+            },
+        };
+    }
 
-  // In a real application, you would send an email, save to a database, etc.
-  console.log('Contact form submitted:', validatedFields.data);
+    const { name, email, message } = validatedFields.data;
 
-  return { message: 'Thank you for your message! We will get back to you soon.' };
+    try {
+        await sendBrevoEmail({
+            subject: 'New Contact Form Submission',
+            htmlContent: `
+            <h1>New Contact Form Submission</h1>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Message:</strong></p>
+            <p>${message.replace(/\n/g, '<br>')}</p>
+        `,
+            senderName: 'Posso Contact Form',
+            senderEmail: 'info@posso.uk'
+        });
+
+        return { message: 'Thank you for your message! We will get back to you soon.' };
+    } catch (error) {
+        console.error('SMTP Error:', error);
+        return {
+            message: 'There was an error sending your message. Please try again later.',
+            fields: { name, email, message }
+        };
+    }
 }
 
 
@@ -63,6 +83,9 @@ async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }:
         throw new Error('Email service is not configured.');
     }
 
+    const recipientEmail = process.env.RECIPIENT_EMAIL || 'info@posso.uk';
+    const finalSenderEmail = process.env.SENDER_EMAIL || 'info@posso.uk';
+
     const response = await fetch('https://api.brevo.com/v3/smtp/email', {
         method: 'POST',
         headers: {
@@ -70,8 +93,8 @@ async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }:
             'api-key': apiKey,
         },
         body: JSON.stringify({
-            sender: { name: senderName, email: senderEmail },
-            to: [{ email: 'info@posso.uk', name: 'Posso Enquiries' }],
+            sender: { name: senderName, email: finalSenderEmail },
+            to: [{ email: recipientEmail, name: 'Posso Enquiries' }],
             subject: subject,
             htmlContent: htmlContent,
         }),
@@ -114,7 +137,7 @@ export async function submitCardMachineEnquiry(formData: unknown) {
             },
         };
     }
-    
+
     const { machines, name, company, email, phone, message } = validatedFields.data;
 
     const emailBody = `
@@ -140,9 +163,9 @@ export async function submitCardMachineEnquiry(formData: unknown) {
             senderEmail: 'info@posso.uk'
         });
 
-        return { 
+        return {
             success: true,
-            message: 'Thank you for your enquiry! We have received your details and will be in touch shortly.' 
+            message: 'Thank you for your enquiry! We have received your details and will be in touch shortly.'
         };
 
     } catch (error) {
@@ -183,7 +206,7 @@ export async function submitGeneralEnquiry(formData: unknown) {
             },
         };
     }
-    
+
     const { products, name, company, email, phone, message } = validatedFields.data;
 
     const emailBody = `
@@ -208,9 +231,9 @@ export async function submitGeneralEnquiry(formData: unknown) {
             senderName: 'Posso General Enquiry',
             senderEmail: 'info@posso.uk'
         });
-        return { 
+        return {
             success: true,
-            message: 'Thank you for your enquiry! We will be in touch shortly.' 
+            message: 'Thank you for your enquiry! We will be in touch shortly.'
         };
     } catch (error) {
         console.error('SMTP Error:', error);
@@ -223,12 +246,12 @@ export async function submitGeneralEnquiry(formData: unknown) {
 }
 
 const agentEnquirySchema = z.object({
-  name: z.string().min(2, 'Name is required.'),
-  email: z.string().email('A valid email is required.'),
-  phone: z.string().min(10, 'A valid phone number is required.'),
-  location: z.string().min(2, 'Location is required.'),
-  experience: z.string().min(20, 'Please provide more detail about your experience.'),
-  interest: z.array(z.string()).min(1, { message: 'Please select at least one product.' }),
+    name: z.string().min(2, 'Name is required.'),
+    email: z.string().email('A valid email is required.'),
+    phone: z.string().min(10, 'A valid phone number is required.'),
+    location: z.string().min(2, 'Location is required.'),
+    experience: z.string().min(20, 'Please provide more detail about your experience.'),
+    interest: z.array(z.string()).min(1, { message: 'Please select at least one product.' }),
 });
 
 export async function submitAgentEnquiry(formData: unknown) {
@@ -249,7 +272,7 @@ export async function submitAgentEnquiry(formData: unknown) {
             },
         };
     }
-    
+
     const { name, email, phone, location, experience, interest } = validatedFields.data;
 
     const emailBody = `
@@ -275,9 +298,9 @@ export async function submitAgentEnquiry(formData: unknown) {
             senderName: 'Posso Agent Enquiry',
             senderEmail: 'info@posso.uk'
         });
-        return { 
+        return {
             success: true,
-            message: 'Thank you for your interest! We have received your details and will be in touch if your profile matches our requirements.' 
+            message: 'Thank you for your interest! We have received your details and will be in touch if your profile matches our requirements.'
         };
     } catch (error) {
         console.error('SMTP Error:', error);
@@ -288,4 +311,3 @@ export async function submitAgentEnquiry(formData: unknown) {
         }
     }
 }
-    
