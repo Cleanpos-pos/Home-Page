@@ -91,10 +91,7 @@ async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }:
     console.log(`> [Brevo] Recipient: ${recipientEmail}, Sender: ${finalSenderEmail}`);
 
     try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
-
-        const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+        const fetchPromise = fetch('https://api.brevo.com/v3/smtp/email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -106,10 +103,13 @@ async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }:
                 subject: subject,
                 htmlContent: htmlContent,
             }),
-            signal: controller.signal
         });
 
-        clearTimeout(timeoutId);
+        const timeoutPromise = new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('TIMEOUT_EXCEEDED')), 10000)
+        );
+
+        const response = await (Promise.race([fetchPromise, timeoutPromise]) as Promise<Response>);
 
         if (!response.ok) {
             const errorBody = await response.text();
@@ -121,7 +121,7 @@ async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }:
         console.log('> [Brevo] Email sent successfully:', resData.messageId);
         return resData;
     } catch (error: any) {
-        if (error.name === 'AbortError') {
+        if (error.message === 'TIMEOUT_EXCEEDED') {
             console.error('> [Brevo] Error: Request timed out after 10 seconds.');
             throw new Error('Email service timed out. Please check server connectivity.');
         }

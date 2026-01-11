@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Cog, MonitorCheck, Phone, Zap } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
+import Image from 'next/image';
 import { IframeDialog } from '../iframe-dialog';
 
 
@@ -11,8 +12,18 @@ export function Hero() {
 
     return (
         <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-background to-slate-950 opacity-90" />
-            <div className="absolute inset-0 grid-bg opacity-40" />
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/restaurant-interior-posso.jpg"
+                    alt="Premium Restaurant Interior"
+                    fill
+                    className="object-cover opacity-30"
+                    priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/90 to-slate-950" />
+            </div>
+            <div className="absolute inset-0 grid-bg opacity-30 z-0" />
 
             <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 items-center relative z-10">
                 <div className="flex flex-col gap-6 text-center md:text-left items-center md:items-start">

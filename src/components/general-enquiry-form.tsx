@@ -73,17 +73,23 @@ export function GeneralEnquiryForm() {
   const onSubmit = async (data: EnquiryFormValues) => {
     setIsSubmitting(true);
     setServerError(null);
-    const result = await submitGeneralEnquiry(data);
-    setIsSubmitting(false);
+    try {
+      const result = await submitGeneralEnquiry(data);
+      setIsSubmitting(false);
 
-    if (result.success) {
-      setIsSuccess(true);
-      setTimeout(() => router.push('/'), 4000);
-    } else {
-      setServerError(result.message);
-      if (result.errors) {
-        console.error('Validation errors:', result.errors);
+      if (result.success) {
+        setIsSuccess(true);
+        setTimeout(() => router.push('/'), 4000);
+      } else {
+        setServerError(result.message);
+        if (result.errors) {
+          console.error('Validation errors:', result.errors);
+        }
       }
+    } catch (err) {
+      console.error('Submission error:', err);
+      setIsSubmitting(false);
+      setServerError('A connection error occurred. Please try again or call us at 0113 521 1716.');
     }
   };
 
