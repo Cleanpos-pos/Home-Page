@@ -13,6 +13,8 @@ const hostname = process.env.HOSTNAME || '0.0.0.0';
 console.log(`> [Posso] Starting server in ${dev ? 'development' : 'production'} mode...`);
 console.log(`> [Posso] NODE_ENV: ${process.env.NODE_ENV || 'not set (defaulting to production in next.js)'}`);
 console.log(`> [Posso] Local Port: ${port}`);
+console.log(`> [Posso] Brevo API Key: ${process.env.BREVO_API_KEY ? 'CONFIGURED (Found)' : 'MISSING (Check .env file)'}`);
+console.log(`> [Posso] Recipient Email: ${process.env.RECIPIENT_EMAIL || 'info@posso.uk'}`);
 
 // Verify .next directory existence in production
 if (!dev) {

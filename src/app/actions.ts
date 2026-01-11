@@ -80,8 +80,8 @@ export async function analyzeSentimentAction(testimonial: string): Promise<Analy
 async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }: { subject: string; htmlContent: string; senderName: string, senderEmail: string }) {
     const apiKey = process.env.BREVO_API_KEY;
     if (!apiKey) {
-        console.error('Brevo API key is not configured.');
-        throw new Error('Email service is not configured.');
+        console.error('CRITICAL: BREVO_API_KEY is missing from environment variables.');
+        throw new Error('Email service configuration missing. Please ensure BREVO_API_KEY is set in the server environment.');
     }
 
     const recipientEmail = process.env.RECIPIENT_EMAIL || 'info@posso.uk';
