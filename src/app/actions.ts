@@ -80,13 +80,22 @@ export async function analyzeSentimentAction(testimonial: string): Promise<Analy
 async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }: { subject: string; htmlContent: string; senderName: string, senderEmail: string }) {
     console.log(`> [Brevo] Attempting to send email: ${subject}`);
 
-    // Attempt to find the API key in multiple common locations
-    const apiKey = process.env.BREVO_API_KEY || process.env.NEXT_PUBLIC_BREVO_API_KEY;
+    // 1. Standard Lookup
+    let apiKey = process.env.BREVO_API_KEY;
+
+    // 2. Fallback: Case-insensitive search + Trim spaces (Fixes Hostinger panel copy-paste issues)
+    if (!apiKey || apiKey.trim().length < 10) {
+        const foundKey = Object.keys(process.env).find(k => k.toUpperCase() === 'BREVO_API_KEY');
+        if (foundKey) {
+            apiKey = process.env[foundKey]?.trim();
+            console.log(`> [Brevo] Found key via case-insensitive search: ${foundKey}`);
+        }
+    }
 
     if (!apiKey || apiKey.length < 10) {
         const envKeys = Object.keys(process.env).filter(k => k.includes('BREVO') || k.includes('API'));
-        console.error(`> [Brevo] CRITICAL: BREVO_API_KEY is missing. Found these similar keys: ${envKeys.join(', ')}`);
-        throw new Error(`Email service configuration missing. (Checked ${envKeys.length} potential keys)`);
+        console.error(`> [Brevo] CRITICAL: BREVO_API_KEY is missing/invalid. Known keys: ${envKeys.join(', ')}`);
+        throw new Error(`Email config missing. The server sees these keys: [${envKeys.join(', ')}]. Please check for typos in the Hostinger panel.`);
     }
 
     const recipientEmail = process.env.RECIPIENT_EMAIL || 'info@posso.uk';
