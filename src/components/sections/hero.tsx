@@ -47,7 +47,6 @@ export function Hero() {
 
                 </div>
 
-
                 <div className="relative flex items-center justify-center h-[500px]">
                     <div className="absolute w-full h-full animate-spin-slow" style={{ animationDuration: '20s' }}>
                         <div className="absolute w-[400px] h-[400px] border-2 border-dashed border-primary/20 rounded-full" />
@@ -73,7 +72,7 @@ export function Hero() {
                     <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-accent/20 blur-3xl" />
                     <div className="absolute -top-20 -left-20 h-60 w-60 rounded-full bg-primary/20 blur-3xl" />
                 </div>
-            </div >
-        </section >
+            </div>
+        </section>
     );
 }

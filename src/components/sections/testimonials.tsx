@@ -9,9 +9,8 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { AnalyzeTestimonialSentimentOutput } from '@/ai/flows/analyze-testimonial-sentiment';
-import { Quote } from 'lucide-react';
+import { Quote, Building } from 'lucide-react';
 
 type Testimonial = {
   name: string;
@@ -24,40 +23,26 @@ type Testimonial = {
 
 const initialTestimonials: Testimonial[] = [
   {
-    name: 'Flava25',
-    role: 'Owner, Flava25',
-    avatarId: 'logo-flava',
-    text: "Posso's complete range of services has been a revelation for our business. From the ePOS to the online ordering system, everything works in perfect harmony.",
-  },
-  {
-    name: 'Wingstar',
-    role: 'Manager, Wingstar',
-    avatarId: 'logo-wingstar',
-    text: 'The kiosks and POS systems are brilliant, but the integrated online ordering has truly expanded our reach. Our takeaway orders have soared!',
-  },
-  {
-    name: 'Love Chicken',
-    role: 'Founder, Love Chicken',
-    avatarId: 'logo-love-chicken',
-    text: "The self-service kiosks have been a massive hit with our regulars. It's streamlined our entire ordering process, especially during the lunch rush.",
-  },
-  {
     name: 'Stonehenge Inn',
     role: 'Proprietor, Stonehenge Inn',
     avatarId: 'logo-stonehenge-inn',
     text: "Implementing the Posso POS and kiosk system was seamless. Our staff love how intuitive it is, and our customers appreciate the quicker service.",
+    sentiment: 'positive',
+    confidence: 0.98
   },
   {
     name: 'Milksha',
     role: 'Franchisee, Milksha',
     avatarId: 'logo-milksha',
     text: 'For a busy bubble tea shop, speed and accuracy are key. The Posso kiosks and POS have delivered on both fronts, reducing queues and errors significantly.',
+    sentiment: 'positive',
+    confidence: 0.95
   }
 ];
 
 export function Testimonials() {
   const [testimonials] = useState<Testimonial[]>(initialTestimonials);
-  
+
   return (
     <section id="testimonials" className="container mx-auto px-4 py-20 md:px-6">
       <div className="text-center">
@@ -73,13 +58,26 @@ export function Testimonials() {
             return (
               <CarouselItem key={index}>
                 <div className="p-1">
-                  <Card className="glass-card border-none">
-                    <CardContent className="flex flex-col items-center justify-center p-8 text-center min-h-[300px]">
-                      <Quote className="w-10 h-10 text-primary/50 mb-4" />
-                      <p className="mt-4 text-lg italic text-slate-200 flex-grow">&quot;{testimonial.text}&quot;</p>
-                      <div className="mt-6">
-                        <p className="font-bold text-slate-50">{testimonial.name}</p>
-                        <p className="text-sm text-slate-400">{testimonial.role}</p>
+                  <Card className="glass-card border-none overflow-hidden relative">
+                    <div className="absolute top-4 right-4">
+                      {testimonial.sentiment === 'positive' && (
+                        <span className="bg-green-500/20 text-green-400 text-[10px] uppercase tracking-wider font-bold py-1 px-2 rounded-full border border-green-500/30">
+                          Verified Positive
+                        </span>
+                      )}
+                    </div>
+                    <CardContent className="flex flex-col items-center justify-center p-8 md:p-12 text-center min-h-[350px]">
+                      <Quote className="w-10 h-10 text-primary/50 mb-6" />
+                      <p className="text-xl md:text-2xl italic text-slate-100 font-light leading-relaxed mb-8">
+                        &quot;{testimonial.text}&quot;
+                      </p>
+
+                      <div className="flex flex-col items-center">
+                        <div className="w-16 h-16 mb-4 relative rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                          <Building className="w-8 h-8 text-primary" />
+                        </div>
+                        <p className="font-bold text-slate-50 text-lg">{testimonial.name}</p>
+                        <p className="text-sm text-slate-400 uppercase tracking-widest mt-1">{testimonial.role}</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -88,8 +86,10 @@ export function Testimonials() {
             );
           })}
         </CarouselContent>
-        <CarouselPrevious className="left-[-50px]" />
-        <CarouselNext className="right-[-50px]" />
+        <div className="hidden md:block">
+          <CarouselPrevious className="left-[-60px] border-slate-700 bg-slate-900/50 hover:bg-primary hover:text-white" />
+          <CarouselNext className="right-[-60px] border-slate-700 bg-slate-900/50 hover:bg-primary hover:text-white" />
+        </div>
       </Carousel>
     </section>
   );

@@ -151,24 +151,6 @@
       "imageHint": "ticketing hardware"
     },
     {
-      "id": "logo-flava",
-      "description": "Flava25 logo",
-      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/flava-logo.png",
-      "imageHint": "Flava logo"
-    },
-    {
-      "id": "logo-wingstar",
-      "description": "Wingstar logo",
-      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/wingstar-logo-scaled.png",
-      "imageHint": "Wingstar logo"
-    },
-    {
-      "id": "logo-love-chicken",
-      "description": "Love Chicken logo",
-      "imageUrl": "https://www.posso.uk/wp-content/uploads/2024/09/love-eatz-top-banner.jpg",
-      "imageHint": "Love Chicken"
-    },
-    {
       "id": "logo-stonehenge-inn",
       "description": "The logo for the Stonehenge Inn, a historic pub and restaurant.",
       "imageUrl": "https://allguardweb.on-forge.com/wp-content/uploads/2024/05/cropped-New-Project-2024-05-22T133649.957.png",

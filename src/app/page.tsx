@@ -5,6 +5,7 @@ import { About } from '@/components/sections/about';
 import { Testimonials } from '@/components/sections/testimonials';
 import { Contact } from '@/components/sections/contact';
 import { Footer } from '@/components/footer';
+import { TableMaestroShowcase } from '@/components/sections/table-maestro';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function Home() {
       <Header />
       <main className="flex-1 pt-20">
         <Hero />
+        <TableMaestroShowcase />
         <Services />
         <About />
         <Testimonials />

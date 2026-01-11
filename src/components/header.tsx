@@ -24,6 +24,7 @@ import {
   Newspaper,
   ChevronDown,
   Building,
+  CalendarDays,
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -64,20 +65,20 @@ const hospitalityLinks = [
 ];
 
 const solutionsLinks = [
-    { href: '/solutions/trampoline-parks', label: 'Trampoline Parks' },
-    { href: '/solutions/family-entertainment-centers', label: 'Family Entertainment' },
-    { href: '/solutions/amusement-parks', label: 'Amusement Parks' },
-    { href: '/solutions/water-parks', label: 'Water Parks' },
-    { href: '/solutions/museums', label: 'Museums' },
-    { href: '/solutions/zoos-aquariums', label: 'Zoos & Aquariums' },
-    { href: '/solutions/wake-parks', label: 'Wake & Aqua Parks' },
-    { href: '/solutions/rock-climbing-gyms', label: 'Rock Climbing Gyms' },
-    { href: '/solutions/playcenters-softplay', label: 'Soft Play & Playcenters' },
-    { href: '/solutions/roller-skating-rinks', label: 'Roller Skating Rinks' },
-    { href: '/solutions/ice-skating-rinks', label: 'Ice Skating Rinks' },
-    { href: '/solutions/ski-resorts', label: 'Ski Resorts' },
-    { href: '/solutions/spas-wellness-centers', label: 'Spas & Wellness' },
-    { href: '/solutions/festivals-events', label: 'Festivals & Events' },
+  { href: '/solutions/trampoline-parks', label: 'Trampoline Parks' },
+  { href: '/solutions/family-entertainment-centers', label: 'Family Entertainment' },
+  { href: '/solutions/amusement-parks', label: 'Amusement Parks' },
+  { href: '/solutions/water-parks', label: 'Water Parks' },
+  { href: '/solutions/museums', label: 'Museums' },
+  { href: '/solutions/zoos-aquariums', label: 'Zoos & Aquariums' },
+  { href: '/solutions/wake-parks', label: 'Wake & Aqua Parks' },
+  { href: '/solutions/rock-climbing-gyms', label: 'Rock Climbing Gyms' },
+  { href: '/solutions/playcenters-softplay', label: 'Soft Play & Playcenters' },
+  { href: '/solutions/roller-skating-rinks', label: 'Roller Skating Rinks' },
+  { href: '/solutions/ice-skating-rinks', label: 'Ice Skating Rinks' },
+  { href: '/solutions/ski-resorts', label: 'Ski Resorts' },
+  { href: '/solutions/spas-wellness-centers', label: 'Spas & Wellness' },
+  { href: '/solutions/festivals-events', label: 'Festivals & Events' },
 ]
 
 const retailLinks = [
@@ -106,13 +107,13 @@ export function Header() {
       icon: <Building className="mr-2 h-4 w-4" />,
       links: solutionsLinks,
     },
-     {
+    {
       label: 'Retail',
       icon: <Store className="mr-2 h-4 w-4" />,
       links: retailLinks,
     },
   ];
-  
+
   const allMobileLinks = navLinks.flatMap(section => section.links);
 
 
@@ -167,70 +168,82 @@ export function Header() {
                 </Link>
               )
             ))}
+            <Button size="sm" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-500/20" asChild>
+              <Link href="/tablemaestro">
+                <CalendarDays className="mr-2 h-4 w-4" />
+                TableMaestro
+              </Link>
+            </Button>
           </div>
         </div>
-        
+
         {/* Mobile Navigation */}
         <div className="md:hidden">
-            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-                <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
-                    <Menu className="h-6 w-6" />
-                </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-slate-950 p-0 flex flex-col">
-                    <SheetHeader className="p-6 pb-0">
-                      <SheetTitle>
-                        <Link href="/" className="flex items-center gap-3" prefetch={false} onClick={() => setIsSheetOpen(false)}>
-                            <Logo />
-                            <span className="text-xl font-bold text-slate-50 tracking-wide">
-                                POSSO
-                            </span>
-                        </Link>
-                      </SheetTitle>
-                    </SheetHeader>
-                    <ScrollArea className="flex-1 px-6">
-                        <div className="flex flex-col gap-4 py-6">
-                            <Link href="/" onClick={() => setIsSheetOpen(false)}>
-                            <Button variant="outline" className="w-full justify-start">
-                                <Home className="mr-2 h-4 w-4" />
-                                Home
-                            </Button>
-                            </Link>
-                            {allMobileLinks.map(({ href, label }) => (
-                              <Link href={href} key={label} onClick={() => setIsSheetOpen(false)}>
-                                  <Button variant="outline" className="w-full justify-start">
-                                  {label}
-                                  </Button>
-                              </Link>
-                            ))}
-                            {companyLinks.map(({ href, icon, label, isExternal }) => (
-                                isExternal ? (
-                                    <a
-                                        key={label}
-                                        href={href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={() => setIsSheetOpen(false)}
-                                    >
-                                        <Button variant="outline" className="w-full justify-start">
-                                        {icon}
-                                        {label}
-                                        </Button>
-                                    </a>
-                                    ) : (
-                                    <Link href={href} key={label} onClick={() => setIsSheetOpen(false)}>
-                                        <Button variant="outline" className="w-full justify-start">
-                                        {icon}
-                                        {label}
-                                        </Button>
-                                    </Link>
-                                    )
-                            ))}
-                        </div>
-                    </ScrollArea>
-                </SheetContent>
-            </Sheet>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-slate-950 p-0 flex flex-col">
+              <SheetHeader className="p-6 pb-0">
+                <SheetTitle>
+                  <Link href="/" className="flex items-center gap-3" prefetch={false} onClick={() => setIsSheetOpen(false)}>
+                    <Logo />
+                    <span className="text-xl font-bold text-slate-50 tracking-wide">
+                      POSSO
+                    </span>
+                  </Link>
+                </SheetTitle>
+              </SheetHeader>
+              <ScrollArea className="flex-1 px-6">
+                <div className="flex flex-col gap-4 py-6">
+                  <Link href="/" onClick={() => setIsSheetOpen(false)}>
+                    <Button variant="outline" className="w-full justify-start">
+                      <Home className="mr-2 h-4 w-4" />
+                      Home
+                    </Button>
+                  </Link>
+                  {allMobileLinks.map(({ href, label }) => (
+                    <Link href={href} key={label} onClick={() => setIsSheetOpen(false)}>
+                      <Button variant="outline" className="w-full justify-start">
+                        {label}
+                      </Button>
+                    </Link>
+                  ))}
+                  {companyLinks.map(({ href, icon, label, isExternal }) => (
+                    isExternal ? (
+                      <a
+                        key={label}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsSheetOpen(false)}
+                      >
+                        <Button variant="outline" className="w-full justify-start">
+                          {icon}
+                          {label}
+                        </Button>
+                      </a>
+                    ) : (
+                      <Link href={href} key={label} onClick={() => setIsSheetOpen(false)}>
+                        <Button variant="outline" className="w-full justify-start">
+                          {icon}
+                          {label}
+                        </Button>
+                      </Link>
+                    )
+                  ))}
+                  <Link href="/tablemaestro" onClick={() => setIsSheetOpen(false)}>
+                    <Button className="w-full justify-start bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+                      <CalendarDays className="mr-2 h-4 w-4" />
+                      TableMaestro
+                    </Button>
+                  </Link>
+                </div>
+              </ScrollArea>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
