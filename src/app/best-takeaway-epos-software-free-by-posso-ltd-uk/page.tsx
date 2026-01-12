@@ -12,7 +12,8 @@ import {
     Smartphone,
     Sparkles,
     Search,
-    ArrowRight
+    ArrowRight,
+    HelpCircle
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
