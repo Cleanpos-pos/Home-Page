@@ -10,7 +10,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { AnimatePresence, motion } from 'framer-motion';
 import { submitAgentEnquiry } from '@/app/actions';
-import { PartyPopper, ShoppingCart, Smartphone, CreditCard, MonitorPlay } from 'lucide-react';
+import { PartyPopper, ShoppingCart, Smartphone, CreditCard, MonitorPlay, Search, Megaphone, MapPin } from 'lucide-react';
 import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
 
@@ -30,6 +30,9 @@ const interestOptions = [
   { id: 'card-machines', label: 'Card Machines', icon: <CreditCard className="w-6 h-6 text-primary" /> },
   { id: 'kiosks', label: 'Self-Order Kiosks', icon: <Smartphone className="w-6 h-6 text-primary" /> },
   { id: 'digital-signage', label: 'Digital Signage', icon: <MonitorPlay className="w-6 h-6 text-primary" /> },
+  { id: 'seo-marketing', label: 'SEO & Marketing', icon: <Search className="w-6 h-6 text-primary" /> },
+  { id: 'social-media', label: 'Social Media', icon: <Megaphone className="w-6 h-6 text-primary" /> },
+  { id: 'google-business', label: 'Google Business', icon: <MapPin className="w-6 h-6 text-primary" /> },
 ];
 
 export function AgentEnquiryForm() {

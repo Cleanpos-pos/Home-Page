@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CreditCard, MonitorPlay, Smartphone, ShoppingCart, Ticket, DownloadCloud, AppWindow, ScreenShare, Tv2, Globe, Lock } from 'lucide-react';
+import { CreditCard, MonitorPlay, Smartphone, ShoppingCart, Ticket, DownloadCloud, AppWindow, ScreenShare, Tv2, Globe, Lock, Search, Megaphone, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -60,6 +60,27 @@ const services = [
     title: 'Online-Ordering & Apps',
     description: 'Reach more customers with a branded online ordering website and mobile app.',
     href: '/online-ordering'
+  },
+  {
+    id: 'marketing',
+    icon: <Search className="h-8 w-8 text-accent" />,
+    title: 'Google SEO & Marketing',
+    description: 'Dominate search results and drive high-quality traffic to your business with our expert SEO strategies.',
+    href: '/marketing'
+  },
+  {
+    id: 'marketing',
+    icon: <Megaphone className="h-8 w-8 text-accent" />,
+    title: 'Social Media Marketing',
+    description: 'Build your brand and engage with your community through professional social media management.',
+    href: '/marketing'
+  },
+  {
+    id: 'marketing',
+    icon: <MapPin className="h-8 w-8 text-accent" />,
+    title: 'Google Business Profile Marketing',
+    description: 'Boost your local presence and get found on Google Maps with expert profile management and optimization.',
+    href: '/marketing'
   },
   {
     id: 'team-photo',
