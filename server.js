@@ -32,16 +32,19 @@ app.prepare().then(() => {
 
   // Serve static assets from .next/static
   const staticPath = path.join(__dirname, '.next/static');
+  console.log(`> [Posso] Absolute Static Path: ${staticPath}`);
   if (fs.existsSync(staticPath)) {
     console.log(`> [Posso] Serving static assets from ${staticPath}`);
     server.use('/_next/static', express.static(staticPath));
+  } else {
+    console.warn(`> [Posso] WARNING: Static path NOT found: ${staticPath}`);
   }
 
   // Health Check
   server.get('/health', (req, res) => {
     const envStatus = {};
     // Check for common keys without revealing values
-    ['SMTP_USER', 'SMTP_PASS', 'RECIPIENT_EMAIL', 'SENDER_EMAIL', 'NODE_ENV', 'PORT'].forEach(key => {
+    ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'RECIPIENT_EMAIL', 'SENDER_EMAIL', 'NODE_ENV', 'PORT'].forEach(key => {
       envStatus[key] = process.env[key] ? `SET (${process.env[key].length} chars)` : 'MISSING';
     });
 

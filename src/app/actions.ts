@@ -86,10 +86,12 @@ async function sendEmailViaSMTP({ subject, htmlContent, senderName }: { subject:
     const pass = process.env.SMTP_PASS;
     const recipientEmail = process.env.RECIPIENT_EMAIL || 'info@posso.uk';
 
-    if (!pass) {
-        console.error('> [SMTP] CRITICAL: SMTP_PASS is missing.');
-        throw new Error('Email service configuration missing (SMTP_PASS).');
-    }
+    ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'RECIPIENT_EMAIL', 'SENDER_EMAIL'].forEach(key => {
+        if (!process.env[key]) {
+            console.error(`> [SMTP] CRITICAL: Missing environment variable: ${key}`);
+            throw new Error(`Email service configuration missing (${key}).`);
+        }
+    });
 
     const transporter = nodemailer.createTransport({
         host,
@@ -101,10 +103,12 @@ async function sendEmailViaSMTP({ subject, htmlContent, senderName }: { subject:
         },
     });
 
+    const finalSenderEmail = process.env.SENDER_EMAIL || user;
+
     try {
         console.log(`> [SMTP] Sending email via ${host}...`);
         const info = await transporter.sendMail({
-            from: `"${senderName}" <${user}>`,
+            from: `"${senderName}" <${finalSenderEmail}>`,
             to: recipientEmail,
             subject: subject,
             html: htmlContent,
