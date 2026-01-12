@@ -2,7 +2,8 @@ const express = require('express');
 const next = require('next');
 const path = require('path');
 const fs = require('fs');
-require('dotenv').config({ path: path.join(__dirname, '.env') });
+const rootDir = process.cwd();
+require('dotenv').config({ path: path.join(rootDir, '.env') });
 
 const dev = process.env.NODE_ENV === 'development';
 const app = next({ dev });
@@ -19,7 +20,7 @@ console.log(`> [Posso] Recipient Email: ${process.env.RECIPIENT_EMAIL || 'info@p
 
 // Verify .next directory existence in production
 if (!dev) {
-  const nextDir = path.join(__dirname, '.next');
+  const nextDir = path.join(rootDir, '.next');
   if (!fs.existsSync(nextDir)) {
     console.warn(`> [Posso] WARNING: .next directory not found at ${nextDir}. Build may be missing!`);
   } else {
@@ -31,7 +32,7 @@ app.prepare().then(() => {
   const server = express();
 
   // Serve static assets from .next/static
-  const staticPath = path.join(__dirname, '.next/static');
+  const staticPath = path.join(rootDir, '.next/static');
   console.log(`> [Posso] Absolute Static Path: ${staticPath}`);
   if (fs.existsSync(staticPath)) {
     console.log(`> [Posso] Serving static assets from ${staticPath}`);
@@ -52,7 +53,7 @@ app.prepare().then(() => {
       status: 'OK',
       timestamp: new Date().toISOString(),
       node_version: process.version,
-      dir: __dirname,
+      dir: rootDir,
       environment_variables: envStatus,
       all_non_secret_keys: Object.keys(process.env).filter(k =>
         !k.includes('SECRET') &&
@@ -64,7 +65,7 @@ app.prepare().then(() => {
   });
 
   // Serve the public folder
-  const publicPath = path.join(__dirname, 'public');
+  const publicPath = path.join(rootDir, 'public');
   if (fs.existsSync(publicPath)) {
     console.log(`> [Posso] Serving public assets from ${publicPath}`);
     server.use(express.static(publicPath));
