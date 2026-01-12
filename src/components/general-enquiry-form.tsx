@@ -79,6 +79,10 @@ export function GeneralEnquiryForm() {
 
       if (result.success) {
         setIsSuccess(true);
+        if (result.whatsappMessage) {
+          const whatsappUrl = `https://wa.me/447867597844?text=${result.whatsappMessage}`;
+          window.open(whatsappUrl, '_blank');
+        }
         setTimeout(() => router.push('/'), 4000);
       } else {
         setServerError(result.message);

@@ -41,23 +41,16 @@ export async function submitContactForm(
     const { name, email, message } = validatedFields.data;
 
     try {
-        await sendEmailViaSMTP({
-            subject: 'New Contact Form Submission',
-            htmlContent: `
-            <h1>New Contact Form Submission</h1>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Message:</strong></p>
-            <p>${message.replace(/\n/g, '<br>')}</p>
-        `,
-            senderName: 'Posso Contact Form'
-        });
+        const whatsappMessage = `*New Contact Form Submission*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
 
-        return { message: 'Thank you for your message! We will get back to you soon.' };
-    } catch (error) {
-        console.error('SMTP Error:', error);
         return {
-            message: 'There was an error sending your message. Please try again later.',
+            message: 'Thank you for your message! Opening WhatsApp to send your details.',
+            fields: { whatsappMessage }
+        };
+    } catch (error) {
+        console.error('WhatsApp Prep Error:', error);
+        return {
+            message: 'There was an error preparing your message for WhatsApp. Please try again or call us directly.',
             fields: { name, email, message }
         };
     }
@@ -172,24 +165,20 @@ export async function submitCardMachineEnquiry(formData: unknown) {
     `;
 
     try {
-        await sendEmailViaSMTP({
-            subject: 'New Card Machine Enquiry',
-            htmlContent: emailBody,
-            senderName: 'Posso Enquiry'
-        });
+        const whatsappMessage = `*New Card Machine Enquiry*%0A%0A*Name:* ${name}%0A*Company:* ${company}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A%0A*Machines:* ${machines.join(', ')}${message ? `%0A%0A*Message:* ${message}` : ''}`;
 
         return {
             success: true,
-            message: 'Thank you for your enquiry! We have received your details and will be in touch shortly.'
+            message: 'Thank you for your enquiry! Opening WhatsApp to send your details.',
+            whatsappMessage
         };
-
     } catch (error) {
-        console.error('SMTP Error:', error);
+        console.error('WhatsApp Prep Error:', error);
         return {
             success: false,
-            message: error instanceof Error ? `Error: ${error.message}` : 'There was an error sending your enquiry. Please try again later.',
+            message: 'There was an error preparing your enquiry for WhatsApp. Please try again or call us directly.',
             errors: null,
-        }
+        };
     }
 }
 
@@ -242,22 +231,20 @@ export async function submitGeneralEnquiry(formData: unknown) {
     `;
 
     try {
-        await sendEmailViaSMTP({
-            subject: 'New General Enquiry from Website',
-            htmlContent: emailBody,
-            senderName: 'Posso General Enquiry'
-        });
+        const whatsappMessage = `*New General Enquiry*%0A%0A*Name:* ${name}%0A*Company:* ${company}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A%0A*Interested in:* ${products.join(', ')}${message ? `%0A%0A*Message:* ${message}` : ''}`;
+
         return {
             success: true,
-            message: 'Thank you for your enquiry! We will be in touch shortly.'
+            message: 'Thank you for your enquiry! Opening WhatsApp to send your details.',
+            whatsappMessage
         };
     } catch (error) {
-        console.error('SMTP Error:', error);
+        console.error('WhatsApp Prep Error:', error);
         return {
             success: false,
-            message: error instanceof Error ? `Error: ${error.message}` : 'There was an error sending your enquiry. Please try again later.',
+            message: 'There was an error preparing your enquiry for WhatsApp. Please try again or call us directly.',
             errors: null,
-        }
+        };
     }
 }
 
@@ -308,21 +295,19 @@ export async function submitAgentEnquiry(formData: unknown) {
     `;
 
     try {
-        await sendEmailViaSMTP({
-            subject: 'New Independent Sales Agent Enquiry',
-            htmlContent: emailBody,
-            senderName: 'Posso Agent Enquiry'
-        });
+        const whatsappMessage = `*New Agent Enquiry*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Location:* ${location}%0A%0A*Experience:* ${experience}%0A%0A*Interest:* ${interest.join(', ')}`;
+
         return {
             success: true,
-            message: 'Thank you for your interest! We have received your details and will be in touch if your profile matches our requirements.'
+            message: 'Thank you for your enquiry! Opening WhatsApp to send your details.',
+            whatsappMessage
         };
     } catch (error) {
-        console.error('SMTP Error:', error);
+        console.error('WhatsApp Prep Error:', error);
         return {
             success: false,
-            message: error instanceof Error ? `Error: ${error.message}` : 'There was an error sending your enquiry. Please try again later.',
+            message: 'There was an error preparing your enquiry for WhatsApp. Please try again or call us directly.',
             errors: null,
-        }
+        };
     }
 }
