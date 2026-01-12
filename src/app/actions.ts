@@ -2,6 +2,7 @@
 // Trigger redeploy: 2026-01-11
 
 import { z } from 'zod';
+import { Resend } from 'resend';
 import { analyzeTestimonialSentiment } from '@/ai/flows/analyze-testimonial-sentiment';
 import type { AnalyzeTestimonialSentimentOutput } from '@/ai/flows/analyze-testimonial-sentiment';
 
@@ -40,7 +41,7 @@ export async function submitContactForm(
     const { name, email, message } = validatedFields.data;
 
     try {
-        await sendBrevoEmail({
+        await sendEmailViaResend({
             subject: 'New Contact Form Submission',
             htmlContent: `
             <h1>New Contact Form Submission</h1>
@@ -49,8 +50,7 @@ export async function submitContactForm(
             <p><strong>Message:</strong></p>
             <p>${message.replace(/\n/g, '<br>')}</p>
         `,
-            senderName: 'Posso Contact Form',
-            senderEmail: 'info@posso.uk'
+            senderName: 'Posso Contact Form'
         });
 
         return { message: 'Thank you for your message! We will get back to you soon.' };
@@ -77,70 +77,40 @@ export async function analyzeSentimentAction(testimonial: string): Promise<Analy
     }
 }
 
-async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }: { subject: string; htmlContent: string; senderName: string, senderEmail: string }) {
-    console.log(`> [Brevo] Attempting to send email: ${subject}`);
+async function sendEmailViaResend({ subject, htmlContent, senderName }: { subject: string; htmlContent: string; senderName: string }) {
+    console.log(`> [Resend] Attempting to send email: ${subject}`);
 
-    // 1. Standard Lookup
-    let apiKey = process.env.BREVO_API_KEY;
-
-    // 2. Fallback: Case-insensitive search + Trim spaces (Fixes Hostinger panel copy-paste issues)
-    if (!apiKey || apiKey.trim().length < 10) {
-        const foundKey = Object.keys(process.env).find(k => k.toUpperCase() === 'BREVO_API_KEY');
-        if (foundKey) {
-            apiKey = process.env[foundKey]?.trim();
-            console.log(`> [Brevo] Found key via case-insensitive search: ${foundKey}`);
-        }
-    }
-
-    if (!apiKey || apiKey.length < 10) {
-        const envKeys = Object.keys(process.env).filter(k => k.includes('BREVO') || k.includes('API'));
-        console.error(`> [Brevo] CRITICAL: BREVO_API_KEY is missing/invalid. Known keys: ${envKeys.join(', ')}`);
-        throw new Error(`Email config missing. The server sees these keys: [${envKeys.join(', ')}]. Please check for typos in the Hostinger panel.`);
-    }
-
+    const apiKey = process.env.RESEND_API_KEY || 're_d1ALUBfg_L7yvcbQJo2Wj9cRhCe8vPt4L';
     const recipientEmail = process.env.RECIPIENT_EMAIL || 'info@posso.uk';
-    const finalSenderEmail = process.env.SENDER_EMAIL || 'info@posso.uk';
 
-    console.log(`> [Brevo] Recipient: ${recipientEmail}, Sender: ${finalSenderEmail}`);
+    // NOTE: In Resend free tier, you can only send from onboarding@resend.dev until you verify a domain.
+    const finalSenderEmail = 'onboarding@resend.dev';
+
+    if (!apiKey) {
+        console.error('> [Resend] CRITICAL: RESEND_API_KEY is missing.');
+        throw new Error('Email service configuration missing.');
+    }
+
+    const resend = new Resend(apiKey);
 
     try {
-        console.log(`> [Brevo] Sending request to Brevo API...`);
-        const fetchPromise = fetch('https://api.brevo.com/v3/smtp/email', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'api-key': apiKey,
-            },
-            body: JSON.stringify({
-                sender: { name: senderName, email: finalSenderEmail },
-                to: [{ email: recipientEmail, name: 'Posso Enquiries' }],
-                subject: subject,
-                htmlContent: htmlContent,
-            }),
+        console.log(`> [Resend] Sending request to Resend...`);
+        const { data, error } = await resend.emails.send({
+            from: `${senderName} <${finalSenderEmail}>`,
+            to: [recipientEmail],
+            subject: subject,
+            html: htmlContent,
         });
 
-        const timeoutPromise = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error('TIMEOUT_EXCEEDED')), 15000)
-        );
-
-        const response = await (Promise.race([fetchPromise, timeoutPromise]) as Promise<Response>);
-
-        if (!response.ok) {
-            const errorBody = await response.text();
-            console.error(`> [Brevo] API Error (${response.status}):`, errorBody);
-            throw new Error(`Brevo API Error (${response.status})`);
+        if (error) {
+            console.error('> [Resend] API Error:', error);
+            throw new Error(`Resend API Error: ${error.message}`);
         }
 
-        const resData = await response.json();
-        console.log('> [Brevo] Email sent successfully:', resData.messageId);
-        return resData;
+        console.log('> [Resend] Email sent successfully:', data?.id);
+        return data;
     } catch (error: any) {
-        if (error.message === 'TIMEOUT_EXCEEDED') {
-            console.error('> [Brevo] Error: Request timed out after 15 seconds.');
-            throw new Error('Email service timed out. Please check server connectivity.');
-        }
-        console.error('> [Brevo] Fetch Error:', error);
+        console.error('> [Resend] Unexpected Error:', error);
         throw error;
     }
 }
@@ -192,11 +162,10 @@ export async function submitCardMachineEnquiry(formData: unknown) {
     `;
 
     try {
-        await sendBrevoEmail({
+        await sendEmailViaResend({
             subject: 'New Card Machine Enquiry',
             htmlContent: emailBody,
-            senderName: 'Posso Enquiry',
-            senderEmail: 'info@posso.uk'
+            senderName: 'Posso Enquiry'
         });
 
         return {
@@ -263,11 +232,10 @@ export async function submitGeneralEnquiry(formData: unknown) {
     `;
 
     try {
-        await sendBrevoEmail({
+        await sendEmailViaResend({
             subject: 'New General Enquiry from Website',
             htmlContent: emailBody,
-            senderName: 'Posso General Enquiry',
-            senderEmail: 'info@posso.uk'
+            senderName: 'Posso General Enquiry'
         });
         return {
             success: true,
@@ -330,11 +298,10 @@ export async function submitAgentEnquiry(formData: unknown) {
     `;
 
     try {
-        await sendBrevoEmail({
+        await sendEmailViaResend({
             subject: 'New Independent Sales Agent Enquiry',
             htmlContent: emailBody,
-            senderName: 'Posso Agent Enquiry',
-            senderEmail: 'info@posso.uk'
+            senderName: 'Posso Agent Enquiry'
         });
         return {
             success: true,

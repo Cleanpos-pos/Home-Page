@@ -13,7 +13,7 @@ const hostname = process.env.HOSTNAME || '0.0.0.0';
 console.log(`> [Posso] Starting server in ${dev ? 'development' : 'production'} mode...`);
 console.log(`> [Posso] NODE_ENV: ${process.env.NODE_ENV || 'not set (defaulting to production in next.js)'}`);
 console.log(`> [Posso] Local Port: ${port}`);
-console.log(`> [Posso] Brevo API Key: ${process.env.BREVO_API_KEY ? 'CONFIGURED (Found)' : 'MISSING (Check .env file)'}`);
+console.log(`> [Posso] Resend API Key: ${process.env.RESEND_API_KEY ? 'CONFIGURED (Found)' : 'MISSING (Check .env file)'}`);
 console.log(`> [Posso] Recipient Email: ${process.env.RECIPIENT_EMAIL || 'info@posso.uk'}`);
 
 // Verify .next directory existence in production
@@ -40,7 +40,7 @@ app.prepare().then(() => {
   server.get('/health', (req, res) => {
     const envStatus = {};
     // Check for common keys without revealing values
-    ['BREVO_API_KEY', 'RECIPIENT_EMAIL', 'SENDER_EMAIL', 'NODE_ENV', 'PORT'].forEach(key => {
+    ['RESEND_API_KEY', 'RECIPIENT_EMAIL', 'SENDER_EMAIL', 'NODE_ENV', 'PORT'].forEach(key => {
       envStatus[key] = process.env[key] ? `SET (${process.env[key].length} chars)` : 'MISSING';
     });
 
