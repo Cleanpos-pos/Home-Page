@@ -101,6 +101,9 @@ async function sendEmailViaSMTP({ subject, htmlContent, senderName }: { subject:
             user,
             pass,
         },
+        connectionTimeout: 10000, // 10 seconds
+        greetingTimeout: 10000,
+        socketTimeout: 15000,
     });
 
     const finalSenderEmail = process.env.SENDER_EMAIL || user;

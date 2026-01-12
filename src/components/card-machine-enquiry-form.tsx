@@ -75,7 +75,8 @@ export function CardMachineEnquiryForm() {
     } catch (err) {
       console.error('Submission error:', err);
       setIsSubmitting(false);
-      setServerError('Our email service is currently experiencing high latency. Please try again or call us directly on 0808 175 3956.');
+      const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+      setServerError(`Connection Error: ${errorMessage}. Please try again or call us at 0808 175 3956.`);
     }
   };
 
