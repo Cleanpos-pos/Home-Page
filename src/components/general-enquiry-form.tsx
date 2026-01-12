@@ -89,7 +89,7 @@ export function GeneralEnquiryForm() {
     } catch (err) {
       console.error('Submission error:', err);
       setIsSubmitting(false);
-      setServerError('A connection error occurred. Please try again or call us at 0113 521 1716.');
+      setServerError('Our email service is currently experiencing high latency. Your request may still go through, but please feel free to call us directly on 0808 175 3956.');
     }
   };
 

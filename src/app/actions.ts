@@ -121,7 +121,7 @@ async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }:
         });
 
         const timeoutPromise = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error('TIMEOUT_EXCEEDED')), 12000)
+            setTimeout(() => reject(new Error('TIMEOUT_EXCEEDED')), 15000)
         );
 
         const response = await (Promise.race([fetchPromise, timeoutPromise]) as Promise<Response>);
@@ -137,7 +137,7 @@ async function sendBrevoEmail({ subject, htmlContent, senderName, senderEmail }:
         return resData;
     } catch (error: any) {
         if (error.message === 'TIMEOUT_EXCEEDED') {
-            console.error('> [Brevo] Error: Request timed out after 10 seconds.');
+            console.error('> [Brevo] Error: Request timed out after 15 seconds.');
             throw new Error('Email service timed out. Please check server connectivity.');
         }
         console.error('> [Brevo] Fetch Error:', error);
