@@ -2,7 +2,7 @@
 // Trigger redeploy: 2026-01-11
 
 import { z } from 'zod';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import { analyzeTestimonialSentiment } from '@/ai/flows/analyze-testimonial-sentiment';
 import type { AnalyzeTestimonialSentimentOutput } from '@/ai/flows/analyze-testimonial-sentiment';
 
@@ -41,7 +41,7 @@ export async function submitContactForm(
     const { name, email, message } = validatedFields.data;
 
     try {
-        await sendEmailViaResend({
+        await sendEmailViaSMTP({
             subject: 'New Contact Form Submission',
             htmlContent: `
             <h1>New Contact Form Submission</h1>
@@ -77,40 +77,43 @@ export async function analyzeSentimentAction(testimonial: string): Promise<Analy
     }
 }
 
-async function sendEmailViaResend({ subject, htmlContent, senderName }: { subject: string; htmlContent: string; senderName: string }) {
-    console.log(`> [Resend] Attempting to send email: ${subject}`);
+async function sendEmailViaSMTP({ subject, htmlContent, senderName }: { subject: string; htmlContent: string; senderName: string }) {
+    console.log(`> [SMTP] Attempting to send email: ${subject}`);
 
-    const apiKey = process.env.RESEND_API_KEY || 're_d1ALUBfg_L7yvcbQJo2Wj9cRhCe8vPt4L';
+    const host = process.env.SMTP_HOST || 'smtp.hostinger.com';
+    const port = parseInt(process.env.SMTP_PORT || '465');
+    const user = process.env.SMTP_USER || 'info@posso.co.uk';
+    const pass = process.env.SMTP_PASS;
     const recipientEmail = process.env.RECIPIENT_EMAIL || 'info@posso.uk';
 
-    // NOTE: In Resend free tier, you can only send from onboarding@resend.dev until you verify a domain.
-    const finalSenderEmail = 'onboarding@resend.dev';
-
-    if (!apiKey) {
-        console.error('> [Resend] CRITICAL: RESEND_API_KEY is missing.');
-        throw new Error('Email service configuration missing.');
+    if (!pass) {
+        console.error('> [SMTP] CRITICAL: SMTP_PASS is missing.');
+        throw new Error('Email service configuration missing (SMTP_PASS).');
     }
 
-    const resend = new Resend(apiKey);
+    const transporter = nodemailer.createTransport({
+        host,
+        port,
+        secure: port === 465, // true for 465, false for other ports
+        auth: {
+            user,
+            pass,
+        },
+    });
 
     try {
-        console.log(`> [Resend] Sending request to Resend...`);
-        const { data, error } = await resend.emails.send({
-            from: `${senderName} <${finalSenderEmail}>`,
-            to: [recipientEmail],
+        console.log(`> [SMTP] Sending email via ${host}...`);
+        const info = await transporter.sendMail({
+            from: `"${senderName}" <${user}>`,
+            to: recipientEmail,
             subject: subject,
             html: htmlContent,
         });
 
-        if (error) {
-            console.error('> [Resend] API Error:', error);
-            throw new Error(`Resend API Error: ${error.message}`);
-        }
-
-        console.log('> [Resend] Email sent successfully:', data?.id);
-        return data;
+        console.log('> [SMTP] Email sent successfully:', info.messageId);
+        return info;
     } catch (error: any) {
-        console.error('> [Resend] Unexpected Error:', error);
+        console.error('> [SMTP] Error:', error);
         throw error;
     }
 }
@@ -162,7 +165,7 @@ export async function submitCardMachineEnquiry(formData: unknown) {
     `;
 
     try {
-        await sendEmailViaResend({
+        await sendEmailViaSMTP({
             subject: 'New Card Machine Enquiry',
             htmlContent: emailBody,
             senderName: 'Posso Enquiry'
@@ -232,7 +235,7 @@ export async function submitGeneralEnquiry(formData: unknown) {
     `;
 
     try {
-        await sendEmailViaResend({
+        await sendEmailViaSMTP({
             subject: 'New General Enquiry from Website',
             htmlContent: emailBody,
             senderName: 'Posso General Enquiry'
@@ -298,7 +301,7 @@ export async function submitAgentEnquiry(formData: unknown) {
     `;
 
     try {
-        await sendEmailViaResend({
+        await sendEmailViaSMTP({
             subject: 'New Independent Sales Agent Enquiry',
             htmlContent: emailBody,
             senderName: 'Posso Agent Enquiry'
