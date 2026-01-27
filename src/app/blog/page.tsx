@@ -1,7 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight, Globe, ShoppingCart, Smartphone, CreditCard, Bot, Ticket, Zap, Snowflake, Pizza, Coffee, Wifi } from 'lucide-react';
+import { ArrowRight, Globe, ShoppingCart, Smartphone, CreditCard, Bot, Ticket, Zap, Snowflake, Pizza, Coffee, Wifi, Rocket } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -14,6 +14,13 @@ export const metadata: Metadata = {
 };
 
 const blogPosts = [
+  {
+    title: "POS & Self-Order Kiosk Solutions",
+    description: "Transform your business with POSSO's cutting-edge POS systems, EPOS solutions, and self-order kiosks. AI-powered technology for the modern hospitality industry.",
+    href: "/blog/pos-and-self-order-kiosk-solutions",
+    icon: <Rocket className="w-12 h-12 text-primary" />,
+    featured: true,
+  },
   {
     title: 'Why Posso? The Operating System for High-Volume Amusement Parks',
     description: 'Discover how we optimise guest flow and season pass ecosystems for 2026. High-speed turnstile integration and ride-side smart storage.',
@@ -50,7 +57,7 @@ const blogPosts = [
     href: '/blog/online-ordering-and-mobile-apps',
     icon: <Globe className="w-12 h-12 text-primary" />,
   },
-   {
+  {
     title: 'Best Card Machine for Small Business UK – Teya vs SumUp vs Dojo',
     description: 'Compare the best card payment machines for UK small businesses. We review Teya, SumUp, and Dojo to help you find the lowest fees and fastest payouts.',
     href: '/blog/best-card-machine-for-small-business',
@@ -89,12 +96,15 @@ const blogPosts = [
 ];
 
 export default function BlogPage() {
+  const featuredPost = blogPosts.find(post => post.featured);
+  const regularPosts = blogPosts.filter(post => !post.featured);
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1 pt-20">
         <section className="container mx-auto px-4 py-12 md:px-6 md:py-20">
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="mx-auto max-w-4xl text-center mb-16">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text">
               The Posso Blog
             </h1>
@@ -103,24 +113,64 @@ export default function BlogPage() {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {blogPosts.map((post) => (
-                <Link href={post.href} key={post.title} className="block group">
-                  <Card className="glass-card h-full flex flex-col">
-                     <div className="relative w-full h-48 flex items-center justify-center rounded-t-lg bg-slate-900/50">
-                        {post.icon}
-                    </div>
-                    <CardHeader>
-                      <CardTitle className="text-xl font-bold text-slate-50 group-hover:text-primary transition-colors">{post.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-grow flex flex-col">
-                      <CardDescription className="flex-grow line-clamp-3">{post.description}</CardDescription>
-                      <div className="mt-4 text-primary flex items-center gap-2 font-semibold">
-                        Read More <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          {featuredPost && (
+            <div className="mb-16">
+              <h2 className="text-2xl font-bold mb-6 text-slate-100 flex items-center gap-2">
+                <span className="w-2 h-8 bg-primary rounded-full"></span>
+                Featured Story
+              </h2>
+              <Link href={featuredPost.href} className="group block">
+                <Card className="glass-card overflow-hidden border-primary/20 hover:border-primary/50 transition-all duration-500">
+                  <div className="grid md:grid-cols-2 gap-0">
+                    <div className="bg-slate-900/50 flex items-center justify-center p-12 order-2 md:order-1">
+                      <div className="transform group-hover:scale-110 transition-transform duration-500">
+                        {featuredPost.icon}
                       </div>
-                    </CardContent>
-                  </Card>
-                </Link>
+                    </div>
+                    <div className="p-8 md:p-12 flex flex-col justify-center order-1 md:order-2">
+                      <div className="mb-4">
+                        <span className="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Sticky Post</span>
+                      </div>
+                      <h3 className="text-3xl font-bold text-slate-50 mb-4 group-hover:text-primary transition-colors">
+                        {featuredPost.title}
+                      </h3>
+                      <p className="text-slate-400 text-lg mb-8 line-clamp-3">
+                        {featuredPost.description}
+                      </p>
+                      <div className="text-primary flex items-center gap-2 font-bold text-lg">
+                        Read Featured Article <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            </div>
+          )}
+
+          <h2 className="text-2xl font-bold mb-6 text-slate-100 flex items-center gap-2">
+            <span className="w-2 h-8 bg-slate-700 rounded-full"></span>
+            Latest Articles
+          </h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {regularPosts.map((post) => (
+              <Link href={post.href} key={post.title} className="block group">
+                <Card className="glass-card h-full flex flex-col hover:border-primary/30 transition-all duration-300">
+                  <div className="relative w-full h-48 flex items-center justify-center rounded-t-lg bg-slate-900/50">
+                    <div className="transform group-hover:scale-110 transition-transform duration-500">
+                      {post.icon}
+                    </div>
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold text-slate-50 group-hover:text-primary transition-colors">{post.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col">
+                    <CardDescription className="flex-grow line-clamp-3 text-slate-400">{post.description}</CardDescription>
+                    <div className="mt-6 text-primary flex items-center gap-2 font-semibold">
+                      Read Article <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </section>
