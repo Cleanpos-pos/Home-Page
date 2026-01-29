@@ -58,6 +58,11 @@ export function GeneralEnquiryForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const router = useRouter();
 
+  // Initialize EmailJS with Public Key
+  if (typeof window !== 'undefined' && process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+  }
+
   const {
     control,
     handleSubmit,
@@ -78,8 +83,14 @@ export function GeneralEnquiryForm() {
     setIsSubmitting(true);
     setServerError(null);
     try {
+      console.log('> [EmailJS] Attempting to send using:', {
+        service: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        template: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        hasKey: !!process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      });
+
       // 1. Send Email via EmailJS
-      await emailjs.send(
+      const emailResponse = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
@@ -89,12 +100,13 @@ export function GeneralEnquiryForm() {
           phone: data.phone,
           message: data.message || 'No message provided',
           products: data.products.join(', '),
-          to_email: 'info@posso.co.uk', // Optional, depends on your template
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+          to_email: 'info@posso.co.uk',
+        }
       );
 
-      // 2. Original Server Action (Optional, for logging/extra processing)
+      console.log('> [EmailJS] Success:', emailResponse.status, emailResponse.text);
+
+      // 2. Original Server Action
       const result = await submitGeneralEnquiry(data);
       setIsSubmitting(false);
 
