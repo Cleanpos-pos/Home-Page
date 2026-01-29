@@ -165,6 +165,12 @@ export async function submitCardMachineEnquiry(formData: unknown) {
     `;
 
     try {
+        await sendEmailViaSMTP({
+            subject: `New Card Machine Enquiry - ${company}`,
+            htmlContent: emailBody,
+            senderName: name
+        });
+
         const whatsappMessage = `*New Card Machine Enquiry*%0A%0A*Name:* ${name}%0A*Company:* ${company}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A%0A*Machines:* ${machines.join(', ')}${message ? `%0A%0A*Message:* ${message}` : ''}`;
 
         return {
@@ -231,6 +237,12 @@ export async function submitGeneralEnquiry(formData: unknown) {
     `;
 
     try {
+        await sendEmailViaSMTP({
+            subject: `New General Enquiry - ${company}`,
+            htmlContent: emailBody,
+            senderName: name
+        });
+
         const whatsappMessage = `*New General Enquiry*%0A%0A*Name:* ${name}%0A*Company:* ${company}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A%0A*Interested in:* ${products.join(', ')}${message ? `%0A%0A*Message:* ${message}` : ''}`;
 
         return {
@@ -295,6 +307,12 @@ export async function submitAgentEnquiry(formData: unknown) {
     `;
 
     try {
+        await sendEmailViaSMTP({
+            subject: `New Independent Sales Agent Enquiry - ${name}`,
+            htmlContent: emailBody,
+            senderName: name
+        });
+
         const whatsappMessage = `*New Agent Enquiry*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Location:* ${location}%0A%0A*Experience:* ${experience}%0A%0A*Interest:* ${interest.join(', ')}`;
 
         return {

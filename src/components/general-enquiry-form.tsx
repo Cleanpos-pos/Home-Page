@@ -14,7 +14,6 @@ import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Ticke
 import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
 import { IframeDialog } from './iframe-dialog';
-import emailjs from '@emailjs/browser';
 
 
 const HangerIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -58,11 +57,6 @@ export function GeneralEnquiryForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const router = useRouter();
 
-  // Initialize EmailJS with Public Key
-  if (typeof window !== 'undefined' && process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
-    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
-  }
-
   const {
     control,
     handleSubmit,
@@ -83,30 +77,6 @@ export function GeneralEnquiryForm() {
     setIsSubmitting(true);
     setServerError(null);
     try {
-      console.log('> [EmailJS] Attempting to send using:', {
-        service: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        template: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        hasKey: !!process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      });
-
-      // 1. Send Email via EmailJS
-      const emailResponse = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          from_name: data.name,
-          from_email: data.email,
-          company: data.company,
-          phone: data.phone,
-          message: data.message || 'No message provided',
-          products: data.products.join(', '),
-          to_email: 'info@posso.co.uk',
-        }
-      );
-
-      console.log('> [EmailJS] Success:', emailResponse.status, emailResponse.text);
-
-      // 2. Original Server Action
       const result = await submitGeneralEnquiry(data);
       setIsSubmitting(false);
 
@@ -124,10 +94,10 @@ export function GeneralEnquiryForm() {
         }
       }
     } catch (err) {
-      console.error('Email/Submission error:', err);
+      console.error('Submission error:', err);
       setIsSubmitting(false);
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
-      setServerError(`Error sending enquiry: ${errorMessage}. Please try again or call us at 0808 175 3956.`);
+      setServerError(`Connection Error: ${errorMessage}. Please try again or call us at 0808 175 3956.`);
     }
   };
 
