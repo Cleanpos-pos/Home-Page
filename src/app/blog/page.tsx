@@ -1,7 +1,27 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight, Globe, ShoppingCart, Smartphone, CreditCard, Bot, Ticket, Zap, Snowflake, Pizza, Coffee, Wifi, Rocket } from 'lucide-react';
+import {
+  ArrowRight,
+  Globe,
+  ShoppingCart,
+  Smartphone,
+  CreditCard,
+  Bot,
+  Ticket,
+  Zap,
+  Snowflake,
+  Pizza,
+  Coffee,
+  Wifi,
+  Rocket,
+  ShieldAlert,
+  Utensils,
+  LayoutDashboard,
+  PiggyBank,
+  Users,
+  WifiOff
+} from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -20,6 +40,66 @@ const blogPosts = [
     href: "/blog/pos-and-self-order-kiosk-solutions",
     icon: <Rocket className="w-12 h-12 text-primary" />,
     featured: true,
+  },
+  {
+    title: 'The Truth About Free EPOS Software in the UK',
+    description: 'Is free EPOS software really free? Discover the hidden costs of "free" UK EPOS systems and why Posso is the transparent choice.',
+    href: '/blog/free-epos-software-uk-truth',
+    icon: <ShieldAlert className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'Why Every Server Needs a Portable Card Machine',
+    description: 'Boost restaurant efficiency with portable card machines. Learn how pay-at-table technology can save time and increase turnaround.',
+    href: '/blog/portable-card-machine-hospitality',
+    icon: <Smartphone className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'Meet Posso: Next-Gen Tech for UK Hospitality',
+    description: 'Explore our complete hospitality ecosystem, from self-service kiosks to commission-free ordering apps.',
+    href: '/blog/posso-future-hospitality-tech',
+    icon: <Rocket className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'The Perfect EPOS System for Your Indian Takeaway',
+    description: 'Simplify complex menus and speed up delivery with Posso\'s EPOS system for Indian takeaways. Featuring Caller ID and advanced modifiers.',
+    href: '/blog/epos-system-for-indian-takeaway',
+    icon: <Utensils className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'Streamline Your Orders with Specialised EPOS Software for Takeaway',
+    description: 'Generic POS fails where specialized takeaway software succeeds. Discover how Posso aggregates orders and manages delivery zones.',
+    href: '/blog/epos-software-for-takeaway-orders',
+    icon: <LayoutDashboard className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'Stop Paying Commissions: A Better EPOS System for Takeaway',
+    description: 'Tired of 30% commission? Posso provides a better EPOS system for takeaways with commission-free online ordering.',
+    href: '/blog/epos-system-for-takeaway-commission-free',
+    icon: <PiggyBank className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'Speed Up Your Coffee Line with a Smart Cafe POS System',
+    description: 'Master the morning rush with Posso\'s high-speed cafe POS system. Features one-tap ordering and automated upselling.',
+    href: '/blog/cafe-pos-system-efficiency',
+    icon: <Coffee className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'Table Management Made Easy with Restaurant EPOS',
+    description: 'Master your dining room with Posso\'s Restaurant EPOS. Featuring TableMaestro visual floor plans and course firing.',
+    href: '/blog/restaurant-epos-table-management',
+    icon: <Users className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'What is the Best POS System for Pizza Delivery?',
+    description: 'Pizza delivery requires specialized features like half-and-half modifiers and integrated mapping. See why Posso leads the way.',
+    href: '/blog/best-pos-system-for-pizza-delivery',
+    icon: <Pizza className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: 'Why "Hybrid" EPOS Systems for Takeaways Are Essential',
+    description: 'Don\'t let a bad internet connection ruin your Friday night. Discover why Posso\'s hybrid EPOS systems are essential.',
+    href: '/blog/hybrid-epos-systems-for-takeaways',
+    icon: <WifiOff className="w-12 h-12 text-primary" />,
   },
   {
     title: 'Why Posso? The Operating System for High-Volume Amusement Parks',
