@@ -31,15 +31,9 @@ if (!dev) {
 app.prepare().then(() => {
   const server = express();
 
-  // Serve static assets from .next/static
-  const staticPath = path.join(rootDir, '.next/static');
-  console.log(`> [Posso] Absolute Static Path: ${staticPath}`);
-  if (fs.existsSync(staticPath)) {
-    console.log(`> [Posso] Serving static assets from ${staticPath}`);
-    server.use('/_next/static', express.static(staticPath));
-  } else {
-    console.warn(`> [Posso] WARNING: Static path NOT found: ${staticPath}`);
-  }
+  // Let Next.js handle all requests including static assets
+  // Manual serving can cause MIME-type header issues in strict browsers (Incognito)
+
 
   // Health Check
   server.get('/health', (req, res) => {
