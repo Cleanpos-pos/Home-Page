@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 import { CookieConsent } from '@/components/cookie-consent';
 
-const title = 'Posso | Restaurant ePOS & Self-Order Kiosks';
+const title = 'Posso | Restaurant ePOS, Self-Order Kiosks & Venue Tech';
 const description = 'State-of-the-art ePOS systems and self-order kiosks for fast food and takeaway restaurants. We offer ticketing, digital signage, and integrated payment solutions.';
 const url = 'https://posso.uk';
 
