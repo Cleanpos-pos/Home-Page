@@ -12,14 +12,14 @@ import { Checkbox } from '../ui/checkbox';
 import { Label } from '../ui/label';
 
 const CheeseIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d="M5.9 4.2L2 10.3c-1.3 2.4.2 5.5 2.9 5.5h14.2c2.7 0 4.2-3.1 2.9-5.5L18.1 4.2c-1.3-2.4-4.9-2.4-6.2 0z"/>
-        <path d="M12 12h.01"/>
-        <path d="M16 8h.01"/>
-        <path d="M8 8h.01"/>
-        <path d="M10 16h.01"/>
-        <path d="M14 16h.01"/>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M5.9 4.2L2 10.3c-1.3 2.4.2 5.5 2.9 5.5h14.2c2.7 0 4.2-3.1 2.9-5.5L18.1 4.2c-1.3-2.4-4.9-2.4-6.2 0z" />
+    <path d="M12 12h.01" />
+    <path d="M16 8h.01" />
+    <path d="M8 8h.01" />
+    <path d="M10 16h.01" />
+    <path d="M14 16h.01" />
+  </svg>
 );
 
 
@@ -76,10 +76,10 @@ const KioskStartScreen = ({ onStart }: { onStart: () => void }) => {
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative glass-panel rounded-2xl w-full max-w-md h-full max-h-[500px] flex flex-col items-center justify-center text-center p-8">
         <div className="animate-bounce mb-6">
-            <svg width="60" height="60" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="1.5" y="1.5" width="29" height="29" rx="8.5" stroke="hsl(var(--primary))" strokeWidth="3"/>
-                <rect x="8" y="8" width="16" height="16" rx="4" fill="hsl(var(--primary))"/>
-            </svg>
+          <svg width="60" height="60" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1.5" y="1.5" width="29" height="29" rx="8.5" stroke="hsl(var(--primary))" strokeWidth="3" />
+            <rect x="8" y="8" width="16" height="16" rx="4" fill="hsl(var(--primary))" />
+          </svg>
         </div>
         <h2 className="text-4xl font-bold text-white">TOUCH TO</h2>
         <h1 className="text-6xl font-bold text-primary">START</h1>
@@ -94,12 +94,12 @@ const KioskStartScreen = ({ onStart }: { onStart: () => void }) => {
 };
 
 const QrCode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
-        <path fill="none" d="M0 0h256v256H0z" />
-        <path d="M176 176v-16h-16v-16h16v-16h16v16h16v16h-16v16zm-48-8a8 8 0 1 1-8-8 8 8 0 0 1 8 8zm-8-32a8 8 0 1 1-8-8 8 8 0 0 1 8 8zm-32 8a8 8 0 1 1-8-8 8 8 0 0 1 8 8zm-8 32a8 8 0 1 1-8-8 8 8 0 0 1 8 8zM88 40H40v48h48zm-8 40H48V48h32zM40 168h48v48H40zm8 8v32h32v-32zm120-128h48v48h-48zm8 8v32h32V48z" fill="currentColor"/>
-        <path d="M104 104v16h16v-16zm-16 0H72v16h16zm32 0v16h16v-16zm-16-16v-16h16v16zm-16 0H72v16h16zm-16-16H40v16h16zm32 32h16v16h-16v-16zm16 16v16h16v-16zm32 16h16v16h-16zm-16 16v16h16v-16zm32 16h16v16h-16zm-16 16v16h16v-16zm32 16h16v16h-16zm-48-48h16v16h-16zm16 16v16h16v-16zm-32 0h-16v16h16zm0 16v16h16v-16zm-16 0h-16v16h16zm-16-16H72v16h16zm0-16V88H72v16zm16 0V88h16v16zM40 120v16h16v-16zm0-16V88h16v16zm16-32H40v16h16zm128 32h16v16h-16zm16-16v-16h16v16zM40 224h16v16H40zm32 0h16v16H72zm32 0h16v16h-16zm32 0h16v16h-16z" fill="currentColor"/>
-    </svg>
-  );
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+    <path fill="none" d="M0 0h256v256H0z" />
+    <path d="M176 176v-16h-16v-16h16v-16h16v16h16v16h-16v16zm-48-8a8 8 0 1 1-8-8 8 8 0 0 1 8 8zm-8-32a8 8 0 1 1-8-8 8 8 0 0 1 8 8zm-32 8a8 8 0 1 1-8-8 8 8 0 0 1 8 8zm-8 32a8 8 0 1 1-8-8 8 8 0 0 1 8 8zM88 40H40v48h48zm-8 40H48V48h32zM40 168h48v48H40zm8 8v32h32v-32zm120-128h48v48h-48zm8 8v32h32V48z" fill="currentColor" />
+    <path d="M104 104v16h16v-16zm-16 0H72v16h16zm32 0v16h16v-16zm-16-16v-16h16v16zm-16 0H72v16h16zm-16-16H40v16h16zm32 32h16v16h-16v-16zm16 16v16h16v-16zm32 16h16v16h-16zm-16 16v16h16v-16zm32 16h16v16h-16zm-16 16v16h16v-16zm32 16h16v16h-16zm-48-48h16v16h-16zm16 16v16h16v-16zm-32 0h-16v16h16zm0 16v16h16v-16zm-16 0h-16v16h16zm-16-16H72v16h16zm0-16V88H72v16zm16 0V88h16v16zM40 120v16h16v-16zm0-16V88h16v16zm16-32H40v16h16zm128 32h16v16h-16zm16-16v-16h16v16zM40 224h16v16H40zm32 0h16v16H72zm32 0h16v16h-16zm32 0h16v16h-16z" fill="currentColor" />
+  </svg>
+);
 
 export function KioskDemo() {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -110,7 +110,11 @@ export function KioskDemo() {
   const [selectedAddons, setSelectedAddons] = useState<Addon[]>([]);
   const [totalFlash, setTotalFlash] = useState(false);
 
-  const orderNumber = useMemo(() => Math.floor(1000 + Math.random() * 9000), [screen]);
+  const [orderNumber, setOrderNumber] = useState<number>(0);
+
+  useEffect(() => {
+    setOrderNumber(Math.floor(1000 + Math.random() * 9000));
+  }, [screen]);
 
   const triggerTotalFlash = () => {
     setTotalFlash(true);
@@ -131,7 +135,7 @@ export function KioskDemo() {
 
   const openEditAddonModal = (cartItem: CartItem) => {
     const menuItem = menuItems.find(mi => mi.id === cartItem.id);
-    if(menuItem) {
+    if (menuItem) {
       setEditingCartItem(cartItem);
       setSelectedItemForAddons(menuItem);
       setSelectedAddons(cartItem.addons);
@@ -176,7 +180,7 @@ export function KioskDemo() {
         setCart(currentCart => [...currentCart, newItem]);
       }
     }
-    
+
     closeAddonModal();
   };
 
@@ -187,7 +191,7 @@ export function KioskDemo() {
   };
 
   const handleAddonSelect = (addon: Addon, checked: boolean) => {
-    setSelectedAddons(current => 
+    setSelectedAddons(current =>
       checked ? [...current, addon] : current.filter(a => a.id !== addon.id)
     );
   };
@@ -197,7 +201,7 @@ export function KioskDemo() {
       openAddonModal(item);
       return;
     }
-  
+
     const cartItemId = `${item.id}-`;
     const existingItem = cart.find(i => i.cartItemId === cartItemId);
     if (existingItem) {
@@ -235,7 +239,7 @@ export function KioskDemo() {
   const handlePayment = () => {
     setScreen('thankyou');
     setTimeout(() => {
-        handleCancelOrder();
+      handleCancelOrder();
     }, 8000);
   };
 
@@ -277,170 +281,173 @@ export function KioskDemo() {
               })}
             </div>
             <div className="text-center mt-8">
-                <Button variant="ghost" onClick={() => handleUpsellChoice(null)}>No thanks, go to payment</Button>
+              <Button variant="ghost" onClick={() => handleUpsellChoice(null)}>No thanks, go to payment</Button>
             </div>
           </Card>
         );
       case 'payment':
         return (
-            <Card className="glass-card overflow-hidden h-[700px] flex flex-col p-8">
-                <div className="flex items-center justify-between mb-6">
-                    <Button variant="outline" onClick={() => setScreen('ordering')}>
-                        <ArrowLeft className="h-5 w-5 mr-2" />
-                        Start Again
-                    </Button>
-                    <div className="text-center">
-                        <h2 className="text-3xl font-bold tracking-tighter gradient-text">Confirm & Pay</h2>
-                        <p className="text-slate-400">Order #{orderNumber}</p>
-                    </div>
-                    <div className="w-24"></div>
-                </div>
+          <Card className="glass-card overflow-hidden h-[700px] flex flex-col p-8">
+            <div className="flex items-center justify-between mb-6">
+              <Button variant="outline" onClick={() => setScreen('ordering')}>
+                <ArrowLeft className="h-5 w-5 mr-2" />
+                Start Again
+              </Button>
+              <div className="text-center">
+                <h2 className="text-3xl font-bold tracking-tighter gradient-text">Confirm & Pay</h2>
+                <p className="text-slate-400">Order #{orderNumber}</p>
+              </div>
+              <div className="w-24"></div>
+            </div>
 
-                <ScrollArea className="flex-grow my-4 h-[350px]">
-                    <div className="space-y-4 pr-4">
-                        {cart.map((item) => {
-                        const image = PlaceHolderImages.find(p => p.id === item.imageId);
-                        return (
-                        <div key={item.cartItemId} className="flex items-center gap-4 text-slate-200">
-                            {image && <Image src={image.imageUrl} alt={item.name} width={48} height={48} className="rounded-md" />}
-                            <div className="flex-grow">
-                                <p className="font-bold text-sm">{item.name}</p>
-                                <p className="text-xs text-slate-400">{item.quantity} x £{item.price.toFixed(2)}</p>
-                            </div>
-                            <p className="font-bold w-16 text-right">£{(item.price * item.quantity).toFixed(2)}</p>
-                        </div>
-                        )})}
+            <ScrollArea className="flex-grow my-4 h-[350px]">
+              <div className="space-y-4 pr-4">
+                {cart.map((item) => {
+                  const image = PlaceHolderImages.find(p => p.id === item.imageId);
+                  return (
+                    <div key={item.cartItemId} className="flex items-center gap-4 text-slate-200">
+                      {image && <Image src={image.imageUrl} alt={item.name} width={48} height={48} className="rounded-md" />}
+                      <div className="flex-grow">
+                        <p className="font-bold text-sm">{item.name}</p>
+                        <p className="text-xs text-slate-400">{item.quantity} x £{item.price.toFixed(2)}</p>
+                      </div>
+                      <p className="font-bold w-16 text-right">£{(item.price * item.quantity).toFixed(2)}</p>
                     </div>
-                </ScrollArea>
-                
-                <div className="border-t border-slate-700 pt-4 mt-auto space-y-6">
-                    <div className={`flex justify-between text-2xl font-bold text-slate-50 transition-all duration-300 ${totalFlash ? 'text-primary scale-105' : ''}`}>
-                        <span>Total to Pay:</span>
-                        <span>£{total.toFixed(2)}</span>
-                    </div>
+                  )
+                })}
+              </div>
+            </ScrollArea>
 
-                    <p className="text-lg text-slate-300 text-center">Please choose your payment method.</p>
-                    <div className="flex gap-8 justify-center">
-                        <Button size="lg" className="h-24 w-48 text-2xl" onClick={handlePayment}>
-                            <CreditCard className="mr-4 h-8 w-8"/> Card
-                        </Button>
-                        <Button size="lg" variant="outline" className="h-24 w-48 text-2xl" onClick={handlePayment}>
-                            <Landmark className="mr-4 h-8 w-8"/> Cash
-                        </Button>
-                    </div>
-                </div>
+            <div className="border-t border-slate-700 pt-4 mt-auto space-y-6">
+              <div className={`flex justify-between text-2xl font-bold text-slate-50 transition-all duration-300 ${totalFlash ? 'text-primary scale-105' : ''}`}>
+                <span>Total to Pay:</span>
+                <span>£{total.toFixed(2)}</span>
+              </div>
+
+              <p className="text-lg text-slate-300 text-center">Please choose your payment method.</p>
+              <div className="flex gap-8 justify-center">
+                <Button size="lg" className="h-24 w-48 text-2xl" onClick={handlePayment}>
+                  <CreditCard className="mr-4 h-8 w-8" /> Card
+                </Button>
+                <Button size="lg" variant="outline" className="h-24 w-48 text-2xl" onClick={handlePayment}>
+                  <Landmark className="mr-4 h-8 w-8" /> Cash
+                </Button>
+              </div>
+            </div>
           </Card>
         );
       case 'thankyou':
         return (
-            <Card className="glass-card overflow-hidden h-[700px] flex flex-col items-center justify-center p-8 text-center">
-                <QrCode className="w-40 h-40 text-white" />
-                <p className="text-lg text-slate-300 mt-4">Scan me for your ticket</p>
-                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text mt-8">Thank You!</h2>
-                <p className="text-2xl font-bold text-white mt-4">Your order number is #{orderNumber}</p>
-                <p className="text-lg text-slate-400 mt-2">Please collect at the counter.</p>
-                <Button variant="outline" className="mt-8" onClick={handleCancelOrder}>
-                    <ArrowLeft className="mr-2 h-4 w-4" />
-                    Start Again
-                </Button>
-            </Card>
+          <Card className="glass-card overflow-hidden h-[700px] flex flex-col items-center justify-center p-8 text-center">
+            <QrCode className="w-40 h-40 text-white" />
+            <p className="text-lg text-slate-300 mt-4">Scan me for your ticket</p>
+            <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text mt-8">Thank You!</h2>
+            <p className="text-2xl font-bold text-white mt-4">Your order number is #{orderNumber}</p>
+            <p className="text-lg text-slate-400 mt-2">Please collect at the counter.</p>
+            <Button variant="outline" className="mt-8" onClick={handleCancelOrder}>
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Start Again
+            </Button>
+          </Card>
         );
       case 'ordering':
       default:
         return (
-            <Card className="glass-card overflow-hidden">
-                <div className="grid grid-cols-1 md:grid-cols-3 h-[700px]">
-                    <div className="md:col-span-2 p-6">
-                    <div className="flex gap-2 mb-6">
-                        {categories.filter(c => c !== 'Desserts').map(category => (
-                            <Button 
-                                key={category} 
-                                variant={activeCategory === category ? 'default' : 'outline'}
-                                onClick={() => setActiveCategory(category)}
-                            >
-                                {category}
-                            </Button>
-                        ))}
-                    </div>
-                    <ScrollArea className="h-[550px]">
-                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 pr-6">
-                        {menuItems.filter(item => item.category === activeCategory).map((item) => {
-                            const image = PlaceHolderImages.find(p => p.id === item.imageId);
-                            return (
-                            <Card key={item.id} className="glass-card overflow-hidden">
-                            {image && (
-                                <Image
-                                    src={image.imageUrl}
-                                    alt={item.name}
-                                    data-ai-hint={image.imageHint}
-                                    width={200}
-                                    height={200}
-                                    className="w-full h-32 object-cover"
-                                />
-                            )}
-                            <CardContent className="p-4">
-                                <h3 className="font-bold text-slate-50">{item.name}</h3>
-                                <p className="text-slate-300">£{item.price.toFixed(2)}</p>
-                                <Button
-                                size="sm"
-                                className="w-full mt-2"
-                                onClick={() => addToCart(item)}
-                                >
-                                Add to Order
-                                </Button>
-                            </CardContent>
-                            </Card>
-                        )})}
-                        </div>
-                    </ScrollArea>
-                    </div>
-
-                    <div className="md:col-span-1 bg-slate-900/50 p-6 flex flex-col">
-                    <h3 className="text-2xl font-bold text-slate-50 flex items-center gap-2">
-                        <ShoppingCart className="text-primary" />
-                        Your Order
-                    </h3>
-                    <ScrollArea className="flex-grow my-4 h-[470px]">
-                        {cart.length === 0 ? (
-                        <div className="text-slate-400 text-center py-16">Your cart is empty.</div>
-                        ) : (
-                        <div className="space-y-4 pr-4">
-                            {cart.map((item) => {
-                            const image = PlaceHolderImages.find(p => p.id === item.imageId);
-                            const menuItem = menuItems.find(mi => mi.id === item.id);
-                            return (
-                            <div key={item.cartItemId} className="flex items-center gap-4 text-slate-200">
-                                {image && <Image src={image.imageUrl} alt={item.name} width={48} height={48} className="rounded-md" />}
-                                <div className="flex-grow">
-                                  <p className="font-bold text-sm">{item.name}</p>
-                                  <p className="text-xs text-slate-400">£{item.price.toFixed(2)}</p>
-                                  {menuItem?.addons && menuItem.addons.length > 0 && (
-                                    <Button variant="link" className="h-auto p-0 text-xs text-primary" onClick={() => openEditAddonModal(item)}>Customise</Button>
-                                  )}
-                                </div>
-                                <div className="flex items-center gap-2">
-                                <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => updateQuantity(item.cartItemId, -1)}><Minus className="h-4 w-4" /></Button>
-                                <span className="font-bold w-4 text-center">{item.quantity}</span>
-                                <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => updateQuantity(item.cartItemId, 1)}><Plus className="h-4 w-4" /></Button>
-                                </div>
-                                <p className="font-bold w-16 text-right">£{(item.price * item.quantity).toFixed(2)}</p>
-                            </div>
-                            )})}
-                        </div>
-                        )}
-                    </ScrollArea>
-                    <div className="border-t border-slate-700 pt-4 mt-auto">
-                        <div className={`flex justify-between text-lg font-bold text-slate-50 transition-all duration-300 ${totalFlash ? 'text-primary scale-105' : ''}`}>
-                        <span>Total:</span>
-                        <span>£{total.toFixed(2)}</span>
-                        </div>
-                        <Button size="lg" className="w-full mt-4" disabled={cart.length === 0} onClick={() => setScreen('upsell')}>
-                          Review and Pay
-                        </Button>
-                    </div>
-                    </div>
+          <Card className="glass-card overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-3 h-[700px]">
+              <div className="md:col-span-2 p-6">
+                <div className="flex gap-2 mb-6">
+                  {categories.filter(c => c !== 'Desserts').map(category => (
+                    <Button
+                      key={category}
+                      variant={activeCategory === category ? 'default' : 'outline'}
+                      onClick={() => setActiveCategory(category)}
+                    >
+                      {category}
+                    </Button>
+                  ))}
                 </div>
-            </Card>
+                <ScrollArea className="h-[550px]">
+                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 pr-6">
+                    {menuItems.filter(item => item.category === activeCategory).map((item) => {
+                      const image = PlaceHolderImages.find(p => p.id === item.imageId);
+                      return (
+                        <Card key={item.id} className="glass-card overflow-hidden">
+                          {image && (
+                            <Image
+                              src={image.imageUrl}
+                              alt={item.name}
+                              data-ai-hint={image.imageHint}
+                              width={200}
+                              height={200}
+                              className="w-full h-32 object-cover"
+                            />
+                          )}
+                          <CardContent className="p-4">
+                            <h3 className="font-bold text-slate-50">{item.name}</h3>
+                            <p className="text-slate-300">£{item.price.toFixed(2)}</p>
+                            <Button
+                              size="sm"
+                              className="w-full mt-2"
+                              onClick={() => addToCart(item)}
+                            >
+                              Add to Order
+                            </Button>
+                          </CardContent>
+                        </Card>
+                      )
+                    })}
+                  </div>
+                </ScrollArea>
+              </div>
+
+              <div className="md:col-span-1 bg-slate-900/50 p-6 flex flex-col">
+                <h3 className="text-2xl font-bold text-slate-50 flex items-center gap-2">
+                  <ShoppingCart className="text-primary" />
+                  Your Order
+                </h3>
+                <ScrollArea className="flex-grow my-4 h-[470px]">
+                  {cart.length === 0 ? (
+                    <div className="text-slate-400 text-center py-16">Your cart is empty.</div>
+                  ) : (
+                    <div className="space-y-4 pr-4">
+                      {cart.map((item) => {
+                        const image = PlaceHolderImages.find(p => p.id === item.imageId);
+                        const menuItem = menuItems.find(mi => mi.id === item.id);
+                        return (
+                          <div key={item.cartItemId} className="flex items-center gap-4 text-slate-200">
+                            {image && <Image src={image.imageUrl} alt={item.name} width={48} height={48} className="rounded-md" />}
+                            <div className="flex-grow">
+                              <p className="font-bold text-sm">{item.name}</p>
+                              <p className="text-xs text-slate-400">£{item.price.toFixed(2)}</p>
+                              {menuItem?.addons && menuItem.addons.length > 0 && (
+                                <Button variant="link" className="h-auto p-0 text-xs text-primary" onClick={() => openEditAddonModal(item)}>Customise</Button>
+                              )}
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => updateQuantity(item.cartItemId, -1)}><Minus className="h-4 w-4" /></Button>
+                              <span className="font-bold w-4 text-center">{item.quantity}</span>
+                              <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => updateQuantity(item.cartItemId, 1)}><Plus className="h-4 w-4" /></Button>
+                            </div>
+                            <p className="font-bold w-16 text-right">£{(item.price * item.quantity).toFixed(2)}</p>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  )}
+                </ScrollArea>
+                <div className="border-t border-slate-700 pt-4 mt-auto">
+                  <div className={`flex justify-between text-lg font-bold text-slate-50 transition-all duration-300 ${totalFlash ? 'text-primary scale-105' : ''}`}>
+                    <span>Total:</span>
+                    <span>£{total.toFixed(2)}</span>
+                  </div>
+                  <Button size="lg" className="w-full mt-4" disabled={cart.length === 0} onClick={() => setScreen('upsell')}>
+                    Review and Pay
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Card>
         );
     }
   };
@@ -461,33 +468,33 @@ export function KioskDemo() {
       </div>
 
       <Dialog open={!!selectedItemForAddons} onOpenChange={(open) => !open && closeAddonModal()}>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Customise your {selectedItemForAddons?.name}</DialogTitle>
-            </DialogHeader>
-            <div className="space-y-4 py-4">
-              {selectedItemForAddons?.addons?.map(addon => (
-                <div key={addon.id} className="flex items-center space-x-3">
-                  <Checkbox 
-                    id={addon.id} 
-                    onCheckedChange={(checked) => handleAddonSelect(addon, !!checked)}
-                    checked={selectedAddons.some(sa => sa.id === addon.id)}
-                  />
-                  <Label htmlFor={addon.id} className="flex-grow flex items-center justify-between text-base">
-                    <div className="flex items-center gap-2">
-                      {addon.icon}
-                      <span>{addon.name}</span>
-                    </div>
-                    <span>+£{addon.price.toFixed(2)}</span>
-                  </Label>
-                </div>
-              ))}
-            </div>
-            <DialogFooter>
-              <Button onClick={handleAddonConfirm}>{editingCartItem ? 'Update Item' : 'Add to Order'}</Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Customise your {selectedItemForAddons?.name}</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 py-4">
+            {selectedItemForAddons?.addons?.map(addon => (
+              <div key={addon.id} className="flex items-center space-x-3">
+                <Checkbox
+                  id={addon.id}
+                  onCheckedChange={(checked) => handleAddonSelect(addon, !!checked)}
+                  checked={selectedAddons.some(sa => sa.id === addon.id)}
+                />
+                <Label htmlFor={addon.id} className="flex-grow flex items-center justify-between text-base">
+                  <div className="flex items-center gap-2">
+                    {addon.icon}
+                    <span>{addon.name}</span>
+                  </div>
+                  <span>+£{addon.price.toFixed(2)}</span>
+                </Label>
+              </div>
+            ))}
+          </div>
+          <DialogFooter>
+            <Button onClick={handleAddonConfirm}>{editingCartItem ? 'Update Item' : 'Add to Order'}</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
