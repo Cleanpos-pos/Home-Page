@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { motion } from 'framer-motion';
-import { submitCardMachineEnquiry } from '@/app/actions';
+// import { submitCardMachineEnquiry } from '@/app/actions';
 import { PartyPopper, Phone } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Textarea } from './ui/textarea';
@@ -61,8 +61,12 @@ export function CardMachineEnquiryForm() {
     setIsSubmitting(true);
     setServerError(null);
     try {
-      // 1. Send via Server Action
-      const result = await submitCardMachineEnquiry(data);
+      const response = await fetch('/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, type: 'card_machine' }),
+      });
+      const result = await response.json();
       setIsSubmitting(false);
 
       if (result.success) {
@@ -70,9 +74,6 @@ export function CardMachineEnquiryForm() {
         setTimeout(() => router.push('/'), 4000);
       } else {
         setServerError(result.message);
-        if (result.errors) {
-          console.error('Validation errors:', result.errors);
-        }
       }
     } catch (err) {
       console.error('Submission error:', err);
@@ -81,6 +82,7 @@ export function CardMachineEnquiryForm() {
       setServerError(`Error sending enquiry: ${errorMessage}. Please try again or call us at 0808 175 3956.`);
     }
   };
+
 
   if (isSuccess) {
     return (

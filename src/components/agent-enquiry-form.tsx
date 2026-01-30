@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { AnimatePresence, motion } from 'framer-motion';
-import { submitAgentEnquiry } from '@/app/actions';
+// import { submitAgentEnquiry } from '@/app/actions';
 import { PartyPopper, ShoppingCart, Smartphone, CreditCard, MonitorPlay, Search, Megaphone, MapPin } from 'lucide-react';
 import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
@@ -62,8 +62,12 @@ export function AgentEnquiryForm() {
     setIsSubmitting(true);
     setServerError(null);
     try {
-      // 1. Send via Server Action
-      const result = await submitAgentEnquiry(data);
+      const response = await fetch('/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, type: 'agent' }),
+      });
+      const result = await response.json();
       setIsSubmitting(false);
 
       if (result.success) {
@@ -71,9 +75,6 @@ export function AgentEnquiryForm() {
         setTimeout(() => router.push('/'), 5000);
       } else {
         setServerError(result.message);
-        if (result.errors) {
-          console.error('Validation errors:', result.errors);
-        }
       }
     } catch (err) {
       console.error('Submission error:', err);
