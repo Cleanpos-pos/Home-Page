@@ -13,7 +13,7 @@ import { submitAgentEnquiry } from '@/app/actions';
 import { PartyPopper, ShoppingCart, Smartphone, CreditCard, MonitorPlay, Search, Megaphone, MapPin } from 'lucide-react';
 import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
-import emailjs from '@emailjs/browser';
+
 
 const agentEnquirySchema = z.object({
   name: z.string().min(2, 'Name is required.'),
@@ -62,32 +62,12 @@ export function AgentEnquiryForm() {
     setIsSubmitting(true);
     setServerError(null);
     try {
-      // 1. Send Email via EmailJS
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          from_name: data.name,
-          from_email: data.email,
-          phone: data.phone,
-          location: data.location,
-          experience: data.experience,
-          interest: data.interest.join(', '),
-          to_email: 'info@posso.co.uk',
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-
-      // 2. Original Server Action
+      // 1. Send via Server Action
       const result = await submitAgentEnquiry(data);
       setIsSubmitting(false);
 
       if (result.success) {
         setIsSuccess(true);
-        if ('whatsappMessage' in result && result.whatsappMessage) {
-          const whatsappUrl = `https://wa.me/447867597844?text=${result.whatsappMessage as string}`;
-          window.open(whatsappUrl, '_blank');
-        }
         setTimeout(() => router.push('/'), 5000);
       } else {
         setServerError(result.message);
@@ -96,7 +76,7 @@ export function AgentEnquiryForm() {
         }
       }
     } catch (err) {
-      console.error('Email/Submission error:', err);
+      console.error('Submission error:', err);
       setIsSubmitting(false);
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
       setServerError(`Error sending application: ${errorMessage}. Please try again or call us.`);

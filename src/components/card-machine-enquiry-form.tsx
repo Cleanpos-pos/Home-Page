@@ -15,7 +15,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
 import { IframeDialog } from './iframe-dialog';
-import emailjs from '@emailjs/browser';
+
 
 const cardMachineEnquirySchema = z.object({
   machines: z.array(z.string()).min(1, { message: 'Please select at least one machine.' }),
@@ -61,32 +61,12 @@ export function CardMachineEnquiryForm() {
     setIsSubmitting(true);
     setServerError(null);
     try {
-      // 1. Send Email via EmailJS
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          from_name: data.name,
-          from_email: data.email,
-          company: data.company,
-          phone: data.phone,
-          message: data.message || 'No message provided',
-          machines: data.machines.join(', '),
-          to_email: 'info@posso.co.uk',
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-
-      // 2. Original Server Action
+      // 1. Send via Server Action
       const result = await submitCardMachineEnquiry(data);
       setIsSubmitting(false);
 
       if (result.success) {
         setIsSuccess(true);
-        if (result.whatsappMessage) {
-          const whatsappUrl = `https://wa.me/447867597844?text=${result.whatsappMessage}`;
-          window.open(whatsappUrl, '_blank');
-        }
         setTimeout(() => router.push('/'), 4000);
       } else {
         setServerError(result.message);
@@ -95,7 +75,7 @@ export function CardMachineEnquiryForm() {
         }
       }
     } catch (err) {
-      console.error('Email/Submission error:', err);
+      console.error('Submission error:', err);
       setIsSubmitting(false);
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
       setServerError(`Error sending enquiry: ${errorMessage}. Please try again or call us at 0808 175 3956.`);

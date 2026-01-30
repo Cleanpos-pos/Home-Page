@@ -41,16 +41,16 @@ export async function submitContactForm(
     const { name, email, message } = validatedFields.data;
 
     try {
-        const whatsappMessage = `*New Contact Form Submission*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
+        // WhatsApp functionality removed as per request
+        // const whatsappMessage = `*New Contact Form Submission*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
 
         return {
-            message: 'Thank you for your message! Opening WhatsApp to send your details.',
-            fields: { whatsappMessage }
+            message: 'Thank you for your message! We will be in touch shortly.',
         };
     } catch (error) {
-        console.error('WhatsApp Prep Error:', error);
+        console.error('Submission Error:', error);
         return {
-            message: 'There was an error preparing your message for WhatsApp. Please try again or call us directly.',
+            message: 'There was an error sending your message. Please try again or call us directly.',
             fields: { name, email, message }
         };
     }
@@ -171,18 +171,18 @@ export async function submitCardMachineEnquiry(formData: unknown) {
             senderName: name
         });
 
-        const whatsappMessage = `*New Card Machine Enquiry*%0A%0A*Name:* ${name}%0A*Company:* ${company}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A%0A*Machines:* ${machines.join(', ')}${message ? `%0A%0A*Message:* ${message}` : ''}`;
+        // WhatsApp functionality removed as per request
+        // const whatsappMessage = `*New Card Machine Enquiry*%0A%0A*Name:* ${name}%0A*Company:* ${company}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A%0A*Machines:* ${machines.join(', ')}${message ? `%0A%0A*Message:* ${message}` : ''}`;
 
         return {
             success: true,
-            message: 'Thank you for your enquiry! Opening WhatsApp to send your details.',
-            whatsappMessage
+            message: 'Thank you for your enquiry! We will be in touch shortly.',
         };
     } catch (error) {
-        console.error('WhatsApp Prep Error:', error);
+        console.error('Submission Error:', error);
         return {
             success: false,
-            message: 'There was an error preparing your enquiry for WhatsApp. Please try again or call us directly.',
+            message: 'There was an error sending your enquiry via email. Please try again or call us directly.',
             errors: null,
         };
     }
@@ -243,18 +243,18 @@ export async function submitGeneralEnquiry(formData: unknown) {
             senderName: name
         });
 
-        const whatsappMessage = `*New General Enquiry*%0A%0A*Name:* ${name}%0A*Company:* ${company}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A%0A*Interested in:* ${products.join(', ')}${message ? `%0A%0A*Message:* ${message}` : ''}`;
+        // WhatsApp functionality removed as per request
+        // const whatsappMessage = `*New General Enquiry*%0A%0A*Name:* ${name}%0A*Company:* ${company}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A%0A*Interested in:* ${products.join(', ')}${message ? `%0A%0A*Message:* ${message}` : ''}`;
 
         return {
             success: true,
-            message: 'Thank you for your enquiry! Opening WhatsApp to send your details.',
-            whatsappMessage
+            message: 'Thank you for your enquiry! We will be in touch shortly.',
         };
     } catch (error) {
-        console.error('WhatsApp Prep Error:', error);
+        console.error('Submission Error:', error);
         return {
             success: false,
-            message: 'There was an error preparing your enquiry for WhatsApp. Please try again or call us directly.',
+            message: 'There was an error sending your enquiry via email. Please try again or call us directly.',
             errors: null,
         };
     }
@@ -313,18 +313,18 @@ export async function submitAgentEnquiry(formData: unknown) {
             senderName: name
         });
 
-        const whatsappMessage = `*New Agent Enquiry*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Location:* ${location}%0A%0A*Experience:* ${experience}%0A%0A*Interest:* ${interest.join(', ')}`;
+        // WhatsApp functionality removed as per request
+        // const whatsappMessage = `*New Agent Enquiry*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Location:* ${location}%0A%0A*Experience:* ${experience}%0A%0A*Interest:* ${interest.join(', ')}`;
 
         return {
             success: true,
-            message: 'Thank you for your enquiry! Opening WhatsApp to send your details.',
-            whatsappMessage
+            message: 'Thank you for your enquiry! We will be in touch shortly.',
         };
     } catch (error) {
-        console.error('WhatsApp Prep Error:', error);
+        console.error('Submission Error:', error);
         return {
             success: false,
-            message: 'There was an error preparing your enquiry for WhatsApp. Please try again or call us directly.',
+            message: 'There was an error sending your enquiry via email. Please try again or call us directly.',
             errors: null,
         };
     }
