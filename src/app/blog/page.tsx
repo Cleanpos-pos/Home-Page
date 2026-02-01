@@ -20,7 +20,8 @@ import {
   LayoutDashboard,
   PiggyBank,
   Users,
-  WifiOff
+  WifiOff,
+  Brain
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -39,6 +40,12 @@ const blogPosts = [
     description: "Transform your business with POSSO's cutting-edge POS systems, EPOS solutions, and self-order kiosks. AI-powered technology for the modern hospitality industry.",
     href: "/blog/pos-and-self-order-kiosk-solutions",
     icon: <Rocket className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: "The Irrational Restaurant: Why Your Customers Are Lying to You",
+    description: "A behavioural economics approach to modern POS systems, self-service kiosks, and hospitality technology. Discover how Posso Ltd solves psychological pain points.",
+    href: "/blog/the-irrational-restaurant",
+    icon: <Brain className="w-12 h-12 text-primary" />,
     featured: true,
   },
   {
