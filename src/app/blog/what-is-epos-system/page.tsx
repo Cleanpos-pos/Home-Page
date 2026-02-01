@@ -135,9 +135,9 @@ export default function EposSystemGuidePage() {
                             <h3>EPOS Systems by Industry</h3>
 
                             <ul>
-                                <li><strong>For Retail Shops:</strong> <Link href="/solutions/retail" className="text-primary hover:underline">EPOS systems for retail</Link> provide real-time sales tracking and automated inventory management</li>
-                                <li><strong>For Hospitality:</strong> <Link href="/solutions/hospitality" className="text-primary hover:underline">Hospitality POS systems</Link> include advanced features like table management, order tracking, and kitchen integration</li>
-                                <li><strong>For Takeaways and Bars:</strong> Specialized <Link href="/solutions/takeaway" className="text-primary hover:underline">EPOS solutions for takeaways</Link> and bars streamline online ordering and stock control</li>
+                                <li><strong>For Retail Shops:</strong> <Link href="/solutions/kiosks-for-retail" className="text-primary hover:underline">EPOS systems for retail</Link> provide real-time sales tracking and automated inventory management</li>
+                                <li><strong>For Hospitality:</strong> <Link href="/hospitality-epos-systems-by-posso-uk-epos-systems" className="text-primary hover:underline">Hospitality POS systems</Link> include advanced features like table management, order tracking, and kitchen integration</li>
+                                <li><strong>For Takeaways and Bars:</strong> Specialized <Link href="/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk" className="text-primary hover:underline">EPOS solutions for takeaways</Link> and bars streamline online ordering and stock control</li>
                             </ul>
 
                             <h2>How Does an EPOS System Work?</h2>
@@ -187,7 +187,7 @@ export default function EposSystemGuidePage() {
                             </ul>
 
                             <p>
-                                For example, retail POS software can automatically alert managers when stock levels fall below predetermined thresholds, while a takeaway EPOS system seamlessly integrates online orders from multiple delivery platforms directly into your workflow.
+                                For example, <Link href="/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk" className="text-primary hover:underline">retail POS software</Link> can automatically alert managers when stock levels fall below predetermined thresholds, while a <Link href="/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk" className="text-primary hover:underline">takeaway EPOS system</Link> seamlessly integrates online orders from multiple delivery platforms directly into your workflow.
                             </p>
 
                             <h2>Key Advantages of an EPOS System in 2026</h2>
@@ -199,14 +199,14 @@ export default function EposSystemGuidePage() {
                             <h3>1. Dramatically Enhanced Efficiency</h3>
 
                             <ul>
-                                <li><strong>Retail Operations:</strong> POS software for retail reduces manual stock checking requirements by approximately 30%, freeing staff for customer-facing activities</li>
-                                <li><strong>Hospitality Services:</strong> Hospitality EPOS systems increase order accuracy by connecting seamlessly with kitchen display systems, reducing errors and waste</li>
+                                <li><strong>Retail Operations:</strong> <Link href="/solutions/kiosks-for-retail" className="text-primary hover:underline">POS software for retail</Link> reduces manual stock checking requirements by approximately 30%, freeing staff for customer-facing activities</li>
+                                <li><strong>Hospitality Services:</strong> <Link href="/hospitality-epos-systems-by-posso-uk-epos-systems" className="text-primary hover:underline">Hospitality EPOS systems</Link> increase order accuracy by connecting seamlessly with kitchen display systems, reducing errors and waste</li>
                             </ul>
 
                             <h3>2. Superior Customer Experience</h3>
 
                             <p>
-                                Deliver faster service through contactless payments, integrated loyalty programs, and self-service options. <span className="bg-emerald-500/10 text-emerald-400 px-2 py-1 rounded font-medium">Currently, 65% of restaurant customers prefer self-service kiosks</span>, and restaurant EPOS systems enable both kiosk ordering and QR code table ordering for maximum convenience.
+                                Deliver faster service through contactless payments, integrated loyalty programs, and self-service options. <span className="bg-emerald-500/10 text-emerald-400 px-2 py-1 rounded font-medium">Currently, 65% of restaurant customers prefer self-service kiosks</span>, and <Link href="/solutions/restaurant-self-service-kiosk" className="text-primary hover:underline">restaurant EPOS systems</Link> enable both kiosk ordering and QR code table ordering for maximum convenience.
                             </p>
 
                             <h3>3. Measurable Revenue Growth</h3>
@@ -230,7 +230,7 @@ export default function EposSystemGuidePage() {
                             <h3>1. EPOS Systems for Retail Stores</h3>
 
                             <ul>
-                                <li>Instant stock updates through retail POS software reduce out-of-stock situations by 25%</li>
+                                <li>Instant stock updates through <Link href="/solutions/kiosks-for-retail" className="text-primary hover:underline">retail POS software</Link> reduce out-of-stock situations by 25%</li>
                                 <li>Comprehensive sales reports reveal your best-selling products and optimal pricing strategies</li>
                                 <li>Multi-location inventory management for growing retail chains</li>
                                 <li>Customer relationship management (CRM) integration for personalized marketing</li>
@@ -239,7 +239,7 @@ export default function EposSystemGuidePage() {
                             <h3>2. EPOS for Restaurants and Hospitality</h3>
 
                             <ul>
-                                <li>Restaurant EPOS systems improve table turnover by 15% through streamlined order management</li>
+                                <li><Link href="/restaurant-epos-system-3" className="text-primary hover:underline">Restaurant EPOS systems</Link> improve table turnover by 15% through streamlined order management</li>
                                 <li>Kitchen display system integration eliminates order errors and accelerates service</li>
                                 <li>Advanced table management features optimize seating and minimize customer wait times</li>
                                 <li>Staff performance tracking and tip management functionality</li>
@@ -248,9 +248,9 @@ export default function EposSystemGuidePage() {
                             <h3>3. EPOS for Takeaways and Bars</h3>
 
                             <ul>
-                                <li>Takeaway EPOS systems reduce order processing time by 20%</li>
+                                <li><Link href="/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk" className="text-primary hover:underline">Takeaway EPOS systems</Link> reduce order processing time by 20%</li>
                                 <li>Seamless integration of online orders from Deliveroo, Uber Eats, Just Eat, and your own website</li>
-                                <li>Bar EPOS solutions monitor inventory during peak hours to prevent costly stockouts</li>
+                                <li><Link href="/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk" className="text-primary hover:underline">Bar EPOS solutions</Link> monitor inventory during peak hours to prevent costly stockouts</li>
                                 <li>Age verification features for alcohol sales compliance</li>
                             </ul>
 
