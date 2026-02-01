@@ -173,6 +173,12 @@ const blogPosts = [
     href: '/blog/cafe-coffee-shop-epos-systems-uk',
     icon: <Coffee className="w-12 h-12 text-primary" />,
   },
+  {
+    title: 'What Is an EPOS System? Transform Your Business in 2026',
+    description: 'Discover how EPOS systems transform businesses in 2026. Learn about the best POS systems for retail, restaurants, and takeaways.',
+    href: '/blog/what-is-epos-system',
+    icon: <LayoutDashboard className="w-12 h-12 text-primary" />,
+  },
 ];
 
 export default function BlogPage() {
