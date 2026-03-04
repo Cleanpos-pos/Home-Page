@@ -79,6 +79,7 @@ const solutionsLinks = [
   { href: '/solutions/ice-skating-rinks', label: 'Ice Skating Rinks' },
   { href: '/solutions/ski-resorts', label: 'Ski Resorts' },
   { href: '/solutions/spas-wellness-centers', label: 'Spas & Wellness' },
+  { href: '/solutions/dry-cleaning-pos-system', label: 'Dry Cleaning POS' },
   { href: '/solutions/festivals-events', label: 'Festivals & Events' },
 ]
 
