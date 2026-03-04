@@ -34,7 +34,11 @@ const machineOptions = [
   { id: 'clover', label: 'Clover', imageId: 'clover-flex' },
 ];
 
-export function CardMachineEnquiryForm() {
+interface CardMachineEnquiryFormProps {
+  onFormSubmit?: () => void;
+}
+
+export function CardMachineEnquiryForm({ onFormSubmit }: CardMachineEnquiryFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -71,6 +75,9 @@ export function CardMachineEnquiryForm() {
 
       if (result.success) {
         setIsSuccess(true);
+        if (onFormSubmit) {
+          onFormSubmit();
+        }
         setTimeout(() => router.push('/'), 4000);
       } else {
         setServerError(result.message);

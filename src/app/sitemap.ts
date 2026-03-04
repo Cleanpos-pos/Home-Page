@@ -78,6 +78,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/android-epos-systems-from-posso',
     '/small-pos-magic-the-tiny-marvels-transforming-our-lives',
     '/dry-cleaning-epos-systems-uk',
+    '/solutions/dry-cleaning-pos-system',
     '/portable-card-machines',
     '/skegness-pos-systems',
     '/cobways-tell-a-friend-scheme',

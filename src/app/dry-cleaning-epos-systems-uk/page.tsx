@@ -8,7 +8,7 @@ export default function RedirectPage() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace('/pos');
+    router.replace('/solutions/dry-cleaning-pos-system');
   }, [router]);
 
   return null;
