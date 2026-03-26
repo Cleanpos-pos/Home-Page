@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Cog, MonitorCheck, Phone, Zap } from 'lucide-react';
+import { ArrowRight, Cog, MonitorCheck, Phone, Zap, CheckCircle2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,14 +9,16 @@ import { IframeDialog } from '../iframe-dialog';
 
 
 export function Hero() {
-
     return (
-        <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
+        <section
+            className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0"
+            aria-label="Posso ePOS systems and self-order kiosks for UK restaurants"
+        >
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
                     src="/restaurant-interior-posso.jpg"
-                    alt="Premium Restaurant Interior"
+                    alt="Modern restaurant interior using Posso ePOS system and self-order kiosks in the UK"
                     fill
                     className="object-cover opacity-30"
                     priority
@@ -29,19 +31,35 @@ export function Hero() {
                 <div className="flex flex-col gap-6 text-center md:text-left items-center md:items-start">
                     <Badge variant="outline" className="border-primary/50 text-primary/80 bg-primary/10 py-1 px-3">
                         <Zap className="w-3 h-3 mr-2" />
-                        NEXT-GEN RESTAURANT TECH
+                        UK&apos;S LEADING RESTAURANT TECHNOLOGY
                     </Badge>
                     <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl lg:text-7xl !leading-tight bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
-                        ePOS Systems & <br />
+                        Restaurant ePOS Systems &{' '}
                         <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Self-Order Kiosks</span>
                     </h1>
-                    <p className="max-w-md text-lg text-slate-400">
-                        Posso Ltd is a pioneering company specialising in state-of-the-art restaurant ePOS systems and self-order kiosks. Our mission is to empower fast food and takeaway restaurants with innovative technology.
+                    <p className="max-w-lg text-lg text-slate-400 leading-relaxed">
+                        Posso provides <strong className="text-slate-200">all-in-one ePOS systems</strong>, <strong className="text-slate-200">self-order kiosks</strong>, online ordering, and digital signage for <strong className="text-slate-200">restaurants, takeaways, and hospitality venues</strong> across the United Kingdom. Reduce costs, speed up service, and boost revenue from day one.
                     </p>
+
+                    <ul className="flex flex-col gap-2 text-sm text-slate-300" aria-label="Key benefits of Posso ePOS">
+                        <li className="flex items-center gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
+                            <span>Trusted by <strong className="text-slate-100">500+ restaurants &amp; venues</strong> across the UK</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
+                            <span>Average <strong className="text-slate-100">30% increase in order value</strong> with self-order kiosks</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
+                            <span>Free setup, training, and <strong className="text-slate-100">UK-based support</strong></span>
+                        </li>
+                    </ul>
+
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50">
                             <Link href="/contact">
-                                Make an enquiry <ArrowRight className="ml-2 h-5 w-5" />
+                                Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                             </Link>
                         </Button>
                         <IframeDialog
@@ -50,15 +68,18 @@ export function Hero() {
                             trigger={
                                 <Button size="lg" variant="outline" className="bg-green-600 hover:bg-green-700 text-white border-green-700 hover:border-green-800">
                                     <Phone className="mr-2 h-5 w-5" />
-                                    Click to Talk Now
+                                    Talk to Us Now
                                 </Button>
                             }
                         />
                     </div>
 
+                    <p className="text-xs text-slate-500 mt-2">
+                        Or call free: <a href="tel:+448081753956" className="text-primary hover:underline font-medium">0808 175 3956</a> &mdash; Mon&ndash;Fri 9am&ndash;5:30pm
+                    </p>
                 </div>
 
-                <div className="relative flex items-center justify-center h-[500px]">
+                <div className="relative flex items-center justify-center h-[500px]" aria-hidden="true">
                     <div className="absolute w-full h-full animate-spin-slow" style={{ animationDuration: '20s' }}>
                         <div className="absolute w-[400px] h-[400px] border-2 border-dashed border-primary/20 rounded-full" />
                         <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 border border-dashed border-primary/10 rounded-full" />

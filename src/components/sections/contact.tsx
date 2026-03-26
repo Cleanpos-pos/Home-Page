@@ -28,7 +28,7 @@ export function ContactDialog({ children }: { children: React.ReactNode }) {
           <iframe
             src="https://calendly.com/delivrr/15min"
             className="w-full h-full border-0"
-            title="Book a call back"
+            title="Book a free consultation with Posso"
           />
         </div>
       </DialogContent>
@@ -38,14 +38,13 @@ export function ContactDialog({ children }: { children: React.ReactNode }) {
 
 export function Contact() {
   return (
-    <section id="contact" className="container mx-auto px-4 py-20 md:px-6">
+    <section id="contact" className="container mx-auto px-4 py-20 md:px-6" aria-label="Contact Posso for a free ePOS demo">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl gradient-text">
-          Ready to Upgrade?
+          Get Your Free ePOS Demo Today
         </h2>
         <p className="mx-auto mt-4 max-w-[700px] text-lg text-slate-300 md:text-xl">
-          Let's talk about how Posso can revolutionise your business. Schedule a
-          free consultation or give us a call today.
+          See how Posso can transform your restaurant or venue. Book a free, no-obligation consultation with our team and get a personalised demo of our ePOS systems, self-order kiosks, and more.
         </p>
       </div>
 
@@ -53,16 +52,21 @@ export function Contact() {
         <ContactDialog>
           <Button size="lg">
             <Calendar className="mr-2 h-5 w-5" />
-            Book a call back
+            Book a Free Consultation
           </Button>
         </ContactDialog>
         <Button size="lg" variant="outline" asChild>
           <a href="tel:+448081753956">
             <Phone className="mr-2 h-5 w-5" />
-            Call Us Now
+            Call 0808 175 3956
           </a>
         </Button>
       </div>
+
+      <p className="text-center text-sm text-slate-500 mt-6 max-w-lg mx-auto">
+        Free call &mdash; available Monday to Friday, 9am&ndash;5:30pm. Or email us anytime at{' '}
+        <a href="mailto:info@posso.uk" className="text-primary hover:underline">info@posso.uk</a>
+      </p>
     </section>
   );
 }

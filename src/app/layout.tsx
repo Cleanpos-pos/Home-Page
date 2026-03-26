@@ -3,8 +3,8 @@ import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 import { CookieConsent } from '@/components/cookie-consent';
 
-const title = 'Posso | Restaurant ePOS, Self-Order Kiosks & Venue Tech';
-const description = 'State-of-the-art ePOS systems and self-order kiosks for fast food and takeaway restaurants. We offer ticketing, digital signage, and integrated payment solutions.';
+const title = 'Restaurant ePOS Systems & Self-Order Kiosks UK | Posso';
+const description = 'Posso provides ePOS systems, self-order kiosks, online ordering, ticketing, and digital signage for restaurants, takeaways, and venues across the UK. Call 0808 175 3956.';
 const url = 'https://posso.uk';
 
 export const metadata: Metadata = {
@@ -14,10 +14,25 @@ export const metadata: Metadata = {
     template: `%s | Posso`,
   },
   description: description,
-  keywords: ['ePOS systems', 'self-order kiosks', 'restaurant technology', 'takeaway POS', 'ticketing software', 'digital signage', 'payment solutions'],
+  keywords: [
+    'ePOS system UK',
+    'restaurant POS system',
+    'self-order kiosk',
+    'self-service kiosk UK',
+    'takeaway POS system',
+    'restaurant technology',
+    'hospitality ePOS',
+    'fast food POS',
+    'ticketing software',
+    'digital signage restaurant',
+    'card payment machine',
+    'online ordering system',
+    'kitchen display system',
+    'venue management software',
+  ],
   openGraph: {
     title: title,
-    description: description,
+    description: 'All-in-one ePOS, self-order kiosks, online ordering, and venue management for UK restaurants and hospitality. Trusted by 500+ businesses.',
     url: url,
     siteName: 'Posso',
     images: [
@@ -25,7 +40,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Posso ePOS and Kiosk solutions',
+        alt: 'Posso restaurant ePOS systems and self-order kiosks for UK hospitality',
       },
     ],
     locale: 'en_GB',
@@ -34,8 +49,10 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: title,
-    description: description,
+    description: 'All-in-one ePOS, self-order kiosks, online ordering & venue management for UK restaurants. Trusted by 500+ businesses.',
     images: ['/og-image.png'],
+    creator: '@posso_uk',
+    site: '@posso_uk',
   },
   applicationName: 'Posso',
   appleWebApp: {
@@ -60,6 +77,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: url,
   },
+  verification: {
+    // Add your Google Search Console verification code here
+    // google: 'your-verification-code',
+  },
 };
 
 export const viewport: Viewport = {
@@ -67,23 +88,57 @@ export const viewport: Viewport = {
   colorScheme: 'dark',
 }
 
-
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Posso",
+  "@id": "https://posso.uk/#organization",
+  "name": "Posso Ltd",
+  "legalName": "Posso Ltd",
   "url": "https://posso.uk",
-  "logo": "https://posso.uk/icon-512x512.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+44-808-175-3956",
-    "contactType": "Customer Service",
-    "areaServed": "GB",
-    "availableLanguage": "en"
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://posso.uk/icon-512x512.png",
+    "width": 512,
+    "height": 512
+  },
+  "description": "UK provider of ePOS systems, self-order kiosks, ticketing, digital signage, and hospitality technology for restaurants, takeaways, and entertainment venues.",
+  "telephone": "+44-808-175-3956",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+44-808-175-3956",
+      "contactType": "Sales",
+      "areaServed": "GB",
+      "availableLanguage": "en"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+44-808-175-3956",
+      "contactType": "Customer Support",
+      "areaServed": "GB",
+      "availableLanguage": "en"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GB"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United Kingdom"
   },
   "sameAs": [
     "https://x.com/posso_uk",
     "https://www.linkedin.com/company/posso-uk"
+  ],
+  "knowsAbout": [
+    "Restaurant ePOS Systems",
+    "Self-Order Kiosks",
+    "Hospitality Technology",
+    "Digital Signage",
+    "Ticketing Systems",
+    "Online Ordering",
+    "Payment Processing"
   ]
 };
 
@@ -93,7 +148,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en-GB" className="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
