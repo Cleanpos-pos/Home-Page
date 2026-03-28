@@ -1,8 +1,12 @@
 import { MetadataRoute } from 'next';
+import { getAllSlugs } from '@/lib/seo-pages-data';
 
 const URL = 'https://posso.uk';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // SEO landing pages (programmatic)
+  const seoPageRoutes = getAllSlugs().map(slug => `/${slug}`);
+
   const routes = [
     '/',
     '/pos',
@@ -86,10 +90,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/posso-epos'
   ];
 
-  return routes.map((route) => ({
+  const allRoutes = [...routes, ...seoPageRoutes];
+
+  return allRoutes.map((route) => ({
     url: `${URL}${route}`,
     lastModified: new Date().toISOString(),
-    changeFrequency: 'monthly',
+    changeFrequency: 'monthly' as const,
     priority: route === '/' ? 1 : 0.8,
   }));
 }
