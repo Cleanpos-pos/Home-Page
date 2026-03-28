@@ -1,7 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, ArrowRight, Zap, HelpCircle, Globe, ShieldCheck, BarChart3, Smartphone } from 'lucide-react';
+import { ArrowRight, Zap, HelpCircle, Globe, ShieldCheck, BarChart3, Smartphone } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -189,8 +189,8 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
                 <p className="text-slate-500 text-sm">UK Businesses</p>
               </div>
               <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-                <p className="text-3xl font-bold text-accent mb-2">0%</p>
-                <p className="text-slate-500 text-sm">Commission on Orders</p>
+                <p className="text-3xl font-bold text-accent mb-2">Low</p>
+                <p className="text-slate-500 text-sm">Commission Rates</p>
               </div>
               <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
                 <p className="text-3xl font-bold text-emerald-400 mb-2">24/7</p>

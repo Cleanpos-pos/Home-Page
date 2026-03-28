@@ -51,7 +51,7 @@ export const seoPages: SeoPageData[] = [
       { title: "Multi-Brand Support", desc: "Run unlimited virtual brands from one kitchen with separate menus and online ordering pages." },
       { title: "Aggregator Integration", desc: "Deliveroo, Uber Eats, Just Eat orders all on one screen. No more tablet farm." },
       { title: "Kitchen Display System", desc: "Colour-coded orders routed to the right station with countdown timers." },
-      { title: "0% Commission Online Orders", desc: "Build your own direct ordering channel and keep 100% of revenue." },
+      { title: "Low Commission Rates Online Orders", desc: "Build your own direct ordering channel and keep more of your revenue with low rates." },
       { title: "Real-Time Analytics", desc: "Track each brand's performance, peak hours and bestselling items independently." },
       { title: "Delivery Driver Management", desc: "Assign and track your own drivers or integrate with third-party fleets." },
     ],
@@ -111,7 +111,7 @@ export const seoPages: SeoPageData[] = [
     ],
     features: [
       { title: "Cloud-Based", desc: "Access your data from anywhere. Real-time sync across all devices and locations." },
-      { title: "Online Ordering Built-In", desc: "Accept orders from your own website with 0% commission. Delivery and collection supported." },
+      { title: "Online Ordering Built-In", desc: "Accept orders from your own website with low commission rates. Delivery and collection supported." },
       { title: "Kitchen Display System", desc: "Replace paper tickets with a screen-based workflow. Faster, cleaner, more accurate." },
       { title: "Multi-Location", desc: "Manage multiple restaurants from one master dashboard. Compare performance across sites." },
       { title: "Integrated Payments", desc: "Accept card, contactless and mobile payments with Posso's built-in payment processing." },
@@ -130,18 +130,18 @@ export const seoPages: SeoPageData[] = [
   {
     slug: "best-epos-now-ordering-app-by-posso-ltd-uk",
     title: "Best ePOS Ordering App UK | Posso Alternative",
-    description: "Looking for the best ePOS ordering app? Posso offers 0% commission, branded apps and full ePOS integration. Better than ePOS Now.",
+    description: "Looking for the best ePOS ordering app? Posso offers low commission rates, branded apps and full ePOS integration. Better than ePOS Now.",
     h1: "Best ePOS Ordering App UK",
     subtitle: "Commission-free online ordering with full ePOS integration. A smarter alternative to ePOS Now's ordering add-on.",
     category: "epos",
     targetKeyword: "ePOS ordering app",
-    heroContent: "If you're searching for the best ePOS ordering app for your restaurant, you've probably looked at ePOS Now. But there's a better option. Posso's ordering app is built natively into our ePOS system — not bolted on as an expensive add-on. You get 0% commission on all direct orders, a fully branded customer-facing app, and seamless kitchen integration from day one.",
+    heroContent: "If you're searching for the best ePOS ordering app for your restaurant, you've probably looked at ePOS Now. But there's a better option. Posso's ordering app is built natively into our ePOS system — not bolted on as an expensive add-on. You get low commission rates on all direct orders, a fully branded customer-facing app, and seamless kitchen integration from day one.",
     sections: [
-      { heading: "Why Restaurants Switch from ePOS Now to Posso", content: "ePOS Now charges extra for online ordering, charges per transaction, and locks you into long contracts. Posso includes online ordering as standard in every plan. Your customers order through your own branded website or app, orders fire straight to your kitchen, and you keep 100% of the revenue. No per-order fees, no hidden charges." },
+      { heading: "Why Restaurants Switch from ePOS Now to Posso", content: "ePOS Now charges extra for online ordering, charges per transaction, and locks you into long contracts. Posso includes online ordering as standard in every plan. Your customers order through your own branded website or app, orders fire straight to your kitchen, and you keep more of your revenue with our low rates. No per-order fees, no hidden charges." },
       { heading: "Built-In, Not Bolted On", content: "With Posso, online ordering isn't a third-party integration — it's part of the core system. That means your online menu stays in sync with your till automatically. Change a price, add a new dish or mark something as sold out, and it updates everywhere instantly. No manual syncing, no duplicate menus to maintain." },
     ],
     features: [
-      { title: "0% Commission", desc: "Keep every penny of your online order revenue. No per-order fees." },
+      { title: "Low Commission Rates", desc: "Low commission rates on online orders. No hidden per-order fees." },
       { title: "Branded Ordering App", desc: "Your logo, your colours, your domain. Customers order from you, not a marketplace." },
       { title: "Auto Menu Sync", desc: "Change your till menu and your online menu updates instantly. One source of truth." },
       { title: "Kitchen Integration", desc: "Online orders print alongside walk-in orders. No separate tablets needed." },
@@ -149,7 +149,7 @@ export const seoPages: SeoPageData[] = [
       { title: "Customer Database", desc: "Build your own marketing list. Send promotions directly to your customers." },
     ],
     faqs: [
-      { q: "Is Posso better than ePOS Now for ordering?", a: "For online ordering specifically, yes. Posso includes ordering as standard with 0% commission, while ePOS Now charges extra for their ordering add-on." },
+      { q: "Is Posso better than ePOS Now for ordering?", a: "For online ordering specifically, yes. Posso includes ordering as standard with low commission rates, while ePOS Now charges extra for their ordering add-on." },
       { q: "Can I switch from ePOS Now to Posso?", a: "Yes. We handle the full migration — menu setup, hardware configuration and staff training. Most restaurants are live within 48 hours." },
       { q: "Do I need new hardware?", a: "Not necessarily. Posso runs on Android tablets and Windows PCs. We can assess your existing kit." },
     ],
@@ -160,7 +160,7 @@ export const seoPages: SeoPageData[] = [
   {
     slug: "best-facebook-food-ordering-system-by-posso-ltd-uk",
     title: "Best Facebook Food Ordering System UK | Posso",
-    description: "Accept food orders directly from your Facebook page. Posso's social ordering system integrates with your ePOS. 0% commission.",
+    description: "Accept food orders directly from your Facebook page. Posso's social ordering system integrates with your ePOS. low commission rates.",
     h1: "Best Facebook Food Ordering System UK",
     subtitle: "Turn your Facebook page into a direct ordering channel. Orders go straight to your kitchen — no commission.",
     category: "ordering",
@@ -172,7 +172,7 @@ export const seoPages: SeoPageData[] = [
     ],
     features: [
       { title: "Facebook Integration", desc: "Order Now button on your Facebook page linked to your branded menu." },
-      { title: "0% Commission", desc: "Every order from Facebook is a direct order. You keep all the revenue." },
+      { title: "Low Commission Rates", desc: "Facebook orders are direct orders with low commission rates — far less than aggregator platforms." },
       { title: "ePOS Integration", desc: "Facebook orders print alongside walk-in and delivery app orders." },
       { title: "Instagram Ready", desc: "Same ordering link works on Instagram bio and stories." },
       { title: "Menu Sync", desc: "One menu across Facebook, your website and your till. Change once, update everywhere." },
@@ -413,7 +413,7 @@ function generateAutoPage(slug: string): SeoPageData {
     ],
     features: [
       { title: "Cloud-Based System", desc: "Access your data from anywhere. Real-time sync across all devices and locations." },
-      { title: "0% Commission Ordering", desc: "Accept online orders through your own branded website. Keep 100% of revenue." },
+      { title: "Low Commission Rates Ordering", desc: "Accept online orders through your own branded website. Keep 100% of revenue." },
       { title: "Easy Setup", desc: "Go live in less than a day. We handle installation, configuration and training." },
       { title: "Integrated Payments", desc: "Accept card, contactless and mobile payments with built-in processing." },
       { title: "Real-Time Analytics", desc: "Sales, stock and customer reports updated live. Export to CSV or view on mobile." },
