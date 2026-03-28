@@ -8,10 +8,25 @@ import { Zap, CalendarDays, TrendingUp, Users, CheckCircle2 } from 'lucide-react
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-    title: 'TableMaestro | Online Table Booking & Promotion Engine',
-    description: 'Manage your restaurant bookings and grow your business with TableMaestro. Integrated online reservations, customer management, and automated promotional tools.',
+    title: 'Table Booking App for Restaurants UK | TableMaestro by Posso',
+    description: 'TableMaestro is the best table booking app for UK restaurants. Online reservations, waitlist management, promotion engine and analytics. From £5/week.',
+    keywords: [
+        'table booking app',
+        'restaurant booking system UK',
+        'table reservation app',
+        'online table booking software',
+        'restaurant reservation system',
+        'table management app',
+        'waitlist management software',
+        'restaurant booking platform UK',
+    ],
     alternates: {
         canonical: '/tablemaestro',
+    },
+    openGraph: {
+        title: 'Table Booking App for Restaurants | TableMaestro by Posso',
+        description: 'Online reservations, waitlist management and growth analytics for UK restaurants. Start from £5/week.',
+        images: ['/tablemaestro_promo_engine.png'],
     },
 };
 
