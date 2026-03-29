@@ -87,7 +87,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/skegness-pos-systems',
     '/cobways-tell-a-friend-scheme',
     '/franchise-epos',
-    '/posso-epos'
+    '/posso-epos',
+    '/pos-systems'
   ];
 
   const allRoutes = [...routes, ...seoPageRoutes];
