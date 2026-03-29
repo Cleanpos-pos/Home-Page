@@ -78,7 +78,7 @@ export default function PizzaDeliveryBlog() {
                         <div className="prose prose-invert prose-lg mx-auto">
                             <h2 className="text-4xl font-bold mb-8">Why Posso is the Best Choice for Pizza</h2>
                             <p className="text-xl text-slate-300 leading-relaxed">
-                                <Link href="https://posso.uk" className="text-red-600 font-bold hover:underline">Posso</Link> is arguably the best POS system for pizza delivery in the UK because we handle the complexity for you. Our <strong>&quot;Pizza Matrix&quot;</strong> modifier system makes building complex pizzas intuitive for your staff.
+                                <Link href="https://posso.co.uk" className="text-red-600 font-bold hover:underline">Posso</Link> is arguably the best POS system for pizza delivery in the UK because we handle the complexity for you. Our <strong>&quot;Pizza Matrix&quot;</strong> modifier system makes building complex pizzas intuitive for your staff.
                             </p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-20">
@@ -151,7 +151,7 @@ export default function PizzaDeliveryBlog() {
                 <section className="py-40 text-center bg-gradient-to-t from-red-600/20 to-transparent">
                     <h2 className="text-5xl md:text-8xl font-black mb-10 tracking-[0.1em] uppercase italic">Deliver Excellence.</h2>
                     <Button size="lg" className="rounded-none h-20 px-16 text-2xl bg-red-600 hover:bg-red-700 text-white font-black uppercase skew-x-[-12deg]" asChild>
-                        <Link href="https://posso.uk">Start with Posso Now</Link>
+                        <Link href="https://posso.co.uk">Start with Posso Now</Link>
                     </Button>
                 </section>
             </main>

@@ -14,7 +14,7 @@ export function DigitalSignageBrochure() {
         <div className="mt-8">
           <Button size="lg" asChild>
             <a
-              href="https://posso.uk/wp-content/uploads/2023/01/Posso-Digital-Signage-Products-and-Solutions-Catalogue-2023.pdf"
+              href="https://posso.co.uk/wp-content/uploads/2023/01/Posso-Digital-Signage-Products-and-Solutions-Catalogue-2023.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >

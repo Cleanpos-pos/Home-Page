@@ -48,7 +48,7 @@ export default function RestaurantTableManagementBlog() {
                                     <Link href="/tablemaestro">Meet TableMaestro</Link>
                                 </Button>
                                 <Button size="lg" variant="outline" className="rounded-full h-16 px-12 text-xl border-white/10" asChild>
-                                    <Link href="https://posso.uk">Visit POSSO.UK</Link>
+                                    <Link href="https://posso.co.uk">Visit POSSO.UK</Link>
                                 </Button>
                             </div>
                         </div>
@@ -102,7 +102,7 @@ export default function RestaurantTableManagementBlog() {
                     <div className="container mx-auto px-4 max-w-4xl">
                         <div className="prose prose-invert prose-lg mx-auto">
                             <p className="text-xl text-slate-300 leading-relaxed mb-12">
-                                At <Link href="https://posso.uk" className="text-primary font-bold hover:underline">Posso</Link>, we understand that the guest experience begins long before the food arrives. Our TableMaestro engine synchronises your online bookings with your floor staff, ensuring no double-bookings and optimal table turnaround.
+                                At <Link href="https://posso.co.uk" className="text-primary font-bold hover:underline">Posso</Link>, we understand that the guest experience begins long before the food arrives. Our TableMaestro engine synchronises your online bookings with your floor staff, ensuring no double-bookings and optimal table turnaround.
                             </p>
 
                             <h3 className="text-4xl font-bold mt-16 mb-8 text-white">Coordinate the Kitchen, Elevate the Plate</h3>
@@ -147,7 +147,7 @@ export default function RestaurantTableManagementBlog() {
                     <h2 className="text-5xl md:text-7xl font-black mb-12">TRANSFORM YOUR DINING ROOM</h2>
                     <div className="flex justify-center gap-6">
                         <Button size="lg" className="rounded-full h-16 px-12 text-xl shadow-2xl shadow-primary/30" asChild>
-                            <Link href="https://posso.uk">Discover Posso.uk</Link>
+                            <Link href="https://posso.co.uk">Discover Posso.uk</Link>
                         </Button>
                     </div>
                 </section>

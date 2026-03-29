@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: page.title,
       description: page.description,
-      url: `https://posso.uk/${page.slug}`,
+      url: `https://posso.co.uk/${page.slug}`,
     },
   };
 }
@@ -55,15 +55,15 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
     "description": page.description,
     "author": { "@type": "Organization", "name": "Posso Ltd" },
     "offers": { "@type": "Offer", "priceCurrency": "GBP", "availability": "https://schema.org/InStock" },
-    "url": `https://posso.uk/${page.slug}`
+    "url": `https://posso.co.uk/${page.slug}`
   };
 
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.uk/" },
-      { "@type": "ListItem", "position": 2, "name": page.h1, "item": `https://posso.uk/${page.slug}` }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk/" },
+      { "@type": "ListItem", "position": 2, "name": page.h1, "item": `https://posso.co.uk/${page.slug}` }
     ]
   };
 

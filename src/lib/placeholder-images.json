@@ -135,19 +135,19 @@
     {
       "id": "ticketing-hero",
       "description": "Smart lockers for ticketing and venue management.",
-      "imageUrl": "https://www.posso.uk/wp-content/uploads/2025/12/lockers.png",
+      "imageUrl": "https://www.posso.co.uk/wp-content/uploads/2025/12/lockers.png",
       "imageHint": "ticketing lockers"
     },
     {
       "id": "ticketing-hero-2",
       "description": "A person scanning a QR code ticket on their phone at a venue entrance.",
-      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/icesk.png",
+      "imageUrl": "https://www.posso.co.uk/wp-content/uploads/2022/12/icesk.png",
       "imageHint": "event ticketing"
     },
     {
       "id": "ticketing-hero-3",
       "description": "Ticketing hardware and insights.",
-      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/icesk.png",
+      "imageUrl": "https://www.posso.co.uk/wp-content/uploads/2022/12/icesk.png",
       "imageHint": "ticketing hardware"
     },
     {
@@ -183,7 +183,7 @@
     {
       "id": "food-booking-app",
       "description": "The FoodBooking mobile app interface showing a list of local restaurants.",
-      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/app-scaled.png",
+      "imageUrl": "https://www.posso.co.uk/wp-content/uploads/2022/12/app-scaled.png",
       "imageHint": "food app"
     },
     {
@@ -213,7 +213,7 @@
     {
       "id": "digital-lockers",
       "description": "A bank of secure digital lockers.",
-      "imageUrl": "https://www.posso.uk/wp-content/uploads/2022/12/lockers.png",
+      "imageUrl": "https://www.posso.co.uk/wp-content/uploads/2022/12/lockers.png",
       "imageHint": "digital lockers"
     }
   ]

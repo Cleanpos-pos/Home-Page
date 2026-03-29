@@ -35,7 +35,7 @@ const schema = {
     "provider": {
         "@type": "Organization",
         "name": "Posso Ltd",
-        "url": "https://posso.uk"
+        "url": "https://posso.co.uk"
     },
     "description": "Speed up service and boost spend per head with the best table ordering app in the UK. 0% commission, seamless EPOS integration, and custom QR codes.",
     "areaServed": "Great Britain",

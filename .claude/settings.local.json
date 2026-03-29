@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(C:/Python313/python.exe \"C:\\\\Users\\\\Owner\\\\.claude\\\\skills\\\\seo\\\\scripts\\\\parse_html.py\" \"C:/Users/Owner/AppData/Local/Temp/posso_page.html\" --url https://posso.uk --json)"
+    ]
+  }
+}

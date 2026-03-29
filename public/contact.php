@@ -39,7 +39,7 @@ if (empty($name) || empty($email) || empty($phone)) {
 }
 
 // Email Configuration
-$to = 'info@posso.uk';
+$to = 'info@posso.co.uk';
 $from = 'info@posso.co.uk';
 
 // Headers

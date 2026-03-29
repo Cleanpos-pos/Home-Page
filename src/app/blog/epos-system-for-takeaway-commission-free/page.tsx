@@ -61,7 +61,7 @@ export default function CommissionFreeTakeawayBlog() {
                                 </div>
                                 <h2 className="text-4xl font-bold">100% Profit is Possible</h2>
                                 <p className="text-xl text-slate-400 leading-relaxed">
-                                    <Link href="https://posso.uk" className="text-primary font-bold hover:underline">Posso</Link> offers a commission-free online ordering system integrated directly into your EPOS. When a customer orders through your own branded website or app, you keep 100% of the profit. No hidden &quot;per-order&quot; technology fees.
+                                    <Link href="https://posso.co.uk" className="text-primary font-bold hover:underline">Posso</Link> offers a commission-free online ordering system integrated directly into your EPOS. When a customer orders through your own branded website or app, you keep 100% of the profit. No hidden &quot;per-order&quot; technology fees.
                                 </p>
                                 <ul className="space-y-4">
                                     <li className="flex items-center gap-3 text-slate-200 text-lg">
@@ -133,7 +133,7 @@ export default function CommissionFreeTakeawayBlog() {
                     <div className="container mx-auto px-4 relative z-10">
                         <h2 className="text-4xl md:text-6xl font-black text-white mb-8">Stop Donating Your Profits</h2>
                         <Button size="lg" variant="secondary" className="rounded-full bg-white text-primary hover:bg-slate-100 font-black h-16 px-12 text-xl" asChild>
-                            <Link href="https://posso.uk">Start Your Commission-Free Future</Link>
+                            <Link href="https://posso.co.uk">Start Your Commission-Free Future</Link>
                         </Button>
                     </div>
                 </section>

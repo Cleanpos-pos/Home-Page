@@ -54,7 +54,7 @@ export default function CafePosBlog() {
                                     Morning rushes in a coffee shop are brutal. You have a line out the door, and every second counts. A clunky till system that requires five taps just to ring up a latte is costing you money.
                                 </p>
                                 <p className="text-lg text-slate-400 leading-relaxed">
-                                    <Link href="https://posso.uk" className="text-primary font-bold hover:underline">Posso’s Cafe POS system</Link> is designed for high-speed counter service. Our interface is intuitive, meaning your baristas can focus on the coffee, not the screen.
+                                    <Link href="https://posso.co.uk" className="text-primary font-bold hover:underline">Posso’s Cafe POS system</Link> is designed for high-speed counter service. Our interface is intuitive, meaning your baristas can focus on the coffee, not the screen.
                                 </p>
                                 <div className="space-y-4 pt-4">
                                     {[
@@ -154,7 +154,7 @@ export default function CafePosBlog() {
                 <div className="py-40 text-center">
                     <h2 className="text-5xl font-extrabold mb-10 tracking-tight">Streamline your shop today</h2>
                     <Button size="lg" className="rounded-full h-20 px-16 text-2xl bg-primary hover:bg-primary/90 text-white" asChild>
-                        <Link href="https://posso.uk">Get Started at Posso.uk</Link>
+                        <Link href="https://posso.co.uk">Get Started at Posso.uk</Link>
                     </Button>
                 </div>
             </main>

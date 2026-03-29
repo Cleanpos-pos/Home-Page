@@ -17,8 +17,8 @@ const schema = {
     "priceCurrency": "GBP",
     "availability": "https://schema.org/InStock"
   },
-  "url": "https://posso.uk/online-ordering",
-  "image": "https://www.posso.uk/wp-content/uploads/2021/11/LOW-RATES-GREAT-SERVICE.gif"
+  "url": "https://posso.co.uk/online-ordering",
+  "image": "https://www.posso.co.uk/wp-content/uploads/2021/11/LOW-RATES-GREAT-SERVICE.gif"
 };
 
 export const metadata: Metadata = {

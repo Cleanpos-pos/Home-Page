@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getAllSlugs } from '@/lib/seo-pages-data';
 
-const URL = 'https://posso.uk';
+const URL = 'https://posso.co.uk';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // SEO landing pages (programmatic)

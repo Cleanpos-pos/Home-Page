@@ -16,7 +16,7 @@ console.log(`> [Posso] NODE_ENV: ${process.env.NODE_ENV || 'not set (defaulting 
 console.log(`> [Posso] Local Port: ${port}`);
 console.log(`> [Posso] SMTP User: ${process.env.SMTP_USER || 'info@posso.co.uk'}`);
 console.log(`> [Posso] SMTP Password: ${process.env.SMTP_PASS ? 'CONFIGURED' : 'MISSING'}`);
-console.log(`> [Posso] Recipient Email: ${process.env.RECIPIENT_EMAIL || 'info@posso.uk'}`);
+console.log(`> [Posso] Recipient Email: ${process.env.RECIPIENT_EMAIL || 'info@posso.co.uk'}`);
 
 // Verify .next directory existence in production
 if (!dev) {

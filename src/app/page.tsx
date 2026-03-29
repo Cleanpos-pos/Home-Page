@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Restaurant ePOS Systems & Self-Order Kiosks | Posso UK',
     description: 'All-in-one ePOS, self-order kiosks, online ordering, and venue management for UK restaurants and hospitality. Trusted by 500+ businesses.',
-    url: 'https://posso.uk',
+    url: 'https://posso.co.uk',
     type: 'website',
   },
 }
@@ -44,12 +44,12 @@ const homepageSchema = [
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Posso",
-    "url": "https://posso.uk",
+    "url": "https://posso.co.uk",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://posso.uk/blog?q={search_term_string}"
+        "urlTemplate": "https://posso.co.uk/blog?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -57,14 +57,14 @@ const homepageSchema = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://posso.uk/#organization",
+    "@id": "https://posso.co.uk/#organization",
     "name": "Posso Ltd",
     "description": "UK provider of ePOS systems, self-order kiosks, ticketing, and digital signage for restaurants, takeaways, and entertainment venues.",
-    "url": "https://posso.uk",
+    "url": "https://posso.co.uk",
     "telephone": "+44-808-175-3956",
-    "email": "info@posso.uk",
-    "logo": "https://posso.uk/icon-512x512.png",
-    "image": "https://posso.uk/og-image.png",
+    "email": "info@posso.co.uk",
+    "logo": "https://posso.co.uk/icon-512x512.png",
+    "image": "https://posso.co.uk/og-image.png",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "GB",
@@ -101,37 +101,37 @@ const homepageSchema = [
         "@type": "ListItem",
         "position": 1,
         "name": "Restaurant ePOS Systems",
-        "url": "https://posso.uk/pos"
+        "url": "https://posso.co.uk/pos"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Self-Order Kiosks",
-        "url": "https://posso.uk/kiosks"
+        "url": "https://posso.co.uk/kiosks"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Ticketing & Venue Management",
-        "url": "https://posso.uk/ticketing"
+        "url": "https://posso.co.uk/ticketing"
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": "Digital Signage",
-        "url": "https://posso.uk/digital-signage"
+        "url": "https://posso.co.uk/digital-signage"
       },
       {
         "@type": "ListItem",
         "position": 5,
         "name": "Card Payment Machines",
-        "url": "https://posso.uk/credit-card-machines"
+        "url": "https://posso.co.uk/credit-card-machines"
       },
       {
         "@type": "ListItem",
         "position": 6,
         "name": "Online Ordering & Apps",
-        "url": "https://posso.uk/online-ordering"
+        "url": "https://posso.co.uk/online-ordering"
       }
     ]
   },
@@ -143,7 +143,7 @@ const homepageSchema = [
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://posso.uk"
+        "item": "https://posso.co.uk"
       }
     ]
   }

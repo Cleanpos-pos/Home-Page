@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'POS Systems for Restaurants & Takeaways UK | From £499 + VAT',
     description:
       'Complete POS, self-order kiosks & online ordering for UK restaurants. Free setup & training included. Trusted by 1,000+ businesses.',
-    url: 'https://posso.uk/pos-systems',
+    url: 'https://posso.co.uk/pos-systems',
     type: 'website',
   },
 };
@@ -42,8 +42,8 @@ const pageSchema = [
       '@type': 'Brand',
       name: 'Posso',
     },
-    url: 'https://posso.uk/pos-systems',
-    image: 'https://posso.uk/images/posso_epos_integration.png',
+    url: 'https://posso.co.uk/pos-systems',
+    image: 'https://posso.co.uk/images/posso_epos_integration.png',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -62,11 +62,11 @@ const pageSchema = [
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://posso.uk/#organization',
+    '@id': 'https://posso.co.uk/#organization',
     name: 'Posso Ltd',
-    url: 'https://posso.uk',
+    url: 'https://posso.co.uk',
     telephone: '+44-808-175-3956',
-    email: 'info@posso.uk',
+    email: 'info@posso.co.uk',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'GB',
@@ -85,13 +85,13 @@ const pageSchema = [
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://posso.uk',
+        item: 'https://posso.co.uk',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'POS Systems',
-        item: 'https://posso.uk/pos-systems',
+        item: 'https://posso.co.uk/pos-systems',
       },
     ],
   },

@@ -65,7 +65,7 @@ export function Contact() {
 
       <p className="text-center text-sm text-slate-500 mt-6 max-w-lg mx-auto">
         Free call &mdash; available Monday to Friday, 9am&ndash;5:30pm. Or email us anytime at{' '}
-        <a href="mailto:info@posso.uk" className="text-primary hover:underline">info@posso.uk</a>
+        <a href="mailto:info@posso.co.uk" className="text-primary hover:underline">info@posso.co.uk</a>
       </p>
     </section>
   );

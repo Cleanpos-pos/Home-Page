@@ -5,7 +5,7 @@ import { CookieConsent } from '@/components/cookie-consent';
 
 const title = 'Restaurant ePOS Systems & Self-Order Kiosks UK | Posso';
 const description = 'Posso provides ePOS systems, self-order kiosks, online ordering, ticketing, and digital signage for restaurants, takeaways, and venues across the UK. Call 0808 175 3956.';
-const url = 'https://posso.uk';
+const url = 'https://posso.co.uk';
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -91,13 +91,13 @@ export const viewport: Viewport = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://posso.uk/#organization",
+  "@id": "https://posso.co.uk/#organization",
   "name": "Posso Ltd",
   "legalName": "Posso Ltd",
-  "url": "https://posso.uk",
+  "url": "https://posso.co.uk",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://posso.uk/icon-512x512.png",
+    "url": "https://posso.co.uk/icon-512x512.png",
     "width": 512,
     "height": 512
   },

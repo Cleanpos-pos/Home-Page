@@ -77,7 +77,7 @@ async function sendEmailViaSMTP({ subject, htmlContent, senderName }: { subject:
     const port = parseInt(process.env.SMTP_PORT || '465');
     const user = process.env.SMTP_USER || 'info@posso.co.uk';
     const pass = process.env.SMTP_PASS;
-    const recipientEmail = process.env.RECIPIENT_EMAIL || 'info@posso.uk';
+    const recipientEmail = process.env.RECIPIENT_EMAIL || 'info@posso.co.uk';
 
     ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'RECIPIENT_EMAIL', 'SENDER_EMAIL'].forEach(key => {
         if (!process.env[key]) {

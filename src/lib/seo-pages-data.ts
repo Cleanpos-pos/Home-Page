@@ -1,5 +1,5 @@
 /**
- * SEO Pages Data — Programmatic landing pages for posso.uk
+ * SEO Pages Data — Programmatic landing pages for posso.co.uk
  * Each entry generates a full Next.js page at /[slug]/
  *
  * Categories: epos, kiosk, ordering, pos, coffee, pizza, takeaway,

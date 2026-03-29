@@ -37,7 +37,7 @@ export default function RetailKioskPage() {
         },
         "offers": {
             "@type": "Offer",
-            "url": "https://posso.uk/solutions/kiosks-for-retail",
+            "url": "https://posso.co.uk/solutions/kiosks-for-retail",
             "priceCurrency": "GBP"
         }
     };

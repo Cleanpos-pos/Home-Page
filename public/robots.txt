@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://posso.uk/sitemap.xml
+Sitemap: https://posso.co.uk/sitemap.xml
