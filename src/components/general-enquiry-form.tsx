@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { motion } from 'framer-motion';
-// import { submitGeneralEnquiry } from '@/app/actions';
+import { submitGeneralEnquiry } from '@/app/actions';
 import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Ticket, GitBranch, Phone, CreditCard, CalendarDays, Search, Megaphone, MapPin } from 'lucide-react';
 import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
@@ -77,13 +77,7 @@ export function GeneralEnquiryForm() {
     setIsSubmitting(true);
     setServerError(null);
     try {
-      const response = await fetch('/contact.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, type: 'general' }),
-      });
-
-      const result = await response.json();
+      const result = await submitGeneralEnquiry(data);
       setIsSubmitting(false);
 
       if (result.success) {

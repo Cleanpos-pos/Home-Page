@@ -29,6 +29,7 @@ import {
   MessageSquare,
 } from 'lucide-react';
 import { ContactDialog } from '@/components/sections/contact';
+import { submitGeneralEnquiry } from '@/app/actions';
 
 /* ─── Form Schema ─── */
 const leadSchema = z.object({
@@ -402,20 +403,14 @@ function LeadCaptureForm() {
     setIsSubmitting(true);
     setServerError(null);
     try {
-      const response = await fetch('/contact.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          type: 'general',
-          name: data.name,
-          company: data.businessName,
-          email: data.email,
-          phone: data.phone,
-          products: ['pos'],
-          message: 'AdWords landing page enquiry — POS Systems',
-        }),
+      const result = await submitGeneralEnquiry({
+        name: data.name,
+        company: data.businessName,
+        email: data.email,
+        phone: data.phone,
+        products: ['pos'],
+        message: 'AdWords landing page enquiry — POS Systems',
       });
-      const result = await response.json();
       setIsSubmitting(false);
       if (result.success) {
         setIsSuccess(true);
