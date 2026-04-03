@@ -2,6 +2,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { PosHero } from '@/components/sections/pos-hero';
 import { Contact } from '@/components/sections/contact';
+import { EposFeatures } from '@/components/sections/epos-features';
 import type { Metadata } from 'next';
 
 const schema = {
@@ -38,6 +39,7 @@ export default function PosPage() {
       <Header />
       <main className="flex-1">
         <PosHero />
+        <EposFeatures />
         <Contact />
       </main>
       <Footer />

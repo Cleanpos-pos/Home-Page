@@ -10,7 +10,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { motion } from 'framer-motion';
 import { submitGeneralEnquiry } from '@/app/actions';
-import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Ticket, GitBranch, Phone, CreditCard, CalendarDays, Search, Megaphone, MapPin } from 'lucide-react';
+import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Ticket, GitBranch, Phone, CreditCard, CalendarDays, Search, Megaphone, MapPin, Truck } from 'lucide-react';
 import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
 import { IframeDialog } from './iframe-dialog';
@@ -49,6 +49,10 @@ const productOptions = [
   { id: 'seo-marketing', label: 'Google SEO & Marketing', icon: <Search className="w-8 h-8 text-primary" /> },
   { id: 'social-media', label: 'Social Media Marketing', icon: <Megaphone className="w-8 h-8 text-primary" /> },
   { id: 'google-business', label: 'Google Business Profile', icon: <MapPin className="w-8 h-8 text-primary" /> },
+  { id: 'just-eat', label: 'Just Eat Integration', icon: <Truck className="w-8 h-8 text-primary" /> },
+  { id: 'uber-eats', label: 'Uber Eats Integration', icon: <Truck className="w-8 h-8 text-primary" /> },
+  { id: 'deliveroo', label: 'Deliveroo Integration', icon: <Truck className="w-8 h-8 text-primary" /> },
+  { id: 'delivery-driver-app', label: 'Delivery Driver App', icon: <Truck className="w-8 h-8 text-primary" /> },
 ];
 
 export function GeneralEnquiryForm() {

@@ -82,6 +82,19 @@ export function CreditCardMachinesContent() {
             ))}
       </div>
 
+      {/* Card Readers Partner Link */}
+      <div className="text-center pt-10">
+        <a
+          href="https://www.card-readers.co.uk"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block w-full max-w-3xl bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-bold text-xl md:text-2xl py-6 px-8 rounded-2xl shadow-lg shadow-yellow-400/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-yellow-400/50"
+        >
+          🔗 Compare Card Machine Deals at Card-Readers.co.uk →
+        </a>
+        <p className="text-slate-400 mt-3 text-sm">Visit our partner site for the latest card reader comparisons, deals, and reviews.</p>
+      </div>
+
       {/* Other Providers */}
       <div className="text-center pt-20">
         <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl gradient-text">We Also Supply Teya & Dojo</h2>

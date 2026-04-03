@@ -88,7 +88,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/cobways-tell-a-friend-scheme',
     '/franchise-epos',
     '/posso-epos',
-    '/pos-systems'
+    '/pos-systems',
+    '/delivery-integrations',
+    '/drink-order-app'
   ];
 
   const allRoutes = [...routes, ...seoPageRoutes];
