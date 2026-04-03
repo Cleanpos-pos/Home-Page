@@ -136,10 +136,39 @@ const structuredData = {
     "@type": "PostalAddress",
     "addressCountry": "GB"
   },
-  "areaServed": {
-    "@type": "Country",
-    "name": "United Kingdom"
-  },
+  "areaServed": [
+    { "@type": "Country", "name": "United Kingdom" },
+    { "@type": "City", "name": "London" },
+    { "@type": "City", "name": "Birmingham" },
+    { "@type": "City", "name": "Manchester" },
+    { "@type": "City", "name": "Leeds" },
+    { "@type": "City", "name": "Glasgow" },
+    { "@type": "City", "name": "Liverpool" },
+    { "@type": "City", "name": "Newcastle" },
+    { "@type": "City", "name": "Sheffield" },
+    { "@type": "City", "name": "Bristol" },
+    { "@type": "City", "name": "Edinburgh" },
+    { "@type": "City", "name": "Cardiff" },
+    { "@type": "City", "name": "Belfast" },
+    { "@type": "City", "name": "Nottingham" },
+    { "@type": "City", "name": "Southampton" },
+    { "@type": "City", "name": "Leicester" },
+    { "@type": "City", "name": "Brighton" },
+    { "@type": "City", "name": "Aberdeen" },
+    { "@type": "City", "name": "Derby" },
+    { "@type": "City", "name": "Plymouth" },
+    { "@type": "City", "name": "Wolverhampton" },
+    { "@type": "City", "name": "Swansea" },
+    { "@type": "City", "name": "Reading" },
+    { "@type": "City", "name": "Coventry" },
+    { "@type": "City", "name": "Cambridge" },
+    { "@type": "City", "name": "Oxford" },
+    { "@type": "City", "name": "York" },
+    { "@type": "City", "name": "Bath" },
+    { "@type": "City", "name": "Exeter" },
+    { "@type": "City", "name": "Norwich" },
+    { "@type": "City", "name": "Dundee" }
+  ],
   "sameAs": [
     "https://x.com/posso_uk",
     "https://www.linkedin.com/company/posso-uk"

@@ -1,5 +1,6 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { DeliveryIntegrationsLanding } from './delivery-integrations-landing';
 import type { Metadata } from 'next';
 
@@ -68,6 +69,7 @@ export default function DeliveryIntegrationsPage() {
       />
       <Header />
       <main className="flex-1 pt-20">
+        <BreadcrumbNav items={[{ label: 'Delivery Integrations' }]} />
         <DeliveryIntegrationsLanding />
       </main>
       <Footer />

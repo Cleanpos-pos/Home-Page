@@ -46,9 +46,23 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://posso.co.uk/#organization",
+  "name": "Posso Ltd",
+  "review": testimonials.map((t) => ({
+    "@type": "Review",
+    "author": { "@type": "Organization", "name": t.name },
+    "reviewRating": { "@type": "Rating", "ratingValue": t.rating, "bestRating": 5 },
+    "reviewBody": t.text,
+  })),
+};
+
 export function Testimonials() {
   return (
     <section id="testimonials" className="container mx-auto px-4 py-20 md:px-6" aria-label="Customer reviews of Posso ePOS systems">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <div className="text-center">
         <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl gradient-text">
           What UK Restaurant Owners Say About Posso

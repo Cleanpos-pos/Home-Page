@@ -7,21 +7,54 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // SEO landing pages (programmatic)
   const seoPageRoutes = getAllSlugs().map(slug => `/${slug}`);
 
-  const routes = [
+  // Core pages — highest priority
+  const coreRoutes = [
     '/',
     '/pos',
+    '/pos-systems',
     '/kiosks',
+    '/online-ordering',
+    '/delivery-integrations',
+    '/drink-order-app',
+    '/credit-card-machines',
+    '/franchise',
     '/ticketing',
     '/digital-signage',
-    '/credit-card-machines',
+    '/tablemaestro',
+  ];
+
+  // Product & solution pages — high priority
+  const productRoutes = [
     '/credit-card-machines-enquiry',
     '/teya-card-machine-application-form',
-    '/franchise',
-    '/online-ordering',
     '/shop-fitting',
     '/shop-signage',
+    '/web-design',
     '/finance',
     '/contact',
+    '/solutions/trampoline-parks',
+    '/solutions/family-entertainment-centers',
+    '/solutions/amusement-parks',
+    '/solutions/water-parks',
+    '/solutions/museums',
+    '/solutions/zoos-aquariums',
+    '/solutions/wake-parks',
+    '/solutions/rock-climbing-gyms',
+    '/solutions/playcenters-softplay',
+    '/solutions/roller-skating-rinks',
+    '/solutions/ice-skating-rinks',
+    '/solutions/ski-resorts',
+    '/solutions/spas-wellness-centers',
+    '/solutions/festivals-events',
+    '/solutions/restaurant-self-service-kiosk',
+    '/solutions/kiosks-for-retail',
+    '/solutions/franchise-pos-systems',
+    '/solutions/self-service-kiosk-uk',
+    '/solutions/dry-cleaning-pos-system',
+  ];
+
+  // Blog posts — medium priority
+  const blogRoutes = [
     '/blog',
     '/blog/pos-systems-for-restaurants-and-takeaways',
     '/blog/self-order-kiosks',
@@ -46,29 +79,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/restaurant-epos-table-management',
     '/blog/best-pos-system-for-pizza-delivery',
     '/blog/hybrid-epos-systems-for-takeaways',
+  ];
+
+  // Misc/legacy pages — lower priority
+  const miscRoutes = [
     '/agents',
     '/privacy-policy',
     '/cookie-policy',
     '/software-terms',
-    '/solutions/trampoline-parks',
-    '/solutions/family-entertainment-centers',
-    '/solutions/amusement-parks',
-    '/solutions/water-parks',
-    '/solutions/museums',
-    '/solutions/zoos-aquariums',
-    '/solutions/wake-parks',
-    '/solutions/rock-climbing-gyms',
-    '/solutions/playcenters-softplay',
-    '/solutions/roller-skating-rinks',
-    '/solutions/ice-skating-rinks',
-    '/solutions/ski-resorts',
-    '/solutions/spas-wellness-centers',
-    '/solutions/festivals-events',
-    '/solutions/restaurant-self-service-kiosk',
-    '/solutions/kiosks-for-retail',
-    '/solutions/franchise-pos-systems',
-    '/solutions/self-service-kiosk-uk',
-    '/web-design',
     '/digital-menu-boards-uk-my-signage',
     '/contact-posso-ltd',
     '/self-order-kiosk-uk-2',
@@ -82,23 +100,54 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/android-epos-systems-from-posso',
     '/small-pos-magic-the-tiny-marvels-transforming-our-lives',
     '/dry-cleaning-epos-systems-uk',
-    '/solutions/dry-cleaning-pos-system',
     '/portable-card-machines',
     '/skegness-pos-systems',
     '/cobways-tell-a-friend-scheme',
     '/franchise-epos',
     '/posso-epos',
-    '/pos-systems',
-    '/delivery-integrations',
-    '/drink-order-app'
   ];
 
-  const allRoutes = [...routes, ...seoPageRoutes];
+  const lastModified = new Date().toISOString();
 
-  return allRoutes.map((route) => ({
-    url: `${URL}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'monthly' as const,
-    priority: route === '/' ? 1 : 0.8,
-  }));
+  const entries: MetadataRoute.Sitemap = [
+    // Homepage
+    { url: `${URL}/`, lastModified, changeFrequency: 'weekly', priority: 1.0 },
+    // Core pages
+    ...coreRoutes.filter(r => r !== '/').map((route) => ({
+      url: `${URL}${route}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    })),
+    // Product & solution pages
+    ...productRoutes.map((route) => ({
+      url: `${URL}${route}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+    // Blog posts
+    ...blogRoutes.map((route) => ({
+      url: `${URL}${route}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+    // Misc/legacy pages
+    ...miscRoutes.map((route) => ({
+      url: `${URL}${route}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.4,
+    })),
+    // Programmatic SEO pages
+    ...seoPageRoutes.map((route) => ({
+      url: `${URL}${route}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    })),
+  ];
+
+  return entries;
 }
