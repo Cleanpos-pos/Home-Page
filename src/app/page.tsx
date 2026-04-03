@@ -33,9 +33,10 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Restaurant ePOS Systems & Self-Order Kiosks | Posso UK',
-    description: 'All-in-one ePOS, self-order kiosks, online ordering, and venue management for UK restaurants and hospitality. Trusted by 500+ businesses.',
+    description: 'All-in-one ePOS, self-order kiosks, online ordering, and venue management for UK restaurants and hospitality. Trusted by 1,000+ businesses.',
     url: 'https://posso.co.uk',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Posso restaurant ePOS systems and self-order kiosks for UK hospitality' }],
   },
 }
 
@@ -57,7 +58,7 @@ const homepageSchema = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://posso.co.uk/#organization",
+    "@id": "https://posso.co.uk/#localbusiness",
     "name": "Posso Ltd",
     "description": "UK provider of ePOS systems, self-order kiosks, ticketing, and digital signage for restaurants, takeaways, and entertainment venues.",
     "url": "https://posso.co.uk",

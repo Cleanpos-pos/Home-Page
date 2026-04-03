@@ -18,12 +18,12 @@ const schema = {
     "availability": "https://schema.org/InStock"
   },
   "url": "https://posso.co.uk/pos",
-  "image": "https://www.posso.co.uk/wp-content/uploads/2021/12/pc.jpeg"
+  "image": "https://posso.co.uk/images/posso_epos_integration.png"
 };
 
 export const metadata: Metadata = {
-  title: 'Powerful ePOS Systems for Restaurants | Posso',
-  description: 'Streamline your restaurant operations with our state-of-the-art ePOS systems. Increase efficiency and provide a seamless experience for staff and customers.',
+  title: 'ePOS System Features for Restaurants & Takeaways',
+  description: 'Explore 30+ features of the Posso One ePOS system: touchscreen ordering, KDS, kiosk mode, split bills, offline operation, Teya payments, and multi-language support.',
   alternates: {
     canonical: '/pos',
   },

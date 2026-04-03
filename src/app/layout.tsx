@@ -1,7 +1,20 @@
 import type { Metadata, Viewport } from 'next';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 import { CookieConsent } from '@/components/cookie-consent';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  display: 'swap',
+});
 
 const title = 'Restaurant ePOS Systems & Self-Order Kiosks UK | Posso';
 const description = 'Posso provides ePOS systems, self-order kiosks, online ordering, ticketing, and digital signage for restaurants, takeaways, and venues across the UK. Call 0808 175 3956.';
@@ -32,7 +45,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: title,
-    description: 'All-in-one ePOS, self-order kiosks, online ordering, and venue management for UK restaurants and hospitality. Trusted by 500+ businesses.',
+    description: 'All-in-one ePOS, self-order kiosks, online ordering, and venue management for UK restaurants and hospitality. Trusted by 1,000+ businesses.',
     url: url,
     siteName: 'Posso',
     images: [
@@ -49,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: title,
-    description: 'All-in-one ePOS, self-order kiosks, online ordering & venue management for UK restaurants. Trusted by 500+ businesses.',
+    description: 'All-in-one ePOS, self-order kiosks, online ordering & venue management for UK restaurants. Trusted by 1,000+ businesses.',
     images: ['/og-image.png'],
     creator: '@posso_uk',
     site: '@posso_uk',
@@ -148,11 +161,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className="dark" suppressHydrationWarning>
+    <html lang="en-GB" className={`dark ${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
         <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"

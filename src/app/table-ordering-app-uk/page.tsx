@@ -116,7 +116,7 @@ export default function TableOrderingLandingPage() {
                                             </div>
                                         ))}
                                     </div>
-                                    <p className="text-sm text-slate-500">Trusted by 500+ UK Hospitality Venues</p>
+                                    <p className="text-sm text-slate-500">Trusted by 1,000+ UK Hospitality Venues</p>
                                 </div>
                             </div>
 

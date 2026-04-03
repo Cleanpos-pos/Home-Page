@@ -18,7 +18,7 @@ const schema = {
     "availability": "https://schema.org/InStock"
   },
   "url": "https://posso.co.uk/online-ordering",
-  "image": "https://www.posso.co.uk/wp-content/uploads/2021/11/LOW-RATES-GREAT-SERVICE.gif"
+  "image": "https://posso.co.uk/images/posso_online_ordering_hero.png"
 };
 
 export const metadata: Metadata = {

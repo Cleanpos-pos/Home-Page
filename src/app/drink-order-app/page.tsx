@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Smartphone, Monitor, CreditCard, QrCode, Utensils, Clock, Users, BarChart3, Globe } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Drink Order App & Table Ordering Waiter Pad | Posso',
+  title: 'Drink Order App & Table Ordering Waiter Pad',
   description:
     'Posso drink order app and waiter pad for restaurants, bars, and pubs. Table ordering, QR ordering, floor plan management, split bills, and pay-at-table — all in one system.',
   keywords: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     canonical: '/drink-order-app',
   },
   openGraph: {
-    title: 'Drink Order App & Table Ordering Waiter Pad | Posso',
+    title: 'Drink Order App & Table Ordering Waiter Pad',
     description:
       'Digital waiter pad and table ordering app for restaurants, bars, and pubs. QR ordering, split bills, and pay-at-table.',
     url: 'https://posso.co.uk/drink-order-app',

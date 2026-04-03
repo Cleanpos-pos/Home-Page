@@ -55,19 +55,19 @@ const services = [
     icon: <Search className="h-8 w-8 text-accent" />,
     title: 'Google SEO & Marketing',
     description: 'Dominate local search results and drive foot traffic with our restaurant-focused SEO, Google Ads, and content marketing strategies.',
-    href: '/marketing'
+    href: '/contact'
   },
   {
     icon: <Megaphone className="h-8 w-8 text-accent" />,
     title: 'Social Media Marketing',
     description: 'Build your restaurant brand and engage your community through professional social media management on Instagram, TikTok, and Facebook.',
-    href: '/marketing'
+    href: '/contact'
   },
   {
     icon: <MapPin className="h-8 w-8 text-accent" />,
     title: 'Google Business Profile',
     description: 'Get found on Google Maps and local search. Expert profile optimisation to drive more calls, direction requests, and walk-in customers.',
-    href: '/marketing'
+    href: '/contact'
   },
   {
     icon: <DownloadCloud className="h-8 w-8 text-accent" />,

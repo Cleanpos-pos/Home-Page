@@ -18,7 +18,7 @@ const schema = {
     "availability": "https://schema.org/InStock"
   },
   "url": "https://posso.co.uk/kiosks",
-  "image": "https://www.posso.co.uk/wp-content/uploads/2022/07/table-kiosk-2.jpg"
+  "image": "https://posso.co.uk/images/posso_coffee_shop_hero.png"
 };
 
 export const metadata: Metadata = {

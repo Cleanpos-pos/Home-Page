@@ -18,9 +18,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
-        code: ['JetBrains Mono', 'monospace'],
+        body: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        headline: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        code: ['var(--font-jetbrains)', 'JetBrains Mono', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
