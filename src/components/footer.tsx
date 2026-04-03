@@ -33,6 +33,8 @@ export function Footer() {
                             <li><Link href="/kiosks" className="hover:text-primary transition-colors">Self-Order Kiosks</Link></li>
                             <li><Link href="/online-ordering" className="hover:text-primary transition-colors">Online Ordering</Link></li>
                             <li><Link href="/credit-card-machines" className="hover:text-primary transition-colors">Card Machines</Link></li>
+                            <li><Link href="/delivery-integrations" className="hover:text-primary transition-colors">Delivery Integrations</Link></li>
+                            <li><Link href="/drink-order-app" className="hover:text-primary transition-colors">Table Ordering &amp; Waiter Pad</Link></li>
                             <li><Link href="/solutions/franchise-pos-systems" className="hover:text-primary transition-colors">Franchise Solutions</Link></li>
                         </ul>
                     </nav>

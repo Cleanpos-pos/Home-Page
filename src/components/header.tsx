@@ -61,6 +61,8 @@ const hospitalityLinks = [
   { href: '/tablemaestro', label: 'TableMaestro Booking' },
   { href: '/kiosks', label: 'Self-Order Kiosks' },
   { href: '/online-ordering', label: 'Online Ordering' },
+  { href: '/delivery-integrations', label: 'Delivery Integrations' },
+  { href: '/drink-order-app', label: 'Table Ordering & Waiter Pad' },
   { href: '/credit-card-machines', label: 'Card Machines' },
   { href: '/franchise', label: 'Franchise Solutions' },
 ];
