@@ -6,8 +6,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'POSSO Online Ordering & Apps UK – 0% Commission Food Ordering',
-  description: 'Launch your own online ordering system or takeaway app with POSSO. Keep 100% of your profits and build loyal customers.',
+  title: 'POSSO Online Ordering & Apps UK – Low-Commission Food Ordering',
+  description: 'Launch your own online ordering system or takeaway app with POSSO. Keep significantly more of your profits and build loyal customers.',
   alternates: {
     canonical: '/blog/online-ordering-and-mobile-apps',
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const faqs = [
     {
         question: "Do POSSO apps charge commission?",
-        answer: "No – all orders are 0% commission, keeping profit with your business."
+        answer: "POSSO charges a low commission that is a fraction of what marketplaces charge — around 1/10th the cost. You keep significantly more of every order."
     },
     {
         question: "Can customers order on desktop and mobile?",
@@ -57,7 +57,7 @@ export default function OnlineOrderingBlogPage() {
               <ul>
                 <li>Your own ordering website</li>
                 <li>Branded apps for iOS and Android</li>
-                <li>0% commission permanently</li>
+                <li>Low commission — a fraction of marketplace fees</li>
                 <li>Direct payments & customer data</li>
               </ul>
               <p>Your customers order from you, not through a marketplace.</p>
@@ -102,7 +102,7 @@ export default function OnlineOrderingBlogPage() {
 
               <h2>Ready to Take Control of Your Online Orders?</h2>
               <p>
-                Let POSSO launch your online ordering system and start keeping 100% of every sale.
+                Let POSSO launch your online ordering system and start keeping significantly more of every sale.
               </p>
 
               <div className="not-prose mt-8 space-y-4">

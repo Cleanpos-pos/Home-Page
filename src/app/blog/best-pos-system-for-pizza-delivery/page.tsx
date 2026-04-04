@@ -140,7 +140,7 @@ export default function PizzaDeliveryBlog() {
                         <Link href="/blog/epos-system-for-takeaway-commission-free" className="group p-8 rounded-3xl bg-white/5 border border-white/5 hover:border-red-600/50 transition-all flex items-center justify-between">
                             <div className="flex items-center gap-4">
                                 <Zap className="text-red-600" />
-                                <span className="font-bold text-lg">Commission-Free Ordering</span>
+                                <span className="font-bold text-lg">Low-Commission Ordering</span>
                             </div>
                             <ArrowRight className="text-red-600 group-hover:translate-x-2 transition-transform" />
                         </Link>

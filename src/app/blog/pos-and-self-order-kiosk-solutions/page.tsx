@@ -194,12 +194,12 @@ export default function PosSolutionsBlogPage() {
                             <h2 className="text-2xl font-bold mb-6">Explore More Solutions</h2>
                             <p className="text-slate-300">
                                 At POSSO, we offer a comprehensive suite of tools to help your business thrive in the digital age.
-                                Whether you're looking for <Link href="/blog/pos-systems-for-restaurants-and-takeaways" className="text-primary hover:underline">Commission-Free POS Systems</Link>,
+                                Whether you're looking for <Link href="/blog/pos-systems-for-restaurants-and-takeaways" className="text-primary hover:underline">Low-Commission POS Systems</Link>,
                                 or want to learn about the <Link href="/blog/self-order-kiosks" className="text-primary hover:underline">Benefits of Self-Order Kiosks</Link>, we have the expertise to guide you.
                             </p>
                             <p className="text-slate-300 mt-4">
                                 Don't forget to check our <Link href="/blog/online-ordering-and-mobile-apps" className="text-primary hover:underline">Online Ordering & Mobile Apps</Link> to eliminate
-                                third-party commissions and keep 100% of your profits.
+                                hefty marketplace commissions and keep significantly more of your profits.
                             </p>
                             <div className="mt-12 p-8 glass-card rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
                                 <div>

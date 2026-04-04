@@ -11,7 +11,7 @@ const schema = {
   "name": "POSSO Online Ordering & Mobile Apps",
   "operatingSystem": "Web, iOS, Android",
   "applicationCategory": "Food Ordering",
-  "description": "Commission-free online ordering and mobile apps for takeaways and restaurants in the UK.",
+  "description": "Low-commission online ordering and mobile apps for takeaways and restaurants in the UK — a fraction of marketplace fees.",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "GBP",

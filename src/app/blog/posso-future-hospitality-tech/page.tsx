@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Meet Posso: The Future of Hospitality Tech | Posso',
-    description: 'Posso is more than just an EPOS provider. Explore our complete hospitality ecosystem, from self-service kiosks to commission-free ordering apps.',
+    description: 'Posso is more than just an EPOS provider. Explore our complete hospitality ecosystem, from self-service kiosks to low-commission ordering apps.',
     keywords: 'posso, hospitality tech uk, restaurant ecosystem, epos software, ordering apps for restaurants',
     alternates: {
         canonical: '/blog/posso-future-hospitality-tech',
@@ -82,8 +82,8 @@ export default function MeetPossoBlog() {
                                 <div className="space-y-4 pt-12">
                                     <div className="bg-blue-600 p-8 rounded-3xl h-80 flex flex-col justify-end text-white">
                                         <TrendingUp className="w-10 h-10 mb-4" />
-                                        <h3 className="font-bold text-xl text-white">Zero Commission</h3>
-                                        <p className="text-white/80 text-sm">Keep 100% of profit.</p>
+                                        <h3 className="font-bold text-xl text-white">Low Commission</h3>
+                                        <p className="text-white/80 text-sm">Keep significantly more profit.</p>
                                     </div>
                                     <div className="bg-slate-900 border border-white/5 p-8 rounded-3xl h-64 flex flex-col justify-end">
                                         <MessageSquare className="text-primary w-10 h-10 mb-4" />

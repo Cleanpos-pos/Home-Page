@@ -33,7 +33,7 @@ const schema = {
     "name": targetKeyword,
     "operatingSystem": "Windows, Android, iOS, Web",
     "applicationCategory": "Restaurant Management System",
-    "description": "Grow your Indian takeaway with the best EPOS system by Posso Ltd UK. Integrated online ordering, caller ID, postcode delivery management, and 0% commission.",
+    "description": "Grow your Indian takeaway with the best EPOS system by Posso Ltd UK. Integrated online ordering, caller ID, postcode delivery management, and low commission.",
     "author": {
         "@type": "Organization",
         "name": "Posso Ltd"
@@ -47,8 +47,8 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-    title: 'Best EPOS System for Indian Takeaway by Posso Ltd UK | 0% Commission',
-    description: 'Grow your Indian takeaway with the best EPOS system by Posso Ltd UK. Integrated online ordering, caller ID, postcode delivery management, and 0% commission. Book a demo.',
+    title: 'Best EPOS System for Indian Takeaway by Posso Ltd UK | Low Commission',
+    description: 'Grow your Indian takeaway with the best EPOS system by Posso Ltd UK. Integrated online ordering, caller ID, postcode delivery management, and low commission. Book a demo.',
     alternates: {
         canonical: '/best-epos-system-for-indian-takeaway-by-posso-ltd-uk',
     },
@@ -82,7 +82,7 @@ export default function IndianTakeawayLandingPage() {
                             </h1>
 
                             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                                Take full control of your Indian takeaway. Manage phone orders, online deliveries, and walk-ins with a system built for speed, accuracy, and 0% commission.
+                                Take full control of your Indian takeaway. Manage phone orders, online deliveries, and walk-ins with a system built for speed, accuracy, and low commission.
                             </p>
 
                             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -181,8 +181,8 @@ export default function IndianTakeawayLandingPage() {
                                     icon: MonitorPlay
                                 },
                                 {
-                                    title: "0% Commission Online Ordering",
-                                    desc: "Launch your own branded web shop. Stop paying 30% to Just Eat and keep 100% of your profits.",
+                                    title: "Low-Commission Online Ordering",
+                                    desc: "Launch your own branded web shop. Stop paying 25-35% to Just Eat and keep significantly more of your profits.",
                                     icon: Zap
                                 },
                                 {
@@ -265,7 +265,7 @@ export default function IndianTakeawayLandingPage() {
                                 </p>
                                 <ul className="space-y-4">
                                     {[
-                                        "0% Commission on every order",
+                                        "Low commission on every order — a fraction of marketplace fees",
                                         "Automatic Customer Loyalty points",
                                         "Push notifications for weekly specials",
                                         "Seamless integration with your EPOS"
@@ -329,7 +329,7 @@ export default function IndianTakeawayLandingPage() {
                                     Does Posso charge commission on online orders?
                                 </AccordionTrigger>
                                 <AccordionContent className="px-6 text-slate-400 leading-relaxed text-lg pb-6">
-                                    No. We believe you should keep your hard-earned profits. We offer a flat-fee subscription model with 0% commission on orders processed through your branded website or app.
+                                    Our commission is a fraction of what marketplaces charge — around 1/10th of the typical 25-35% aggregator fee. We believe you should keep significantly more of your hard-earned profits.
                                 </AccordionContent>
                             </AccordionItem>
                         </Accordion>

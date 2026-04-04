@@ -31,7 +31,7 @@ const schema = {
     "name": targetKeyword,
     "operatingSystem": "Web, iOS, Android, Windows",
     "applicationCategory": "Delivery Management System",
-    "description": "The best EPOS software for takeaway delivery in the UK. Integrated driver tracking, 0% commission ordering, and real-time delivery management by Posso Ltd.",
+    "description": "The best EPOS software for takeaway delivery in the UK. Integrated driver tracking, low-commission ordering, and real-time delivery management by Posso Ltd.",
     "author": {
         "@type": "Organization",
         "name": "Posso Ltd"
@@ -45,12 +45,12 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-    title: 'Best EPOS Software for Takeaway Delivery by Posso Ltd UK | 0% Commission',
-    description: 'Streamline your delivery business with the best EPOS software for takeaway delivery by Posso Ltd UK. Integrated driver tracking and 0% commission ordering. Book a demo.',
+    title: 'Best EPOS Software for Takeaway Delivery by Posso Ltd UK | Low Commission',
+    description: 'Streamline your delivery business with the best EPOS software for takeaway delivery by Posso Ltd UK. Integrated driver tracking and low-commission ordering. Book a demo.',
     alternates: {
         canonical: '/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk',
     },
-    keywords: "Takeaway delivery software UK, driver tracking system, restaurant delivery management, 0% commission delivery app, Posso Ltd delivery features",
+    keywords: "Takeaway delivery software UK, driver tracking system, restaurant delivery management, low commission delivery app, Posso Ltd delivery features",
 };
 
 export default function TakeawayDeliveryLandingPage() {
@@ -80,7 +80,7 @@ export default function TakeawayDeliveryLandingPage() {
                             </h1>
 
                             <p className="text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
-                                Take the guesswork out of delivery. From real-time driver tracking to 0% commission online ordering, Posso Ltd provides the ultimate toolkit for high-volume takeaway delivery operations.
+                                Take the guesswork out of delivery. From real-time driver tracking to low-commission online ordering, Posso Ltd provides the ultimate toolkit for high-volume takeaway delivery operations.
                             </p>
 
                             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -170,8 +170,8 @@ export default function TakeawayDeliveryLandingPage() {
                                     icon: Smartphone
                                 },
                                 {
-                                    title: "0% Commission Growth",
-                                    desc: "Every order through your direct channel is commission-free. Reclaim that 30% from aggregators.",
+                                    title: "Low-Commission Growth",
+                                    desc: "Every order through your direct channel costs a fraction of marketplace fees. Save up to 90% vs aggregators.",
                                     icon: Zap
                                 },
                                 {
@@ -291,7 +291,7 @@ export default function TakeawayDeliveryLandingPage() {
                     <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
                         <div className="max-w-4xl mx-auto space-y-10">
                             <h2 className="text-4xl md:text-7xl font-bold tracking-tight">
-                                Scale Your Delivery Without the <span className="text-blue-500 underline decoration-blue-500/30">Commission Fees.</span>
+                                Scale Your Delivery Without the <span className="text-blue-500 underline decoration-blue-500/30">Hefty Commission Fees.</span>
                             </h2>
                             <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
                                 Join 1,000+ UK takeaways that have reclaimed their profits with the best delivery EPOS software.

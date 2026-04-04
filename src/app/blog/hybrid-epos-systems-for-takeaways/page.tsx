@@ -138,8 +138,8 @@ export default function HybridEposBlog() {
                             </Link>
                             <Link href="/blog/epos-system-for-takeaway-commission-free" className="group p-8 rounded-[2rem] bg-slate-950 border border-white/5 hover:border-primary/50 transition-all flex justify-between items-center">
                                 <div>
-                                    <h4 className="text-xl font-bold group-hover:text-primary transition-colors">Commission-Free Systems</h4>
-                                    <p className="text-sm text-slate-500">Keep 100% of your profit on every order.</p>
+                                    <h4 className="text-xl font-bold group-hover:text-primary transition-colors">Low-Commission Systems</h4>
+                                    <p className="text-sm text-slate-500">Keep significantly more of your profit on every order.</p>
                                 </div>
                                 <ArrowRight className="text-primary group-hover:translate-x-2 transition-transform" />
                             </Link>

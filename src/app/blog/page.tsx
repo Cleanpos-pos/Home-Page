@@ -62,7 +62,7 @@ const blogPosts = [
   },
   {
     title: 'Meet Posso: Next-Gen Tech for UK Hospitality',
-    description: 'Explore our complete hospitality ecosystem, from self-service kiosks to commission-free ordering apps.',
+    description: 'Explore our complete hospitality ecosystem, from self-service kiosks to low-commission ordering apps.',
     href: '/blog/posso-future-hospitality-tech',
     icon: <Rocket className="w-12 h-12 text-primary" />,
   },
@@ -80,7 +80,7 @@ const blogPosts = [
   },
   {
     title: 'Stop Paying Commissions: A Better EPOS System for Takeaway',
-    description: 'Tired of 30% commission? Posso provides a better EPOS system for takeaways with commission-free online ordering.',
+    description: 'Tired of 30% commission? Posso provides a better EPOS system for takeaways with low-commission online ordering.',
     href: '/blog/epos-system-for-takeaway-commission-free',
     icon: <PiggyBank className="w-12 h-12 text-primary" />,
   },
@@ -127,8 +127,8 @@ const blogPosts = [
     icon: <Snowflake className="w-12 h-12 text-primary" />,
   },
   {
-    title: 'POSSO POS Systems for Restaurants & Takeaways – Fast, Modern & Commission-Free Ordering',
-    description: 'Discover POSSO POS – the UK’s modern EPOS system for restaurants & takeaways. Faster service, menu control, split payments and real reporting.',
+    title: 'POSSO POS Systems for Restaurants & Takeaways – Fast, Modern & Low-Commission Ordering',
+    description: 'Discover POSSO POS - the UK modern EPOS system for restaurants & takeaways. Faster service, menu control, split payments and real reporting.',
     href: '/blog/pos-systems-for-restaurants-and-takeaways',
     icon: <ShoppingCart className="w-12 h-12 text-primary" />,
   },
@@ -139,8 +139,8 @@ const blogPosts = [
     icon: <Smartphone className="w-12 h-12 text-primary" />,
   },
   {
-    title: 'POSSO Online Ordering & Mobile Apps – Commission-Free Food Ordering System',
-    description: 'Launch your own online ordering website or mobile app with POSSO. Keep 100% of your profit with zero commission.',
+    title: 'POSSO Online Ordering & Mobile Apps – Low-Commission Food Ordering System',
+    description: 'Launch your own online ordering website or mobile app with POSSO. Keep significantly more of your profit with low commission.',
     href: '/blog/online-ordering-and-mobile-apps',
     icon: <Globe className="w-12 h-12 text-primary" />,
   },

@@ -7,7 +7,7 @@ const features = [
   {
     icon: <Globe className="h-8 w-8 text-accent" />,
     title: 'Your Own Website',
-    description: 'Get a beautiful, modern, and mobile-friendly website designed to convert visitors into paying customers. 100% commission-free.',
+    description: 'Get a beautiful, modern, and mobile-friendly website designed to convert visitors into paying customers. A fraction of marketplace fees.',
   },
   {
     icon: <Smartphone className="h-8 w-8 text-accent" />,
@@ -21,8 +21,8 @@ const features = [
   },
     {
     icon: <Percent className="h-8 w-8 text-accent" />,
-    title: 'Zero Commission',
-    description: "Unlike major aggregators, we charge a flat monthly fee. That means you keep 100% of your online revenue, not just a fraction of it.",
+    title: 'Low Commission',
+    description: "Unlike major aggregators who charge 25-35%, our fees are a fraction of marketplace costs. That means you keep significantly more of your online revenue.",
   },
   {
     icon: <AreaChart className="h-8 w-8 text-accent" />,

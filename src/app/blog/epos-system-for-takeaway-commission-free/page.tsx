@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Stop Paying Commissions: A Better EPOS System for Takeaway | Posso',
-    description: 'Tired of 30% commission? Posso provides a better EPOS system for takeaways with commission-free online ordering, integrated printing, and automated marketing.',
+    description: 'Tired of 30% commission? Posso provides a better EPOS system for takeaways with low-commission online ordering, integrated printing, and automated marketing.',
     keywords: 'epos system for takeaway, commission free ordering, takeaway pos uk, online ordering system takeaways',
     alternates: {
         canonical: '/blog/epos-system-for-takeaway-commission-free',
@@ -45,7 +45,7 @@ export default function CommissionFreeTakeawayBlog() {
                         </p>
                         <div className="flex flex-wrap justify-center gap-4 pt-6">
                             <Button size="lg" className="rounded-full h-16 px-12 text-xl bg-primary hover:bg-primary/90 shadow-2xl shadow-primary/30" asChild>
-                                <Link href="/online-ordering">Go Commission-Free</Link>
+                                <Link href="/online-ordering">Go Low-Commission</Link>
                             </Button>
                         </div>
                     </div>
@@ -59,9 +59,9 @@ export default function CommissionFreeTakeawayBlog() {
                                 <div className="absolute top-0 right-0 p-10 opacity-5 group-hover:opacity-10 transition-opacity">
                                     <PiggyBank className="w-40 h-40" />
                                 </div>
-                                <h2 className="text-4xl font-bold">100% Profit is Possible</h2>
+                                <h2 className="text-4xl font-bold">Keep Significantly More Profit</h2>
                                 <p className="text-xl text-slate-400 leading-relaxed">
-                                    <Link href="https://posso.co.uk" className="text-primary font-bold hover:underline">Posso</Link> offers a commission-free online ordering system integrated directly into your EPOS. When a customer orders through your own branded website or app, you keep 100% of the profit. No hidden &quot;per-order&quot; technology fees.
+                                    <Link href="https://posso.co.uk" className="text-primary font-bold hover:underline">Posso</Link> offers a low-commission online ordering system integrated directly into your EPOS. Our fees are around 1/10th of what marketplaces charge, so you keep significantly more of every order.
                                 </p>
                                 <ul className="space-y-4">
                                     <li className="flex items-center gap-3 text-slate-200 text-lg">
@@ -114,7 +114,7 @@ export default function CommissionFreeTakeawayBlog() {
                         <TrendingUp className="w-20 h-20 text-primary mx-auto mb-8 animate-pulse" />
                         <h2 className="text-4xl md:text-5xl font-bold mb-8">Take Back Control of Your Revenue</h2>
                         <p className="text-xl text-slate-400 leading-relaxed mb-12">
-                            A Posso takeaway system isn&apos;t just a till; it&apos;s a growth engine. By eliminating commissions and moving customers to your own digital storefront, you can increase your take-home profit by thousands of pounds every single month.
+                            A Posso takeaway system isn&apos;t just a till; it&apos;s a growth engine. By drastically reducing commissions and moving customers to your own digital storefront, you can increase your take-home profit by thousands of pounds every single month.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Button size="lg" className="rounded-full h-14 px-10 text-lg" asChild>
@@ -133,7 +133,7 @@ export default function CommissionFreeTakeawayBlog() {
                     <div className="container mx-auto px-4 relative z-10">
                         <h2 className="text-4xl md:text-6xl font-black text-white mb-8">Stop Donating Your Profits</h2>
                         <Button size="lg" variant="secondary" className="rounded-full bg-white text-primary hover:bg-slate-100 font-black h-16 px-12 text-xl" asChild>
-                            <Link href="https://posso.co.uk">Start Your Commission-Free Future</Link>
+                            <Link href="https://posso.co.uk">Start Your Low-Commission Future</Link>
                         </Button>
                     </div>
                 </section>

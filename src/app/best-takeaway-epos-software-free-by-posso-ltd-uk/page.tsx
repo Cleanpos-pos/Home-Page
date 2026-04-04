@@ -39,7 +39,7 @@ const schema = {
         "priceCurrency": "GBP",
         "availability": "https://schema.org/InStock"
     },
-    "description": "Start your takeaway business with the best free EPOS software by Posso Ltd UK. Full featured, 0% commission ordering, and easy setup - for £0/month.",
+    "description": "Start your takeaway business with the best free EPOS software by Posso Ltd UK. Full featured, low-commission ordering, and easy setup - for £0/month.",
     "author": {
         "@type": "Organization",
         "name": "Posso Ltd"
@@ -49,11 +49,11 @@ const schema = {
 
 export const metadata: Metadata = {
     title: 'Best Takeaway EPOS Software Free by Posso Ltd UK | £0 Per Month',
-    description: 'Launch your takeaway today with the best free EPOS software by Posso Ltd UK. Full features, zero monthly cost, and 0% commission ordering. Join for free.',
+    description: 'Launch your takeaway today with the best free EPOS software by Posso Ltd UK. Full features, zero monthly cost, and low-commission ordering. Join for free.',
     alternates: {
         canonical: '/best-takeaway-epos-software-free-by-posso-ltd-uk',
     },
-    keywords: "Free takeaway EPOS UK, £0 EPOS software, best free restaurant POS, Posso Ltd free software, commission-free ordering free epos",
+    keywords: "Free takeaway EPOS UK, £0 EPOS software, best free restaurant POS, Posso Ltd free software, low commission ordering free epos",
 };
 
 export default function FreeTakeawayEposLandingPage() {
@@ -84,7 +84,7 @@ export default function FreeTakeawayEposLandingPage() {
                             </h1>
 
                             <p className="text-xl md:text-2xl text-slate-400 max-w-3xl leading-relaxed font-medium">
-                                Yes, it's actually free. No trials, no catch. Launch your takeaway with a professional EPOS and commission-free ordering system for **£0 a month**.
+                                Yes, it's actually free. No trials, no catch. Launch your takeaway with a professional EPOS and low-commission ordering system for **£0 a month**.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -139,7 +139,7 @@ export default function FreeTakeawayEposLandingPage() {
                                 },
                                 {
                                     title: "Online Ordering",
-                                    desc: "Your own web shop for collections and deliveries at 0% commission.",
+                                    desc: "Your own web shop for collections and deliveries at a fraction of marketplace fees.",
                                     icon: Smartphone
                                 },
                                 {
@@ -171,7 +171,7 @@ export default function FreeTakeawayEposLandingPage() {
                         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                             <div className="space-y-8">
                                 <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight">Finally, Software <br /> That's On Your Side.</h2>
-                                <p className="text-lg text-slate-400">Aggregators charge you 30% per order. Other EPOS companies charge you £60+ per month. We charge you **nothing** for the software and commission.</p>
+                                <p className="text-lg text-slate-400">Aggregators charge you 25-35% per order. Other EPOS companies charge you £60+ per month. Our commission is around 1/10th of what marketplaces charge, and the software is **free**.</p>
 
                                 <ul className="space-y-4 font-bold">
                                     <li className="flex items-center gap-4">
@@ -180,7 +180,7 @@ export default function FreeTakeawayEposLandingPage() {
                                     </li>
                                     <li className="flex items-center gap-4">
                                         <CheckCircle2 className="w-6 h-6 text-emerald-500" />
-                                        <span>0% Order Commission</span>
+                                        <span>Low Order Commission — Save up to 90% vs Marketplaces</span>
                                     </li>
                                     <li className="flex items-center gap-4">
                                         <CheckCircle2 className="w-6 h-6 text-emerald-500" />

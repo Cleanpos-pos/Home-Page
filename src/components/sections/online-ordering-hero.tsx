@@ -18,14 +18,14 @@ export function OnlineOrderingHero() {
             <div className="flex flex-col gap-6 text-center md:text-left items-center md:items-start">
                 <Badge variant="outline" className="border-primary/50 text-primary/80 bg-primary/10 py-1 px-3">
                     <Zap className="w-3 h-3 mr-2" />
-                    COMMISSION-FREE ORDERING
+                    LOW-COMMISSION ORDERING
                 </Badge>
                 <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl lg:text-7xl !leading-tight bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
                     Your Brand, Your Customers, <br />
                     <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Your Orders.</span>
                 </h1>
                 <p className="max-w-xl text-lg text-slate-400">
-                   Launch a commission-free online ordering website and branded mobile app. Plus, get listed on the FoodBooking marketplace to attract thousands of new local customers.
+                   Launch a low-commission online ordering website and branded mobile app — at a fraction of marketplace fees. Plus, get listed on the FoodBooking marketplace to attract thousands of new local customers.
                 </p>
                 <SolutionEnquiryModal 
                     defaultSolutionId="online-ordering" 

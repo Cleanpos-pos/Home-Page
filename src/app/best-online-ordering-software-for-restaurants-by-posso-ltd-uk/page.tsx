@@ -20,7 +20,7 @@ const schema = {
     "name": targetKeyword,
     "operatingSystem": "Web, iOS, Android",
     "applicationCategory": "Restaurant Ordering System",
-    "description": "Discover the best online ordering software for restaurants by Posso Ltd UK. Boost profits with 0% commission, branded apps, and seamless EPOS integration.",
+    "description": "Discover the best online ordering software for restaurants by Posso Ltd UK. Boost profits with low commission, branded apps, and seamless EPOS integration.",
     "author": {
         "@type": "Organization",
         "name": "Posso Ltd"
@@ -34,12 +34,12 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-    title: 'Best Online Ordering Software for Restaurants by Posso Ltd UK | 0% Commission',
-    description: 'Discover the best online ordering software for restaurants by Posso Ltd UK. Boost profits with 0% commission, branded apps, and seamless EPOS integration. Book a demo today.',
+    title: 'Best Online Ordering Software for Restaurants by Posso Ltd UK | Low Commission',
+    description: 'Discover the best online ordering software for restaurants by Posso Ltd UK. Boost profits with low commission, branded apps, and seamless EPOS integration. Book a demo today.',
     alternates: {
         canonical: '/best-online-ordering-software-for-restaurants-by-posso-ltd-uk',
     },
-    keywords: "Commission-free food ordering system, restaurant EPOS integration, custom branded restaurant app, direct online ordering UK, Posso Ltd features",
+    keywords: "Low commission food ordering system, restaurant EPOS integration, custom branded restaurant app, direct online ordering UK, Posso Ltd features",
 };
 
 export default function LongTailLandingPage() {
@@ -69,7 +69,7 @@ export default function LongTailLandingPage() {
                             </h1>
 
                             <p className="text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
-                                Stop paying 30% to delivery aggregators. Reclaim your profits with a commission-free, fully branded online ordering system designed specifically for UK hospitality businesses.
+                                Stop paying 25-35% to delivery aggregators. Reclaim your profits with a low-commission, fully branded online ordering system designed specifically for UK hospitality businesses.
                             </p>
 
                             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -111,12 +111,12 @@ export default function LongTailLandingPage() {
                                         In the competitive UK hospitality market, relying solely on third-party aggregators like Deliveroo or Uber Eats eats into your margins. The best online ordering software for restaurants by Posso Ltd UK offers a powerful alternative: a direct channel to your customers that you own and control.
                                     </p>
                                     <p>
-                                        Posso Ltd provides an all-in-one ecosystem that empowers takeaways, cafes, and QSRs (Quick Service Restaurants) to process orders for delivery, collection, and table service—all without the stinging commission fees.
+                                        Posso Ltd provides an all-in-one ecosystem that empowers takeaways, cafes, and QSRs (Quick Service Restaurants) to process orders for delivery, collection, and table service—all without the stinging marketplace commission fees.
                                     </p>
                                 </div>
                                 <div className="pt-4 flex items-center gap-6">
                                     <div className="flex flex-col">
-                                        <span className="text-3xl font-bold text-primary">0%</span>
+                                        <span className="text-3xl font-bold text-primary">Low</span>
                                         <span className="text-sm text-slate-500">Commission</span>
                                     </div>
                                     <div className="w-px h-12 bg-slate-800" />
@@ -153,8 +153,8 @@ export default function LongTailLandingPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
                                 {
-                                    title: "0% Commission Fees",
-                                    desc: "Keep 100% of your revenue. Unlike aggregators, we don't charge you for your own success.",
+                                    title: "Low Commission Fees",
+                                    desc: "Keep significantly more of your revenue. Our fees are around 1/10th of what aggregators charge.",
                                     icon: Zap
                                 },
                                 {
@@ -297,7 +297,7 @@ export default function LongTailLandingPage() {
                                     Does Posso Ltd charge commission on orders?
                                 </AccordionTrigger>
                                 <AccordionContent className="text-slate-400 leading-relaxed text-lg pb-6">
-                                    No. Posso Ltd provides a flat-fee or subscription model, meaning you pay 0% commission on the orders you process.
+                                    Posso Ltd charges a low commission that is around 1/10th of what marketplaces like Just Eat or Deliveroo charge, meaning you keep significantly more of every order.
                                 </AccordionContent>
                             </AccordionItem>
 

@@ -22,7 +22,7 @@ const features = [
     {
         icon: <Globe className="h-6 w-6 text-primary" />,
         title: "Integrated Online Ordering",
-        description: "Take commission-free orders from your own website. All online orders print directly in your kitchen, just like an in-store order."
+        description: "Take low-commission orders from your own website — a fraction of marketplace fees. All online orders print directly in your kitchen, just like an in-store order."
     },
     {
         icon: <ShoppingCart className="h-6 w-6 text-primary" />,

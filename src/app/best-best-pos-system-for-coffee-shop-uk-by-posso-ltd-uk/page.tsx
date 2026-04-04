@@ -47,7 +47,7 @@ const schema = {
 
 export const metadata: Metadata = {
     title: 'Best POS System for Coffee Shop UK by Posso Ltd UK | Digital Loyalty',
-    description: 'Boost your cafe efficiency with the best POS system for coffee shops in the UK. Integrated digital loyalty, KDS, and 0% commission ordering by Posso Ltd. Book a demo.',
+    description: 'Boost your cafe efficiency with the best POS system for coffee shops in the UK. Integrated digital loyalty, KDS, and low-commission ordering by Posso Ltd. Book a demo.',
     alternates: {
         canonical: '/best-best-pos-system-for-coffee-shop-uk-by-posso-ltd-uk',
     },
@@ -81,7 +81,7 @@ export default function CoffeeShopLandingPage() {
                             </h1>
 
                             <p className="text-xl md:text-2xl text-stone-400 max-w-2xl leading-relaxed font-medium">
-                                Speed up your morning rush with a POS system built for baristas. Integrated loyalty, smart modifiers, and real-time inventory—all with **0% commission**.
+                                Speed up your morning rush with a POS system built for baristas. Integrated loyalty, smart modifiers, and real-time inventory—all at **a fraction of marketplace fees**.
                             </p>
 
                             <div className="flex flex-wrap items-center justify-center gap-4">

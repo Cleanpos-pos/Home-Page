@@ -38,8 +38,8 @@ export default function BestFoodAppPage() {
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                         <Percent className="w-8 h-8 text-primary" />
                     </div>
-                    <h3 className="text-xl font-bold text-slate-100 m-0">Keep 100% of Your Profit</h3>
-                    <p className="text-slate-300 mt-2">Stop paying commission. With your own system, every penny from every order goes directly into your pocket.</p>
+                    <h3 className="text-xl font-bold text-slate-100 m-0">Keep Significantly More of Your Profit</h3>
+                    <p className="text-slate-300 mt-2">Stop paying hefty marketplace fees. With your own system, our commission is around 1/10th of what aggregators charge.</p>
                 </div>
                 <div className="flex flex-col items-center text-center">
                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
@@ -67,12 +67,12 @@ export default function BestFoodAppPage() {
                 <li><strong>Convert Them to Your Platform:</strong> Include a flyer in every marketplace order that offers a discount (e.g., "10% off your first order") for ordering directly from your website or app next time.</li>
               </ul>
               <p>
-                This approach gives you the best of both worlds: you acquire new customers through the big platforms and then convert them into profitable, long-term customers on your own commission-free system.
+                This approach gives you the best of both worlds: you acquire new customers through the big platforms and then convert them into profitable, long-term customers on your own low-commission system.
               </p>
 
               <h2 className="mt-8">Launch Your Own Ordering System with Posso</h2>
               <p>
-                Posso provides everything you need to take control of your online orders. We build you a professional ordering website and branded mobile apps for iOS and Android, all for a flat, predictable monthly fee. No commission, no hidden charges.
+                Posso provides everything you need to take control of your online orders. We build you a professional ordering website and branded mobile apps for iOS and Android, all with low commission — a fraction of what marketplaces charge. No hidden charges.
               </p>
 
               <div className="not-prose mt-8 space-y-4">

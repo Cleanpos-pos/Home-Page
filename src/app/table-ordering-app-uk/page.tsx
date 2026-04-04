@@ -37,7 +37,7 @@ const schema = {
         "name": "Posso Ltd",
         "url": "https://posso.co.uk"
     },
-    "description": "Speed up service and boost spend per head with the best table ordering app in the UK. 0% commission, seamless EPOS integration, and custom QR codes.",
+    "description": "Speed up service and boost spend per head with the best table ordering app in the UK. Low commission, seamless EPOS integration, and custom QR codes.",
     "areaServed": "Great Britain",
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -56,7 +56,7 @@ const schema = {
 
 export const metadata: Metadata = {
     title: 'Best Table Ordering App UK | QR Code Order & Pay | Posso Ltd',
-    description: 'Speed up service and boost spend per head with the best table ordering app in the UK. 0% commission, seamless EPOS integration, and custom QR codes. Book a demo.',
+    description: 'Speed up service and boost spend per head with the best table ordering app in the UK. Low commission, seamless EPOS integration, and custom QR codes. Book a demo.',
     alternates: {
         canonical: '/table-ordering-app-uk',
     },
@@ -308,9 +308,9 @@ export default function TableOrderingLandingPage() {
                                     <div className="space-y-4">
                                         <div className="flex items-center gap-2 text-accent font-bold">
                                             <ShieldCheck className="w-5 h-5" />
-                                            <span>0% Commission</span>
+                                            <span>Low Commission</span>
                                         </div>
-                                        <p className="text-slate-400">You keep the profit. No hidden fees or per-order charges from us.</p>
+                                        <p className="text-slate-400">Our fees are a fraction of what other platforms charge. No hidden costs.</p>
                                     </div>
 
                                     <div className="space-y-4">
