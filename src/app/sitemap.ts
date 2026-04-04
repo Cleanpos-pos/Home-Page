@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ticketing',
     '/digital-signage',
     '/tablemaestro',
+    '/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now',
   ];
 
   // Product & solution pages — high priority
