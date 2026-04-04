@@ -67,7 +67,7 @@ const products = [
     price: 'From £350 or FREE with Teya',
     icon: Globe,
     image: '/images/posso_online_ordering_hero.png',
-    features: ['Your own website + ordering', 'Delivery & collection', 'No commission fees'],
+    features: ['Your own website + ordering', 'Delivery & collection', 'Fraction of marketplace commission'],
   },
 ];
 

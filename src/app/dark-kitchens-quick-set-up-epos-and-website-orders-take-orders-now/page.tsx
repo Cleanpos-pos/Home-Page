@@ -11,7 +11,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Dark Kitchen ePOS & Online Ordering | Quick Setup',
   description:
-    'Launch your dark kitchen fast with Posso ePOS and commission-free online ordering. Take delivery, collection, and marketplace orders from one system. Setup in under 24 hours.',
+    'Launch your dark kitchen fast with Posso ePOS and low-commission online ordering. Take delivery, collection, and marketplace orders from one system. Setup in under 24 hours.',
   keywords: [
     'dark kitchen POS',
     'ghost kitchen EPOS',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Dark Kitchen ePOS & Online Ordering — Take Orders Now',
     description:
-      'Complete ePOS, online ordering website, and delivery integration for dark kitchens. Zero commission. Setup in under 24 hours.',
+      'Complete ePOS, online ordering website, and delivery integration for dark kitchens. Low commission — a fraction of marketplace fees. Setup in under 24 hours.',
     url: 'https://posso.co.uk/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -40,7 +40,7 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'Posso Dark Kitchen ePOS & Online Ordering',
-    description: 'Complete ePOS system and commission-free online ordering for dark kitchens, ghost kitchens, and delivery-only restaurants in the UK.',
+    description: 'Complete ePOS system and low-commission online ordering for dark kitchens, ghost kitchens, and delivery-only restaurants in the UK.',
     brand: { '@type': 'Brand', name: 'Posso' },
     url: 'https://posso.co.uk/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now',
     image: 'https://posso.co.uk/images/posso_epos_integration.png',
@@ -62,7 +62,7 @@ const pageSchema = [
 ];
 
 const features = [
-  { icon: Globe, title: 'Your Own Ordering Website', description: 'Commission-free branded ordering page. Accept delivery and collection orders 24/7 — no marketplace fees. Keep 100% of your revenue.' },
+  { icon: Globe, title: 'Your Own Ordering Website', description: 'Low-commission branded ordering page — around 1/10th the cost of Just Eat or Deliveroo. Accept delivery and collection orders 24/7.' },
   { icon: Monitor, title: 'Full ePOS Till System', description: 'Touchscreen ordering with category tabs, modifiers, and one-tap payments. Built for speed in high-volume delivery kitchens.' },
   { icon: Smartphone, title: 'Kitchen Display System', description: 'Orders appear instantly on your KDS — colour-coded by type with countdown timers. No paper tickets, no missed orders.' },
   { icon: Truck, title: 'Just Eat, Uber Eats & Deliveroo', description: 'All marketplace orders flow into one POS. No extra tablets, no re-keying. Auto-accept and auto-print to kitchen.' },
@@ -80,7 +80,7 @@ const steps = [
 ];
 
 const benefits = [
-  'Zero commission on your own website orders',
+  'Commission around 1/10th of marketplace fees',
   'All delivery platforms in one POS — no tablet juggling',
   'Setup in under 24 hours — we handle everything',
   'Works offline — no internet? No problem',
@@ -117,7 +117,7 @@ export default function DarkKitchensPage() {
                 </span>
               </h1>
               <p className="text-xl text-slate-300 mt-6 max-w-2xl mx-auto">
-                Launch your dark kitchen in under 24 hours. Commission-free online ordering, delivery platform integration, kitchen display, and full ePOS — everything you need to take orders now.
+                Launch your dark kitchen in under 24 hours. Low-commission online ordering, delivery platform integration, kitchen display, and full ePOS — everything you need to take orders now.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
@@ -159,7 +159,7 @@ export default function DarkKitchensPage() {
                   Dark kitchens — also called ghost kitchens, cloud kitchens, or virtual restaurants — are delivery-only operations that don&apos;t need a shopfront. But they still need a fast, reliable POS system and their own online ordering to avoid paying 30%+ commission to marketplaces on every order.
                 </p>
                 <p>
-                  Posso gives you everything in one system: a <strong className="text-white">commission-free ordering website</strong>, direct integration with <Link href="/delivery-integrations" className="text-primary hover:underline">Just Eat, Uber Eats, and Deliveroo</Link>, a kitchen display system, and a full ePOS till. All orders — from your website, phone, or delivery apps — appear on one screen and print to your kitchen automatically.
+                  Posso gives you everything in one system: a <strong className="text-white">low-commission ordering website</strong> (around 1/10th the cost of marketplaces), direct integration with <Link href="/delivery-integrations" className="text-primary hover:underline">Just Eat, Uber Eats, and Deliveroo</Link>, a kitchen display system, and a full ePOS till. All orders — from your website, phone, or delivery apps — appear on one screen and print to your kitchen automatically.
                 </p>
                 <p>
                   Whether you&apos;re launching a new dark kitchen or converting an existing restaurant to delivery-only, we go from signup to live orders in <strong className="text-white">under 24 hours</strong>. We handle menu setup, printer configuration, and staff training — included free.
@@ -246,7 +246,7 @@ export default function DarkKitchensPage() {
                 </Link>
                 <Link href="/online-ordering" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Online Ordering</p>
-                  <p className="text-slate-400 text-sm mt-1">Commission-free website</p>
+                  <p className="text-slate-400 text-sm mt-1">Low-commission website</p>
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
@@ -261,9 +261,9 @@ export default function DarkKitchensPage() {
           { question: 'What is a dark kitchen?', answer: 'A dark kitchen (also called a ghost kitchen, cloud kitchen, or virtual restaurant) is a food preparation facility that produces meals exclusively for delivery. There\'s no dine-in or walk-in service — all orders come through online ordering, delivery apps, or phone.' },
           { question: 'How quickly can I set up a dark kitchen with Posso?', answer: 'We go from signup to live orders in under 24 hours. We handle your menu setup, printer configuration, online ordering website, and delivery app integration remotely. You just need your kitchen and equipment ready.' },
           { question: 'Do I need a separate tablet for each delivery app?', answer: 'No — Posso integrates Just Eat, Uber Eats, and Deliveroo directly into your POS. All orders from every platform appear on one screen and auto-print to your kitchen. No extra tablets.' },
-          { question: 'Is the online ordering website really commission-free?', answer: 'Yes. Unlike Just Eat or Deliveroo which charge 25–35% per order, your Posso ordering website has zero commission. You keep 100% of every order placed through your site.' },
+          { question: 'How much commission do you charge on online orders?', answer: 'Our commission is around 1/10th the cost of marketplaces like Just Eat or Deliveroo, which typically charge 25–35% per order. With Posso, you keep significantly more of every order placed through your own website.' },
           { question: 'Can I run multiple brands from one dark kitchen?', answer: 'Yes — Posso supports multi-brand operation from a single kitchen. Each brand can have its own menu, branding, and ordering website while sharing the same POS and kitchen display.' },
-          { question: 'Does it work without internet?', answer: 'Yes. Posso is built offline-first. Take orders and process cash payments even when the internet drops. Everything syncs automatically when connectivity returns.' },
+          { question: 'Does it work without internet?', answer: 'The Posso ePOS is built offline-first — you can take orders, process cash payments, and print receipts even when the internet drops. Everything syncs when connectivity returns. However, online ordering and delivery platform integrations (Just Eat, Uber Eats, Deliveroo) require an active internet connection to receive orders.' },
         ]} />
 
         <Contact />

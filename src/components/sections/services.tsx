@@ -48,7 +48,7 @@ const services = [
   {
     icon: <Globe className="h-8 w-8 text-accent" />,
     title: 'Online Ordering & Mobile Apps',
-    description: 'Commission-free online ordering websites and branded mobile apps. Accept orders directly without third-party marketplace fees.',
+    description: 'Low-commission online ordering websites and branded mobile apps. Accept orders directly at a fraction of third-party marketplace fees.',
     href: '/online-ordering'
   },
   {
