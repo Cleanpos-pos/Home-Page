@@ -23,6 +23,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tablemaestro',
     '/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now',
     '/pizza-pos-system',
+    '/epos-system-for-indian-takeaway',
+    '/epos-system-for-takeaway',
+    '/restaurant-epos',
+    '/cafe-epos-system',
+    '/restaurant-epos-systems-uk',
+    '/epos-software-for-takeaway',
+    '/epos-software-for-takeaway-delivery',
+    '/takeaway-epos',
+    '/cafe-pos',
+    '/epos-systems-for-takeaways',
+    '/cheap-epos-systems-for-restaurants',
+    '/mobile-ordering-system',
+    '/bar-epos',
+    '/best-epos-system-for-takeaway',
   ];
 
   // Product & solution pages — high priority
