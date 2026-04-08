@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/mobile-ordering-system',
     '/bar-epos',
     '/best-epos-system-for-takeaway',
+    '/best-dark-kitchen-software-by-posso-ltd-uk',
     '/how-much-does-a-pos-system-cost-for-a-restaurant',
     '/top-5-pos-systems-for-restaurants',
     '/best-pos-system-for-pizzeria',
