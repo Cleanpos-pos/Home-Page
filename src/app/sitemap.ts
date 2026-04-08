@@ -100,6 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/restaurant-epos-table-management',
     '/blog/best-pos-system-for-pizza-delivery',
     '/blog/hybrid-epos-systems-for-takeaways',
+    '/blog/how-dominos-became-a-tech-company',
   ];
 
   // Misc/legacy pages — lower priority
