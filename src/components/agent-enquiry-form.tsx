@@ -13,12 +13,15 @@ import { submitAgentEnquiry } from '@/app/actions';
 import { PartyPopper, ShoppingCart, Smartphone, CreditCard, MonitorPlay, Search, Megaphone, MapPin } from 'lucide-react';
 import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
+import { cleanPhone, isValidPhone } from '@/lib/phone-validation';
 
 
 const agentEnquirySchema = z.object({
   name: z.string().min(2, 'Name is required.'),
   email: z.string().email('A valid email is required.'),
-  phone: z.string().min(10, 'A valid phone number is required.'),
+  phone: z.string().min(10, 'A valid phone number is required.').refine((val) => isValidPhone(cleanPhone(val)), {
+    message: 'Please enter a UK, European, USA, or Canadian phone number.',
+  }),
   location: z.string().min(2, 'Location is required.'),
   experience: z.string().min(20, 'Please provide some detail on your sales background.'),
   interest: z.array(z.string()).min(1, { message: 'Please select at least one product.' }),
@@ -62,7 +65,7 @@ export function AgentEnquiryForm() {
     setIsSubmitting(true);
     setServerError(null);
     try {
-      const result = await submitAgentEnquiry(data);
+      const result = await submitAgentEnquiry({ ...data, phone: cleanPhone(data.phone) });
       setIsSubmitting(false);
 
       if (result.success) {

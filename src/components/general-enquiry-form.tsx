@@ -14,6 +14,7 @@ import { PartyPopper, ShoppingCart, Smartphone, Globe, MonitorPlay, Store, Ticke
 import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
 import { IframeDialog } from './iframe-dialog';
+import { cleanPhone, isValidPhone } from '@/lib/phone-validation';
 
 
 const HangerIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -27,7 +28,9 @@ const generalEnquirySchema = z.object({
   name: z.string().min(2, 'Name is required.'),
   company: z.string().min(2, 'Company name is required.'),
   email: z.string().email('A valid email is required.'),
-  phone: z.string().min(10, 'A valid phone number is required.'),
+  phone: z.string().min(10, 'A valid phone number is required.').refine((val) => isValidPhone(cleanPhone(val)), {
+    message: 'Please enter a UK, European, USA, or Canadian phone number.',
+  }),
   message: z.string().optional(),
 });
 
@@ -81,7 +84,7 @@ export function GeneralEnquiryForm() {
     setIsSubmitting(true);
     setServerError(null);
     try {
-      const result = await submitGeneralEnquiry(data);
+      const result = await submitGeneralEnquiry({ ...data, phone: cleanPhone(data.phone) });
       setIsSubmitting(false);
 
       if (result.success) {

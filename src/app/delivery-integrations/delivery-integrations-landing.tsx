@@ -29,11 +29,14 @@ import {
   MessageSquare,
 } from 'lucide-react';
 import { submitGeneralEnquiry } from '@/app/actions';
+import { cleanPhone, isValidPhone } from '@/lib/phone-validation';
 
 const leadSchema = z.object({
   name: z.string().min(2, 'Name is required.'),
   businessName: z.string().min(2, 'Business name is required.'),
-  phone: z.string().min(10, 'A valid phone number is required.'),
+  phone: z.string().min(10, 'A valid phone number is required.').refine((val) => isValidPhone(cleanPhone(val)), {
+    message: 'Please enter a UK, European, USA, or Canadian phone number.',
+  }),
   email: z.string().email('A valid email is required.'),
 });
 type LeadFormValues = z.infer<typeof leadSchema>;

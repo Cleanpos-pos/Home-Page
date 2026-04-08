@@ -15,6 +15,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
 import { IframeDialog } from './iframe-dialog';
+import { cleanPhone, isValidPhone } from '@/lib/phone-validation';
 
 
 const cardMachineEnquirySchema = z.object({
@@ -22,7 +23,9 @@ const cardMachineEnquirySchema = z.object({
   name: z.string().min(2, 'Name is required.'),
   company: z.string().min(2, 'Company name is required.'),
   email: z.string().email('A valid email is required.'),
-  phone: z.string().min(10, 'A valid phone number is required.'),
+  phone: z.string().min(10, 'A valid phone number is required.').refine((val) => isValidPhone(cleanPhone(val)), {
+    message: 'Please enter a UK, European, USA, or Canadian phone number.',
+  }),
   message: z.string().optional(),
 });
 
@@ -65,7 +68,7 @@ export function CardMachineEnquiryForm({ onFormSubmit }: CardMachineEnquiryFormP
     setIsSubmitting(true);
     setServerError(null);
     try {
-      const result = await submitCardMachineEnquiry(data);
+      const result = await submitCardMachineEnquiry({ ...data, phone: cleanPhone(data.phone) });
       setIsSubmitting(false);
 
       if (result.success) {
