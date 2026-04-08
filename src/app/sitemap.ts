@@ -37,6 +37,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/mobile-ordering-system',
     '/bar-epos',
     '/best-epos-system-for-takeaway',
+    '/how-much-does-a-pos-system-cost-for-a-restaurant',
+    '/top-5-pos-systems-for-restaurants',
+    '/best-pos-system-for-pizzeria',
+    '/does-dominos-use-a-pos-system',
+    '/what-is-the-3-8-rule-for-pizza',
   ];
 
   // Product & solution pages — high priority
