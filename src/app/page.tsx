@@ -14,7 +14,7 @@ import { FAQSection } from '@/components/sections/faq-section';
 
 export const metadata: Metadata = {
   title: 'Restaurant ePOS Systems & Self-Order Kiosks UK | Posso',
-  description: 'Posso provides ePOS systems, self-order kiosks, and hospitality technology for restaurants, takeaways, and venues across the UK. Free demo available. Call 0808 175 3956.',
+  description: 'ePOS systems, self-order kiosks & online ordering for UK restaurants and takeaways. Free setup & training. Call 0808 175 3956.',
   keywords: [
     'ePOS system',
     'restaurant POS system UK',
