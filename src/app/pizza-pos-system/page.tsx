@@ -9,7 +9,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pizza POS System UK | Pizza Builder Software for Takeaways & Restaurants',
+  title: '🍕 Pizza POS System UK | Pizza Builder Software',
   description:
     'Posso Pizza POS system with built-in pizza builder for UK pizza shops and takeaways. Split-sided pizzas, size pricing, toppings, and one-tap ordering. From £499 + VAT.',
   keywords: [

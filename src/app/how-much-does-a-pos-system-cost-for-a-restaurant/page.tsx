@@ -9,7 +9,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'How Much Does a POS System Cost for a Restaurant? (2026 UK Guide)',
+  title: '💰 How Much Does a POS System Cost for a Restaurant? (2026 UK Guide)',
   description:
     'Restaurant POS system costs in the UK range from £499 to £4,500+ depending on hardware, software, and features. Full 2026 pricing breakdown with finance options from £24.92/week.',
   keywords: [

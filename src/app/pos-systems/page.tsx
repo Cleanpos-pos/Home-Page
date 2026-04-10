@@ -4,7 +4,7 @@ import { PosSystemsLanding } from './pos-systems-landing';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'POS Systems for Restaurants & Takeaways UK | From £499 + VAT | Posso',
+  title: '⭐ POS Systems for Restaurants & Takeaways UK | From £499 + VAT',
   description:
     'POS systems for UK restaurants & takeaways from £499 + VAT. Self-order kiosks, online ordering & card machines. Free setup & training. Call 0808 175 3956.',
   keywords: [

@@ -5,7 +5,7 @@ import { DeliveryIntegrationsLanding } from './delivery-integrations-landing';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Just Eat, Uber Eats & Deliveroo POS Integration',
+  title: '🚀 Just Eat, Uber Eats & Deliveroo POS Integration',
   description:
     'Integrate Just Eat, Uber Eats, and Deliveroo directly into your Posso ePOS. Cloud phone integration, delivery driver app, and kitchen display — all in one system.',
   keywords: [

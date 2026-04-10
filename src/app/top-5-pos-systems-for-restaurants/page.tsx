@@ -9,7 +9,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Top 5 POS Systems for Restaurants UK (2026 Comparison)',
+  title: '⭐ Top 5 POS Systems for Restaurants UK (2026 Comparison)',
   description:
     'Compare the top 5 POS systems for UK restaurants in 2026: Posso, Square, Lightspeed, Zettle, and TouchBistro. Features, pricing, and which is best for your restaurant.',
   keywords: [

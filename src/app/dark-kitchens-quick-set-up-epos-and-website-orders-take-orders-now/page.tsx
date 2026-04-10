@@ -9,7 +9,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Dark Kitchen ePOS & Online Ordering | Quick Setup',
+  title: '🚀 Dark Kitchen ePOS & Online Ordering | Quick Setup',
   description:
     'Launch your dark kitchen fast with Posso ePOS and low-commission online ordering. Take delivery, collection, and marketplace orders from one system. Setup in under 24 hours.',
   keywords: [

@@ -25,7 +25,7 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-  title: 'ePOS System Features for Restaurants & Takeaways',
+  title: '🚀 ePOS System Features for Restaurants & Takeaways',
   description: 'Explore 30+ features of the Posso One ePOS system: touchscreen ordering, KDS, kiosk mode, split bills, offline operation, Teya payments, and multi-language support.',
   alternates: {
     canonical: '/pos',

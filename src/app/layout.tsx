@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
-const title = 'Restaurant ePOS Systems & Self-Order Kiosks UK | Posso';
+const title = '🚀 Restaurant ePOS Systems & Self-Order Kiosks UK | Posso';
 const description = 'Posso provides ePOS systems, self-order kiosks, online ordering, ticketing, and digital signage for restaurants, takeaways, and venues across the UK. Call 0808 175 3956.';
 const url = 'https://posso.co.uk';
 
@@ -89,6 +89,17 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: url,
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-192x192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512x512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
   },
   verification: {
     // Add your Google Search Console verification code here
