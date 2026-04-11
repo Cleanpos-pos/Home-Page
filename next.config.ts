@@ -212,6 +212,7 @@ const nextConfig: NextConfig = {
       { source: '/best-self-serve-coffee-bar-stands-by-posso-ltd-uk', destination: '/self-serve-coffee-bar', permanent: true },
       { source: '/best-branded-self-serve-coffee-cart-by-posso-ltd-uk', destination: '/branded-self-serve-coffee-cart', permanent: true },
       { source: '/best-facebook-food-ordering-system-by-posso-ltd-uk', destination: '/facebook-food-ordering-system', permanent: true },
+      { source: '/best-takeaway-software-uk-by-posso-ltd-uk', destination: '/epos-software-for-takeaway', permanent: true },
     ];
   },
   async headers() {
