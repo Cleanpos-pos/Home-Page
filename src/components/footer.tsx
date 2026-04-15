@@ -73,6 +73,7 @@ export function Footer() {
                             <li><Link href="/#about" className="hover:text-primary transition-colors">About Posso</Link></li>
                             <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
                             <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
+                            <li><Link href="/downloads" className="hover:text-primary transition-colors">Downloads</Link></li>
                             <li><Link href="/agents" className="hover:text-primary transition-colors">Become an Agent</Link></li>
                             <li><Link href="/finance" className="hover:text-primary transition-colors">Finance Calculator</Link></li>
                             <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>

@@ -142,6 +142,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/self-serve-coffee-bar',
     '/branded-self-serve-coffee-cart',
     '/facebook-food-ordering-system',
+    '/dry-cleaning-pickup-delivery-app',
+    '/downloads',
   ];
 
   // Product & solution pages — high priority

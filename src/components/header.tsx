@@ -87,6 +87,7 @@ const solutionsLinks = [
 
 const retailLinks = [
   { href: '/digital-signage', label: 'Digital Signage' },
+  { href: '/dry-cleaning-pickup-delivery-app', label: 'Dry Cleaning App' },
   { href: '/shop-fitting', label: 'Shop Fitting' },
   { href: '/shop-signage', label: 'Shop Signage' },
 ];
