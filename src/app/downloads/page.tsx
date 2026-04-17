@@ -53,14 +53,14 @@ type DownloadItem = {
 const downloads: DownloadItem[] = [
   {
     icon: Printer,
-    title: 'Posso Printer Helper (Android)',
+    title: 'Posso Printer Helper v2 (Android)',
     description:
-      'Required companion app for Posso ePOS users running on Android tablets or devices. Handles thermal printer communication for receipt and kitchen printing.',
-    fileName: 'posso-printer-helper.apk',
-    fileUrl: '/downloads/posso-printer-helper.apk',
-    fileSize: '3.7 MB',
+      'Required companion app for Posso ePOS users running on Android tablets or devices. Handles thermal printer communication for receipt and kitchen printing. Latest version — install over any previous version.',
+    fileName: 'posso-printer-helper-v2.apk',
+    fileUrl: '/downloads/posso-printer-helper-v2.apk',
+    fileSize: '3.6 MB',
     platform: 'Android 7.0+',
-    badge: 'Latest',
+    badge: 'v2 — Latest',
   },
   {
     icon: FileText,
