@@ -4,14 +4,14 @@ import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { Contact } from '@/components/sections/contact';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Download, Smartphone, FileText, Printer, Phone, ArrowRight } from 'lucide-react';
+import { Download, Smartphone, FileText, Printer, Phone, ArrowRight, ClipboardList } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Downloads — Posso Printer Helper App, Brochures & Docs',
+  title: 'Downloads — Posso Apps, Brochures & Docs',
   description:
-    'Download the Posso Printer Helper Android app, product brochures, and support documents. Direct downloads for all Posso ePOS system resources.',
+    'Download the Posso Waiter Pad app, Printer Helper app, product brochures, and support documents. Direct downloads for all Posso ePOS system resources.',
   keywords: [
     'Posso downloads',
     'Posso printer helper app',
@@ -51,6 +51,17 @@ type DownloadItem = {
 };
 
 const downloads: DownloadItem[] = [
+  {
+    icon: ClipboardList,
+    title: 'Posso Waiter Pad (Android)',
+    description:
+      'Handheld waiter app for table-side ordering on Android phones and tablets. Take orders straight to the kitchen, manage tables, split bills, and process payments without leaving the table.',
+    fileName: 'posso-waiter-pad.apk',
+    fileUrl: '/downloads/posso-waiter-pad.apk',
+    fileSize: '3.0 MB',
+    platform: 'Android 5.1+',
+    badge: 'Latest',
+  },
   {
     icon: Printer,
     title: 'Posso Printer Helper v2 (Android)',
