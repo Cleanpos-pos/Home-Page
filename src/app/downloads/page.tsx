@@ -4,14 +4,14 @@ import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { Contact } from '@/components/sections/contact';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Download, Smartphone, FileText, Printer, Phone, ArrowRight, ClipboardList } from 'lucide-react';
+import { Download, Smartphone, FileText, Printer, Phone, ArrowRight, ClipboardList, Monitor } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Downloads — Posso Apps, Brochures & Docs',
+  title: 'Downloads — Posso One Desktop, Apps, Brochures & Docs',
   description:
-    'Download the Posso Waiter Pad app, Printer Helper app, product brochures, and support documents. Direct downloads for all Posso ePOS system resources.',
+    'Download Posso One Desktop for Windows, Waiter Pad app, Printer Helper app, product brochures, and support documents. Direct downloads for Posso ePOS users.',
   keywords: [
     'Posso downloads',
     'Posso printer helper app',
@@ -51,6 +51,17 @@ type DownloadItem = {
 };
 
 const downloads: DownloadItem[] = [
+  {
+    icon: Monitor,
+    title: 'Posso One Desktop (Windows)',
+    description:
+      'Full Posso One ePOS desktop application for Windows. Runs your touchscreen till, kitchen display, kiosk, and online ordering management. Includes hardware access for USB printers, cash drawers, and Teya card terminals.',
+    fileName: 'posso-one-setup-1.0.39.exe',
+    fileUrl: '/downloads/posso-one-setup-1.0.39.exe',
+    fileSize: '81 MB',
+    platform: 'Windows 10/11',
+    badge: 'v1.0.39 — Latest',
+  },
   {
     icon: ClipboardList,
     title: 'Posso Waiter Pad (Android)',
