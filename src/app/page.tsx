@@ -6,6 +6,7 @@ import { Testimonials } from '@/components/sections/testimonials';
 import { Contact } from '@/components/sections/contact';
 import { Footer } from '@/components/footer';
 import { TableMaestroShowcase } from '@/components/sections/table-maestro';
+import { GloriaFoodSwitchBanner } from '@/components/sections/gloriafood-switch-banner';
 import { WhyPosso } from '@/components/sections/why-posso';
 import { IndustryServed } from '@/components/sections/industry-served';
 import { Metadata } from 'next';
@@ -164,6 +165,7 @@ export default function Home() {
       <Header />
       <main className="flex-1 pt-20">
         <Hero />
+        <GloriaFoodSwitchBanner />
         <TableMaestroShowcase />
         <Services />
         <WhyPosso />
