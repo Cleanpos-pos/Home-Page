@@ -1,0 +1,7 @@
+node_modules/
+package-lock.json
+*.gloriafood-results.csv
+live-test.csv
+# your own input/output lists — keep leads out of the repo
+*-domains.csv
+!sample-domains.csv
