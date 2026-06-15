@@ -72,7 +72,7 @@ const downloads: DownloadItem[] = [
       'The full Posso One ePOS app for Android tablets and phones. Run your touchscreen till, kitchen display, and order management on Android, with direct printing to LAN and Bluetooth thermal printers and integrated PossoPay card payments. Sideload install — no Play Store account required.',
     fileName: 'posso-one-android.apk',
     fileUrl: '/downloads/posso-one-android.apk',
-    fileSize: '2.9 MB',
+    fileSize: '2.3 MB',
     platform: 'Android 6.0+',
     badge: 'v1.0.0 — New',
   },
