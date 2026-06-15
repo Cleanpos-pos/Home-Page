@@ -11,9 +11,12 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Downloads — Posso One Desktop, Apps, Brochures & Docs',
   description:
-    'Download Posso One Desktop for Windows, Waiter Pad app, Printer Helper app, product brochures, and support documents. Direct downloads for Posso ePOS users.',
+    'Download Posso One for Windows and Android, the Waiter Pad app, Printer Helper app, product brochures, and support documents. Direct downloads for Posso ePOS users.',
   keywords: [
     'Posso downloads',
+    'Posso One Android app',
+    'Posso One Android APK',
+    'Posso Android POS app',
     'Posso printer helper app',
     'Posso printer helper APK',
     'Posso Android app',
@@ -61,6 +64,17 @@ const downloads: DownloadItem[] = [
     fileSize: '81 MB',
     platform: 'Windows 10/11',
     badge: 'v1.0.44 — Latest',
+  },
+  {
+    icon: Smartphone,
+    title: 'Posso Android',
+    description:
+      'The full Posso One ePOS app for Android tablets and phones. Run your touchscreen till, kitchen display, and order management on Android, with direct printing to LAN and Bluetooth thermal printers and integrated PossoPay card payments. Sideload install — no Play Store account required.',
+    fileName: 'posso-one-android.apk',
+    fileUrl: '/downloads/posso-one-android.apk',
+    fileSize: '2.9 MB',
+    platform: 'Android 6.0+',
+    badge: 'v1.0.0 — New',
   },
   {
     icon: ClipboardList,
