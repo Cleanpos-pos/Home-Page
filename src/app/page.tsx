@@ -9,6 +9,7 @@ import { TableMaestroShowcase } from '@/components/sections/table-maestro';
 import { GloriaFoodSwitchBanner } from '@/components/sections/gloriafood-switch-banner';
 import { WhyPosso } from '@/components/sections/why-posso';
 import { IndustryServed } from '@/components/sections/industry-served';
+import { EducationCashless } from '@/components/sections/education-cashless';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import { FAQSection } from '@/components/sections/faq-section';
@@ -169,6 +170,7 @@ export default function Home() {
         <TableMaestroShowcase />
         <Services />
         <WhyPosso />
+        <EducationCashless />
         <IndustryServed />
         <About />
         <Testimonials />

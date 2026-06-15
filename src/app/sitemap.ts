@@ -77,6 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/dry-cleaning-software',
     '/homeware-pos',
     '/bespoke-epos-software',
+    '/cashless-catering-colleges-universities',
     '/pdq-machine-small-business',
     '/pdq-systems',
     '/order-counter-pos',
