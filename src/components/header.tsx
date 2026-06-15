@@ -58,6 +58,7 @@ const Logo = () => (
 
 const hospitalityLinks = [
   { href: '/pos', label: 'ePOS Systems' },
+  { href: '/cashless-catering-colleges-universities', label: 'Cashless Catering (Education)' },
   { href: '/tablemaestro', label: 'TableMaestro Booking' },
   { href: '/kiosks', label: 'Self-Order Kiosks' },
   { href: '/online-ordering', label: 'Online Ordering' },
