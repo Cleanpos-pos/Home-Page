@@ -214,6 +214,7 @@ const nextConfig: NextConfig = {
       { source: '/best-facebook-food-ordering-system-by-posso-ltd-uk', destination: '/facebook-food-ordering-system', permanent: true },
       { source: '/best-takeaway-software-uk-by-posso-ltd-uk', destination: '/epos-software-for-takeaway', permanent: true },
       { source: '/epos-system-for-takeaways', destination: '/epos-systems-for-takeaways', permanent: true },
+      { source: '/restaurant-epos-system-3', destination: '/pos', permanent: true },
     ];
   },
   async headers() {

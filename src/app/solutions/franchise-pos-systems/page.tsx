@@ -1,5 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { BreadcrumbNav } from '@/components/breadcrumb-nav';
+import { FAQSection } from '@/components/sections/faq-section';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -23,21 +25,51 @@ export const metadata: Metadata = {
     alternates: {
         canonical: '/solutions/franchise-pos-systems',
     },
+    openGraph: {
+        title: 'Franchise POS System UK | Multi-Site EPOS & Franchise Management Software',
+        description: 'Franchise POS system for multi-site operators: central menu and price control, per-site and group reporting, royalty and fee tracking, brand consistency, stock control, and fast onboarding of new sites.',
+        url: 'https://posso.co.uk/solutions/franchise-pos-systems',
+        type: 'website',
+        images: [
+            {
+                url: '/og-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Franchise POS system UK with central menu control, multi-site EPOS reporting, and royalty tracking for franchise networks',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Franchise POS System UK | Multi-Site EPOS & Franchise Management Software',
+        description: 'Central menu and price control, per-site and group reporting, royalty tracking, brand consistency, and stock control for franchise networks.',
+        images: ['/og-image.png'],
+    },
 };
 
 export default function FranchisePosPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "POSSO Franchise ePOS",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web, iOS, Android, Windows",
-        "description": "Enterprise-grade POS system built for franchises. Centralized menu control, real-time multi-unit analytics, and role-based access for franchise owners and managers.",
-        "brand": {
-            "@type": "Brand",
-            "name": "POSSO"
+    const jsonLd = [
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "POSSO Franchise ePOS",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, Windows",
+            "description": "Enterprise-grade POS system built for franchises. Centralized menu control, real-time multi-unit analytics, and role-based access for franchise owners and managers.",
+            "brand": {
+                "@type": "Brand",
+                "name": "POSSO"
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
+                { "@type": "ListItem", "position": 2, "name": "Franchise POS Systems", "item": "https://posso.co.uk/solutions/franchise-pos-systems" }
+            ]
         }
-    };
+    ];
 
     return (
         <div className="flex min-h-screen flex-col bg-background">
@@ -47,6 +79,8 @@ export default function FranchisePosPage() {
             />
             <Header />
             <main className="flex-1 pt-20">
+                <BreadcrumbNav items={[{ label: 'Franchise POS Systems' }]} />
+
                 {/* Hero Section */}
                 <section className="relative py-24 overflow-hidden bg-slate-950">
                     <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
@@ -178,6 +212,15 @@ export default function FranchisePosPage() {
                         </div>
                     </div>
                 </section>
+
+                <FAQSection title="Franchise POS Systems — Frequently Asked Questions" faqs={[
+                    { question: 'What is a franchise POS system?', answer: 'A franchise POS system is a multi-site EPOS platform designed to run a network of locations under one brand. As well as everyday till functions at each site, it gives head office central control over the menu and pricing, group-wide and per-site reporting, royalty and fee tracking, and consistent branding — so the whole estate runs to the same standard.' },
+                    { question: 'How does central menu and price control work across sites?', answer: 'Head office maintains a master menu and price list and pushes updates to every location, a region, or a single site with one action. You can run national pricing while still allowing approved local variations, and roll out new products or promotions across the network instantly.' },
+                    { question: 'Can I see reporting per site and for the whole group?', answer: 'Yes. The franchise management software gives you consolidated group reporting alongside drill-down per-site reports. Compare sales, average transaction value, and product performance across locations, identify top and underperforming sites, and export the data you need for board and franchisee reviews.' },
+                    { question: 'Does it handle royalties and franchise fees?', answer: 'Yes. The system can automate royalty and management-fee calculations based on each site’s sales, so franchisee billing is accurate and transparent. This removes manual spreadsheets and reduces disputes between head office and franchisees.' },
+                    { question: 'How quickly can new franchise sites be onboarded?', answer: 'New sites inherit your master menu, pricing, branding, and configuration, so onboarding is fast. We handle hardware setup, data import, and staff training, and a new site can typically be live and trading on the network within a short, planned go-live window.' },
+                    { question: 'Does the franchise EPOS include stock control and brand consistency tools?', answer: 'Yes. You get stock control with supplier integration and automated replenishment, plus brand-consistency controls that keep every terminal, kiosk, and receipt aligned to your brand identity across the entire multi-site estate.' },
+                ]} />
             </main>
             <Footer />
         </div>

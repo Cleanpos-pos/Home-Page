@@ -1,5 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { BreadcrumbNav } from '@/components/breadcrumb-nav';
+import { FAQSection } from '@/components/sections/faq-section';
 import { Button } from '@/components/ui/button';
 import {
     Coffee,
@@ -14,7 +16,6 @@ import {
     Users,
     Clock,
     CreditCard,
-    HelpCircle,
     Star,
     Utensils,
     Receipt,
@@ -24,12 +25,6 @@ import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SolutionEnquiryModal } from '@/components/solution-enquiry-modal';
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
     title: 'Coffee Shop & Cafe ePOS Systems UK | Posso',
@@ -133,15 +128,12 @@ export default function CoffeeShopEposPage() {
             <main className="flex-1">
                 {/* Breadcrumb */}
                 <div className="pt-20 bg-slate-950">
-                    <div className="container mx-auto px-4 md:px-6">
-                        <nav aria-label="Breadcrumb" className="text-xs text-slate-500 py-3">
-                            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-                            {' / '}
-                            <Link href="/pos" className="hover:text-primary transition-colors">ePOS Systems</Link>
-                            {' / '}
-                            <span className="text-primary">Coffee Shop & Cafe ePOS</span>
-                        </nav>
-                    </div>
+                    <BreadcrumbNav
+                        items={[
+                            { label: 'ePOS Systems', href: '/pos' },
+                            { label: 'Coffee Shop & Café EPOS' },
+                        ]}
+                    />
                 </div>
 
                 {/* Hero */}
@@ -347,70 +339,46 @@ export default function CoffeeShopEposPage() {
                 </section>
 
                 {/* FAQ */}
-                <section className="py-24">
-                    <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-                        <div className="flex items-center justify-center gap-3 mb-8">
-                            <HelpCircle className="w-8 h-8 text-primary" />
-                            <h2 className="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
-                        </div>
-
-                        <Accordion type="single" collapsible className="w-full">
-                            <AccordionItem value="item-1" className="border-slate-800">
-                                <AccordionTrigger className="text-left text-lg font-bold hover:text-primary transition-colors py-6">
-                                    What&apos;s included in the coffee shop ePOS package?
-                                </AccordionTrigger>
-                                <AccordionContent className="text-slate-400 leading-relaxed text-lg pb-6">
-                                    The complete package includes a 15&quot; touchscreen terminal, 15&quot; customer advertising display, 80mm thermal printer, UK cash drawer, 64GB SSD with 4GB RAM, free menu programming and a affordable monthly software licence. Optional add-ons like kitchen display, card reader and barcode scanner are available.
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            <AccordionItem value="item-2" className="border-slate-800">
-                                <AccordionTrigger className="text-left text-lg font-bold hover:text-primary transition-colors py-6">
-                                    How much is the software?
-                                </AccordionTrigger>
-                                <AccordionContent className="text-slate-400 leading-relaxed text-lg pb-6">
-                                    Our software runs on a low monthly fee, keeping your costs predictable. This covers the core ePOS system, updates and ongoing improvements. Cloud features like online ordering are included in your plan.
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            <AccordionItem value="item-3" className="border-slate-800">
-                                <AccordionTrigger className="text-left text-lg font-bold hover:text-primary transition-colors py-6">
-                                    Can I accept online orders through the same system?
-                                </AccordionTrigger>
-                                <AccordionContent className="text-slate-400 leading-relaxed text-lg pb-6">
-                                    Yes. Posso&apos;s <Link href="/online-ordering" className="text-primary hover:underline">online ordering system</Link> integrates directly with your ePOS. Website and app orders print alongside walk-in orders at low commission rates. You can also accept orders via <Link href="/best-facebook-food-ordering-system-by-posso-ltd-uk" className="text-primary hover:underline">Facebook and Instagram</Link>.
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            <AccordionItem value="item-4" className="border-slate-800">
-                                <AccordionTrigger className="text-left text-lg font-bold hover:text-primary transition-colors py-6">
-                                    Do you set up the menu for me?
-                                </AccordionTrigger>
-                                <AccordionContent className="text-slate-400 leading-relaxed text-lg pb-6">
-                                    Yes. Simple menus are programmed free of charge. More complex setups with extensive modifiers and multi-level screens carry a small one-time charge. Either way, we handle it so you&apos;re ready to trade on day one.
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            <AccordionItem value="item-5" className="border-slate-800">
-                                <AccordionTrigger className="text-left text-lg font-bold hover:text-primary transition-colors py-6">
-                                    Can I integrate card payments?
-                                </AccordionTrigger>
-                                <AccordionContent className="text-slate-400 leading-relaxed text-lg pb-6">
-                                    Yes. We integrate with leading UK card payment providers. Transactions sync automatically with your ePOS for accurate end-of-day reporting. See our <Link href="/credit-card-machines" className="text-primary hover:underline">card machines page</Link> for options.
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            <AccordionItem value="item-6" className="border-slate-800">
-                                <AccordionTrigger className="text-left text-lg font-bold hover:text-primary transition-colors py-6">
-                                    Do you offer training?
-                                </AccordionTrigger>
-                                <AccordionContent className="text-slate-400 leading-relaxed text-lg pb-6">
-                                    Yes. Every installation includes on-site or remote training for your team. We also provide a training clerk mode in the software so new staff can practise without affecting live sales data.
-                                </AccordionContent>
-                            </AccordionItem>
-                        </Accordion>
-                    </div>
-                </section>
+                <FAQSection
+                    title="Coffee Shop & Café EPOS — Frequently Asked Questions"
+                    faqs={[
+                        {
+                            question: "What's included in the coffee shop & café EPOS package?",
+                            answer:
+                                'The complete package includes a 15" touchscreen terminal, a 15" customer advertising display, an 80mm thermal printer, a UK cash drawer, 64GB SSD with 4GB RAM, free menu programming, and an affordable monthly software licence. Optional add-ons like a kitchen display, card reader, and barcode scanner are available so you can build the exact setup your café needs.',
+                        },
+                        {
+                            question: 'Can my café run a loyalty scheme and multi-buy offers?',
+                            answer:
+                                'Yes. Posso EPOS has loyalty stamps, points, membership cards, percentage discounts, and buy-one-get-one and combo deals built in. Offers apply automatically at the till, so baristas never have to remember to add them — perfect for rewarding regulars and increasing repeat visits.',
+                        },
+                        {
+                            question: 'Is it fast enough for quick-serve, high-volume coffee service?',
+                            answer:
+                                'Absolutely. The till screens are fully customisable so your team taps through hot drinks, cold drinks, food, and seasonal specials in seconds. Drink customisation, modifiers, and happy-hour auto-pricing are all one tap, keeping queues moving even at peak times.',
+                        },
+                        {
+                            question: 'Can I take online and app orders through the same system?',
+                            answer:
+                                'Yes. Posso online ordering integrates directly with your café EPOS, so orders from your own branded website and app print alongside walk-in orders at low commission. You can also accept orders via Facebook and Instagram, all flowing into one screen.',
+                        },
+                        {
+                            question: 'Can I integrate card payments with my café EPOS?',
+                            answer:
+                                'Yes. We integrate with leading UK card payment providers, including contactless, chip & PIN, Apple Pay, and Google Pay. Transactions sync automatically with your EPOS for accurate, fast end-of-day reporting and reconciliation.',
+                        },
+                        {
+                            question: 'Can I track stock for beans, milk, and other ingredients?',
+                            answer:
+                                'Yes. Posso EPOS includes stock management so you can monitor coffee beans, milk, syrups, cups, and food items, set reorder levels, and see what is selling. Combined with detailed reporting, it helps you cut waste and keep your most popular items in stock.',
+                        },
+                        {
+                            question: 'How much does a coffee shop EPOS system cost?',
+                            answer:
+                                'Posso café EPOS runs on a low, predictable monthly software fee that covers the core system, updates, and cloud features like online ordering. Simple menus are programmed free of charge, and finance options are available on hardware — call 0808 175 3956 for a tailored quote.',
+                        },
+                    ]}
+                />
 
                 {/* Related Solutions */}
                 <section className="py-16 bg-slate-900/30">

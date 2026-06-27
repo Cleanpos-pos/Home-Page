@@ -1,5 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { BreadcrumbNav } from '@/components/breadcrumb-nav';
+import { FAQSection } from '@/components/sections/faq-section';
 import { PosSystemsLanding } from './pos-systems-landing';
 import { Metadata } from 'next';
 
@@ -90,6 +92,12 @@ const pageSchema = [
       {
         '@type': 'ListItem',
         position: 2,
+        name: 'ePOS Systems',
+        item: 'https://posso.co.uk/pos',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
         name: 'POS Systems',
         item: 'https://posso.co.uk/pos-systems',
       },
@@ -106,7 +114,48 @@ export default function PosSystemsPage() {
       />
       <Header />
       <main className="flex-1 pt-20">
+        <BreadcrumbNav
+          items={[
+            { label: 'ePOS Systems', href: '/pos' },
+            { label: 'POS Systems' },
+          ]}
+        />
         <PosSystemsLanding />
+        <FAQSection
+          title="POS Systems UK — Frequently Asked Questions"
+          faqs={[
+            {
+              question: 'What is a POS / EPOS system and do I need one for my UK business?',
+              answer:
+                'A POS (point of sale) or EPOS (electronic point of sale) system is the till, software, and hardware you use to take orders, process payments, and track sales. For UK restaurants, takeaways, cafés, and retail, a modern EPOS system speeds up service, reduces order errors, gives you live sales reporting, and connects payments, online ordering, and stock in one place. Posso systems are built specifically for UK hospitality and retail.',
+            },
+            {
+              question: 'What hardware is included with a Posso POS system?',
+              answer:
+                'A standard Posso POS system includes a touchscreen till, integrated card payments, a receipt printer, and a cash drawer, with stock management and reporting built into the software. You can add self-order kiosks, kitchen display screens, additional terminals, and customer-facing displays as your business grows.',
+            },
+            {
+              question: 'How much does a POS system cost and can I spread the payments?',
+              answer:
+                'Posso POS systems start from £499 + VAT for a complete touchscreen till with integrated payments, reporting, and stock management. Self-order kiosks start from £699 + VAT and online ordering from £350 (or free with Teya). Finance options let you spread the cost into affordable weekly or monthly payments — call 0808 175 3956 for a tailored quote.',
+            },
+            {
+              question: 'Does the POS system work offline if my internet goes down?',
+              answer:
+                'Yes. Posso EPOS is built offline-first, so you can keep taking orders and processing cash payments even if your internet drops. Sales sync automatically once your connection is restored, so you never lose data or miss a transaction during a busy service.',
+            },
+            {
+              question: 'Does it integrate with online ordering and delivery apps?',
+              answer:
+                'Yes. Posso integrates with your own branded online ordering website and app, and with major delivery platforms including Just Eat, Uber Eats, and Deliveroo. Online and delivery orders flow straight into your POS and kitchen, so your staff manage every channel from one screen at low commission.',
+            },
+            {
+              question: 'How long does setup take and what support do I get?',
+              answer:
+                'We handle professional on-site installation anywhere in the UK, configure your full menu and pricing, and provide staff training — most businesses go live the same day, often in under 24 hours. Every system includes free setup and training, plus ongoing UK-based support from our team.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </div>

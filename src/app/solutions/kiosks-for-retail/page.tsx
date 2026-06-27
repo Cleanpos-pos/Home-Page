@@ -1,5 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { BreadcrumbNav } from '@/components/breadcrumb-nav';
+import { FAQSection } from '@/components/sections/faq-section';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -23,24 +25,54 @@ export const metadata: Metadata = {
     alternates: {
         canonical: '/solutions/kiosks-for-retail',
     },
+    openGraph: {
+        title: 'Kiosk for Retail | Retail Kiosk Point of Sale Solutions UK',
+        description: 'Advanced self-service and self-checkout kiosks for UK retailers. Speed up checkout, enable click & collect, and free up staff with POSSO retail kiosk systems.',
+        url: 'https://posso.co.uk/solutions/kiosks-for-retail',
+        type: 'website',
+        images: [
+            {
+                url: '/og-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'POSSO self-service retail kiosk and self-checkout system for UK shops and stores',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Kiosk for Retail | Retail Kiosk Point of Sale Solutions UK',
+        description: 'Advanced self-service and self-checkout kiosks for UK retailers. Speed up checkout, enable click & collect, and free up staff with POSSO retail kiosk systems.',
+        images: ['/og-image.png'],
+    },
 };
 
 export default function RetailKioskPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "POSSO Retail Kiosk System",
-        "description": "Interactive self-service kiosks for retail environments. Streamline checkout, provide product information, and enhance the shopper experience.",
-        "brand": {
-            "@type": "Brand",
-            "name": "POSSO"
+    const jsonLd = [
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "POSSO Retail Kiosk System",
+            "description": "Interactive self-service kiosks for retail environments. Streamline checkout, provide product information, and enhance the shopper experience.",
+            "brand": {
+                "@type": "Brand",
+                "name": "POSSO"
+            },
+            "offers": {
+                "@type": "Offer",
+                "url": "https://posso.co.uk/solutions/kiosks-for-retail",
+                "priceCurrency": "GBP"
+            }
         },
-        "offers": {
-            "@type": "Offer",
-            "url": "https://posso.co.uk/solutions/kiosks-for-retail",
-            "priceCurrency": "GBP"
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
+                { "@type": "ListItem", "position": 2, "name": "Kiosks for Retail", "item": "https://posso.co.uk/solutions/kiosks-for-retail" }
+            ]
         }
-    };
+    ];
 
     return (
         <div className="flex min-h-screen flex-col bg-background">
@@ -50,6 +82,7 @@ export default function RetailKioskPage() {
             />
             <Header />
             <main className="flex-1 pt-20">
+                <BreadcrumbNav items={[{ label: 'Kiosks for Retail' }]} />
                 {/* Hero Section */}
                 <section className="relative py-24 overflow-hidden bg-slate-950">
                     <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 via-transparent to-primary/10 opacity-30" />
@@ -138,6 +171,36 @@ export default function RetailKioskPage() {
                         </Button>
                     </div>
                 </section>
+
+                <FAQSection
+                    title="Kiosks for Retail — Frequently Asked Questions"
+                    faqs={[
+                        {
+                            question: "What is a self-service kiosk for retail?",
+                            answer: "A retail self-service kiosk is a touchscreen terminal that lets shoppers scan items, look up products, and pay for themselves without queuing at a manned till. POSSO retail kiosks double as a self-checkout kiosk and an interactive product catalogue, reducing queues and freeing staff for the shop floor.",
+                        },
+                        {
+                            question: "How does a self-checkout kiosk speed up service in my store?",
+                            answer: "Self-checkout kiosks let multiple customers pay at once instead of waiting for a single cashier, so peak-time queues shrink dramatically. Each station handles scanning, bagging prompts and contactless payment automatically, which typically cuts average checkout time and lets your team focus on restocking and customer service.",
+                        },
+                        {
+                            question: "Can a retail kiosk support click & collect orders?",
+                            answer: "Yes. POSSO kiosks integrate with your inventory and online store so customers can collect click & collect orders, check stock in other branches, and order out-of-stock items for home delivery — turning a small footprint into an endless aisle.",
+                        },
+                        {
+                            question: "Do your retail kiosks accept contactless and card payments?",
+                            answer: "Every POSSO self-service kiosk includes an integrated, PCI-compliant card terminal supporting contactless, chip & PIN, Apple Pay and Google Pay. Payments reconcile straight into your POS and reporting, so there is no separate device to manage.",
+                        },
+                        {
+                            question: "Are POSSO retail kiosks accessible and multilingual?",
+                            answer: "Our kiosk software supports multiple languages, large-text and high-contrast modes, and accessible screen heights so a wider range of customers can order independently. This helps you meet accessibility expectations while serving a diverse UK customer base.",
+                        },
+                        {
+                            question: "How quickly can a retail kiosk be installed and what does it cost?",
+                            answer: "Most retail kiosk rollouts go live within a few days of hardware delivery, as the software is pre-configured with your products. We offer outright purchase or finance options to spread the cost, and our UK support team handles setup, training and ongoing maintenance.",
+                        },
+                    ]}
+                />
 
                 {/* Internal Linking Footer */}
                 <section className="py-16 bg-slate-900/30 border-t border-white/5">

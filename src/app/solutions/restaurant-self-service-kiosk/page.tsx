@@ -1,5 +1,6 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -22,6 +23,26 @@ export const metadata: Metadata = {
     keywords: 'restaurant self service kiosk, self ordering kiosk restaurant, restaurant kiosk, restaurant kiosk systems, kiosk system for restaurants, self order kiosks restaurants, restaurant kiosk ordering, restaurant ordering kiosk, self ordering kiosk system for restaurants, self-service kiosks for food, self service ordering machine, self service kiosk restaurant, kiosks for restaurants, order kiosks, restaurant kiosks, self-order kiosk software, kiosks in restaurants, self-ordering kiosk system, kiosk machine for restaurants, food ordering kiosk system, self-ordering kiosk restaurant, food order kiosk, kiosk ordering system for restaurants, self ordering kiosk software for restaurants, ordering kiosk system, quick service restaurant kiosk, restaurant self service ordering kiosk, self serve kiosks for restaurants, kiosk in restaurants, self order kiosks, self service kiosk manufacturers uk, self serve kiosk, restaurant order kiosk, self ordering system for restaurants, self service food kiosk, restaurant self ordering kiosk, self ordering kiosk for restaurants, ordering kiosk',
     alternates: {
         canonical: '/solutions/restaurant-self-service-kiosk',
+    },
+    openGraph: {
+        title: 'Restaurant Self-Service Kiosk | Self Ordering System for Restaurants UK',
+        description: 'POSSO restaurant self-service kiosks help UK fast food and QSR venues cut queues, lift average order value by up to 30% and eliminate order errors.',
+        url: 'https://posso.co.uk/solutions/restaurant-self-service-kiosk',
+        type: 'website',
+        images: [
+            {
+                url: '/og-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'POSSO restaurant self-service kiosk and self-ordering system for UK fast food and quick-service venues',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Restaurant Self-Service Kiosk | Self Ordering System for Restaurants UK',
+        description: 'POSSO restaurant self-service kiosks help UK fast food and QSR venues cut queues, lift average order value by up to 30% and eliminate order errors.',
+        images: ['/og-image.png'],
     },
 };
 
@@ -71,6 +92,15 @@ export default function RestaurantKioskPage() {
         ]
     };
 
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
+            { "@type": "ListItem", "position": 2, "name": "Restaurant Self-Service Kiosks", "item": "https://posso.co.uk/solutions/restaurant-self-service-kiosk" }
+        ]
+    };
+
     return (
         <div className="flex min-h-screen flex-col bg-background">
             <script
@@ -81,8 +111,13 @@ export default function RestaurantKioskPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
             <Header />
             <main className="flex-1 pt-20">
+                <BreadcrumbNav items={[{ label: 'Restaurant Self-Service Kiosks' }]} />
                 {/* Hero Section */}
                 <section className="relative py-24 overflow-hidden bg-slate-950">
                     <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10" />

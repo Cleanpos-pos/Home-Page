@@ -1,5 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { BreadcrumbNav } from '@/components/breadcrumb-nav';
+import { FAQSection } from '@/components/sections/faq-section';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -24,21 +26,51 @@ export const metadata: Metadata = {
     alternates: {
         canonical: '/solutions/dry-cleaning-pos-system',
     },
+    openGraph: {
+        title: 'Dry Cleaning POS System UK | Laundry EPOS & Garment Tracking',
+        description: 'Dry cleaning and laundry POS/EPOS with ticket and garment tracking, SMS ready-for-collection alerts, pickup and delivery, customer accounts, card payments, and multi-branch control.',
+        url: 'https://posso.co.uk/solutions/dry-cleaning-pos-system',
+        type: 'website',
+        images: [
+            {
+                url: '/og-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Dry cleaning POS system UK with garment tracking, SMS collection alerts, and pickup and delivery management for laundry businesses',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Dry Cleaning POS System UK | Laundry EPOS & Garment Tracking',
+        description: 'Garment tracking, SMS ready-for-collection alerts, pickup and delivery, card payments, and multi-branch control for dry cleaners and laundries.',
+        images: ['/og-image.png'],
+    },
 };
 
 export default function DryCleaningPosPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "CleanPos Dry Cleaning ePOS",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web, iOS, Android, Windows",
-        "description": "Comprehensive ePOS system designed for dry cleaners and laundry businesses. Featuring garment tracking, automated customer alerts, and integrated payments.",
-        "brand": {
-            "@type": "Brand",
-            "name": "CleanPos"
+    const jsonLd = [
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "CleanPos Dry Cleaning ePOS",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, iOS, Android, Windows",
+            "description": "Comprehensive ePOS system designed for dry cleaners and laundry businesses. Featuring garment tracking, automated customer alerts, and integrated payments.",
+            "brand": {
+                "@type": "Brand",
+                "name": "CleanPos"
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
+                { "@type": "ListItem", "position": 2, "name": "Dry Cleaning POS", "item": "https://posso.co.uk/solutions/dry-cleaning-pos-system" }
+            ]
         }
-    };
+    ];
 
     return (
         <div className="flex min-h-screen flex-col bg-slate-950 text-white selection:bg-primary/30">
@@ -56,6 +88,8 @@ export default function DryCleaningPosPage() {
             <Header />
 
             <main className="flex-1">
+                <BreadcrumbNav items={[{ label: 'Dry Cleaning POS' }]} />
+
                 {/* Hero Section */}
                 <section className="relative pt-32 pb-20 overflow-hidden">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/20 blur-[120px] rounded-full opacity-50 pointer-events-none" />
@@ -228,6 +262,15 @@ export default function DryCleaningPosPage() {
                         </div>
                     </div>
                 </section>
+
+                <FAQSection title="Dry Cleaning POS — Frequently Asked Questions" faqs={[
+                    { question: 'What is a dry cleaning POS system and how is it different from a standard till?', answer: 'A dry cleaning POS system (also called a laundry EPOS) is built around garment tracking rather than simple product sales. Instead of just ringing up an item, it creates a ticket for each order, tags individual garments, tracks them through cleaning and pressing, and tells you exactly which items are ready for collection. You also get customer accounts, automated SMS alerts, card payments, and reporting — all tailored to dry cleaners and laundries.' },
+                    { question: 'How does garment tracking work?', answer: 'Each garment is tagged with a barcode or heat-resistant NFC tag when it is booked in. Staff scan items at each stage — booked in, cleaned, pressed, and ready — so the system always knows the status and location of every garment. This eliminates lost items and lets you find any order in seconds.' },
+                    { question: 'Can the system send SMS when an order is ready for collection?', answer: 'Yes. As soon as an order is marked ready, the system can automatically send a ready-for-collection SMS or email to the customer. This reduces phone calls, speeds up collections, and improves customer satisfaction without any manual effort from your staff.' },
+                    { question: 'Does it support pickup and delivery rounds?', answer: 'Yes. The dry cleaning POS supports pickup and delivery with a driver app, optimised routes, and digital signatures on collection or drop-off. Orders booked in on a round flow straight into garment tracking just like counter orders.' },
+                    { question: 'Can I manage multiple branches from one system?', answer: 'Yes. The laundry EPOS is multi-branch ready. You can manage several shops or processing sites under one account, transfer garments between locations, share customer accounts across branches, and view consolidated reporting for the whole business.' },
+                    { question: 'How do customers pay, and are card payments included?', answer: 'Customers can pay by card, contactless, Apple Pay, Google Pay, or cash, and balances can be held against customer accounts for regulars and trade clients. Card payments are integrated directly into the POS with PCI-DSS compliant processing.' },
+                ]} />
             </main>
 
             <Footer />

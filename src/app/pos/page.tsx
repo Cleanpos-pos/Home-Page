@@ -8,27 +8,59 @@ import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "POSSO POS System",
-  "brand": "POSSO Ltd",
-  "description": "UK-based EPOS system for restaurants and takeaways with real-time menu control, stock tracking, reporting and integrated payments.",
-  "category": "Point of Sale",
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "GBP",
-    "availability": "https://schema.org/InStock"
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "POSSO POS System",
+    "brand": "POSSO Ltd",
+    "description": "UK-based EPOS system for restaurants and takeaways with real-time menu control, stock tracking, reporting and integrated payments.",
+    "category": "Point of Sale",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/InStock"
+    },
+    "url": "https://posso.co.uk/pos",
+    "image": "https://posso.co.uk/images/posso_epos_integration.png"
   },
-  "url": "https://posso.co.uk/pos",
-  "image": "https://posso.co.uk/images/posso_epos_integration.png"
-};
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
+      { "@type": "ListItem", "position": 2, "name": "ePOS Systems", "item": "https://posso.co.uk/pos" }
+    ]
+  }
+];
 
 export const metadata: Metadata = {
   title: '🚀 ePOS System Features for Restaurants & Takeaways',
   description: 'Explore 30+ features of the Posso One ePOS system: touchscreen ordering, KDS, kiosk mode, split bills, offline operation, Teya payments, and multi-language support.',
   alternates: {
     canonical: '/pos',
+  },
+  openGraph: {
+    title: 'ePOS System for Restaurants & Takeaways | Posso UK',
+    description:
+      'Discover the Posso One ePOS system: touchscreen ordering, kitchen display, kiosk mode, split bills, offline operation, and integrated Teya payments for UK hospitality.',
+    url: 'https://posso.co.uk/pos',
+    type: 'website',
+    images: [
+      {
+        url: '/images/posso_epos_integration.png',
+        width: 1200,
+        height: 630,
+        alt: 'Posso One ePOS system for UK restaurants and takeaways showing touchscreen ordering, integrated payments, and kitchen display integration',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ePOS System for Restaurants & Takeaways | Posso UK',
+    description:
+      'Touchscreen ordering, kitchen display, kiosk mode, split bills, offline operation, and integrated Teya payments for UK hospitality.',
+    images: ['/images/posso_epos_integration.png'],
   },
 };
 

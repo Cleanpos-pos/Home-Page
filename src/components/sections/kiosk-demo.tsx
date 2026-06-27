@@ -81,8 +81,8 @@ const KioskStartScreen = ({ onStart }: { onStart: () => void }) => {
             <rect x="8" y="8" width="16" height="16" rx="4" fill="hsl(var(--primary))" />
           </svg>
         </div>
-        <h2 className="text-4xl font-bold text-white">TOUCH TO</h2>
-        <h1 className="text-6xl font-bold text-primary">START</h1>
+        <div className="text-4xl font-bold text-white" aria-hidden="true">TOUCH TO</div>
+        <div className="text-6xl font-bold text-primary" aria-hidden="true">START</div>
         <p className="mt-4 text-slate-300">TAP ANYWHERE TO BEGIN YOUR ORDER</p>
         <Button size="lg" className="mt-8">Order Now &gt;</Button>
       </div>

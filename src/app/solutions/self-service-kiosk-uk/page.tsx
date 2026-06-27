@@ -1,5 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { BreadcrumbNav } from '@/components/breadcrumb-nav';
+import { FAQSection } from '@/components/sections/faq-section';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -23,43 +25,73 @@ export const metadata: Metadata = {
     alternates: {
         canonical: '/solutions/self-service-kiosk-uk',
     },
+    openGraph: {
+        title: 'Self-Service Kiosk UK | UK Manufacturers & Software for Kiosks',
+        description: 'POSSO is a leading UK provider of self-service kiosk hardware and software for restaurants, retail and hospitality. Nationwide installation, support and finance.',
+        url: 'https://posso.co.uk/solutions/self-service-kiosk-uk',
+        type: 'website',
+        images: [
+            {
+                url: '/og-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'POSSO self-service kiosk UK hardware and software for restaurants and retail',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Self-Service Kiosk UK | UK Manufacturers & Software for Kiosks',
+        description: 'POSSO is a leading UK provider of self-service kiosk hardware and software for restaurants, retail and hospitality. Nationwide installation, support and finance.',
+        images: ['/og-image.png'],
+    },
 };
 
 export default function KioskUkPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Self-Service Kiosk Solutions",
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "POSSO LTD",
-            "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "UK"
+    const jsonLd = [
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Self-Service Kiosk Solutions",
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "POSSO LTD",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "UK"
+                }
+            },
+            "areaServed": "United Kingdom",
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Kiosk Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Kiosk Hardware Installation"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Kiosk Software Development"
+                        }
+                    }
+                ]
             }
         },
-        "areaServed": "United Kingdom",
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Kiosk Services",
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
             "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Kiosk Hardware Installation"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Kiosk Software Development"
-                    }
-                }
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
+                { "@type": "ListItem", "position": 2, "name": "Self-Service Kiosks UK", "item": "https://posso.co.uk/solutions/self-service-kiosk-uk" }
             ]
         }
-    };
+    ];
 
     return (
         <div className="flex min-h-screen flex-col bg-background">
@@ -69,6 +101,7 @@ export default function KioskUkPage() {
             />
             <Header />
             <main className="flex-1 pt-20">
+                <BreadcrumbNav items={[{ label: 'Self-Service Kiosks UK' }]} />
                 {/* Hero Section */}
                 <section className="relative py-24 overflow-hidden bg-slate-950">
                     <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
@@ -183,6 +216,36 @@ export default function KioskUkPage() {
                         </div>
                     </div>
                 </section>
+
+                <FAQSection
+                    title="Self-Service Kiosks UK — Frequently Asked Questions"
+                    faqs={[
+                        {
+                            question: "What is a self-service kiosk?",
+                            answer: "A self-service kiosk is a touchscreen terminal that lets customers browse, order or check out and pay for themselves without staff assistance. POSSO supplies self-service kiosk hardware and software across the UK for restaurants, takeaways, retail and hospitality venues.",
+                        },
+                        {
+                            question: "Are POSSO self-service kiosks made and supported in the UK?",
+                            answer: "Yes. We supply, configure and install self-service kiosks throughout the UK and back them with a nationwide team of engineers offering on-site maintenance plus 24/7 UK-based phone and remote support, so help is always close at hand.",
+                        },
+                        {
+                            question: "How do self-service kiosks benefit my business?",
+                            answer: "Self-service kiosks shorten queues, speed up service and lift average order value through built-in upselling prompts. They also reduce order errors and let your team focus on preparation and customer care rather than manning the till during peak periods.",
+                        },
+                        {
+                            question: "Do your kiosks integrate with my existing POS and kitchen systems?",
+                            answer: "Our self-service kiosks send orders directly to your POS and kitchen display system, keeping menus, pricing and stock in sync in real time. They also integrate with common UK accounting and CRM tools so your reporting stays in one place.",
+                        },
+                        {
+                            question: "Are the kiosks PCI compliant and secure for payments?",
+                            answer: "All POSSO kiosk payment solutions are PCI compliant and meet UK financial regulations. Each kiosk includes an integrated card terminal supporting contactless, chip & PIN, Apple Pay and Google Pay for fast, secure transactions.",
+                        },
+                        {
+                            question: "Can I buy kiosks outright or is finance available?",
+                            answer: "You can purchase kiosks outright or spread the cost with flexible finance options. We arrange a UK site survey, handle installation and provide staff training so your kiosks are live and earning quickly.",
+                        },
+                    ]}
+                />
 
                 {/* SEO Cross-Links Section */}
                 <section className="py-20 bg-slate-900/20">

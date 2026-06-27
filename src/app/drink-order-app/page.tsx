@@ -1,6 +1,8 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { Contact } from '@/components/sections/contact';
+import { FAQSection } from '@/components/sections/faq-section';
 import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Check, Smartphone, Monitor, CreditCard, QrCode, Utensils, Clock, Users, BarChart3, Globe } from 'lucide-react';
@@ -30,6 +32,13 @@ export const metadata: Metadata = {
       'Digital waiter pad and table ordering app for restaurants, bars, and pubs. QR ordering, split bills, and pay-at-table.',
     url: 'https://posso.co.uk/drink-order-app',
     type: 'website',
+    images: [{ url: '/images/posso_table_ordering_menu.png', width: 1200, height: 630, alt: 'Posso table ordering and digital waiter pad app showing menu, QR ordering and pay-at-table for restaurants, bars and pubs' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Drink Order App & Table Ordering Waiter Pad',
+    description: 'Digital waiter pad and table ordering app for restaurants, bars, and pubs. QR ordering, split bills, and pay-at-table.',
+    images: ['/images/posso_table_ordering_menu.png'],
   },
 };
 
@@ -50,7 +59,8 @@ const pageSchema = [
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Drink Order App', item: 'https://posso.co.uk/drink-order-app' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Table Ordering & Waiter Pad', item: 'https://posso.co.uk/drink-order-app' },
     ],
   },
 ];
@@ -118,6 +128,11 @@ export default function DrinkOrderAppPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <Header />
       <main className="flex-1 pt-20">
+        <BreadcrumbNav items={[
+          { label: 'ePOS Systems', href: '/pos' },
+          { label: 'Table Ordering & Waiter Pad' },
+        ]} />
+
         {/* Hero */}
         <section className="relative w-full min-h-[80vh] flex items-center overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-background to-slate-950 opacity-90" />
@@ -246,6 +261,15 @@ export default function DrinkOrderAppPage() {
             </div>
           </div>
         </section>
+
+        <FAQSection title="Table Ordering & Waiter Pad — Frequently Asked Questions" faqs={[
+          { question: 'What is a table ordering app and digital waiter pad?', answer: 'A table ordering app, or digital waiter pad, replaces paper order pads with a touchscreen handheld device. Waiters take food and drink orders right at the table and send them straight to the kitchen and bar — no walking back and forth to a till. Posso runs on phones, handheld terminals, and tablets, so your staff can order at the table from anywhere on the floor.' },
+          { question: 'How does QR code ordering at the table work?', answer: 'Each table gets its own QR code. Customers scan it with their phone camera — no app download needed — and browse your menu, place food and drink orders, and even pay at the table. Orders flow directly to the relevant kitchen or bar screen, freeing your staff to focus on service and helping you turn tables faster.' },
+          { question: 'Do orders go straight to the kitchen and bar?', answer: 'Yes. Whether the order is taken on the waiter pad or placed by a customer via QR, Posso routes each item automatically — food to the kitchen display or printer, drinks to the bar. Nothing is re-keyed, so there are no lost tickets, no transcription errors, and no missed orders during busy service.' },
+          { question: 'Can staff take orders on handheld devices?', answer: 'Absolutely. The Posso waiter pad runs on handheld terminals, Android phones, and tablets. Staff take orders at the table, add modifiers and dietary notes, fire courses, and split bills — all from one device. It works offline too, syncing automatically when the connection returns.' },
+          { question: 'Will table ordering speed up table turnover?', answer: 'It does both. Sending orders straight to the kitchen and bar cuts the time between seating and service, and pay-at-table means customers settle up the moment they are ready instead of waiting for the bill. Faster ordering plus faster payment means more covers per shift and higher average spend through smart upsells.' },
+          { question: 'How much does the Posso table ordering and waiter pad system cost?', answer: 'Pricing depends on how many handhelds and QR ordering points you need. Book a free demo and we will build a quote around your venue, handle setup and menu import, and train your staff. Most venues are live within 24 hours. Call 0808 175 3956 to get started.' },
+        ]} />
 
         <Contact />
       </main>

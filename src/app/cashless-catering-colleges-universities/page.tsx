@@ -43,6 +43,12 @@ export const metadata: Metadata = {
     type: 'article',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Posso cashless catering for colleges and universities' }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cashless Catering for Colleges & Universities | Posso UK',
+    description: 'Cashless catering and payment systems for UK colleges, sixth forms and universities. Built for the September 2026 free school meals expansion.',
+    images: ['/og-image.png'],
+  },
 };
 
 const pageSchema = [
