@@ -64,6 +64,25 @@ export const metadata: Metadata = {
   },
 };
 
+const posScreenshots = [
+  { src: '/images/posso-epos-dashboard.png', w: 1906, h: 914, alt: 'Posso One EPOS back-office dashboard showing live sales, orders, average ticket, terminals and store management for a UK restaurant', cap: 'The Posso One dashboard — live sales, terminals and store management in one place.' },
+  { src: '/images/posso-epos-order-types-till.png', w: 1914, h: 912, alt: 'Posso EPOS till order-types screen with Eat In, Takeaway and Delivery plus manager operations', cap: 'Start every order by choosing Eat In, Takeaway or Delivery on the Posso till.' },
+  { src: '/images/posso-epos-add-delivery-order.png', w: 1298, h: 677, alt: 'Adding a delivery order with customer address capture in the Posso One EPOS system', cap: 'Take delivery orders with address capture, straight from the POS.' },
+  { src: '/images/posso-epos-add-collection-order.png', w: 864, h: 575, alt: 'Adding a collection order in the Posso One EPOS system for a UK takeaway', cap: 'Log a collection order in seconds on Posso One.' },
+];
+
+const posImageSchema = posScreenshots.map((s) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ImageObject',
+  contentUrl: `https://posso.co.uk${s.src}`,
+  url: `https://posso.co.uk${s.src}`,
+  name: s.alt,
+  caption: s.cap,
+  creditText: 'Posso Ltd',
+  creator: { '@type': 'Organization', name: 'Posso Ltd' },
+  copyrightNotice: '© Posso Ltd',
+}));
+
 export default function PosPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -76,6 +95,34 @@ export default function PosPage() {
         <BreadcrumbNav items={[{ label: 'ePOS Systems' }]} />
         <PosHero />
         <EposFeatures />
+
+        {/* Product screenshots */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(posImageSchema) }} />
+        <section className="py-20 bg-slate-900/30">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-14">
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text">See the Posso One EPOS in Action</h2>
+              <p className="text-slate-400 mt-3 text-lg max-w-2xl mx-auto">
+                From the back-office dashboard to taking Eat In, Takeaway and Delivery orders on the till — a real look at the Posso One EPOS system.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {posScreenshots.map((s) => (
+                <figure key={s.src} className="glass-card rounded-2xl border border-slate-700/50 overflow-hidden">
+                  <img
+                    src={s.src}
+                    alt={s.alt}
+                    width={s.w}
+                    height={s.h}
+                    loading="lazy"
+                    className="w-full h-auto"
+                  />
+                  <figcaption className="text-slate-400 text-sm p-4 text-center">{s.cap}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Contextual internal links */}
         <section className="py-12">

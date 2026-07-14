@@ -73,6 +73,24 @@ export const metadata: Metadata = {
   },
 };
 
+const kioskScreenshots = [
+  { src: '/images/posso-self-order-kiosk-menu-screen.png', w: 545, h: 962, alt: 'Posso self-order kiosk menu screen showing categories and iced drinks with prices for a UK coffee shop', cap: 'Customers browse the full menu at their own pace.' },
+  { src: '/images/posso-self-order-kiosk-item-customise.png', w: 536, h: 949, alt: 'Customising an iced latte with syrup and milk options on a Posso self-order kiosk', cap: 'Every item prompts upsells — syrups, milk choices and extras.' },
+  { src: '/images/posso-self-order-kiosk-review-order.png', w: 545, h: 958, alt: 'Review order and checkout screen with a tip prompt on a Posso self-order kiosk', cap: 'Review, tip and pay — the checkout that lifts average order value.' },
+];
+
+const kioskImageSchema = kioskScreenshots.map((s) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ImageObject',
+  contentUrl: `https://posso.co.uk${s.src}`,
+  url: `https://posso.co.uk${s.src}`,
+  name: s.alt,
+  caption: s.cap,
+  creditText: 'Posso Ltd',
+  creator: { '@type': 'Organization', name: 'Posso Ltd' },
+  copyrightNotice: '© Posso Ltd',
+}));
+
 export default function KiosksPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -176,6 +194,34 @@ export default function KiosksPage() {
                   <h3 className="text-lg font-bold text-white mb-1">{s.title}</h3>
                   <p className="text-slate-400 text-sm">{s.desc}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Kiosk screenshots */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(kioskImageSchema) }} />
+        <section className="py-20 bg-slate-900/30">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-14">
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text">Inside the Posso Self-Order Kiosk</h2>
+              <p className="text-slate-400 mt-3 text-lg max-w-2xl mx-auto">
+                From browsing the menu to customising an item and paying at the checkout — the self-order kiosk experience your customers get.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              {kioskScreenshots.map((s) => (
+                <figure key={s.src} className="flex flex-col items-center">
+                  <img
+                    src={s.src}
+                    alt={s.alt}
+                    width={s.w}
+                    height={s.h}
+                    loading="lazy"
+                    className="rounded-2xl shadow-xl w-full max-w-[280px] border border-slate-700/50"
+                  />
+                  <figcaption className="text-slate-400 text-sm mt-3 text-center max-w-[280px]">{s.cap}</figcaption>
+                </figure>
               ))}
             </div>
           </div>
