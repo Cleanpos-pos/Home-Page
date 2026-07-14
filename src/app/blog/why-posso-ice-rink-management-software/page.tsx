@@ -47,7 +47,7 @@ export default function IceRinkBlog() {
               </p>
               <div className="glass-card p-6 rounded-xl border border-primary/20 bg-primary/5">
                 <p className="font-semibold text-primary mb-2">The Tech:</p>
-                <p>Skate and safety gear rentals are processed directly at the <Link href="/kiosks" className="text-accent underline hover:text-primary transition-colors">ticketing point</Link>—online or at the kiosk. The data is pushed instantly to the rental counter.</p>
+                <p>Skate and safety gear rentals are processed directly at the <Link href="/self-order-kiosks" className="text-accent underline hover:text-primary transition-colors">ticketing point</Link>—online or at the kiosk. The data is pushed instantly to the rental counter.</p>
                 <p className="font-semibold text-accent mt-4 mb-2">The Win:</p>
                 <p>Staff know exactly what size is needed before the guest even reaches the counter. It reduces queue dwell time and ensures you have real-time visibility on inventory availability, preventing overbooking of specific sizes.</p>
               </div>

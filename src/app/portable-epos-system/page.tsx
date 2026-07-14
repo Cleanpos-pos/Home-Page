@@ -216,7 +216,7 @@ export default function PortableEposSystemPage() {
                   <p className="font-semibold text-white">POS Systems</p>
                   <p className="text-slate-400 text-sm mt-1">Compare POS options</p>
                 </Link>
-                <Link href="/kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
                   <p className="text-slate-400 text-sm mt-1">In-store kiosk ordering</p>
                 </Link>

@@ -136,7 +136,7 @@ export default function RestaurantKioskPage() {
                                     <Link href="/contact">Get a Quote Today</Link>
                                 </Button>
                                 <Button size="lg" variant="outline" asChild className="px-8 h-14 text-lg border-white/20 hover:bg-white/5 transition-all">
-                                    <Link href="/kiosks">View Hardware Options</Link>
+                                    <Link href="/self-order-kiosks">View Hardware Options</Link>
                                 </Button>
                             </div>
                         </div>

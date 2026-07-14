@@ -77,7 +77,7 @@ export default function AmusementParkBlog() {
               </p>
               <div className="glass-card p-6 rounded-xl border border-primary/20 bg-primary/5">
                 <p className="font-semibold text-primary mb-2">The Tech:</p>
-                <p>Our identity management layer recognises membership tiers instantly at any touchpoint—be it the gate, a <Link href="/kiosks" className="text-accent underline hover:text-primary transition-colors">retail kiosk</Link>, or a locker rental station.</p>
+                <p>Our identity management layer recognises membership tiers instantly at any touchpoint—be it the gate, a <Link href="/self-order-kiosks" className="text-accent underline hover:text-primary transition-colors">retail kiosk</Link>, or a locker rental station.</p>
                 <p className="font-semibold text-accent mt-4 mb-2">The Win:</p>
                 <p>Frictionless perk delivery. A Gold Member shouldn&apos;t have to ask for their discount; the system should apply their 20% locker rental reduction automatically. This creates a &quot;sticky&quot; ecosystem where renewal becomes the default choice.</p>
               </div>

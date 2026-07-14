@@ -30,7 +30,7 @@ export function Footer() {
                             <li><Link href="/pos" className="hover:text-primary transition-colors">ePOS Systems</Link></li>
                             <li><Link href="/solutions/restaurant-self-service-kiosk" className="hover:text-primary transition-colors font-semibold text-primary/80">Restaurant Kiosks</Link></li>
                             <li><Link href="/tablemaestro" className="hover:text-primary transition-colors">TableMaestro Booking</Link></li>
-                            <li><Link href="/kiosks" className="hover:text-primary transition-colors">Self-Order Kiosks</Link></li>
+                            <li><Link href="/self-order-kiosks" className="hover:text-primary transition-colors">Self-Order Kiosks</Link></li>
                             <li><Link href="/online-ordering" className="hover:text-primary transition-colors">Online Ordering</Link></li>
                             <li><Link href="/gloriafood-alternative" className="hover:text-primary transition-colors">GloriaFood Alternative</Link></li>
                             <li><Link href="/credit-card-machines" className="hover:text-primary transition-colors">Card Machines</Link></li>

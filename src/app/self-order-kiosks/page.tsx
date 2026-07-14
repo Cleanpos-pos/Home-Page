@@ -5,8 +5,11 @@ import { KiosksHero } from '@/components/sections/kiosks-hero';
 import { KioskDemo } from '@/components/sections/kiosk-demo';
 import { Contact } from '@/components/sections/contact';
 import { FAQSection } from '@/components/sections/faq-section';
-import { TrendingUp, Clock, CheckCircle2, Sparkles, Languages, CreditCard } from 'lucide-react';
+import { TrendingUp, Clock, CheckCircle2, Sparkles, Languages, CreditCard, ArrowRight, PlayCircle } from 'lucide-react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
+import { videoPages } from '@/lib/video-pages-data';
 
 const kioskFeatures = [
   { icon: TrendingUp, title: 'Higher Average Order Value', description: 'Self-order kiosks consistently lift average order value by 15-30%. The screen never forgets to suggest a meal deal, a side, or a dessert — and customers spend more when they order at their own pace without feeling watched.' },
@@ -30,7 +33,7 @@ const schema = [
       "priceCurrency": "GBP",
       "availability": "https://schema.org/InStock"
     },
-    "url": "https://posso.co.uk/kiosks",
+    "url": "https://posso.co.uk/self-order-kiosks",
     "image": "https://posso.co.uk/images/posso_coffee_shop_hero.png"
   },
   {
@@ -39,22 +42,35 @@ const schema = [
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
       { "@type": "ListItem", "position": 2, "name": "ePOS Systems", "item": "https://posso.co.uk/pos" },
-      { "@type": "ListItem", "position": 3, "name": "Self-Order Kiosks", "item": "https://posso.co.uk/kiosks" },
+      { "@type": "ListItem", "position": 3, "name": "Self-Order Kiosks", "item": "https://posso.co.uk/self-order-kiosks" },
     ],
   },
 ];
 
+const videoHubSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Posso Self-Order Kiosk Videos",
+  "itemListElement": videoPages.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "url": `https://posso.co.uk/${p.slug}`,
+    "name": p.h1,
+    "image": `https://posso.co.uk/videos/thumbs/${p.slug}.png`,
+  })),
+};
+
 export const metadata: Metadata = {
-  title: 'Self-Order Kiosks for Restaurants | Increase Efficiency',
-  description: 'Reduce queues, increase order accuracy, and empower your customers with our intuitive and sleek self-order kiosks. Perfect for fast-paced environments.',
+  title: 'Self-Order Kiosks for UK Restaurants & Takeaways | Posso',
+  description: 'Posso self-order kiosks cut queues, increase order accuracy and lift average order value by 15–30% — with contactless payments and full EPOS & kitchen integration. UK setup & support.',
   alternates: {
-    canonical: '/kiosks',
+    canonical: '/self-order-kiosks',
   },
   openGraph: {
     title: 'Self-Order Kiosks for Restaurants & Takeaways | Posso UK',
     description:
       'Reduce queues, increase order accuracy, and boost average order value with Posso self-order kiosks. Smart upsells, kitchen and POS integration, UK setup and support.',
-    url: 'https://posso.co.uk/kiosks',
+    url: 'https://posso.co.uk/self-order-kiosks',
     type: 'website',
     images: [
       {
@@ -222,6 +238,48 @@ export default function KiosksPage() {
                   />
                   <figcaption className="text-slate-400 text-sm mt-3 text-center max-w-[280px]">{s.cap}</figcaption>
                 </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Video guides hub */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoHubSchema) }} />
+        <section className="py-20">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-14">
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text">Self-Order Kiosk Video Guides</h2>
+              <p className="text-slate-400 mt-3 text-lg max-w-2xl mx-auto">
+                Costs, kiosks for restaurants and takeaways, IP65 outdoor kiosks, and how they increase sales — watch the guides.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {videoPages.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/${p.slug}`}
+                  className="group rounded-2xl overflow-hidden border border-slate-700/50 glass-card hover:border-primary/50 transition-all hover:-translate-y-1"
+                >
+                  <div className="relative aspect-video overflow-hidden bg-black">
+                    <Image
+                      src={`/videos/thumbs/${p.slug}.png`}
+                      alt={p.h1}
+                      width={1280}
+                      height={720}
+                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity">
+                      <PlayCircle className="w-14 h-14 text-white/90 drop-shadow-lg" />
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors mb-2">{p.h1}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">{p.description}</p>
+                    <span className="inline-flex items-center gap-1 text-primary text-sm font-semibold mt-4">
+                      Watch &amp; learn more <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

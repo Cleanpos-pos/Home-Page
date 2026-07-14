@@ -73,6 +73,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: '/home', destination: '/', permanent: true },
+      { source: '/kiosks', destination: '/self-order-kiosks', permanent: true },
       { source: '/best-food-on-the-table-app-by-posso-ltd-uk', destination: '/restaurant-order-at-table-app', permanent: true },
       { source: '/best-restaurant-order-at-table-app-by-posso-ltd-uk', destination: '/restaurant-order-at-table-app', permanent: true },
       { source: '/best-food-ordering-system-by-posso-ltd-uk', destination: '/food-ordering-system', permanent: true },

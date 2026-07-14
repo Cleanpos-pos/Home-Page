@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/',
     '/pos',
     '/pos-systems',
-    '/kiosks',
+    '/self-order-kiosks',
     '/online-ordering',
     '/gloriafood-alternative',
     '/delivery-integrations',

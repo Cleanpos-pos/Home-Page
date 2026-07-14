@@ -123,7 +123,7 @@ export default function KioskUkPage() {
                                     <Link href="/contact">Book Your UK Site Survey</Link>
                                 </Button>
                                 <Button size="lg" variant="outline" asChild className="h-14 px-10 text-lg">
-                                    <Link href="/kiosks">Browse Terminals</Link>
+                                    <Link href="/self-order-kiosks">Browse Terminals</Link>
                                 </Button>
                             </div>
                         </div>

@@ -23,11 +23,11 @@ export function KiosksHero() {
                     SELF-SERVICE ORDERING
                 </Badge>
                 <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl lg:text-7xl !leading-tight bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
-                    Revolutionise Your Service with <br />
-                    <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Self-Order Kiosks</span>
+                    <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Self-Order Kiosks</span> <br />
+                    for UK Restaurants &amp; Takeaways
                 </h1>
                 <p className="max-w-xl text-lg text-slate-400">
-                    Reduce queues, increase order accuracy, and empower your customers with our intuitive and sleek self-order kiosks. Perfect for fast-paced environments.
+                    Posso self-service kiosks cut queues, increase order accuracy and lift average order value by 15&ndash;30% &mdash; with contactless card payments and full EPOS and kitchen integration. Built for restaurants, takeaways, coffee shops and quick-service venues across the UK.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                     <SolutionEnquiryModal 
