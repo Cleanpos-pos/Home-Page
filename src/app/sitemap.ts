@@ -1,11 +1,9 @@
 import { MetadataRoute } from 'next';
-import { getAllSlugs } from '@/lib/seo-pages-data';
+import { allSeoPages } from '@/lib/seo-pages-data';
 
 const URL = 'https://posso.co.uk';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // SEO landing pages (programmatic)
-  const seoPageRoutes = getAllSlugs().map(slug => `/${slug}`);
 
   // Core pages — highest priority
   const coreRoutes = [
@@ -276,12 +274,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.4,
     })),
-    // Programmatic SEO pages
-    ...seoPageRoutes.map((route) => ({
-      url: `${URL}${route}`,
+    // Programmatic SEO pages (video pages carry video-sitemap data)
+    ...allSeoPages.map((p) => ({
+      url: `${URL}/${p.slug}`,
       lastModified,
       changeFrequency: 'monthly' as const,
-      priority: 0.5,
+      priority: p.video ? 0.6 : 0.5,
+      ...(p.video
+        ? {
+            videos: [{
+              title: p.h1,
+              thumbnail_loc: `${URL}/videos/thumbs/${p.slug}.png`,
+              description: p.description,
+              content_loc: `${URL}/videos/${p.slug}.mp4`,
+              duration: p.video.durationSec,
+              publication_date: `${p.video.uploadDate}T09:00:00+00:00`,
+              family_friendly: 'yes' as const,
+            }],
+          }
+        : {}),
     })),
   ];
 

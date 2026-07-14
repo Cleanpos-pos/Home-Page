@@ -26,6 +26,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const page = getPageBySlug(slug);
   if (!page) return {};
 
+  const mp4 = `https://posso.co.uk/videos/${page.slug}.mp4`;
+  const thumb = `https://posso.co.uk/videos/thumbs/${page.slug}.png`;
+
   return {
     title: page.title,
     description: page.description,
@@ -37,7 +40,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: page.title,
       description: page.description,
       url: `https://posso.co.uk/${page.slug}`,
+      ...(page.video
+        ? {
+            type: 'video.other',
+            images: [thumb],
+            videos: [{ url: mp4, type: 'video/mp4', width: 1920, height: 1080 }],
+          }
+        : {}),
     },
+    ...(page.video
+      ? { twitter: { card: 'player', title: page.title, description: page.description, images: [thumb] } }
+      : {}),
   };
 }
 
@@ -67,6 +80,49 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
     ]
   };
 
+  const faqSchema = page.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": page.faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a },
+    })),
+  } : null;
+
+  const videoSchema = page.video ? (() => {
+    const base = `https://posso.co.uk/${page.slug}`;
+    const ch = page.video.chapters;
+    return {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": page.h1,
+      "description": page.description,
+      "thumbnailUrl": [`https://posso.co.uk/videos/thumbs/${page.slug}.png`],
+      "uploadDate": page.video.uploadDate,
+      "duration": page.video.durationISO,
+      "contentUrl": `https://posso.co.uk/videos/${page.slug}.mp4`,
+      "embedUrl": base,
+      "publisher": {
+        "@type": "Organization",
+        "name": "Posso Ltd",
+        "logo": { "@type": "ImageObject", "url": "https://posso.co.uk/icon-512x512.png" },
+      },
+      "hasPart": ch.map((c, i) => ({
+        "@type": "Clip",
+        "name": c.name,
+        "startOffset": c.start,
+        "endOffset": i + 1 < ch.length ? ch[i + 1].start : page.video!.durationSec,
+        "url": `${base}?t=${c.start}`,
+      })),
+      "potentialAction": {
+        "@type": "SeekToAction",
+        "target": `${base}?t={seek_to_second_number}`,
+        "startOffset-input": "required name=seek_to_second_number",
+      },
+    };
+  })() : null;
+
   const relatedPages = page.relatedSlugs
     .map(s => allSeoPages.find(p => p.slug === s))
     .filter(Boolean) as SeoPageData[];
@@ -75,6 +131,8 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
     <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50 selection:bg-primary/30">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      {videoSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />}
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
       <Header />
 
       <main className="flex-1">
@@ -127,6 +185,40 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
             </div>
           </div>
         </section>
+
+        {/* Video */}
+        {page.video && (
+          <section className="pb-4">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="max-w-4xl mx-auto">
+                <div className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl shadow-primary/10 bg-black aspect-video">
+                  {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                  <video className="w-full h-full" controls preload="none" poster={`/videos/thumbs/${page.slug}.png`}>
+                    <source src={`/videos/${page.slug}.mp4`} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div className="mt-8 grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">In this video</h2>
+                    <ul className="space-y-3">
+                      {page.video.chapters.map((c, i) => (
+                        <li key={i} className="flex items-baseline gap-4 text-slate-300">
+                          <span className="text-primary font-mono text-sm shrink-0">{Math.floor(c.start / 60)}:{String(c.start % 60).padStart(2, '0')}</span>
+                          <span>{c.name}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">Summary</h2>
+                    <p className="text-slate-400 leading-relaxed">{page.video.transcript}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Hero Content */}
         <section className="py-24 bg-slate-900/50">

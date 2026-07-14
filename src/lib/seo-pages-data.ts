@@ -6,6 +6,8 @@
  * dry-cleaning, salon, digital-signage, card-machine, hospitality, pub, hotel, sweet-shop, misc
  */
 
+import { videoPages } from './video-pages-data';
+
 export interface SeoPageData {
   slug: string;
   title: string; // max 60 chars
@@ -30,6 +32,15 @@ export interface SeoPageData {
   ctaHeading: string;
   ctaText: string;
   relatedSlugs: string[];
+  /** Optional video for VideoObject schema + on-page player. Self-hosted at
+   *  /videos/<slug>.mp4 with a poster at /videos/thumbs/<slug>.png */
+  video?: {
+    durationSec: number;
+    durationISO: string; // e.g. "PT39S"
+    uploadDate: string;  // ISO date, e.g. "2026-07-14"
+    chapters: { name: string; start: number }[];
+    transcript: string;
+  };
 }
 
 export const seoPages: SeoPageData[] = [
@@ -430,9 +441,10 @@ function generateAutoPage(slug: string): SeoPageData {
   };
 }
 
-// Combine hand-crafted pages with auto-generated ones
+// Combine hand-crafted pages, video pages, and auto-generated ones
 export const allSeoPages: SeoPageData[] = [
   ...seoPages,
+  ...videoPages,
   ...remainingSlugs.map(generateAutoPage),
 ];
 
