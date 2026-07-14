@@ -145,6 +145,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/branded-self-serve-coffee-cart',
     '/facebook-food-ordering-system',
     '/dry-cleaning-pickup-delivery-app',
+    '/coffee-shop-cafe-epos-systems',
+    '/table-ordering-app-uk',
+    '/credit-card-machine-clover-by-posso-ltd-uk',
     '/downloads',
   ];
 
@@ -205,6 +208,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/best-pos-system-for-pizza-delivery',
     '/blog/hybrid-epos-systems-for-takeaways',
     '/blog/how-dominos-became-a-tech-company',
+    '/blog/the-irrational-restaurant',
+    '/blog/what-is-epos-system',
   ];
 
   // Misc/legacy pages — lower priority
@@ -222,7 +227,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/digital-menu-boards-4',
     '/hospitality-epos-systems-by-posso-uk-epos-systems',
     '/food-order-app-comparison-tool',
-    '/restaurant-epos-system-3',
     '/android-epos-systems-from-posso',
     '/small-pos-magic-the-tiny-marvels-transforming-our-lives',
     '/dry-cleaning-epos-systems-uk',
@@ -231,6 +235,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/cobways-tell-a-friend-scheme',
     '/franchise-epos',
     '/posso-epos',
+    '/best-best-online-ordering-software-by-posso-ltd-uk',
+    '/best-best-pos-system-for-coffee-shop-uk-by-posso-ltd-uk',
+    '/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk',
+    '/best-epos-system-for-indian-takeaway-by-posso-ltd-uk',
+    '/best-online-ordering-software-for-restaurants-by-posso-ltd-uk',
+    '/best-takeaway-epos-software-free-by-posso-ltd-uk',
   ];
 
   const lastModified = new Date().toISOString();
