@@ -6,6 +6,7 @@ import { EposFeatures } from '@/components/sections/epos-features';
 import { FAQSection } from '@/components/sections/faq-section';
 import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 const schema = [
@@ -83,6 +84,33 @@ const posImageSchema = posScreenshots.map((s) => ({
   copyrightNotice: '© Posso Ltd',
 }));
 
+const eposVerticals = [
+  { href: '/restaurant-epos', name: 'Restaurant EPOS', desc: 'Table service, courses & split bills' },
+  { href: '/takeaway-epos', name: 'Takeaway EPOS', desc: 'Collection, delivery & online orders' },
+  { href: '/cafe-epos-system', name: 'Cafe EPOS', desc: 'Fast counter service & loyalty' },
+  { href: '/coffee-pos-system', name: 'Coffee Shop POS', desc: 'Quick drinks ordering & modifiers' },
+  { href: '/pizza-pos-system', name: 'Pizza POS', desc: 'Half & half, toppings & delivery' },
+  { href: '/pub-pos-system', name: 'Pub POS', desc: 'Tabs, rounds & fast bar service' },
+  { href: '/bar-epos', name: 'Bar EPOS', desc: 'Rapid rounds & happy-hour pricing' },
+  { href: '/hotel-epos-system', name: 'Hotel EPOS', desc: 'Room charging & multi-outlet' },
+  { href: '/epos-system-for-indian-takeaway', name: 'Indian Takeaway EPOS', desc: 'Heat levels, menus & delivery' },
+  { href: '/salon-pos-software', name: 'Salon POS', desc: 'Appointments, deposits & tips' },
+  { href: '/cloud-epos-system', name: 'Cloud EPOS', desc: 'Manage every site from anywhere' },
+  { href: '/self-order-kiosks', name: 'Self-Order Kiosks', desc: 'Self-service ordering that upsells' },
+];
+
+const eposHubSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Posso EPOS Systems by Business Type',
+  itemListElement: eposVerticals.map((v, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: v.name,
+    url: `https://posso.co.uk${v.href}`,
+  })),
+};
+
 export default function PosPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -119,6 +147,30 @@ export default function PosPage() {
                   />
                   <figcaption className="text-slate-400 text-sm p-4 text-center">{s.cap}</figcaption>
                 </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* EPOS by business type — pillar hub */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eposHubSchema) }} />
+        <section className="py-20">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-14">
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text">EPOS Systems for Every Type of Venue</h2>
+              <p className="text-slate-400 mt-3 text-lg max-w-2xl mx-auto">
+                One Posso EPOS platform, tailored to how your business actually works — from restaurants and takeaways to cafes, pubs, hotels and salons.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {eposVerticals.map((v) => (
+                <Link key={v.href} href={v.href} className="group glass-card rounded-2xl border border-slate-700/50 p-6 hover:border-primary/50 transition-all hover:-translate-y-1">
+                  <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors">{v.name}</h3>
+                  <p className="text-slate-400 text-sm mt-2">{v.desc}</p>
+                  <span className="inline-flex items-center gap-1 text-primary text-sm font-semibold mt-4">
+                    Learn more <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </Link>
               ))}
             </div>
           </div>

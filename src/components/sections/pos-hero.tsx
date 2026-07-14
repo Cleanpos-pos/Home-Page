@@ -21,11 +21,11 @@ export function PosHero() {
                     POWERFUL EPOS SYSTEMS
                 </Badge>
                 <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl lg:text-7xl !leading-tight bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
-                    Streamline Your Operations with <br />
-                    <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Posso EPOS</span>
+                    <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">EPOS Systems</span> <br />
+                    for UK Restaurants &amp; Takeaways
                 </h1>
                 <p className="max-w-xl text-lg text-slate-400">
-                    Our state-of-the-art Electronic Point of Sale systems are designed to simplify your restaurant's workflow, increase efficiency, and provide a seamless experience for both your staff and customers.
+                    Posso EPOS powers restaurants, takeaways, cafes and bars across the UK — touchscreen ordering, kitchen display, table service, offline mode and integrated card payments, all in one system with UK-based support.
                 </p>
                 <SolutionEnquiryModal 
                     defaultSolutionId="pos" 
