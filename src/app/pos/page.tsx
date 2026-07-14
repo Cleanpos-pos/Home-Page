@@ -20,7 +20,9 @@ const schema = [
     "offers": {
       "@type": "Offer",
       "priceCurrency": "GBP",
-      "availability": "https://schema.org/InStock"
+      "price": "499.00",
+      "availability": "https://schema.org/InStock",
+      "url": "https://posso.co.uk/pos"
     },
     "url": "https://posso.co.uk/pos",
     "image": "https://posso.co.uk/images/posso_epos_integration.png"

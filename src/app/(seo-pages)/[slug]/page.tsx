@@ -67,7 +67,6 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
     "applicationCategory": page.category,
     "description": page.description,
     "author": { "@type": "Organization", "name": "Posso Ltd" },
-    "offers": { "@type": "Offer", "priceCurrency": "GBP", "availability": "https://schema.org/InStock" },
     "url": `https://posso.co.uk/${page.slug}`
   };
 
