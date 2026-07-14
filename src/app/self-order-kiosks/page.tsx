@@ -36,7 +36,14 @@ const schema = [
       "url": "https://posso.co.uk/self-order-kiosks"
     },
     "url": "https://posso.co.uk/self-order-kiosks",
-    "image": "https://posso.co.uk/images/posso_coffee_shop_hero.png"
+    "image": "https://posso.co.uk/images/posso_coffee_shop_hero.png",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "bestRating": "5", "ratingCount": "1" },
+    "review": {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Ashan, Smith's" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5" },
+      "reviewBody": "The new self-order kiosk software beats the old software hands down — we love the new look. Thanks to Posso One."
+    }
   },
   {
     "@context": "https://schema.org",
@@ -283,6 +290,19 @@ export default function KiosksPage() {
                   </div>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Customer review */}
+        <section className="py-16">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+            <div className="glass-card rounded-2xl border border-slate-700/50 p-8 text-center">
+              <div className="text-amber-400 text-2xl mb-4" aria-label="Rated 4.5 out of 5">★★★★<span className="opacity-40">★</span></div>
+              <blockquote className="text-xl md:text-2xl text-slate-100 italic leading-relaxed">
+                &ldquo;The new self-order kiosk software beats the old software hands down — we love the new look. Thanks to Posso One.&rdquo;
+              </blockquote>
+              <p className="text-slate-300 mt-5 font-semibold">Ashan, Smith&rsquo;s <span className="text-slate-500 font-normal">· 4.5/5</span></p>
             </div>
           </div>
         </section>

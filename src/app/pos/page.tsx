@@ -25,7 +25,14 @@ const schema = [
       "url": "https://posso.co.uk/pos"
     },
     "url": "https://posso.co.uk/pos",
-    "image": "https://posso.co.uk/images/posso_epos_integration.png"
+    "image": "https://posso.co.uk/images/posso_epos_integration.png",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "bestRating": "5", "ratingCount": "1" },
+    "review": {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Sally" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5" },
+      "reviewBody": "My Posso POS system is a game changer — my restaurant runs more smoothly now thanks to Posso One and the team. A big thank you."
+    }
   },
   {
     "@context": "https://schema.org",
@@ -174,6 +181,19 @@ export default function PosPage() {
                   </span>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Customer review */}
+        <section className="py-16">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+            <div className="glass-card rounded-2xl border border-slate-700/50 p-8 text-center">
+              <div className="text-amber-400 text-2xl mb-4" aria-label="Rated 4.5 out of 5">★★★★<span className="opacity-40">★</span></div>
+              <blockquote className="text-xl md:text-2xl text-slate-100 italic leading-relaxed">
+                &ldquo;My Posso POS system is a game changer — my restaurant runs more smoothly now thanks to Posso One and the team. A big thank you.&rdquo;
+              </blockquote>
+              <p className="text-slate-300 mt-5 font-semibold">Sally <span className="text-slate-500 font-normal">· 4.5/5</span></p>
             </div>
           </div>
         </section>
