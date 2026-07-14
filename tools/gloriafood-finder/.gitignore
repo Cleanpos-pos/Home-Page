@@ -2,6 +2,9 @@ node_modules/
 package-lock.json
 *.gloriafood-results.csv
 live-test.csv
+# lead data + PII — never commit to the repo
+leads/
+*.xlsx
 # your own input/output lists — keep leads out of the repo
 *-domains.csv
 !sample-domains.csv
