@@ -97,6 +97,11 @@ export function Footer() {
                         <p className="text-sm text-slate-400">
                             Free call: <a href="tel:+448081753956" className="hover:text-primary transition-colors">0808 175 3956</a>
                         </p>
+                        <div className="mt-3 text-xs text-slate-500">
+                            <p className="font-medium text-slate-400">Registered office address</p>
+                            <address className="not-italic">The Oval, 57 New Walk, Leicester, United Kingdom, LE1 7EA</address>
+                            <p className="mt-2">Company number 11813595</p>
+                        </div>
                     </div>
                     <div className="flex gap-4">
                         <a href="https://x.com/posso_uk" target="_blank" rel="noopener noreferrer" aria-label="Follow Posso on X (Twitter)">

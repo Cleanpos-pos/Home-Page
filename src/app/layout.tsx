@@ -145,7 +145,15 @@ const structuredData = {
   ],
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "The Oval, 57 New Walk",
+    "addressLocality": "Leicester",
+    "postalCode": "LE1 7EA",
     "addressCountry": "GB"
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "Companies House Number",
+    "value": "11813595"
   },
   "areaServed": [
     { "@type": "Country", "name": "United Kingdom" },
