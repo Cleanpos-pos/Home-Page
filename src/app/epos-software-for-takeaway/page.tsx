@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'ePOS Software for Takeaway | Posso UK',
     description:
       'Cloud-based takeaway ePOS software with offline mode, real-time sync, analytics dashboard, and multi-device support.',
-    url: 'https://posso.co.uk/epos-software-for-takeaway',
+    url: 'https://www.posso.co.uk/epos-software-for-takeaway',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Cloud-based ePOS software for takeaway businesses with offline-first architecture, real-time sync, multi-device support, menu management, analytics dashboard, and X/Z reporting.',
-    url: 'https://posso.co.uk/epos-software-for-takeaway',
+    url: 'https://www.posso.co.uk/epos-software-for-takeaway',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -77,9 +77,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Takeaway ePOS Software', item: 'https://posso.co.uk/epos-software-for-takeaway' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Takeaway ePOS Software', item: 'https://www.posso.co.uk/epos-software-for-takeaway' },
     ],
   },
 ];

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Restaurant Self-Service Kiosk | Self Ordering System for Restaurants UK',
         description: 'POSSO restaurant self-service kiosks help UK fast food and QSR venues cut queues, lift average order value by up to 30% and eliminate order errors.',
-        url: 'https://posso.co.uk/solutions/restaurant-self-service-kiosk',
+        url: 'https://www.posso.co.uk/solutions/restaurant-self-service-kiosk',
         type: 'website',
         images: [
             {
@@ -60,7 +60,7 @@ export default function RestaurantKioskPage() {
             "@type": "Offer",
             "availability": "https://schema.org/InStock",
             "priceCurrency": "GBP",
-            "url": "https://posso.co.uk/solutions/restaurant-self-service-kiosk"
+            "url": "https://www.posso.co.uk/solutions/restaurant-self-service-kiosk"
         },
         "aggregateRating": {
             "@type": "AggregateRating",
@@ -96,8 +96,8 @@ export default function RestaurantKioskPage() {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
-            { "@type": "ListItem", "position": 2, "name": "Restaurant Self-Service Kiosks", "item": "https://posso.co.uk/solutions/restaurant-self-service-kiosk" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.posso.co.uk" },
+            { "@type": "ListItem", "position": 2, "name": "Restaurant Self-Service Kiosks", "item": "https://www.posso.co.uk/solutions/restaurant-self-service-kiosk" }
         ]
     };
 

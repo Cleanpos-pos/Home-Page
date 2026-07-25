@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Hospitality POS Software | Posso UK',
     description:
       'Hospitality POS Software for restaurants, hotels, bars, cafes, venues, and events. One platform for all hospitality sectors.',
-    url: 'https://posso.co.uk/hospitality-pos-software',
+    url: 'https://www.posso.co.uk/hospitality-pos-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Hospitality POS software serving restaurants, hotels, bars, cafes, venues, and events with table management, kitchen display, online ordering, delivery integration, and multi-site reporting.',
-    url: 'https://posso.co.uk/hospitality-pos-software',
+    url: 'https://www.posso.co.uk/hospitality-pos-software',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Hospitality POS Software', item: 'https://posso.co.uk/hospitality-pos-software' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Hospitality POS Software', item: 'https://www.posso.co.uk/hospitality-pos-software' },
     ],
   },
 ];

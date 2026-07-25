@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Coffee Shop Ordering App | Posso UK',
     description:
       'Coffee Shop Ordering App — skip-the-queue ordering, loyalty stamps, pickup notifications, and barista display integration.',
-    url: 'https://posso.co.uk/coffee-shop-ordering-app',
+    url: 'https://www.posso.co.uk/coffee-shop-ordering-app',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, iOS, Android',
     description:
       'Coffee shop ordering app with skip-the-queue mobile ordering, loyalty stamp cards, pickup notifications, drink customisation, and barista kitchen display integration.',
-    url: 'https://posso.co.uk/coffee-shop-ordering-app',
+    url: 'https://www.posso.co.uk/coffee-shop-ordering-app',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Online Ordering', item: 'https://posso.co.uk/online-ordering' },
-      { '@type': 'ListItem', position: 3, name: 'Coffee Shop Ordering App', item: 'https://posso.co.uk/coffee-shop-ordering-app' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Online Ordering', item: 'https://www.posso.co.uk/online-ordering' },
+      { '@type': 'ListItem', position: 3, name: 'Coffee Shop Ordering App', item: 'https://www.posso.co.uk/coffee-shop-ordering-app' },
     ],
   },
 ];

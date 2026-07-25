@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'ePOS System for Takeaway | Posso UK',
     description:
       'Complete takeaway ePOS with fast order entry, collection/delivery workflow, kitchen display, and driver management.',
-    url: 'https://posso.co.uk/epos-system-for-takeaway',
+    url: 'https://www.posso.co.uk/epos-system-for-takeaway',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Complete ePOS system for takeaway businesses with fast order entry, collection and delivery management, online ordering, kitchen display, and driver tracking.',
-    url: 'https://posso.co.uk/epos-system-for-takeaway',
+    url: 'https://www.posso.co.uk/epos-system-for-takeaway',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -77,9 +77,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Takeaway ePOS', item: 'https://posso.co.uk/epos-system-for-takeaway' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Takeaway ePOS', item: 'https://www.posso.co.uk/epos-system-for-takeaway' },
     ],
   },
 ];

@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: 'Best Dark Kitchen Software UK (2026) — Posso One',
     description:
       'Complete dark kitchen software: ePOS, online ordering, KDS, delivery integration, and multi-brand support. One system, every order.',
-    url: 'https://posso.co.uk/best-dark-kitchen-software-by-posso-ltd-uk',
+    url: 'https://www.posso.co.uk/best-dark-kitchen-software-by-posso-ltd-uk',
     type: 'article',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -61,8 +61,8 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'All-in-one dark kitchen software for UK ghost kitchens. ePOS, kitchen display, online ordering, delivery platform integration, and multi-brand support.',
-    url: 'https://posso.co.uk/best-dark-kitchen-software-by-posso-ltd-uk',
-    image: 'https://posso.co.uk/images/posso_epos_integration.png',
+    url: 'https://www.posso.co.uk/best-dark-kitchen-software-by-posso-ltd-uk',
+    image: 'https://www.posso.co.uk/images/posso_epos_integration.png',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -94,19 +94,19 @@ const pageSchema = [
     '@type': 'Article',
     headline: 'Best Dark Kitchen Software UK (2026)',
     description: 'In-depth guide to choosing the best dark kitchen software in the UK. Features, pricing, and why Posso One is the top choice for ghost kitchens.',
-    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://posso.co.uk' },
-    publisher: { '@type': 'Organization', name: 'Posso Ltd', logo: { '@type': 'ImageObject', url: 'https://posso.co.uk/icon-512x512.png' } },
+    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://www.posso.co.uk' },
+    publisher: { '@type': 'Organization', name: 'Posso Ltd', logo: { '@type': 'ImageObject', url: 'https://www.posso.co.uk/icon-512x512.png' } },
     datePublished: '2026-04-08',
     dateModified: '2026-04-08',
-    url: 'https://posso.co.uk/best-dark-kitchen-software-by-posso-ltd-uk',
-    image: 'https://posso.co.uk/images/posso_epos_integration.png',
+    url: 'https://www.posso.co.uk/best-dark-kitchen-software-by-posso-ltd-uk',
+    image: 'https://www.posso.co.uk/images/posso_epos_integration.png',
   },
   {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Best Dark Kitchen Software', item: 'https://posso.co.uk/best-dark-kitchen-software-by-posso-ltd-uk' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Best Dark Kitchen Software', item: 'https://www.posso.co.uk/best-dark-kitchen-software-by-posso-ltd-uk' },
     ],
   },
 ];

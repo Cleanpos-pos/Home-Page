@@ -48,7 +48,7 @@ export default function FreeEposBlog() {
                             </p>
                             <div className="flex flex-wrap justify-center gap-4 pt-4">
                                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 h-14 text-lg rounded-full" asChild>
-                                    <Link href="https://posso.co.uk">Explore Posso Solutions</Link>
+                                    <Link href="https://www.posso.co.uk">Explore Posso Solutions</Link>
                                 </Button>
                                 <Button size="lg" variant="outline" className="border-white/10 hover:bg-white/5 h-14 px-8 text-lg rounded-full" asChild>
                                     <Link href="/contact">Get a Quote</Link>
@@ -73,7 +73,7 @@ export default function FreeEposBlog() {
                             </div>
 
                             <p className="text-slate-300">
-                                At <Link href="https://posso.co.uk" className="text-primary font-bold hover:underline">Posso</Link>, we believe in transparency. Our approach to EPOS software is designed to help startups and small businesses get off the ground with minimal overheads. We offer powerful, cloud-based EPOS solutions where the software value is packed into an affordable hardware bundle or a low, sustainable flat-rate model.
+                                At <Link href="https://www.posso.co.uk" className="text-primary font-bold hover:underline">Posso</Link>, we believe in transparency. Our approach to EPOS software is designed to help startups and small businesses get off the ground with minimal overheads. We offer powerful, cloud-based EPOS solutions where the software value is packed into an affordable hardware bundle or a low, sustainable flat-rate model.
                             </p>
 
                             <h3 className="text-2xl font-bold text-white mt-12 mb-6">Why pay for bloated software you don't use?</h3>

@@ -345,7 +345,7 @@ export function PosSystemsLanding() {
             Ready to Upgrade Your POS System?
           </h2>
           <p className="text-slate-400 text-lg mb-8 max-w-xl mx-auto">
-            Join 1,000+ UK businesses already using Posso to increase revenue and speed up service.
+            Join 500+ UK businesses already using Posso to increase revenue and speed up service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ContactDialog>

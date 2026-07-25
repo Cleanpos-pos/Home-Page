@@ -49,7 +49,7 @@ function StarRating({ rating }: { rating: number }) {
 const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://posso.co.uk/#organization",
+  "@id": "https://www.posso.co.uk/#organization",
   "name": "Posso Ltd",
   "review": testimonials.map((t) => ({
     "@type": "Review",

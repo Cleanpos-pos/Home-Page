@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { allSeoPages } from '@/lib/seo-pages-data';
 
-const URL = 'https://posso.co.uk';
+const URL = 'https://www.posso.co.uk';
 
 export default function sitemap(): MetadataRoute.Sitemap {
 
@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/epos-system-for-indian-takeaway',
     '/epos-system-for-takeaway',
     '/restaurant-epos',
+    '/best-restaurant-epos-system-uk',
     '/cafe-epos-system',
     '/restaurant-epos-systems-uk',
     '/epos-software-for-takeaway',
@@ -158,6 +159,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/web-design',
     '/finance',
     '/contact',
+    '/support',
     '/solutions/trampoline-parks',
     '/solutions/family-entertainment-centers',
     '/solutions/amusement-parks',
@@ -213,6 +215,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Misc/legacy pages — lower priority
   const miscRoutes = [
     '/agents',
+    '/about/paul-robinson',
     '/privacy-policy',
     '/cookie-policy',
     '/software-terms',

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Downloads — Posso Printer Helper & Brochures',
     description: 'Official downloads for Posso ePOS users: Android printer helper, brochures, and support docs.',
-    url: 'https://posso.co.uk/downloads',
+    url: 'https://www.posso.co.uk/downloads',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -37,8 +37,8 @@ const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-    { '@type': 'ListItem', position: 2, name: 'Downloads', item: 'https://posso.co.uk/downloads' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+    { '@type': 'ListItem', position: 2, name: 'Downloads', item: 'https://www.posso.co.uk/downloads' },
   ],
 };
 

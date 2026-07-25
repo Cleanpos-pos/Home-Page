@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Branded Self Serve Coffee Cart | Posso UK',
     description:
       'Branded Self Serve Coffee Cart — mobile POS, branded kiosk, event-ready setup, and contactless payment for mobile coffee businesses.',
-    url: 'https://posso.co.uk/branded-self-serve-coffee-cart',
+    url: 'https://www.posso.co.uk/branded-self-serve-coffee-cart',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Mobile coffee cart POS with branded self-serve kiosk interface, event-ready portable setup, pop-up deployment, contactless payment, 4G connectivity, and remote sales monitoring.',
-    url: 'https://posso.co.uk/branded-self-serve-coffee-cart',
+    url: 'https://www.posso.co.uk/branded-self-serve-coffee-cart',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '699',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Branded Self Serve Coffee Cart', item: 'https://posso.co.uk/branded-self-serve-coffee-cart' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Branded Self Serve Coffee Cart', item: 'https://www.posso.co.uk/branded-self-serve-coffee-cart' },
     ],
   },
 ];

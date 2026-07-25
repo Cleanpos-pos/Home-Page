@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Bar ePOS System | Posso UK',
     description:
       'Bar ePOS with tab management, speed ordering, drink modifiers, split bills, and happy hour pricing. Built for high-volume service.',
-    url: 'https://posso.co.uk/bar-epos',
+    url: 'https://www.posso.co.uk/bar-epos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Bar ePOS system with tab management, speed-pour ordering, drink modifiers for singles and doubles, split bills, cocktail menu management, and happy hour scheduling.',
-    url: 'https://posso.co.uk/bar-epos',
+    url: 'https://www.posso.co.uk/bar-epos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -77,9 +77,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Bar ePOS System', item: 'https://posso.co.uk/bar-epos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Bar ePOS System', item: 'https://www.posso.co.uk/bar-epos' },
     ],
   },
 ];

@@ -44,7 +44,7 @@ export default function TakeawayOrdersBlog() {
                                 </p>
                                 <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
                                     <Button size="lg" className="rounded-full h-14 px-10 text-lg shadow-xl shadow-primary/20" asChild>
-                                        <Link href="https://posso.co.uk">Exlpore the Software</Link>
+                                        <Link href="https://www.posso.co.uk">Exlpore the Software</Link>
                                     </Button>
                                     <Button size="lg" variant="outline" className="rounded-full h-14 px-10 text-lg border-white/10" asChild>
                                         <Link href="/contact">Request a Demo</Link>
@@ -109,7 +109,7 @@ export default function TakeawayOrdersBlog() {
                         <div className="prose prose-invert prose-lg max-w-none text-center">
                             <h2 className="text-4xl font-bold text-white mb-8">Own Your Customer Data</h2>
                             <p className="text-slate-300 text-xl leading-relaxed mb-12">
-                                Instead of giving all your customer data to third-party apps, <Link href="https://posso.co.uk" className="text-primary font-bold hover:underline font-bold">Posso&apos;s</Link> software captures every detail so you can market to them directly later. Launch direct SMS campaigns and email bursts directly from your dashboard.
+                                Instead of giving all your customer data to third-party apps, <Link href="https://www.posso.co.uk" className="text-primary font-bold hover:underline font-bold">Posso&apos;s</Link> software captures every detail so you can market to them directly later. Launch direct SMS campaigns and email bursts directly from your dashboard.
                             </p>
                             <div className="flex flex-col items-center gap-8 py-12 px-8 rounded-[3rem] bg-gradient-to-br from-slate-900 to-primary/10 border border-white/5">
                                 <Users className="w-20 h-20 text-primary animate-bounce-slow" />
@@ -148,7 +148,7 @@ export default function TakeawayOrdersBlog() {
                 {/* Final Button */}
                 <div className="py-32 text-center">
                     <Button size="lg" className="rounded-full h-20 px-16 text-2xl" asChild>
-                        <Link href="https://posso.co.uk">Start Streamlining with Posso</Link>
+                        <Link href="https://www.posso.co.uk">Start Streamlining with Posso</Link>
                     </Button>
                 </div>
             </main>

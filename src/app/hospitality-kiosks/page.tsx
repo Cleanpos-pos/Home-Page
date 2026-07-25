@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Hospitality Kiosks | Posso UK',
     description:
       'Hospitality Kiosks for hotels, restaurants, bars, events, and visitor attractions. Self-service ordering and check-in.',
-    url: 'https://posso.co.uk/hospitality-kiosks',
+    url: 'https://www.posso.co.uk/hospitality-kiosks',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Hospitality kiosks for self-service ordering, check-in, and ticketing across hotels, restaurants, bars, events, and visitor attractions.',
-    url: 'https://posso.co.uk/hospitality-kiosks',
+    url: 'https://www.posso.co.uk/hospitality-kiosks',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '699',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Hospitality Kiosks', item: 'https://posso.co.uk/hospitality-kiosks' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Hospitality Kiosks', item: 'https://www.posso.co.uk/hospitality-kiosks' },
     ],
   },
 ];

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Festival Ticketing & Cashless RFID Payments UK | Posso',
     description: 'Cashless RFID wristbands, fast entry, multi-vendor payments and pop-up locker rentals for UK festivals and live events — all on one platform.',
-    url: 'https://posso.co.uk/solutions/festivals-events',
+    url: 'https://www.posso.co.uk/solutions/festivals-events',
     type: 'website',
     images: [
       {

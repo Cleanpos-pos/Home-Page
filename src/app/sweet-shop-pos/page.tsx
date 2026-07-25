@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Sweet Shop POS System | Posso UK',
     description:
       'Sweet Shop POS System with weigh-and-pay, barcode scanning, pick & mix pricing, and stock management. POS from £499 + VAT.',
-    url: 'https://posso.co.uk/sweet-shop-pos',
+    url: 'https://www.posso.co.uk/sweet-shop-pos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Sweet shop POS system with weigh-and-pay functionality, barcode scanning, pick and mix pricing by weight, stock management for loose and packaged confectionery, and integrated card payments.',
-    url: 'https://posso.co.uk/sweet-shop-pos',
+    url: 'https://www.posso.co.uk/sweet-shop-pos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Sweet Shop POS System', item: 'https://posso.co.uk/sweet-shop-pos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Sweet Shop POS System', item: 'https://www.posso.co.uk/sweet-shop-pos' },
     ],
   },
 ];

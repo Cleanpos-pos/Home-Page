@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ice Rink Booking & Ticketing System UK | Posso',
     description: 'Online session booking, skate hire management, RFID wristbands, secure lockers, and café EPOS — one system to run your UK ice skating rink.',
-    url: 'https://posso.co.uk/solutions/ice-skating-rinks',
+    url: 'https://www.posso.co.uk/solutions/ice-skating-rinks',
     type: 'website',
     images: [
       {

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'ePOS Marketing | Posso UK',
     description:
       'ePOS Marketing tools built into your POS — promotions, loyalty, customer segmentation, and targeted campaigns from your till.',
-    url: 'https://posso.co.uk/epos-marketing',
+    url: 'https://www.posso.co.uk/epos-marketing',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'ePOS marketing tools including promotions engine, digital loyalty programmes, customer segmentation, targeted SMS and email campaigns, and real-time marketing analytics built into your point of sale.',
-    url: 'https://posso.co.uk/epos-marketing',
+    url: 'https://www.posso.co.uk/epos-marketing',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'ePOS Marketing', item: 'https://posso.co.uk/epos-marketing' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'ePOS Marketing', item: 'https://www.posso.co.uk/epos-marketing' },
     ],
   },
 ];

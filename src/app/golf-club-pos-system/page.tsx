@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Golf Club POS System | Posso UK',
     description:
       'Golf Club POS System for pro shop, bar, restaurant, and member accounts. Multi-venue POS for golf clubs. From £499 + VAT.',
-    url: 'https://posso.co.uk/golf-club-pos-system',
+    url: 'https://www.posso.co.uk/golf-club-pos-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Golf club POS system managing pro shop retail, bar operations, restaurant service, member account charging, event and function catering, and multi-venue reporting for golf clubs.',
-    url: 'https://posso.co.uk/golf-club-pos-system',
+    url: 'https://www.posso.co.uk/golf-club-pos-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Golf Club POS System', item: 'https://posso.co.uk/golf-club-pos-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Golf Club POS System', item: 'https://www.posso.co.uk/golf-club-pos-system' },
     ],
   },
 ];

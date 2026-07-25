@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Website POS Finance Software | Posso UK',
     description:
       'Website POS Finance Software — one platform for in-store POS, online website, and financial reporting. All-in-one business management.',
-    url: 'https://posso.co.uk/website-pos-finance-software',
+    url: 'https://www.posso.co.uk/website-pos-finance-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'All-in-one platform combining POS, website/webshop, and financial management. In-store sales, online orders, payment processing, and business reporting from a single system.',
-    url: 'https://posso.co.uk/website-pos-finance-software',
+    url: 'https://www.posso.co.uk/website-pos-finance-software',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Website POS Finance Software', item: 'https://posso.co.uk/website-pos-finance-software' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Website POS Finance Software', item: 'https://www.posso.co.uk/website-pos-finance-software' },
     ],
   },
 ];

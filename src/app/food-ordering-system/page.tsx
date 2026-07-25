@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Food Ordering System | Posso UK',
     description:
       'Food Ordering System covering online, kiosk, POS, phone, and delivery apps. One platform for every ordering channel.',
-    url: 'https://posso.co.uk/food-ordering-system',
+    url: 'https://www.posso.co.uk/food-ordering-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Complete food ordering system combining online ordering, self-order kiosks, POS terminal, phone order entry, and delivery app integration into one unified platform.',
-    url: 'https://posso.co.uk/food-ordering-system',
+    url: 'https://www.posso.co.uk/food-ordering-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Food Ordering System', item: 'https://posso.co.uk/food-ordering-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Food Ordering System', item: 'https://www.posso.co.uk/food-ordering-system' },
     ],
   },
 ];

@@ -12,7 +12,7 @@ import {
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-const PAGE_URL = 'https://posso.co.uk/cashless-catering-colleges-universities';
+const PAGE_URL = 'https://www.posso.co.uk/cashless-catering-colleges-universities';
 
 export const metadata: Metadata = {
   title: 'Cashless Catering for Colleges & Universities',
@@ -60,7 +60,7 @@ const pageSchema = [
     provider: {
       '@type': 'Organization',
       name: 'Posso Ltd',
-      url: 'https://posso.co.uk',
+      url: 'https://www.posso.co.uk',
       telephone: '+44-808-175-3956',
     },
     areaServed: { '@type': 'Country', name: 'United Kingdom' },
@@ -83,16 +83,16 @@ const pageSchema = [
     headline: 'Cashless Catering for Colleges and Universities: Preparing for the 2026 Free School Meals Expansion',
     description:
       'How UK colleges, sixth forms and universities can move to cashless catering ahead of the September 2026 free school meals expansion, protecting student dignity while meeting funding and record-keeping rules.',
-    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://posso.co.uk' },
+    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://www.posso.co.uk' },
     publisher: {
       '@type': 'Organization',
       name: 'Posso Ltd',
-      logo: { '@type': 'ImageObject', url: 'https://posso.co.uk/icon-512x512.png' },
+      logo: { '@type': 'ImageObject', url: 'https://www.posso.co.uk/icon-512x512.png' },
     },
     datePublished: '2026-06-14',
     dateModified: '2026-06-14',
     mainEntityOfPage: { '@type': 'WebPage', '@id': PAGE_URL },
-    image: 'https://posso.co.uk/og-image.png',
+    image: 'https://www.posso.co.uk/og-image.png',
   },
   {
     '@context': 'https://schema.org',
@@ -160,8 +160,8 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
       { '@type': 'ListItem', position: 3, name: 'Cashless Catering for Colleges & Universities', item: PAGE_URL },
     ],
   },

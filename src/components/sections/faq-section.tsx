@@ -1,11 +1,4 @@
-'use client';
-
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import { ChevronDown } from 'lucide-react';
 
 type FAQItem = {
   question: string;
@@ -37,22 +30,22 @@ export function FAQSection({ title, faqs }: { title?: string; faqs: FAQItem[] })
           <h2 className="text-3xl sm:text-4xl font-bold gradient-text text-center mb-10">
             {title || 'Frequently Asked Questions'}
           </h2>
-          <Accordion type="single" collapsible className="space-y-3">
+          {/* Native details/summary keeps every answer in the server-rendered HTML
+              (the client accordion omitted closed answers, so crawlers saw empty FAQs) */}
+          <div className="space-y-3">
             {faqs.map((faq, i) => (
-              <AccordionItem
+              <details
                 key={i}
-                value={`faq-${i}`}
-                className="glass-card rounded-xl border border-slate-700/50 px-6"
+                className="group glass-card rounded-xl border border-slate-700/50 px-6"
               >
-                <AccordionTrigger className="text-left text-white font-medium py-5 hover:no-underline">
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none text-left text-white font-medium py-5 [&::-webkit-details-marker]:hidden">
                   {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-slate-400 pb-5 leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+                  <ChevronDown className="h-4 w-4 shrink-0 text-slate-500 transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="text-slate-400 pb-5 leading-relaxed">{faq.answer}</p>
+              </details>
             ))}
-          </Accordion>
+          </div>
         </div>
       </div>
     </section>

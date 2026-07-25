@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Affordable ePOS Systems for Restaurants | Posso UK',
     description:
       'Restaurant ePOS from £499 + VAT with touchscreen till, KDS, online ordering, and card payments. No hidden fees. Finance from £24.92/week.',
-    url: 'https://posso.co.uk/cheap-epos-systems-for-restaurants',
+    url: 'https://www.posso.co.uk/cheap-epos-systems-for-restaurants',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Affordable ePOS system for restaurants from £499 + VAT. Includes touchscreen till, kitchen display, card payments, online ordering, and table management with no hidden fees.',
-    url: 'https://posso.co.uk/cheap-epos-systems-for-restaurants',
+    url: 'https://www.posso.co.uk/cheap-epos-systems-for-restaurants',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -77,9 +77,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Affordable ePOS for Restaurants', item: 'https://posso.co.uk/cheap-epos-systems-for-restaurants' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Affordable ePOS for Restaurants', item: 'https://www.posso.co.uk/cheap-epos-systems-for-restaurants' },
     ],
   },
 ];

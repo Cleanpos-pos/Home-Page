@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Tablet Food Ordering System | Posso UK',
     description:
       'Tablet Food Ordering System for restaurants — waiter pads, customer tablets, kitchen integration, and real-time menu sync.',
-    url: 'https://posso.co.uk/tablet-food-ordering-system',
+    url: 'https://www.posso.co.uk/tablet-food-ordering-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, iOS, Android',
     description:
       'Tablet-based food ordering system for restaurants featuring waiter pad ordering, customer table tablets, direct kitchen integration, and real-time menu synchronisation across all devices.',
-    url: 'https://posso.co.uk/tablet-food-ordering-system',
+    url: 'https://www.posso.co.uk/tablet-food-ordering-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Restaurant Systems', item: 'https://posso.co.uk/restaurant-epos' },
-      { '@type': 'ListItem', position: 3, name: 'Tablet Food Ordering System', item: 'https://posso.co.uk/tablet-food-ordering-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Restaurant Systems', item: 'https://www.posso.co.uk/restaurant-epos' },
+      { '@type': 'ListItem', position: 3, name: 'Tablet Food Ordering System', item: 'https://www.posso.co.uk/tablet-food-ordering-system' },
     ],
   },
 ];

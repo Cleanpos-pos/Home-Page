@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Pizza Shop POS | Posso UK',
     description:
       'Pizza Shop POS with counter + delivery, caller ID, driver management, and kiosk ordering. Complete pizza shop system.',
-    url: 'https://posso.co.uk/pizza-shop-pos',
+    url: 'https://www.posso.co.uk/pizza-shop-pos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Complete pizza shop POS system with counter service, delivery management, caller ID for phone orders, driver tracking and assignment, and self-service kiosk ordering.',
-    url: 'https://posso.co.uk/pizza-shop-pos',
+    url: 'https://www.posso.co.uk/pizza-shop-pos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Pizza Shop POS', item: 'https://posso.co.uk/pizza-shop-pos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Pizza Shop POS', item: 'https://www.posso.co.uk/pizza-shop-pos' },
     ],
   },
 ];

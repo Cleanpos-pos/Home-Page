@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'DIY POS System for Restaurants | Posso UK',
     description:
       'DIY POS System for Restaurants — build your own vs buy ready-made. Honest cost comparison and hidden pitfalls explained.',
-    url: 'https://posso.co.uk/diy-pos-system-restaurants',
+    url: 'https://www.posso.co.uk/diy-pos-system-restaurants',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Ready-made restaurant POS system that replaces DIY solutions with professional hardware, pre-configured software, kitchen display integration, and UK-based support from £499 + VAT.',
-    url: 'https://posso.co.uk/diy-pos-system-restaurants',
+    url: 'https://www.posso.co.uk/diy-pos-system-restaurants',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'DIY POS System for Restaurants', item: 'https://posso.co.uk/diy-pos-system-restaurants' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'DIY POS System for Restaurants', item: 'https://www.posso.co.uk/diy-pos-system-restaurants' },
     ],
   },
 ];

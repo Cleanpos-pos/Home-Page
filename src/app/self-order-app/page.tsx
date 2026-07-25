@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Self Order App | Posso UK',
     description:
       'Self Order App — QR-based ordering from phone, no download, table + collection, mobile payments, kitchen integration.',
-    url: 'https://posso.co.uk/self-order-app',
+    url: 'https://www.posso.co.uk/self-order-app',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, iOS, Android',
     description:
       'Self-ordering app where customers order from their phone via QR code with no app download required. Supports table ordering, collection, mobile payments, and kitchen display integration.',
-    url: 'https://posso.co.uk/self-order-app',
+    url: 'https://www.posso.co.uk/self-order-app',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Online Ordering', item: 'https://posso.co.uk/online-ordering' },
-      { '@type': 'ListItem', position: 3, name: 'Self Order App', item: 'https://posso.co.uk/self-order-app' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Online Ordering', item: 'https://www.posso.co.uk/online-ordering' },
+      { '@type': 'ListItem', position: 3, name: 'Self Order App', item: 'https://www.posso.co.uk/self-order-app' },
     ],
   },
 ];

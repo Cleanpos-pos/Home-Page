@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Grocery Store ePOS | Posso UK',
     description:
       'Grocery Store ePOS with barcode scanning, scales, stock management, supplier ordering, and loyalty. Built for grocery stores.',
-    url: 'https://posso.co.uk/grocery-store-epos',
+    url: 'https://www.posso.co.uk/grocery-store-epos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'ePOS system for grocery and convenience stores with barcode scanning, weigh scale integration, stock management, supplier ordering, and customer loyalty programmes.',
-    url: 'https://posso.co.uk/grocery-store-epos',
+    url: 'https://www.posso.co.uk/grocery-store-epos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Grocery Store ePOS', item: 'https://posso.co.uk/grocery-store-epos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Grocery Store ePOS', item: 'https://www.posso.co.uk/grocery-store-epos' },
     ],
   },
 ];

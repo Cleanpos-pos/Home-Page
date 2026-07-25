@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Self Employed Card Machine',
     description:
       'Self Employed Card Machine for sole traders and mobile businesses. No contract, low fees, portable 4G, next-day settlement.',
-    url: 'https://posso.co.uk/self-employed-card-machine',
+    url: 'https://www.posso.co.uk/self-employed-card-machine',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Self employed card machine for sole traders and mobile businesses with no long-term contract, low transaction fees, portable 4G connectivity, next-day settlement, digital receipts, and sales tracking.',
-    url: 'https://posso.co.uk/self-employed-card-machine',
+    url: 'https://www.posso.co.uk/self-employed-card-machine',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Self Employed Card Machine', item: 'https://posso.co.uk/self-employed-card-machine' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Self Employed Card Machine', item: 'https://www.posso.co.uk/self-employed-card-machine' },
     ],
   },
 ];

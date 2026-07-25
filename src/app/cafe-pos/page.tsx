@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Cafe POS System | Posso UK',
     description:
       'Quick-serve cafe POS with coffee modifiers, digital loyalty, mobile payments, and compact hardware for countertop use.',
-    url: 'https://posso.co.uk/cafe-pos',
+    url: 'https://www.posso.co.uk/cafe-pos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Cafe POS system for quick-serve counter ordering with coffee modifiers, bakery item management, digital loyalty programme, mobile payments, and compact countertop hardware.',
-    url: 'https://posso.co.uk/cafe-pos',
+    url: 'https://www.posso.co.uk/cafe-pos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -77,9 +77,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Cafe POS', item: 'https://posso.co.uk/cafe-pos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Cafe POS', item: 'https://www.posso.co.uk/cafe-pos' },
     ],
   },
 ];

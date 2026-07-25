@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Best ePOS System for Takeaway | Posso UK',
     description:
       'Feature checklist for choosing the best takeaway ePOS — offline mode, delivery integration, caller ID, kitchen display, and online ordering. 1,000+ UK installs.',
-    url: 'https://posso.co.uk/best-epos-system-for-takeaway',
+    url: 'https://www.posso.co.uk/best-epos-system-for-takeaway',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'The best ePOS system for takeaways with offline operation, delivery integration, caller ID, kitchen display, online ordering, and multi-language support. 1,000+ UK installs with 2-year warranty.',
-    url: 'https://posso.co.uk/best-epos-system-for-takeaway',
+    url: 'https://www.posso.co.uk/best-epos-system-for-takeaway',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -77,9 +77,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Best ePOS System for Takeaway', item: 'https://posso.co.uk/best-epos-system-for-takeaway' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Best ePOS System for Takeaway', item: 'https://www.posso.co.uk/best-epos-system-for-takeaway' },
     ],
   },
 ];

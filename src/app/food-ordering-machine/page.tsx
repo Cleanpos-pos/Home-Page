@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Food Ordering Machine | Posso UK',
     description:
       'Food Ordering Machine with touchscreen self-service, card payment, and direct kitchen integration for restaurants and takeaways.',
-    url: 'https://posso.co.uk/food-ordering-machine',
+    url: 'https://www.posso.co.uk/food-ordering-machine',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, Android',
     description:
       'Self-service food ordering machine with touchscreen interface, integrated card payment, kitchen display connection, and upsell automation for restaurants, takeaways, and fast food outlets.',
-    url: 'https://posso.co.uk/food-ordering-machine',
+    url: 'https://www.posso.co.uk/food-ordering-machine',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '699',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Self-Service', item: 'https://posso.co.uk/self-service-epos' },
-      { '@type': 'ListItem', position: 3, name: 'Food Ordering Machine', item: 'https://posso.co.uk/food-ordering-machine' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Self-Service', item: 'https://www.posso.co.uk/self-service-epos' },
+      { '@type': 'ListItem', position: 3, name: 'Food Ordering Machine', item: 'https://www.posso.co.uk/food-ordering-machine' },
     ],
   },
 ];

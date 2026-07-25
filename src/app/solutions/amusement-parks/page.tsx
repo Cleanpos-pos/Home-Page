@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Amusement Park POS & Ticketing Software UK | Posso',
     description: 'Online ticketing, RFID wristbands, cashless spend, self-service kiosks and capacity management for UK amusement and theme parks.',
-    url: 'https://posso.co.uk/solutions/amusement-parks',
+    url: 'https://www.posso.co.uk/solutions/amusement-parks',
     type: 'website',
     images: [
       {

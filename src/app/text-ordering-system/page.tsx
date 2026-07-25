@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Text Ordering System',
     description:
       'Text Ordering System with SMS order placement, caller ID integration, phone order management, repeat order recall, and kitchen display routing.',
-    url: 'https://posso.co.uk/text-ordering-system',
+    url: 'https://www.posso.co.uk/text-ordering-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Text ordering system with SMS-based order placement, caller ID customer recognition, phone order management, repeat order recall, kitchen display routing, and order confirmation messaging.',
-    url: 'https://posso.co.uk/text-ordering-system',
+    url: 'https://www.posso.co.uk/text-ordering-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Text Ordering System', item: 'https://posso.co.uk/text-ordering-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Text Ordering System', item: 'https://www.posso.co.uk/text-ordering-system' },
     ],
   },
 ];

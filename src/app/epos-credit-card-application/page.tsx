@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'ePOS Credit Card Application',
     description:
       'ePOS Credit Card Application with Teya integration, quick approval, low transaction fees, and next-day settlement.',
-    url: 'https://posso.co.uk/epos-credit-card-application',
+    url: 'https://www.posso.co.uk/epos-credit-card-application',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'ePOS credit card application with integrated Teya card machine, quick approval process, low transaction fees, next-day settlement, contactless and chip-and-pin support, and unified sales reporting.',
-    url: 'https://posso.co.uk/epos-credit-card-application',
+    url: 'https://www.posso.co.uk/epos-credit-card-application',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'ePOS Credit Card Application', item: 'https://posso.co.uk/epos-credit-card-application' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'ePOS Credit Card Application', item: 'https://www.posso.co.uk/epos-credit-card-application' },
     ],
   },
 ];

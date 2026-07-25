@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Coffee Ordering App | Posso UK',
     description:
       'Coffee Ordering App with mobile ordering, loyalty stamps, milk modifiers, and pickup scheduling for coffee shops.',
-    url: 'https://posso.co.uk/coffee-ordering-app',
+    url: 'https://www.posso.co.uk/coffee-ordering-app',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, iOS, Android',
     description:
       'Coffee ordering app with mobile order-ahead, loyalty stamp cards, milk and syrup modifiers, pickup time scheduling, and integrated POS for coffee shops and cafes.',
-    url: 'https://posso.co.uk/coffee-ordering-app',
+    url: 'https://www.posso.co.uk/coffee-ordering-app',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Coffee Ordering App', item: 'https://posso.co.uk/coffee-ordering-app' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Coffee Ordering App', item: 'https://www.posso.co.uk/coffee-ordering-app' },
     ],
   },
 ];

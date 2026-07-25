@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Online Food Ordering Software | Posso UK',
     description:
       'Online Food Ordering Software with branded website, delivery zones, time slots, and POS integration. Low commission direct orders.',
-    url: 'https://posso.co.uk/online-food-ordering-software',
+    url: 'https://www.posso.co.uk/online-food-ordering-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web',
     description:
       'Online food ordering software providing a branded ordering website with mobile-first design, configurable delivery zones, time slot management, and direct POS and kitchen display integration.',
-    url: 'https://posso.co.uk/online-food-ordering-software',
+    url: 'https://www.posso.co.uk/online-food-ordering-software',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Online Ordering', item: 'https://posso.co.uk/online-ordering' },
-      { '@type': 'ListItem', position: 3, name: 'Online Food Ordering Software', item: 'https://posso.co.uk/online-food-ordering-software' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Online Ordering', item: 'https://www.posso.co.uk/online-ordering' },
+      { '@type': 'ListItem', position: 3, name: 'Online Food Ordering Software', item: 'https://www.posso.co.uk/online-food-ordering-software' },
     ],
   },
 ];

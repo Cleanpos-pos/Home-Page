@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Mobile POS System UK | Posso UK',
     description:
       'Mobile POS System UK with handheld devices, tableside ordering, pop-up support, and WiFi/4G connectivity.',
-    url: 'https://posso.co.uk/mobile-pos-system-uk',
+    url: 'https://www.posso.co.uk/mobile-pos-system-uk',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Mobile POS system for the UK market with handheld devices, tableside ordering, pop-up and event support, WiFi and 4G connectivity, and portable card payments.',
-    url: 'https://posso.co.uk/mobile-pos-system-uk',
+    url: 'https://www.posso.co.uk/mobile-pos-system-uk',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Mobile POS System UK', item: 'https://posso.co.uk/mobile-pos-system-uk' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Mobile POS System UK', item: 'https://www.posso.co.uk/mobile-pos-system-uk' },
     ],
   },
 ];

@@ -239,10 +239,11 @@ export default function EposSystemGuidePage() {
                             <h3>2. EPOS for Restaurants and Hospitality</h3>
 
                             <ul>
-                                <li><Link href="/restaurant-epos-system-3" className="text-primary hover:underline">Restaurant EPOS systems</Link> improve table turnover by 15% through streamlined order management</li>
+                                <li><Link href="/restaurant-epos" className="text-primary hover:underline">Restaurant EPOS systems</Link> improve table turnover by 15% through streamlined order management</li>
                                 <li>Kitchen display system integration eliminates order errors and accelerates service</li>
                                 <li>Advanced table management features optimize seating and minimize customer wait times</li>
                                 <li>Staff performance tracking and tip management functionality</li>
+                                <li>Comparing providers? See our guide to the <Link href="/best-restaurant-epos-system-uk" className="text-primary hover:underline">best restaurant EPOS systems in the UK</Link> for 2026</li>
                             </ul>
 
                             <h3>3. EPOS for Takeaways and Bars</h3>

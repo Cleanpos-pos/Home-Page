@@ -33,10 +33,10 @@ const schema = [
       "priceCurrency": "GBP",
       "price": "699.00",
       "availability": "https://schema.org/InStock",
-      "url": "https://posso.co.uk/self-order-kiosks"
+      "url": "https://www.posso.co.uk/self-order-kiosks"
     },
-    "url": "https://posso.co.uk/self-order-kiosks",
-    "image": "https://posso.co.uk/images/posso_coffee_shop_hero.png",
+    "url": "https://www.posso.co.uk/self-order-kiosks",
+    "image": "https://www.posso.co.uk/images/posso_coffee_shop_hero.png",
     "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "bestRating": "5", "ratingCount": "1" },
     "review": {
       "@type": "Review",
@@ -49,9 +49,9 @@ const schema = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
-      { "@type": "ListItem", "position": 2, "name": "ePOS Systems", "item": "https://posso.co.uk/pos" },
-      { "@type": "ListItem", "position": 3, "name": "Self-Order Kiosks", "item": "https://posso.co.uk/self-order-kiosks" },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.posso.co.uk" },
+      { "@type": "ListItem", "position": 2, "name": "ePOS Systems", "item": "https://www.posso.co.uk/pos" },
+      { "@type": "ListItem", "position": 3, "name": "Self-Order Kiosks", "item": "https://www.posso.co.uk/self-order-kiosks" },
     ],
   },
 ];
@@ -63,9 +63,9 @@ const videoHubSchema = {
   "itemListElement": videoPages.map((p, i) => ({
     "@type": "ListItem",
     "position": i + 1,
-    "url": `https://posso.co.uk/${p.slug}`,
+    "url": `https://www.posso.co.uk/${p.slug}`,
     "name": p.h1,
-    "image": `https://posso.co.uk/videos/thumbs/${p.slug}.png`,
+    "image": `https://www.posso.co.uk/videos/thumbs/${p.slug}.png`,
   })),
 };
 
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     title: 'Self-Order Kiosks for Restaurants & Takeaways | Posso UK',
     description:
       'Reduce queues, increase order accuracy, and boost average order value with Posso self-order kiosks. Smart upsells, kitchen and POS integration, UK setup and support.',
-    url: 'https://posso.co.uk/self-order-kiosks',
+    url: 'https://www.posso.co.uk/self-order-kiosks',
     type: 'website',
     images: [
       {
@@ -107,8 +107,8 @@ const kioskScreenshots = [
 const kioskImageSchema = kioskScreenshots.map((s) => ({
   '@context': 'https://schema.org',
   '@type': 'ImageObject',
-  contentUrl: `https://posso.co.uk${s.src}`,
-  url: `https://posso.co.uk${s.src}`,
+  contentUrl: `https://www.posso.co.uk${s.src}`,
+  url: `https://www.posso.co.uk${s.src}`,
   name: s.alt,
   caption: s.cap,
   creditText: 'Posso Ltd',
@@ -304,6 +304,18 @@ export default function KiosksPage() {
               </blockquote>
               <p className="text-slate-300 mt-5 font-semibold">Ashan, Smith&rsquo;s <span className="text-slate-500 font-normal">· 4.5/5</span></p>
             </div>
+          </div>
+        </section>
+
+        <section className="pb-8">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl text-center">
+            <p className="text-slate-400">
+              Weighing up the whole stack? Our{' '}
+              <Link href="/best-restaurant-epos-system-uk" className="text-primary hover:underline">
+                best restaurant EPOS system UK
+              </Link>{' '}
+              guide compares kiosks, tills and online ordering across the leading providers.
+            </p>
           </div>
         </section>
 

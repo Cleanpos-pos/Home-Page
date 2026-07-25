@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Bar Ordering App | Posso UK',
     description:
       'Bar Ordering App with QR table ordering, tab management, drink modifiers, and happy hour pricing. Built for bars.',
-    url: 'https://posso.co.uk/bar-ordering-app',
+    url: 'https://www.posso.co.uk/bar-ordering-app',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Mobile ordering app for bars with QR code table ordering, tab management, drink modifiers and mixers, happy hour automatic pricing, and contactless payments.',
-    url: 'https://posso.co.uk/bar-ordering-app',
+    url: 'https://www.posso.co.uk/bar-ordering-app',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Bar Ordering App', item: 'https://posso.co.uk/bar-ordering-app' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Bar Ordering App', item: 'https://www.posso.co.uk/bar-ordering-app' },
     ],
   },
 ];

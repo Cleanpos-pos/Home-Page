@@ -47,9 +47,9 @@ const pageSchema = [
         operatingSystem: 'Web, iOS, Android',
         description:
             'TableMaestro is a restaurant table booking and reservation system by Posso. Take online reservations, manage table availability and covers, reduce no-shows with deposits, run promotions, and integrate bookings with your Posso EPOS.',
-        url: 'https://posso.co.uk/tablemaestro',
-        image: 'https://posso.co.uk/tablemaestro_booking_ui.png',
-        screenshot: 'https://posso.co.uk/tablemaestro_promo_engine.png',
+        url: 'https://www.posso.co.uk/tablemaestro',
+        image: 'https://www.posso.co.uk/tablemaestro_booking_ui.png',
+        screenshot: 'https://www.posso.co.uk/tablemaestro_promo_engine.png',
         offers: {
             '@type': 'AggregateOffer',
             lowPrice: '5',
@@ -76,8 +76,8 @@ const pageSchema = [
     {
         '@context': 'https://schema.org',
         '@type': 'ImageObject',
-        contentUrl: 'https://posso.co.uk/tablemaestro_booking_ui.png',
-        url: 'https://posso.co.uk/tablemaestro',
+        contentUrl: 'https://www.posso.co.uk/tablemaestro_booking_ui.png',
+        url: 'https://www.posso.co.uk/tablemaestro',
         name: 'TableMaestro Booking System Interface - Restaurant Reservation App',
         description:
             'TableMaestro restaurant table booking and reservation system by Posso, showing the online booking interface for managing tables, covers, and reservations.',
@@ -97,8 +97,8 @@ const pageSchema = [
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-            { '@type': 'ListItem', position: 2, name: 'TableMaestro Booking', item: 'https://posso.co.uk/tablemaestro' },
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+            { '@type': 'ListItem', position: 2, name: 'TableMaestro Booking', item: 'https://www.posso.co.uk/tablemaestro' },
         ],
     },
 ];

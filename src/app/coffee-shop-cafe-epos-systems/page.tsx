@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Coffee Shop & Cafe ePOS Systems | Posso',
         description: 'Complete ePOS hardware and software for coffee shops and cafes. Touchscreen, printer, cash drawer, kitchen display and online ordering included.',
-        url: 'https://posso.co.uk/coffee-shop-cafe-epos-systems',
+        url: 'https://www.posso.co.uk/coffee-shop-cafe-epos-systems',
     },
 };
 
@@ -73,9 +73,9 @@ const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk/" },
-        { "@type": "ListItem", "position": 2, "name": "ePOS Systems", "item": "https://posso.co.uk/pos" },
-        { "@type": "ListItem", "position": 3, "name": "Coffee Shop & Cafe ePOS", "item": "https://posso.co.uk/coffee-shop-cafe-epos-systems" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.posso.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "ePOS Systems", "item": "https://www.posso.co.uk/pos" },
+        { "@type": "ListItem", "position": 3, "name": "Coffee Shop & Cafe ePOS", "item": "https://www.posso.co.uk/coffee-shop-cafe-epos-systems" }
     ]
 };
 

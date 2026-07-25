@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Tablet ePOS System | Posso UK',
     description:
       'Tablet ePOS System for iPad and Android. Portable, cloud-synced, with waiter mode and offline operation. POS from £499 + VAT.',
-    url: 'https://posso.co.uk/tablet-epos-system',
+    url: 'https://www.posso.co.uk/tablet-epos-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, iOS, Android',
     description:
       'Tablet ePOS system running on iPad and Android tablets with portable waiter ordering, touchscreen interface, cloud synchronisation, offline-first operation, and wireless connectivity.',
-    url: 'https://posso.co.uk/tablet-epos-system',
+    url: 'https://www.posso.co.uk/tablet-epos-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Tablet ePOS System', item: 'https://posso.co.uk/tablet-epos-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Tablet ePOS System', item: 'https://www.posso.co.uk/tablet-epos-system' },
     ],
   },
 ];

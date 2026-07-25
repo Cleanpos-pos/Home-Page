@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'ePOS Booking System | Posso UK',
     description:
       'ePOS Booking System with table reservations, deposits, calendar integration, and booking management for restaurants.',
-    url: 'https://posso.co.uk/epos-booking-system',
+    url: 'https://www.posso.co.uk/epos-booking-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'ePOS system with integrated table reservation management, deposit collection, booking calendar, and guest communication for restaurants and hospitality venues.',
-    url: 'https://posso.co.uk/epos-booking-system',
+    url: 'https://www.posso.co.uk/epos-booking-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'ePOS Booking System', item: 'https://posso.co.uk/epos-booking-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'ePOS Booking System', item: 'https://www.posso.co.uk/epos-booking-system' },
     ],
   },
 ];

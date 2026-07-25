@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'Just Eat, Uber Eats & Deliveroo POS Integration | Posso',
     description:
       'Manage all delivery orders from Just Eat, Uber Eats & Deliveroo in one POS system. Plus cloud phone and driver app integration.',
-    url: 'https://posso.co.uk/delivery-integrations',
+    url: 'https://www.posso.co.uk/delivery-integrations',
     type: 'website',
     images: [{ url: '/images/posso_takeaway_delivery_dashboard.png', width: 1200, height: 630, alt: 'Posso ePOS showing Just Eat, Uber Eats and Deliveroo delivery orders managed in one dashboard' }],
   },
@@ -47,7 +47,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'POS integration for Just Eat, Uber Eats, and Deliveroo with cloud phone and delivery driver app.',
-    url: 'https://posso.co.uk/delivery-integrations',
+    url: 'https://www.posso.co.uk/delivery-integrations',
     brand: {
       '@type': 'Brand',
       name: 'Posso',
@@ -62,9 +62,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Delivery Integrations', item: 'https://posso.co.uk/delivery-integrations' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Delivery Integrations', item: 'https://www.posso.co.uk/delivery-integrations' },
     ],
   },
 ];

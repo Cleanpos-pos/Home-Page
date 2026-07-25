@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Restaurant Self Ordering System | Posso UK',
     description:
       'Restaurant Self Ordering System with kiosks, QR table ordering, and digital menus. Reduce staff dependency and speed up service.',
-    url: 'https://posso.co.uk/restaurant-self-ordering-system',
+    url: 'https://www.posso.co.uk/restaurant-self-ordering-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Restaurant self ordering system with self-service kiosks, QR code table ordering, digital menu boards, and kitchen integration for faster service with fewer staff.',
-    url: 'https://posso.co.uk/restaurant-self-ordering-system',
+    url: 'https://www.posso.co.uk/restaurant-self-ordering-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Restaurant Self Ordering System', item: 'https://posso.co.uk/restaurant-self-ordering-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Restaurant Self Ordering System', item: 'https://www.posso.co.uk/restaurant-self-ordering-system' },
     ],
   },
 ];

@@ -6,6 +6,7 @@ import { OnlineOrderingFeatures } from '@/components/sections/online-ordering-fe
 import { FAQSection } from '@/components/sections/faq-section';
 import { Contact } from '@/components/sections/contact';
 import { Percent, Globe, Monitor, RefreshCw, Users, Truck } from 'lucide-react';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 
 const onlineOrderingFeatures = [
@@ -37,14 +38,14 @@ const schema = [
       "priceCurrency": "GBP",
       "availability": "https://schema.org/InStock"
     },
-    "url": "https://posso.co.uk/online-ordering",
-    "image": "https://posso.co.uk/images/posso_online_ordering_hero.png"
+    "url": "https://www.posso.co.uk/online-ordering",
+    "image": "https://www.posso.co.uk/images/posso_online_ordering_hero.png"
   },
   {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    contentUrl: "https://posso.co.uk/images/posso_online_ordering_hero.png",
-    url: "https://posso.co.uk/online-ordering",
+    contentUrl: "https://www.posso.co.uk/images/posso_online_ordering_hero.png",
+    url: "https://www.posso.co.uk/online-ordering",
     name: "POSSO Online Ordering Website & Branded Mobile App",
     description: "Commission-free online ordering website and branded mobile app for UK takeaways and restaurants, with orders sent straight to the Posso POS and kitchen.",
     creator: {
@@ -60,9 +61,9 @@ const schema = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://posso.co.uk" },
-      { "@type": "ListItem", position: 2, name: "ePOS Systems", item: "https://posso.co.uk/pos" },
-      { "@type": "ListItem", position: 3, name: "Online Ordering", item: "https://posso.co.uk/online-ordering" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.posso.co.uk" },
+      { "@type": "ListItem", position: 2, name: "ePOS Systems", item: "https://www.posso.co.uk/pos" },
+      { "@type": "ListItem", position: 3, name: "Online Ordering", item: "https://www.posso.co.uk/online-ordering" },
     ],
   },
 ];
@@ -77,7 +78,7 @@ export const metadata: Metadata = {
     title: 'Online Ordering & Branded Apps | Get More Orders with Posso',
     description:
       'Launch your own commission-free online ordering website and branded mobile app. Orders flow straight into your Posso POS and kitchen.',
-    url: 'https://posso.co.uk/online-ordering',
+    url: 'https://www.posso.co.uk/online-ordering',
     type: 'website',
     images: [
       {
@@ -194,6 +195,18 @@ export default function OnlineOrderingPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="pb-8">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl text-center">
+            <p className="text-slate-400">
+              Choosing a full till system too? Read our guide to the{' '}
+              <Link href="/best-restaurant-epos-system-uk" className="text-primary hover:underline">
+                best restaurant EPOS systems in the UK
+              </Link>{' '}
+              to see how online ordering fits into one integrated platform.
+            </p>
           </div>
         </section>
 

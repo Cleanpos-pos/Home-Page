@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Homeware POS | Posso UK',
     description:
       'Homeware POS with barcode scanning, stock management, supplier ordering, and multi-location support for homeware retailers.',
-    url: 'https://posso.co.uk/homeware-pos',
+    url: 'https://www.posso.co.uk/homeware-pos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Homeware POS system with barcode scanning, stock management, supplier ordering, and multi-location support for homeware shops and home furnishing retailers.',
-    url: 'https://posso.co.uk/homeware-pos',
+    url: 'https://www.posso.co.uk/homeware-pos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Homeware POS', item: 'https://posso.co.uk/homeware-pos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Homeware POS', item: 'https://www.posso.co.uk/homeware-pos' },
     ],
   },
 ];

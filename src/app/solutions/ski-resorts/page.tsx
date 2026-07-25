@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ski Resort Management Software UK | Lift Pass & Ticketing | Posso',
     description: 'Lift passes, equipment rental, RFID access, secure ski storage, and multi-outlet F&B EPOS — one platform to run your ski resort.',
-    url: 'https://posso.co.uk/solutions/ski-resorts',
+    url: 'https://www.posso.co.uk/solutions/ski-resorts',
     type: 'website',
     images: [
       {

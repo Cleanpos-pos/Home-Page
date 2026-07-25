@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Kiosk POS | Posso UK',
     description:
       'Kiosk POS combining self-service and counter ordering in one system. Staff override, kitchen integration, and hybrid operation.',
-    url: 'https://posso.co.uk/kiosk-pos',
+    url: 'https://www.posso.co.uk/kiosk-pos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Hybrid kiosk POS system combining self-service ordering with counter-based point of sale. Features staff override mode, kitchen display integration, and unified order management.',
-    url: 'https://posso.co.uk/kiosk-pos',
+    url: 'https://www.posso.co.uk/kiosk-pos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '699',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Kiosk POS', item: 'https://posso.co.uk/kiosk-pos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Kiosk POS', item: 'https://www.posso.co.uk/kiosk-pos' },
     ],
   },
 ];

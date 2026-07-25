@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Top 5 POS Systems for Restaurants UK (2026 Comparison)',
     description: 'Side-by-side comparison of the 5 best restaurant POS systems in the UK. Features, pricing, pros, and cons.',
-    url: 'https://posso.co.uk/top-5-pos-systems-for-restaurants',
+    url: 'https://www.posso.co.uk/top-5-pos-systems-for-restaurants',
     type: 'article',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -38,12 +38,12 @@ const pageSchema = [
     '@type': 'Article',
     headline: 'Top 5 POS Systems for Restaurants UK (2026 Comparison)',
     description: 'Independent comparison of the best restaurant POS systems available in the UK, including pricing, features, and ideal use cases.',
-    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://posso.co.uk' },
-    publisher: { '@type': 'Organization', name: 'Posso Ltd', logo: { '@type': 'ImageObject', url: 'https://posso.co.uk/icon-512x512.png' } },
+    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://www.posso.co.uk' },
+    publisher: { '@type': 'Organization', name: 'Posso Ltd', logo: { '@type': 'ImageObject', url: 'https://www.posso.co.uk/icon-512x512.png' } },
     datePublished: '2026-04-08',
     dateModified: '2026-04-08',
-    url: 'https://posso.co.uk/top-5-pos-systems-for-restaurants',
-    image: 'https://posso.co.uk/images/posso_epos_integration.png',
+    url: 'https://www.posso.co.uk/top-5-pos-systems-for-restaurants',
+    image: 'https://www.posso.co.uk/images/posso_epos_integration.png',
   },
   {
     '@context': 'https://schema.org',
@@ -52,7 +52,7 @@ const pageSchema = [
     description: 'Ranked comparison of the best restaurant POS systems in the UK.',
     numberOfItems: 5,
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Posso One', url: 'https://posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 1, name: 'Posso One', url: 'https://www.posso.co.uk/pos' },
       { '@type': 'ListItem', position: 2, name: 'Square for Restaurants' },
       { '@type': 'ListItem', position: 3, name: 'Lightspeed Restaurant' },
       { '@type': 'ListItem', position: 4, name: 'Zettle by PayPal' },
@@ -63,8 +63,8 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Top 5 POS Systems', item: 'https://posso.co.uk/top-5-pos-systems-for-restaurants' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Top 5 POS Systems', item: 'https://www.posso.co.uk/top-5-pos-systems-for-restaurants' },
     ],
   },
 ];

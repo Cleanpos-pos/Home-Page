@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Buy ePOS System UK | Posso UK',
     description:
       'Buy ePOS System UK — complete buyer\'s guide covering pricing, finance, installation, and what\'s included. ePOS from £499 + VAT.',
-    url: 'https://posso.co.uk/buy-epos-system-uk',
+    url: 'https://www.posso.co.uk/buy-epos-system-uk',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Complete ePOS system available to buy in the UK with touchscreen hardware, POS software, payment processing, free installation, and staff training. Finance options available.',
-    url: 'https://posso.co.uk/buy-epos-system-uk',
+    url: 'https://www.posso.co.uk/buy-epos-system-uk',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Buy ePOS System UK', item: 'https://posso.co.uk/buy-epos-system-uk' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Buy ePOS System UK', item: 'https://www.posso.co.uk/buy-epos-system-uk' },
     ],
   },
 ];

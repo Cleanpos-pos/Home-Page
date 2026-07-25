@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'Pizza POS System with Built-In Pizza Builder | Posso UK',
     description:
       'The most intuitive pizza POS interface. Build split-sided pizzas, manage sizes and toppings, and send orders to the kitchen in seconds.',
-    url: 'https://posso.co.uk/pizza-pos-system',
+    url: 'https://www.posso.co.uk/pizza-pos-system',
     type: 'website',
     images: [
       {
@@ -61,9 +61,9 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Pizza POS system with built-in pizza builder for UK pizza shops and takeaways. Visual split-sided pizza creator, size-based pricing, topping management, and integrated kitchen display.',
-    url: 'https://posso.co.uk/pizza-pos-system',
-    image: 'https://posso.co.uk/images/posso-pizza-pos-system-interface-builder.png',
-    screenshot: 'https://posso.co.uk/images/posso-pizza-pos-system-interface-builder.png',
+    url: 'https://www.posso.co.uk/pizza-pos-system',
+    image: 'https://www.posso.co.uk/images/posso-pizza-pos-system-interface-builder.png',
+    screenshot: 'https://www.posso.co.uk/images/posso-pizza-pos-system-interface-builder.png',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -96,8 +96,8 @@ const pageSchema = [
   {
     '@context': 'https://schema.org',
     '@type': 'ImageObject',
-    contentUrl: 'https://posso.co.uk/images/posso-pizza-pos-system-interface-builder.avif',
-    url: 'https://posso.co.uk/pizza-pos-system',
+    contentUrl: 'https://www.posso.co.uk/images/posso-pizza-pos-system-interface-builder.avif',
+    url: 'https://www.posso.co.uk/pizza-pos-system',
     name: 'Posso Pizza POS System Interface - Pizza Builder Software',
     description: 'Posso Pizza POS system software showing the custom pizza builder menu with size selection (9", 14", 18"), topping pricing, and split-sided pizza options for UK pizza shops and takeaways.',
     width: 1200,
@@ -116,9 +116,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Pizza POS System', item: 'https://posso.co.uk/pizza-pos-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Pizza POS System', item: 'https://www.posso.co.uk/pizza-pos-system' },
     ],
   },
 ];

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Dry Cleaning POS System UK | Laundry EPOS & Garment Tracking',
         description: 'Dry cleaning and laundry POS/EPOS with ticket and garment tracking, SMS ready-for-collection alerts, pickup and delivery, customer accounts, card payments, and multi-branch control.',
-        url: 'https://posso.co.uk/solutions/dry-cleaning-pos-system',
+        url: 'https://www.posso.co.uk/solutions/dry-cleaning-pos-system',
         type: 'website',
         images: [
             {
@@ -66,8 +66,8 @@ export default function DryCleaningPosPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
-                { "@type": "ListItem", "position": 2, "name": "Dry Cleaning POS", "item": "https://posso.co.uk/solutions/dry-cleaning-pos-system" }
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.posso.co.uk" },
+                { "@type": "ListItem", "position": 2, "name": "Dry Cleaning POS", "item": "https://www.posso.co.uk/solutions/dry-cleaning-pos-system" }
             ]
         }
     ];

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Mobile Ordering System for Coffee Shops | Posso UK',
     description:
       'Mobile Ordering System for Coffee Shops — skip-the-queue, push notifications, pickup alerts, favourites, and loyalty.',
-    url: 'https://posso.co.uk/mobile-ordering-system-coffee-shops',
+    url: 'https://www.posso.co.uk/mobile-ordering-system-coffee-shops',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, iOS, Android',
     description:
       'Mobile ordering system for coffee shops with skip-the-queue functionality, push notification alerts, pickup ready notifications, favourite drink saving, and integrated loyalty tracking.',
-    url: 'https://posso.co.uk/mobile-ordering-system-coffee-shops',
+    url: 'https://www.posso.co.uk/mobile-ordering-system-coffee-shops',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Coffee POS', item: 'https://posso.co.uk/coffee-pos-system' },
-      { '@type': 'ListItem', position: 3, name: 'Mobile Ordering System for Coffee Shops', item: 'https://posso.co.uk/mobile-ordering-system-coffee-shops' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Coffee POS', item: 'https://www.posso.co.uk/coffee-pos-system' },
+      { '@type': 'ListItem', position: 3, name: 'Mobile Ordering System for Coffee Shops', item: 'https://www.posso.co.uk/mobile-ordering-system-coffee-shops' },
     ],
   },
 ];

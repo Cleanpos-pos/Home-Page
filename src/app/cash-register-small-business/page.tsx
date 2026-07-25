@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Cash Register for Small Business | Posso UK',
     description:
       'Cash Register for Small Business — modern ePOS vs traditional till, upgrade guide, and what you get from £499 + VAT.',
-    url: 'https://posso.co.uk/cash-register-small-business',
+    url: 'https://www.posso.co.uk/cash-register-small-business',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Modern ePOS cash register for small businesses with touchscreen interface, card payments, stock management, sales reporting, and cloud access. Replaces traditional cash registers.',
-    url: 'https://posso.co.uk/cash-register-small-business',
+    url: 'https://www.posso.co.uk/cash-register-small-business',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Cash Register for Small Business', item: 'https://posso.co.uk/cash-register-small-business' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Cash Register for Small Business', item: 'https://www.posso.co.uk/cash-register-small-business' },
     ],
   },
 ];

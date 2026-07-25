@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Touchscreen POS System | Posso UK',
     description:
       'Touchscreen POS System with 15" capacitive display, IP54 rating, fanless design, and one-tap ordering. POS from £499 + VAT.',
-    url: 'https://posso.co.uk/touchscreen-pos-system',
+    url: 'https://www.posso.co.uk/touchscreen-pos-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Touchscreen POS system with 15-inch capacitive display, IP54 splash-proof rating, fanless silent design, visual product grid, and one-tap ordering for restaurant and hospitality environments.',
-    url: 'https://posso.co.uk/touchscreen-pos-system',
+    url: 'https://www.posso.co.uk/touchscreen-pos-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Touchscreen POS System', item: 'https://posso.co.uk/touchscreen-pos-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Touchscreen POS System', item: 'https://www.posso.co.uk/touchscreen-pos-system' },
     ],
   },
 ];

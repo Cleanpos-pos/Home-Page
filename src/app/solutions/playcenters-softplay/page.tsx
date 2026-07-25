@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Soft Play & Play Centre Booking, Ticketing & EPOS | Posso',
     description: 'Safety-first ticketing with parent-child pairing, online booking, capacity control, party bookings, café EPOS and shoe storage for UK soft play and play centres.',
-    url: 'https://posso.co.uk/solutions/playcenters-softplay',
+    url: 'https://www.posso.co.uk/solutions/playcenters-softplay',
     type: 'website',
     images: [
       {

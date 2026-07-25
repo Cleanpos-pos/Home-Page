@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Coffee POS System | Posso UK',
     description:
       'Coffee POS System with barista KDS, milk/size modifiers, loyalty stamps, and morning rush speed. Built for coffee shops.',
-    url: 'https://posso.co.uk/coffee-pos-system',
+    url: 'https://www.posso.co.uk/coffee-pos-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Coffee POS system with barista kitchen display, milk and size modifiers, digital loyalty stamp cards, morning rush optimisation, and takeaway cup management for coffee shops.',
-    url: 'https://posso.co.uk/coffee-pos-system',
+    url: 'https://www.posso.co.uk/coffee-pos-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Coffee POS System', item: 'https://posso.co.uk/coffee-pos-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Coffee POS System', item: 'https://www.posso.co.uk/coffee-pos-system' },
     ],
   },
 ];

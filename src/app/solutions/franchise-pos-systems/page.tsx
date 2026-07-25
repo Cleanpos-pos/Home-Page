@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Franchise POS System UK | Multi-Site EPOS & Franchise Management Software',
         description: 'Franchise POS system for multi-site operators: central menu and price control, per-site and group reporting, royalty and fee tracking, brand consistency, stock control, and fast onboarding of new sites.',
-        url: 'https://posso.co.uk/solutions/franchise-pos-systems',
+        url: 'https://www.posso.co.uk/solutions/franchise-pos-systems',
         type: 'website',
         images: [
             {
@@ -65,8 +65,8 @@ export default function FranchisePosPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
-                { "@type": "ListItem", "position": 2, "name": "Franchise POS Systems", "item": "https://posso.co.uk/solutions/franchise-pos-systems" }
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.posso.co.uk" },
+                { "@type": "ListItem", "position": 2, "name": "Franchise POS Systems", "item": "https://www.posso.co.uk/solutions/franchise-pos-systems" }
             ]
         }
     ];

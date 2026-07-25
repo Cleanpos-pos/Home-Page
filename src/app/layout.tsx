@@ -18,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const title = '🚀 Restaurant ePOS Systems & Self-Order Kiosks UK | Posso';
 const description = 'Posso provides ePOS systems, self-order kiosks, online ordering, ticketing, and digital signage for restaurants, takeaways, and venues across the UK. Call 0808 175 3956.';
-const url = 'https://posso.co.uk';
+const url = 'https://www.posso.co.uk';
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: title,
-    description: 'All-in-one ePOS, self-order kiosks, online ordering, and venue management for UK restaurants and hospitality. Trusted by 1,000+ businesses.',
+    description: 'All-in-one ePOS, self-order kiosks, online ordering, and venue management for UK restaurants and hospitality. Trusted by 500+ businesses.',
     url: url,
     siteName: 'Posso',
     images: [
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: title,
-    description: 'All-in-one ePOS, self-order kiosks, online ordering & venue management for UK restaurants. Trusted by 1,000+ businesses.',
+    description: 'All-in-one ePOS, self-order kiosks, online ordering & venue management for UK restaurants. Trusted by 500+ businesses.',
     images: ['/og-image.png'],
     creator: '@posso_uk',
     site: '@posso_uk',
@@ -115,13 +115,13 @@ export const viewport: Viewport = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://posso.co.uk/#organization",
+  "@id": "https://www.posso.co.uk/#organization",
   "name": "Posso Ltd",
   "legalName": "Posso Ltd",
-  "url": "https://posso.co.uk",
+  "url": "https://www.posso.co.uk",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://posso.co.uk/icon-512x512.png",
+    "url": "https://www.posso.co.uk/icon-512x512.png",
     "width": 512,
     "height": 512
   },

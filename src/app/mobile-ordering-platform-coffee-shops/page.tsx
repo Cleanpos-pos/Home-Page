@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Mobile Ordering Platform for Coffee Shops',
     description:
       'Mobile Ordering Platform for Coffee Shops with branded app, push notifications, chain management, loyalty, and barista routing.',
-    url: 'https://posso.co.uk/mobile-ordering-platform-coffee-shops',
+    url: 'https://www.posso.co.uk/mobile-ordering-platform-coffee-shops',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Mobile ordering platform for coffee shops with branded app experience, push notifications, multi-site chain management, digital loyalty stamps, and real-time barista display routing.',
-    url: 'https://posso.co.uk/mobile-ordering-platform-coffee-shops',
+    url: 'https://www.posso.co.uk/mobile-ordering-platform-coffee-shops',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Mobile Ordering Platform for Coffee Shops', item: 'https://posso.co.uk/mobile-ordering-platform-coffee-shops' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Mobile Ordering Platform for Coffee Shops', item: 'https://www.posso.co.uk/mobile-ordering-platform-coffee-shops' },
     ],
   },
 ];

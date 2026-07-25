@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'DIY Cash Drawer | Posso UK',
     description:
       'DIY Cash Drawer — setup guide for auto-kick POS integration, key management, denominations, and cash reconciliation.',
-    url: 'https://posso.co.uk/diy-cash-drawer',
+    url: 'https://www.posso.co.uk/diy-cash-drawer',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'POS system with automatic cash drawer integration — auto-kick on transaction, key management, denomination tracking, cash reconciliation reports, and full audit trail for cash handling.',
-    url: 'https://posso.co.uk/diy-cash-drawer',
+    url: 'https://www.posso.co.uk/diy-cash-drawer',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'DIY Cash Drawer', item: 'https://posso.co.uk/diy-cash-drawer' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'DIY Cash Drawer', item: 'https://www.posso.co.uk/diy-cash-drawer' },
     ],
   },
 ];

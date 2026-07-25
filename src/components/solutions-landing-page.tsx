@@ -47,7 +47,7 @@ export function SolutionsLandingPage({
   schemaDescription,
 }: SolutionsLandingPageProps) {
   const solutionId = ctaText.toLowerCase().replace(/ /g, '-');
-  const pageUrl = slug ? `https://posso.co.uk/${slug.replace(/^\//, '')}` : undefined;
+  const pageUrl = slug ? `https://www.posso.co.uk/${slug.replace(/^\//, '')}` : undefined;
 
   const pageSchema = pageUrl
     ? [
@@ -62,14 +62,14 @@ export function SolutionsLandingPage({
           provider: {
             '@type': 'Organization',
             name: 'Posso Ltd',
-            url: 'https://posso.co.uk',
+            url: 'https://www.posso.co.uk',
           },
         },
         {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
             ...(breadcrumbLabel
               ? [{ '@type': 'ListItem', position: 2, name: breadcrumbLabel, item: pageUrl }]
               : []),

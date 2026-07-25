@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Custom POS System | Posso UK',
     description:
       'Custom POS System with bespoke development for chains, franchise management, and multi-site analytics.',
-    url: 'https://posso.co.uk/custom-pos-system',
+    url: 'https://www.posso.co.uk/custom-pos-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Custom POS system with bespoke development for chains, franchise management, multi-site analytics, and tailored workflows for businesses with complex requirements.',
-    url: 'https://posso.co.uk/custom-pos-system',
+    url: 'https://www.posso.co.uk/custom-pos-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Custom POS System', item: 'https://posso.co.uk/custom-pos-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Custom POS System', item: 'https://www.posso.co.uk/custom-pos-system' },
     ],
   },
 ];

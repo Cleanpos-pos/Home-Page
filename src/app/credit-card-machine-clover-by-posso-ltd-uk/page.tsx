@@ -43,7 +43,7 @@ const schema = {
         "@type": "Organization",
         "name": "Posso Ltd"
     },
-    "url": "https://posso.co.uk/credit-card-machine-clover-by-posso-ltd-uk"
+    "url": "https://www.posso.co.uk/credit-card-machine-clover-by-posso-ltd-uk"
 };
 
 export const metadata: Metadata = {

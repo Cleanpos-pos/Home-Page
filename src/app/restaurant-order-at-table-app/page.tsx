@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Restaurant Order at Table App | Posso UK',
     description:
       'Restaurant Order at Table App with QR ordering, waiter pad, pay-at-table, and course firing. Let guests order from their phone.',
-    url: 'https://posso.co.uk/restaurant-order-at-table-app',
+    url: 'https://www.posso.co.uk/restaurant-order-at-table-app',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, iOS, Android',
     description:
       'Restaurant Order at Table App with QR code ordering, waiter pad mode, pay-at-table functionality, interactive floor plan management, and course firing for multi-course meals.',
-    url: 'https://posso.co.uk/restaurant-order-at-table-app',
+    url: 'https://www.posso.co.uk/restaurant-order-at-table-app',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Restaurant Order at Table App', item: 'https://posso.co.uk/restaurant-order-at-table-app' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Restaurant Order at Table App', item: 'https://www.posso.co.uk/restaurant-order-at-table-app' },
     ],
   },
 ];

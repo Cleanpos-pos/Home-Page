@@ -6,6 +6,7 @@ import { CreditCardMachinesContent } from '@/components/sections/credit-card-mac
 import { Contact } from '@/components/sections/contact';
 import { FAQSection } from '@/components/sections/faq-section';
 import { CreditCard, Smartphone, Layers, Banknote, ShieldCheck, Wifi } from 'lucide-react';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     title: 'Credit Card Machines & Card Readers UK | Teya, Dojo, Clover',
     description:
       'Posso supplies and integrates fast, secure credit card machines and Clover card terminals for UK businesses. Contactless, Apple Pay, Google Pay, and full EPOS integration.',
-    url: 'https://posso.co.uk/credit-card-machines',
+    url: 'https://www.posso.co.uk/credit-card-machines',
     type: 'website',
     images: [
       {
@@ -44,8 +45,8 @@ const pageSchema = [
     name: 'Posso Card Machines & Clover Card Terminals',
     description:
       'Credit card machines and Clover card terminals for UK businesses. Fast, secure card readers supporting contactless, chip & PIN, Apple Pay, and Google Pay, fully integrated with the Posso EPOS system.',
-    url: 'https://posso.co.uk/credit-card-machines',
-    image: 'https://posso.co.uk/images/posso_clover_flex_hospitality.png',
+    url: 'https://www.posso.co.uk/credit-card-machines',
+    image: 'https://www.posso.co.uk/images/posso_clover_flex_hospitality.png',
     category: 'Payment Terminals',
     brand: {
       '@type': 'Brand',
@@ -70,8 +71,8 @@ const pageSchema = [
   {
     '@context': 'https://schema.org',
     '@type': 'ImageObject',
-    contentUrl: 'https://posso.co.uk/images/posso_clover_flex_hospitality.png',
-    url: 'https://posso.co.uk/credit-card-machines',
+    contentUrl: 'https://www.posso.co.uk/images/posso_clover_flex_hospitality.png',
+    url: 'https://www.posso.co.uk/credit-card-machines',
     name: 'Posso Clover Flex Card Machine - Integrated Card Reader UK',
     description: 'Posso Clover Flex card machine taking a contactless payment in a UK hospitality venue, fully integrated with the Posso EPOS system for end-to-end payment and sales reporting.',
     width: 1200,
@@ -90,8 +91,8 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Card Machines', item: 'https://posso.co.uk/credit-card-machines' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Card Machines', item: 'https://www.posso.co.uk/credit-card-machines' },
     ],
   },
 ];
@@ -202,6 +203,18 @@ export default function CreditCardMachinesPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="pb-8">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl text-center">
+            <p className="text-slate-400">
+              Bundling payments with a new till? Compare the{' '}
+              <Link href="/best-restaurant-epos-system-uk" className="text-primary hover:underline">
+                best restaurant EPOS systems in the UK
+              </Link>{' '}
+              to see integrated card machines, kiosks and online ordering as one platform.
+            </p>
           </div>
         </section>
 

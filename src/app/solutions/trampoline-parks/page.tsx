@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Trampoline Park Booking, Ticketing & Waiver System | Posso',
     description: 'Online booking, digital waivers, RFID wristbands, smart lockers and timed-session control in one EPOS platform built for UK trampoline parks.',
-    url: 'https://posso.co.uk/solutions/trampoline-parks',
+    url: 'https://www.posso.co.uk/solutions/trampoline-parks',
     type: 'website',
     images: [
       {

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Cloud ePOS System | Posso UK',
     description:
       'Cloud ePOS System with real-time sync, multi-device, PowerSync, offline-first, and remote management. POS from £499 + VAT.',
-    url: 'https://posso.co.uk/cloud-epos-system',
+    url: 'https://www.posso.co.uk/cloud-epos-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Cloud ePOS system with real-time data synchronisation, multi-device operation, PowerSync technology for instant sync, offline-first architecture, and remote business management from any location.',
-    url: 'https://posso.co.uk/cloud-epos-system',
+    url: 'https://www.posso.co.uk/cloud-epos-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Cloud ePOS System', item: 'https://posso.co.uk/cloud-epos-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Cloud ePOS System', item: 'https://www.posso.co.uk/cloud-epos-system' },
     ],
   },
 ];

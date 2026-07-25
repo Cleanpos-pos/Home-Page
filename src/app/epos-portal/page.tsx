@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'ePOS Portal | Posso UK',
     description:
       'ePOS Portal — manage menus, view analytics, and control multi-site operations from any browser with the Posso cloud dashboard.',
-    url: 'https://posso.co.uk/epos-portal',
+    url: 'https://www.posso.co.uk/epos-portal',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Cloud-based ePOS management portal with remote menu editing, multi-site dashboard, real-time sales analytics, staff management, and inventory control accessible from any web browser.',
-    url: 'https://posso.co.uk/epos-portal',
+    url: 'https://www.posso.co.uk/epos-portal',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'ePOS Portal', item: 'https://posso.co.uk/epos-portal' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'ePOS Portal', item: 'https://www.posso.co.uk/epos-portal' },
     ],
   },
 ];

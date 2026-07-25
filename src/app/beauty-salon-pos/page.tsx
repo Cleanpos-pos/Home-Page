@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Beauty Salon POS | Posso UK',
     description:
       'Beauty Salon POS with treatment booking, staff scheduling, client records, retail sales, and loyalty. Built for salons.',
-    url: 'https://posso.co.uk/beauty-salon-pos',
+    url: 'https://www.posso.co.uk/beauty-salon-pos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Beauty salon POS system with treatment booking, staff scheduling, client records, retail product management, loyalty programmes, and online booking integration for salons.',
-    url: 'https://posso.co.uk/beauty-salon-pos',
+    url: 'https://www.posso.co.uk/beauty-salon-pos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Beauty Salon POS', item: 'https://posso.co.uk/beauty-salon-pos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Beauty Salon POS', item: 'https://www.posso.co.uk/beauty-salon-pos' },
     ],
   },
 ];

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Delivery POS Software | Posso UK',
     description:
       'Delivery POS Software with zones, driver tracking, estimated times, and aggregator integration. Built for delivery businesses.',
-    url: 'https://posso.co.uk/delivery-pos-software',
+    url: 'https://www.posso.co.uk/delivery-pos-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Delivery-focused POS software with delivery zone configuration, driver assignment and tracking, estimated delivery times, and integration with third-party delivery aggregators.',
-    url: 'https://posso.co.uk/delivery-pos-software',
+    url: 'https://www.posso.co.uk/delivery-pos-software',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Delivery POS Software', item: 'https://posso.co.uk/delivery-pos-software' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Delivery POS Software', item: 'https://www.posso.co.uk/delivery-pos-software' },
     ],
   },
 ];

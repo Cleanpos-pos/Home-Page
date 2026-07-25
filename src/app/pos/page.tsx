@@ -22,10 +22,10 @@ const schema = [
       "priceCurrency": "GBP",
       "price": "499.00",
       "availability": "https://schema.org/InStock",
-      "url": "https://posso.co.uk/pos"
+      "url": "https://www.posso.co.uk/pos"
     },
-    "url": "https://posso.co.uk/pos",
-    "image": "https://posso.co.uk/images/posso_epos_integration.png",
+    "url": "https://www.posso.co.uk/pos",
+    "image": "https://www.posso.co.uk/images/posso_epos_integration.png",
     "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "bestRating": "5", "ratingCount": "1" },
     "review": {
       "@type": "Review",
@@ -38,8 +38,8 @@ const schema = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
-      { "@type": "ListItem", "position": 2, "name": "ePOS Systems", "item": "https://posso.co.uk/pos" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.posso.co.uk" },
+      { "@type": "ListItem", "position": 2, "name": "ePOS Systems", "item": "https://www.posso.co.uk/pos" }
     ]
   }
 ];
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: 'ePOS System for Restaurants & Takeaways | Posso UK',
     description:
       'Discover the Posso One ePOS system: touchscreen ordering, kitchen display, kiosk mode, split bills, offline operation, and integrated Teya payments for UK hospitality.',
-    url: 'https://posso.co.uk/pos',
+    url: 'https://www.posso.co.uk/pos',
     type: 'website',
     images: [
       {
@@ -84,8 +84,8 @@ const posScreenshots = [
 const posImageSchema = posScreenshots.map((s) => ({
   '@context': 'https://schema.org',
   '@type': 'ImageObject',
-  contentUrl: `https://posso.co.uk${s.src}`,
-  url: `https://posso.co.uk${s.src}`,
+  contentUrl: `https://www.posso.co.uk${s.src}`,
+  url: `https://www.posso.co.uk${s.src}`,
   name: s.alt,
   caption: s.cap,
   creditText: 'Posso Ltd',
@@ -94,6 +94,7 @@ const posImageSchema = posScreenshots.map((s) => ({
 }));
 
 const eposVerticals = [
+  { href: '/best-restaurant-epos-system-uk', name: 'Best Restaurant EPOS UK', desc: '2026 buyer’s guide & comparison' },
   { href: '/restaurant-epos', name: 'Restaurant EPOS', desc: 'Table service, courses & split bills' },
   { href: '/takeaway-epos', name: 'Takeaway EPOS', desc: 'Collection, delivery & online orders' },
   { href: '/cafe-epos-system', name: 'Cafe EPOS', desc: 'Fast counter service & loyalty' },
@@ -116,7 +117,7 @@ const eposHubSchema = {
     '@type': 'ListItem',
     position: i + 1,
     name: v.name,
-    url: `https://posso.co.uk${v.href}`,
+    url: `https://www.posso.co.uk${v.href}`,
   })),
 };
 

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: 'Drink Order App & Table Ordering Waiter Pad',
     description:
       'Digital waiter pad and table ordering app for restaurants, bars, and pubs. QR ordering, split bills, and pay-at-table.',
-    url: 'https://posso.co.uk/drink-order-app',
+    url: 'https://www.posso.co.uk/drink-order-app',
     type: 'website',
     images: [{ url: '/images/posso_table_ordering_menu.png', width: 1200, height: 630, alt: 'Posso table ordering and digital waiter pad app showing menu, QR ordering and pay-at-table for restaurants, bars and pubs' }],
   },
@@ -50,7 +50,7 @@ const pageSchema = [
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web, Android, Windows',
     description: 'Digital waiter pad and table ordering system for restaurants, bars, and pubs with QR ordering, split bills, and pay-at-table.',
-    url: 'https://posso.co.uk/drink-order-app',
+    url: 'https://www.posso.co.uk/drink-order-app',
     brand: { '@type': 'Brand', name: 'Posso' },
     offers: { '@type': 'Offer', priceCurrency: 'GBP', availability: 'https://schema.org/InStock' },
   },
@@ -58,9 +58,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Table Ordering & Waiter Pad', item: 'https://posso.co.uk/drink-order-app' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Table Ordering & Waiter Pad', item: 'https://www.posso.co.uk/drink-order-app' },
     ],
   },
 ];

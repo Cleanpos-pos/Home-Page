@@ -73,7 +73,7 @@ const services = [
     icon: <DownloadCloud className="h-8 w-8 text-accent" />,
     title: '24/7 UK-Based Support',
     description: 'Dedicated UK support team for remote and on-site assistance. Average response time under 15 minutes for critical issues.',
-    href: 'https://download.anydesk.com/AnyDesk.exe?_ga=2.228450974.22024143.1581947022-1619378576.1575561389'
+    href: '/support'
   },
 ];
 

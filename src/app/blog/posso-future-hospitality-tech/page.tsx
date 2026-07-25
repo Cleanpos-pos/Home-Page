@@ -55,7 +55,7 @@ export default function MeetPossoBlog() {
                                     <span className="text-primary">A Mission Control.</span>
                                 </h2>
                                 <p className="text-xl text-slate-400 leading-relaxed">
-                                    The hospitality industry is evolving, and <Link href="https://posso.co.uk" className="text-primary font-bold hover:underline">Posso</Link> is leading the charge. We aren&apos;t just another software company; we are a dedicated tech partner for the modern UK food business.
+                                    The hospitality industry is evolving, and <Link href="https://www.posso.co.uk" className="text-primary font-bold hover:underline">Posso</Link> is leading the charge. We aren&apos;t just another software company; we are a dedicated tech partner for the modern UK food business.
                                 </p>
                                 <p className="text-xl text-slate-400 leading-relaxed">
                                     From self-service kiosks that slash queues to &quot;hybrid&quot; systems that keep working when the internet crashes, Posso was built by engineers who understand the chaos of a Friday night shift.
@@ -146,7 +146,7 @@ export default function MeetPossoBlog() {
                     <div className="container mx-auto px-4 text-center">
                         <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">Ready for the Future?</h2>
                         <Button size="lg" className="rounded-full h-16 px-12 text-xl bg-primary hover:bg-primary/90 text-white" asChild>
-                            <Link href="https://posso.co.uk">Start Your Journey at Posso.uk</Link>
+                            <Link href="https://www.posso.co.uk">Start Your Journey at Posso.uk</Link>
                         </Button>
                     </div>
                 </section>

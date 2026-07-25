@@ -1,18 +1,12 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Zap, HelpCircle, Globe, ShieldCheck, BarChart3, Smartphone } from 'lucide-react';
+import { ArrowRight, Zap, HelpCircle, Globe, ShieldCheck, BarChart3, Smartphone, ChevronDown } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { SolutionEnquiryModal } from '@/components/solution-enquiry-modal';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { allSeoPages, getPageBySlug, getAllSlugs, type SeoPageData } from '@/lib/seo-pages-data';
 
 const featureIcons = [Zap, Smartphone, Globe, ShieldCheck, BarChart3, ArrowRight];
@@ -26,11 +20,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const page = getPageBySlug(slug);
   if (!page) return {};
 
-  const mp4 = `https://posso.co.uk/videos/${page.slug}.mp4`;
-  const thumb = `https://posso.co.uk/videos/thumbs/${page.slug}.png`;
+  const mp4 = `https://www.posso.co.uk/videos/${page.slug}.mp4`;
+  const thumb = `https://www.posso.co.uk/videos/thumbs/${page.slug}.png`;
 
   return {
-    title: page.title,
+    // Data titles already end in "| Posso" — absolute skips the layout's "%s | Posso"
+    // template, which was rendering a double brand suffix ("… | Posso | Posso").
+    title: { absolute: page.title },
     description: page.description,
     alternates: {
       canonical: `/${page.slug}`,
@@ -39,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: page.title,
       description: page.description,
-      url: `https://posso.co.uk/${page.slug}`,
+      url: `https://www.posso.co.uk/${page.slug}`,
       ...(page.video
         ? {
             type: 'video.other',
@@ -67,15 +63,15 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
     "applicationCategory": page.category,
     "description": page.description,
     "author": { "@type": "Organization", "name": "Posso Ltd" },
-    "url": `https://posso.co.uk/${page.slug}`
+    "url": `https://www.posso.co.uk/${page.slug}`
   };
 
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk/" },
-      { "@type": "ListItem", "position": 2, "name": page.h1, "item": `https://posso.co.uk/${page.slug}` }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.posso.co.uk/" },
+      { "@type": "ListItem", "position": 2, "name": page.h1, "item": `https://www.posso.co.uk/${page.slug}` }
     ]
   };
 
@@ -90,22 +86,22 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
   } : null;
 
   const videoSchema = page.video ? (() => {
-    const base = `https://posso.co.uk/${page.slug}`;
+    const base = `https://www.posso.co.uk/${page.slug}`;
     const ch = page.video.chapters;
     return {
       "@context": "https://schema.org",
       "@type": "VideoObject",
       "name": page.h1,
       "description": page.description,
-      "thumbnailUrl": [`https://posso.co.uk/videos/thumbs/${page.slug}.png`],
+      "thumbnailUrl": [`https://www.posso.co.uk/videos/thumbs/${page.slug}.png`],
       "uploadDate": page.video.uploadDate,
       "duration": page.video.durationISO,
-      "contentUrl": `https://posso.co.uk/videos/${page.slug}.mp4`,
+      "contentUrl": `https://www.posso.co.uk/videos/${page.slug}.mp4`,
       "embedUrl": base,
       "publisher": {
         "@type": "Organization",
         "name": "Posso Ltd",
-        "logo": { "@type": "ImageObject", "url": "https://posso.co.uk/icon-512x512.png" },
+        "logo": { "@type": "ImageObject", "url": "https://www.posso.co.uk/icon-512x512.png" },
       },
       "hasPart": ch.map((c, i) => ({
         "@type": "Clip",
@@ -299,18 +295,19 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
                 <HelpCircle className="w-8 h-8 text-primary" />
                 <h2 className="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
               </div>
-              <Accordion type="single" collapsible className="w-full">
+              {/* Native details/summary so answers are in the server-rendered HTML —
+                  the client-only accordion left crawlers seeing questions with no answers. */}
+              <div className="w-full">
                 {page.faqs.map((faq, i) => (
-                  <AccordionItem key={i} value={`faq-${i}`} className="border-slate-800">
-                    <AccordionTrigger className="text-left text-lg font-bold hover:text-primary transition-colors py-6">
+                  <details key={i} className="group border-b border-slate-800">
+                    <summary className="flex items-center justify-between cursor-pointer list-none text-left text-lg font-bold hover:text-primary transition-colors py-6 [&::-webkit-details-marker]:hidden">
                       {faq.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-slate-400 leading-relaxed text-lg pb-6">
-                      {faq.a}
-                    </AccordionContent>
-                  </AccordionItem>
+                      <ChevronDown className="h-5 w-5 shrink-0 text-slate-500 transition-transform group-open:rotate-180" />
+                    </summary>
+                    <p className="text-slate-400 leading-relaxed text-lg pb-6">{faq.a}</p>
+                  </details>
                 ))}
-              </Accordion>
+              </div>
             </div>
           </section>
         )}

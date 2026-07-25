@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'POS for Pizza Shop | Posso UK',
     description:
       'POS for Pizza Shop buyer\'s guide — what to look for, must-have features, pricing, and how to choose the right system.',
-    url: 'https://posso.co.uk/pos-for-pizza-shop',
+    url: 'https://www.posso.co.uk/pos-for-pizza-shop',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Comprehensive guide to choosing a POS system for a pizza shop, covering pizza builder functionality, delivery management, online ordering, caller ID, and pricing considerations.',
-    url: 'https://posso.co.uk/pos-for-pizza-shop',
+    url: 'https://www.posso.co.uk/pos-for-pizza-shop',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'POS for Pizza Shop', item: 'https://posso.co.uk/pos-for-pizza-shop' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'POS for Pizza Shop', item: 'https://www.posso.co.uk/pos-for-pizza-shop' },
     ],
   },
 ];

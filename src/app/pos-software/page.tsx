@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'POS Software | Posso UK',
     description:
       'POS Software with cloud management, touchscreen interface, real-time reporting, stock control, and offline-first reliability.',
-    url: 'https://posso.co.uk/pos-software',
+    url: 'https://www.posso.co.uk/pos-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Cloud-based POS software with touchscreen interface, real-time reporting, stock management, multi-device sync, and offline-first architecture for retail and hospitality.',
-    url: 'https://posso.co.uk/pos-software',
+    url: 'https://www.posso.co.uk/pos-software',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'POS Software', item: 'https://posso.co.uk/pos-software' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'POS Software', item: 'https://www.posso.co.uk/pos-software' },
     ],
   },
 ];

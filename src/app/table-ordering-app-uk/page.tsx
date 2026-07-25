@@ -35,7 +35,7 @@ const schema = {
     "provider": {
         "@type": "Organization",
         "name": "Posso Ltd",
-        "url": "https://posso.co.uk"
+        "url": "https://www.posso.co.uk"
     },
     "description": "Speed up service and boost spend per head with the best table ordering app in the UK. Low commission, seamless EPOS integration, and custom QR codes.",
     "areaServed": "Great Britain",
@@ -116,7 +116,7 @@ export default function TableOrderingLandingPage() {
                                             </div>
                                         ))}
                                     </div>
-                                    <p className="text-sm text-slate-500">Trusted by 1,000+ UK Hospitality Venues</p>
+                                    <p className="text-sm text-slate-500">Trusted by 500+ UK Hospitality Venues</p>
                                 </div>
                             </div>
 

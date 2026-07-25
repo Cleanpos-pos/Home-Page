@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'Franchise ePOS Systems | Multi-Site Management & Kiosks | Posso',
     description:
       'Scale your food franchise with Posso. Centralised menu management, real-time multi-site reporting, and unified stock control for growing brands.',
-    url: 'https://posso.co.uk/franchise',
+    url: 'https://www.posso.co.uk/franchise',
     type: 'website',
     images: [
       {
@@ -54,9 +54,9 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Franchise POS and multi-site EPOS system for UK food brands. Centralised menu and price control, real-time multi-location reporting, franchisee royalty tracking, unified stock control, and fast onboarding of new sites.',
-    url: 'https://posso.co.uk/franchise',
-    image: 'https://posso.co.uk/images/posso_dashboard_analytics.png',
-    screenshot: 'https://posso.co.uk/images/posso_dashboard_analytics.png',
+    url: 'https://www.posso.co.uk/franchise',
+    image: 'https://www.posso.co.uk/images/posso_dashboard_analytics.png',
+    screenshot: 'https://www.posso.co.uk/images/posso_dashboard_analytics.png',
     brand: {
       '@type': 'Brand',
       name: 'Posso',
@@ -77,8 +77,8 @@ const pageSchema = [
   {
     '@context': 'https://schema.org',
     '@type': 'ImageObject',
-    contentUrl: 'https://posso.co.uk/images/posso_dashboard_analytics.png',
-    url: 'https://posso.co.uk/franchise',
+    contentUrl: 'https://www.posso.co.uk/images/posso_dashboard_analytics.png',
+    url: 'https://www.posso.co.uk/franchise',
     name: 'Posso Franchise POS Dashboard - Multi-Site EPOS Analytics',
     description: 'Posso franchise POS dashboard showing real-time multi-site reporting, analytics, and centralised management for multi-location food brands.',
     width: 1200,
@@ -97,8 +97,8 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Franchise Solutions', item: 'https://posso.co.uk/franchise' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Franchise Solutions', item: 'https://www.posso.co.uk/franchise' },
     ],
   },
 ];

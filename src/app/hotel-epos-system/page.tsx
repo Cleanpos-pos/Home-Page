@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Hotel ePOS System | Posso UK',
     description:
       'Hotel ePOS System with room service, restaurant, bar, and conference catering. Charge to rooms and manage multiple outlets.',
-    url: 'https://posso.co.uk/hotel-epos-system',
+    url: 'https://www.posso.co.uk/hotel-epos-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Hotel ePOS system managing room service ordering, restaurant POS, bar tab management, conference catering, and multi-venue reporting with room charge capability.',
-    url: 'https://posso.co.uk/hotel-epos-system',
+    url: 'https://www.posso.co.uk/hotel-epos-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Hotel ePOS System', item: 'https://posso.co.uk/hotel-epos-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Hotel ePOS System', item: 'https://www.posso.co.uk/hotel-epos-system' },
     ],
   },
 ];

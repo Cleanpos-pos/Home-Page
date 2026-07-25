@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Spa & Wellness Centre Booking & POS System UK | Posso',
     description: 'Treatment bookings, gift vouchers, memberships, RFID access control and retail EPOS for UK spas and wellness centres — all in one system.',
-    url: 'https://posso.co.uk/solutions/spas-wellness-centers',
+    url: 'https://www.posso.co.uk/solutions/spas-wellness-centers',
     type: 'website',
     images: [
       {

@@ -86,7 +86,7 @@ export default function IndianTakeawayBlog() {
                         <div className="prose prose-invert prose-lg max-w-none">
                             <h2 className="text-4xl font-bold text-white">Built for the Heat of the Kitchen</h2>
                             <p className="text-slate-300">
-                                Stop using generic retail systems for your curry house. Switch to a system designed for the heat of the takeaway kitchen. <Link href="https://posso.co.uk" className="text-orange-500 font-bold hover:underline">Posso&apos;s</Link> EPOS system for Indian takeaways is built for speed and accuracy.
+                                Stop using generic retail systems for your curry house. Switch to a system designed for the heat of the takeaway kitchen. <Link href="https://www.posso.co.uk" className="text-orange-500 font-bold hover:underline">Posso&apos;s</Link> EPOS system for Indian takeaways is built for speed and accuracy.
                             </p>
 
                             <div className="bg-gradient-to-br from-slate-900 to-orange-950/30 border border-white/5 p-10 rounded-[3rem] my-16">
@@ -145,7 +145,7 @@ export default function IndianTakeawayBlog() {
                                     <Link href="/contact">Book Free Demo</Link>
                                 </Button>
                                 <Button size="lg" variant="outline" className="rounded-full px-10 h-14 bg-transparent border-white text-white hover:bg-white/10" asChild>
-                                    <Link href="https://posso.co.uk">Visit POSSO.UK <ArrowRight className="ml-2 w-5 h-5" /></Link>
+                                    <Link href="https://www.posso.co.uk">Visit POSSO.UK <ArrowRight className="ml-2 w-5 h-5" /></Link>
                                 </Button>
                             </div>
                         </div>

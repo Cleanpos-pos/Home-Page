@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'PDQ Systems | Posso UK',
     description:
       'PDQ Systems with payment processing hardware, card readers, mobile terminals, and full POS integration.',
-    url: 'https://posso.co.uk/pdq-systems',
+    url: 'https://www.posso.co.uk/pdq-systems',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'PDQ systems for payment processing hardware, card readers, mobile terminals, and POS integration for businesses of all sizes.',
-    url: 'https://posso.co.uk/pdq-systems',
+    url: 'https://www.posso.co.uk/pdq-systems',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'PDQ Systems', item: 'https://posso.co.uk/pdq-systems' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'PDQ Systems', item: 'https://www.posso.co.uk/pdq-systems' },
     ],
   },
 ];

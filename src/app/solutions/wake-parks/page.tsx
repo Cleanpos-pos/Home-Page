@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Wake Park Booking & POS Software UK | Posso',
     description: 'Session and slot booking, equipment hire tracking, digital waivers, RFID wristbands and secure lockers for UK wake and aqua parks.',
-    url: 'https://posso.co.uk/solutions/wake-parks',
+    url: 'https://www.posso.co.uk/solutions/wake-parks',
     type: 'website',
     images: [
       {

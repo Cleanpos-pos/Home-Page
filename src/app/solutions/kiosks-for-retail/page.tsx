@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Kiosk for Retail | Retail Kiosk Point of Sale Solutions UK',
         description: 'Advanced self-service and self-checkout kiosks for UK retailers. Speed up checkout, enable click & collect, and free up staff with POSSO retail kiosk systems.',
-        url: 'https://posso.co.uk/solutions/kiosks-for-retail',
+        url: 'https://www.posso.co.uk/solutions/kiosks-for-retail',
         type: 'website',
         images: [
             {
@@ -60,7 +60,7 @@ export default function RetailKioskPage() {
             },
             "offers": {
                 "@type": "Offer",
-                "url": "https://posso.co.uk/solutions/kiosks-for-retail",
+                "url": "https://www.posso.co.uk/solutions/kiosks-for-retail",
                 "priceCurrency": "GBP"
             }
         },
@@ -68,8 +68,8 @@ export default function RetailKioskPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
-                { "@type": "ListItem", "position": 2, "name": "Kiosks for Retail", "item": "https://posso.co.uk/solutions/kiosks-for-retail" }
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.posso.co.uk" },
+                { "@type": "ListItem", "position": 2, "name": "Kiosks for Retail", "item": "https://www.posso.co.uk/solutions/kiosks-for-retail" }
             ]
         }
     ];

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'Dark Kitchen ePOS & Online Ordering — Take Orders Now',
     description:
       'Complete ePOS, online ordering website, and delivery integration for dark kitchens. Low commission — a fraction of marketplace fees. Setup in under 24 hours.',
-    url: 'https://posso.co.uk/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now',
+    url: 'https://www.posso.co.uk/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -42,8 +42,8 @@ const pageSchema = [
     name: 'Posso Dark Kitchen ePOS & Online Ordering',
     description: 'Complete ePOS system and low-commission online ordering for dark kitchens, ghost kitchens, and delivery-only restaurants in the UK.',
     brand: { '@type': 'Brand', name: 'Posso' },
-    url: 'https://posso.co.uk/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now',
-    image: 'https://posso.co.uk/images/posso_epos_integration.png',
+    url: 'https://www.posso.co.uk/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now',
+    image: 'https://www.posso.co.uk/images/posso_epos_integration.png',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '350',
@@ -55,8 +55,8 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Dark Kitchens', item: 'https://posso.co.uk/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Dark Kitchens', item: 'https://www.posso.co.uk/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now' },
     ],
   },
 ];

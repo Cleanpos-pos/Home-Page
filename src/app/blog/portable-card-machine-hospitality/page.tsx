@@ -67,7 +67,7 @@ export default function PortableCardMachineBlog() {
                                     <Link href="/portable-card-machines">View Portable Models</Link>
                                 </Button>
                                 <Button size="lg" variant="outline" className="border-white/10 hover:bg-white/5 rounded-full h-14 px-10 text-lg" asChild>
-                                    <Link href="https://posso.co.uk">Visit POSSO.UK</Link>
+                                    <Link href="https://www.posso.co.uk">Visit POSSO.UK</Link>
                                 </Button>
                             </div>
                         </div>
@@ -97,7 +97,7 @@ export default function PortableCardMachineBlog() {
                         <div className="prose prose-invert prose-lg max-w-none">
                             <h2 className="text-4xl font-bold text-white mb-8">Modern Payments, No Luxury Required</h2>
                             <p className="text-slate-300 text-xl leading-relaxed mb-10">
-                                A modern portable card machine is no longer a luxury; it’s a necessity. At <Link href="https://posso.co.uk" className="text-primary font-bold hover:underline">Posso</Link>, we integrate with the UK’s leading payment providers—like <strong>Dojo, Teya, and Clover</strong>—to offer lightweight, robust card terminals that work right at the table.
+                                A modern portable card machine is no longer a luxury; it’s a necessity. At <Link href="https://www.posso.co.uk" className="text-primary font-bold hover:underline">Posso</Link>, we integrate with the UK’s leading payment providers—like <strong>Dojo, Teya, and Clover</strong>—to offer lightweight, robust card terminals that work right at the table.
                             </p>
 
                             <div className="my-16 relative rounded-3xl overflow-hidden aspect-video group">

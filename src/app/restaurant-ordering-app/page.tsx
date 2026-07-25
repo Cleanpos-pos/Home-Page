@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Restaurant Ordering App | Posso UK',
     description:
       'Restaurant Ordering App — dine-in QR, takeaway, delivery, branded, POS-integrated. Low commission ordering for restaurants.',
-    url: 'https://posso.co.uk/restaurant-ordering-app',
+    url: 'https://www.posso.co.uk/restaurant-ordering-app',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, iOS, Android',
     description:
       'Restaurant ordering app for dine-in QR ordering, takeaway, and delivery with full POS integration, branded experience, customer data ownership, and low commission.',
-    url: 'https://posso.co.uk/restaurant-ordering-app',
+    url: 'https://www.posso.co.uk/restaurant-ordering-app',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Online Ordering', item: 'https://posso.co.uk/online-ordering' },
-      { '@type': 'ListItem', position: 3, name: 'Restaurant Ordering App', item: 'https://posso.co.uk/restaurant-ordering-app' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Online Ordering', item: 'https://www.posso.co.uk/online-ordering' },
+      { '@type': 'ListItem', position: 3, name: 'Restaurant Ordering App', item: 'https://www.posso.co.uk/restaurant-ordering-app' },
     ],
   },
 ];

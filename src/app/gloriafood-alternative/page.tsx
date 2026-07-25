@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: 'GloriaFood Alternative UK | Posso — Free Migration Before the 2027 Shutdown',
     description:
       'Oracle is closing GloriaFood on 30 April 2027. Posso moves your menu, online ordering, and customers across with free setup — branded website & app, ePOS, and delivery integrations in one system.',
-    url: 'https://posso.co.uk/gloriafood-alternative',
+    url: 'https://www.posso.co.uk/gloriafood-alternative',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Posso — the UK GloriaFood alternative for restaurants and takeaways' }],
   },
@@ -127,7 +127,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Posso is a UK GloriaFood alternative for restaurants and takeaways: branded online ordering website and mobile app, complete ePOS system, kitchen display, self-order kiosks, and Just Eat, Uber Eats, and Deliveroo integrations, with free migration from GloriaFood before the April 2027 shutdown.',
-    url: 'https://posso.co.uk/gloriafood-alternative',
+    url: 'https://www.posso.co.uk/gloriafood-alternative',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -164,9 +164,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Online Ordering', item: 'https://posso.co.uk/online-ordering' },
-      { '@type': 'ListItem', position: 3, name: 'GloriaFood Alternative', item: 'https://posso.co.uk/gloriafood-alternative' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Online Ordering', item: 'https://www.posso.co.uk/online-ordering' },
+      { '@type': 'ListItem', position: 3, name: 'GloriaFood Alternative', item: 'https://www.posso.co.uk/gloriafood-alternative' },
     ],
   },
 ];

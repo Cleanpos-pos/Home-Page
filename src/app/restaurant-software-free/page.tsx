@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Restaurant Software Free | Posso UK',
     description:
       'Restaurant Software Free — what free POS really offers, limitations, hidden costs, and the clear upgrade path to a full system.',
-    url: 'https://posso.co.uk/restaurant-software-free',
+    url: 'https://www.posso.co.uk/restaurant-software-free',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Restaurant software with free trial and affordable upgrade path — table management, kitchen display, online ordering, inventory control, and full reporting for restaurants of all sizes.',
-    url: 'https://posso.co.uk/restaurant-software-free',
+    url: 'https://www.posso.co.uk/restaurant-software-free',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Restaurant Software Free', item: 'https://posso.co.uk/restaurant-software-free' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Restaurant Software Free', item: 'https://www.posso.co.uk/restaurant-software-free' },
     ],
   },
 ];

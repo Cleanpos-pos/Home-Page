@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Food Ordering Apps | Posso UK',
     description:
       'Food Ordering Apps — branded vs marketplace, build vs buy, commission rates compared. Guide for UK restaurants.',
-    url: 'https://posso.co.uk/food-ordering-apps',
+    url: 'https://www.posso.co.uk/food-ordering-apps',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, iOS, Android',
     description:
       'Branded food ordering app for restaurants with direct ordering, low commission, delivery management, and POS integration. Alternative to high-commission marketplaces.',
-    url: 'https://posso.co.uk/food-ordering-apps',
+    url: 'https://www.posso.co.uk/food-ordering-apps',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Online Ordering', item: 'https://posso.co.uk/online-ordering' },
-      { '@type': 'ListItem', position: 3, name: 'Food Ordering Apps', item: 'https://posso.co.uk/food-ordering-apps' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Online Ordering', item: 'https://www.posso.co.uk/online-ordering' },
+      { '@type': 'ListItem', position: 3, name: 'Food Ordering Apps', item: 'https://www.posso.co.uk/food-ordering-apps' },
     ],
   },
 ];

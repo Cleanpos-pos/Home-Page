@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: 'Dry Cleaning Pickup & Delivery App UK | XP Clean by Posso',
     description:
       'Manage pickups, deliveries, and customer orders from one app. Garment tracking, driver management, and automated SMS notifications.',
-    url: 'https://posso.co.uk/dry-cleaning-pickup-delivery-app',
+    url: 'https://www.posso.co.uk/dry-cleaning-pickup-delivery-app',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -61,8 +61,8 @@ const pageSchema = [
     operatingSystem: 'Web, iOS, Android',
     description:
       'Pickup and delivery management app for dry cleaning and laundry businesses. Customer booking portal, driver management, garment tracking, and automated notifications.',
-    url: 'https://posso.co.uk/dry-cleaning-pickup-delivery-app',
-    image: 'https://posso.co.uk/og-image.png',
+    url: 'https://www.posso.co.uk/dry-cleaning-pickup-delivery-app',
+    image: 'https://www.posso.co.uk/og-image.png',
     offers: {
       '@type': 'Offer',
       priceCurrency: 'GBP',
@@ -74,8 +74,8 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Dry Cleaning Pickup & Delivery App', item: 'https://posso.co.uk/dry-cleaning-pickup-delivery-app' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Dry Cleaning Pickup & Delivery App', item: 'https://www.posso.co.uk/dry-cleaning-pickup-delivery-app' },
     ],
   },
 ];

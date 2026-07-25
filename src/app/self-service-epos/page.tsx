@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Self Service ePOS | Posso UK',
     description:
       'Self Service ePOS with unattended ordering kiosks, QR code ordering, reduced staffing, and 24/7 operation.',
-    url: 'https://posso.co.uk/self-service-epos',
+    url: 'https://www.posso.co.uk/self-service-epos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Self service ePOS with unattended ordering kiosks, QR code ordering, reduced staffing requirements, and 24/7 operation for restaurants, retail, and hospitality.',
-    url: 'https://posso.co.uk/self-service-epos',
+    url: 'https://www.posso.co.uk/self-service-epos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '699',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Self Service ePOS', item: 'https://posso.co.uk/self-service-epos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Self Service ePOS', item: 'https://www.posso.co.uk/self-service-epos' },
     ],
   },
 ];

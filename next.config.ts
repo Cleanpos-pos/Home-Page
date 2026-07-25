@@ -72,6 +72,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Canonical host: force non-www → www so link equity consolidates on one host
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'posso.co.uk' }],
+        destination: 'https://www.posso.co.uk/:path*',
+        permanent: true,
+      },
       { source: '/home', destination: '/', permanent: true },
       { source: '/kiosks', destination: '/self-order-kiosks', permanent: true },
       { source: '/best-food-on-the-table-app-by-posso-ltd-uk', destination: '/restaurant-order-at-table-app', permanent: true },
@@ -214,6 +221,7 @@ const nextConfig: NextConfig = {
       { source: '/best-branded-self-serve-coffee-cart-by-posso-ltd-uk', destination: '/branded-self-serve-coffee-cart', permanent: true },
       { source: '/best-facebook-food-ordering-system-by-posso-ltd-uk', destination: '/facebook-food-ordering-system', permanent: true },
       { source: '/best-takeaway-software-uk-by-posso-ltd-uk', destination: '/epos-software-for-takeaway', permanent: true },
+      { source: '/best-restaurant-epos-uk-by-posso-ltd-uk', destination: '/best-restaurant-epos-system-uk', permanent: true },
       { source: '/epos-system-for-takeaways', destination: '/epos-systems-for-takeaways', permanent: true },
       { source: '/restaurant-epos-system-3', destination: '/pos', permanent: true },
     ];

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'POS Webshop | Posso UK',
     description:
       'POS Webshop with integrated online store, real-time product sync, and unified inventory. Sell in-store and online from one system.',
-    url: 'https://posso.co.uk/pos-webshop',
+    url: 'https://www.posso.co.uk/pos-webshop',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'POS system with integrated webshop for selling in-store and online. Real-time product sync, unified inventory management, combined sales reporting, and online payment processing.',
-    url: 'https://posso.co.uk/pos-webshop',
+    url: 'https://www.posso.co.uk/pos-webshop',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'POS Webshop', item: 'https://posso.co.uk/pos-webshop' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'POS Webshop', item: 'https://www.posso.co.uk/pos-webshop' },
     ],
   },
 ];

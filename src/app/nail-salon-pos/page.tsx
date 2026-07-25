@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Nail Salon POS | Posso UK',
     description:
       'Nail Salon POS with appointments, treatment tracking, product retail, staff scheduling, and client records for nail salons.',
-    url: 'https://posso.co.uk/nail-salon-pos',
+    url: 'https://www.posso.co.uk/nail-salon-pos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'POS system for nail salons with appointment booking, treatment tracking and timing, retail product sales, staff scheduling and commission, and client record management.',
-    url: 'https://posso.co.uk/nail-salon-pos',
+    url: 'https://www.posso.co.uk/nail-salon-pos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Nail Salon POS', item: 'https://posso.co.uk/nail-salon-pos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Nail Salon POS', item: 'https://www.posso.co.uk/nail-salon-pos' },
     ],
   },
 ];

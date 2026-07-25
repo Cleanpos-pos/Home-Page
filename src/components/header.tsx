@@ -10,7 +10,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import {
-  DownloadCloud,
+  LifeBuoy,
   MonitorPlay,
   CreditCard,
   ShoppingCart,
@@ -96,7 +96,7 @@ const retailLinks = [
 const companyLinks = [
   { href: '/finance', icon: <Wallet className="mr-2 h-4 w-4" />, label: 'Finance' },
   { href: '/blog', icon: <Newspaper className="mr-2 h-4 w-4" />, label: 'Blog' },
-  { href: 'https://download.anydesk.com/AnyDesk.exe?_ga=2.228450974.22024143.1581947022-1619378576.1575561389', icon: <DownloadCloud className="mr-2 h-4 w-4" />, label: 'Support', isExternal: true },
+  { href: '/support', icon: <LifeBuoy className="mr-2 h-4 w-4" />, label: 'Support' },
 ]
 
 export function Header() {
@@ -152,27 +152,13 @@ export function Header() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ))}
-            {companyLinks.map(({ href, icon, label, isExternal }) => (
-              isExternal ? (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button variant="outline" size="sm">
-                    {icon}
-                    {label}
-                  </Button>
-                </a>
-              ) : (
-                <Link href={href} key={label}>
-                  <Button variant="outline" size="sm">
-                    {icon}
-                    {label}
-                  </Button>
-                </Link>
-              )
+            {companyLinks.map(({ href, icon, label }) => (
+              <Link href={href} key={label}>
+                <Button variant="outline" size="sm">
+                  {icon}
+                  {label}
+                </Button>
+              </Link>
             ))}
             <Button size="sm" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-500/20" asChild>
               <Link href="/tablemaestro">
@@ -217,28 +203,13 @@ export function Header() {
                       </Button>
                     </Link>
                   ))}
-                  {companyLinks.map(({ href, icon, label, isExternal }) => (
-                    isExternal ? (
-                      <a
-                        key={label}
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setIsSheetOpen(false)}
-                      >
-                        <Button variant="outline" className="w-full justify-start">
-                          {icon}
-                          {label}
-                        </Button>
-                      </a>
-                    ) : (
-                      <Link href={href} key={label} onClick={() => setIsSheetOpen(false)}>
-                        <Button variant="outline" className="w-full justify-start">
-                          {icon}
-                          {label}
-                        </Button>
-                      </Link>
-                    )
+                  {companyLinks.map(({ href, icon, label }) => (
+                    <Link href={href} key={label} onClick={() => setIsSheetOpen(false)}>
+                      <Button variant="outline" className="w-full justify-start">
+                        {icon}
+                        {label}
+                      </Button>
+                    </Link>
                   ))}
                   <Link href="/tablemaestro" onClick={() => setIsSheetOpen(false)}>
                     <Button className="w-full justify-start bg-gradient-to-r from-blue-600 to-indigo-600 text-white">

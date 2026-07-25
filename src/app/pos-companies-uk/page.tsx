@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'POS Companies UK | Posso UK',
     description:
       'POS Companies UK — compare the leading UK POS providers. What to look for, hidden costs to avoid, and why Posso offers the best value.',
-    url: 'https://posso.co.uk/pos-companies-uk',
+    url: 'https://www.posso.co.uk/pos-companies-uk',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'UK POS company providing complete point-of-sale systems for retail, hospitality, and food service businesses with transparent pricing, free installation, and UK-based support.',
-    url: 'https://posso.co.uk/pos-companies-uk',
+    url: 'https://www.posso.co.uk/pos-companies-uk',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'POS Companies UK', item: 'https://posso.co.uk/pos-companies-uk' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'POS Companies UK', item: 'https://www.posso.co.uk/pos-companies-uk' },
     ],
   },
 ];

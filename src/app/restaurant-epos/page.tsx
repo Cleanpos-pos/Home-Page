@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Restaurant ePOS System | Posso UK',
     description:
       'Full dine-in restaurant ePOS with table management, course firing, split bills, and pay-at-table.',
-    url: 'https://posso.co.uk/restaurant-epos',
+    url: 'https://www.posso.co.uk/restaurant-epos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Restaurant ePOS system with table management, visual floor plan, course firing, split bills, waiter pad app, tab management, and pay-at-table functionality.',
-    url: 'https://posso.co.uk/restaurant-epos',
+    url: 'https://www.posso.co.uk/restaurant-epos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -77,9 +77,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Restaurant ePOS', item: 'https://posso.co.uk/restaurant-epos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Restaurant ePOS', item: 'https://www.posso.co.uk/restaurant-epos' },
     ],
   },
 ];
@@ -257,6 +257,10 @@ export default function RestaurantEposPage() {
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
                   <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                </Link>
+                <Link href="/best-restaurant-epos-system-uk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Best Restaurant EPOS Systems UK</p>
+                  <p className="text-slate-400 text-sm mt-1">2026 buyer&apos;s guide &amp; comparison</p>
                 </Link>
               </div>
             </div>

@@ -43,7 +43,7 @@ const schema = {
         "priceCurrency": "GBP",
         "availability": "https://schema.org/InStock"
     },
-    "url": "https://posso.co.uk/best-epos-system-for-indian-takeaway-by-posso-ltd-uk"
+    "url": "https://www.posso.co.uk/best-epos-system-for-indian-takeaway-by-posso-ltd-uk"
 };
 
 export const metadata: Metadata = {

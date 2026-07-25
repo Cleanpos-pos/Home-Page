@@ -106,7 +106,7 @@ export default function PosSolutionsBlogPage() {
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
                                 <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-white">
-                                    <Link href="https://posso.co.uk">Visit POSSO.UK</Link>
+                                    <Link href="https://www.posso.co.uk">Visit POSSO.UK</Link>
                                 </Button>
                                 <Button size="lg" variant="outline" asChild>
                                     <Link href="/contact">Get a Free Demo</Link>
@@ -181,7 +181,7 @@ export default function PosSolutionsBlogPage() {
                                 <Link href="/contact">Inquire Now</Link>
                             </Button>
                             <Button size="lg" variant="outline" asChild className="px-10 h-14 text-lg">
-                                <Link href="https://posso.co.uk">Visit POSSO.UK</Link>
+                                <Link href="https://www.posso.co.uk">Visit POSSO.UK</Link>
                             </Button>
                         </div>
                     </div>

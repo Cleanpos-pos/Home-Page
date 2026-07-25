@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Climbing Gym Booking & POS System UK | Posso',
     description: 'Online booking, digital waivers, memberships, shoe hire and café EPOS for UK climbing and bouldering gyms — all in one system.',
-    url: 'https://posso.co.uk/solutions/rock-climbing-gyms',
+    url: 'https://www.posso.co.uk/solutions/rock-climbing-gyms',
     type: 'website',
     images: [
       {

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Takeaway ePOS | Posso UK',
     description:
       'Fast takeaway ePOS with quick order processing, thermal printing, cash management, and online ordering website.',
-    url: 'https://posso.co.uk/takeaway-epos',
+    url: 'https://www.posso.co.uk/takeaway-epos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Takeaway ePOS system focused on speed and efficiency with fast order processing, thermal printing, cash management, shift reports, caller ID, and integrated online ordering website.',
-    url: 'https://posso.co.uk/takeaway-epos',
+    url: 'https://www.posso.co.uk/takeaway-epos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -77,9 +77,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Takeaway ePOS', item: 'https://posso.co.uk/takeaway-epos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Takeaway ePOS', item: 'https://www.posso.co.uk/takeaway-epos' },
     ],
   },
 ];

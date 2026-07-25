@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Cheap ePOS Software',
     description:
       'Cheap ePOS Software with no hidden fees, full features, cloud reporting, integrated payments, and free training. From £499 + VAT.',
-    url: 'https://posso.co.uk/cheap-epos-software',
+    url: 'https://www.posso.co.uk/cheap-epos-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Affordable ePOS software with full feature set including cloud reporting, integrated card payments, inventory management, staff management, and online ordering — all from £499 + VAT with no hidden fees.',
-    url: 'https://posso.co.uk/cheap-epos-software',
+    url: 'https://www.posso.co.uk/cheap-epos-software',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Cheap ePOS Software', item: 'https://posso.co.uk/cheap-epos-software' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Cheap ePOS Software', item: 'https://www.posso.co.uk/cheap-epos-software' },
     ],
   },
 ];

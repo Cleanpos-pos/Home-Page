@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Pub ePOS System | Posso UK',
     description:
       'Pub ePOS System with tab management, cellar stock, real ale management, and pub-specific reporting. POS from £499 + VAT.',
-    url: 'https://posso.co.uk/pub-epos-system',
+    url: 'https://www.posso.co.uk/pub-epos-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Pub ePOS system with tab management, cellar stock tracking, real ale and guest beer management, drink modifiers, multi-till sync, and pub-specific reporting for wet-led and food-led pubs.',
-    url: 'https://posso.co.uk/pub-epos-system',
+    url: 'https://www.posso.co.uk/pub-epos-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Pub ePOS System', item: 'https://posso.co.uk/pub-epos-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Pub ePOS System', item: 'https://www.posso.co.uk/pub-epos-system' },
     ],
   },
 ];

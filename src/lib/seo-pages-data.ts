@@ -135,7 +135,7 @@ export const seoPages: SeoPageData[] = [
       { q: "Do you provide training?", a: "Yes. Every installation includes on-site or remote training for your team, plus 24/7 support." },
     ],
     ctaHeading: "Ready for the Best POS Software in the UK?",
-    ctaText: "Book a free demo and see why hundreds of UK restaurants trust Posso for their point of sale.",
+    ctaText: "Book a free demo and see why 500+ UK restaurants trust Posso for their point of sale.",
     relatedSlugs: ["best-free-pos-system-by-posso-ltd-uk", "best-touch-screen-pos-software-by-posso-ltd-uk", "best-cloud-epos-software-by-posso-ltd-uk"],
   },
   {
@@ -243,7 +243,6 @@ const remainingSlugs = [
   "best-order-counter-pos-system-by-posso-ltd-uk",
   "best-vat-on-dry-cleaning-by-posso-ltd-uk",
   "best-epos-now-contact-uk-by-posso-ltd-uk",
-  "best-restaurant-epos-uk-by-posso-ltd-uk",
   "best-free-pos-system-by-posso-ltd-uk",
   "best-demo-restaurant-sunderland-by-posso-ltd-uk",
   "best-self-ordering-system-by-posso-ltd-uk",
@@ -365,13 +364,26 @@ const remainingSlugs = [
   "best-best-pizza-pos-system-2020-by-posso-ltd-uk",
 ];
 
+// Acronyms/brand casing for generated titles ("epos" → "ePOS", not "Epos")
+const TITLE_CASING: Record<string, string> = {
+  epos: 'ePOS',
+  pos: 'POS',
+  pdq: 'PDQ',
+  diy: 'DIY',
+  vat: 'VAT',
+  coa: 'COA',
+  eposnow: 'Epos Now',
+};
+
 function slugToTitle(slug: string): string {
   return slug
     .replace(/-by-posso-ltd-uk$/, '')
     .replace(/^best-best-/, 'best-')
     .replace(/^best-/, '')
+    // The title template appends "UK" itself — a trailing "uk" here would render "Uk UK"
+    .replace(/-uk$/, '')
     .split('-')
-    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+    .map(w => TITLE_CASING[w] ?? w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ');
 }
 
@@ -411,7 +423,7 @@ function generateAutoPage(slug: string): SeoPageData {
     sections: [
       {
         heading: `Why Choose Posso for ${cleanTitle}`,
-        content: `Posso has been trusted by hundreds of UK businesses for ${cleanTitle.toLowerCase()} solutions. We combine cutting-edge technology with hands-on support, ensuring your system works perfectly from day one. Our platform is built specifically for UK hospitality and retail — not adapted from generic software. That means features designed around how your business actually works.`
+        content: `Posso has been trusted by 500+ UK businesses for ${cleanTitle.toLowerCase()} solutions. We combine cutting-edge technology with hands-on support, ensuring your system works perfectly from day one. Our platform is built specifically for UK hospitality and retail — not adapted from generic software. That means features designed around how your business actually works.`
       },
       {
         heading: "All-in-One Platform",

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Self Order Kiosk Fast Food | Posso UK',
     description:
       'Self Order Kiosk Fast Food with speed ordering, upselling, combo meals, and queue reduction. Kiosks from £699 + VAT.',
-    url: 'https://posso.co.uk/self-order-kiosk-fast-food',
+    url: 'https://www.posso.co.uk/self-order-kiosk-fast-food',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'Self order kiosk for fast food restaurants with speed-optimised ordering, intelligent upselling, combo meal builder, queue reduction technology, and direct kitchen display integration.',
-    url: 'https://posso.co.uk/self-order-kiosk-fast-food',
+    url: 'https://www.posso.co.uk/self-order-kiosk-fast-food',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '699',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Kiosks', item: 'https://posso.co.uk/kiosks' },
-      { '@type': 'ListItem', position: 3, name: 'Self Order Kiosk Fast Food', item: 'https://posso.co.uk/self-order-kiosk-fast-food' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Kiosks', item: 'https://www.posso.co.uk/kiosks' },
+      { '@type': 'ListItem', position: 3, name: 'Self Order Kiosk Fast Food', item: 'https://www.posso.co.uk/self-order-kiosk-fast-food' },
     ],
   },
 ];

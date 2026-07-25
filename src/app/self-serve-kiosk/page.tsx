@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Self Serve Kiosk | Posso UK',
     description:
       'Self Serve Kiosk for unattended 24/7 ordering. Card-only payment, attract screen, and vending-style automation. No staff needed.',
-    url: 'https://posso.co.uk/self-serve-kiosk',
+    url: 'https://www.posso.co.uk/self-serve-kiosk',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Self serve kiosk software for unattended ordering with 24/7 operation, card-only payment processing, attract screen loop, and vending-style automation for food and retail businesses.',
-    url: 'https://posso.co.uk/self-serve-kiosk',
+    url: 'https://www.posso.co.uk/self-serve-kiosk',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '699',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Self Serve Kiosk', item: 'https://posso.co.uk/self-serve-kiosk' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Self Serve Kiosk', item: 'https://www.posso.co.uk/self-serve-kiosk' },
     ],
   },
 ];

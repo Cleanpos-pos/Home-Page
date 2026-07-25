@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Family Entertainment Centre EPOS, Ticketing & Booking | Posso',
     description: 'Multi-attraction ticketing, RFID wristbands, smart lockers, café EPOS and cashless payments in one platform built for UK family entertainment centres.',
-    url: 'https://posso.co.uk/solutions/family-entertainment-centers',
+    url: 'https://www.posso.co.uk/solutions/family-entertainment-centers',
     type: 'website',
     images: [
       {

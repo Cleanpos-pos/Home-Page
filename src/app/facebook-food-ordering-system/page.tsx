@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Facebook Food Ordering System | Posso UK',
     description:
       'Facebook Food Ordering System — accept orders via social media, link to online ordering, and track social commerce at low commission.',
-    url: 'https://posso.co.uk/facebook-food-ordering-system',
+    url: 'https://www.posso.co.uk/facebook-food-ordering-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Facebook food ordering system that links your social media pages to your online ordering platform, tracks social commerce sales, processes orders at low commission, and integrates with your POS.',
-    url: 'https://posso.co.uk/facebook-food-ordering-system',
+    url: 'https://www.posso.co.uk/facebook-food-ordering-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Facebook Food Ordering System', item: 'https://posso.co.uk/facebook-food-ordering-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Facebook Food Ordering System', item: 'https://www.posso.co.uk/facebook-food-ordering-system' },
     ],
   },
 ];

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Till System Software | Posso UK',
     description:
       'Till System Software with cloud management, touchscreen interface, real-time reporting, and cash management. Modern till software for UK businesses.',
-    url: 'https://posso.co.uk/till-system-software',
+    url: 'https://www.posso.co.uk/till-system-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Modern till system software with cloud-based management, touchscreen interface, real-time sales reporting, cash management, and secure staff login for UK retail and hospitality businesses.',
-    url: 'https://posso.co.uk/till-system-software',
+    url: 'https://www.posso.co.uk/till-system-software',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Till System Software', item: 'https://posso.co.uk/till-system-software' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Till System Software', item: 'https://www.posso.co.uk/till-system-software' },
     ],
   },
 ];

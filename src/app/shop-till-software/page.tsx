@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Shop Till Software | Posso UK',
     description:
       'Shop Till Software for retail and hospitality — stock control, barcode scanning, reporting, and multi-location support. From £499 + VAT.',
-    url: 'https://posso.co.uk/shop-till-software',
+    url: 'https://www.posso.co.uk/shop-till-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Till software for retail and hospitality shops with stock control, barcode scanning, real-time sales reporting, multi-location management, and cloud-based dashboard.',
-    url: 'https://posso.co.uk/shop-till-software',
+    url: 'https://www.posso.co.uk/shop-till-software',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Shop Till Software', item: 'https://posso.co.uk/shop-till-software' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Shop Till Software', item: 'https://www.posso.co.uk/shop-till-software' },
     ],
   },
 ];

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Mobile Ordering System for Restaurants | Posso UK',
     description:
       'QR code table ordering, mobile-responsive online ordering, waiter pad app, and mobile POS for pop-ups. Over 70% of orders come from mobile devices.',
-    url: 'https://posso.co.uk/mobile-ordering-system',
+    url: 'https://www.posso.co.uk/mobile-ordering-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, iOS, Android',
     description:
       'Mobile ordering system for restaurants with QR code table ordering, mobile-responsive online ordering website, waiter pad app, order tracking, and mobile POS for pop-ups and events.',
-    url: 'https://posso.co.uk/mobile-ordering-system',
+    url: 'https://www.posso.co.uk/mobile-ordering-system',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -77,9 +77,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Mobile Ordering System', item: 'https://posso.co.uk/mobile-ordering-system' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Mobile Ordering System', item: 'https://www.posso.co.uk/mobile-ordering-system' },
     ],
   },
 ];

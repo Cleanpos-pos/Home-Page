@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Zoo Ticketing System & Aquarium Admission Software UK | Posso',
     description: 'Online and on-site ticketing, timed entry, annual passes, access control and multi-outlet F&B EPOS for UK zoos and aquariums — all on one platform.',
-    url: 'https://posso.co.uk/solutions/zoos-aquariums',
+    url: 'https://www.posso.co.uk/solutions/zoos-aquariums',
     type: 'website',
     images: [
       {

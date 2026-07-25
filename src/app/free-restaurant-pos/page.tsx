@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Free Restaurant POS | Posso UK',
     description:
       'Free Restaurant POS — hidden costs exposed, what is actually free, and how to get the best value. Honest comparison guide.',
-    url: 'https://posso.co.uk/free-restaurant-pos',
+    url: 'https://www.posso.co.uk/free-restaurant-pos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Best-value restaurant POS system with transparent pricing, no hidden fees, and full features included. Honest alternative to "free" POS systems that charge hidden commission and transaction fees.',
-    url: 'https://posso.co.uk/free-restaurant-pos',
+    url: 'https://www.posso.co.uk/free-restaurant-pos',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Free Restaurant POS', item: 'https://posso.co.uk/free-restaurant-pos' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Free Restaurant POS', item: 'https://www.posso.co.uk/free-restaurant-pos' },
     ],
   },
 ];

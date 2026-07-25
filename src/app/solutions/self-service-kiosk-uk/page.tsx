@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Self-Service Kiosk UK | UK Manufacturers & Software for Kiosks',
         description: 'POSSO is a leading UK provider of self-service kiosk hardware and software for restaurants, retail and hospitality. Nationwide installation, support and finance.',
-        url: 'https://posso.co.uk/solutions/self-service-kiosk-uk',
+        url: 'https://www.posso.co.uk/solutions/self-service-kiosk-uk',
         type: 'website',
         images: [
             {
@@ -87,8 +87,8 @@ export default function KioskUkPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://posso.co.uk" },
-                { "@type": "ListItem", "position": 2, "name": "Self-Service Kiosks UK", "item": "https://posso.co.uk/solutions/self-service-kiosk-uk" }
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.posso.co.uk" },
+                { "@type": "ListItem", "position": 2, "name": "Self-Service Kiosks UK", "item": "https://www.posso.co.uk/solutions/self-service-kiosk-uk" }
             ]
         }
     ];

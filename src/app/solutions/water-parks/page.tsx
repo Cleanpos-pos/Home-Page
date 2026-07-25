@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Water Park POS & RFID Wristband Ticketing UK | Posso',
     description: 'Waterproof RFID wristbands for cashless spend, keyless lockers, online ticketing and capacity management for UK water parks.',
-    url: 'https://posso.co.uk/solutions/water-parks',
+    url: 'https://www.posso.co.uk/solutions/water-parks',
     type: 'website',
     images: [
       {

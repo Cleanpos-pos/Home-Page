@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'ePOS System for Indian Takeaway | Posso UK',
     description:
       'Purpose-built ePOS for Indian takeaways with caller ID, delivery zones, multi-language tickets, and aggregator integration.',
-    url: 'https://posso.co.uk/epos-system-for-indian-takeaway',
+    url: 'https://www.posso.co.uk/epos-system-for-indian-takeaway',
     type: 'website',
     images: [
       {
@@ -52,7 +52,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'ePOS system designed for Indian takeaways with caller ID, delivery zone management, multi-language kitchen tickets, spice level modifiers, meal deal combos, and delivery aggregator integration.',
-    url: 'https://posso.co.uk/epos-system-for-indian-takeaway',
+    url: 'https://www.posso.co.uk/epos-system-for-indian-takeaway',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -86,9 +86,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Indian Takeaway ePOS', item: 'https://posso.co.uk/epos-system-for-indian-takeaway' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Indian Takeaway ePOS', item: 'https://www.posso.co.uk/epos-system-for-indian-takeaway' },
     ],
   },
 ];

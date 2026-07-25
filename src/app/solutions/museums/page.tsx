@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Museum Ticketing System & Admission Software UK | Posso',
     description: 'Online and on-site museum ticketing, timed entry, memberships, donations and gift shop EPOS — one platform built for UK museums and galleries.',
-    url: 'https://posso.co.uk/solutions/museums',
+    url: 'https://www.posso.co.uk/solutions/museums',
     type: 'website',
     images: [
       {

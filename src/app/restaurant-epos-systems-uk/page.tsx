@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Restaurant ePOS Systems UK | Posso',
     description:
       'UK-based restaurant ePOS with British support, GBP pricing, VAT reporting, and HMRC compliance. Serving restaurants across England, Scotland, and Wales.',
-    url: 'https://posso.co.uk/restaurant-epos-systems-uk',
+    url: 'https://www.posso.co.uk/restaurant-epos-systems-uk',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows',
     description:
       'UK restaurant ePOS system with British-based support, GBP pricing, VAT reporting, HMRC compliance, and nationwide coverage across England, Scotland, and Wales.',
-    url: 'https://posso.co.uk/restaurant-epos-systems-uk',
+    url: 'https://www.posso.co.uk/restaurant-epos-systems-uk',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -77,9 +77,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Restaurant ePOS Systems UK', item: 'https://posso.co.uk/restaurant-epos-systems-uk' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Restaurant ePOS Systems UK', item: 'https://www.posso.co.uk/restaurant-epos-systems-uk' },
     ],
   },
 ];
@@ -268,6 +268,10 @@ export default function RestaurantEposUkPage() {
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
                   <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                </Link>
+                <Link href="/best-restaurant-epos-system-uk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Compare Restaurant EPOS Systems</p>
+                  <p className="text-slate-400 text-sm mt-1">2026 buyer&apos;s guide</p>
                 </Link>
               </div>
             </div>

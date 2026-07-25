@@ -45,7 +45,7 @@ export default function HybridEposBlog() {
                                 </p>
                                 <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
                                     <Button size="lg" className="rounded-full h-14 px-10 text-lg shadow-xl shadow-primary/20" asChild>
-                                        <Link href="https://posso.co.uk">Explore Hybrid Tech</Link>
+                                        <Link href="https://www.posso.co.uk">Explore Hybrid Tech</Link>
                                     </Button>
                                     <Button size="lg" variant="outline" className="rounded-full h-14 px-10 text-lg border-white/10 hover:bg-white/5" asChild>
                                         <Link href="/contact">Get a Quote</Link>
@@ -89,7 +89,7 @@ export default function HybridEposBlog() {
                                 Many modern EPOS systems are &quot;Pure Cloud.&quot; This means they rely 100% on a constant internet connection to function. If your router restarts or your broadband drops, your till becomes a paperweight.
                             </p>
                             <p className="text-xl text-slate-300 leading-relaxed">
-                                At <Link href="https://posso.co.uk" className="text-primary font-extrabold hover:underline">Posso</Link>, we build EPOS systems for takeaways that are <strong>&quot;Hybrid.&quot;</strong> This means they have a local database installed on your hardware. If your internet cuts out, your local system keeps running, your printers keep printing, and your kitchen keeps cooking.
+                                At <Link href="https://www.posso.co.uk" className="text-primary font-extrabold hover:underline">Posso</Link>, we build EPOS systems for takeaways that are <strong>&quot;Hybrid.&quot;</strong> This means they have a local database installed on your hardware. If your internet cuts out, your local system keeps running, your printers keep printing, and your kitchen keeps cooking.
                             </p>
 
                             <div className="my-16 p-12 rounded-[3.5rem] bg-slate-900 border border-white/5 relative overflow-hidden group">
@@ -151,7 +151,7 @@ export default function HybridEposBlog() {
                 <div className="py-40 text-center">
                     <h2 className="text-5xl font-black mb-10 tracking-tighter">NEVER STOP TAKING ORDERS</h2>
                     <Button size="lg" className="rounded-full h-20 px-16 text-2xl shadow-2xl shadow-primary/40 bg-primary hover:bg-primary/90 text-white" asChild>
-                        <Link href="https://posso.co.uk">Get Your Hybrid System</Link>
+                        <Link href="https://www.posso.co.uk">Get Your Hybrid System</Link>
                     </Button>
                 </div>
             </main>

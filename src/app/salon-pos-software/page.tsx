@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Salon POS Software | Posso UK',
     description:
       'Salon POS Software with appointment booking, staff scheduling, product retail, and client records. POS from £499 + VAT.',
-    url: 'https://posso.co.uk/salon-pos-software',
+    url: 'https://www.posso.co.uk/salon-pos-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const pageSchema = [
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
       'Salon POS software with appointment booking, staff scheduling, product retail management, client records with service history, and integrated card payments for hair salons, beauty salons, and spas.',
-    url: 'https://posso.co.uk/salon-pos-software',
+    url: 'https://www.posso.co.uk/salon-pos-software',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '499',
@@ -73,9 +73,9 @@ const pageSchema = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://posso.co.uk/pos' },
-      { '@type': 'ListItem', position: 3, name: 'Salon POS Software', item: 'https://posso.co.uk/salon-pos-software' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'ePOS Systems', item: 'https://www.posso.co.uk/pos' },
+      { '@type': 'ListItem', position: 3, name: 'Salon POS Software', item: 'https://www.posso.co.uk/salon-pos-software' },
     ],
   },
 ];
