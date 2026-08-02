@@ -59,11 +59,11 @@ const downloads: DownloadItem[] = [
     title: 'Posso One Desktop (Windows)',
     description:
       'Full Posso One ePOS desktop application for Windows. Runs your touchscreen till, kitchen display, kiosk, and online ordering management. Includes hardware access for USB printers, cash drawers, and Teya card terminals.',
-    fileName: 'posso-one-setup-1.0.44.exe',
-    fileUrl: '/downloads/posso-one-setup-1.0.44.exe',
+    fileName: 'posso-one-setup-1.0.66.exe',
+    fileUrl: '/downloads/posso-one-setup-1.0.66.exe',
     fileSize: '81 MB',
     platform: 'Windows 10/11',
-    badge: 'v1.0.44 — Latest',
+    badge: 'v1.0.66 — Latest',
   },
   {
     icon: Smartphone,

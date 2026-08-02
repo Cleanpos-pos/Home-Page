@@ -117,6 +117,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/mobile-ordering-platform-coffee-shops',
     '/cafe-online-ordering-system',
     '/text-ordering-system',
+    '/ai-phone-ordering',
     '/pos-signage',
     '/food-and-drink-digital-signage',
     '/epos-credit-card-application',

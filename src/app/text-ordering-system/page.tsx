@@ -220,9 +220,9 @@ export default function TextOrderingSystemPage() {
                   <p className="font-semibold text-white">Restaurant POS</p>
                   <p className="text-slate-400 text-sm mt-1">Full restaurant system</p>
                 </Link>
-                <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">ePOS Systems</p>
-                  <p className="text-slate-400 text-sm mt-1">All POS solutions</p>
+                <Link href="/ai-phone-ordering" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">AI Phone Ordering</p>
+                  <p className="text-slate-400 text-sm mt-1">24/7 AI answers &amp; orders</p>
                 </Link>
               </div>
             </div>
