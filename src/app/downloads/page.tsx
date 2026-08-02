@@ -74,7 +74,7 @@ const downloads: DownloadItem[] = [
     fileUrl: '/downloads/posso-one-android.apk',
     fileSize: '3.5 MB',
     platform: 'Android 6.0+',
-    badge: 'v2.0 — Latest',
+    badge: 'v2.1 — Latest',
   },
   {
     icon: ClipboardList,
