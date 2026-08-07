@@ -4,7 +4,7 @@ import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { Contact } from '@/components/sections/contact';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Download, Smartphone, FileText, Printer, Phone, ArrowRight, ClipboardList, Monitor } from 'lucide-react';
+import { Download, Smartphone, FileText, Printer, Phone, ArrowRight, ClipboardList, Monitor, Bike } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -86,6 +86,17 @@ const downloads: DownloadItem[] = [
     fileSize: '3.0 MB',
     platform: 'Android 5.1+',
     badge: 'Latest',
+  },
+  {
+    icon: Bike,
+    title: 'Posso Dispatch Driver (Android)',
+    description:
+      'Delivery driver app for restaurants running Posso Dispatch. Drivers go on duty, receive delivery offers with live earnings, accept in one tap, and hand off to Google Maps for navigation. Background GPS keeps the restaurant and the customer’s live tracking page up to date. Sideload install — no Play Store account required.',
+    fileName: 'posso-dispatch-driver-1.0.1.apk',
+    fileUrl: '/downloads/posso-dispatch-driver-1.0.1.apk',
+    fileSize: '30 MB',
+    platform: 'Android 7.0+',
+    badge: 'v1.0.1 — Latest',
   },
   {
     icon: Printer,
