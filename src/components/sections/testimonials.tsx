@@ -100,9 +100,12 @@ export function Testimonials() {
             );
           })}
         </CarouselContent>
+        {/* Sit inside the carousel until there is room beside it. The -60px
+            offset put the arrows past the viewport edge below xl, which made
+            the whole homepage scroll sideways. */}
         <div className="hidden md:block">
-          <CarouselPrevious className="left-[-60px] border-slate-700 bg-slate-900/50 hover:bg-primary hover:text-white" />
-          <CarouselNext className="right-[-60px] border-slate-700 bg-slate-900/50 hover:bg-primary hover:text-white" />
+          <CarouselPrevious className="left-2 xl:left-[-60px] border-slate-700 bg-slate-900/50 hover:bg-primary hover:text-white" />
+          <CarouselNext className="right-2 xl:right-[-60px] border-slate-700 bg-slate-900/50 hover:bg-primary hover:text-white" />
         </div>
       </Carousel>
     </section>

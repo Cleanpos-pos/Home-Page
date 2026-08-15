@@ -134,7 +134,10 @@ export function Header() {
               POSSO
             </span>
           </Link>
-          <div className="hidden md:flex items-center gap-2">
+          {/* Needs ~1130px (logo 112 + dropdowns 441 + company 311 + CTA 147 + gaps).
+              At md/lg it overflowed the viewport and every page scrolled sideways,
+              so the full bar only appears from xl; below that the sheet covers it. */}
+          <div className="hidden xl:flex items-center gap-2">
             {navLinks.map((navLink) => (
               <DropdownMenu key={navLink.label}>
                 <DropdownMenuTrigger asChild>
@@ -170,8 +173,9 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        <div className="md:hidden">
+        {/* Mobile / tablet navigation — carries the same links as the bar above,
+            plus the company links and the TableMaestro CTA, so nothing is lost. */}
+        <div className="xl:hidden">
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon">
