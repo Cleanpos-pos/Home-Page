@@ -243,6 +243,11 @@ export default function IndianTakeawayEposPage() {
                   <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
                 </Link>
               </div>
+              <p className="text-slate-400 text-center mt-6">
+                Still comparing suppliers? Our{' '}
+                <Link href="/pos-for-indian-takeaway" className="text-primary hover:underline">Indian takeaway POS buyer&apos;s guide</Link>{' '}
+                covers what to look for, what to test and what it should cost — whoever you buy from.
+              </p>
             </div>
           </div>
         </section>

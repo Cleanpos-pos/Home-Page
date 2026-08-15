@@ -221,6 +221,11 @@ export default function AiPhoneOrderingPage() {
                   You also get the full paper trail: <strong className="text-white">live call transcripts, recordings, and an order log</strong> in your Posso dashboard, so you can hear exactly how your AI greets customers and fine-tune what it says. Phone revenue shows up in your reports next to every other channel — one system, one set of numbers.
                 </p>
                 <p>
+                  Late-night trade is where this bites hardest — for{' '}
+                  <Link href="/pos-for-kebab-shop" className="text-primary hover:underline">kebab shops taking phone orders at peak</Link>,{' '}
+                  the calls that go unanswered between eleven and three are the ones worth the most.
+                </p>
+                <p>
                   And because Posso is a <strong className="text-white">UK company with UK-based support</strong>, your AI speaks naturally to British customers — pounds and pence, postcodes, collection and delivery — and our team on <a href="tel:+448081753956" className="text-primary hover:underline">0808 175 3956</a> sets it up with you end to end.
                 </p>
               </div>

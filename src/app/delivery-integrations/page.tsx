@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer';
 import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { FAQSection } from '@/components/sections/faq-section';
 import { DeliveryIntegrationsLanding } from './delivery-integrations-landing';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -80,6 +81,22 @@ export default function DeliveryIntegrationsPage() {
       <main className="flex-1 pt-20">
         <BreadcrumbNav items={[{ label: 'Delivery Integrations' }]} />
         <DeliveryIntegrationsLanding />
+
+        <section className="py-12">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8 text-center">
+              <p className="text-lg text-slate-300 leading-relaxed">
+                Marketplace integration matters differently depending on what you sell. Our buyer&apos;s guides walk through it for{' '}
+                <Link href="/pos-for-fish-and-chip-shop" className="text-primary hover:underline">fish and chip shops</Link>,{' '}
+                <Link href="/pos-for-kebab-shop" className="text-primary hover:underline">kebab shops</Link>,{' '}
+                <Link href="/pos-for-pizza-shop" className="text-primary hover:underline">pizza shops</Link>,{' '}
+                <Link href="/pos-for-chinese-takeaway" className="text-primary hover:underline">Chinese takeaways</Link>{' '}
+                and <Link href="/pos-for-indian-takeaway" className="text-primary hover:underline">Indian takeaways</Link>. Marketplace orders land on the same{' '}
+                <Link href="/kitchen-display-system" className="text-primary hover:underline">kitchen display</Link> as everything else.
+              </p>
+            </div>
+          </div>
+        </section>
 
         <FAQSection title="Delivery Integrations — Frequently Asked Questions" faqs={[
           { question: 'Which delivery platforms does Posso integrate with?', answer: 'Posso integrates directly with Just Eat, Uber Eats, and Deliveroo. Orders from all three platforms flow straight into your POS and kitchen display alongside your dine-in and takeaway sales — so you manage every channel from one screen instead of separate tablets.' },

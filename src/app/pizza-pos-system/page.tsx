@@ -271,6 +271,11 @@ export default function PizzaPosPage() {
                   <p>
                     For busy Friday nights when you&apos;re taking 100+ orders, that speed difference adds up to <strong className="text-white">hours saved per week</strong>.
                   </p>
+                  <p>
+                    Still comparing systems? Our{' '}
+                    <Link href="/pos-for-pizza-shop" className="text-primary hover:underline">pizza POS buyer&apos;s guide</Link>{' '}
+                    covers what to look for, what to avoid, and what it should cost.
+                  </p>
                 </div>
               </div>
             </div>

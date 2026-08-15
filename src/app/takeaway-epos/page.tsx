@@ -224,6 +224,15 @@ export default function TakeawayEposPage() {
                   <p>
                     Combined with caller ID that pulls up previous orders instantly, and thermal printing that fires the moment an order is confirmed, Posso turns your takeaway into a well-oiled machine.
                   </p>
+                  <p>
+                    Running a specific type of takeaway? See our buyer&apos;s guides for{' '}
+                    <Link href="/pos-for-pizza-shop" className="text-primary hover:underline">pizza shops</Link>,{' '}
+                    <Link href="/pos-for-fish-and-chip-shop" className="text-primary hover:underline">fish and chip shops</Link>,{' '}
+                    <Link href="/pos-for-kebab-shop" className="text-primary hover:underline">kebab shops</Link>,{' '}
+                    <Link href="/pos-for-chinese-takeaway" className="text-primary hover:underline">Chinese takeaways</Link>{' '}
+                    and <Link href="/pos-for-indian-takeaway" className="text-primary hover:underline">Indian takeaways</Link> —
+                    or the <Link href="/kitchen-display-system" className="text-primary hover:underline">kitchen display system</Link> that sits behind all of them.
+                  </p>
                 </div>
               </div>
               <div className="relative">
