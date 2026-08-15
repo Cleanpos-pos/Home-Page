@@ -3,6 +3,19 @@ import { allSeoPages } from '@/lib/seo-pages-data';
 
 const URL = 'https://www.posso.co.uk';
 
+/**
+ * Escape free text destined for the video-sitemap extension.
+ *
+ * Next.js escapes the fields it owns (<loc>, <lastmod>, …) but passes
+ * `videos[].title` / `.description` through verbatim, so a bare "&" in a page
+ * H1 emits invalid XML and Search Console rejects the whole sitemap with
+ * "Parsing error". Only "&" and the angle brackets are illegal in element
+ * text, and "&" must be replaced first or it would re-escape the others.
+ */
+function xmlText(s: string): string {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
 
   // Core pages — highest priority
@@ -321,9 +334,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...(p.video
         ? {
             videos: [{
-              title: p.h1,
+              title: xmlText(p.h1),
               thumbnail_loc: `${URL}/videos/thumbs/${p.slug}.png`,
-              description: p.description,
+              description: xmlText(p.description),
               content_loc: `${URL}/videos/${p.slug}.mp4`,
               duration: p.video.durationSec,
               publication_date: `${p.video.uploadDate}T09:00:00+00:00`,
