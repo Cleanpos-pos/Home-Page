@@ -5,7 +5,7 @@ export function Footer() {
     return (
         <footer className="w-full py-12 mt-20 border-t border-slate-800" role="contentinfo">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
                     {/* Logo and About */}
                     <div className="flex flex-col gap-4">
                         <div className="flex items-center gap-2">
@@ -38,6 +38,19 @@ export function Footer() {
                             <li><Link href="/delivery-integrations" className="hover:text-primary transition-colors">Delivery Integrations</Link></li>
                             <li><Link href="/drink-order-app" className="hover:text-primary transition-colors">Table Ordering &amp; Waiter Pad</Link></li>
                             <li><Link href="/solutions/franchise-pos-systems" className="hover:text-primary transition-colors">Franchise Solutions</Link></li>
+                        </ul>
+                    </nav>
+
+                    {/* Buyer's Guides — the vendor-neutral guide layer */}
+                    <nav aria-label="POS buyer's guides">
+                        <h4 className="font-bold text-slate-50 mb-4">Buyer&apos;s Guides</h4>
+                        <ul className="space-y-2 text-sm text-slate-400">
+                            <li><Link href="/pos-for-pizza-shop" className="hover:text-primary transition-colors">Pizza Shop POS</Link></li>
+                            <li><Link href="/pos-for-fish-and-chip-shop" className="hover:text-primary transition-colors">Fish &amp; Chip Shop POS</Link></li>
+                            <li><Link href="/pos-for-kebab-shop" className="hover:text-primary transition-colors">Kebab Shop POS</Link></li>
+                            <li><Link href="/pos-for-chinese-takeaway" className="hover:text-primary transition-colors">Chinese Takeaway POS</Link></li>
+                            <li><Link href="/pos-for-indian-takeaway" className="hover:text-primary transition-colors">Indian Takeaway POS</Link></li>
+                            <li><Link href="/kitchen-display-system" className="hover:text-primary transition-colors">Kitchen Display System</Link></li>
                         </ul>
                     </nav>
 
