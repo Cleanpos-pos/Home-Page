@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer';
 import { CardMachineEnquiryForm } from '@/components/card-machine-enquiry-form';
 import type { Metadata } from 'next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Card Machine Enquiry',
@@ -17,6 +18,8 @@ export default function CardMachineEnquiryPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1 pt-20">
+        <PageBreadcrumb path="/credit-card-machines-enquiry" items={[{"label":"Card Machines","href":"/credit-card-machines"},{"label":"Enquiry"}]} />
+
         <section className="container mx-auto px-4 py-12 md:px-6 md:py-20">
             <div className="mx-auto max-w-4xl">
                 <div className="text-center">

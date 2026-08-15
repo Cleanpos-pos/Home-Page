@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
   title: 'The UK Self-Service Revolution: Kiosk Trends & Benefits',
@@ -17,6 +18,8 @@ export default function SelfServiceRevolutionPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1 pt-20">
+        <BlogBreadcrumb slug="self-service-revolution" title={"The UK Self-Service Revolution: Trends, Benefits & The Future of Kiosks"} />
+
         <div className="container mx-auto px-4 py-12 md:px-6 md:py-20">
           <div className="mx-auto max-w-3xl">
             <article className="prose prose-invert prose-lg mx-auto">

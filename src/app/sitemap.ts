@@ -69,6 +69,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/pizza-shop-pos',
     '/bar-ordering-app',
     '/pos-for-pizza-shop',
+    '/pos-for-fish-and-chip-shop',
+    '/pos-for-kebab-shop',
+    '/pos-for-chinese-takeaway',
+    '/pos-for-indian-takeaway',
+    '/kitchen-display-system',
     '/restaurant-till-system',
     '/shop-till-software',
     '/takeaway-app',
@@ -247,39 +252,68 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const lastModified = new Date().toISOString();
 
+  // `-by-posso-ltd-uk` aliases are kept out of the sitemap. Most of them canonicalise
+  // to a clean equivalent, so submitting them asks Google to crawl pages we have
+  // already told it not to index. The routes still render — this only affects discovery.
+  const isAlias = (path: string) => path.includes('-by-posso-ltd-uk');
+
+  // Routes that now serve a permanent redirect (see next.config.ts). Submitting a
+  // redirecting URL asks Google to crawl a hop rather than the destination.
+  const redirecting = new Set([
+    '/android-epos-systems-from-posso',
+    '/book-a-call',
+    '/cobways-tell-a-friend-scheme',
+    '/contact-posso-ltd',
+    '/credit-card-machine-clover-flex-uk',
+    '/digital-menu-boards-4',
+    '/digital-menu-boards-uk-my-signage',
+    '/dry-cleaning-epos-systems-uk',
+    '/food-order-app-comparison-tool',
+    '/franchise-epos',
+    '/hospitality-epos-systems-by-posso-uk-epos-systems',
+    '/portable-card-machines',
+    '/posso-epos',
+    '/self-order-kiosk-uk-2',
+    '/self-order-kiosks-uk',
+    '/skegness-pos-systems',
+    '/small-pos-magic-the-tiny-marvels-transforming-our-lives',
+  ]);
+
+  const isDropped = (path: string) => isAlias(path) || redirecting.has(path);
+
   const entries: MetadataRoute.Sitemap = [
     // Homepage
     { url: `${URL}/`, lastModified, changeFrequency: 'weekly', priority: 1.0 },
     // Core pages
-    ...coreRoutes.filter(r => r !== '/').map((route) => ({
+    ...coreRoutes.filter(r => r !== '/' && !isDropped(r)).map((route) => ({
       url: `${URL}${route}`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     })),
     // Product & solution pages
-    ...productRoutes.map((route) => ({
+    ...productRoutes.filter(r => !isDropped(r)).map((route) => ({
       url: `${URL}${route}`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
     // Blog posts
-    ...blogRoutes.map((route) => ({
+    ...blogRoutes.filter(r => !isDropped(r)).map((route) => ({
       url: `${URL}${route}`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
     // Misc/legacy pages
-    ...miscRoutes.map((route) => ({
+    ...miscRoutes.filter(r => !isDropped(r)).map((route) => ({
       url: `${URL}${route}`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.4,
     })),
     // Programmatic SEO pages (video pages carry video-sitemap data)
-    ...allSeoPages.map((p) => ({
+    ...allSeoPages.filter((p) => !isDropped('/' + p.slug)).map((p) => ({
       url: `${URL}/${p.slug}`,
       lastModified,
       changeFrequency: 'monthly' as const,
@@ -300,5 +334,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return entries;
+  // A route can appear in more than one bucket above; emit each <loc> once.
+  const seen = new Set<string>();
+  return entries.filter((entry) => {
+    if (seen.has(entry.url)) return false;
+    seen.add(entry.url);
+    return true;
+  });
 }

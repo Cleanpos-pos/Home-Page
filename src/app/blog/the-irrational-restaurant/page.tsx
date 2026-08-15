@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Brain, Utensils, Zap, Users, ShieldCheck, TrendingUp, Smartphone, LayoutDashboard, Clock } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
     title: 'The Irrational Restaurant: Behavioral Economics & Tech | Posso',
@@ -54,6 +55,8 @@ export default function IrrationalRestaurantPage() {
             />
             <Header />
             <main className="flex-1 pt-20">
+        <BlogBreadcrumb slug="the-irrational-restaurant" title={"The Irrational Restaurant: Why Your Customers Are Lying to You (And Your Tech Stack Knows It)"} />
+
                 <div className="container mx-auto px-4 py-12 md:px-6 md:py-20">
                     <div className="mx-auto max-w-4xl">
                         <article className="prose prose-invert prose-lg mx-auto">

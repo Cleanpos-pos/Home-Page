@@ -14,6 +14,7 @@ import {
     ArrowRight
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
     title: 'Stop Paying Commissions: A Better EPOS System for Takeaway | Posso',
@@ -29,6 +30,8 @@ export default function CommissionFreeTakeawayBlog() {
         <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
             <Header />
             <main className="flex-1 pt-24">
+        <BlogBreadcrumb slug="epos-system-for-takeaway-commission-free" title={"A Commission-Free EPOS System for Takeaways"} />
+
                 {/* Hero Section */}
                 <section className="relative py-24 px-4 bg-[url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80')] bg-cover bg-fixed">
                     <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm" />

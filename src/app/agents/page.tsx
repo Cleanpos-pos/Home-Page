@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { AgentEnquiryForm } from '@/components/agent-enquiry-form';
 import { Badge } from '@/components/ui/badge';
 import { Check, HandCoins, Repeat, Handshake } from 'lucide-react';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 
 
 export const metadata: Metadata = {
@@ -39,6 +40,8 @@ export default function AgentsPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1 pt-20">
+        <PageBreadcrumb path="/agents" items={[{"label":"Agents"}]} />
+
         <section className="container mx-auto px-4 py-12 md:px-6 md:py-20">
             <div className="mx-auto max-w-4xl">
                 <div className="text-center">

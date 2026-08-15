@@ -25,6 +25,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Posso Blog | Insights on Restaurant & Hospitality Tech',
@@ -196,6 +197,8 @@ export default function BlogPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1 pt-20">
+        <PageBreadcrumb path="/blog" items={[{"label":"Blog"}]} />
+
         <section className="container mx-auto px-4 py-12 md:px-6 md:py-20">
           <div className="mx-auto max-w-4xl text-center mb-16">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl gradient-text">

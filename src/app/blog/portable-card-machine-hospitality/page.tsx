@@ -14,6 +14,7 @@ import {
     Timer
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
     title: 'Why Every Server Needs a Portable Card Machine | Posso',
@@ -47,6 +48,8 @@ export default function PortableCardMachineBlog() {
         <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
             <Header />
             <main className="flex-1 pt-24">
+        <BlogBreadcrumb slug="portable-card-machine-hospitality" title={"Why Every Server Needs a Portable Card Machine"} />
+
                 {/* Hero Section */}
                 <section className="relative py-20 px-4 overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />

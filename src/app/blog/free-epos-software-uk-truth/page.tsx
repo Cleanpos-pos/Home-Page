@@ -14,6 +14,7 @@ import {
     HelpCircle
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
     title: 'The Truth About Free EPOS Software in the UK | Posso',
@@ -29,6 +30,8 @@ export default function FreeEposBlog() {
         <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
             <Header />
             <main className="flex-1 pt-24">
+        <BlogBreadcrumb slug="free-epos-software-uk-truth" title={"Free EPOS Software UK: Is it Really Free?"} />
+
                 {/* Hero Section */}
                 <section className="relative py-20 px-4 overflow-hidden">
                     <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/10 blur-[120px] rounded-full -z-10 animate-pulse" />

@@ -14,6 +14,7 @@ import {
     ShieldCheck
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
     title: 'Meet Posso: The Future of Hospitality Tech | Posso',
@@ -29,6 +30,8 @@ export default function MeetPossoBlog() {
         <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
             <Header />
             <main className="flex-1 pt-24">
+        <BlogBreadcrumb slug="posso-future-hospitality-tech" title={"The Future of Hospitality Tech"} />
+
                 {/* Visual Header */}
                 <section className="relative h-[70vh] flex items-center justify-center overflow-hidden border-b border-white/5">
                     <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-overlay opacity-30 scale-105" />

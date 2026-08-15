@@ -16,6 +16,7 @@ import {
     ArrowRight
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
     title: 'POS & Self-Order Kiosk Solutions | POSSO UK',
@@ -92,6 +93,8 @@ export default function PosSolutionsBlogPage() {
         <div className="flex min-h-screen flex-col bg-background">
             <Header />
             <main className="flex-1 pt-20">
+        <BlogBreadcrumb slug="pos-and-self-order-kiosk-solutions" title={"POS & Self-Order Kiosk Solutions"} />
+
                 {/* Hero Section */}
                 <section className="relative py-20 overflow-hidden bg-slate-950">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-30" />

@@ -8,6 +8,7 @@ import { ArrowRight, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Teya Card Machine Application Form | Posso',
@@ -24,6 +25,8 @@ export default function TeyaApplicationRedirectPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1 pt-20">
+        <PageBreadcrumb path="/teya-card-machine-application-form" items={[{"label":"Card Machines","href":"/credit-card-machines"},{"label":"Teya Application"}]} />
+
         <section className="container mx-auto px-4 py-12 md:px-6 md:py-20">
             <div className="mx-auto max-w-4xl">
                 <div className="grid md:grid-cols-2 gap-12 items-center">

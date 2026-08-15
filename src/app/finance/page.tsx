@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer';
 import { Contact } from '@/components/sections/contact';
 import type { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Business Equipment Finance Calculator',
@@ -17,6 +18,8 @@ export default function FinancePage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1 pt-20">
+        <PageBreadcrumb path="/finance" items={[{"label":"Finance"}]} />
+
         <section className="container mx-auto px-4 py-12 md:px-6 md:py-20">
           <div className="mx-auto max-w-4xl">
             <div className="text-center">

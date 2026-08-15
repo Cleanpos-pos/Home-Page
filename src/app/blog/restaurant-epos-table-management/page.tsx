@@ -14,6 +14,7 @@ import {
     ArrowRight
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
     title: 'Table Management Made Easy with Restaurant EPOS | Posso',
@@ -29,6 +30,8 @@ export default function RestaurantTableManagementBlog() {
         <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
             <Header />
             <main className="flex-1 pt-24 text-slate-50">
+        <BlogBreadcrumb slug="restaurant-epos-table-management" title={"Table Management with Restaurant EPOS"} />
+
                 {/* Hero Section */}
                 <section className="relative min-h-[60vh] flex items-center bg-slate-900 overflow-hidden">
                     <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80')] bg-cover opacity-20" />

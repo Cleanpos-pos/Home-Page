@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Best Card Machine for Small Business UK – Why We Recommend Teya in 2025',
@@ -43,6 +44,8 @@ export default function BestCardMachineBlogPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1 pt-20">
+        <BlogBreadcrumb slug="best-card-machine-for-small-business" title={"Best Card Machine for Small Business UK – Why We Recommend Teya in 2025"} />
+
         <div className="container mx-auto px-4 py-12 md:px-6 md:py-20">
           <div className="mx-auto max-w-3xl">
             <article className="prose prose-invert prose-lg mx-auto">

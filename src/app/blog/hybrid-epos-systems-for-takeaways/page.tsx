@@ -14,6 +14,7 @@ import {
     ArrowRight
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
     title: 'Why "Hybrid" EPOS Systems for Takeaways Are Essential | Posso',
@@ -29,6 +30,8 @@ export default function HybridEposBlog() {
         <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
             <Header />
             <main className="flex-1 pt-24">
+        <BlogBreadcrumb slug="hybrid-epos-systems-for-takeaways" title={"Why Hybrid EPOS Systems Matter for Takeaways"} />
+
                 {/* Hero Section */}
                 <section className="relative py-24 px-4 overflow-hidden border-b border-white/5">
                     <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-blue-600/10 blur-[140px] rounded-full -z-10" />

@@ -14,6 +14,7 @@ import {
     Clock
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
     title: 'Speed Up Your Coffee Line with a Smart Cafe POS | Posso',
@@ -29,6 +30,8 @@ export default function CafePosBlog() {
         <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
             <Header />
             <main className="flex-1 pt-24">
+        <BlogBreadcrumb slug="cafe-pos-system-efficiency" title={"Speeding Up the Coffee Line with a Cafe POS"} />
+
                 {/* Visual Banner */}
                 <div className="relative h-[400px] overflow-hidden">
                     <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80')] bg-cover bg-center" />

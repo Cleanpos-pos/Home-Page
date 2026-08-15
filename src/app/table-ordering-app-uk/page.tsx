@@ -18,6 +18,7 @@ import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
 import { SolutionEnquiryModal } from '@/components/solution-enquiry-modal';
 import Link from 'next/link';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import {
     Accordion,
     AccordionContent,
@@ -73,6 +74,8 @@ export default function TableOrderingLandingPage() {
             <Header />
 
             <main className="flex-1">
+        <PageBreadcrumb path="/table-ordering-app-uk" items={[{"label":"Table Ordering App"}]} />
+
                 {/* Hero Section */}
                 <section className="relative pt-32 pb-20 overflow-hidden">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.1),transparent_50%)]" />

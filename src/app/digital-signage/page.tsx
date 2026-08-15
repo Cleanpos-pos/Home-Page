@@ -5,6 +5,7 @@ import { DigitalSignageFeatures } from '@/components/sections/digital-signage-fe
 import { DigitalSignageBrochure } from '@/components/sections/digital-signage-brochure';
 import { Contact } from '@/components/sections/contact';
 import type { Metadata } from 'next';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Dynamic Digital Signage Solutions for Businesses',
@@ -19,6 +20,8 @@ export default function DigitalSignagePage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
+        <PageBreadcrumb path="/digital-signage" items={[{"label":"Digital Signage"}]} />
+
         <DigitalSignageHero />
         <DigitalSignageFeatures />
         <DigitalSignageBrochure />

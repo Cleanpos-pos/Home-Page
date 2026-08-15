@@ -36,6 +36,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: page.title,
       description: page.description,
       url: `https://www.posso.co.uk/${page.slug}`,
+      // A page-level openGraph block replaces the layout's entirely, so without an
+      // explicit image these pages shipped with no og:image at all.
+      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: page.h1 }],
       ...(page.video
         ? {
             type: 'video.other',

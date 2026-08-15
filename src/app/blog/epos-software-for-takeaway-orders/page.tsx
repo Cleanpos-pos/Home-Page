@@ -14,6 +14,7 @@ import {
     ArrowRight
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
     title: 'Streamline Your Orders with Specialised EPOS Software | Posso',
@@ -29,6 +30,8 @@ export default function TakeawayOrdersBlog() {
         <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
             <Header />
             <main className="flex-1 pt-24">
+        <BlogBreadcrumb slug="epos-software-for-takeaway-orders" title={"Specialised EPOS Software for Modern Takeaways"} />
+
                 {/* Hero Section */}
                 <section className="relative py-24 px-4">
                     <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/20 blur-[120px] rounded-full -z-10" />

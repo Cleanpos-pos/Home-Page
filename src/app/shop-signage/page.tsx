@@ -4,6 +4,7 @@ import { Contact } from '@/components/sections/contact';
 import type { Metadata } from 'next';
 import { ShopFitOut } from '@/components/sections/shop-fit-out';
 import { ShopSignageContent } from './shop-signage-content';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Custom Shop Signage | Indoor & Outdoor Signs',
@@ -18,6 +19,8 @@ export default function ShopSignagePage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
+        <PageBreadcrumb path="/shop-signage" items={[{"label":"Shop Signage"}]} />
+
         <ShopSignageContent />
         <ShopFitOut />
         <Contact />

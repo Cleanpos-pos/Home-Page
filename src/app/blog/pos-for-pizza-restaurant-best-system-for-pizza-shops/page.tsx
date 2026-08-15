@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Pizza, Smartphone, Globe, ShoppingCart } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Best POS for Pizza Restaurant & Shops in the UK | Posso',
@@ -41,6 +42,8 @@ export default function PizzaPosPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1 pt-20">
+        <BlogBreadcrumb slug="pos-for-pizza-restaurant-best-system-for-pizza-shops" title={"The Best ePOS System for a Pizza Restaurant or Takeaway"} />
+
         <div className="container mx-auto px-4 py-12 md:px-6 md:py-20">
           <div className="mx-auto max-w-3xl">
             <article className="prose prose-invert prose-lg mx-auto">

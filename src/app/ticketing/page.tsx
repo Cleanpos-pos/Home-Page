@@ -4,6 +4,7 @@ import { TicketingHero } from '@/components/sections/ticketing-hero';
 import { TicketingFeatures } from '@/components/sections/ticketing-features';
 import { Contact } from '@/components/sections/contact';
 import type { Metadata } from 'next';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 
 export const metadata: Metadata = {
   title: 'All-in-One Venue & Event Ticketing Software',
@@ -18,6 +19,8 @@ export default function TicketingPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
+        <PageBreadcrumb path="/ticketing" items={[{"label":"Ticketing"}]} />
+
         <TicketingHero />
         <TicketingFeatures />
         <Contact />

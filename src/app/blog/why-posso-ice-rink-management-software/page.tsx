@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { SolutionEnquiryModal } from '@/components/solution-enquiry-modal';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BarChart3, Box, ShieldCheck, Snowflake } from 'lucide-react';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Why Posso? The Bespoke Solution for Modern Ice Rinks',
@@ -19,6 +20,8 @@ export default function IceRinkBlog() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1 pt-32 pb-20">
+        <BlogBreadcrumb slug="why-posso-ice-rink-management-software" title={"Why Posso? The Bespoke Solution for Modern Ice Rinks"} />
+
         <article className="container mx-auto px-4 md:px-6 max-w-4xl">
           <header className="mb-12 text-center">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter gradient-text mb-6">

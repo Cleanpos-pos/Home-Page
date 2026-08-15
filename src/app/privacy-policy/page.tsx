@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import type { Metadata } from 'next';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -23,6 +24,8 @@ export default function PrivacyPolicyPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1 pt-20">
+        <PageBreadcrumb path="/privacy-policy" items={[{"label":"Privacy Policy"}]} />
+
         <div className="container mx-auto px-4 py-12 md:px-6 md:py-20">
           <div className="mx-auto max-w-3xl">
             <div className="space-y-8">

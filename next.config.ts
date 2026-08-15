@@ -81,6 +81,30 @@ const nextConfig: NextConfig = {
       },
       { source: '/home', destination: '/', permanent: true },
       { source: '/kiosks', destination: '/self-order-kiosks', permanent: true },
+
+      // These 17 used to be client-side `router.replace()` stubs. A JS redirect is not
+      // a 301: Google has to render the page to find it, little equity passes, and the
+      // empty stub is indexable in the meantime. Served as real redirects instead.
+      // (Targets are the ones the stubs already declared; /kiosks hops are flattened
+      // to /self-order-kiosks so these do not become two-hop chains.)
+      { source: '/android-epos-systems-from-posso', destination: '/pos', permanent: true },
+      { source: '/book-a-call', destination: '/contact', permanent: true },
+      { source: '/cobways-tell-a-friend-scheme', destination: '/', permanent: true },
+      { source: '/contact-posso-ltd', destination: '/contact', permanent: true },
+      { source: '/credit-card-machine-clover-flex-uk', destination: '/credit-card-machines', permanent: true },
+      { source: '/digital-menu-boards-4', destination: '/digital-signage', permanent: true },
+      { source: '/digital-menu-boards-uk-my-signage', destination: '/digital-signage', permanent: true },
+      { source: '/dry-cleaning-epos-systems-uk', destination: '/solutions/dry-cleaning-pos-system', permanent: true },
+      { source: '/food-order-app-comparison-tool', destination: '/online-ordering', permanent: true },
+      { source: '/franchise-epos', destination: '/franchise', permanent: true },
+      { source: '/hospitality-epos-systems-by-posso-uk-epos-systems', destination: '/pos', permanent: true },
+      { source: '/portable-card-machines', destination: '/credit-card-machines', permanent: true },
+      { source: '/posso-epos', destination: '/pos', permanent: true },
+      { source: '/self-order-kiosk-uk-2', destination: '/self-order-kiosks', permanent: true },
+      { source: '/self-order-kiosks-uk', destination: '/self-order-kiosks', permanent: true },
+      { source: '/skegness-pos-systems', destination: '/pos', permanent: true },
+      { source: '/small-pos-magic-the-tiny-marvels-transforming-our-lives', destination: '/pos', permanent: true },
+
       { source: '/best-food-on-the-table-app-by-posso-ltd-uk', destination: '/restaurant-order-at-table-app', permanent: true },
       { source: '/best-restaurant-order-at-table-app-by-posso-ltd-uk', destination: '/restaurant-order-at-table-app', permanent: true },
       { source: '/best-food-ordering-system-by-posso-ltd-uk', destination: '/food-ordering-system', permanent: true },
@@ -222,6 +246,8 @@ const nextConfig: NextConfig = {
       { source: '/best-facebook-food-ordering-system-by-posso-ltd-uk', destination: '/facebook-food-ordering-system', permanent: true },
       { source: '/best-takeaway-software-uk-by-posso-ltd-uk', destination: '/epos-software-for-takeaway', permanent: true },
       { source: '/best-restaurant-epos-uk-by-posso-ltd-uk', destination: '/best-restaurant-epos-system-uk', permanent: true },
+      // Self-canonicalising alias served duplicate content against the clean URL
+      { source: '/best-epos-system-for-indian-takeaway-by-posso-ltd-uk', destination: '/epos-system-for-indian-takeaway', permanent: true },
       { source: '/epos-system-for-takeaways', destination: '/epos-systems-for-takeaways', permanent: true },
       { source: '/restaurant-epos-system-3', destination: '/pos', permanent: true },
     ];

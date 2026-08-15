@@ -14,6 +14,7 @@ import {
     Utensils
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
     title: 'What is the Best POS System for Pizza Delivery? | Posso',
@@ -29,6 +30,8 @@ export default function PizzaDeliveryBlog() {
         <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
             <Header />
             <main className="flex-1 pt-24">
+        <BlogBreadcrumb slug="best-pos-system-for-pizza-delivery" title={"Best POS System for Pizza Delivery"} />
+
                 {/* Hero Section */}
                 <section className="relative py-24 px-4 overflow-hidden">
                     <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,rgba(220,38,38,0.1),transparent_50%)]" />

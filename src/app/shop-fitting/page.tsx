@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 import { IframeDialog } from '@/components/iframe-dialog';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 
 const galleryImages = [
     { src: '/restaurant-interior-posso.jpg', alt: 'Modern restaurant interior with digital signage' },
@@ -57,6 +58,8 @@ export default function ShopFittingPage() {
         <div className="flex min-h-screen flex-col bg-background">
             <Header />
             <main className="flex-1">
+        <PageBreadcrumb path="/shop-fitting" items={[{"label":"Shop Fitting"}]} />
+
                 <section className="relative w-full min-h-[70vh] flex items-center overflow-hidden pt-20">
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">

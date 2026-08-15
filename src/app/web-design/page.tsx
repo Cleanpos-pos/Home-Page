@@ -8,6 +8,7 @@ import { ArrowRight, Store, Hammer, Paintbrush, Check, Lightbulb, DraftingCompas
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 
 const services = [
     "Mobile-first responsive design",
@@ -25,6 +26,8 @@ export default function WebDesignPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
+        <PageBreadcrumb path="/web-design" items={[{"label":"Web Design"}]} />
+
         <section className="relative w-full min-h-[60vh] flex items-center overflow-hidden pt-20">
             <div className="absolute inset-0 bg-gradient-to-b from-background to-slate-950 opacity-90" />
             <div className="absolute inset-0 grid-bg opacity-40" />

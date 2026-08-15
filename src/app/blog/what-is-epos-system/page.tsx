@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap, CheckCircle2, LayoutDashboard } from 'lucide-react';
 import type { Metadata } from 'next';
+import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
     title: 'What Is an EPOS System? Transform Your Business in 2026 | Posso',
@@ -99,6 +100,8 @@ export default function EposSystemGuidePage() {
             />
             <Header />
             <main className="flex-1 pt-20">
+        <BlogBreadcrumb slug="what-is-epos-system" title={"What Is an EPOS System, and How Does It Transform Your Business in 2026?"} />
+
                 <div className="container mx-auto px-4 py-12 md:px-6 md:py-20">
                     <div className="mx-auto max-w-3xl">
                         <article className="prose prose-invert prose-lg mx-auto">
