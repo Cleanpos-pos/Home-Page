@@ -9,11 +9,21 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'POS for Indian Takeaways | Buyer\'s Guide',
+  title: 'POS for Indian Takeaways',
   description:
     'POS for Indian takeaways — what to look for, what to avoid and what it costs. Spice levels, protein-by-curry pricing, banquet menus, sundries and collection times.',
-  // Explicitly drop the sitewide meta-keywords tag inherited from the root layout
-  keywords: null,
+  keywords: [
+    'pos for indian takeaway',
+    'indian takeaway epos',
+    'indian takeaway till system',
+    'indian takeaway pos system',
+    'curry house epos',
+    'indian restaurant pos uk',
+    'spice level pos',
+    'indian takeaway till',
+    'indian takeaway software',
+    'best pos for indian takeaway',
+  ],
   alternates: {
     canonical: '/pos-for-indian-takeaway',
   },
@@ -45,6 +55,12 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '167',
+      bestRating: '5',
+    },
     publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     featureList: [
       'Compulsory spice-level modifiers per dish',

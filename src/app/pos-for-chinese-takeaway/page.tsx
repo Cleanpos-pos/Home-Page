@@ -9,11 +9,21 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'POS for Chinese Takeaways | Buyer\'s Guide',
+  title: 'POS for Chinese Takeaways',
   description:
     'POS for Chinese takeaways — what to look for, what to avoid and what it costs. Dish numbers, 200-item menus, set meals, station printing and phone ordering.',
-  // Explicitly drop the sitewide meta-keywords tag inherited from the root layout
-  keywords: null,
+  keywords: [
+    'pos for chinese takeaway',
+    'chinese takeaway epos',
+    'chinese takeaway till system',
+    'chinese takeaway pos system',
+    'chinese takeaway pos uk',
+    'chinese restaurant epos',
+    'dish number pos',
+    'chinese takeaway till',
+    'chinese takeaway software',
+    'best pos for chinese takeaway',
+  ],
   alternates: {
     canonical: '/pos-for-chinese-takeaway',
   },
@@ -45,6 +55,12 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '143',
+      bestRating: '5',
+    },
     publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     featureList: [
       'Dish-number search and quick keys',

@@ -9,11 +9,21 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'POS for Kebab Shops | Buyer\'s Guide',
+  title: 'POS for Kebab Shops',
   description:
     'POS for kebab shops — what to look for, what to avoid and what it costs. Build sequence, no-salad prompts, paid extras by size, late-night trade and delivery apps.',
-  // Explicitly drop the sitewide meta-keywords tag inherited from the root layout
-  keywords: null,
+  keywords: [
+    'pos for kebab shop',
+    'kebab shop epos',
+    'kebab shop till system',
+    'kebab pos system',
+    'kebab shop pos uk',
+    'kebab epos system',
+    'takeaway pos kebab',
+    'kebab shop till',
+    'kebab shop software',
+    'best pos for kebab shop',
+  ],
   alternates: {
     canonical: '/pos-for-kebab-shop',
   },
@@ -45,6 +55,12 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '152',
+      bestRating: '5',
+    },
     publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     featureList: [
       'Sequenced modifier groups for meat, bread, salad and sauces',

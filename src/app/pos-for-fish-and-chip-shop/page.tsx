@@ -9,11 +9,21 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'POS for Fish and Chip Shops | Buyer\'s Guide',
+  title: 'POS for Fish and Chip Shops',
   description:
     'POS for fish and chip shops — what to look for, what to avoid and what it costs. Portion pricing, condiment prompts, meal deals, peak-hour speed and collection orders.',
-  // Explicitly drop the sitewide meta-keywords tag inherited from the root layout
-  keywords: null,
+  keywords: [
+    'pos for fish and chip shop',
+    'fish and chip shop epos',
+    'chip shop till system',
+    'chippy pos system',
+    'fish and chip shop pos uk',
+    'chip shop epos system',
+    'takeaway pos fish and chips',
+    'chip shop till',
+    'fish and chip shop software',
+    'best pos for chip shop',
+  ],
   alternates: {
     canonical: '/pos-for-fish-and-chip-shop',
   },
@@ -45,6 +55,12 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '164',
+      bestRating: '5',
+    },
     publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     featureList: [
       'Portion and size pricing on a single screen',

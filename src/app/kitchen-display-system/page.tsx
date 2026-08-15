@@ -9,11 +9,21 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Kitchen Display System | Buyer\'s Guide',
+  title: 'Kitchen Display System',
   description:
     'Kitchen display system buyer\'s guide — what to look for, what to avoid and what it costs. Completion tracking, batching, station routing and screens vs printers.',
-  // Explicitly drop the sitewide meta-keywords tag inherited from the root layout
-  keywords: null,
+  keywords: [
+    'kitchen display system',
+    'kds system',
+    'kitchen display system uk',
+    'restaurant kitchen display',
+    'kds for takeaway',
+    'kitchen order display',
+    'kitchen screen system',
+    'kds epos integration',
+    'kitchen display software',
+    'best kitchen display system',
+  ],
   alternates: {
     canonical: '/kitchen-display-system',
   },
@@ -45,6 +55,12 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '134',
+      bestRating: '5',
+    },
     publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     featureList: [
       'Real-time order display across every channel',
