@@ -4,26 +4,27 @@ import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { DemoEnquiry } from '@/components/sections/demo-enquiry';
 import { FAQSection } from '@/components/sections/faq-section';
 import { Badge } from '@/components/ui/badge';
-import { Check, Phone, ArrowRight, Monitor, Timer, Split, WifiOff, CheckCheck, Layers, Printer } from 'lucide-react';
+import { Check, Phone, ArrowRight, Search, CheckCheck, Layers, Inbox, Split, Timer, WifiOff } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Kitchen Display System (KDS) for Restaurants & Takeaways',
+  title: 'Kitchen Display System | Buyer\'s Guide',
   description:
-    'Posso kitchen display system — every order on one screen with item completion tracking, prep timers, station routing and production totals. Works offline. From £499 + VAT.',
+    'Kitchen display system buyer\'s guide — what to look for, what to avoid and what it costs. Completion tracking, batching, station routing and screens vs printers.',
   // Explicitly drop the sitewide meta-keywords tag inherited from the root layout
   keywords: null,
   alternates: {
     canonical: '/kitchen-display-system',
   },
   openGraph: {
-    title: 'Kitchen Display System (KDS) | Posso UK',
+    title: 'Kitchen Display System | Posso UK',
     description:
-      'One screen for counter, phone, online and delivery app orders — with completion tracking, prep timers and station routing.',
+      'KDS buyer\'s guide — six things that actually matter in a kitchen, what to test before you buy, and what it costs.',
     url: 'https://www.posso.co.uk/kitchen-display-system',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Posso kitchen display system showing live orders with completion tracking' }],
+    // TODO: replace with a bespoke 1200×630 card once artwork exists
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Posso kitchen display system — buyer\'s guide' }],
   },
 };
 
@@ -35,7 +36,7 @@ const pageSchema = [
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
-      'Kitchen display system for restaurants and takeaways with real-time order display, item completion tracking, production totals, prep timers, station routing and offline-first operation.',
+      'Guide to choosing a kitchen display system, covering item-level completion tracking, production totals and batching, single-queue order intake across every channel, station routing, order ageing and offline-first operation.',
     url: 'https://www.posso.co.uk/kitchen-display-system',
     offers: {
       '@type': 'AggregateOffer',
@@ -51,6 +52,7 @@ const pageSchema = [
       'Production totals across live orders',
       'Prep timers and order ageing',
       'Station routing by menu category',
+      'Thermal kitchen printing alongside the display',
       'Offline-first operation',
     ],
   },
@@ -66,19 +68,19 @@ const pageSchema = [
 ];
 
 const features = [
-  { icon: Monitor, title: 'Every Channel on One Screen', description: 'Counter, phone, your own website and Just Eat, Uber Eats and Deliveroo orders all arrive in the same list. The kitchen works one queue instead of watching a printer and three tablets, which is where most missed orders during a rush actually come from.' },
-  { icon: CheckCheck, title: 'Item-Level Completion Tracking', description: 'Mark individual items done rather than whole tickets. On a multi-item order that means the parts already made are visibly finished, so nothing gets cooked twice and nothing gets forgotten at the pass when the order is called.' },
-  { icon: Layers, title: 'Production Totals Across Live Orders', description: 'See how many of each item are outstanding across every order on the screen at once. Six portions of chips across four tickets is one basket, not four — which is the difference between batching properly at peak and running the fryer inefficiently all night.' },
-  { icon: Timer, title: 'Prep Timers and Order Ageing', description: 'Every ticket carries the time it has been waiting, so the order that has been sitting longest is obvious at a glance instead of buried in the middle of the screen. Orders that pass your target time stand out before the customer is the one telling you.' },
-  { icon: Split, title: 'Route by Station, Not One Long Ticket', description: 'Send items to the right screen or printer by menu category, so the grill gets the grill items and the fryer gets the fryer items. On a long ticket that removes the reading-past problem entirely — each station sees only what it has to make.' },
-  { icon: WifiOff, title: 'Keeps Working Without Internet', description: 'The kitchen display runs on the same offline-first architecture as the rest of Posso One. If the broadband drops mid-service, orders keep arriving from the till, tickets keep printing, and everything syncs when the connection returns.' },
+  { icon: CheckCheck, title: 'Completion Has to Work Item by Item, Not Ticket by Ticket', description: 'On a six-item order the grill finishes its part long before the fryer does. A system that only lets you clear a whole ticket tells the kitchen nothing about what is already made, so items get cooked twice or forgotten at the pass. Each line needs to be markable on its own, with the ticket closing only when the last one is done. Ask to see a half-finished order on screen and check what the pass can actually tell from it.' },
+  { icon: Layers, title: 'Production Totals Are the Feature That Pays for the Screen', description: 'The question that matters at peak is not "what is on ticket four", it is "how many portions of chips are outstanding across everything on this board". Six across four tickets is one basket, not four. A display that shows only per-order lists cannot answer that, and the kitchen goes on cooking in ones. This single view is usually where the time actually comes back — more than any speed gained from not reading paper.' },
+  { icon: Inbox, title: 'Every Channel Has to Land on the Same Screen', description: 'Counter, phone, your own website, Just Eat, Uber Eats, Deliveroo. If marketplace orders arrive on their own tablets and someone re-keys them into the till before the kitchen sees them, the tablets stay on your counter and you have bought a screen that solved half the problem. Ask specifically whether each channel appears automatically, or whether a person is the integration.' },
+  { icon: Split, title: 'Routing by Station Beats One Long Ticket', description: 'A kitchen with a grill, a fryer and a cold section does not want three copies of the same ticket, each with two-thirds of it to read past. Items should route to the screen or printer that owns them, by menu category. Ask what happens to a dish that belongs to two stations, and whether the pass still sees the whole order assembled in one place.' },
+  { icon: Timer, title: 'Order Ageing Has to Be Readable Without Reading', description: 'During service nobody has time to compare timestamps. The ticket that has been waiting longest has to be obvious from across the kitchen — colour, position, a timer that changes state at your target. If working out what is late requires studying the screen, it will not get done at the moment it matters. Set a target time in the demo and watch what the board does when an order passes it.' },
+  { icon: WifiOff, title: 'It Has to Survive a Dropped Connection', description: 'A screen that goes blank when the broadband drops is worse than paper, because paper does not disappear. Ask what happens to orders already on the display, whether new ones still arrive from the till, and whether anything is lost when the connection returns. A cloud-only display in a kitchen is a single point of failure on your busiest night.' },
 ];
 
 const benefits = [
-  { title: 'Paper Tickets Are the Failure Point at Peak', description: 'Printed tickets get smudged by steam, fall off the rail, get stuck together, and are read wrong at the exact moment nobody has time to check. A screen has none of those failure modes, and every order is still there to re-read when someone asks what happened to table nine or the collection at half seven.' },
-  { title: 'The Real Saving Is Batching, Not Speed', description: 'A KDS does not make anyone cook faster. What it does is show the whole board at once, so the same items across different orders get made together. In a takeaway running a fryer or a grill at capacity between five and seven, that is the single largest efficiency gain available without hiring anyone.' },
-  { title: 'Count Your Screens Before You Budget', description: 'A single busy counter operation often needs one screen. A kitchen with distinct stations usually wants two or three, and a pass screen on top of that. Work out how many you actually need before comparing quotes, because per-screen pricing is where headline figures and real figures separate.' },
-  { title: 'Check It Handles Marketplace Orders Natively', description: 'A KDS that only shows orders typed at the till is half a system. Ask specifically whether Just Eat, Uber Eats and Deliveroo orders appear on the same screen automatically, or whether someone has to re-key them from a tablet first — because the second option leaves the tablets on your counter regardless.' },
+  { title: 'Count Your Screens Before You Compare Prices', description: 'A single busy counter often runs on one. A kitchen with distinct sections usually wants one per station, sometimes with another at the pass. Per-screen licensing is where headline quotes and real quotes separate, so work out the number you actually need first and get every supplier to price the same configuration. A cheap first screen with an expensive second one is a common shape.' },
+  { title: 'A Screen Does Not Replace the Printer', description: 'Most kitchens end up running both, and that is usually right. The display manages the queue; the printed ticket is the thing that physically travels with a collection bag or a driver order. Decide which job you are solving before you decide what to buy. If your bottleneck is getting paper onto a bag, a screen will not fix it — and if it is the kitchen losing track of the queue, a faster printer will not either.' },
+  { title: 'Check the Hardware Is Rated for a Kitchen', description: 'Heat, steam and hands coming straight off the grill. Consumer tablets on a shelf above a fryer do not last. Ask what the screen is rated for, whether it responds to wet or gloved fingers, how it is mounted, and what the replacement time is when one fails mid-service. Response time is worth more to you than warranty length.' },
+  { title: 'Test It at Real Volume, Not With Three Orders', description: 'Any display looks calm with three tickets on it. Ask the supplier to load fifteen live orders across your stations and then judge it: can you see what is outstanding, what is batched, and what is late, without touching anything? That is the state the screen will be in for the two hours a week that decide whether service works.' },
 ];
 
 export default function KitchenDisplaySystemPage() {
@@ -98,8 +100,8 @@ export default function KitchenDisplaySystemPage() {
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-6">
               <Badge variant="outline" className="border-primary/50 text-primary/80 bg-primary/10 py-1 px-3">
-                <Monitor className="w-3 h-3 mr-2" />
-                KITCHEN DISPLAY SYSTEM
+                <Search className="w-3 h-3 mr-2" />
+                BUYER&apos;S GUIDE
               </Badge>
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl !leading-tight">
                 <span className="bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
@@ -110,11 +112,11 @@ export default function KitchenDisplaySystemPage() {
                 </span>
               </h1>
               <p className="text-xl text-slate-300 max-w-2xl">
-                One screen for every order, wherever it came from. Item-level completion tracking, live production totals so the same items get batched together, prep timers that surface the ticket that has been waiting longest, and station routing so each section sees only its own work.
+                A kitchen display is sold as a way to stop losing paper tickets. That is the smallest thing it does. The real question is whether the screen can tell your kitchen what to batch, what is late and what is already made — during the two hours a week when nobody has time to look properly. Here is what to look for, what to test, and what it should cost.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Counter, phone, online and delivery apps in one queue</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Works without internet, syncs when it returns</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Six things that matter in a real kitchen</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> What to test before you sign anything</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Part of Posso One — POS from £499 + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
@@ -132,9 +134,9 @@ export default function KitchenDisplaySystemPage() {
         <section className="py-20 bg-slate-900/30">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-14">
-              <h2 className="text-3xl sm:text-4xl font-bold gradient-text">What the Posso Kitchen Display Does</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text">What to Look For in a Kitchen Display System</h2>
               <p className="text-slate-400 mt-3 text-lg max-w-2xl mx-auto">
-                Built into Posso One rather than bolted on, so orders reach the kitchen without a second system in between.
+                Six things that separate a screen your kitchen relies on from one that becomes an expensive ticket printer.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -148,13 +150,21 @@ export default function KitchenDisplaySystemPage() {
                 </div>
               ))}
             </div>
+            <blockquote className="max-w-3xl mx-auto mt-12 glass-card rounded-xl border border-slate-700/50 border-l-4 border-l-primary p-6">
+              <p className="text-lg text-slate-200 italic">
+                &ldquo;Fifteen live orders, six of them with chips, across three stations — and one ticket that has been waiting eleven minutes.&rdquo;
+              </p>
+              <footer className="text-slate-400 mt-3">
+                Ask for that board on any system you are shown, then time how long it takes you to spot the chips and the late one.
+              </footer>
+            </blockquote>
           </div>
         </section>
 
         <section className="py-20">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl font-bold gradient-text text-center mb-10">Screen or Printer? What Actually Changes</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text text-center mb-10">Smart Buying Advice</h2>
               <div className="grid sm:grid-cols-2 gap-8">
                 {benefits.map((b) => (
                   <div key={b.title} className="glass-card rounded-xl p-6 border border-slate-700/50">
@@ -171,17 +181,23 @@ export default function KitchenDisplaySystemPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl sm:text-4xl font-bold gradient-text text-center mb-8">
-                A Kitchen Display Is Not a Replacement for Printing
+                The Posso Approach to Kitchen Display
               </h2>
               <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                 <p>
-                  Most kitchens end up running <strong className="text-white">both</strong>, and that is usually the right answer. The screen manages the queue — what is outstanding, what is batched, what has been waiting longest. The printer produces the thing that travels with the order: the ticket that goes on the bag for a collection, or the label the driver checks against.
+                  The Posso kitchen display is <strong className="text-white">part of Posso One</strong> rather than a separate product wired into it, so there is no integration between the till and the kitchen that can break or fall behind.
                 </p>
                 <p>
-                  Posso supports <strong className="text-white">thermal receipt and kitchen printing over network or USB</strong> alongside the display, with custom receipt templates, so you can route by category to a screen, a printer, or both. If you are choosing between them rather than running both, the question is whether your bottleneck is the kitchen keeping track of the queue — in which case a screen wins — or getting a piece of paper onto a bag, in which case a printer alone may still be enough.
+                  Orders show in <strong className="text-white">real time with item-level completion tracking</strong>, so a half-finished ticket reads correctly at the pass, and <strong className="text-white">production totals</strong> show how many of each item are outstanding across every live order rather than order by order. Counter, phone, website and Just Eat, Uber Eats and Deliveroo orders all arrive in the same queue — no marketplace tablet in between, and nothing to re-key.
                 </p>
                 <p>
-                  Both run on the same <strong className="text-white">offline-first</strong> system. A dropped connection mid-service does not stop the kitchen receiving orders from the till.
+                  Printing and the display can be <strong className="text-white">routed by menu category</strong>, so a station receives only its own items. Thermal receipt and kitchen printing over network or USB runs alongside the screen with custom templates, which is what most kitchens actually want: the screen manages the queue, the printed ticket travels with the bag.
+                </p>
+                <p>
+                  The whole system is <strong className="text-white">offline-first</strong>. If the broadband drops mid-service, orders keep reaching the kitchen from the till and nothing on the board is lost — everything syncs when the connection returns.
+                </p>
+                <p>
+                  The kitchen display is part of Posso One, with the POS from <strong className="text-white">£499 + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a two-year warranty. On-site installation is quoted separately if you want it. Screen count depends on how your kitchen is laid out, so we price that with you rather than quoting a number that assumes one.
                 </p>
               </div>
             </div>
@@ -191,7 +207,7 @@ export default function KitchenDisplaySystemPage() {
         <section className="py-12">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
-              <h2 className="text-2xl font-bold text-white mb-6 text-center">Works With the Rest of Posso One</h2>
+              <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore Kitchen Display Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS System</p>
@@ -207,11 +223,11 @@ export default function KitchenDisplaySystemPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosk orders land on the same screen</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosk orders on the same screen</p>
                 </Link>
               </div>
               <p className="text-slate-400 text-center mt-6">
-                Choosing a system for a specific kind of kitchen? See the buyer&apos;s guides for{' '}
+                Choosing for a specific kind of kitchen? See the buyer&apos;s guides for{' '}
                 <Link href="/pos-for-pizza-shop" className="text-primary hover:underline">pizza shops</Link>,{' '}
                 <Link href="/pos-for-fish-and-chip-shop" className="text-primary hover:underline">fish and chip shops</Link>,{' '}
                 <Link href="/pos-for-kebab-shop" className="text-primary hover:underline">kebab shops</Link>,{' '}
@@ -224,17 +240,14 @@ export default function KitchenDisplaySystemPage() {
 
         <FAQSection title="Kitchen Display System — Frequently Asked Questions" faqs={[
           { question: 'What is a kitchen display system?', answer: 'A kitchen display system, or KDS, is a screen in the kitchen that replaces or supplements printed tickets. It shows every live order in one queue with the items still to make, tracks completion at item level, ages each ticket so the longest-waiting order is obvious, and can route items to the station responsible for them.' },
-          { question: 'Do delivery app orders appear on the kitchen display?', answer: 'On Posso, yes. Just Eat, Uber Eats and Deliveroo orders arrive in the same queue as counter, phone and website orders, so the kitchen works one list rather than a printer plus three marketplace tablets. Ask any supplier this specifically — a KDS that only shows orders typed at the till leaves the tablets on your counter.' },
           { question: 'Does a kitchen display replace kitchen printers?', answer: 'Not usually, and it does not have to. Most kitchens run both: the screen manages the queue while the printer produces the ticket that physically travels with a collection bag or a driver order. Posso supports thermal kitchen printing over network or USB alongside the display, routed by menu category to a screen, a printer, or both.' },
           { question: 'What are production totals and why do they matter?', answer: 'Production totals show how many of each item are outstanding across every live order at once, rather than order by order. Six portions of chips spread across four tickets is one fryer basket rather than four. In a kitchen running a fryer or grill at capacity during peak, batching from that view is usually the largest efficiency gain available without adding staff.' },
+          { question: 'Do delivery app orders appear on the kitchen display?', answer: 'On Posso, yes. Just Eat, Uber Eats and Deliveroo orders arrive in the same queue as counter, phone and website orders, so the kitchen works one list rather than a printer plus three marketplace tablets. Ask any supplier this specifically — a KDS that only shows orders typed at the till leaves the tablets on your counter.' },
           { question: 'How many screens does a kitchen need?', answer: 'A single busy counter operation often runs on one. A kitchen with distinct stations — grill, fryer, wok, cold — typically wants one per station, sometimes with an additional screen at the pass. Work out the number you need before comparing quotes, because per-screen pricing is where headline prices and real prices tend to diverge.' },
           { question: 'Does the kitchen display work if the internet goes down?', answer: 'Yes. Posso One is offline-first, so orders continue to reach the kitchen display and the kitchen printers from the till without a connection, and everything syncs to the cloud once you are back online. Cloud-only systems stop dead in the same situation.' },
         ]} />
 
-        <DemoEnquiry
-          heading="See the Kitchen Display in Action"
-          intro="Tell us how your kitchen is set up and we will show you how the display would run your service — including how many screens you would actually need."
-        />
+        <DemoEnquiry />
       </main>
       <Footer />
     </div>
