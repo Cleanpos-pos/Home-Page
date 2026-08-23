@@ -232,6 +232,8 @@ export default function TakeawayEposPage() {
                     <Link href="/pos-for-chinese-takeaway" className="text-primary hover:underline">Chinese takeaways</Link>{' '}
                     and <Link href="/pos-for-indian-takeaway" className="text-primary hover:underline">Indian takeaways</Link> —
                     or the <Link href="/kitchen-display-system" className="text-primary hover:underline">kitchen display system</Link> that sits behind all of them.
+                    Opening your first site? Start with the{' '}
+                    <Link href="/opening-a-takeaway-epos-checklist" className="text-primary hover:underline">opening-a-takeaway EPOS checklist</Link>.
                   </p>
                 </div>
               </div>

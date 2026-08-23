@@ -232,7 +232,7 @@ export default function ThreeEighthsRulePage() {
                 </p>
               </div>
               <p>
-                <Link href="/pizza-pos-system" className="text-primary hover:underline font-semibold">Posso&apos;s pizza builder</Link>{' '}
+                <Link href="/pizza-epos" className="text-primary hover:underline font-semibold">Posso&apos;s pizza builder</Link>{' '}
                 goes further: when a customer selects a 14&quot; pizza and adds extra mozzarella, the topping price adjusts to the 14&quot; rate automatically. Split-sided pizzas are priced correctly too — half toppings are charged at half the topping rate for that size.
               </p>
               <p>
@@ -281,7 +281,7 @@ export default function ThreeEighthsRulePage() {
             <div className="glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Get Size-Based Pricing for Your Pizza Shop</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/pizza-pos-system" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza POS System</p>
                   <p className="text-slate-400 text-sm mt-1">Visual builder + size pricing</p>
                 </Link>

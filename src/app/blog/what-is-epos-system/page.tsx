@@ -209,7 +209,7 @@ export default function EposSystemGuidePage() {
                             <h3>2. Superior Customer Experience</h3>
 
                             <p>
-                                Deliver faster service through contactless payments, integrated loyalty programs, and self-service options. <span className="bg-emerald-500/10 text-emerald-400 px-2 py-1 rounded font-medium">Currently, 65% of restaurant customers prefer self-service kiosks</span>, and <Link href="/solutions/restaurant-self-service-kiosk" className="text-primary hover:underline">restaurant EPOS systems</Link> enable both kiosk ordering and QR code table ordering for maximum convenience.
+                                Deliver faster service through contactless payments, integrated loyalty programs, and self-service options. <span className="bg-emerald-500/10 text-emerald-400 px-2 py-1 rounded font-medium">Currently, 65% of restaurant customers prefer self-service kiosks</span>, and <Link href="/self-order-kiosks" className="text-primary hover:underline">restaurant EPOS systems</Link> enable both kiosk ordering and QR code table ordering for maximum convenience.
                             </p>
 
                             <h3>3. Measurable Revenue Growth</h3>
@@ -282,7 +282,7 @@ export default function EposSystemGuidePage() {
                                 <ul className="space-y-4 list-none p-0 m-0">
                                     {[
                                         "Complete Customization: Adapt every feature and function to match your specific industry requirements.",
-                                        "24/7 Expert Support: Access knowledgeable UK-based support whenever you need assistance.",
+                                        "UK Expert Support: Access knowledgeable UK-based support, Monday to Friday 9am–9:30pm.",
                                         "Unlimited Scalability: Expand seamlessly as your business grows without system limitations.",
                                         "Continuous Innovation: Benefit from regular updates featuring the latest retail technology.",
                                         "Transparent Pricing: No hidden fees or surprise charges—just straightforward value."

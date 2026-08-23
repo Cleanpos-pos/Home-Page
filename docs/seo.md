@@ -45,6 +45,36 @@ Three supporting rules, all observable in the existing pages:
 /kitchen-display-system
 ```
 
+### Typed guide pages (August 2026 batch)
+
+Seven further pages use a different mechanism: typed content in
+`src/content/guides/*.ts` rendered by `src/components/GuidePage.tsx`
+(types + metadata/schema builders in `src/lib/guides.ts`). Restyling the
+renderer restyles all seven at once. They follow the same house rules —
+`FAQSection` emits the FAQ schema, `DemoEnquiry` on `#contact`, short
+templated titles — plus a "quickAnswer" block rendered as a delimited
+"Short answer" card for AI extraction, and explicit per-page Twitter
+metadata.
+
+```
+/pos-for-cafe
+/opening-a-takeaway-epos-checklist
+/delivery-management-pos
+/replace-old-epos-system
+/multi-site-epos-uk
+/epos-now-alternative              switching guide
+/posso-vs-epos-now                 comparison — LAST_CHECKED constant in the
+                                   content file renders under the table;
+                                   re-verify Epos Now figures quarterly
+```
+
+Consolidation shipped with this batch: `/pizza-pos-system` and
+`/pizza-shop-pos` now 308 to `/pos-for-pizza-shop`; `/self-service-epos` and
+`/solutions/restaurant-self-service-kiosk` 308 to `/self-order-kiosks`. The
+product layer for pizza is now `/pizza-epos`, `/pizza-pos-software`,
+`/pizza-restaurant-software` and `/pizza-delivery-pos` — the §1 example above
+predates this.
+
 ---
 
 ## 2. The base template

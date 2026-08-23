@@ -110,7 +110,7 @@ export default function IrrationalRestaurantPage() {
                                 When Debbie asks a customer "Would you like to add bacon?", there's social pressure. The customer thinks: "Will I look greedy? Will I look indecisive?" So they say no. They're not making a rational decision—they're managing their self-image in front of another human.
                             </p>
                             <p>
-                                A <Link href="/solutions/restaurant-self-service-kiosk" className="text-primary hover:underline">self-service kiosk</Link> doesn't judge. A kiosk shows them a beautiful photo of bacon, glistening under studio lighting that cost more than your week's wage bill, and whispers (in pixels): "You deserve this. It's only £1.50."
+                                A <Link href="/self-order-kiosks" className="text-primary hover:underline">self-service kiosk</Link> doesn't judge. A kiosk shows them a beautiful photo of bacon, glistening under studio lighting that cost more than your week's wage bill, and whispers (in pixels): "You deserve this. It's only £1.50."
                             </p>
 
                             <h3>The Upselling Revelation</h3>

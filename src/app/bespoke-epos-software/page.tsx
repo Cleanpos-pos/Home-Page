@@ -216,7 +216,7 @@ export default function BespokeEposSoftwarePage() {
                   <p className="font-semibold text-white">ePOS Systems</p>
                   <p className="text-slate-400 text-sm mt-1">All POS solutions</p>
                 </Link>
-                <Link href="/self-service-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self Service ePOS</p>
                   <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
                 </Link>

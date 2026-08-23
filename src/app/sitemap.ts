@@ -86,7 +86,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/pos-for-kebab-shop',
     '/pos-for-chinese-takeaway',
     '/pos-for-indian-takeaway',
+    '/pos-for-cafe',
     '/kitchen-display-system',
+    '/epos-now-alternative',
+    '/posso-vs-epos-now',
+    '/opening-a-takeaway-epos-checklist',
+    '/delivery-management-pos',
+    '/replace-old-epos-system',
+    '/multi-site-epos-uk',
     '/restaurant-till-system',
     '/shop-till-software',
     '/takeaway-app',
@@ -290,6 +297,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/self-order-kiosks-uk',
     '/skegness-pos-systems',
     '/small-pos-magic-the-tiny-marvels-transforming-our-lives',
+    // Cluster consolidation, August 2026: pizza product duplicates fold into the
+    // /pos-for-pizza-shop guide; kiosk duplicates fold into /self-order-kiosks.
+    '/pizza-pos-system',
+    '/pizza-shop-pos',
+    '/self-service-epos',
+    '/solutions/restaurant-self-service-kiosk',
   ]);
 
   const isDropped = (path: string) => isAlias(path) || redirecting.has(path);

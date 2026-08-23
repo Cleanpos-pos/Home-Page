@@ -92,7 +92,8 @@ export default function DeliveryIntegrationsPage() {
                 <Link href="/pos-for-pizza-shop" className="text-primary hover:underline">pizza shops</Link>,{' '}
                 <Link href="/pos-for-chinese-takeaway" className="text-primary hover:underline">Chinese takeaways</Link>{' '}
                 and <Link href="/pos-for-indian-takeaway" className="text-primary hover:underline">Indian takeaways</Link>. Marketplace orders land on the same{' '}
-                <Link href="/kitchen-display-system" className="text-primary hover:underline">kitchen display</Link> as everything else.
+                <Link href="/kitchen-display-system" className="text-primary hover:underline">kitchen display</Link> as everything else. And if your own drivers handle deliveries, the{' '}
+                <Link href="/delivery-management-pos" className="text-primary hover:underline">delivery management POS guide</Link> covers zones, dispatch and driver apps.
               </p>
             </div>
           </div>

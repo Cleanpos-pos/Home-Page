@@ -13,7 +13,7 @@ const services = [
     icon: <Smartphone className="h-8 w-8 text-accent" />,
     title: 'Self-Order Kiosks',
     description: 'Reduce queues by up to 70% and increase average order value by 30% with sleek, user-friendly self-order kiosks for restaurants and retail.',
-    href: '/kiosks'
+    href: '/self-order-kiosks'
   },
   {
     icon: <Ticket className="h-8 w-8 text-accent" />,
@@ -43,7 +43,7 @@ const services = [
     icon: <Tv2 className="h-8 w-8 text-accent" />,
     title: 'Kitchen Display Systems (KDS)',
     description: 'Replace paper tickets with digital kitchen display screens. Streamline order flow, reduce errors, and speed up preparation times.',
-    href: '#'
+    href: '/kitchen-display-system'
   },
   {
     icon: <Globe className="h-8 w-8 text-accent" />,
@@ -71,8 +71,8 @@ const services = [
   },
   {
     icon: <DownloadCloud className="h-8 w-8 text-accent" />,
-    title: '24/7 UK-Based Support',
-    description: 'Dedicated UK support team for remote and on-site assistance. Average response time under 15 minutes for critical issues.',
+    title: 'UK-Based Support',
+    description: 'Dedicated UK support team for remote and on-site assistance, Monday to Friday, 9am–9:30pm. Average response time under 15 minutes for critical issues.',
     href: '/support'
   },
 ];

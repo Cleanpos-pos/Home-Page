@@ -66,7 +66,7 @@ export function EducationCashless() {
               FSM 2026 expansion
             </Link>
             {' · '}
-            <Link href="/self-service-epos" className="text-primary/90 hover:text-primary underline underline-offset-4">
+            <Link href="/self-order-kiosks" className="text-primary/90 hover:text-primary underline underline-offset-4">
               self-service kiosks
             </Link>
             {' · '}

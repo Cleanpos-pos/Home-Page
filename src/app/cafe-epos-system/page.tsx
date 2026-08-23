@@ -214,9 +214,9 @@ export default function CafeEposPage() {
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">More Posso Solutions for Cafes</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">Full ePOS Features</p>
-                  <p className="text-slate-400 text-sm mt-1">30+ features overview</p>
+                <Link href="/pos-for-cafe" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Caf&eacute; POS Buyer&apos;s Guide</p>
+                  <p className="text-slate-400 text-sm mt-1">What to look for before you buy</p>
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>

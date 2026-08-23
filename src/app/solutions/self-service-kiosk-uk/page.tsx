@@ -175,7 +175,7 @@ export default function KioskUkPage() {
                                         "Bespoke hardware branding available",
                                         "Zero-latency software optimized for UK networks",
                                         "Integration with local accounting & CRM systems",
-                                        "24/7 UK-based phone and remote support"
+                                        "UK-based phone and remote support, Mon–Fri 9am–9:30pm"
                                     ].map((li, i) => (
                                         <li key={i} className="flex items-center gap-3 text-slate-200 font-medium">
                                             <CheckCircle2 className="w-5 h-5 text-primary" />
@@ -226,7 +226,7 @@ export default function KioskUkPage() {
                         },
                         {
                             question: "Are POSSO self-service kiosks made and supported in the UK?",
-                            answer: "Yes. We supply, configure and install self-service kiosks throughout the UK and back them with a nationwide team of engineers offering on-site maintenance plus 24/7 UK-based phone and remote support, so help is always close at hand.",
+                            answer: "Yes. We supply, configure and install self-service kiosks throughout the UK and back them with a nationwide team of engineers offering on-site maintenance plus UK-based phone and remote support Monday to Friday, 9am–9:30pm, so help is always close at hand.",
                         },
                         {
                             question: "How do self-service kiosks benefit my business?",
@@ -251,7 +251,7 @@ export default function KioskUkPage() {
                 <section className="py-20 bg-slate-900/20">
                     <div className="container mx-auto px-4">
                         <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-x-12 gap-y-8 text-center">
-                            <Link href="/solutions/restaurant-self-service-kiosk" className="text-slate-500 hover:text-primary transition-colors hover:underline underline-offset-4">Restaurant Kiosks</Link>
+                            <Link href="/self-order-kiosks" className="text-slate-500 hover:text-primary transition-colors hover:underline underline-offset-4">Restaurant Kiosks</Link>
                             <Link href="/solutions/kiosks-for-retail" className="text-slate-500 hover:text-primary transition-colors hover:underline underline-offset-4">Retail Kiosk Systems</Link>
                             <Link href="/solutions/franchise-pos-systems" className="text-slate-500 hover:text-primary transition-colors hover:underline underline-offset-4">Franchise ePOS Solutions</Link>
                             <Link href="/blog/self-service-revolution" className="text-slate-500 hover:text-primary transition-colors hover:underline underline-offset-4">UK Kiosk Trends</Link>

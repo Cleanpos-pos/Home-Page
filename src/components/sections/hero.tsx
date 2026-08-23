@@ -75,7 +75,7 @@ export function Hero() {
                     </div>
 
                     <p className="text-xs text-slate-500 mt-2">
-                        Or call free: <a href="tel:+448081753956" className="text-primary hover:underline font-medium">0808 175 3956</a> &mdash; Mon&ndash;Fri 9am&ndash;5:30pm
+                        Or call free: <a href="tel:+448081753956" className="text-primary hover:underline font-medium">0808 175 3956</a> &mdash; Mon&ndash;Fri 9am&ndash;9:30pm
                     </p>
                 </div>
 
