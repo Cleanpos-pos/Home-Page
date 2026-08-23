@@ -105,7 +105,7 @@ export default function SupportPage() {
                   <h2 className="text-xl font-bold text-white mb-2">UK Phone Support</h2>
                   <p className="text-slate-400 mb-4">
                     Speak to a real person on <a href="tel:+448081753956" className="text-primary hover:underline">0808 175 3956</a> (free from UK landlines and mobiles).
-                    Lines are staffed Monday to Friday, 9am–5:30pm, with an urgent line for critical
+                    Lines are staffed Monday to Friday, 9am–9:30pm, with an urgent line for critical
                     till-down issues outside those hours — average response under 15 minutes.
                   </p>
                 </div>

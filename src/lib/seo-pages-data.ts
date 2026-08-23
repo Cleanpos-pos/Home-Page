@@ -132,7 +132,7 @@ export const seoPages: SeoPageData[] = [
       { q: "How much does Posso POS software cost?", a: "Plans are flexible based on your needs. Contact us for a personalised quote. There's no upfront hardware cost on most plans." },
       { q: "Can I use my existing hardware?", a: "Yes. Posso runs on Android tablets and Windows PCs. We can also supply a full hardware kit if needed." },
       { q: "Is there a contract?", a: "We offer flexible terms. No long lock-in contracts required." },
-      { q: "Do you provide training?", a: "Yes. Every installation includes on-site or remote training for your team, plus 24/7 support." },
+      { q: "Do you provide training?", a: "Yes. Every installation includes on-site or remote training for your team, plus UK phone support Monday to Friday, 9am–9:30pm." },
     ],
     ctaHeading: "Ready for the Best POS Software in the UK?",
     ctaText: "Book a free demo and see why 500+ UK restaurants trust Posso for their point of sale.",

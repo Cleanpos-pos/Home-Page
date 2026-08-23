@@ -161,7 +161,7 @@ const comparisonRows: {
     highlight: true,
     bestFor: 'UK restaurants, takeaways & QSRs wanting one integrated platform',
     hospitality: { label: 'Yes — hospitality only', state: 'yes' },
-    ukSupport: { label: 'Yes, incl. evenings/weekends', state: 'yes' },
+    ukSupport: { label: 'Yes — UK phone, Mon–Fri 9am–9:30pm', state: 'yes' },
     builtIn: { label: 'Yes, native', state: 'yes' },
   },
   {
@@ -460,12 +460,19 @@ export default function BestRestaurantEposSystemUkPage() {
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-6">Who Posso Is Built For</h2>
               <p className="text-lg text-slate-300 leading-relaxed">
-                Independent restaurants and multi-site groups, takeaways and QSRs, cafés and dessert bars, plus{' '}
+                Independent restaurants and{' '}
+                <Link href="/multi-site-epos-uk" className="text-primary hover:underline">
+                  multi-site groups
+                </Link>
+                , takeaways and QSRs, cafés and dessert bars, plus{' '}
                 <Link href="/solutions/franchise-pos-systems" className="text-primary hover:underline">
                   franchise operations
                 </Link>{' '}
-                needing central menu and reporting control. If you&apos;re moving off a legacy till or a generic
-                retail POS, we migrate your menu and product data as part of setup.
+                needing central menu and reporting control. If you&apos;re{' '}
+                <Link href="/replace-old-epos-system" className="text-primary hover:underline">
+                  moving off a legacy till
+                </Link>{' '}
+                or a generic retail POS, we migrate your menu and product data as part of setup.
               </p>
             </div>
           </div>
@@ -489,6 +496,17 @@ export default function BestRestaurantEposSystemUkPage() {
                   </div>
                 ))}
               </div>
+              <p className="text-slate-400 text-center mt-8">
+                Coming from Epos Now specifically? Read the honest{' '}
+                <Link href="/posso-vs-epos-now" className="text-primary hover:underline">
+                  Posso vs Epos Now comparison
+                </Link>{' '}
+                and our{' '}
+                <Link href="/epos-now-alternative" className="text-primary hover:underline">
+                  Epos Now alternative guide
+                </Link>{' '}
+                — including where they win.
+              </p>
             </div>
           </div>
         </section>

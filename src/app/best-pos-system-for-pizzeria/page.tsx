@@ -107,7 +107,7 @@ export default function BestPosSystemForPizzeriaPage() {
               </p>
               <p className="text-lg text-slate-300">
                 Most generic POS systems treat a pizza like any other menu item — forcing staff to type toppings into a notes field or add dozens of modifiers manually. A pizza-specific POS like{' '}
-                <Link href="/pizza-pos-system" className="text-primary hover:underline font-semibold">Posso&apos;s Pizza POS</Link>{' '}
+                <Link href="/pizza-epos" className="text-primary hover:underline font-semibold">Posso&apos;s Pizza POS</Link>{' '}
                 handles the complexity natively, reducing order errors and speeding up service.
               </p>
             </div>
@@ -207,7 +207,7 @@ export default function BestPosSystemForPizzeriaPage() {
             </h2>
             <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
               <p>
-                Posso built a dedicated <Link href="/pizza-pos-system" className="text-primary hover:underline font-semibold">pizza builder interface</Link> from the ground up. It is not a bolt-on or a plugin — the pizza builder is a core part of the POS that works on till screens, self-order kiosks, and your online ordering website.
+                Posso built a dedicated <Link href="/pizza-epos" className="text-primary hover:underline font-semibold">pizza builder interface</Link> from the ground up. It is not a bolt-on or a plugin — the pizza builder is a core part of the POS that works on till screens, self-order kiosks, and your online ordering website.
               </p>
               <p>
                 Staff tap to add toppings to a visual pizza graphic. They select whole, left half, or right half for each topping. The price updates instantly based on the selected size. The finished order is sent to the kitchen display with a full spec sheet — size, base, sauce, every topping by position, and any special notes.
@@ -261,7 +261,7 @@ export default function BestPosSystemForPizzeriaPage() {
             <div className="glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore Pizza POS Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/pizza-pos-system" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza POS System</p>
                   <p className="text-slate-400 text-sm mt-1">Full pizza builder details</p>
                 </Link>

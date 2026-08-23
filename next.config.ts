@@ -105,6 +105,18 @@ const nextConfig: NextConfig = {
       { source: '/skegness-pos-systems', destination: '/pos', permanent: true },
       { source: '/small-pos-magic-the-tiny-marvels-transforming-our-lives', destination: '/pos', permanent: true },
 
+      // Cluster consolidation (guide-layer build, August 2026): the pizza product
+      // duplicates fold into the /pos-for-pizza-shop guide and the kiosk
+      // duplicates fold into /self-order-kiosks, so each cluster stops splitting
+      // authority across near-identical pages. Old directories stay in place —
+      // these redirects take precedence over the file-system routes.
+      { source: '/pizza-pos-system', destination: '/pos-for-pizza-shop', permanent: true },
+      { source: '/pizza-shop-pos', destination: '/pos-for-pizza-shop', permanent: true },
+      { source: '/solutions/restaurant-self-service-kiosk', destination: '/self-order-kiosks', permanent: true },
+      { source: '/self-service-epos', destination: '/self-order-kiosks', permanent: true },
+      { source: '/best-epos-now-ordering-app-by-posso-ltd-uk', destination: '/epos-now-alternative', permanent: true },
+      { source: '/best-online-ordering-software-for-restaurants-by-posso-ltd-uk', destination: '/online-ordering', permanent: true },
+
       { source: '/best-food-on-the-table-app-by-posso-ltd-uk', destination: '/restaurant-order-at-table-app', permanent: true },
       { source: '/best-restaurant-order-at-table-app-by-posso-ltd-uk', destination: '/restaurant-order-at-table-app', permanent: true },
       { source: '/best-food-ordering-system-by-posso-ltd-uk', destination: '/food-ordering-system', permanent: true },
@@ -138,8 +150,9 @@ const nextConfig: NextConfig = {
       { source: '/best-coffee-pos-by-posso-ltd-uk', destination: '/coffee-pos-system', permanent: true },
       { source: '/best-coffee-pos-system-by-posso-ltd-uk', destination: '/coffee-pos-system', permanent: true },
       { source: '/best-pizza-epos-by-posso-ltd-uk', destination: '/pizza-epos', permanent: true },
-      { source: '/best-pizza-shop-pos-software-by-posso-ltd-uk', destination: '/pizza-shop-pos', permanent: true },
-      { source: '/best-pizza-shop-point-of-sale-by-posso-ltd-uk', destination: '/pizza-shop-pos', permanent: true },
+      // Flattened to the guide (was /pizza-shop-pos, which now redirects there)
+      { source: '/best-pizza-shop-pos-software-by-posso-ltd-uk', destination: '/pos-for-pizza-shop', permanent: true },
+      { source: '/best-pizza-shop-point-of-sale-by-posso-ltd-uk', destination: '/pos-for-pizza-shop', permanent: true },
       { source: '/best-bar-ordering-app-by-posso-ltd-uk', destination: '/bar-ordering-app', permanent: true },
       { source: '/best-pos-for-pizza-shop-by-posso-ltd-uk', destination: '/pos-for-pizza-shop', permanent: true },
       { source: '/best-pos-system-for-pizza-shop-by-posso-ltd-uk', destination: '/pos-for-pizza-shop', permanent: true },
@@ -159,8 +172,11 @@ const nextConfig: NextConfig = {
       { source: '/best-order-counter-pos-system-by-posso-ltd-uk', destination: '/order-counter-pos', permanent: true },
       { source: '/best-custom-pos-system-by-posso-ltd-uk', destination: '/custom-pos-system', permanent: true },
       { source: '/best-mobile-pos-system-uk-by-posso-ltd-uk', destination: '/mobile-pos-system-uk', permanent: true },
-      { source: '/best-self-service-epos-by-posso-ltd-uk', destination: '/self-service-epos', permanent: true },
-      { source: '/best-restaurant-self-ordering-system-by-posso-ltd-uk', destination: '/self-service-epos', permanent: true },
+      // Flattened (was /self-service-epos, which now redirects to /self-order-kiosks).
+      // The duplicate /best-restaurant-self-ordering-system-by-posso-ltd-uk entry that
+      // pointed here was removed — the later rule sending it to
+      // /restaurant-self-ordering-system now takes effect instead of being shadowed.
+      { source: '/best-self-service-epos-by-posso-ltd-uk', destination: '/self-order-kiosks', permanent: true },
       { source: '/best-till-system-software-by-posso-ltd-uk', destination: '/till-system-software', permanent: true },
       { source: '/best-touch-screen-till-system-by-posso-ltd-uk', destination: '/touch-screen-till-system', permanent: true },
       { source: '/best-touch-screen-epos-system-by-posso-ltd-uk', destination: '/touch-screen-till-system', permanent: true },

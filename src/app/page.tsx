@@ -180,7 +180,7 @@ export default function Home() {
           { question: 'Can I integrate Just Eat, Uber Eats, and Deliveroo with my POS?', answer: 'Absolutely. Posso integrates with Just Eat, Uber Eats, and Deliveroo so all delivery orders appear directly on your POS and kitchen display. No extra tablets, no re-keying — everything in one place.' },
           { question: 'Does the POS work offline?', answer: 'Yes. Posso One is built offline-first using PowerSync technology. You can take orders, process cash payments, and print receipts even without internet. Everything syncs automatically when connectivity returns.' },
           { question: 'How long does setup take?', answer: 'We go from first install to first order in under 24 hours. We handle hardware setup, menu import, staff training, and ongoing support. Setup and training are included free.' },
-          { question: 'Do you provide support?', answer: 'Yes — we offer UK-based support via phone (0808 175 3956, free call) and remote assistance. Our team is available Monday to Friday, 9am–5:30pm, with average response times under 15 minutes for critical issues.' },
+          { question: 'Do you provide support?', answer: 'Yes — we offer UK-based support via phone (0808 175 3956, free call) and remote assistance. Our team is available Monday to Friday, 9am–9:30pm, with average response times under 15 minutes for critical issues.' },
         ]} />
         <Contact />
       </main>

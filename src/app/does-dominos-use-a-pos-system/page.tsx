@@ -166,7 +166,7 @@ export default function DominosPosSystemPage() {
             </h2>
             <p className="text-slate-400 text-lg text-center mb-10 max-w-2xl mx-auto">
               You do not need Domino&apos;s budget to get a pizza-specific POS.{' '}
-              <Link href="/pizza-pos-system" className="text-primary hover:underline font-semibold">Posso&apos;s Pizza POS</Link>{' '}
+              <Link href="/pizza-epos" className="text-primary hover:underline font-semibold">Posso&apos;s Pizza POS</Link>{' '}
               gives independent pizza shops many of the same core capabilities — at a fraction of the cost.
             </p>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -228,7 +228,7 @@ export default function DominosPosSystemPage() {
               </div>
               <p>
                 Ready to bring pizza-specific POS technology to your shop?{' '}
-                <Link href="/pizza-pos-system" className="text-primary hover:underline font-semibold">Explore Posso&apos;s Pizza POS system</Link>{' '}
+                <Link href="/pizza-epos" className="text-primary hover:underline font-semibold">Explore Posso&apos;s Pizza POS system</Link>{' '}
                 or call <a href="tel:+448081753956" className="text-primary hover:underline">0808 175 3956</a> for a free demo.
               </p>
             </div>
@@ -241,7 +241,7 @@ export default function DominosPosSystemPage() {
             <div className="glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore Pizza POS Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/pizza-pos-system" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza POS System</p>
                   <p className="text-slate-400 text-sm mt-1">Visual pizza builder</p>
                 </Link>

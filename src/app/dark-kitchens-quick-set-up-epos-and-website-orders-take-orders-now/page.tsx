@@ -139,8 +139,8 @@ export default function DarkKitchensPage() {
                   <p className="text-slate-400 text-sm">Commission</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl font-bold text-primary">24/7</p>
-                  <p className="text-slate-400 text-sm">UK Support</p>
+                  <p className="text-2xl font-bold text-primary">Mon–Fri</p>
+                  <p className="text-slate-400 text-sm">UK Support, 9am–9:30pm</p>
                 </div>
               </div>
             </div>

@@ -212,17 +212,17 @@ export default function PosForPizzaShopPage() {
                   <p className="font-semibold text-white">Pizza ePOS</p>
                   <p className="text-slate-400 text-sm mt-1">Pizza-specific ePOS</p>
                 </Link>
-                <Link href="/pizza-shop-pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">Pizza Shop POS</p>
+                <Link href="/pizza-pos-software" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Pizza POS Software</p>
                   <p className="text-slate-400 text-sm mt-1">Complete shop system</p>
                 </Link>
                 <Link href="/pizza-delivery-pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza Delivery POS</p>
                   <p className="text-slate-400 text-sm mt-1">Delivery management</p>
                 </Link>
-                <Link href="/pizza-pos-system" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">Pizza POS System</p>
-                  <p className="text-slate-400 text-sm mt-1">Full POS features</p>
+                <Link href="/best-pos-system-for-pizzeria" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Best Pizzeria POS</p>
+                  <p className="text-slate-400 text-sm mt-1">2026 comparison</p>
                 </Link>
               </div>
             </div>

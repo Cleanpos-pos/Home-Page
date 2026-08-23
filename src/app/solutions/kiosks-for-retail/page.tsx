@@ -209,7 +209,7 @@ export default function RetailKioskPage() {
                             <div>
                                 <h4 className="text-lg font-bold text-white mb-6">Explore More</h4>
                                 <ul className="space-y-4">
-                                    <li><Link href="/solutions/restaurant-self-service-kiosk" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Restaurant Kiosks</Link></li>
+                                    <li><Link href="/self-order-kiosks" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Restaurant Kiosks</Link></li>
                                     <li><Link href="/solutions/franchise-pos-systems" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Franchise POS</Link></li>
                                 </ul>
                             </div>

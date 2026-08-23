@@ -198,13 +198,14 @@ export default function FranchisePosPage() {
                             <div>
                                 <h4 className="text-lg font-bold text-white mb-6">Vertical Solutions</h4>
                                 <ul className="space-y-4">
-                                    <li><Link href="/solutions/restaurant-self-service-kiosk" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 underline-offset-4 decoration-primary/30 underline"><ArrowRight className="w-4 h-4" /> Multi-Unit Kiosks</Link></li>
+                                    <li><Link href="/self-order-kiosks" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 underline-offset-4 decoration-primary/30 underline"><ArrowRight className="w-4 h-4" /> Multi-Unit Kiosks</Link></li>
                                     <li><Link href="/online-ordering" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 underline-offset-4 decoration-primary/30 underline"><ArrowRight className="w-4 h-4" /> Branded App Ecosystem</Link></li>
                                 </ul>
                             </div>
                             <div>
                                 <h4 className="text-lg font-bold text-white mb-6">Expert Advice</h4>
                                 <ul className="space-y-4">
+                                    <li><Link href="/multi-site-epos-uk" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 underline-offset-4 decoration-primary/30 underline"><ArrowRight className="w-4 h-4" /> Multi-Site EPOS Guide</Link></li>
                                     <li><Link href="/blog/pos-and-self-order-kiosk-solutions" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 underline-offset-4 decoration-primary/30 underline"><ArrowRight className="w-4 h-4" /> POS Strategy 2026</Link></li>
                                     <li><Link href="/contact" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 underline-offset-4 decoration-primary/30 underline"><ArrowRight className="w-4 h-4" /> Contact Support</Link></li>
                                 </ul>

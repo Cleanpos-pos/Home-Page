@@ -217,7 +217,7 @@ export default function DownloadsPage() {
             <div className="glass-card rounded-2xl border border-slate-700/50 p-8 text-center">
               <h2 className="text-2xl font-bold text-white mb-3">Need Support?</h2>
               <p className="text-slate-400 mb-6">
-                Our UK support team is available Monday to Friday, 9am–5:30pm.
+                Our UK support team is available Monday to Friday, 9am–9:30pm.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-white">

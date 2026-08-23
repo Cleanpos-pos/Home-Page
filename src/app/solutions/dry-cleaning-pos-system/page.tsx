@@ -13,7 +13,8 @@ import {
     ArrowRight,
     CheckCircle2,
     Truck,
-    Shield
+    Shield,
+    ExternalLink
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -271,6 +272,67 @@ export default function DryCleaningPosPage() {
                     { question: 'Can I manage multiple branches from one system?', answer: 'Yes. The laundry EPOS is multi-branch ready. You can manage several shops or processing sites under one account, transfer garments between locations, share customer accounts across branches, and view consolidated reporting for the whole business.' },
                     { question: 'How do customers pay, and are card payments included?', answer: 'Customers can pay by card, contactless, Apple Pay, Google Pay, or cash, and balances can be held against customer accounts for regulars and trade clients. Card payments are integrated directly into the POS with PCI-DSS compliant processing.' },
                 ]} />
+
+                {/* Explore more + industry references */}
+                <section className="py-16">
+                    <div className="container mx-auto px-4">
+                        <div className="max-w-3xl mx-auto">
+                            <p className="text-lg text-slate-300 text-center mb-12">
+                                Interested to know more about POS Solutions?{' '}
+                                <Link href="/pos" className="text-primary hover:underline font-semibold">
+                                    Click here to explore more
+                                </Link>
+                                .
+                            </p>
+                            <div className="glass-card rounded-2xl border border-white/5 p-8">
+                                <h2 className="text-xl font-bold text-white mb-3">References</h2>
+                                <p className="text-sm text-slate-500 mb-6">
+                                    Industry reading on how the dry cleaning and laundry market is changing:
+                                </p>
+                                <ul className="space-y-3 text-sm">
+                                    {[
+                                        {
+                                            label: 'NBC News — One of New York City’s last Chinese hand laundries closes',
+                                            href: 'https://www.nbcnews.com/specials/one-of-new-york-city-last-chinese-hand-laundries-closes/',
+                                        },
+                                        {
+                                            label: 'NPR — Coronavirus pandemic upends the dry cleaning industry',
+                                            href: 'https://www.npr.org/2021/03/31/982953808/coronavirus-pandemic-upends-the-dry-cleaning-industry',
+                                        },
+                                        {
+                                            label: 'NBC News — One year later, many dry cleaners are still hanging by a thread',
+                                            href: 'https://www.nbcnews.com/business/business-news/one-year-later-many-dry-cleaners-are-still-hanging-thread-n1259642',
+                                        },
+                                        {
+                                            label: 'Bloomberg — Dry cleaners face a reckoning in the work-from-home economy',
+                                            href: 'https://www.bloomberg.com/news/articles/2020-11-25/covid-19-dry-cleaners-face-a-reckoning-in-work-from-home-economy',
+                                        },
+                                        {
+                                            label: 'Tracxn — Trending start-ups in on-demand laundry services',
+                                            href: 'https://tracxn.com/d/trending-themes/Startups-in-Ondemand-Laundry-Services',
+                                        },
+                                        {
+                                            label: 'Inc. — Rinse, the laundry start-up',
+                                            href: 'https://www.inc.com/magazine/201804/bill-saporito/rinse-laundry-startup.html',
+                                        },
+                                    ].map((ref) => (
+                                        <li key={ref.href}>
+                                            <a
+                                                href={ref.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-start gap-2 text-slate-400 hover:text-primary transition-colors"
+                                            >
+                                                <ExternalLink className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
+                                                {ref.label}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
 
             <Footer />

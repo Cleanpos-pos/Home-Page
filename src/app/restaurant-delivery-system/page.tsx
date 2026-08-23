@@ -220,7 +220,7 @@ export default function RestaurantDeliverySystemPage() {
                   <p className="font-semibold text-white">ePOS Systems</p>
                   <p className="text-slate-400 text-sm mt-1">Full POS features</p>
                 </Link>
-                <Link href="/pizza-pos-system" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza POS</p>
                   <p className="text-slate-400 text-sm mt-1">Pizza delivery features</p>
                 </Link>

@@ -226,7 +226,7 @@ export default function EposSystemsForTakeawaysPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl sm:text-4xl font-bold gradient-text text-center mb-10">
-                Why 1,000+ Takeaways Use Posso
+                Why UK Takeaways Choose Posso
               </h2>
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
@@ -255,10 +255,29 @@ export default function EposSystemsForTakeawaysPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore More Takeaway Solutions</h2>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <p className="text-slate-300 text-center mb-8 max-w-2xl mx-auto">
+                Opening your first shop? Work through the{' '}
+                <Link href="/opening-a-takeaway-epos-checklist" className="text-primary hover:underline">
+                  opening-a-takeaway EPOS checklist
+                </Link>
+                . Running your own drivers? See the{' '}
+                <Link href="/delivery-management-pos" className="text-primary hover:underline">
+                  delivery management POS guide
+                </Link>
+                .
+              </p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <Link href="/best-epos-system-for-takeaway" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Best Takeaway ePOS</p>
                   <p className="text-slate-400 text-sm mt-1">Feature comparison guide</p>
+                </Link>
+                <Link href="/opening-a-takeaway-epos-checklist" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Opening a Takeaway</p>
+                  <p className="text-slate-400 text-sm mt-1">Week-by-week checklist</p>
+                </Link>
+                <Link href="/delivery-management-pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Delivery Management</p>
+                  <p className="text-slate-400 text-sm mt-1">Own drivers, zones & dispatch</p>
                 </Link>
                 <Link href="/online-ordering" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Online Ordering</p>

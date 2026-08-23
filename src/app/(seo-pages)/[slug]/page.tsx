@@ -283,8 +283,8 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
                 <p className="text-slate-500 text-sm">Commission Rates</p>
               </div>
               <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-                <p className="text-3xl font-bold text-emerald-400 mb-2">24/7</p>
-                <p className="text-slate-500 text-sm">UK-Based Support</p>
+                <p className="text-3xl font-bold text-emerald-400 mb-2">Mon–Fri</p>
+                <p className="text-slate-500 text-sm">UK-Based Support, 9am–9:30pm</p>
               </div>
             </div>
           </div>

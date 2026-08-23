@@ -28,14 +28,15 @@ export function Footer() {
                         <h4 className="font-bold text-slate-50 mb-4">Hospitality</h4>
                         <ul className="space-y-2 text-sm text-slate-400">
                             <li><Link href="/pos" className="hover:text-primary transition-colors">ePOS Systems</Link></li>
-                            <li><Link href="/solutions/restaurant-self-service-kiosk" className="hover:text-primary transition-colors font-semibold text-primary/80">Restaurant Kiosks</Link></li>
+                            <li><Link href="/self-order-kiosks" className="hover:text-primary transition-colors font-semibold text-primary/80">Self-Order Kiosks</Link></li>
                             <li><Link href="/tablemaestro" className="hover:text-primary transition-colors">TableMaestro Booking</Link></li>
-                            <li><Link href="/self-order-kiosks" className="hover:text-primary transition-colors">Self-Order Kiosks</Link></li>
                             <li><Link href="/online-ordering" className="hover:text-primary transition-colors">Online Ordering</Link></li>
                             <li><Link href="/ai-phone-ordering" className="hover:text-primary transition-colors">AI Phone Ordering</Link></li>
                             <li><Link href="/gloriafood-alternative" className="hover:text-primary transition-colors">GloriaFood Alternative</Link></li>
                             <li><Link href="/credit-card-machines" className="hover:text-primary transition-colors">Card Machines</Link></li>
                             <li><Link href="/delivery-integrations" className="hover:text-primary transition-colors">Delivery Integrations</Link></li>
+                            <li><Link href="/delivery-management-pos" className="hover:text-primary transition-colors">Delivery Management</Link></li>
+                            <li><Link href="/multi-site-epos-uk" className="hover:text-primary transition-colors">Multi-Site EPOS</Link></li>
                             <li><Link href="/drink-order-app" className="hover:text-primary transition-colors">Table Ordering &amp; Waiter Pad</Link></li>
                             <li><Link href="/solutions/franchise-pos-systems" className="hover:text-primary transition-colors">Franchise Solutions</Link></li>
                         </ul>
@@ -50,6 +51,8 @@ export function Footer() {
                             <li><Link href="/pos-for-kebab-shop" className="hover:text-primary transition-colors">Kebab Shop POS</Link></li>
                             <li><Link href="/pos-for-chinese-takeaway" className="hover:text-primary transition-colors">Chinese Takeaway POS</Link></li>
                             <li><Link href="/pos-for-indian-takeaway" className="hover:text-primary transition-colors">Indian Takeaway POS</Link></li>
+                            <li><Link href="/pos-for-cafe" className="hover:text-primary transition-colors">POS for Caf&eacute;</Link></li>
+                            <li><Link href="/opening-a-takeaway-epos-checklist" className="hover:text-primary transition-colors">Opening a Takeaway</Link></li>
                             <li><Link href="/kitchen-display-system" className="hover:text-primary transition-colors">Kitchen Display System</Link></li>
                         </ul>
                     </nav>
