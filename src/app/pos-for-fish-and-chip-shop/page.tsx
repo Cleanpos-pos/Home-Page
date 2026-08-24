@@ -256,6 +256,11 @@ export default function PosForFishAndChipShopPage() {
                   <p className="text-slate-400 text-sm mt-1">Just Eat, Uber Eats, Deliveroo</p>
                 </Link>
               </div>
+              <p className="text-slate-400 text-center mt-6">
+                Prefer the unvarnished version? Read{' '}
+                <Link href="/takeaway-epos-what-owners-say" className="text-primary hover:underline">what takeaway owners actually say about EPOS</Link>{' '}
+                — including the chippy modernisation story, every source linked.
+              </p>
             </div>
           </div>
         </section>

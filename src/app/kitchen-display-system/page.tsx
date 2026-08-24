@@ -243,6 +243,8 @@ export default function KitchenDisplaySystemPage() {
                 <Link href="/pos-for-kebab-shop" className="text-primary hover:underline">kebab shops</Link>,{' '}
                 <Link href="/pos-for-chinese-takeaway" className="text-primary hover:underline">Chinese takeaways</Link>{' '}
                 and <Link href="/pos-for-indian-takeaway" className="text-primary hover:underline">Indian takeaways</Link>.
+                Or hear it from the people running the screens — {' '}
+                <Link href="/kitchen-display-system-what-kitchens-say" className="text-primary hover:underline">what chefs and owners actually say about KDS</Link>, with every thread linked.
               </p>
             </div>
           </div>

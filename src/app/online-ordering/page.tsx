@@ -205,7 +205,12 @@ export default function OnlineOrderingPage() {
               <Link href="/best-restaurant-epos-system-uk" className="text-primary hover:underline">
                 best restaurant EPOS systems in the UK
               </Link>{' '}
-              to see how online ordering fits into one integrated platform.
+              to see how online ordering fits into one integrated platform. And before you decide
+              anything, read{' '}
+              <Link href="/restaurant-online-ordering-what-owners-say" className="text-primary hover:underline">
+                what owners and their developers say about online ordering
+              </Link>{' '}
+              — the reliability test, the build-vs-buy question, sources linked.
             </p>
           </div>
         </section>

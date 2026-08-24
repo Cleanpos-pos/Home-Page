@@ -117,6 +117,7 @@ export const posForCafe: Guide = {
         { label: "TableMaestro booking", href: "/tablemaestro" },
         { label: "Card machines", href: "/credit-card-machines" },
         { label: "EPOS pricing", href: "/epos-pricing-uk" },
+        { label: "Dessert & bubble tea POS", href: "/pos-for-dessert-shop" },
       ],
     },
   ],
