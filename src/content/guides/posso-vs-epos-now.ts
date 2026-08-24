@@ -53,7 +53,7 @@ export const possoVsEposNow: Guide = {
           "Included; customer pays a 60p service fee, business pays only card processing",
           "Reported as an add-on from ~£25/month",
         ],
-        ["Kitchen display", "21-inch screen £399 + VAT, no monthly fee", "Reported as an add-on from ~£19/month"],
+        ["Kitchen display", "21-inch screen £399 + VAT; covered by the standard software fee", "Reported as an add-on from ~£19/month"],
         [
           "Loyalty / marketing",
           "Built-in CMS, 2,000 marketing emails a month included",
