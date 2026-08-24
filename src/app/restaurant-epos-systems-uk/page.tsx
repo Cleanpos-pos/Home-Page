@@ -80,7 +80,7 @@ const pageSchema = [
 
 const ukFeatures = [
   { icon: Phone, title: 'UK-Based Support', description: 'Call our British support team on 0808 175 3956. No overseas call centres, no language barriers. Real people who understand UK hospitality.' },
-  { icon: CreditCard, title: 'GBP Pricing, No Hidden Fees', description: 'POS from £499 + VAT. Kiosks from £699 + VAT. Prices in pounds sterling with no monthly software fees, no per-transaction charges from Posso.' },
+  { icon: CreditCard, title: 'GBP Pricing, No Hidden Fees', description: 'POS from £499 + VAT. Kiosks from £699 + VAT. Prices in pounds sterling, software from £25 + VAT a month, and no per-transaction charges from Posso.' },
   { icon: BarChart3, title: 'VAT Reporting Built In', description: 'Automatic VAT calculation on every transaction. Generate VAT-ready reports for your accountant. Handles different VAT rates for eat-in vs takeaway food.' },
   { icon: Shield, title: 'HMRC Compliance', description: 'Sales reports, X and Z reads, cash management, and digital record-keeping that satisfy HMRC requirements. Your accountant will thank you.' },
   { icon: MapPin, title: 'UK Delivery Zones', description: 'Set delivery areas by UK postcode. Custom minimum order values and delivery charges per zone. Automatic postcode validation for every delivery order.' },
@@ -278,7 +278,7 @@ export default function RestaurantEposUkPage() {
           { question: 'Is the ePOS system HMRC compliant?', answer: 'Yes. Posso provides digital sales records, X and Z reads, cash management reports, and itemised transaction logs that satisfy HMRC requirements for restaurant businesses.' },
           { question: 'Do you deliver ePOS systems anywhere in the UK?', answer: 'Yes. We deliver and support ePOS systems nationwide — from central London to rural Scotland. Hardware is shipped with next-day delivery available, and remote setup support is included free.' },
           { question: 'Can I manage UK postcode delivery zones?', answer: 'Yes. Set delivery zones by postcode prefix (e.g. M1, M2, M3 for Manchester). Each zone can have its own minimum order value and delivery charge. The system validates postcodes automatically.' },
-          { question: 'How much does a UK restaurant ePOS system cost?', answer: 'Posso restaurant ePOS starts from £499 + VAT for a complete terminal. Self-order kiosks from £699 + VAT. All prices are in GBP with no hidden monthly software fees. Finance options are available from £24.92/week.' },
+          { question: 'How much does a UK restaurant ePOS system cost?', answer: 'Posso restaurant ePOS starts from £499 + VAT for a complete terminal. Self-order kiosks from £699 + VAT. All prices are in GBP, with software from £25 + VAT a month. Finance options are available from £24.92/week.' },
         ]} />
 
         <Contact />
