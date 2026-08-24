@@ -251,7 +251,10 @@ export default function EposPricingUkPage() {
                   <Link href="/posso-vs-epos-now" className="text-primary hover:underline">Posso vs Epos Now comparison</Link>{' '}
                   works through a real example, and the{' '}
                   <Link href="/epos-now-alternative" className="text-primary hover:underline">Epos Now alternative guide</Link>{' '}
-                  lists the questions to put to any provider before you sign.
+                  lists the questions to put to any provider before you sign. For what operators
+                  across the market report actually paying — sourced from the owner threads, with
+                  every figure linked — see{' '}
+                  <Link href="/epos-system-monthly-fee" className="text-primary hover:underline">EPOS monthly fees: what owners pay</Link>.
                 </p>
                 <p>
                   One honest caveat about our own pricing: card processing through Posso Pay is{' '}

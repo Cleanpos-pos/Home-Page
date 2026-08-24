@@ -219,6 +219,11 @@ export default function PosForPizzaShopPage() {
                   <p className="text-slate-400 text-sm mt-1">2026 comparison</p>
                 </Link>
               </div>
+              <p className="text-slate-400 text-center mt-6">
+                Prefer the unvarnished version? Read{' '}
+                <Link href="/takeaway-epos-what-owners-say" className="text-primary hover:underline">what takeaway owners actually say about EPOS</Link>{' '}
+                — synthesised from the owner threads, every source linked.
+              </p>
             </div>
           </div>
         </section>

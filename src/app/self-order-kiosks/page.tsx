@@ -314,7 +314,12 @@ export default function KiosksPage() {
               <Link href="/best-restaurant-epos-system-uk" className="text-primary hover:underline">
                 best restaurant EPOS system UK
               </Link>{' '}
-              guide compares kiosks, tills and online ordering across the leading providers.
+              guide compares kiosks, tills and online ordering across the leading providers. Still
+              on the fence? Read the community's answer to{' '}
+              <Link href="/are-self-order-kiosks-worth-it" className="text-primary hover:underline">
+                are self-order kiosks worth it?
+              </Link>{' '}
+              — operator and customer threads, including the case against.
             </p>
           </div>
         </section>

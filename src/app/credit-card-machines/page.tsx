@@ -207,7 +207,11 @@ export default function CreditCardMachinesPage() {
               <Link href="/best-restaurant-epos-system-uk" className="text-primary hover:underline">
                 best restaurant EPOS systems in the UK
               </Link>{' '}
-              to see integrated card machines, kiosks and online ordering as one platform.
+              to see integrated card machines, kiosks and online ordering as one platform. For the
+              community's view — reader recommendations, the warnings, the fund-hold stories — read{' '}
+              <Link href="/card-machines-what-owners-say" className="text-primary hover:underline">
+                what small business owners actually say about card machines
+              </Link>.
             </p>
           </div>
         </section>
