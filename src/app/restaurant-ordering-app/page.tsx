@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '264',
-      bestRating: '5',
-    },
     featureList: [
       'Dine-in QR code ordering',
       'Takeaway and collection ordering',

@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '213',
-      bestRating: '5',
-    },
     featureList: [
       'No long-term contract',
       'Low transaction fees for sole traders',

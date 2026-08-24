@@ -63,12 +63,6 @@ const pageSchema = [
       '@type': 'Brand',
       name: 'Posso',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '127',
-      bestRating: '5',
-    },
     featureList: [
       'Caller ID for repeat phone orders',
       'Delivery zone management by postcode',

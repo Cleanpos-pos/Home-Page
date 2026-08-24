@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '234',
-      bestRating: '5',
-    },
     featureList: [
       'Table management with floor plan and course firing',
       'Kitchen display system with order routing',

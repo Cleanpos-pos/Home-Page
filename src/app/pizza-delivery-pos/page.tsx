@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '178',
-      bestRating: '5',
-    },
     featureList: [
       'Visual pizza builder with half-and-half topping support',
       'Delivery zone management with distance-based pricing',

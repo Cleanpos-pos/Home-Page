@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '167',
-      bestRating: '5',
-    },
     featureList: [
       'Freestanding touchscreen kiosk',
       'Integrated contactless card payment',

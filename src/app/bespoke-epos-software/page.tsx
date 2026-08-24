@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '156',
-      bestRating: '5',
-    },
     featureList: [
       'Custom-built workflows and screens',
       'Full API integration with existing systems',

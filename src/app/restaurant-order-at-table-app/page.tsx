@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '142',
-      bestRating: '5',
-    },
     featureList: [
       'QR code table ordering — guests scan and order from their phone',
       'Waiter pad mode for staff-assisted ordering',

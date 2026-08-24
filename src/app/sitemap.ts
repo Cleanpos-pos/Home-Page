@@ -90,6 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/kitchen-display-system',
     '/epos-now-alternative',
     '/posso-vs-epos-now',
+    '/epos-pricing-uk',
     '/opening-a-takeaway-epos-checklist',
     '/delivery-management-pos',
     '/replace-old-epos-system',
@@ -303,6 +304,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/pizza-shop-pos',
     '/self-service-epos',
     '/solutions/restaurant-self-service-kiosk',
+    // Programmatic alias now redirecting; not caught by isAlias (no -by-posso-ltd-uk)
+    '/best-pos-software-free-download-full-version-crack-uk',
   ]);
 
   const isDropped = (path: string) => isAlias(path) || redirecting.has(path);

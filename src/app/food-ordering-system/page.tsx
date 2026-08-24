@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '189',
-      bestRating: '5',
-    },
     featureList: [
       'Online ordering website — branded, mobile-first',
       'Self-order kiosk with upselling prompts',

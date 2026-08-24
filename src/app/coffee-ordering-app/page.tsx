@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '134',
-      bestRating: '5',
-    },
     featureList: [
       'Mobile order-ahead — customers order before they arrive',
       'Digital loyalty stamps — buy 9 get 10th free',

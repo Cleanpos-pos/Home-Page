@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '212',
-      bestRating: '5',
-    },
     featureList: [
       'Visual pizza builder with topping selector',
       'Size and topping pricing matrix',

@@ -113,6 +113,7 @@ const eposVerticals = [
   { href: '/replace-old-epos-system', name: 'Replacing an Old EPOS', desc: 'What transfers & how to switch' },
   { href: '/epos-now-alternative', name: 'Epos Now Alternative', desc: 'Costs & contracts compared' },
   { href: '/posso-vs-epos-now', name: 'Posso vs Epos Now', desc: 'Honest side-by-side comparison' },
+  { href: '/epos-pricing-uk', name: 'EPOS Pricing', desc: 'Every cost, published' },
   { href: '/pub-pos-system', name: 'Pub POS', desc: 'Tabs, rounds & fast bar service' },
   { href: '/bar-epos', name: 'Bar EPOS', desc: 'Rapid rounds & happy-hour pricing' },
   { href: '/hotel-epos-system', name: 'Hotel EPOS', desc: 'Room charging & multi-outlet' },

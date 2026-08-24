@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '176',
-      bestRating: '5',
-    },
     featureList: [
       'Unattended 24/7 ordering mode',
       'Card-only payment processing',

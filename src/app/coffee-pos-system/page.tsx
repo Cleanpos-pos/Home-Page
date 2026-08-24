@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '245',
-      bestRating: '5',
-    },
     featureList: [
       'Barista kitchen display with drink queue',
       'Milk and size modifiers with live pricing',

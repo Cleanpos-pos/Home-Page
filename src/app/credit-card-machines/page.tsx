@@ -61,12 +61,6 @@ const pageSchema = [
         name: 'Posso Ltd',
       },
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '127',
-      bestRating: '5',
-    },
   },
   {
     '@context': 'https://schema.org',

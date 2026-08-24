@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '145',
-      bestRating: '5',
-    },
     featureList: [
       'Runs on iPad and Android tablets',
       'Portable waiter ordering — take orders tableside',

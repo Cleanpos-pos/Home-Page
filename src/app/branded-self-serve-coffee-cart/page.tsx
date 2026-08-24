@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '118',
-      bestRating: '5',
-    },
     featureList: [
       'Branded kiosk interface with custom logo and colours',
       'Portable setup with 4G and battery backup',

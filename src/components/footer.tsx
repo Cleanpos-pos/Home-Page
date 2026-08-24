@@ -37,6 +37,7 @@ export function Footer() {
                             <li><Link href="/delivery-integrations" className="hover:text-primary transition-colors">Delivery Integrations</Link></li>
                             <li><Link href="/delivery-management-pos" className="hover:text-primary transition-colors">Delivery Management</Link></li>
                             <li><Link href="/multi-site-epos-uk" className="hover:text-primary transition-colors">Multi-Site EPOS</Link></li>
+                            <li><Link href="/epos-pricing-uk" className="hover:text-primary transition-colors">EPOS Pricing</Link></li>
                             <li><Link href="/drink-order-app" className="hover:text-primary transition-colors">Table Ordering &amp; Waiter Pad</Link></li>
                             <li><Link href="/solutions/franchise-pos-systems" className="hover:text-primary transition-colors">Franchise Solutions</Link></li>
                         </ul>

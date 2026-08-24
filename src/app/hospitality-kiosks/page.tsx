@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '189',
-      bestRating: '5',
-    },
     featureList: [
       'Self-service food and drink ordering',
       'Hotel check-in and check-out',

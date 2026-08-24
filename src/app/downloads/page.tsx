@@ -11,7 +11,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Downloads — Posso One Desktop, Apps, Brochures & Docs',
   description:
-    'Download Posso One for Windows and Android, the Waiter Pad app, Printer Helper app, product brochures, and support documents. Direct downloads for Posso ePOS users.',
+    'Download Posso One for Windows and Android, the Waiter Pad app, Printer Helper, PrintAssist for Citaq H10, brochures, and support docs for Posso ePOS users.',
   keywords: [
     'Posso downloads',
     'Posso One Android app',
@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     'Posso Android POS app',
     'Posso printer helper app',
     'Posso printer helper APK',
+    'PrintAssist Citaq H10',
+    'Citaq H10 printer app',
     'Posso Android app',
     'Posso product brochure',
     'Posso ePOS downloads',
@@ -108,6 +110,17 @@ const downloads: DownloadItem[] = [
     fileSize: '3.6 MB',
     platform: 'Android 7.0+',
     badge: 'v2 — Latest',
+  },
+  {
+    icon: Printer,
+    title: 'PrintAssist for Citaq H10-1 / H10-2 / H10-3 (Android)',
+    description:
+      'Printing companion app for Citaq H10 series Android tills — H10-1, H10-2 and H10-3. Bridges the terminal’s built-in thermal printer so Posso One receipts and kitchen tickets print directly on Citaq hardware. Install alongside the Posso One Android app. Sideload install — no Play Store account required.',
+    fileName: 'printassist-citaq-h10.apk',
+    fileUrl: '/downloads/printassist-citaq-h10.apk',
+    fileSize: '6.7 MB',
+    platform: 'Citaq H10-1 / H10-2 / H10-3',
+    badge: 'v1.0 — Latest',
   },
   {
     icon: FileText,

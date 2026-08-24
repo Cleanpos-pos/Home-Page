@@ -140,7 +140,7 @@ export const eposNowAlternative: Guide = {
         { label: "ePOS systems", href: "/pos" },
         { label: "Online ordering", href: "/online-ordering" },
         { label: "Replacing an old EPOS", href: "/replace-old-epos-system" },
-        { label: "EPOS pricing", href: "/buy-epos-system-uk" },
+        { label: "EPOS pricing", href: "/epos-pricing-uk" },
       ],
     },
   ],

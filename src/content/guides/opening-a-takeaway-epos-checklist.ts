@@ -170,7 +170,7 @@ export const openingATakeawayEposChecklist: Guide = {
         { label: "Delivery management", href: "/delivery-management-pos" },
         { label: "Kitchen display systems", href: "/kitchen-display-system" },
         { label: "Finance calculator", href: "/finance" },
-        { label: "EPOS pricing", href: "/buy-epos-system-uk" },
+        { label: "EPOS pricing", href: "/epos-pricing-uk" },
       ],
     },
   ],

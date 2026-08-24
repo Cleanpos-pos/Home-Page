@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '186',
-      bestRating: '5',
-    },
     featureList: [
       'Real-time cloud synchronisation across all devices',
       'Multi-device operation — tablet, desktop, phone',

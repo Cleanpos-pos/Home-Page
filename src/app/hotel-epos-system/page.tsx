@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '98',
-      bestRating: '5',
-    },
     featureList: [
       'Room service ordering with delivery tracking',
       'Restaurant POS with table management and course firing',

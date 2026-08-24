@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '143',
-      bestRating: '5',
-    },
     featureList: [
       'Tab management across multiple tills',
       'Cellar stock tracking with yield monitoring',

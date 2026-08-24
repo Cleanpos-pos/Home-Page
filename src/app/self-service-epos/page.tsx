@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '234',
-      bestRating: '5',
-    },
     featureList: [
       'Self-ordering touchscreen kiosks',
       'QR code table and takeaway ordering',

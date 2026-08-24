@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '176',
-      bestRating: '5',
-    },
     featureList: [
       'Order Now button on Facebook and Instagram',
       'Direct link to branded online ordering page',

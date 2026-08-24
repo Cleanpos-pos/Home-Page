@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '193',
-      bestRating: '5',
-    },
     featureList: [
       'Waiter pad tablet ordering',
       'Customer-facing table tablets',

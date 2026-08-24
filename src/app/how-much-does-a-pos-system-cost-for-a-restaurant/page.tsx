@@ -261,9 +261,9 @@ export default function PosSystemCostPage() {
                   <p className="font-semibold text-white">Get a Quote</p>
                   <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
                 </Link>
-                <Link href="/cheap-epos-systems-for-restaurants" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">Affordable ePOS</p>
-                  <p className="text-slate-400 text-sm mt-1">Budget-friendly options</p>
+                <Link href="/epos-pricing-uk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">EPOS Pricing</p>
+                  <p className="text-slate-400 text-sm mt-1">Every cost, published</p>
                 </Link>
                 <Link href="/finance" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Finance Calculator</p>
