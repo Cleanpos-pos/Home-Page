@@ -100,7 +100,7 @@ const posSystems: PosSystem[] = [
       'Smaller brand compared to Square or Lightspeed',
       'Currently UK-only',
     ],
-    verdict: 'The most feature-rich option for UK restaurants and takeaways. Ideal if you need kiosks, online ordering, delivery integration, and a pizza builder — all in one system with no monthly software fees.',
+    verdict: 'The most feature-rich option for UK restaurants and takeaways. Ideal if you need kiosks, online ordering, delivery integration, and a pizza builder — all in one system with transparent UK pricing.',
     highlight: true,
   },
   {
@@ -385,7 +385,7 @@ export default function Top5PosPage() {
         </section>
 
         <FAQSection title="Restaurant POS — FAQs" faqs={[
-          { question: 'What is the best POS system for a small restaurant?', answer: 'For small UK restaurants, Posso One offers the best value — you get a full POS with KDS, online ordering, and card payments from £499 + VAT with no monthly software fees. Square is a good free alternative but lacks features like kitchen display and delivery integration on the free plan.' },
+          { question: 'What is the best POS system for a small restaurant?', answer: 'For small UK restaurants, Posso One offers the best value — you get a full POS with KDS, online ordering, and card payments from £499 + VAT plus software from £25 + VAT a month. Square is a good free alternative but lacks features like kitchen display and delivery integration on the free plan.' },
           { question: 'What POS system do most restaurants use?', answer: 'In the UK, the most common restaurant POS systems are Square, Lightspeed, Posso, and Zettle. Takeaways and fast food outlets tend to prefer systems with delivery integration (Posso, Square), while fine dining restaurants often choose Lightspeed for its advanced table management.' },
           { question: 'How much should I pay for a restaurant POS?', answer: 'A professional restaurant POS in the UK costs from £499 to £4,500+ depending on your setup. A basic single-till costs around £499–£799. A full package with kiosks, KDS, printers, and online ordering is typically £3,000–£4,500. Finance is available from £24.92/week.' },
           { question: 'Do I need a self-order kiosk for my restaurant?', answer: 'Kiosks are optional but highly recommended for fast food, takeaways, and casual dining. They increase average order value by 20–30% through smart upselling and reduce queue times. Most restaurants see ROI within 3–6 months.' },
