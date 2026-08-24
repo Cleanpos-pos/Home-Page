@@ -62,11 +62,6 @@ const schema = {
         "availability": "https://schema.org/InStock",
         "seller": { "@type": "Organization", "name": "Posso Ltd" }
     },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "142"
-    }
 };
 
 const breadcrumb = {

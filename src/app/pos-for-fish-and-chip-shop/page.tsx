@@ -55,12 +55,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '164',
-      bestRating: '5',
-    },
     publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     featureList: [
       'Portion and size pricing on a single screen',

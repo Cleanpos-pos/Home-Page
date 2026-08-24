@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '178',
-      bestRating: '5',
-    },
     featureList: [
       'Click-and-collect ordering',
       'Drink customisation (milk, size, extras)',

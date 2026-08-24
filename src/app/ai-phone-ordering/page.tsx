@@ -56,12 +56,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.7',
-      reviewCount: '134',
-      bestRating: '5',
-    },
     featureList: [
       '24/7 AI phone answering in a natural voice',
       'Phone orders sent directly to POS and kitchen display',

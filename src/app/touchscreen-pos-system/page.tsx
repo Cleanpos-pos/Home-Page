@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '175',
-      bestRating: '5',
-    },
     featureList: [
       '15-inch capacitive touchscreen display',
       'IP54 splash-proof rating for hospitality',

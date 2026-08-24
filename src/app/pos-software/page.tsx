@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '312',
-      bestRating: '5',
-    },
     featureList: [
       'Cloud-based management with real-time dashboard',
       'Touchscreen interface designed for speed',

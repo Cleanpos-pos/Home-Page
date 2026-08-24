@@ -122,7 +122,7 @@ export const multiSiteEposUk: Guide = {
         { label: "Best restaurant EPOS UK", href: "/best-restaurant-epos-system-uk" },
         { label: "Online ordering", href: "/online-ordering" },
         { label: "Delivery management", href: "/delivery-management-pos" },
-        { label: "EPOS pricing", href: "/buy-epos-system-uk" },
+        { label: "EPOS pricing", href: "/epos-pricing-uk" },
       ],
     },
   ],

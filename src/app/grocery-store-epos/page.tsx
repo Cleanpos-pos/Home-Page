@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '234',
-      bestRating: '5',
-    },
     featureList: [
       'Barcode scanning with product lookup',
       'Weigh scale integration for loose goods',

@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '112',
-      bestRating: '5',
-    },
     featureList: [
       'Appointment booking with online self-booking',
       'Staff scheduling with commission tracking',

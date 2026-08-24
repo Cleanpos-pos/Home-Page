@@ -89,12 +89,6 @@ const homepageSchema = [
       "https://x.com/posso_uk",
       "https://www.linkedin.com/company/posso-uk"
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "127",
-      "bestRating": "5"
-    }
   },
   {
     "@context": "https://schema.org",

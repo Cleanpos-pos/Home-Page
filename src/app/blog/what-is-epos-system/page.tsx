@@ -84,11 +84,6 @@ export default function EposSystemGuidePage() {
                 "priceCurrency": "GBP",
                 "availability": "https://schema.org/InStock"
             },
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "reviewCount": "150"
-            }
         }
     ];
 

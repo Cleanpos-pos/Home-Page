@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '141',
-      bestRating: '5',
-    },
     featureList: [
       'Dynamic menu boards for food and drink',
       'Automatic daypart menu switching',

@@ -54,12 +54,6 @@ const pageSchema = [
       offerCount: '3',
       availability: 'https://schema.org/InStock',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '127',
-      bestRating: '5',
-    },
   },
   {
     '@context': 'https://schema.org',

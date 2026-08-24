@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '76',
-      bestRating: '5',
-    },
     featureList: [
       'Weigh-and-pay with connected scale integration',
       'Barcode scanning for packaged confectionery',

@@ -259,23 +259,32 @@ Sitemap: **211 URLs**, no aliases, no duplicates, no redirecting URLs, valid XML
 
 ### Known outstanding
 
-- **`aggregateRating` on 128 of 210 live pages.** Hardcoded ratings (4.7–4.9,
-  counts 76–178) with **no visible reviews on any page**. Google requires review
-  markup to reflect reviews shown on the page; this pattern is what manual actions
-  are issued for. The counts are not tied to real data — including the five added
-  to the new guide pages to match the house template. Decide: real figures, one
-  consistent value, or remove.
 - **24 blog posts have no `FAQPage`.** Needs FAQ copy per post, not a mechanical fix.
 - **150 meta descriptions over 160 chars, 71 titles over 60.** Truncated in SERPs.
-- **Pricing copy contradicts itself.** The guide pages say *setup free, on-site
-  installation quoted separately, 60p service fee, Posso Pay*. `/pizza-pos-system`
-  and `/pos-for-pizza-shop` say *free setup + training + low commission + Teya*.
-  Both are indexed.
+- **Card-partner copy varies.** The homepage services grid says card machines from
+  *Clover, Teya, and Dojo*; `/pos` says *Teya via certified POSLink*; the guide
+  layer says *Posso Pay, Posso's own merchant service* (confirmed by Posso —
+  rates vary on card turnover, never state a flat rate). Reconcile when the
+  commercial position is settled.
 - **OG images are generic.** Every guide page uses `/og-image.png`; bespoke
   1200×630 cards are still to be produced.
-- **32 self-canonicalising aliases**, 8 of them city pages
-  (`/best-epos-london-by-posso-ltd-uk` etc.). Out of the sitemap but still live and
-  serving duplicate content. Each needs a 301 or a corrected canonical.
+
+### Resolved 23 Aug 2026 (batch 2)
+
+- **`aggregateRating` removed from 128 pages.** The hardcoded 4.7–4.9 ratings with
+  no visible reviews were a manual-action risk. Kept on exactly two pages —
+  `/pos` and `/self-order-kiosks` — where a `ratingCount: 1` matches a real,
+  named review displayed on the page. Do not add ratings to new pages unless the
+  page shows the reviews they summarise.
+- **The 32 self-canonicalising aliases are gone.** 26 were true aliases and now
+  308 to their closest live equivalent in `next.config.ts` (city queries fold
+  into `/pos`, `/digital-signage` or the best-restaurant pillar); the other 6 are
+  the video pages, whose self-canonicals are correct.
+- **`/epos-pricing-uk` built.** The published price list, consistent with
+  `/buy-epos-system-uk` ("no monthly software fees in the first year"). All seven
+  typed guides' "EPOS pricing" links point at it; footer, `/pos` hub,
+  `/buy-epos-system-uk` and `/how-much-does-a-pos-system-cost-for-a-restaurant`
+  link to it contextually.
 
 ---
 

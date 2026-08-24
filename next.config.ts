@@ -117,6 +117,37 @@ const nextConfig: NextConfig = {
       { source: '/best-epos-now-ordering-app-by-posso-ltd-uk', destination: '/epos-now-alternative', permanent: true },
       { source: '/best-online-ordering-software-for-restaurants-by-posso-ltd-uk', destination: '/online-ordering', permanent: true },
 
+      // The last 26 self-canonicalising aliases (August 2026 batch 2). These were
+      // still served by the programmatic (seo-pages)/[slug] route with canonicals
+      // pointing at themselves, so they competed with the clean pages. Each now
+      // 308s to its closest live equivalent; city queries fold into the pillar.
+      { source: '/best-dark-kitchen-restaurant-by-posso-ltd-uk', destination: '/best-dark-kitchen-software-by-posso-ltd-uk', permanent: true },
+      { source: '/best-pos-software-free-download-full-version-crack-uk', destination: '/free-epos-software', permanent: true },
+      { source: '/best-epos-video-by-posso-ltd-uk', destination: '/pos', permanent: true },
+      { source: '/best-software-for-cleaners-by-posso-ltd-uk', destination: '/dry-cleaning-software', permanent: true },
+      { source: '/best-top-table-app-by-posso-ltd-uk', destination: '/tablemaestro', permanent: true },
+      { source: '/best-eposnow-online-ordering-by-posso-ltd-uk', destination: '/epos-now-alternative', permanent: true },
+      { source: '/best-epos-bournemouth-by-posso-ltd-uk', destination: '/pos', permanent: true },
+      { source: '/best-epos-nottingham-by-posso-ltd-uk', destination: '/pos', permanent: true },
+      { source: '/best-best-epos-system-review-uk-by-posso-ltd-uk', destination: '/best-restaurant-epos-system-uk', permanent: true },
+      { source: '/best-vat-on-dry-cleaning-by-posso-ltd-uk', destination: '/dry-cleaning-software', permanent: true },
+      { source: '/best-epos-now-contact-uk-by-posso-ltd-uk', destination: '/epos-now-alternative', permanent: true },
+      { source: '/best-demo-restaurant-sunderland-by-posso-ltd-uk', destination: '/pos', permanent: true },
+      { source: '/best-takeaway-epos-software-free-by-posso-ltd-uk', destination: '/free-epos-software', permanent: true },
+      { source: '/best-restaurant-epos-london-by-posso-ltd-uk', destination: '/best-restaurant-epos-system-uk', permanent: true },
+      { source: '/best-epos-london-by-posso-ltd-uk', destination: '/pos', permanent: true },
+      { source: '/best-salon-software-free-download-full-version-by-posso-ltd-uk', destination: '/salon-pos-software', permanent: true },
+      { source: '/best-best-food-delivery-app-uk-by-posso-ltd-uk', destination: '/blog/best-food-delivery-app-uk', permanent: true },
+      { source: '/best-pos-system-for-takeaway-by-posso-ltd-uk', destination: '/best-epos-system-for-takeaway', permanent: true },
+      { source: '/best-digital-signage-sheffield-by-posso-ltd-uk', destination: '/digital-signage', permanent: true },
+      { source: '/best-digital-signage-newcastle-by-posso-ltd-uk', destination: '/digital-signage', permanent: true },
+      { source: '/best-epos-now-handheld-by-posso-ltd-uk', destination: '/epos-now-alternative', permanent: true },
+      { source: '/best-windows-10-coa-by-posso-ltd-uk', destination: '/pos', permanent: true },
+      { source: '/best-pos-leicester-by-posso-ltd-uk', destination: '/pos', permanent: true },
+      { source: '/best-digital-signage-edinburgh-by-posso-ltd-uk', destination: '/digital-signage', permanent: true },
+      { source: '/best-epos-systems-for-takeaways-by-posso-ltd-uk', destination: '/epos-systems-for-takeaways', permanent: true },
+      { source: '/best-epos-system-restaurant-by-posso-ltd-uk', destination: '/best-restaurant-epos-system-uk', permanent: true },
+
       { source: '/best-food-on-the-table-app-by-posso-ltd-uk', destination: '/restaurant-order-at-table-app', permanent: true },
       { source: '/best-restaurant-order-at-table-app-by-posso-ltd-uk', destination: '/restaurant-order-at-table-app', permanent: true },
       { source: '/best-food-ordering-system-by-posso-ltd-uk', destination: '/food-ordering-system', permanent: true },

@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '156',
-      bestRating: '5',
-    },
     featureList: [
       'Integrated scale for weigh-and-pay pricing',
       'Pick and mix per-gram and per-scoop pricing',

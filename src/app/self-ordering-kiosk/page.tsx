@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '167',
-      bestRating: '5',
-    },
     featureList: [
       '21-inch capacitive touchscreen display',
       'Integrated contactless card payment terminal',

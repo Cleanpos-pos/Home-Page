@@ -55,12 +55,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '152',
-      bestRating: '5',
-    },
     publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     featureList: [
       'Sequenced modifier groups for meat, bread, salad and sauces',

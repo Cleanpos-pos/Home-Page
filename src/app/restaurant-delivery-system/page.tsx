@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '162',
-      bestRating: '5',
-    },
     featureList: [
       'Configurable delivery zones with distance-based pricing',
       'Driver tracking app with delivery queue and navigation',

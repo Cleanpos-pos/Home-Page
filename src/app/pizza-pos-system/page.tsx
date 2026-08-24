@@ -74,12 +74,6 @@ const pageSchema = [
       '@type': 'Brand',
       name: 'Posso',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '127',
-      bestRating: '5',
-    },
     featureList: [
       'Visual pizza builder with split-sided pizzas',
       'Size-based pricing (9", 14", 18")',

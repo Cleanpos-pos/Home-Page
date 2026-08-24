@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '143',
-      bestRating: '5',
-    },
     featureList: [
       'Product images on till for visual identification',
       'Customer loyalty with points and rewards',

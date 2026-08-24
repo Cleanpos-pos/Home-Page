@@ -62,11 +62,6 @@ export default function RestaurantKioskPage() {
             "priceCurrency": "GBP",
             "url": "https://www.posso.co.uk/solutions/restaurant-self-service-kiosk"
         },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "128"
-        }
     };
 
     const faqSchema = {

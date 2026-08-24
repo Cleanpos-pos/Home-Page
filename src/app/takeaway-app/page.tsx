@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '203',
-      bestRating: '5',
-    },
     featureList: [
       'Branded ordering app with your logo and colours',
       'Delivery and collection ordering',

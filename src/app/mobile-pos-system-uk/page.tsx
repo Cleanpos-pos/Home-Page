@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '203',
-      bestRating: '5',
-    },
     featureList: [
       'Handheld POS devices with touchscreen',
       'Tableside ordering and payment',

@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '156',
-      bestRating: '5',
-    },
     featureList: [
       'Tab management — open, add, settle across shift changes',
       'Speed-pour one-tap ordering for popular drinks',

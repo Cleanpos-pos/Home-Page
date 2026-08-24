@@ -55,12 +55,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '134',
-      bestRating: '5',
-    },
     publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     featureList: [
       'Real-time order display across every channel',

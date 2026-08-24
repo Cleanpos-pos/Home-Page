@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '267',
-      bestRating: '5',
-    },
     featureList: [
       'Caller ID with customer history and address',
       'One-tap repeat ordering for regular customers',

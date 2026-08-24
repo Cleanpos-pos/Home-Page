@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '267',
-      bestRating: '5',
-    },
     featureList: [
       'Free Teya card terminal with processing agreement',
       'Low transaction fees',

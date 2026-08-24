@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '198',
-      bestRating: '5',
-    },
     featureList: [
       'Branded online storefront for coffee shops',
       'Multi-location order management',

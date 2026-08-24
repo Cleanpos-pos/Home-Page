@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '245',
-      bestRating: '5',
-    },
     featureList: [
       'Pre-tested compatible hardware',
       'Software pre-installed and configured',

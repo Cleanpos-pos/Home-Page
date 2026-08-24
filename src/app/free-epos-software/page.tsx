@@ -54,12 +54,6 @@ const pageSchema = [
       availability: 'https://schema.org/InStock',
     },
     brand: { '@type': 'Brand', name: 'Posso' },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '210',
-      bestRating: '5',
-    },
     featureList: [
       'Transparent pricing — no hidden fees or forced upgrades',
       'Full POS features included from day one',
