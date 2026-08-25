@@ -8,32 +8,30 @@ import type { Guide } from "@/lib/guides";
  * the linked r/UKBroadband thread.
  *
  * VERIFIED by owner 2026-08-24: unlimited internet + 2-line cloud phone at
- * £55 + VAT/month.
- * ⚠️ CONFIRM before strengthening copy: whether the £55 bundle includes the
- * desk handset and inclusive UK calls (the platform's bundles typically do —
- * copy currently says "confirmed line by line on your quote"); broadband
- * install lead times; minimum term. Support hours stated are Posso's
- * (Mon–Fri 9am–9:30pm), NOT the platform's wholesale 24/7 line.
+ * £55 + VAT/month, INCLUDING the desk handset and inclusive UK calls.
+ * Also owner-confirmed 2026-08-24: three-year agreement; standard lead time
+ * five days. Support hours stated are Posso's (Mon–Fri 9am–9:30pm), NOT the
+ * platform's wholesale 24/7 line.
  */
 
 export const cloudPhoneForRestaurants: Guide = {
   slug: "cloud-phone-for-restaurants",
   title: "Cloud Phones for Restaurants",
   metaDescription:
-    "Cloud phone for restaurants and takeaways: two lines so the order line is never engaged, unlimited internet included, £55 + VAT a month. Keep your number.",
+    "Cloud phone for restaurants: two lines so the order line is never engaged. Unlimited internet, handset and UK calls included, £55 + VAT a month.",
   eyebrow: "Phones & broadband",
   h1: "Cloud phones for restaurants: two lines, one bill, no engaged tone",
   h1Split: ["Cloud phones for restaurants:", "two lines, one bill, no engaged tone"],
   standfirst:
     "A restaurant phone has one job: taking orders. When it's engaged on a Friday night, the order goes to a competitor — and from the end of January 2027, the analogue line it runs on stops working anyway. Here is the cloud version, priced plainly, with what owners in the forums say about making the switch.",
   highlights: [
-    "Unlimited internet + two-line cloud phone, £55 + VAT a month",
+    "Unlimited internet + two-line cloud phone, £55 + VAT — UK calls and handset included",
     "Keep your number — ported, and it moves premises with you",
-    "Live in days with an app on any phone, not an engineer and a wall box",
+    "Live in around five days, with an app on any phone — no wall box",
   ],
   breadcrumb: "Cloud Phones",
   quickAnswer:
-    "For a restaurant or takeaway, the answer is a hosted cloud phone with two lines on your existing number, so a second caller rings through instead of hitting an engaged tone — plus unlimited business internet on the same bill, £55 + VAT a month from Posso. Your current number ports across and stays yours even if you move premises. The deadline making this urgent is real: the UK analogue phone network switches off at the end of January 2027, and traditional landlines stop working with it.",
+    "For a restaurant or takeaway, the answer is a hosted cloud phone with two lines on your existing number, so a second caller rings through instead of hitting an engaged tone — plus unlimited business internet on the same bill, £55 + VAT a month from Posso, with the desk handset and UK calls included. Standard lead time is five days, on a three-year agreement — stated upfront, because the term is the clause to check with any supplier. Your current number ports across and stays yours even if you move premises. The deadline making this urgent is real: the UK analogue phone network switches off at the end of January 2027, and traditional landlines stop working with it.",
   sections: [
     {
       kind: "prose",
@@ -82,7 +80,7 @@ export const cloudPhoneForRestaurants: Guide = {
       kicker: "The numbers",
       heading: "One bill: £55 + VAT a month",
       paragraphs: [
-        "The Posso bundle is unlimited business broadband plus the two-line cloud phone for £55 + VAT a month, on one bill from one supplier. Handset and inclusive UK calls are confirmed line by line on your quote before you sign — the same written-total discipline we tell you to demand for EPOS. There is no phone system to buy up front.",
+        "The Posso bundle is unlimited business broadband plus the two-line cloud phone for £55 + VAT a month, on one bill from one supplier — and the price includes the desk handset and inclusive UK calls, so the number you see is the number you pay. The whole thing is still itemised line by line on your written quote, the same discipline we tell you to demand for EPOS. There is no phone system to buy up front, the standard lead time is five days from order, and it is a three-year agreement — we put the term in the same sentence as the price because our own fees guide tells you to read the term before the feature list.",
         "For comparison, the threads show what the alternatives really cost: separate broadband and line rentals on two bills; app-based second numbers at around a tenner a month that one owner describes missing messages on; and the free routes that get discontinued under you — the two-line thread exists because a free service was being shut off. Cheap DIY VoIP providers also genuinely work — owners in the UK threads have run one happily for twenty years — and if you enjoy being your own telecoms engineer, that is a fair route. The bundle is for everyone who would rather it just worked, from the people who already look after the till.",
       ],
     },
@@ -146,7 +144,7 @@ export const cloudPhoneForRestaurants: Guide = {
   faqs: [
     {
       q: "How much does a restaurant cloud phone system cost?",
-      a: "The Posso bundle is £55 + VAT a month for unlimited business broadband plus a two-line cloud phone system — one bill, no phone hardware to buy up front, with the handset and inclusive UK calls confirmed line by line on your written quote. Extensions beyond that are monthly, so a second site or a December rush is an add, not a new system.",
+      a: "The Posso bundle is £55 + VAT a month for unlimited business broadband plus a two-line cloud phone system, including the desk handset and inclusive UK calls — one bill, nothing to buy up front, itemised on your written quote. It is a three-year agreement, stated upfront because that is exactly the clause we tell you to check with any supplier. Extensions beyond the two lines are monthly, so a second site or a December rush is an add, not a new system.",
     },
     {
       q: "Can I keep my existing phone number?",
@@ -154,7 +152,7 @@ export const cloudPhoneForRestaurants: Guide = {
     },
     {
       q: "How fast can it go live?",
-      a: "The phone side is fast: there is no engineer visit and no box to install — handsets plug into your internet and the app works on any phone, so new lines are typically live in days, with your existing number following once the port completes. If the bundle's broadband is replacing an existing connection, that install follows the network's lead times, which we confirm when you order — the phones do not have to wait for it if you already have usable internet.",
+      a: "The standard lead time is five days from order. There is no engineer visit for the phones and no box to install — handsets plug into your internet and the app works on any phone — with your existing number following once the port completes. If you already have usable internet, the phones do not have to wait for the broadband side of the bundle to be installed.",
     },
     {
       q: "What is the PSTN switch-off and does it affect my restaurant?",
