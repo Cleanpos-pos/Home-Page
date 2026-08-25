@@ -293,6 +293,11 @@ export default function AiPhoneOrderingPage() {
                   <p className="text-slate-400 text-sm mt-1">Reservations &amp; bookings</p>
                 </Link>
               </div>
+              <p className="text-slate-400 text-center mt-6">
+                The AI answers the calls — the line itself matters too. See{' '}
+                <Link href="/cloud-phone-for-restaurants" className="text-primary hover:underline">cloud phones for restaurants</Link>:{' '}
+                two lines and unlimited internet on one bill, so the order line is never engaged.
+              </p>
             </div>
           </div>
         </section>
