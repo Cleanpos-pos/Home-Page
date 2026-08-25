@@ -95,6 +95,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/restaurant-online-ordering-what-owners-say',
     '/card-machines-what-owners-say',
     '/cloud-phone-for-restaurants',
+    '/pos-for-bakery',
+    '/epos-with-teya',
     '/kitchen-display-system',
     '/epos-now-alternative',
     '/posso-vs-epos-now',
