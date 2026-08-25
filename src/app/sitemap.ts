@@ -94,6 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/kitchen-display-system-what-kitchens-say',
     '/restaurant-online-ordering-what-owners-say',
     '/card-machines-what-owners-say',
+    '/cloud-phone-for-restaurants',
     '/kitchen-display-system',
     '/epos-now-alternative',
     '/posso-vs-epos-now',
