@@ -165,6 +165,7 @@ export const posForDessertShop: Guide = {
         { label: "Self-order kiosks", href: "/self-order-kiosks" },
         { label: "EPOS pricing", href: "/epos-pricing-uk" },
         { label: "POS for café", href: "/pos-for-cafe" },
+        { label: "POS for bakery", href: "/pos-for-bakery" },
         { label: "Sweet shop POS", href: "/sweet-shop-pos" },
         { label: "Card machines", href: "/credit-card-machines" },
         { label: "Online ordering", href: "/online-ordering" },

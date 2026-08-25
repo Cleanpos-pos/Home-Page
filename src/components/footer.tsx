@@ -55,6 +55,7 @@ export function Footer() {
                             <li><Link href="/pos-for-indian-takeaway" className="hover:text-primary transition-colors">Indian Takeaway POS</Link></li>
                             <li><Link href="/pos-for-cafe" className="hover:text-primary transition-colors">POS for Caf&eacute;</Link></li>
                             <li><Link href="/pos-for-dessert-shop" className="hover:text-primary transition-colors">Dessert &amp; Bubble Tea POS</Link></li>
+                            <li><Link href="/pos-for-bakery" className="hover:text-primary transition-colors">POS for Bakery</Link></li>
                             <li><Link href="/opening-a-takeaway-epos-checklist" className="hover:text-primary transition-colors">Opening a Takeaway</Link></li>
                             <li><Link href="/kitchen-display-system" className="hover:text-primary transition-colors">Kitchen Display System</Link></li>
                         </ul>

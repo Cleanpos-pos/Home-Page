@@ -130,6 +130,7 @@ export const cardMachinesWhatOwnersSay: Guide = {
       heading: "Card payment solutions",
       items: [
         { label: "Card machines", href: "/credit-card-machines" },
+        { label: "EPOS with Teya", href: "/epos-with-teya" },
         { label: "Free card machine", href: "/free-card-machine" },
         { label: "PDQ machines for small business", href: "/pdq-machine-small-business" },
         { label: "Card machines for the self-employed", href: "/self-employed-card-machine" },

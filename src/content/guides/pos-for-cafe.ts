@@ -118,6 +118,7 @@ export const posForCafe: Guide = {
         { label: "Card machines", href: "/credit-card-machines" },
         { label: "EPOS pricing", href: "/epos-pricing-uk" },
         { label: "Dessert & bubble tea POS", href: "/pos-for-dessert-shop" },
+        { label: "POS for bakery", href: "/pos-for-bakery" },
       ],
     },
   ],

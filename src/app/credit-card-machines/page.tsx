@@ -212,6 +212,8 @@ export default function CreditCardMachinesPage() {
               <Link href="/card-machines-what-owners-say" className="text-primary hover:underline">
                 what small business owners actually say about card machines
               </Link>.
+              Taking Teya rates? See{' '}
+              <Link href="/epos-with-teya" className="text-primary hover:underline">EPOS that works with Teya</Link>.
             </p>
           </div>
         </section>
