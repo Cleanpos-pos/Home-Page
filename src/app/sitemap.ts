@@ -97,6 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/cloud-phone-for-restaurants',
     '/pos-for-bakery',
     '/epos-with-teya',
+    '/how-to-get-a-credit-card-machine',
     '/kitchen-display-system',
     '/epos-now-alternative',
     '/posso-vs-epos-now',

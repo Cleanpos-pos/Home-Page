@@ -184,10 +184,15 @@ function SectionBlock({ section, shaded }: { section: Section; shaded: boolean }
 export default function GuidePage({
   guide,
   updated,
+  enquiryHeading,
+  enquiryIntro,
 }: {
   guide: Guide;
   /** ISO date, e.g. "2026-08-23" — drives Article.dateModified */
   updated: string;
+  /** Optional override for the closing enquiry form's heading/intro */
+  enquiryHeading?: string;
+  enquiryIntro?: string;
 }) {
   const pageSchema = [breadcrumbSchema(guide), articleSchema(guide, updated)];
 
@@ -294,7 +299,10 @@ export default function GuidePage({
           faqs={guide.faqs.map((f) => ({ question: f.q, answer: f.a }))}
         />
 
-        <DemoEnquiry />
+        <DemoEnquiry
+          {...(enquiryHeading ? { heading: enquiryHeading } : {})}
+          {...(enquiryIntro ? { intro: enquiryIntro } : {})}
+        />
       </main>
       <Footer />
     </div>
