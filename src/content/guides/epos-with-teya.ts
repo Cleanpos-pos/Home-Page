@@ -82,6 +82,7 @@ export const eposWithTeya: Guide = {
       items: [
         { label: "Teya card machine application", href: "/teya-card-machine-application-form" },
         { label: "Card machines", href: "/credit-card-machines" },
+        { label: "How to get a card machine", href: "/how-to-get-a-credit-card-machine" },
         { label: "Card machines — what owners say", href: "/card-machines-what-owners-say" },
         { label: "PDQ machines for small business", href: "/pdq-machine-small-business" },
         { label: "ePOS systems", href: "/pos" },
