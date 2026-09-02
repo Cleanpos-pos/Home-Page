@@ -72,7 +72,7 @@ export const howToGetACreditCardMachine: Guide = {
       heading: "What a card machine actually costs",
       paragraphs: [
         "There are three cost lines, and providers hide the pain in different ones. Hardware: a simple reader can be under £50, a full terminal more; some providers give the hardware free and recover it in the rate. The transaction rate: flat rates cluster around the 1.5–1.75% mark for advertised readers, but a quoted merchant rate on real turnover is usually lower. And the fees that catch people out: monthly minimums, PCI-compliance charges, statement fees, and early-exit penalties — the lines that turn an advertised rate into a bigger real one.",
-        "The honest rule: compare the total monthly cost at your real volume, not the headline percentage. Take your last card statement to two or three providers and ask each for the all-in figure in writing. Posso card processing runs through Posso Pay, quoted on your card turnover — deliberately not a single flat rate printed here, because a market stall and a busy restaurant should not pay the same structure, and the same rate applies in store and on your online ordering. Bring your current statement and we'll put our number next to it.",
+        "The honest rule: compare the total monthly cost at your real volume, not the headline percentage. Take your last card statement to two or three providers and ask each for the all-in figure in writing. Posso card processing runs through Posso Pay — from 1% + 10p, quoted on your card turnover, because a market stall and a busy restaurant should not pay the same structure — and the same rate applies in store and on your online ordering. Bring your current statement and we'll put our number next to it.",
       ],
     },
     {
@@ -101,7 +101,7 @@ export const howToGetACreditCardMachine: Guide = {
         [
           "Pricing",
           "One advertised flat rate, no monthly fee",
-          "Posso Pay — quoted on your real card turnover, same rate in store and online",
+          "Posso Pay — from 1% + 10p, quoted on your real card turnover, same in store and online",
         ],
         [
           "Setup speed",
@@ -125,7 +125,7 @@ export const howToGetACreditCardMachine: Guide = {
       kicker: "Where Posso fits",
       heading: "Getting a card machine from Posso — Posso Pay and Teya",
       paragraphs: [
-        "Posso is a UK hospitality and retail technology company with 500+ UK businesses on the system, supported from Leicester. When you get a card machine from us, you have two integrated routes. Posso Pay is our own merchant service: card processing quoted on your actual turnover, the same rate in store and on your online ordering, with the terminal integrated natively into the till so amounts push from the basket and nothing is retyped. Or, if you already have — or want — Teya's rates, our Teya partnership integrates Teya card machines directly with Posso One: the terms Teya is chosen for (competitive rates, no long-term contracts, no hidden fees, no monthly minimums), with the till link that ends the retyping.",
+        "Posso is a UK hospitality and retail technology company with 500+ UK businesses on the system, supported from Leicester. When you get a card machine from us, you have two integrated routes. Posso Pay is our own merchant service: card processing from 1% + 10p, quoted on your actual turnover, the same rate in store and on your online ordering, with the terminal integrated natively into the till so amounts push from the basket and nothing is retyped. Or, if you already have — or want — Teya's rates, our Teya partnership integrates Teya card machines directly with Posso One: the terms Teya is chosen for (competitive rates, no long-term contracts, no hidden fees, no monthly minimums), with the till link that ends the retyping.",
         "Either way, the machine is part of a system rather than a lonely reader: it settles alongside your EPOS, kiosks and online ordering through one relationship, with a human on the phone Monday to Friday, 9am to 9:30pm. Getting started is a short application and, for a card machine with a Posso till, the complete system is £499 + VAT with software from £25 + VAT a month.",
       ],
     },
@@ -165,7 +165,7 @@ export const howToGetACreditCardMachine: Guide = {
     },
     {
       q: "How much does a card machine cost?",
-      a: "Three lines: hardware (from under £50 for a simple reader, sometimes free and recovered in the rate), the transaction rate (flat rates around 1.5–1.75% for advertised readers; a quoted merchant rate on real turnover is usually lower), and the fees that hide the real cost — monthly minimums, PCI charges, exit penalties. Compare the all-in monthly cost at your real volume, not the headline percentage. Posso Pay is quoted on your card turnover, so bring your statement for a like-for-like figure.",
+      a: "Three lines: hardware (from under £50 for a simple reader, sometimes free and recovered in the rate), the transaction rate (flat rates around 1.5–1.75% for advertised readers; a quoted merchant rate on real turnover is usually lower), and the fees that hide the real cost — monthly minimums, PCI charges, exit penalties. Compare the all-in monthly cost at your real volume, not the headline percentage. Posso Pay is from 1% + 10p, quoted on your card turnover, so bring your statement for a like-for-like figure.",
     },
     {
       q: "How long does it take to get a card machine?",
