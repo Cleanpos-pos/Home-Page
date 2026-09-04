@@ -254,6 +254,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Misc/legacy pages — lower priority
   const miscRoutes = [
     '/agents',
+    '/about',
     '/about/paul-robinson',
     '/privacy-policy',
     '/cookie-policy',

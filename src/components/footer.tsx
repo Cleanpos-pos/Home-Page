@@ -94,7 +94,7 @@ export function Footer() {
                     <nav aria-label="Company information">
                         <h4 className="font-bold text-slate-50 mb-4">Company</h4>
                         <ul className="space-y-2 text-sm text-slate-400">
-                            <li><Link href="/#about" className="hover:text-primary transition-colors">About Posso</Link></li>
+                            <li><Link href="/about" className="hover:text-primary transition-colors">About Posso</Link></li>
                             <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
                             <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
                             <li><Link href="/downloads" className="hover:text-primary transition-colors">Downloads</Link></li>
