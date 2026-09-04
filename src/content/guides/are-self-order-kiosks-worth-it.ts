@@ -121,6 +121,7 @@ export const areSelfOrderKiosksWorthIt: Guide = {
       heading: "Kiosk solutions",
       items: [
         { label: "Self-order kiosks", href: "/self-order-kiosks" },
+        { label: "Self-order kiosks — complete guide", href: "/self-order-kiosks-guide" },
         { label: "Kiosks for fast food", href: "/self-order-kiosk-fast-food" },
         { label: "Dessert & bubble tea POS", href: "/pos-for-dessert-shop" },
         { label: "Restaurant self-ordering", href: "/restaurant-self-ordering-system" },

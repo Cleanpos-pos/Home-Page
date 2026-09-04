@@ -319,7 +319,8 @@ export default function KiosksPage() {
               <Link href="/are-self-order-kiosks-worth-it" className="text-primary hover:underline">
                 are self-order kiosks worth it?
               </Link>{' '}
-              — operator and customer threads, including the case against.
+              — operator and customer threads, including the case against. New to kiosks? Start with the{' '}
+              <Link href="/self-order-kiosks-guide" className="text-primary hover:underline">complete self-order kiosks guide</Link>.
             </p>
           </div>
         </section>
