@@ -98,6 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/pos-for-bakery',
     '/epos-with-teya',
     '/how-to-get-a-credit-card-machine',
+    '/self-order-kiosks-guide',
     '/kitchen-display-system',
     '/epos-now-alternative',
     '/posso-vs-epos-now',
