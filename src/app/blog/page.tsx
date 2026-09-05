@@ -44,6 +44,12 @@ const blogPosts = [
     featured: true,
   },
   {
+    title: 'How Can I Sync My EPOS Menu With Kiosks and Digital Signage?',
+    description: 'One menu on the till, mirrored to kiosks, signage, kitchen screens, your website, Just Eat, Deliveroo, Uber Eats and the AI phone line. How it works and what to check.',
+    href: '/blog/sync-epos-menu-with-kiosks-and-digital-signage',
+    icon: <Wifi className="w-12 h-12 text-primary" />,
+  },
+  {
     title: "POS & Self-Order Kiosk Solutions",
     description: "Transform your business with POSSO's cutting-edge POS systems, EPOS solutions, and self-order kiosks. AI-powered technology for the modern hospitality industry.",
     href: "/blog/pos-and-self-order-kiosk-solutions",

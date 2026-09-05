@@ -293,7 +293,8 @@ export default function MenuLaunchNuggetWarBlogPage() {
             <p className="text-slate-400 mt-6">
               If your{' '}
               <Link href="/online-ordering" className="text-primary hover:underline">online ordering site</Link> and{' '}
-              <Link href="/delivery-integrations" className="text-primary hover:underline">aggregator menus</Link> pull from the same EPOS menu, the launch is one edit rather than five.
+              <Link href="/delivery-integrations" className="text-primary hover:underline">aggregator menus</Link> pull from the same EPOS menu, the launch is one edit rather than five. See{' '}
+              <Link href="/blog/sync-epos-menu-with-kiosks-and-digital-signage" className="text-primary hover:underline">how to sync your EPOS menu with kiosks and digital signage</Link>.
             </p>
           </div>
         </section>
