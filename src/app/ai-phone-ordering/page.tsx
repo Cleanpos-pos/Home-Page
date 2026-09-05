@@ -296,7 +296,8 @@ export default function AiPhoneOrderingPage() {
               <p className="text-slate-400 text-center mt-6">
                 The AI answers the calls — the line itself matters too. See{' '}
                 <Link href="/cloud-phone-for-restaurants" className="text-primary hover:underline">cloud phones for restaurants</Link>:{' '}
-                two lines and unlimited internet on one bill, so the order line is never engaged.
+                two lines and unlimited internet on one bill, so the order line is never engaged. And because the AI reads the live till menu, it is one of the channels covered in our guide to{' '}
+                <Link href="/blog/sync-epos-menu-with-kiosks-and-digital-signage" className="text-primary hover:underline">syncing your EPOS menu with kiosks and digital signage</Link>.
               </p>
             </div>
           </div>

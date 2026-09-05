@@ -93,7 +93,8 @@ export default function DeliveryIntegrationsPage() {
                 <Link href="/pos-for-chinese-takeaway" className="text-primary hover:underline">Chinese takeaways</Link>{' '}
                 and <Link href="/pos-for-indian-takeaway" className="text-primary hover:underline">Indian takeaways</Link>. Marketplace orders land on the same{' '}
                 <Link href="/kitchen-display-system" className="text-primary hover:underline">kitchen display</Link> as everything else. And if your own drivers handle deliveries, the{' '}
-                <Link href="/delivery-management-pos" className="text-primary hover:underline">delivery management POS guide</Link> covers zones, dispatch and driver apps.
+                <Link href="/delivery-management-pos" className="text-primary hover:underline">delivery management POS guide</Link> covers zones, dispatch and driver apps. To see how the marketplace menus stay aligned with the till, kiosks and signage, read{' '}
+                <Link href="/blog/sync-epos-menu-with-kiosks-and-digital-signage" className="text-primary hover:underline">how to sync your EPOS menu across every channel</Link>.
               </p>
             </div>
           </div>
