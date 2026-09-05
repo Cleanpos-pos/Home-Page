@@ -23,8 +23,8 @@ import type { Metadata } from 'next';
 const SLUG = 'sync-epos-menu-with-kiosks-and-digital-signage';
 const URL = `https://www.posso.co.uk/blog/${SLUG}`;
 const PUBLISHED = '2026-09-05';
-const HERO_IMAGE = 'https://www.posso.co.uk/images/posso_free_epos_signage.png';
-const HERO_ALT = 'Posso EPOS till with a digital signage menu board and self-order kiosk showing the same synced menu in a UK takeaway';
+const HERO_IMAGE = 'https://www.posso.co.uk/digital-menu-signage.png';
+const HERO_ALT = 'Digital signage menu board in a UK restaurant showing burgers and salads with prices synced from the Posso EPOS menu';
 
 export const metadata: Metadata = {
   title: 'Sync Your EPOS Menu With Kiosks and Digital Signage',
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: PUBLISHED,
     authors: ['https://www.posso.co.uk/about/paul-robinson'],
-    images: [{ url: '/images/posso_free_epos_signage.png', width: 1024, height: 1024, alt: HERO_ALT }],
+    images: [{ url: '/digital-menu-signage.png', width: 1024, height: 1024, alt: HERO_ALT }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sync Your EPOS Menu With Kiosks and Digital Signage',
     description: 'Edit the menu once on the till. Kiosks, signage, KDS, website, Just Eat, Deliveroo, Uber Eats and the AI phone line all update.',
-    images: ['/images/posso_free_epos_signage.png'],
+    images: ['/digital-menu-signage.png'],
   },
 };
 
@@ -176,9 +176,9 @@ export default function SyncEposMenuBlogPage() {
           <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <figure className="rounded-2xl overflow-hidden border border-slate-700/50 glass-card">
               <Image
-                src="/images/posso_free_epos_signage.png"
+                src="/digital-menu-signage.png"
                 alt={HERO_ALT}
-                title="One Posso One menu on the till, the kiosk and the signage"
+                title="Digital menu board synced from the Posso One EPOS menu"
                 width={1024}
                 height={1024}
                 priority
@@ -186,7 +186,7 @@ export default function SyncEposMenuBlogPage() {
                 className="w-full h-auto object-cover"
               />
               <figcaption className="px-5 py-3 text-sm text-slate-400">
-                The till, the self-order kiosk and the menu board showing the same Posso One menu. Change the price of the chicken box once and all three update.
+                A digital signage menu board managed from the same Posso One menu as the till and kiosks. Change a price once on the till and the board, kiosk and website all update.
               </figcaption>
             </figure>
           </div>
@@ -309,7 +309,7 @@ export default function SyncEposMenuBlogPage() {
           <div className="container mx-auto px-4 md:px-6 max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-white mb-4">One menu. Every screen. Every channel.</h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Posso One runs the till, kiosks, signage, kitchen screens, online ordering, the marketplaces and the AI phone line from a single menu. Setup is free, and we build your menu before you go live.
+              Posso One runs the till, kiosks, signage, kitchen screens, online ordering, the marketplaces and the AI phone line from a single menu. Software is £25 + VAT a month, setup is free, and we build your menu before you go live.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all hover:scale-105 text-lg px-8 py-3 font-medium">
@@ -328,7 +328,7 @@ export default function SyncEposMenuBlogPage() {
           { question: 'Do Just Eat, Deliveroo and Uber Eats menus sync with the POS?', answer: 'With Posso delivery integrations, items, prices and availability are kept aligned between the Posso POS and the connected marketplaces, and orders from all three arrive on the till and kitchen display automatically instead of on separate tablets.' },
           { question: 'Does AI phone ordering use the same menu as the till?', answer: 'Yes. Posso AI phone ordering is trained on the live Posso One menu, including prices, portions, modifiers and out-of-stock items, so it never offers a caller something the kitchen has run out of. Orders go straight to the till and kitchen display.' },
           { question: 'What happens to menu sync if the internet goes down?', answer: 'Posso One is built offline-first. The till and kitchen keep taking and cooking orders locally and re-sync with the cloud when the connection returns. Online, marketplace and phone orders resume as soon as the line is back.' },
-          { question: 'How long does it take to set up a synced menu?', answer: 'Posso builds your menu and configures your equipment before you go live, and setup is free. Most single-site takeaways are live within a day or two of the hardware arriving; the AI phone line typically goes live within a day or two as well.' },
+          { question: 'How long does it take to set up a synced menu?', answer: 'Posso builds your menu and configures your equipment before you go live. Setup is free and the software is £25 + VAT a month. Most single-site takeaways are live within a day or two of the hardware arriving; the AI phone line typically goes live within a day or two as well.' },
         ]} />
 
         {/* Author box */}
