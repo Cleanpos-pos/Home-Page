@@ -37,6 +37,13 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    title: "Menu Launches That Actually Sell: What the McDonald's vs Burger King Nugget War Teaches UK Takeaways",
+    description: "McDonald's ran a limited-time offer; Burger King rebuilt a product from complaints. Both sold sauces. The six-step menu launch process UK takeaways can copy, and the numbers to check at week one and four.",
+    href: "/blog/how-to-launch-a-new-menu-item-takeaway",
+    icon: <Utensils className="w-12 h-12 text-primary" />,
+    featured: true,
+  },
+  {
     title: "POS & Self-Order Kiosk Solutions",
     description: "Transform your business with POSSO's cutting-edge POS systems, EPOS solutions, and self-order kiosks. AI-powered technology for the modern hospitality industry.",
     href: "/blog/pos-and-self-order-kiosk-solutions",
@@ -47,7 +54,6 @@ const blogPosts = [
     description: "A behavioural economics approach to modern POS systems, self-service kiosks, and hospitality technology. Discover how Posso Ltd solves psychological pain points.",
     href: "/blog/the-irrational-restaurant",
     icon: <Brain className="w-12 h-12 text-primary" />,
-    featured: true,
   },
   {
     title: 'The Truth About Free EPOS Software in the UK',

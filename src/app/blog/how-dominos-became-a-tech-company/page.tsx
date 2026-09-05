@@ -259,11 +259,14 @@ export default function DominosTechBlogPage() {
                 { title: 'One System, Every Location', description: "Domino's mandated a single POS across all franchises. It was controversial, but it was the foundation for everything. With Posso One, you get this from day one." },
                 { title: 'Digital Ordering Is Not Optional', description: "Over half of Domino's orders are digital. Customers expect to order from their phone. If you don't have an online ordering website, you're losing sales to competitors who do." },
                 { title: 'Speed Wins', description: "Domino's obsessed over ordering speed — 17 seconds at a stoplight. Fast ordering means more orders. Posso's POS is built for speed: visual grids, one-tap payments, instant kitchen prints." },
-                { title: 'Data Drives Decisions', description: "Domino's hired data scientists to A/B test every idea. Posso's built-in analytics give you the same insights: best sellers, peak hours, payment breakdowns, and channel performance." },
+                { title: 'Data Drives Decisions', description: "Domino's hired data scientists to A/B test every idea. Posso's built-in analytics give you the same insights: best sellers, peak hours, payment breakdowns, and channel performance.", href: '/blog/how-to-launch-a-new-menu-item-takeaway', linkText: 'See how to measure a menu launch like a chain' },
               ].map((lesson) => (
                 <div key={lesson.title} className="glass-card rounded-xl p-6 border border-slate-700/50">
                   <h3 className="text-lg font-bold text-white mb-2">{lesson.title}</h3>
                   <p className="text-slate-400">{lesson.description}</p>
+                  {'href' in lesson && lesson.href && (
+                    <Link href={lesson.href} className="inline-block mt-3 text-sm text-primary hover:underline">{lesson.linkText}</Link>
+                  )}
                 </div>
               ))}
             </div>

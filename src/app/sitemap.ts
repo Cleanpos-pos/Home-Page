@@ -249,6 +249,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/how-dominos-became-a-tech-company',
     '/blog/the-irrational-restaurant',
     '/blog/what-is-epos-system',
+    '/blog/how-to-launch-a-new-menu-item-takeaway',
   ];
 
   // Misc/legacy pages — lower priority
