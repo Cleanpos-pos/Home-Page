@@ -82,6 +82,21 @@ const nextConfig: NextConfig = {
       { source: '/home', destination: '/', permanent: true },
       { source: '/kiosks', destination: '/self-order-kiosks', permanent: true },
 
+      // SEO consolidation (2026-09-06, per GSC audit): the coffee-shop
+      // online/mobile ordering cluster was 8 near-duplicate pages all stuck
+      // ~position 46, splitting authority. Consolidated into the single
+      // /coffee-shop-ordering-app survivor. The duplicate restaurant-EPOS
+      // product page folds into /restaurant-epos (the "best" compare page is
+      // kept — different intent). Old directories stay; the redirect wins.
+      { source: '/coffee-ordering-app', destination: '/coffee-shop-ordering-app', permanent: true },
+      { source: '/online-ordering-software-coffee-shops', destination: '/coffee-shop-ordering-app', permanent: true },
+      { source: '/online-ordering-platform-coffee-shops', destination: '/coffee-shop-ordering-app', permanent: true },
+      { source: '/mobile-ordering-system-coffee-shops', destination: '/coffee-shop-ordering-app', permanent: true },
+      { source: '/mobile-ordering-platform-coffee-shops', destination: '/coffee-shop-ordering-app', permanent: true },
+      { source: '/web-based-ordering-system-coffee-shops', destination: '/coffee-shop-ordering-app', permanent: true },
+      { source: '/cafe-online-ordering-system', destination: '/coffee-shop-ordering-app', permanent: true },
+      { source: '/restaurant-epos-systems-uk', destination: '/restaurant-epos', permanent: true },
+
       // These 17 used to be client-side `router.replace()` stubs. A JS redirect is not
       // a 301: Google has to render the page to find it, little equity passes, and the
       // empty stub is indexable in the meantime. Served as real redirects instead.
