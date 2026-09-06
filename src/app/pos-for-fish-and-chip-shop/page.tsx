@@ -9,9 +9,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'POS for Fish and Chip Shops',
+  title: 'Fish & Chip Shop EPOS & Till System — from £499',
   description:
-    'POS for fish and chip shops — what to look for, what to avoid and what it costs. Portion pricing, condiment prompts, meal deals, peak-hour speed and collection orders.',
+    'Choosing an EPOS for a fish & chip shop? What actually matters — portion pricing, condiment prompts, meal deals and peak-hour speed — plus real costs. Posso tills from £499 + VAT, UK support.',
   keywords: [
     'pos for fish and chip shop',
     'fish and chip shop epos',
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     canonical: '/pos-for-fish-and-chip-shop',
   },
   openGraph: {
-    title: 'POS for Fish and Chip Shops | Posso UK',
+    title: 'Fish & Chip Shop EPOS & Till System | Posso UK',
     description:
-      'Fish and chip shop POS buyer\'s guide — six things that actually matter, what to test before you buy, and what it costs.',
+      'Fish & chip shop EPOS buyer\'s guide — the six things that actually matter, what to test before you buy, and what it costs. Posso tills from £499 + VAT.',
     url: 'https://www.posso.co.uk/pos-for-fish-and-chip-shop',
     type: 'website',
     // TODO: replace with a bespoke 1200×630 chip shop card once artwork exists

@@ -9,9 +9,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'POS for Chinese Takeaways',
+  title: 'Chinese Takeaway EPOS & Till System — from £499',
   description:
-    'POS for Chinese takeaways — what to look for, what to avoid and what it costs. Dish numbers, 200-item menus, set meals, station printing and phone ordering.',
+    'Choosing an EPOS for a Chinese takeaway? What actually matters — dish numbers, 200-item menus, set meals, station printing and phone ordering — plus real costs. Posso tills from £499 + VAT.',
   keywords: [
     'pos for chinese takeaway',
     'chinese takeaway epos',
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     canonical: '/pos-for-chinese-takeaway',
   },
   openGraph: {
-    title: 'POS for Chinese Takeaways | Posso UK',
+    title: 'Chinese Takeaway EPOS & Till System | Posso UK',
     description:
-      'Chinese takeaway POS buyer\'s guide — six things that actually matter on a 200-item menu, what to test before you buy, and what it costs.',
+      'Chinese takeaway EPOS buyer\'s guide — the six things that actually matter on a 200-item menu, what to test before you buy, and what it costs. Posso tills from £499 + VAT.',
     url: 'https://www.posso.co.uk/pos-for-chinese-takeaway',
     type: 'website',
     // TODO: replace with a bespoke 1200×630 card once artwork exists
