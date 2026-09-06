@@ -9,9 +9,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'POS for Indian Takeaways',
+  title: 'Indian Takeaway EPOS & Till System — from £499',
   description:
-    'POS for Indian takeaways — what to look for, what to avoid and what it costs. Spice levels, protein-by-curry pricing, banquet menus, sundries and collection times.',
+    'Choosing an EPOS for an Indian takeaway? What actually matters — spice levels, protein-by-curry pricing, banquet menus and collection times — plus real costs. Posso tills from £499 + VAT.',
   keywords: [
     'pos for indian takeaway',
     'indian takeaway epos',
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     canonical: '/pos-for-indian-takeaway',
   },
   openGraph: {
-    title: 'POS for Indian Takeaways | Posso UK',
+    title: 'Indian Takeaway EPOS & Till System | Posso UK',
     description:
-      'Indian takeaway POS buyer\'s guide — six things that actually matter, what to test before you buy, and what it costs.',
+      'Indian takeaway EPOS buyer\'s guide — the six things that actually matter, what to test before you buy, and what it costs. Posso tills from £499 + VAT.',
     url: 'https://www.posso.co.uk/pos-for-indian-takeaway',
     type: 'website',
     // TODO: replace with a bespoke 1200×630 card once artwork exists
