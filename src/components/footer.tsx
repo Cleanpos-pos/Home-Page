@@ -60,6 +60,7 @@ export function Footer() {
                             <li><Link href="/kitchen-display-system" className="hover:text-primary transition-colors">Kitchen Display System</Link></li>
                             <li><Link href="/how-to-get-a-credit-card-machine" className="hover:text-primary transition-colors">How to Get a Card Machine</Link></li>
                             <li><Link href="/self-order-kiosks-guide" className="hover:text-primary transition-colors">Self-Order Kiosks Guide</Link></li>
+                            <li><Link href="/food-truck-epos-system" className="hover:text-primary transition-colors">Food Truck &amp; Trailer EPOS</Link></li>
                         </ul>
                     </nav>
 

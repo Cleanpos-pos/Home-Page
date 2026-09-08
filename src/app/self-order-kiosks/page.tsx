@@ -322,6 +322,9 @@ export default function KiosksPage() {
               </Link>{' '}
               — operator and customer threads, including the case against. New to kiosks? Start with the{' '}
               <Link href="/self-order-kiosks-guide" className="text-primary hover:underline">complete self-order kiosks guide</Link>.
+              On the road? See{' '}
+              <Link href="/food-truck-epos-system" className="text-primary hover:underline">food truck &amp; trailer EPOS</Link>{' '}
+              — the same kiosks, built for the pitch.
             </p>
           </div>
         </section>
