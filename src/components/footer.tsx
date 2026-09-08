@@ -111,7 +111,7 @@ export function Footer() {
                 {/* SEO-rich footer text */}
                 <div className="mt-8 pt-8 border-t border-slate-800/50">
                     <p className="text-xs text-slate-500 max-w-4xl mx-auto text-center leading-relaxed">
-                        Posso Ltd provides ePOS systems, self-order kiosks, online ordering platforms, digital signage, ticketing software, and card payment machines for restaurants, takeaways, cafes, fast food outlets, entertainment venues, and retail businesses throughout the United Kingdom including London, Manchester, Birmingham, Leeds, Glasgow, Edinburgh, Bristol, Liverpool, Sheffield, and Cardiff.
+                        Posso Ltd provides ePOS systems, self-order kiosks, online ordering platforms, digital signage, ticketing software, and card payment machines for restaurants, takeaways, cafes, <Link href="/food-truck-epos-system" className="underline hover:text-primary transition-colors">food trucks and mobile catering</Link>, fast food outlets, entertainment venues, and retail businesses throughout the United Kingdom including London, Manchester, Birmingham, Leeds, Glasgow, Edinburgh, Bristol, Liverpool, Sheffield, and Cardiff.
                     </p>
                 </div>
 
