@@ -50,7 +50,7 @@ export default function SelfServiceRevolutionPage() {
               <h2>Industry Breakdown: Who is Winning with Kiosks?</h2>
               <h3>1. Quick-Service Restaurants (QSRs)</h3>
               <p><strong>The Leaders:</strong> McDonald’s, KFC, Burger King, Greggs.</p>
-              <p><strong>The Impact:</strong> QSRs have seen the most dramatic ROI. Studies indicate that self-service kiosks can increase order values by up to 30%. By utilizing effective upselling prompts and attractive visuals, customers are psychologically inclined to order that extra side or drink upgrade.</p>
+              <p><strong>The Impact:</strong> QSRs have seen the most dramatic ROI. Studies indicate that self-service kiosks can increase order values by up to 30%. By utilizing effective upselling prompts and attractive visuals, customers are psychologically inclined to order that extra side or drink upgrade. For the full restaurant breakdown — 18 measured benefits, a payback calculator and worked scenarios — see <Link href="/blog/benefits-of-self-ordering-kiosks-for-restaurants" className="text-primary hover:underline">the benefits of self-ordering kiosks for restaurants</Link>.</p>
               <p><strong>Case Study:</strong> McDonald’s UK pioneered this model, using kiosks to streamline complex customization options, resulting in higher average checks and improved order accuracy.</p>
 
               <h3>2. Supermarkets & Retail</h3>
