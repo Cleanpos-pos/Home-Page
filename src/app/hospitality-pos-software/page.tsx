@@ -208,7 +208,7 @@ export default function HospitalityPosSoftwarePage() {
                   <p className="font-semibold text-white">Bar ePOS</p>
                   <p className="text-slate-400 text-sm mt-1">Bar & pub features</p>
                 </Link>
-                <Link href="/cafe-pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/coffee-shop-cafe-epos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Cafe POS</p>
                   <p className="text-slate-400 text-sm mt-1">Cafe & coffee shop</p>
                 </Link>

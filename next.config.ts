@@ -97,6 +97,16 @@ const nextConfig: NextConfig = {
       { source: '/cafe-online-ordering-system', destination: '/coffee-shop-ordering-app', permanent: true },
       { source: '/restaurant-epos-systems-uk', destination: '/restaurant-epos', permanent: true },
 
+      // Café/coffee-shop EPOS consolidation (2026-09-11, per audit): four
+      // near-duplicate "cafe/coffee EPOS/POS" till pages, none ranking top-10
+      // (checked live), splitting authority. Folded into the strongest
+      // survivor — /coffee-shop-cafe-epos-systems (most content, broadest
+      // keyword set, already schema-upgraded). /pos-for-cafe (guide layer)
+      // kept — different, informational intent.
+      { source: '/cafe-epos-system', destination: '/coffee-shop-cafe-epos-systems', permanent: true },
+      { source: '/cafe-pos', destination: '/coffee-shop-cafe-epos-systems', permanent: true },
+      { source: '/coffee-pos-system', destination: '/coffee-shop-cafe-epos-systems', permanent: true },
+
       // These 17 used to be client-side `router.replace()` stubs. A JS redirect is not
       // a 301: Google has to render the page to find it, little equity passes, and the
       // empty stub is indexable in the meantime. Served as real redirects instead.
