@@ -241,6 +241,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/what-is-epos-system',
     '/blog/how-to-launch-a-new-menu-item-takeaway',
     '/blog/sync-epos-menu-with-kiosks-and-digital-signage',
+    '/blog/benefits-of-self-ordering-kiosks-for-restaurants',
   ];
 
   // Misc/legacy pages — lower priority

@@ -21,7 +21,8 @@ import {
   PiggyBank,
   Users,
   WifiOff,
-  Brain
+  Brain,
+  TrendingUp
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -42,6 +43,12 @@ const blogPosts = [
     href: "/blog/how-to-launch-a-new-menu-item-takeaway",
     icon: <Utensils className="w-12 h-12 text-primary" />,
     featured: true,
+  },
+  {
+    title: 'The Benefits of Self-Ordering Kiosks for Restaurants: 18 Data-Backed Reasons (and the ROI)',
+    description: 'Self-ordering kiosks lift average order value 20–30%, cut errors below 1% and pay back in under 3 months. The full benefit list, a UK ROI calculator, and worked before/after scenarios.',
+    href: '/blog/benefits-of-self-ordering-kiosks-for-restaurants',
+    icon: <TrendingUp className="w-12 h-12 text-primary" />,
   },
   {
     title: 'How Can I Sync My EPOS Menu With Kiosks and Digital Signage?',
