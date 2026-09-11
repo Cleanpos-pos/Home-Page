@@ -202,9 +202,9 @@ export default function CoffeeShopOrderingAppPage() {
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore More Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/coffee-pos-system" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">Coffee POS System</p>
-                  <p className="text-slate-400 text-sm mt-1">Full coffee shop POS</p>
+                <Link href="/coffee-shop-cafe-epos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Coffee Shop &amp; Caf&eacute; EPOS</p>
+                  <p className="text-slate-400 text-sm mt-1">Full coffee shop &amp; caf&eacute; POS</p>
                 </Link>
                 <Link href="/mobile-ordering-apps" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Mobile Ordering Apps</p>
@@ -214,9 +214,9 @@ export default function CoffeeShopOrderingAppPage() {
                   <p className="font-semibold text-white">Self Order App</p>
                   <p className="text-slate-400 text-sm mt-1">QR-based self-ordering</p>
                 </Link>
-                <Link href="/cafe-pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">Cafe POS</p>
-                  <p className="text-slate-400 text-sm mt-1">Full cafe system</p>
+                <Link href="/pos-for-cafe" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">POS for Caf&eacute;s</p>
+                  <p className="text-slate-400 text-sm mt-1">Buyer&apos;s guide</p>
                 </Link>
               </div>
             </div>

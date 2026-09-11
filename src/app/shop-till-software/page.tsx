@@ -210,7 +210,7 @@ export default function ShopTillSoftwarePage() {
                   <p className="font-semibold text-white">Touchscreen POS</p>
                   <p className="text-slate-400 text-sm mt-1">Touchscreen terminals</p>
                 </Link>
-                <Link href="/cafe-pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/coffee-shop-cafe-epos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Cafe POS</p>
                   <p className="text-slate-400 text-sm mt-1">Cafe till system</p>
                 </Link>
