@@ -50,6 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/best-dark-kitchen-software-by-posso-ltd-uk',
     '/how-much-does-a-pos-system-cost-for-a-restaurant',
     '/top-5-pos-systems-for-restaurants',
+    '/best-pos-system-reddit',
     '/best-pos-system-for-pizzeria',
     '/does-dominos-use-a-pos-system',
     '/what-is-the-3-8-rule-for-pizza',

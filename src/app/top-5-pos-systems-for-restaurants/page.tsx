@@ -379,6 +379,10 @@ export default function Top5PosPage() {
                   <p className="font-semibold text-white">Get a Quote</p>
                   <p className="text-slate-400 text-sm mt-1">Free demo available</p>
                 </Link>
+                <Link href="/best-pos-system-reddit" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">What Reddit Users Say</p>
+                  <p className="text-slate-400 text-sm mt-1">Real-world POS opinions</p>
+                </Link>
               </div>
             </div>
           </div>
