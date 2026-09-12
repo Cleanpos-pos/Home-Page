@@ -221,6 +221,10 @@ export default function PosSystemCostPage() {
                 </div>
               ))}
             </div>
+            <p className="text-slate-400 text-center mt-8 max-w-2xl mx-auto">
+              These are the same hidden costs UK owners warn about on Reddit — see the recurring complaints in{' '}
+              <Link href="/best-pos-system-reddit" className="text-primary hover:underline">real POS discussions</Link>.
+            </p>
           </div>
         </section>
 
