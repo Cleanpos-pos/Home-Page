@@ -243,6 +243,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/how-to-launch-a-new-menu-item-takeaway',
     '/blog/sync-epos-menu-with-kiosks-and-digital-signage',
     '/blog/benefits-of-self-ordering-kiosks-for-restaurants',
+    '/blog/how-independent-chippies-compete-with-chains',
   ];
 
   // Misc/legacy pages — lower priority
@@ -279,6 +280,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const lastModified = new Date().toISOString();
+
+  // Real published dates for blog posts, so their <lastmod> is a truthful, stable
+  // freshness signal rather than the build time (which changes on every deploy and
+  // is ignored by search engines). Posts without an entry fall back to the build
+  // date; add a post's PUBLISHED date here when you publish it.
+  const blogDates: Record<string, string> = {
+    '/blog/how-independent-chippies-compete-with-chains': '2026-09-13',
+    '/blog/benefits-of-self-ordering-kiosks-for-restaurants': '2026-09-11',
+    '/blog/how-to-launch-a-new-menu-item-takeaway': '2026-09-05',
+    '/blog/sync-epos-menu-with-kiosks-and-digital-signage': '2026-09-05',
+    '/blog/how-dominos-became-a-tech-company': '2026-04-08',
+  };
+  const blogLastMod = (route: string) =>
+    blogDates[route] ? new Date(blogDates[route]).toISOString() : lastModified;
 
   // `-by-posso-ltd-uk` aliases are kept out of the sitemap. Most of them canonicalise
   // to a clean equivalent, so submitting them asks Google to crawl pages we have
@@ -337,7 +352,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Blog posts
     ...blogRoutes.filter(r => !isDropped(r)).map((route) => ({
       url: `${URL}${route}`,
-      lastModified,
+      lastModified: blogLastMod(route),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
