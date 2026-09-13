@@ -22,7 +22,8 @@ import {
   Users,
   WifiOff,
   Brain,
-  TrendingUp
+  TrendingUp,
+  Fish
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -43,6 +44,18 @@ const blogPosts = [
     href: "/blog/how-to-launch-a-new-menu-item-takeaway",
     icon: <Utensils className="w-12 h-12 text-primary" />,
     featured: true,
+  },
+  {
+    title: 'How Independent Chippies Compete With the Chains',
+    description: 'A chain opened in Middleton with 45p fish and chips; the independent across the road sold out by 2.30pm. What UK chip shops can actually compete on when a chain arrives — speed, accuracy, direct ordering and margin.',
+    href: '/blog/how-independent-chippies-compete-with-chains',
+    icon: <Fish className="w-12 h-12 text-primary" />,
+  },
+  {
+    title: "How Domino's Became a Tech Company",
+    description: "Domino's rebuilt itself around technology — online ordering, customer data and delivery tracking — and became a tech business that happens to sell pizza. The lessons an independent takeaway can borrow.",
+    href: '/blog/how-dominos-became-a-tech-company',
+    icon: <Pizza className="w-12 h-12 text-primary" />,
   },
   {
     title: 'The Benefits of Self-Ordering Kiosks for Restaurants: 18 Data-Backed Reasons (and the ROI)',
