@@ -95,6 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/epos-with-teya',
     '/how-to-get-a-credit-card-machine',
     '/self-order-kiosks-guide',
+    '/xero-integration',
     '/food-truck-epos-system',
     '/kitchen-display-system',
     '/epos-now-alternative',
