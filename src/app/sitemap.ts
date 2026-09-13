@@ -96,6 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/how-to-get-a-credit-card-machine',
     '/self-order-kiosks-guide',
     '/xero-integration',
+    '/event-bookings',
     '/food-truck-epos-system',
     '/kitchen-display-system',
     '/epos-now-alternative',
