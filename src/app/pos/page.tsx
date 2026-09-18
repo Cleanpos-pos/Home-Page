@@ -311,7 +311,7 @@ const priceRows: [string, string][] = [
   ['Extra printer', '£99'],
   ['Handheld waiter pad', '£259'],
   ['Twin-screen upgrade', '£150'],
-  ['Software and support', '£35/month'],
+  ['Software and support', 'From £25 + VAT a month'],
 ];
 
 const comparisonChecks = [
@@ -420,12 +420,12 @@ const faqs = [
   {
     question: 'How much does an EPOS system cost in the UK?',
     answer:
-      'Posso POS systems start at £499 plus VAT and self-order kiosks at £699 plus VAT, with package prices for single-screen setups. Software and support is £35 per month. Setup is free; on-site installation for larger sites is priced on application.',
+      'Posso POS systems start at £499 plus VAT and self-order kiosks at £699 plus VAT, with package prices for single-screen setups. Software is from £25 + VAT a month, with your exact figure confirmed on your quote. Setup is free; on-site installation for larger sites is priced on application.',
   },
   {
     question: 'Is support included, or extra?',
     answer:
-      'Included. The £35 per month covers both the software and UK-based support — there is no separate support tier to buy.',
+      'Included. The monthly software fee, from £25 + VAT, covers the core system, software updates and cloud features, and UK-based support comes with it — there is no separate support tier to buy.',
   },
   {
     question: 'Can I move my data over from my old EPOS system?',
@@ -694,9 +694,11 @@ export default function PosPage() {
               </div>
               <div className="space-y-5 text-slate-300 leading-relaxed mt-8">
                 <p>
-                  Software and support is £35 per month, with support included rather than sold as a separate
-                  tier. Setup — menu building and equipment configuration — is free. Systems are plug-and-play
-                  with setup guidance; on-site installation for larger sites is priced on application.
+                  Software is from £25 + VAT a month, covering the core system, software updates and cloud
+                  features, with your exact figure confirmed on your quote. UK-based support is included in
+                  that — there is no separate support tier to buy. Setup — menu building and equipment
+                  configuration — is free. Systems are plug-and-play with setup guidance; on-site installation
+                  for larger sites is priced on application.
                 </p>
                 <p>
                   Add-ons priced separately: delivery platform integration (Just Eat, Uber Eats, Deliveroo) at
