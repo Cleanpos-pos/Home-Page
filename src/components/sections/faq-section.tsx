@@ -5,10 +5,21 @@ type FAQItem = {
   answer: string;
 };
 
-export function FAQSection({ title, faqs }: { title?: string; faqs: FAQItem[] }) {
+export function FAQSection({
+  title,
+  faqs,
+  schemaId,
+}: {
+  title?: string;
+  faqs: FAQItem[];
+  /** Optional canonical @id for this page's FAQPage node, e.g. `${url}#faq`,
+   *  so other schema on the page can reference it and IDs stay unique sitewide. */
+  schemaId?: string;
+}) {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    ...(schemaId ? { '@id': schemaId } : {}),
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
