@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" role="img" aria-labelledby="posso-epos-diagram-title posso-epos-diagram-desc">
+  <title id="posso-epos-diagram-title">How a Posso EPOS system works</title>
+  <desc id="posso-epos-diagram-desc">Orders from the POS till, self-order kiosk, handheld waiter pad, QR table ordering, website and app, AI phone ordering and delivery platforms all feed one offline-first EPOS core, which drives the kitchen display system, kitchen and receipt printers, Posso Pay card terminals, the driver app, reporting and the customer marketing CMS.</desc>
+
+  <defs>
+    <linearGradient id="posso-epos-diagram-core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2C76F6" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#915DF8" stop-opacity="0.22" />
+    </linearGradient>
+    <marker id="posso-epos-diagram-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2C76F6" />
+    </marker>
+    <marker id="posso-epos-diagram-arrow-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#915DF8" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="720" fill="#02091D" />
+
+  <g font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+    <text x="600" y="46" text-anchor="middle" font-size="29" font-weight="700" fill="#FFFFFF">How a Posso EPOS system works</text>
+    <text x="600" y="74" text-anchor="middle" font-size="15" fill="#94A3B8">Every order channel writes into one offline-first core</text>
+
+    <text x="190" y="120" text-anchor="middle" font-size="12.5" font-weight="700" letter-spacing="1.6" fill="#2C76F6">WHERE ORDERS COME FROM</text>
+    <text x="600" y="120" text-anchor="middle" font-size="12.5" font-weight="700" letter-spacing="1.6" fill="#915DF8">ONE POSSO EPOS CORE</text>
+    <text x="1010" y="120" text-anchor="middle" font-size="12.5" font-weight="700" letter-spacing="1.6" fill="#2C76F6">WHAT THE CORE DRIVES</text>
+
+    <g fill="none" stroke="#334155" stroke-width="1.5">
+      <path d="M 340 181 H 376" /><path d="M 340 255 H 376" /><path d="M 340 329 H 376" /><path d="M 340 403 H 376" /><path d="M 340 477 H 376" /><path d="M 340 551 H 376" /><path d="M 340 625 H 376" />
+      <path d="M 376 181 V 625" stroke="#2C76F6" stroke-opacity="0.55" />
+      <path d="M 824 218 V 588" stroke="#915DF8" stroke-opacity="0.55" />
+    </g>
+    <g fill="none" stroke="#2C76F6" stroke-width="2.5" marker-end="url(#posso-epos-diagram-arrow)">
+      <path d="M 376 403 H 414" />
+    </g>
+    <g fill="none" stroke="#915DF8" stroke-width="2.5">
+      <path d="M 786 403 H 824" />
+    </g>
+    <g fill="none" stroke="#915DF8" stroke-width="1.5" marker-end="url(#posso-epos-diagram-arrow-accent)">
+      <path d="M 824 218 H 854" /><path d="M 824 292 H 854" /><path d="M 824 366 H 854" /><path d="M 824 440 H 854" /><path d="M 824 514 H 854" /><path d="M 824 588 H 854" />
+    </g>
+
+    <g>
+      <rect x="40" y="150" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="60" y="176" font-size="16" font-weight="600" fill="#FFFFFF">POS till</text>
+      <text x="60" y="196" font-size="12.5" fill="#94A3B8">Eat in, takeaway, collection, delivery</text>
+
+      <rect x="40" y="224" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="60" y="250" font-size="16" font-weight="600" fill="#FFFFFF">Self-order kiosk</text>
+      <text x="60" y="270" font-size="12.5" fill="#94A3B8">Floor-standing or wall-mounted</text>
+
+      <rect x="40" y="298" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="60" y="324" font-size="16" font-weight="600" fill="#FFFFFF">Handheld waiter pad</text>
+      <text x="60" y="344" font-size="12.5" fill="#94A3B8">Order taken at the table</text>
+
+      <rect x="40" y="372" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="60" y="398" font-size="16" font-weight="600" fill="#FFFFFF">QR table ordering</text>
+      <text x="60" y="418" font-size="12.5" fill="#94A3B8">Scan, order and pay at the table</text>
+
+      <rect x="40" y="446" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="60" y="472" font-size="16" font-weight="600" fill="#FFFFFF">Website &amp; app</text>
+      <text x="60" y="492" font-size="12.5" fill="#94A3B8">Your own domain, collection &amp; delivery</text>
+
+      <rect x="40" y="520" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="60" y="546" font-size="16" font-weight="600" fill="#FFFFFF">AI phone ordering</text>
+      <text x="60" y="566" font-size="12.5" fill="#94A3B8">Answers when the line is busy</text>
+
+      <rect x="40" y="594" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="60" y="620" font-size="16" font-weight="600" fill="#FFFFFF">Delivery platforms</text>
+      <text x="60" y="640" font-size="12.5" fill="#94A3B8">Just Eat &#183; Uber Eats &#183; Deliveroo</text>
+    </g>
+
+    <g>
+      <rect x="414" y="230" width="372" height="346" rx="18" fill="url(#posso-epos-diagram-core)" stroke="#915DF8" stroke-opacity="0.45" stroke-width="1.5" />
+      <text x="600" y="274" text-anchor="middle" font-size="23" font-weight="700" fill="#FFFFFF">Posso EPOS core</text>
+      <text x="600" y="300" text-anchor="middle" font-size="13.5" fill="#94A3B8">One menu &#183; one price list &#183; one set of numbers</text>
+      <path d="M 460 322 H 740" stroke="#334155" stroke-width="1" />
+      <rect x="500" y="342" width="200" height="30" rx="15" fill="#915DF8" fill-opacity="0.16" stroke="#915DF8" stroke-opacity="0.45" />
+      <text x="600" y="362" text-anchor="middle" font-size="12.5" font-weight="700" letter-spacing="1.5" fill="#B99CFB">OFFLINE-FIRST</text>
+      <text x="600" y="404" text-anchor="middle" font-size="14" fill="#CBD5E1">Runs on a local database on the</text>
+      <text x="600" y="426" text-anchor="middle" font-size="14" fill="#CBD5E1">terminal itself.</text>
+      <text x="600" y="460" text-anchor="middle" font-size="14" fill="#CBD5E1">Broadband drops? The till keeps serving,</text>
+      <text x="600" y="482" text-anchor="middle" font-size="14" fill="#CBD5E1">kitchen screens keep receiving and</text>
+      <text x="600" y="504" text-anchor="middle" font-size="14" fill="#CBD5E1">printers keep printing.</text>
+      <text x="600" y="540" text-anchor="middle" font-size="13" fill="#94A3B8">Everything syncs when the connection returns.</text>
+    </g>
+
+    <g>
+      <rect x="860" y="187" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="880" y="213" font-size="16" font-weight="600" fill="#FFFFFF">Kitchen display system</text>
+      <text x="880" y="233" font-size="12.5" fill="#94A3B8">Tickets routed by course or station</text>
+
+      <rect x="860" y="261" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="880" y="287" font-size="16" font-weight="600" fill="#FFFFFF">Kitchen &amp; receipt printers</text>
+      <text x="880" y="307" font-size="12.5" fill="#94A3B8">Multi-kitchen printed copies</text>
+
+      <rect x="860" y="335" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="880" y="361" font-size="16" font-weight="600" fill="#FFFFFF">Posso Pay card terminals</text>
+      <text x="880" y="381" font-size="12.5" fill="#94A3B8">Amount pushed across from the till</text>
+
+      <rect x="860" y="409" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="880" y="435" font-size="16" font-weight="600" fill="#FFFFFF">Driver app &amp; dispatch</text>
+      <text x="880" y="455" font-size="12.5" fill="#94A3B8">Zones, fees and live driver tracking</text>
+
+      <rect x="860" y="483" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="880" y="509" font-size="16" font-weight="600" fill="#FFFFFF">Reporting &amp; analytics</text>
+      <text x="880" y="529" font-size="12.5" fill="#94A3B8">X and Z reads, sales by item and hour</text>
+
+      <rect x="860" y="557" width="300" height="62" rx="12" fill="#1E293B" fill-opacity="0.55" stroke="#334155" />
+      <text x="880" y="583" font-size="16" font-weight="600" fill="#FFFFFF">Customer marketing CMS</text>
+      <text x="880" y="603" font-size="12.5" fill="#94A3B8">Built in, with 2,000 emails a month</text>
+    </g>
+
+    <text x="600" y="694" text-anchor="middle" font-size="13" fill="#64748B">posso.co.uk &#183; EPOS systems built and supported in the UK</text>
+  </g>
+</svg>

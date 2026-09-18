@@ -41,7 +41,7 @@ const featureCategories = [
   {
     title: 'Payments & Finance',
     features: [
-      { icon: CreditCard, name: 'Integrated Card Payments', description: 'Teya terminal integration with contactless, chip & PIN, Apple Pay, and Google Pay.' },
+      { icon: CreditCard, name: 'Integrated Card Payments', description: 'Posso Pay terminals with contactless, chip & PIN, Apple Pay, and Google Pay. Teya and Dojo also supported.' },
       { icon: Split, name: 'Split Bills', description: 'Split by number of people, by item, or by custom amount.' },
       { icon: Clock, name: 'Shift & Cash Management', description: 'Opening float, cash drops, blind count closing, and variance alerts.' },
       { icon: BarChart3, name: 'X & Z Reports', description: 'Running totals and end-of-day reconciliation with full audit trail.' },
