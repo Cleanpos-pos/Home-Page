@@ -190,7 +190,9 @@ export default function PosForPizzaShopPage() {
                   The system handles <strong className="text-white">counter orders, phone orders, online orders, and delivery app orders</strong> from one interface. The kitchen sees one queue. Drivers are managed on one screen. Reports cover all channels in one dashboard. No juggling separate tools for each part of the business.
                 </p>
                 <p>
-                  Pricing is straightforward: <strong className="text-white">POS from £499 + VAT</strong> with online ordering at low commission. No hidden fees, no surprise charges after 6 months. Free setup, menu import, staff training, and a 2-year warranty. Phone support when you need it — not just email tickets that take 48 hours to answer.
+                  Pricing is straightforward: <strong className="text-white">POS from £499 + VAT</strong> with online ordering at low commission. No hidden fees, no surprise charges after 6 months. Free setup, menu import, staff training, and a 2-year warranty. Phone support when you need it — not just email tickets that take 48 hours to answer. It is all one{' '}
+                  <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
+                  rather than separate products bolted together.
                 </p>
               </div>
             </div>
