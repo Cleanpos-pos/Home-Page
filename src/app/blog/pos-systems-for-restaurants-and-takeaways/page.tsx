@@ -117,7 +117,7 @@ export default function PossoPosBlogPage() {
                 <div className="border-t border-slate-700 pt-6 mt-6">
                     <h4 className="font-semibold text-slate-300 mb-2">Related Reading:</h4>
                     <ul className="list-none p-0 m-0 space-y-2">
-                        <li><Link href="/blog/self-order-kiosks" className="text-primary hover:underline">POSSO Self-Order Kiosks</Link></li>
+                        <li><Link href="/self-order-kiosks-guide" className="text-primary hover:underline">POSSO Self-Order Kiosks</Link></li>
                         <li><Link href="/blog/online-ordering-and-mobile-apps" className="text-primary hover:underline">POSSO Online Ordering & Apps</Link></li>
                     </ul>
                 </div>

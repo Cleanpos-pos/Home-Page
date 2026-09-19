@@ -202,17 +202,17 @@ export default function KioskPosPage() {
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore More Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/self-ordering-kiosk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">Self-Ordering Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Dedicated self-service</p>
-                </Link>
-                <Link href="/self-serve-kiosk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">Self Serve Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Unattended ordering</p>
-                </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">Self-Service ePOS</p>
-                  <p className="text-slate-400 text-sm mt-1">Self-service solutions</p>
+                  <p className="font-semibold text-white">Self-Order Kiosks</p>
+                  <p className="text-slate-400 text-sm mt-1">The full kiosk range</p>
+                </Link>
+                <Link href="/self-order-kiosk-cost" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Kiosk Costs</p>
+                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT, itemised</p>
+                </Link>
+                <Link href="/self-order-app" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Self-Order App</p>
+                  <p className="text-slate-400 text-sm mt-1">Ordering from the customer&apos;s phone</p>
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>

@@ -36,7 +36,7 @@ const features = [
     {
         icon: <Smartphone className="w-8 h-8 text-primary" />,
         title: 'Self-Order Kiosk Excellence',
-        description: 'Empower customers with intuitive self-service kiosks. Reduce wait times, increase order accuracy, and boost average transaction values by up to 30%.'
+        description: 'Empower customers with intuitive self-service kiosks. Reduce wait times, increase order accuracy, and prompt a consistent upsell on every order.'
     },
     {
         icon: <CreditCard className="w-8 h-8 text-primary" />,
@@ -198,7 +198,7 @@ export default function PosSolutionsBlogPage() {
                             <p className="text-slate-300">
                                 At POSSO, we offer a comprehensive suite of tools to help your business thrive in the digital age.
                                 Whether you're looking for <Link href="/blog/pos-systems-for-restaurants-and-takeaways" className="text-primary hover:underline">Low-Commission POS Systems</Link>,
-                                or want to learn about the <Link href="/blog/self-order-kiosks" className="text-primary hover:underline">Benefits of Self-Order Kiosks</Link>, we have the expertise to guide you.
+                                or want to learn about the <Link href="/self-order-kiosks-guide" className="text-primary hover:underline">Benefits of Self-Order Kiosks</Link>, we have the expertise to guide you.
                             </p>
                             <p className="text-slate-300 mt-4">
                                 Don't forget to check our <Link href="/blog/online-ordering-and-mobile-apps" className="text-primary hover:underline">Online Ordering & Mobile Apps</Link> to eliminate

@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-    title: 'Stop Paying Commissions: A Better EPOS System for Takeaway | Posso',
+    title: 'Stop Paying Commissions: A Better EPOS System for Takeaway',
     description: 'Tired of 30% commission? Posso provides a better EPOS system for takeaways with low-commission online ordering, integrated printing, and automated marketing.',
     keywords: 'epos system for takeaway, commission free ordering, takeaway pos uk, online ordering system takeaways',
     alternates: {

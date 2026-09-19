@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-    title: 'The Truth About Free EPOS Software in the UK | Posso',
+    title: 'The Truth About Free EPOS Software in the UK',
     description: 'Is free EPOS software really free? Discover the hidden costs of "free" UK EPOS systems and why a transparent, low-cost model from Posso is better for your business.',
     keywords: 'free epos software uk, affordable epos systems, hidden epos fees, restaurant software uk, takeaway epso',
     alternates: {
@@ -129,7 +129,7 @@ export default function FreeEposBlog() {
                                         <Link href="/finance">Check Budget Solutions</Link>
                                     </Button>
                                     <Button size="lg" variant="outline" asChild className="rounded-full px-8 bg-transparent border-white text-white hover:bg-white/10">
-                                        <Link href="/contact-posso-ltd">Speak to an Expert</Link>
+                                        <Link href="/contact">Speak to an Expert</Link>
                                     </Button>
                                 </div>
                             </div>

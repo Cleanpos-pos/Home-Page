@@ -126,7 +126,7 @@ export const howToGetACreditCardMachine: Guide = {
       heading: "Getting a card machine from Posso — Posso Pay and Teya",
       paragraphs: [
         "Posso is a UK hospitality and retail technology company with 500+ UK businesses on the system, supported from Leicester. When you get a card machine from us, you have two integrated routes. Posso Pay is our own merchant service: card processing from 1% + 10p, quoted on your actual turnover, the same rate in store and on your online ordering, with the terminal integrated natively into the till so amounts push from the basket and nothing is retyped. Or, if you already have — or want — Teya's rates, our Teya partnership integrates Teya card machines directly with Posso One: the terms Teya is chosen for (competitive rates, no long-term contracts, no hidden fees, no monthly minimums), with the till link that ends the retyping.",
-        "Either way, the machine is part of a system rather than a lonely reader: it settles alongside your EPOS, kiosks and online ordering through one relationship, with a human on the phone Monday to Friday, 9am to 9:30pm. Getting started is a short application and, for a card machine with a Posso till, the complete system is £499 + VAT with software from £25 + VAT a month.",
+        "Either way, the machine is part of a system rather than a lonely reader: it settles alongside your EPOS, kiosks and online ordering through one relationship, with a human on the phone Monday to Friday, 9am to 9:30pm. Getting started is a short application and, for a card machine with a Posso till, the complete system is £499 + VAT with software from £35 + VAT a month.",
       ],
     },
     {

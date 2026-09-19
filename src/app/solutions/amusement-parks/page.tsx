@@ -2,7 +2,7 @@ import { SolutionsLandingPage } from "@/components/solutions-landing-page";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Amusement Park POS & Ticketing Software UK | Posso',
+  title: 'Amusement Park POS & Ticketing Software UK',
   description: 'Enterprise-grade ticketing and smart locker networks built to handle thousands of guests a day without a hitch.',
   keywords: [
     'amusement park POS system',

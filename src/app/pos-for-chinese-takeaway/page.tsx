@@ -229,6 +229,13 @@ export default function PosForChineseTakeawayPage() {
                   <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
                   rather than separate products bolted together.
                 </p>
+                <p>
+                  Two parts of that system carry most of the load in a Chinese takeaway. A{' '}
+                  <Link href="/kitchen-display-system" className="text-primary hover:underline">kitchen display system</Link>{' '}
+                  keeps counter, phone, website and marketplace tickets in one queue when the wok section is at full stretch, and a{' '}
+                  <Link href="/self-order-kiosks-for-takeaways" className="text-primary hover:underline">self-order kiosk for takeaways</Link>{' '}
+                  takes the walk-in collection queue off the counter so the phone still gets answered.
+                </p>
               </div>
             </div>
           </div>

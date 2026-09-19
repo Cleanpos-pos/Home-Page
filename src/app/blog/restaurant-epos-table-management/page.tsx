@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-    title: 'Table Management Made Easy with Restaurant EPOS | Posso',
+    title: 'Table Management Made Easy with Restaurant EPOS',
     description: 'Master your dining room with Posso\'s Restaurant EPOS. Featuring TableMaestro visual floor plans, course firing, and instant bill splitting.',
     keywords: 'restaurant epos, table management system, restaurant floor plan, split bills restaurant, hospitality pos',
     alternates: {

@@ -216,6 +216,13 @@ export default function PosForKebabShopPage() {
                   <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
                   rather than separate products bolted together.
                 </p>
+                <p>
+                  Late trade is where a kebab shop wins or loses the night. A{' '}
+                  <Link href="/kitchen-display-system" className="text-primary hover:underline">kitchen display system</Link>{' '}
+                  keeps grill tickets legible when the counter is three deep, and a{' '}
+                  <Link href="/self-order-kiosks-for-takeaways" className="text-primary hover:underline">self-order kiosk for takeaways</Link>{' '}
+                  takes orders at closing time without another pair of hands on the till.
+                </p>
               </div>
             </div>
           </div>

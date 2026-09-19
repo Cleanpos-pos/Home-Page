@@ -207,7 +207,26 @@ export default function KitchenDisplaySystemPage() {
                   The whole system is <strong className="text-white">offline-first</strong>. If the broadband drops mid-service, orders keep reaching the kitchen from the till and nothing on the board is lost — everything syncs when the connection returns.
                 </p>
                 <p>
-                  The kitchen display is part of Posso One, with the POS from <strong className="text-white">£499 + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a two-year warranty. On-site installation is quoted separately if you want it. Screen count depends on how your kitchen is laid out, so we price that with you rather than quoting a number that assumes one.
+                  The kitchen display is part of Posso One, with the POS from <strong className="text-white">£499 + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a two-year warranty. On-site installation is quoted separately if you want it. Screen count depends on how your kitchen is laid out.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text text-center mb-8">
+                What does a kitchen display system cost?
+              </h2>
+              <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
+                <p>
+                  A 21-inch kitchen display screen is <strong className="text-white">£399 + VAT</strong>, one-off, per screen, running on the Posso EPOS from <strong className="text-white">£499 + VAT</strong>. There is <strong className="text-white">no separate per-screen licence</strong> — screens run under the standard software fee from £35 + VAT a month, however many you add. The twin-screen upgrade is +£150, and on-site installation is quoted separately.
+                </p>
+                <p>
+                  <Link href="/kitchen-display-system-cost" className="text-primary hover:underline">Full kitchen display system costs</Link>{' '}
+                  breaks that down line by line, with worked totals for one, two and three screens and an honest comparison against kitchen printers.
                 </p>
               </div>
             </div>
@@ -252,10 +271,10 @@ export default function KitchenDisplaySystemPage() {
 
         <FAQSection title="Kitchen Display System — Frequently Asked Questions" faqs={[
           { question: 'What is a kitchen display system?', answer: 'A kitchen display system, or KDS, is a screen in the kitchen that replaces or supplements printed tickets. It shows every live order in one queue with the items still to make, tracks completion at item level, ages each ticket so the longest-waiting order is obvious, and can route items to the station responsible for them.' },
-          { question: 'Does a kitchen display replace kitchen printers?', answer: 'Not usually, and it does not have to. Most kitchens run both: the screen manages the queue while the printer produces the ticket that physically travels with a collection bag or a driver order. Posso supports thermal kitchen printing over network or USB alongside the display, routed by menu category to a screen, a printer, or both.' },
+          { question: 'Does a kitchen display replace kitchen printers?', answer: 'It can, but it usually does not have to. Most kitchens run both: the screen manages the queue while the printer produces the ticket that travels with a collection bag or a driver order. A 21-inch screen is £399 + VAT and an extra printer is £99, so the printer is cheaper upfront. Posso routes either by menu category.' },
           { question: 'What are production totals and why do they matter?', answer: 'Production totals show how many of each item are outstanding across every live order at once, rather than order by order. Six portions of chips spread across four tickets is one fryer basket rather than four. In a kitchen running a fryer or grill at capacity during peak, batching from that view is usually the largest efficiency gain available without adding staff.' },
           { question: 'Do delivery app orders appear on the kitchen display?', answer: 'On Posso, yes. Just Eat, Uber Eats and Deliveroo orders arrive in the same queue as counter, phone and website orders, so the kitchen works one list rather than a printer plus three marketplace tablets. Ask any supplier this specifically — a KDS that only shows orders typed at the till leaves the tablets on your counter.' },
-          { question: 'How many screens does a kitchen need?', answer: 'A single busy counter operation often runs on one. A kitchen with distinct stations — grill, fryer, wok, cold — typically wants one per station, sometimes with an additional screen at the pass. Work out the number you need before comparing quotes, because per-screen pricing is where headline prices and real prices tend to diverge.' },
+          { question: 'How many screens does a kitchen need?', answer: 'A single busy counter operation often runs on one, at £399 + VAT per screen. A kitchen with distinct stations — grill, fryer, wok, cold — typically wants one per station, sometimes with another at the pass. Posso charges no per-screen licence, so adding a screen is hardware only; check that before comparing quotes, because per-screen pricing is where real costs diverge.' },
           { question: 'Does the kitchen display work if the internet goes down?', answer: 'Yes. Posso One is offline-first, so orders continue to reach the kitchen display and the kitchen printers from the till without a connection, and everything syncs to the cloud once you are back online. Cloud-only systems stop dead in the same situation.' },
         ]} />
 

@@ -2,7 +2,7 @@ import { SolutionsLandingPage } from "@/components/solutions-landing-page";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Museum Ticketing System & Admission Software UK | Posso',
+  title: 'Museum Ticketing System & Admission Software UK',
   description: 'Elegant ticketing and cloakroom management that respects the art of hospitality. Posso powers museum admissions, timed entry, memberships, donations and gift shop EPOS for UK museums and galleries.',
   keywords: [
     'museum ticketing system',

@@ -78,14 +78,14 @@ const features = [
   { icon: Monitor, title: '21" Touchscreen Display', description: 'A large, bright 21-inch capacitive touchscreen that customers can see clearly even in bright environments. Responsive touch means no frustrated jabbing at the screen. The display is commercial-grade — built for thousands of touches per day without degrading.' },
   { icon: CreditCard, title: 'Integrated Card Payment', description: 'The card payment terminal is built into the kiosk — no separate device to manage. Contactless, chip and PIN, Apple Pay, and Google Pay all accepted. Payment processes in under 2 seconds. The customer taps, pays, and moves on.' },
   { icon: Paintbrush, title: 'Your Brand, Your Kiosk', description: 'Upload your logo, set your brand colours, add product images, and the kiosk becomes an extension of your restaurant. Customers see your brand identity throughout the ordering journey — not a generic ordering interface with someone else\'s branding.' },
-  { icon: TrendingUp, title: 'Upselling That Works', description: 'After selecting a main item, customers see relevant upsell suggestions — add a drink? upgrade to a meal deal? extra cheese? These prompts convert at 20-30% because customers are already in buying mode. Average order value increases by £2-4 per transaction.' },
+  { icon: TrendingUp, title: 'Upselling That Works', description: 'After selecting a main item, customers see relevant upsell suggestions — add a drink? upgrade to a meal deal? extra cheese? The prompt appears at the moment the customer is choosing, and it appears on every order rather than only when staff have time to ask.' },
   { icon: ChefHat, title: 'Kitchen Display Integration', description: 'When a customer completes their order, it appears on the kitchen display within 2 seconds. The ticket shows item details, modifiers, and order number. The customer receives a printed receipt with their order number to collect when ready.' },
   { icon: ShoppingCart, title: 'Menu Sync Across Channels', description: 'Your kiosk menu syncs with your POS and online ordering. Update a price or add a new item once, and it appears on the kiosk, counter POS, and website simultaneously. Mark an item as out of stock and it disappears from all channels.' },
 ];
 
 const benefits = [
   { title: 'Reduce Queue Times by 50%', description: 'Two kiosks serve customers as fast as three counter staff. During lunch rush, kiosks absorb the ordering workload while staff focus on food preparation. Customers who see a short queue are more likely to stay — those who see a long one walk away.' },
-  { title: 'Increase Average Order Value 20-30%', description: 'Kiosk upselling prompts are consistent and never forget. Every customer sees relevant suggestions at the right moment in the ordering journey. No awkward verbal upselling, no rushing past extras because the queue is long. The kiosk sells patiently, every time.' },
+  { title: 'Consistent Upselling on Every Order', description: 'Kiosk upselling prompts are consistent and never forget. Every customer sees relevant suggestions at the right moment in the ordering journey. No awkward verbal upselling, no rushing past extras because the queue is long. The kiosk sells patiently, every time.' },
   { title: 'Free Your Staff for Better Tasks', description: 'When kiosks handle ordering and payment, your staff focus on food preparation, customer service, and keeping the restaurant clean. You serve more customers without hiring more people — or you maintain service levels with fewer staff during quieter periods.' },
   { title: 'Consistent Customer Experience', description: 'The kiosk presents the same menu, the same upsells, and the same ordering flow every time. No variation based on which staff member is on shift. Customers get a predictable, professional experience whether they visit at 8am or 8pm.' },
 ];
@@ -123,7 +123,7 @@ export default function SelfOrderingKioskPage() {
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> 21" touchscreen with integrated payment</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Upselling increases order value 20-30%</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Upselling prompts fire on every order</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Self ordering kiosks from £699 + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
@@ -225,7 +225,7 @@ export default function SelfOrderingKioskPage() {
 
         <FAQSection title="Self Ordering Kiosk — Frequently Asked Questions" faqs={[
           { question: 'What size is the kiosk touchscreen?', answer: 'The Posso self ordering kiosk features a 21-inch capacitive touchscreen display. It is commercial-grade, built for thousands of touches per day, and bright enough to see clearly in well-lit restaurant environments. The screen supports multi-touch for smooth scrolling and navigation.' },
-          { question: 'How does kiosk upselling work?', answer: 'After a customer selects a main item, the kiosk displays relevant upsell suggestions — add a drink, upgrade to a meal deal, add extra toppings. The suggestions are configurable per product. These prompts convert at 20-30% and increase average order value by £2-4 per transaction.' },
+          { question: 'How does kiosk upselling work?', answer: 'After a customer selects a main item, the kiosk displays relevant upsell suggestions — add a drink, upgrade to a meal deal, add extra toppings. The suggestions are configurable per product, and they appear on every order rather than only when staff remember to ask.' },
           { question: 'Can I customise the kiosk with my branding?', answer: 'Yes. Upload your logo, set your brand colours, add product images, and configure the menu layout. The entire ordering interface reflects your brand identity. You can also add promotional banners and featured items to the home screen.' },
           { question: 'Does the kiosk accept contactless payment?', answer: 'Yes. The integrated payment terminal accepts contactless card, chip and PIN, Apple Pay, and Google Pay. Payment processes in under 2 seconds. The terminal is built into the kiosk unit — no separate device to manage or charge.' },
           { question: 'How does the kiosk connect to the kitchen?', answer: 'When a customer completes their order on the kiosk, it appears on the kitchen display system within 2 seconds. The kitchen ticket shows all items, modifiers, and the order number. The customer receives a printed receipt with their number to collect when ready.' },

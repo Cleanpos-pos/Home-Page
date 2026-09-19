@@ -9,7 +9,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'ePOS System for Indian Takeaway | Posso UK',
+  title: 'ePOS System for Indian Takeaway',
   description:
     'Posso ePOS system built for Indian takeaways. Caller ID phone ordering, delivery zone management, multi-language kitchen tickets, spice level modifiers, and Just Eat/Uber Eats/Deliveroo integration. From £499 + VAT.',
   keywords: [

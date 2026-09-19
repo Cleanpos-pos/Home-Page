@@ -2,7 +2,7 @@ import { SolutionsLandingPage } from "@/components/solutions-landing-page";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Festival Ticketing & Cashless RFID Payments UK | Posso',
+  title: 'Festival Ticketing & Cashless RFID Payments UK',
   description: 'Cashless RFID wristbands, fast entry and vendor payments for UK festivals and live events. Posso powers festival ticketing, access control, multi-vendor payments and pop-up locker rentals.',
   keywords: [
     'festival ticketing system',

@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-    title: 'Why Every Server Needs a Portable Card Machine | Posso',
+    title: 'Why Every Server Needs a Portable Card Machine',
     description: 'Boost restaurant efficiency with portable card machines. Learn how pay-at-table technology and 4G backup can save time and increase table turnaround.',
     keywords: 'portable card machine, restaurant payments, pay at table, handheld pos uk, mobile payment terminal',
     alternates: {
@@ -67,7 +67,7 @@ export default function PortableCardMachineBlog() {
                             </p>
                             <div className="flex flex-wrap justify-center gap-4 pt-8">
                                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full h-14 px-10 text-lg shadow-lg shadow-primary/20" asChild>
-                                    <Link href="/portable-card-machines">View Portable Models</Link>
+                                    <Link href="/credit-card-machines">View Portable Models</Link>
                                 </Button>
                                 <Button size="lg" variant="outline" className="border-white/10 hover:bg-white/5 rounded-full h-14 px-10 text-lg" asChild>
                                     <Link href="https://www.posso.co.uk">Visit POSSO.UK</Link>

@@ -2,7 +2,7 @@ import { SolutionsLandingPage } from "@/components/solutions-landing-page";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Soft Play & Play Centre Booking, Ticketing & EPOS | Posso',
+  title: 'Soft Play & Play Centre Booking, Ticketing & EPOS',
   description: 'Safety-first ticketing that pairs children with parents, plus online booking, capacity control and convenient storage for shoes and bags.',
   keywords: [
     'soft play booking system',

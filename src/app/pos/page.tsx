@@ -109,19 +109,6 @@ const pageSchema = {
         areaServed: 'GB',
         seller: { '@id': 'https://www.posso.co.uk/#organization' },
       },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.5',
-        bestRating: '5',
-        ratingCount: '1',
-      },
-      review: {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Sally' },
-        reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5' },
-        reviewBody:
-          'My Posso POS system is a game changer — my restaurant runs more smoothly now thanks to Posso One and the team. A big thank you.',
-      },
     },
     {
       '@type': 'BreadcrumbList',
@@ -311,7 +298,7 @@ const priceRows: [string, string][] = [
   ['Extra printer', '£99'],
   ['Handheld waiter pad', '£259'],
   ['Twin-screen upgrade', '£150'],
-  ['Software and support', 'From £25 + VAT a month'],
+  ['Software and support', 'From £35 + VAT a month'],
 ];
 
 const comparisonChecks = [
@@ -421,12 +408,12 @@ const faqs = [
   {
     question: 'How much does an EPOS system cost in the UK?',
     answer:
-      'Posso POS systems start at £499 plus VAT and self-order kiosks at £699 plus VAT, with package prices for single-screen setups. Software is from £25 + VAT a month, with your exact figure confirmed on your quote. Setup is free; on-site installation for larger sites is priced on application.',
+      'Posso POS systems start at £499 plus VAT and self-order kiosks at £699 plus VAT, with package prices for single-screen setups. Software is from £35 + VAT a month, with your exact figure confirmed on your quote. Setup is free; on-site installation for larger sites is priced on application.',
   },
   {
     question: 'Is support included, or extra?',
     answer:
-      'Included. The monthly software fee, from £25 + VAT, covers the core system, software updates and cloud features, and UK-based support comes with it — there is no separate support tier to buy.',
+      'Included. The monthly software fee, from £35 + VAT, covers the core system, software updates and cloud features, and UK-based support comes with it — there is no separate support tier to buy.',
   },
   {
     question: 'Can I move my data over from my old EPOS system?',
@@ -695,7 +682,7 @@ export default function PosPage() {
               </div>
               <div className="space-y-5 text-slate-300 leading-relaxed mt-8">
                 <p>
-                  Software is from £25 + VAT a month, covering the core system, software updates and cloud
+                  Software is from £35 + VAT a month, covering the core system, software updates and cloud
                   features, with your exact figure confirmed on your quote. UK-based support is included in
                   that — there is no separate support tier to buy. Setup — menu building and equipment
                   configuration — is free. Systems are plug-and-play with setup guidance; on-site installation

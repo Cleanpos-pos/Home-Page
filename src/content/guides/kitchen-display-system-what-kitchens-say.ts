@@ -7,7 +7,7 @@ import type { Guide } from "@/lib/guides";
  * in a linked thread; no figure or quote without a link.
  *
  * KDS pricing per posso-vs-epos-now (corrected 2026-08-24): 21-inch screen
- * £399 + VAT, covered by the standard software fee (from £25 + VAT/month).
+ * £399 + VAT, covered by the standard software fee (from £35 + VAT/month).
  */
 
 export const kitchenDisplaySystemWhatKitchensSay: Guide = {
@@ -68,7 +68,7 @@ export const kitchenDisplaySystemWhatKitchensSay: Guide = {
       heading: "What a kitchen screen actually costs",
       paragraphs: [
         "The market pattern owners describe is a monthly add-on per screen — Epos Now's KDS, for example, is reported by users at around £19 a month on top of the software plan, which is £228 a year for one screen before you have bought anything. The self-hosted thread is the reaction to exactly that structure.",
-        "Posso prices it the other way: the 21-inch kitchen screen is £399 + VAT once, and it runs under the same standard software fee as the rest of the system — from £25 + VAT a month for the platform, not per screen. Orders from the counter, phone, your own online ordering and the £45-a-month marketplace integration all land on the same display in the same queue, which is the coordination loop the owner thread asked for. If you already run our till, adding the screen is hardware plus configuration, not a new subscription.",
+        "Posso prices it the other way: the 21-inch kitchen screen is £399 + VAT once, and it runs under the same standard software fee as the rest of the system — from £35 + VAT a month for the platform, not per screen. Orders from the counter, phone, your own online ordering and the £45-a-month marketplace integration all land on the same display in the same queue, which is the coordination loop the owner thread asked for. If you already run our till, adding the screen is hardware plus configuration, not a new subscription.",
       ],
     },
     {
@@ -131,7 +131,7 @@ export const kitchenDisplaySystemWhatKitchensSay: Guide = {
     },
     {
       q: "How much does a kitchen display system cost in the UK?",
-      a: "The market pattern is a monthly per-screen add-on — around £19 a month is reported for Epos Now's — which compounds forever. Posso's 21-inch screen is £399 + VAT one-off and runs under the standard software fee (from £25 + VAT a month for the platform), not a separate per-screen subscription. On a three-year view the one-off screen is the cheaper structure by some distance.",
+      a: "The market pattern is a monthly per-screen add-on — around £19 a month is reported for Epos Now's — which compounds forever. Posso's 21-inch screen is £399 + VAT one-off and runs under the standard software fee (from £35 + VAT a month for the platform), not a separate per-screen subscription. On a three-year view the one-off screen is the cheaper structure by some distance.",
     },
     {
       q: "What goes wrong with kitchen display systems?",

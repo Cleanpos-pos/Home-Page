@@ -27,7 +27,7 @@ import Link from 'next/link';
 import { SolutionEnquiryModal } from '@/components/solution-enquiry-modal';
 
 export const metadata: Metadata = {
-    title: 'Coffee Shop & Cafe ePOS Systems UK | Posso',
+    title: 'Coffee Shop & Cafe ePOS Systems UK',
     description: 'Complete coffee shop and cafe ePOS systems from Posso. 15" touchscreen, kitchen display, online ordering and card payments. Low monthly fee, no long contracts.',
     alternates: {
         canonical: '/coffee-shop-cafe-epos-systems',
@@ -380,7 +380,7 @@ export default function CoffeeShopEposPage() {
                     <div className="container mx-auto px-4 md:px-6">
                         <h2 className="text-2xl font-bold mb-8 text-center">Related Solutions</h2>
                         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                            <Link href="/self-order-kiosks-uk" className="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-primary/30 transition-colors block group">
+                            <Link href="/self-order-kiosks" className="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-primary/30 transition-colors block group">
                                 <h3 className="font-bold text-white group-hover:text-primary mb-2">Self-Order Kiosks</h3>
                                 <p className="text-slate-500 text-sm">Let customers order and pay at a touchscreen kiosk. Reduce queues and boost order value.</p>
                             </Link>

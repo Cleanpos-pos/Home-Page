@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Benefits of a Mobile POS Device for Restaurants | Posso',
+  title: 'Benefits of a Mobile POS Device for Restaurants',
   description: 'Discover how mobile POS devices can revolutionise your restaurant, from faster service and tableside ordering to improved staff efficiency and sales.',
   alternates: {
     canonical: '/blog/benefits-of-a-mobile-pos-device-for-restaurants',

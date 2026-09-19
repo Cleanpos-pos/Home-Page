@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Best ePOS System for UK Coffee Shops & Cafes | Posso',
+  title: 'Best ePOS System for UK Coffee Shops & Cafes',
   description: 'Looking for an ePOS for your cafe? Our guide covers essential features like loyalty schemes, speedy payments, and multi-location management for UK coffee shops.',
   alternates: {
     canonical: '/blog/cafe-coffee-shop-epos-systems-uk',

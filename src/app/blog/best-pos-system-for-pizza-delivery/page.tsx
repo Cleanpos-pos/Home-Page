@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-    title: 'What is the Best POS System for Pizza Delivery? | Posso',
+    title: 'What is the Best POS System for Pizza Delivery?',
     description: 'Pizza delivery requires specialized features like half-and-half modifiers and integrated delivery mapping. Discover why Posso is the UK leader in pizza POS.',
     keywords: 'best pos system for pizza delivery, pizza shop software, pizza toppings matrix, delivery tracking uk, takeaway pos pizza',
     alternates: {

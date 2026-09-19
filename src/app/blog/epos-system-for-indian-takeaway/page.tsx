@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-    title: 'The Perfect EPOS System for Your Indian Takeaway | Posso',
+    title: 'The Perfect EPOS System for Your Indian Takeaway',
     description: 'Simplify complex menus and speed up delivery with Posso\'s EPOS system for Indian takeaways. Featuring Caller ID, advanced modifiers, and driver tracking.',
     keywords: 'epos system for indian takeaway, indian restaurant software, caller id for takeaway, delivery management system',
     alternates: {
@@ -48,7 +48,7 @@ export default function IndianTakeawayBlog() {
                         </p>
                         <div className="mt-10 flex justify-center gap-4">
                             <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-10 h-14" asChild>
-                                <Link href="/best-epos-system-for-indian-takeaway-by-posso-ltd-uk">View Specialised System</Link>
+                                <Link href="/epos-system-for-indian-takeaway">View Specialised System</Link>
                             </Button>
                         </div>
                     </div>

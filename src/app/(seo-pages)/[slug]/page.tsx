@@ -122,8 +122,16 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
   })() : null;
 
   const relatedPages = page.relatedSlugs
+    .filter(s => s !== page.slug)
     .map(s => allSeoPages.find(p => p.slug === s))
     .filter(Boolean) as SeoPageData[];
+
+  // `relatedSlugs` can only name programmatic pages, so bespoke routes are carried
+  // separately in `extraLinks` and rendered in the same grid.
+  const relatedCards: { href: string; label: string; desc: string }[] = [
+    ...relatedPages.map(rp => ({ href: `/${rp.slug}`, label: rp.h1, desc: rp.description })),
+    ...(page.extraLinks ?? []).map(l => ({ href: l.href, label: l.label, desc: l.desc ?? '' })),
+  ];
 
   return (
     <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50 selection:bg-primary/30">
@@ -174,7 +182,7 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
                     </Button>
                   }
                 />
-                <Link href="/contact-posso-ltd">
+                <Link href="/contact">
                   <Button size="lg" variant="outline" className="h-12 px-8 border-slate-700 bg-slate-900/50 backdrop-blur-sm text-slate-100 hover:bg-slate-800 transition-all">
                     Contact Sales
                   </Button>
@@ -316,15 +324,15 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
         )}
 
         {/* Related Pages */}
-        {relatedPages.length > 0 && (
+        {relatedCards.length > 0 && (
           <section className="py-16 bg-slate-900/30">
             <div className="container mx-auto px-4 md:px-6">
               <h2 className="text-2xl font-bold mb-8 text-center">Related Solutions</h2>
               <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                {relatedPages.map((rp) => (
-                  <Link key={rp.slug} href={`/${rp.slug}`} className="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-primary/30 transition-colors block group">
-                    <h3 className="font-bold text-white group-hover:text-primary mb-2">{rp.h1}</h3>
-                    <p className="text-slate-500 text-sm line-clamp-2">{rp.description}</p>
+                {relatedCards.map((rc) => (
+                  <Link key={rc.href} href={rc.href} className="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-primary/30 transition-colors block group">
+                    <h3 className="font-bold text-white group-hover:text-primary mb-2">{rc.label}</h3>
+                    <p className="text-slate-500 text-sm line-clamp-2">{rc.desc}</p>
                   </Link>
                 ))}
               </div>

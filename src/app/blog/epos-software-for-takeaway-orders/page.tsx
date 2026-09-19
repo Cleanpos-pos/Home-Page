@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-    title: 'Streamline Your Orders with Specialised EPOS Software | Posso',
+    title: 'Streamline Your Orders with Specialised EPOS Software',
     description: 'Generic POS fails where specialized takeaway software succeeds. Discover how Posso aggregates orders, manages delivery zones, and builds your customer database.',
     keywords: 'epos software for takeaway, takeaway management system, order aggregation, restaurant crm uk',
     alternates: {

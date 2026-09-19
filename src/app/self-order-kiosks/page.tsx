@@ -12,7 +12,7 @@ import Image from 'next/image';
 import { videoPages } from '@/lib/video-pages-data';
 
 const kioskFeatures = [
-  { icon: TrendingUp, title: 'Higher Average Order Value', description: 'Self-order kiosks consistently lift average order value by 15-30%. The screen never forgets to suggest a meal deal, a side, or a dessert — and customers spend more when they order at their own pace without feeling watched.' },
+  { icon: TrendingUp, title: 'Higher Average Order Value', description: 'The screen never forgets to suggest a meal deal, a side, or a dessert — and it asks on every order, including the last one of a busy night. Customers browse at their own pace without feeling watched.' },
   { icon: Clock, title: 'Shorter Queues & Faster Service', description: 'Add extra ordering points without adding staff. A self-service kiosk busts queues at peak times, turns tables faster, and keeps your counter free for collections — ideal for fast food and busy takeaway venues.' },
   { icon: CheckCircle2, title: 'Fewer Order Errors', description: 'Customers tap exactly what they want, so there is no mishearing across a noisy counter. Every order on the self-ordering kiosk goes straight to the kitchen exactly as entered, cutting refunds and remakes.' },
   { icon: Sparkles, title: 'Smart Upselling Prompts', description: 'Built-in upsell and cross-sell prompts appear at the perfect moment — "make it a meal?", "add a drink?", "go large?" — so every restaurant kiosk works like your best salesperson on every single order.' },
@@ -36,14 +36,7 @@ const schema = [
       "url": "https://www.posso.co.uk/self-order-kiosks"
     },
     "url": "https://www.posso.co.uk/self-order-kiosks",
-    "image": "https://www.posso.co.uk/images/posso_coffee_shop_hero.png",
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "bestRating": "5", "ratingCount": "1" },
-    "review": {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Ashan, Smith's" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5" },
-      "reviewBody": "The new self-order kiosk software beats the old software hands down — we love the new look. Thanks to Posso One."
-    }
+    "image": "https://www.posso.co.uk/images/posso_coffee_shop_hero.png"
   },
   {
     "@context": "https://schema.org",
@@ -70,8 +63,8 @@ const videoHubSchema = {
 };
 
 export const metadata: Metadata = {
-  title: 'Self-Order Kiosks for UK Restaurants & Takeaways | Posso',
-  description: 'Posso self-order kiosks cut queues, increase order accuracy and lift average order value by 15–30% — with contactless payments and full EPOS & kitchen integration. UK setup & support.',
+  title: 'Self-Order Kiosks for UK Restaurants & Takeaways',
+  description: 'Posso self-order kiosks cut queues, increase order accuracy and prompt an upsell on every order — with contactless payments and full EPOS & kitchen integration. UK setup & support.',
   alternates: {
     canonical: '/self-order-kiosks',
   },
@@ -160,7 +153,7 @@ export default function KiosksPage() {
                     Counter ordering has a ceiling. At peak times your team can only serve one customer at a time, queues build, and rushed orders lead to mistakes. <strong className="text-white">Self-order kiosks in the UK</strong> remove that bottleneck by letting customers place and pay for their own orders while your staff focus on preparing food and serving fast.
                   </p>
                   <p>
-                    A <strong className="text-white">self-service kiosk</strong> also sells harder than a person can. It presents the whole menu, never forgets to suggest a meal deal, and prompts every customer to add a side, drink, or dessert. That is why UK operators typically see a <strong className="text-white">15-30% rise in average order value</strong> after installing a self-ordering kiosk — the upsell happens on every single order, automatically. It is also the strongest channel for a new menu item, as our{' '}
+                    A <strong className="text-white">self-service kiosk</strong> also sells harder than a person can. It presents the whole menu, never forgets to suggest a meal deal, and prompts every customer to add a side, drink, or dessert. That is why the upsell happens on <strong className="text-white">every single order, automatically</strong> — rather than only when a member of staff has a spare moment to ask. It is also the strongest channel for a new menu item, as our{' '}
                     <Link href="/blog/how-to-launch-a-new-menu-item-takeaway" className="text-primary hover:underline">guide to launching a new menu item</Link> explains.
                   </p>
                   <p>
@@ -253,6 +246,32 @@ export default function KiosksPage() {
           </div>
         </section>
 
+        {/* Unattended operation — absorbed from /self-serve-kiosk before that URL was redirected here */}
+        <section className="py-20 bg-slate-900/30">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text text-center mb-8">Can a self-order kiosk run unattended?</h2>
+              <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
+                <p>
+                  Yes — a kiosk can run as a fully unattended order point, taking orders and payments around the clock with nobody standing beside it. It suits a hotel lobby, a student campus, a late-night counter or any spot where you want an ordering channel open without staffing it.
+                </p>
+                <p>
+                  Unattended mode is <strong className="text-white">card-only</strong>. The kiosk takes contactless, chip and PIN, Apple Pay and Google Pay, and settles straight to your bank, so there is no cash drawer to manage and no float to count. When nobody is ordering, an <strong className="text-white">attract screen</strong> runs an animated loop of your menu, specials and promotions, and you change that content remotely from the dashboard.
+                </p>
+                <div className="glass-card rounded-xl border border-slate-700/50 p-6">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Two honest caveats</p>
+                  <p>
+                    There is nobody there to help a customer who gets stuck. A confusing modifier, a declined card or a jammed receipt printer becomes an abandoned order rather than a question someone answers, so keep the menu shallow on an unattended unit and put a phone number on the screen.
+                  </p>
+                  <p className="mt-4">
+                    Card-only also turns away anyone paying cash. In areas where cash is still a meaningful share of counter takings, an unattended kiosk loses those orders outright rather than converting them — worth checking against your own payment mix before you rely on one.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Video guides hub */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoHubSchema) }} />
         <section className="py-20">
@@ -331,8 +350,41 @@ export default function KiosksPage() {
           </div>
         </section>
 
+        {/* Kiosk range hub — every spoke reachable from the pillar */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text text-center mb-4">Explore the kiosk range</h2>
+              <p className="text-slate-400 text-center mb-12 text-lg max-w-2xl mx-auto">
+                Costs, the kiosks built for each kind of venue, and the outdoor and retail variants.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  { href: '/self-order-kiosk-cost', title: 'Kiosk Costs', desc: 'Itemised pricing, worked configurations and how to calculate payback.' },
+                  { href: '/self-order-kiosks-for-restaurants', title: 'For Restaurants', desc: 'Absorbing the walk-in queue while table service carries on.' },
+                  { href: '/self-order-kiosks-for-takeaways', title: 'For Takeaways', desc: 'Short, sharp collection peaks and deep modifier menus.' },
+                  { href: '/self-order-kiosk-fast-food', title: 'For Fast Food', desc: 'Combo builders and speed-optimised ordering at peak.' },
+                  { href: '/outdoor-self-order-kiosks-ip65', title: 'Outdoor IP65', desc: 'Weatherproof, sunlight-readable kiosks for trading outside.' },
+                  { href: '/kiosk-pos', title: 'Kiosk POS', desc: 'The till and back office running behind the kiosks.' },
+                  { href: '/self-order-app', title: 'Self-Order App', desc: 'Ordering from the customer\u2019s own phone instead of a screen.' },
+                  { href: '/solutions/kiosks-for-retail', title: 'Retail Kiosks', desc: 'Self-service ordering and checkout outside hospitality.' },
+                ].map((spoke) => (
+                  <Link
+                    key={spoke.href}
+                    href={spoke.href}
+                    className="glass-card rounded-xl p-6 border border-slate-700/50 hover:border-primary/50 transition-colors block group"
+                  >
+                    <h3 className="font-bold text-white group-hover:text-primary mb-2">{spoke.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{spoke.desc}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         <FAQSection title="Self-Order Kiosks — Frequently Asked Questions" faqs={[
-          { question: 'How do self-order kiosks increase average order value?', answer: 'Self-order kiosks consistently increase average order value because customers take their time browsing the full menu without feeling rushed, and the kiosk automatically suggests relevant upsells and meal deals at the right moment. UK operators typically see a 15-30% uplift in average order value once kiosks are in place — the screen never forgets to ask "would you like to make that a meal?" or "add a dessert?".' },
+          { question: 'How do self-order kiosks increase average order value?', answer: 'Self-order kiosks consistently increase average order value because customers take their time browsing the full menu without feeling rushed, and the kiosk automatically suggests relevant upsells and meal deals at the right moment. The screen never forgets to ask "would you like to make that a meal?" or "add a dessert?".' },
           { question: 'Are Posso self-order kiosks suitable for UK restaurants and takeaways?', answer: 'Yes. Posso self-order kiosks are built for UK restaurants, takeaways, quick-service venues, coffee shops, and casual dining. They handle GBP pricing, UK VAT, contactless and chip & PIN card payments, and integrate with the same menu you use on your Posso POS — so prices and items stay in sync across every till and kiosk.' },
           { question: 'What hardware comes with a Posso self-order kiosk?', answer: 'Each kiosk includes a large touchscreen display, an integrated card payment terminal for contactless, Apple Pay and Google Pay, and an optional receipt printer. We offer freestanding floor kiosks and countertop/wall-mounted units so you can match the format to your floor space. All hardware is supplied, configured, and supported by Posso.' },
           { question: 'Do the kiosks integrate with my kitchen and POS system?', answer: 'Yes. Every order placed on a kiosk goes straight to your kitchen display system (KDS) or kitchen printer, exactly like an order taken at the counter. Kiosks share one central menu with your Posso POS, so a price or menu change updates everywhere at once — no double entry and no mismatched menus.' },
@@ -340,7 +392,7 @@ export default function KiosksPage() {
           { question: 'How long does it take to set up a self-order kiosk?', answer: 'Setup is fast. Because the kiosk uses your existing Posso menu, we can configure and deploy in well under 24 hours in most cases. Posso handles menu import, payment setup, and staff training, so your team is comfortable before you go live — and ongoing UK-based support is included.' },
           { question: 'Do you offer outdoor self-order kiosks?', answer: 'Yes. Posso outdoor self-order kiosks are IP65 rated — water and dust resistant — with bright, sunlight-readable screens, so they keep trading in rain, sun and cold. They are ideal for food trucks, beer gardens, stadiums, markets and festivals, and run on 4G with no fixed Wi-Fi needed.' },
           { question: 'Are self-order kiosks suitable for coffee shops and quick-service restaurants?', answer: 'Absolutely. Self-ordering kiosks work brilliantly for coffee shops, quick-service restaurants (QSR), fast food and casual dining. Customers customise drinks and meals with modifiers, the kiosk automatically upsells sides and extras, and orders fire straight to the barista station or kitchen display — keeping queues short at peak.' },
-          { question: 'Are self-order kiosks worth it for a small business?', answer: 'Yes. Even a single self-order kiosk can pay for itself by lifting average order value 15-30% and freeing staff at busy times. Many small UK restaurants and takeaways start with one countertop or freestanding kiosk and add more as they grow — kiosks start from £699 + VAT with finance available.' },
+          { question: 'Are self-order kiosks worth it for a small business?', answer: 'Yes. Even a single self-order kiosk adds a consistent upsell prompt to every order and frees staff at busy times. Many small UK restaurants and takeaways start with one countertop or freestanding kiosk and add more as they grow — kiosks start from £699 + VAT with finance available.' },
           { question: 'Self-order kiosk vs counter service — which is better?', answer: 'Self-order kiosks do not replace your team — they remove the ordering bottleneck. Counter service handles one customer at a time, while a self-service kiosk lets several customers order and pay at once, cutting queues and freeing staff to prepare food and serve. Most venues run kiosks alongside a staffed counter for the best of both.' },
         ]} />
         <Contact />

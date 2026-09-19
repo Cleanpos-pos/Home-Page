@@ -45,7 +45,7 @@ type LeadFormValues = z.infer<typeof leadSchema>;
 
 /* ─── Data ─── */
 const trustStats = [
-  { icon: Users, value: '1,000+', label: 'Installs Nationwide' },
+  { icon: Users, value: 'Nationwide', label: 'Installation & Support' },
   { icon: Shield, value: '2 Year', label: 'Warranty Included' },
   { icon: Headphones, value: 'UK Based', label: 'Support Team' },
 ];
@@ -63,7 +63,7 @@ const products = [
     price: 'From £699 + VAT',
     icon: Smartphone,
     image: '/images/posso_coffee_shop_hero.png',
-    features: ['21" touchscreen display', 'Payment integration built-in', 'Boost average order value 20–30%'],
+    features: ['21" touchscreen display', 'Payment integration built-in', 'Consistent upsell prompt on every order'],
   },
   {
     title: 'Online Ordering',
@@ -77,7 +77,7 @@ const products = [
 const benefits = [
   { icon: Zap, title: 'Faster Service', description: 'Speed up order processing and reduce wait times for happier customers.' },
   { icon: Check, title: 'Fewer Errors', description: 'Digital orders go straight to the kitchen — no miscommunication.' },
-  { icon: TrendingUp, title: 'More Upsells', description: 'Smart prompts on kiosks increase average order value by 20–30%.' },
+  { icon: TrendingUp, title: 'More Upsells', description: 'Smart prompts on kiosks offer a side or an upgrade on every order.' },
   { icon: UserCheck, title: 'Better Experience', description: 'Self-service options give customers control and speed they expect.' },
 ];
 
@@ -135,7 +135,7 @@ export function PosSystemsLanding() {
 
             <ul className="space-y-3 text-slate-300 text-lg">
               <li className="flex items-center gap-3">
-                <Check className="h-5 w-5 text-green-400 shrink-0" /> Increase order value by 20–30%
+                <Check className="h-5 w-5 text-green-400 shrink-0" /> Upsell prompt on every order
               </li>
               <li className="flex items-center gap-3">
                 <Check className="h-5 w-5 text-green-400 shrink-0" /> Reduce queues with self-service kiosks

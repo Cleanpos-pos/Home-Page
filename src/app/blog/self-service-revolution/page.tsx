@@ -50,7 +50,7 @@ export default function SelfServiceRevolutionPage() {
               <h2>Industry Breakdown: Who is Winning with Kiosks?</h2>
               <h3>1. Quick-Service Restaurants (QSRs)</h3>
               <p><strong>The Leaders:</strong> McDonald’s, KFC, Burger King, Greggs.</p>
-              <p><strong>The Impact:</strong> QSRs have seen the most dramatic ROI. Studies indicate that self-service kiosks can increase order values by up to 30%. By utilizing effective upselling prompts and attractive visuals, customers are psychologically inclined to order that extra side or drink upgrade. For the full restaurant breakdown — 18 measured benefits, a payback calculator and worked scenarios — see <Link href="/blog/benefits-of-self-ordering-kiosks-for-restaurants" className="text-primary hover:underline">the benefits of self-ordering kiosks for restaurants</Link>.</p>
+              <p><strong>The Impact:</strong> QSRs have seen the most dramatic ROI. Self-service kiosks put an upsell prompt in front of every customer. By utilizing effective upselling prompts and attractive visuals, customers are psychologically inclined to order that extra side or drink upgrade. For the full restaurant breakdown — 18 measured benefits, a payback calculator and worked scenarios — see <Link href="/blog/benefits-of-self-ordering-kiosks-for-restaurants" className="text-primary hover:underline">the benefits of self-ordering kiosks for restaurants</Link>.</p>
               <p><strong>Case Study:</strong> McDonald’s UK pioneered this model, using kiosks to streamline complex customization options, resulting in higher average checks and improved order accuracy.</p>
 
               <h3>2. Supermarkets & Retail</h3>
@@ -74,7 +74,7 @@ export default function SelfServiceRevolutionPage() {
                     <h4 className="font-bold text-xl text-slate-100 mb-2">For the Business</h4>
                     <ul className="list-disc list-inside space-y-2 text-slate-300">
                         <li><strong>Higher Accuracy:</strong> Eliminates hearing errors in noisy environments.</li>
-                        <li><strong>Upselling:</strong> AI recommendations boost sales by 15–30%.</li>
+                        <li><strong>Upselling:</strong> AI recommendations surface a relevant add-on on every order.</li>
                         <li><strong>Labor Savings:</strong> Reduces reliance on till staff.</li>
                         <li><strong>Data:</strong> Deep insights into purchasing habits.</li>
                     </ul>

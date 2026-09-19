@@ -29,6 +29,8 @@ export function Footer() {
                         <ul className="space-y-2 text-sm text-slate-400">
                             <li><Link href="/pos" className="hover:text-primary transition-colors">ePOS Systems</Link></li>
                             <li><Link href="/self-order-kiosks" className="hover:text-primary transition-colors font-semibold text-primary/80">Self-Order Kiosks</Link></li>
+                            <li><Link href="/self-order-kiosk-cost" className="hover:text-primary transition-colors">Self-Order Kiosk Cost</Link></li>
+                            <li><Link href="/kitchen-display-system-cost" className="hover:text-primary transition-colors">Kitchen Display Cost</Link></li>
                             <li><Link href="/tablemaestro" className="hover:text-primary transition-colors">TableMaestro Booking</Link></li>
                             <li><Link href="/online-ordering" className="hover:text-primary transition-colors">Online Ordering</Link></li>
                             <li><Link href="/ai-phone-ordering" className="hover:text-primary transition-colors">AI Phone Ordering</Link></li>
@@ -83,7 +85,7 @@ export function Footer() {
                     <nav aria-label="Retail solutions">
                         <h4 className="font-bold text-slate-50 mb-4">Retail Solutions</h4>
                         <ul className="space-y-2 text-sm text-slate-400">
-                            <li><Link href="/solutions/kiosks-for-retail" className="hover:text-primary transition-colors font-semibold text-primary/80">Retail Kiosks</Link></li>
+                            <li><Link href="/solutions/kiosks-for-retail" className="hover:text-primary transition-colors">Retail Kiosks</Link></li>
                             <li><Link href="/digital-signage" className="hover:text-primary transition-colors">Digital Signage</Link></li>
                             <li><Link href="/shop-fitting" className="hover:text-primary transition-colors">Shop Fitting</Link></li>
                             <li><Link href="/shop-signage" className="hover:text-primary transition-colors">Shop Signage</Link></li>

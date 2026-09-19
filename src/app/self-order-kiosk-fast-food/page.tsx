@@ -75,17 +75,17 @@ const pageSchema = [
 ];
 
 const features = [
-  { icon: Zap, title: 'Speed-Optimised Ordering', description: 'The kiosk interface is designed for speed. Popular items are front and centre. Category navigation takes one tap. A complete fast food order — burger, fries, drink — takes under 45 seconds. During lunch rush, speed is the difference between a queue of 5 and a queue of 20.' },
-  { icon: TrendingUp, title: 'Intelligent Upselling', description: 'After selecting a burger, the customer sees: "Make it a meal for £2 more?" Then: "Upgrade to large for 50p?" These prompts convert at 25-35% on kiosks — significantly higher than verbal upselling at the counter. Average order value increases by £2-5 per transaction.' },
+  { icon: Zap, title: 'Speed-Optimised Ordering', description: 'The kiosk interface is designed for speed. Popular items are front and centre. Category navigation takes one tap. A complete fast food order — burger, fries, drink — is a handful of taps. During lunch rush, speed is the difference between a queue of 5 and a queue of 20.' },
+  { icon: TrendingUp, title: 'Intelligent Upselling', description: 'After selecting a burger, the customer sees: "Make it a meal for £2 more?" Then: "Upgrade to large for 50p?" The prompt appears on every order, at the moment the customer is choosing, rather than only when the counter is quiet enough for staff to ask.' },
   { icon: ShoppingCart, title: 'Combo Meal Builder', description: 'One-tap meal deals let customers select a main, side, and drink as a combo. The price updates automatically. Custom combos let customers mix and match within categories. The meal deal price is always visible so customers see the savings instantly.' },
   { icon: Timer, title: 'Queue Reduction', description: 'Two kiosks handle the same ordering throughput as three counter staff. During the 12-1pm lunch rush, kiosks absorb the peak while staff focus on food preparation. Customers who see a short queue stay. Those who see a long one go to the competitor next door.' },
-  { icon: Monitor, title: 'Kitchen Integration', description: 'Kiosk orders appear on the kitchen display within 2 seconds. The ticket shows items, customisations, and order number. Customers collect with their receipt number. The kitchen works one queue — kiosk and counter orders interleaved by time of submission.' },
-  { icon: CreditCard, title: 'Fast Contactless Payment', description: 'Integrated card terminal processes contactless payments in under 2 seconds. Tap, done. Apple Pay and Google Pay supported. For fast food, eliminating cash handling at the kiosk speeds up the entire transaction and reduces errors.' },
+  { icon: Monitor, title: 'Kitchen Integration', description: 'Kiosk orders appear on the kitchen display as soon as payment completes. The ticket shows items, customisations, and order number. Customers collect with their receipt number. The kitchen works one queue — kiosk and counter orders interleaved by time of submission.' },
+  { icon: CreditCard, title: 'Fast Contactless Payment', description: 'Integrated card terminal takes contactless payments. Tap, done. Apple Pay and Google Pay supported. For fast food, eliminating cash handling at the kiosk speeds up the entire transaction and reduces errors.' },
 ];
 
 const benefits = [
-  { title: 'Serve More Customers Per Hour', description: 'During the lunch rush, every second counts. Kiosks process orders simultaneously while counter staff focus on preparation. A restaurant with 2 kiosks and 2 counter tills serves 40% more customers per hour than one with 4 counter tills alone.' },
-  { title: 'Higher Average Order Value', description: 'Kiosk upselling is consistent, patient, and never rushed. Every customer sees meal deal offers, size upgrades, and add-on suggestions. Counter staff under pressure skip upselling to keep the queue moving. The kiosk never skips it — and the 25-35% conversion rate proves it works.' },
+  { title: 'Serve More Customers Per Hour', description: 'During the lunch rush, every second counts. Kiosks process orders simultaneously while counter staff focus on preparation. Adding kiosks alongside your counter tills opens more order points at once, so the queue splits instead of stacking behind a single till.' },
+  { title: 'Higher Average Order Value', description: 'Kiosk upselling is consistent, patient, and never rushed. Every customer sees meal deal offers, size upgrades, and add-on suggestions. Counter staff under pressure skip upselling to keep the queue moving. The kiosk never skips it, on the tenth order of the rush or the last one of the night.' },
   { title: 'Reduce Labour Costs', description: 'Two kiosks replace the ordering workload of two counter staff. Those staff members are redeployed to food preparation, cleaning, or customer service — roles that directly improve the customer experience. You serve more customers without increasing headcount.' },
   { title: 'Consistent Brand Experience', description: 'The kiosk delivers the same ordering experience every time — same menu layout, same upselling prompts, same payment flow. No variation based on which staff member is on shift. Customers get a predictable, professional experience at 8am and 8pm.' },
 ];
@@ -119,11 +119,11 @@ export default function SelfOrderKioskFastFoodPage() {
                 </span>
               </h1>
               <p className="text-xl text-slate-300 max-w-2xl">
-                Speed-optimised kiosks for fast food restaurants. Combo meal builder, upselling that converts at 25-35%, and queue reduction that keeps customers coming back.
+                Speed-optimised kiosks for fast food restaurants. Combo meal builder, an upsell prompt on every order, and queue reduction that keeps customers coming back.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete order in under 45 seconds</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Upselling increases orders by £2-5</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete an order in a handful of taps</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Upsell prompt fires on every order</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Fast food kiosks from £699 + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
@@ -177,16 +177,36 @@ export default function SelfOrderKioskFastFoodPage() {
         <section className="py-20 bg-slate-900/30">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl font-bold gradient-text text-center mb-8">The Maths Behind Fast Food Kiosks</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text text-center mb-8">How to Work Out Kiosk Payback</h2>
               <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                 <p>
-                  Consider a fast food restaurant averaging <strong className="text-white">200 orders per day</strong> with an average order value of £8. If kiosk upselling increases that average by £2.50, that is <strong className="text-white">£500 per day in extra revenue</strong> — £3,500 per week, £182,000 per year.
+                  Most kiosk payback sums divide the hardware cost by extra <em>revenue</em>. That overstates the answer badly, because a pound of extra sales is not a pound in your pocket — you still have to buy the food. Work it on <strong className="text-white">gross margin</strong> instead, in four steps.
                 </p>
+                <ol className="space-y-4 list-decimal pl-6">
+                  <li><strong className="text-white">Take your own average order value and gross margin.</strong> Gross margin is sales minus food cost, expressed as a percentage. Your accounts have both figures — do not borrow a number from a vendor page.</li>
+                  <li><strong className="text-white">Measure the uplift per kiosk order.</strong> Run one kiosk for a few weeks and compare the average kiosk order against the average counter order over the same period. That difference is your uplift, not an industry range.</li>
+                  <li><strong className="text-white">Convert the uplift into gross profit.</strong> Multiply kiosk orders per day by the uplift per order, then by your gross margin. Extra sales at a thin margin buy you a fraction of what the headline suggests.</li>
+                  <li><strong className="text-white">Divide the total cost by that daily gross profit.</strong> Count the kiosk, the software fee and any installation — not just the headline hardware price.</li>
+                </ol>
+                <div className="glass-card rounded-xl border border-slate-700/50 p-6">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Worked illustration — assumed inputs, not measured results</p>
+                  <p>
+                    Every number below is an assumption chosen to demonstrate the method. Replace each one with your own before drawing any conclusion from it.
+                  </p>
+                  <ul className="mt-4 space-y-2 text-base">
+                    <li>Assume 80 orders a day are placed at the kiosk.</li>
+                    <li>Assume the average kiosk order runs 80p above the average counter order.</li>
+                    <li>Assume a gross margin of 65%.</li>
+                  </ul>
+                  <p className="mt-4">
+                    Extra gross profit per day = 80 × £0.80 × 0.65 = <strong className="text-white">£41.60</strong>. Against a £699 + VAT kiosk that is roughly 17 trading days before the hardware is covered, and longer once the monthly software fee is included.
+                  </p>
+                  <p className="mt-4 text-slate-400 text-base">
+                    Change any one of those assumptions and the answer moves a long way. A thinner margin, a smaller uplift or fewer kiosk orders turns weeks into months. Posso does not promise a payback period — the point of the method is that you can work out your own.
+                  </p>
+                </div>
                 <p>
-                  A kiosk costs £699 + VAT. At £500 per day in extra revenue, the kiosk <strong className="text-white">pays for itself in less than 2 days</strong>. The ROI on fast food kiosks is among the highest of any restaurant technology investment.
-                </p>
-                <p>
-                  Add the labour efficiency — 2 kiosks absorbing the ordering workload of 2 counter staff — and the total value compounds. Staff redeployed to food prep means faster kitchen output, which means <strong className="text-white">more orders served before customers get tired of waiting</strong>.
+                  Labour is the other half of the picture. Kiosks add order points without adding staffed tills, so the queue splits at peak and staff can move across to preparation. Whether that saves a shift or simply makes an existing shift less frantic depends on how your rota is built.
                 </p>
               </div>
             </div>
@@ -220,10 +240,10 @@ export default function SelfOrderKioskFastFoodPage() {
         </section>
 
         <FAQSection title="Self Order Kiosk Fast Food — Frequently Asked Questions" faqs={[
-          { question: 'How fast can customers order on the kiosk?', answer: 'A complete fast food order — main item, side, drink, and payment — takes under 45 seconds on the Posso kiosk. The interface is optimised for speed with popular items prominent, one-tap meal deals, and fast contactless payment. This is comparable to or faster than counter ordering.' },
-          { question: 'How much does upselling increase average order value?', answer: 'Restaurants using Posso kiosks see average order value increases of £2-5 per transaction. Meal deal prompts, size upgrades, and add-on suggestions convert at 25-35% on kiosks because customers browse at their own pace without feeling rushed.' },
+          { question: 'How fast can customers order on the kiosk?', answer: 'A complete fast food order — main item, side, drink, and payment — takes a handful of taps on the Posso kiosk. The interface is optimised for speed with popular items prominent, one-tap meal deals, and fast contactless payment. How long it takes in practice depends on your menu size and how deep your customisation options go.' },
+          { question: 'How much does upselling increase average order value?', answer: 'Any increase depends on your menu, your prices and how you configure the prompts, so the honest answer is to measure it on your own tills. The mechanism is that meal deal prompts, size upgrades and add-on suggestions appear on every kiosk order, while customers browse at their own pace without feeling rushed.' },
           { question: 'How many kiosks do I need for my fast food restaurant?', answer: 'Most fast food restaurants start with 2 kiosks alongside their counter till. Two kiosks handle the ordering throughput of approximately 3 counter staff during peak hours. For very high-volume locations, 3-4 kiosks are recommended. We assess your peak traffic during the consultation.' },
-          { question: 'Do kiosk orders go straight to the kitchen?', answer: 'Yes. When a customer completes their order and pays, it appears on the kitchen display within 2 seconds. The ticket shows items, customisations, and the order number. Kiosk and counter orders are interleaved by submission time so the kitchen works one unified queue.' },
+          { question: 'Do kiosk orders go straight to the kitchen?', answer: 'Yes. When a customer completes their order and pays, it appears on the kitchen display straight away. The ticket shows items, customisations, and the order number. Kiosk and counter orders are interleaved by submission time so the kitchen works one unified queue.' },
           { question: 'Can I customise the kiosk with meal deals and combos?', answer: 'Yes. Set up meal deals with configurable choices — pick a main, pick a side, pick a drink — with automatic combo pricing. Feature seasonal promotions on the home screen. Upselling prompts are configurable per product. The entire interface reflects your brand colours and imagery.' },
           { question: 'How much does a fast food kiosk cost?', answer: 'Fast food self order kiosks start from £699 + VAT including the 21-inch touchscreen, integrated payment terminal, receipt printer, and kiosk software. The kiosk menu syncs with your POS — one menu to manage. Finance options available. Free setup and training included.' },
         ]} />

@@ -396,7 +396,7 @@ export default function BestRestaurantEposSystemUkPage() {
                 <h3 className="text-xl font-semibold text-white mb-3">Self-order kiosks that pay for themselves</h3>
                 <p className="text-lg text-slate-300 leading-relaxed">
                   <Link href="/self-order-kiosks" className="text-primary hover:underline">Self-order kiosks</Link>{' '}
-                  typically lift average order value 20–30% through consistent upselling, and cut queue
+                  lift average order value through consistent upselling on every order, and cut queue
                   abandonment at peak. Posso kiosks run on the same menu database as your till — update once,
                   everywhere.
                 </p>

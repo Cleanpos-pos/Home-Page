@@ -231,6 +231,13 @@ export default function PosForIndianTakeawayPage() {
                   <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
                   rather than separate products bolted together.
                 </p>
+                <p>
+                  Where an Indian takeaway usually feels the pressure is the tandoor and curry sections running to different timings. A{' '}
+                  <Link href="/kitchen-display-system" className="text-primary hover:underline">kitchen display system</Link>{' '}
+                  gives each section its own queue rather than one shared paper rail, and a{' '}
+                  <Link href="/self-order-kiosks-for-takeaways" className="text-primary hover:underline">self-order kiosk for takeaways</Link>{' '}
+                  lets walk-in customers work through a deep modifier menu at their own pace.
+                </p>
               </div>
             </div>
           </div>

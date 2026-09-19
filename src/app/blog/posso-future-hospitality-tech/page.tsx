@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-    title: 'Meet Posso: The Future of Hospitality Tech | Posso',
+    title: 'Meet Posso: The Future of Hospitality Tech',
     description: 'Posso is more than just an EPOS provider. Explore our complete hospitality ecosystem, from self-service kiosks to low-commission ordering apps.',
     keywords: 'posso, hospitality tech uk, restaurant ecosystem, epos software, ordering apps for restaurants',
     alternates: {

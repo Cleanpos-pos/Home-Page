@@ -78,7 +78,7 @@ const features = [
   { icon: PoundSterling, title: 'Genuinely Affordable Pricing', description: 'The complete ePOS software starts from £499 + VAT. That includes the touchscreen terminal, software licence, menu setup, and staff training. No setup fee hidden in the small print, no "activation charge" added at checkout. The price you see is the price you pay. Finance options from £24.92 per week make it accessible for any budget.' },
   { icon: Package, title: 'Full Feature Set Included', description: 'Cheap does not mean stripped down. You get sales reporting, inventory management, staff permissions, table management, kitchen display, online ordering integration, loyalty programme, and card payment integration. Every feature that expensive competitors charge extra for is included as standard. Nothing is paywalled behind a premium tier.' },
   { icon: BarChart3, title: 'Cloud Reporting & Analytics', description: 'Access your sales data from any device, anywhere. See daily revenue, best-selling items, peak trading hours, staff performance, and payment method breakdowns. Compare this week to last week. Export reports for your accountant. The cloud dashboard is included — not a paid add-on that doubles your monthly cost.' },
-  { icon: ShieldCheck, title: 'No Hidden Fees', description: 'No per-terminal surcharge for additional screens. No separate charge for software updates — they are covered by the monthly software fee — from £25 + VAT, stated upfront. The ePOS industry has a reputation for hidden costs — we list every charge before you commit. Ask us to break down the total cost and we will, line by line.' },
+  { icon: ShieldCheck, title: 'No Hidden Fees', description: 'No per-terminal surcharge for additional screens. No separate charge for software updates — they are covered by the monthly software fee — from £35 + VAT, stated upfront. The ePOS industry has a reputation for hidden costs — we list every charge before you commit. Ask us to break down the total cost and we will, line by line.' },
   { icon: Layers, title: 'Integrated Card Payments', description: 'The ePOS integrates with Teya card machines. Sale amounts transfer from the till to the terminal automatically. Low transaction fees with next-day settlement. Unified reporting shows card and cash sales in one view. You can even get a free card machine with a processing agreement — eliminating another upfront cost.' },
   { icon: HeadphonesIcon, title: 'Free Setup & Training', description: 'Setup, menu configuration, and staff training are included at no extra cost. We configure your menu, load your items, set up your table layout, and train your team on how to use the system. You do not pay a consultant £500 to get started. The system is ready to trade on day one.' },
 ];
@@ -210,7 +210,7 @@ export default function CheapEposSoftwarePage() {
                   <p className="font-semibold text-white">Free Card Machine</p>
                   <p className="text-slate-400 text-sm mt-1">No upfront hardware cost</p>
                 </Link>
-                <Link href="/self-ordering-kiosk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
                   <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
                 </Link>

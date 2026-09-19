@@ -9,7 +9,7 @@ import type { Guide } from "@/lib/guides";
  * Verified house numbers used: customer pays 60p service fee on own-channel
  * ordering, business pays only card processing (posso-vs-epos-now table);
  * £45/month marketplace integration; 30p own-driver delivery; software from
- * £25 + VAT/month.
+ * £35 + VAT/month.
  */
 
 export const restaurantOnlineOrderingWhatOwnersSay: Guide = {
@@ -71,7 +71,7 @@ export const restaurantOnlineOrderingWhatOwnersSay: Guide = {
       heading: "The commission maths, plainly",
       paragraphs: [
         "The number that drives every thread: aggregator commission of up to 35% per order, plus marketing add-ons, on the platforms' terms. Against that, the enterprise build route (the Olo tier the webdev thread mentions) is priced for chains, and the DIY route prices its true cost in developer hours and Friday-night support rather than pounds.",
-        "Posso's own-channel numbers, stated plainly: branded online ordering on your own site and app where the customer pays a 60p service fee and you pay only the card processing — no percentage commission to us on your own orders. Marketplace integration for the orders that still come via Just Eat, Deliveroo and Uber Eats is £45 a month, only if you use it. Deliveries through your own drivers are 30p each. The platform behind it runs from £25 + VAT a month with the system from £499 + VAT. On a takeaway doing meaningful weekly aggregator volume, shifting even a third of those orders to your own channel typically covers the entire system cost — run the arithmetic on your own commission statement, which is exactly the calculation the threads never quite finish.",
+        "Posso's own-channel numbers, stated plainly: branded online ordering on your own site and app where the customer pays a 60p service fee and you pay only the card processing — no percentage commission to us on your own orders. Marketplace integration for the orders that still come via Just Eat, Deliveroo and Uber Eats is £45 a month, only if you use it. Deliveries through your own drivers are 30p each. The platform behind it runs from £35 + VAT a month with the system from £499 + VAT. On a takeaway doing meaningful weekly aggregator volume, shifting even a third of those orders to your own channel typically covers the entire system cost — run the arithmetic on your own commission statement, which is exactly the calculation the threads never quite finish.",
       ],
     },
     {
@@ -146,7 +146,7 @@ export const restaurantOnlineOrderingWhatOwnersSay: Guide = {
     },
     {
       q: "What does online ordering cost with Posso?",
-      a: "Branded ordering on your own site and app: the customer pays a 60p service fee and you pay only card processing — no percentage commission to us on your own orders. Marketplace integration is £45 a month only if you use it; own-driver deliveries are 30p each; the platform runs from £25 + VAT a month on a £499 + VAT system. Compare that with one month of your aggregator commission statement — that comparison is the whole business case.",
+      a: "Branded ordering on your own site and app: the customer pays a 60p service fee and you pay only card processing — no percentage commission to us on your own orders. Marketplace integration is £45 a month only if you use it; own-driver deliveries are 30p each; the platform runs from £35 + VAT a month on a £499 + VAT system. Compare that with one month of your aggregator commission statement — that comparison is the whole business case.",
     },
     {
       q: "Do customers actually want to order online rather than phone?",

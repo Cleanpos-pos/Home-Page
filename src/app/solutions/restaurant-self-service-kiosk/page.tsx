@@ -19,14 +19,14 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Restaurant Self-Service Kiosk | Self Ordering System for Restaurants UK',
-    description: 'Revolutionize your dining experience with POSSO’s restaurant self-service kiosks. Increase order value by 30%, reduce queues, and streamline your restaurant kiosk system.',
+    description: 'Revolutionize your dining experience with POSSO’s restaurant self-service kiosks. Prompt an upsell on every order, reduce queues, and streamline your restaurant kiosk system.',
     keywords: 'restaurant self service kiosk, self ordering kiosk restaurant, restaurant kiosk, restaurant kiosk systems, kiosk system for restaurants, self order kiosks restaurants, restaurant kiosk ordering, restaurant ordering kiosk, self ordering kiosk system for restaurants, self-service kiosks for food, self service ordering machine, self service kiosk restaurant, kiosks for restaurants, order kiosks, restaurant kiosks, self-order kiosk software, kiosks in restaurants, self-ordering kiosk system, kiosk machine for restaurants, food ordering kiosk system, self-ordering kiosk restaurant, food order kiosk, kiosk ordering system for restaurants, self ordering kiosk software for restaurants, ordering kiosk system, quick service restaurant kiosk, restaurant self service ordering kiosk, self serve kiosks for restaurants, kiosk in restaurants, self order kiosks, self service kiosk manufacturers uk, self serve kiosk, restaurant order kiosk, self ordering system for restaurants, self service food kiosk, restaurant self ordering kiosk, self ordering kiosk for restaurants, ordering kiosk',
     alternates: {
         canonical: '/solutions/restaurant-self-service-kiosk',
     },
     openGraph: {
         title: 'Restaurant Self-Service Kiosk | Self Ordering System for Restaurants UK',
-        description: 'POSSO restaurant self-service kiosks help UK fast food and QSR venues cut queues, lift average order value by up to 30% and eliminate order errors.',
+        description: 'POSSO restaurant self-service kiosks help UK fast food and QSR venues cut queues, prompt a consistent upsell on every order and eliminate order errors.',
         url: 'https://www.posso.co.uk/solutions/restaurant-self-service-kiosk',
         type: 'website',
         images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Restaurant Self-Service Kiosk | Self Ordering System for Restaurants UK',
-        description: 'POSSO restaurant self-service kiosks help UK fast food and QSR venues cut queues, lift average order value by up to 30% and eliminate order errors.',
+        description: 'POSSO restaurant self-service kiosks help UK fast food and QSR venues cut queues, prompt a consistent upsell on every order and eliminate order errors.',
         images: ['/og-image.png'],
     },
 };
@@ -81,7 +81,7 @@ export default function RestaurantKioskPage() {
                 "name": "Do self-ordering kiosks increase restaurant sales?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, on average, restaurants using POSSO kiosks see a 20-30% increase in average order value through automated upselling and cross-selling prompts."
+                    "text": "A kiosk offers a side, a drink or an upgrade on every single order through automated upselling and cross-selling prompts, rather than only when a member of staff has time to ask."
                 }
             }
         ]
@@ -153,7 +153,7 @@ export default function RestaurantKioskPage() {
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4 text-white">Increased Order Value</h3>
                                 <p className="text-slate-400 leading-relaxed text-lg">
-                                    Visual menus and intelligent upselling prompts encourage customers to add toppings, drinks, and sides, increasing average spend by up to 30%.
+                                    Visual menus and intelligent upselling prompts encourage customers to add toppings, drinks, and sides on every order.
                                 </p>
                             </div>
 
@@ -266,9 +266,9 @@ export default function RestaurantKioskPage() {
                             <div>
                                 <h4 className="text-lg font-bold text-white mb-6 underline decoration-primary decoration-2 underline-offset-4">Industry Insights</h4>
                                 <ul className="space-y-4">
-                                    <li><Link href="/blog/self-order-kiosks" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Why Modern Restaurants Switch</Link></li>
+                                    <li><Link href="/self-order-kiosks-guide" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Why Modern Restaurants Switch</Link></li>
                                     <li><Link href="/blog/self-service-revolution" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> The UK Self-Service Revolution</Link></li>
-                                    <li><Link href="/blog/pos-and-self-order-kiosk-solutions" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Comprehensive POS Solutions</Link></li>
+                                    <li><Link href="/self-order-kiosks" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Comprehensive POS Solutions</Link></li>
                                 </ul>
                             </div>
                             <div>
