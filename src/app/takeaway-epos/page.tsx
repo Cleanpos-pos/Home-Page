@@ -228,6 +228,8 @@ export default function TakeawayEposPage() {
                     or the <Link href="/kitchen-display-system" className="text-primary hover:underline">kitchen display system</Link> that sits behind all of them.
                     Opening your first site? Start with the{' '}
                     <Link href="/opening-a-takeaway-epos-checklist" className="text-primary hover:underline">opening-a-takeaway EPOS checklist</Link>.
+                    Every one of them runs on the same{' '}
+                    <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>.
                   </p>
                 </div>
               </div>

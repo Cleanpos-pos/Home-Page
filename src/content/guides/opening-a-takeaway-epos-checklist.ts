@@ -165,6 +165,7 @@ export const openingATakeawayEposChecklist: Guide = {
       kind: "links",
       heading: "Explore further",
       items: [
+        { label: "EPOS systems", href: "/pos" },
         { label: "EPOS for takeaways", href: "/epos-systems-for-takeaways" },
         { label: "Online ordering", href: "/online-ordering" },
         { label: "Delivery management", href: "/delivery-management-pos" },

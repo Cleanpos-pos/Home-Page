@@ -260,7 +260,9 @@ export default function EposPricingUkPage() {
                   One honest note about our own pricing: card processing through Posso Pay starts{' '}
                   <strong className="text-white">from 1% + 10p, quoted on your card turnover</strong> rather than one
                   flat figure for everyone, because rates depend on your volume. Ask for your quote in writing on your
-                  real numbers — from us and from anyone else you are comparing.
+                  real numbers — from us and from anyone else you are comparing. What the hardware and
+                  software actually include is set out on the{' '}
+                  <Link href="/pos" className="text-primary hover:underline">EPOS system</Link> page.
                 </p>
               </div>
             </div>
