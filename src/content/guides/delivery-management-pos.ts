@@ -119,6 +119,7 @@ export const deliveryManagementPos: Guide = {
       kind: "links",
       heading: "Explore further",
       items: [
+        { label: "EPOS systems", href: "/pos" },
         { label: "Delivery integrations", href: "/delivery-integrations" },
         { label: "Online ordering", href: "/online-ordering" },
         { label: "EPOS for takeaways", href: "/epos-systems-for-takeaways" },

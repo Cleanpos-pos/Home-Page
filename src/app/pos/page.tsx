@@ -345,8 +345,9 @@ const eposVerticals = [
   { href: '/best-restaurant-epos-system-uk', name: 'Best Restaurant EPOS UK', desc: '2026 buyer’s guide & comparison' },
   { href: '/restaurant-epos', name: 'Restaurant EPOS', desc: 'Table service, courses & split bills' },
   { href: '/takeaway-epos', name: 'Takeaway EPOS', desc: 'Collection, delivery & online orders' },
-  { href: '/cafe-epos-system', name: 'Cafe EPOS', desc: 'Fast counter service & loyalty' },
-  { href: '/coffee-pos-system', name: 'Coffee Shop POS', desc: 'Quick drinks ordering & modifiers' },
+  // /cafe-epos-system and /coffee-pos-system both 308 to this page — link the
+  // canonical URL directly rather than sending the hub through a redirect.
+  { href: '/coffee-shop-cafe-epos-systems', name: 'Cafe & Coffee Shop EPOS', desc: 'Fast counter service, modifiers & loyalty' },
   { href: '/pos-for-cafe', name: 'Café POS Buyer’s Guide', desc: 'Modifiers, peak speed & loyalty' },
   { href: '/pizza-epos', name: 'Pizza POS', desc: 'Half & half, toppings & delivery' },
   { href: '/pos-for-pizza-shop', name: 'Pizza POS Buyer’s Guide', desc: 'What to look for before you buy' },

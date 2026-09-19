@@ -192,7 +192,9 @@ export default function PubPosSystemPage() {
                   A gastropub needs all of that plus <strong className="text-white">food service management</strong> — table ordering, course firing, kitchen display, and the ability to handle a busy restaurant service alongside bar traffic. Posso handles both workloads on one system.
                 </p>
                 <p>
-                  For pub groups with multiple sites, the cloud-based dashboard gives you <strong className="text-white">real-time reporting across all venues</strong>. Compare sales, track stock, and manage menus centrally while each pub runs independently.
+                  For pub groups with multiple sites, the cloud-based dashboard gives you <strong className="text-white">real-time reporting across all venues</strong>. Compare sales, track stock, and manage menus centrally while each pub runs independently. It is the same{' '}
+                  <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
+                  behind every Posso venue type, set up for bar service.
                 </p>
               </div>
             </div>

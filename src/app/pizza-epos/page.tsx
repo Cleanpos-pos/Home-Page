@@ -190,7 +190,9 @@ export default function PizzaEposPage() {
                   Whether orders arrive by <strong className="text-white">phone, counter, website, or delivery app</strong>, they all flow through the same pizza builder logic. The kitchen receives a consistent, structured specification for every pizza. No handwritten tickets with ambiguous abbreviations.
                 </p>
                 <p>
-                  For pizzerias running delivery, the ePOS manages <strong className="text-white">zones, fees, drivers, and tracking</strong> alongside the kitchen workflow. One system handles everything from the first tap on the screen to the doorstep delivery. No separate tools, no manual coordination.
+                  For pizzerias running delivery, the ePOS manages <strong className="text-white">zones, fees, drivers, and tracking</strong> alongside the kitchen workflow. One system handles everything from the first tap on the screen to the doorstep delivery. No separate tools, no manual coordination. It is the same{' '}
+                  <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
+                  behind every Posso setup, configured for pizza.
                 </p>
               </div>
             </div>

@@ -165,6 +165,7 @@ export const possoVsEposNow: Guide = {
       kind: "links",
       heading: "Explore further",
       items: [
+        { label: "EPOS systems", href: "/pos" },
         { label: "Epos Now alternative", href: "/epos-now-alternative" },
         { label: "Best restaurant EPOS UK", href: "/best-restaurant-epos-system-uk" },
         { label: "EPOS for takeaways", href: "/epos-systems-for-takeaways" },

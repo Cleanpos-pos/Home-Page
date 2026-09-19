@@ -118,6 +118,7 @@ export const multiSiteEposUk: Guide = {
       kind: "links",
       heading: "Explore further",
       items: [
+        { label: "EPOS systems", href: "/pos" },
         { label: "Franchise solutions", href: "/solutions/franchise-pos-systems" },
         { label: "Best restaurant EPOS UK", href: "/best-restaurant-epos-system-uk" },
         { label: "Online ordering", href: "/online-ordering" },

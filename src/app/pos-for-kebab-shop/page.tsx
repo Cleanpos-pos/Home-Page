@@ -212,7 +212,9 @@ export default function PosForKebabShopPage() {
                   covers the other half of the counter.
                 </p>
                 <p>
-                  Pricing starts at <strong className="text-white">£499 + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a two-year warranty. On-site installation is quoted separately if you want it. Orders through your own website or app carry a 60p service fee paid by the customer at checkout, so there is no percentage commission on your own trade; you pay card processing only. Card payments run through Posso Pay.
+                  Pricing starts at <strong className="text-white">£499 + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a two-year warranty. On-site installation is quoted separately if you want it. Orders through your own website or app carry a 60p service fee paid by the customer at checkout, so there is no percentage commission on your own trade; you pay card processing only. Card payments run through Posso Pay. It is all one{' '}
+                  <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
+                  rather than separate products bolted together.
                 </p>
               </div>
             </div>

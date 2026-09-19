@@ -393,6 +393,11 @@ export default function CoffeeShopEposPage() {
                                 <p className="text-slate-500 text-sm">Display your menu, promotions and brand content on stunning digital screens.</p>
                             </Link>
                         </div>
+                        <p className="text-slate-500 text-center mt-8 max-w-2xl mx-auto">
+                            All of it runs on the same{' '}
+                            <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
+                            — one menu and one price list across the till, the kiosk and online ordering.
+                        </p>
                     </div>
                 </section>
 
