@@ -2,7 +2,7 @@ import { SolutionsLandingPage } from "@/components/solutions-landing-page";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Trampoline Park Booking, Ticketing & Waiver System | Posso',
+  title: 'Trampoline Park Booking, Ticketing & Waiver System',
   description: 'Integrated ticketing, digital waivers, and smart locker solutions designed to keep your jumpers on the trampolines, not at the front desk.',
   keywords: [
     'trampoline park booking system',

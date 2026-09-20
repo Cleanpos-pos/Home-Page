@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-    title: 'Why "Hybrid" EPOS Systems for Takeaways Are Essential | Posso',
+    title: 'Why "Hybrid" EPOS Systems for Takeaways Are Essential',
     description: 'Don\'t let a bad internet connection ruin your Friday night. Discover why Posso\'s hybrid EPOS systems—which work offline—are essential for UK takeaways.',
     keywords: 'epos systems for takeaways, hybrid pos system, offline pos software, reliable takeaway tech uk, cloud pos offline mode',
     alternates: {

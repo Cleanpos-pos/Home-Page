@@ -206,7 +206,7 @@ export default function OnlineFoodOrderingPortalPage() {
                   <p className="font-semibold text-white">Food Delivery Ordering</p>
                   <p className="text-slate-400 text-sm mt-1">Delivery management</p>
                 </Link>
-                <Link href="/food-ordering-machine" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Ordering Machines</p>
                   <p className="text-slate-400 text-sm mt-1">Self-service kiosks</p>
                 </Link>

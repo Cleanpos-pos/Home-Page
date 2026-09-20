@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Best Food Delivery App UK: Own Your Orders | Posso',
+  title: 'Best Food Delivery App UK: Own Your Orders',
   description: 'Tired of high commissions? Discover why owning your online presence with a branded app is the best food delivery solution for UK takeaways.',
   alternates: {
     canonical: '/blog/best-food-delivery-app-uk',

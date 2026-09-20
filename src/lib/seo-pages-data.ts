@@ -32,6 +32,11 @@ export interface SeoPageData {
   ctaHeading: string;
   ctaText: string;
   relatedSlugs: string[];
+  /** Links to destinations outside `allSeoPages` — e.g. a bespoke route such as
+   *  /self-order-kiosk-cost. `relatedSlugs` resolves only against allSeoPages, so
+   *  without this a spoke silently loses its link when a page moves off the
+   *  programmatic renderer. */
+  extraLinks?: { href: string; label: string; desc?: string }[];
   /** Optional video for VideoObject schema + on-page player. Self-hosted at
    *  /videos/<slug>.mp4 with a poster at /videos/thumbs/<slug>.png */
   video?: {

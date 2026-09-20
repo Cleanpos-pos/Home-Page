@@ -8,7 +8,7 @@ import type { Guide } from "@/lib/guides";
  * r/restaurant cafe-bakery stack thread) — linked on the page.
  *
  * Verified Posso claims used: £499 + VAT incl. menu build/training; software
- * from £25 + VAT/month; kiosks £699 + VAT; bag/box label printing; CMS with
+ * from £35 + VAT/month; kiosks £699 + VAT; bag/box label printing; CMS with
  * 2,000 emails/month; Posso Pay quoted on turnover; support Mon–Fri 9–9:30.
  * ⚠️ NOT claimed (confirm before adding): cake-order deposits/balance-due
  * mechanics, Natasha's Law ingredient-label printing, wholesale account
@@ -33,7 +33,7 @@ export const posForBakery: Guide = {
   ],
   breadcrumb: "POS for Bakery",
   quickAnswer:
-    "A bakery POS has to do three jobs: clear a morning queue at café speed with priced options one tap deep, get hot/cold and eat-in/takeaway VAT right at the till rather than in a spreadsheet at year end, and carry made-to-order cakes as proper orders with collection details instead of notes on a pad. Owners in the forums default to Square for the counter and then bolt on separate tools for production — the gap to close is the till and the order book living in one system. Complete systems from £499 + VAT with software from £25 + VAT a month.",
+    "A bakery POS has to do three jobs: clear a morning queue at café speed with priced options one tap deep, get hot/cold and eat-in/takeaway VAT right at the till rather than in a spreadsheet at year end, and carry made-to-order cakes as proper orders with collection details instead of notes on a pad. Owners in the forums default to Square for the counter and then bolt on separate tools for production — the gap to close is the till and the order book living in one system. Complete systems from £499 + VAT with software from £35 + VAT a month.",
   sections: [
     {
       kind: "prose",
@@ -89,7 +89,7 @@ export const posForBakery: Guide = {
       paragraphs: [
         "Posso is a UK hospitality EPOS, supported from Leicester, with 500+ UK businesses on the system. For a bakery counter, the relevant parts are touchscreen ordering with priced options one tap deep and the most-sold items on the home screen; eat-in, takeaway and collection order types; label printing for bags and boxes so the right order leaves with the right customer; and your customer list in the built-in CMS with 2,000 marketing emails a month — which for a bakery means birthday and Christmas-order campaigns to people who already buy from you.",
         "Pre-orders run through your own branded online ordering with collection slots, so the Saturday queue can order on Thursday night. Self-order kiosks start at £699 + VAT when the weekend counter justifies one. Card processing runs through Posso Pay, quoted on your turnover — at a bakery's average ticket, that quote matters more than any hardware price, so bring your real numbers.",
-        "Systems start at £499 + VAT including the terminal, menu build and staff training, with software from £25 + VAT a month, a 2-year warranty and UK phone support Monday to Friday, 9am to 9:30pm. On the bakery-specific workflows — how your cake orders, VAT setup and any labelling should run — bring your messiest real week to the demo and make us show you, item by item. That is the standard we tell you to hold every vendor to, so it would be strange to exempt ourselves.",
+        "Systems start at £499 + VAT including the terminal, menu build and staff training, with software from £35 + VAT a month, a 2-year warranty and UK phone support Monday to Friday, 9am to 9:30pm. On the bakery-specific workflows — how your cake orders, VAT setup and any labelling should run — bring your messiest real week to the demo and make us show you, item by item. That is the standard we tell you to hold every vendor to, so it would be strange to exempt ourselves.",
       ],
     },
     {
@@ -131,7 +131,7 @@ export const posForBakery: Guide = {
   faqs: [
     {
       q: "How much does a bakery POS system cost in the UK?",
-      a: "A complete Posso system is £499 + VAT including the touchscreen terminal, menu build and staff training, with software from £25 + VAT a month and finance from £24.92 a week. Self-order kiosks start at £699 + VAT. At a bakery's low average ticket, card processing is usually the bigger ongoing number — Posso Pay quotes on your real turnover, so compare providers on your actual takings, not a £30 example basket.",
+      a: "A complete Posso system is £499 + VAT including the touchscreen terminal, menu build and staff training, with software from £35 + VAT a month and finance from £24.92 a week. Self-order kiosks start at £699 + VAT. At a bakery's low average ticket, card processing is usually the bigger ongoing number — Posso Pay quotes on your real turnover, so compare providers on your actual takings, not a £30 example basket.",
     },
     {
       q: "How should a bakery till handle VAT on hot and cold food?",

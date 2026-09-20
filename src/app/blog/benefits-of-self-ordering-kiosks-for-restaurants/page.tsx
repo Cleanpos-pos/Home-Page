@@ -196,7 +196,7 @@ export default function KioskBenefitsBlogPage() {
             <div className="glass-card rounded-2xl border border-primary/30 p-6 md:p-8">
               <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">In short</p>
               <p className="text-slate-200 text-lg leading-relaxed">
-                Self-ordering kiosks help UK restaurants and takeaways <strong className="text-white">increase average order value by 20–30%</strong>, <strong className="text-white">cut order errors to under 1%</strong>, and <strong className="text-white">process 30–40% more orders per hour</strong> — typically paying for themselves in <strong className="text-white">under three months</strong>. The gains come from consistent visual upselling, a faster ordering flow, and the removal of the verbal-communication errors that counter ordering introduces. Kiosks run alongside counter service rather than replacing it, so staff are freed for the kitchen and genuine hospitality.
+                Across quick-service hospitality, self-ordering kiosks are widely reported to <strong className="text-white">increase average order value by 20–30%</strong>, <strong className="text-white">cut order errors to under 1%</strong>, and <strong className="text-white">process 30–40% more orders per hour</strong>, with payback commonly quoted at <strong className="text-white">under three months</strong>. Those are sector figures rather than measured Posso results. The gains come from consistent visual upselling, a faster ordering flow, and the removal of the verbal-communication errors that counter ordering introduces. Kiosks run alongside counter service rather than replacing it, so staff are freed for the kitchen and genuine hospitality.
               </p>
             </div>
           </div>
@@ -398,7 +398,7 @@ export default function KioskBenefitsBlogPage() {
           <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <div className="glass-card rounded-2xl border border-slate-700/50 p-6 text-slate-400 text-sm leading-relaxed">
               <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">How we source these figures</p>
-              The 20–30% average-order-value uplift is widely reported across quick-service hospitality; McDonald&apos;s has publicly attributed higher average checks to its self-order kiosks, and Posso sees similar uplifts across UK deployments. Throughput, accuracy and satisfaction figures are given as ranges because results vary by menu complexity, footfall, kiosk placement and configuration. The ROI calculator is an illustrative model built on the stated assumptions, not a guarantee — the honest way to size the opportunity is to run your own numbers.
+              The 20–30% average-order-value uplift is widely reported across quick-service hospitality; McDonald&apos;s has publicly attributed higher average checks to its self-order kiosks. These are figures reported across the wider sector, not results Posso has measured across its own UK deployments. Throughput, accuracy and satisfaction figures are given as ranges because results vary by menu complexity, footfall, kiosk placement and configuration. The ROI calculator is an illustrative model built on the stated assumptions, not a guarantee — the honest way to size the opportunity is to run your own numbers.
             </div>
           </div>
         </section>

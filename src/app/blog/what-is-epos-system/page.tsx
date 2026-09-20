@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-    title: 'What Is an EPOS System? Transform Your Business in 2026 | Posso',
+    title: 'What Is an EPOS System? Transform Your Business in 2026',
     description: 'Discover how EPOS systems transform businesses in 2026. Learn about the best POS systems for retail, restaurants, and takeaways. Expert solutions from Posso Ltd.',
     keywords: 'EPOS system, POS system, retail POS, restaurant EPOS, takeaway POS, hospitality POS, cloud POS, electronic point of sale',
     alternates: {
@@ -134,7 +134,7 @@ export default function EposSystemGuidePage() {
 
                             <ul>
                                 <li><strong>For Retail Shops:</strong> <Link href="/solutions/kiosks-for-retail" className="text-primary hover:underline">EPOS systems for retail</Link> provide real-time sales tracking and automated inventory management</li>
-                                <li><strong>For Hospitality:</strong> <Link href="/hospitality-epos-systems-by-posso-uk-epos-systems" className="text-primary hover:underline">Hospitality POS systems</Link> include advanced features like table management, order tracking, and kitchen integration</li>
+                                <li><strong>For Hospitality:</strong> <Link href="/pos" className="text-primary hover:underline">Hospitality POS systems</Link> include advanced features like table management, order tracking, and kitchen integration</li>
                                 <li><strong>For Takeaways and Bars:</strong> Specialized <Link href="/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk" className="text-primary hover:underline">EPOS solutions for takeaways</Link> and bars streamline online ordering and stock control</li>
                             </ul>
 
@@ -198,7 +198,7 @@ export default function EposSystemGuidePage() {
 
                             <ul>
                                 <li><strong>Retail Operations:</strong> <Link href="/solutions/kiosks-for-retail" className="text-primary hover:underline">POS software for retail</Link> reduces manual stock checking requirements by approximately 30%, freeing staff for customer-facing activities</li>
-                                <li><strong>Hospitality Services:</strong> <Link href="/hospitality-epos-systems-by-posso-uk-epos-systems" className="text-primary hover:underline">Hospitality EPOS systems</Link> increase order accuracy by connecting seamlessly with kitchen display systems, reducing errors and waste</li>
+                                <li><strong>Hospitality Services:</strong> <Link href="/pos" className="text-primary hover:underline">Hospitality EPOS systems</Link> increase order accuracy by connecting seamlessly with kitchen display systems, reducing errors and waste</li>
                             </ul>
 
                             <h3>2. Superior Customer Experience</h3>
@@ -317,7 +317,7 @@ export default function EposSystemGuidePage() {
                                     <span>|</span>
                                     <Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link>
                                     <span>|</span>
-                                    <Link href="/book-a-call" className="hover:text-primary transition-colors">Request a Demo</Link>
+                                    <Link href="/contact" className="hover:text-primary transition-colors">Request a Demo</Link>
                                 </div>
                             </footer>
                         </article>

@@ -202,15 +202,15 @@ export default function OnlineOrderingSoftwareCoffeeShopsPage() {
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore More Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/coffee-pos-system" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/coffee-shop-cafe-epos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Coffee POS System</p>
                   <p className="text-slate-400 text-sm mt-1">Full coffee shop POS</p>
                 </Link>
-                <Link href="/web-based-ordering-system-coffee-shops" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/coffee-shop-ordering-app" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Web Based Ordering</p>
                   <p className="text-slate-400 text-sm mt-1">Click-and-collect</p>
                 </Link>
-                <Link href="/mobile-ordering-system-coffee-shops" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/coffee-shop-ordering-app" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Mobile Ordering</p>
                   <p className="text-slate-400 text-sm mt-1">Mobile coffee ordering</p>
                 </Link>

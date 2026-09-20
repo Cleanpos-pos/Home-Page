@@ -47,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/mobile-ordering-system',
     '/bar-epos',
     '/best-epos-system-for-takeaway',
-    '/best-dark-kitchen-software-by-posso-ltd-uk',
+    '/best-dark-kitchen-software-uk',
     '/how-much-does-a-pos-system-cost-for-a-restaurant',
     '/top-5-pos-systems-for-restaurants',
     '/best-pos-system-reddit',
@@ -99,6 +99,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/event-bookings',
     '/food-truck-epos-system',
     '/kitchen-display-system',
+    '/kitchen-display-system-cost',
     '/epos-now-alternative',
     '/posso-vs-epos-now',
     '/epos-pricing-uk',
@@ -330,6 +331,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/solutions/restaurant-self-service-kiosk',
     // Programmatic alias now redirecting; not caught by isAlias (no -by-posso-ltd-uk)
     '/best-pos-software-free-download-full-version-crack-uk',
+    // Kiosk cluster consolidation, September 2026
+    '/self-ordering-kiosk',
+    '/self-serve-kiosk',
+    '/food-ordering-machine',
+    '/hospitality-kiosks',
+    '/solutions/self-service-kiosk-uk',
+    '/restaurant-self-ordering-system',
+    '/do-self-order-kiosks-increase-sales',
+    '/blog/self-order-kiosks',
+    '/blog/pos-and-self-order-kiosk-solutions',
+    '/outdoor-self-order-kiosks-food-truck-epos',
   ]);
 
   const isDropped = (path: string) => isAlias(path) || redirecting.has(path);
@@ -385,6 +397,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
           }
         : {}),
     })),
+    // /self-order-kiosk-cost is a bespoke route, not a programmatic page, so its
+    // video-sitemap entry is not generated from allSeoPages. Declared explicitly
+    // here or the video is silently dropped from the sitemap.
+    {
+      url: `${URL}/self-order-kiosk-cost`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+      videos: [{
+        title: xmlText('How Much Does a Self-Order Kiosk Cost?'),
+        thumbnail_loc: `${URL}/videos/thumbs/self-order-kiosk-cost.png`,
+        description: xmlText('What a self-order kiosk costs in the UK: hardware, ordering software, card payments and installation, and how to work out payback on gross margin.'),
+        content_loc: `${URL}/videos/self-order-kiosk-cost.mp4`,
+        duration: 39,
+        publication_date: '2026-07-14T09:00:00+00:00',
+        family_friendly: 'yes' as const,
+      }],
+    },
   ];
 
   // A route can appear in more than one bucket above; emit each <loc> once.

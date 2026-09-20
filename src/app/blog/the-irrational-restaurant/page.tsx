@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-    title: 'The Irrational Restaurant: Behavioral Economics & Tech | Posso',
+    title: 'The Irrational Restaurant: Behavioral Economics & Tech',
     description: 'A behavioural economics approach to modern POS systems, self-service kiosks, and hospitality technology. Discover how Posso Ltd solves psychological pain points.',
     keywords: 'behavioural economics hospitality, restaurant psychology, EPOS systems UK, self-service kiosks, hospitality technology, platform-based pricing, cognitive bias business',
     alternates: {
@@ -114,7 +114,7 @@ export default function IrrationalRestaurantPage() {
                             </p>
 
                             <h3>The Upselling Revelation</h3>
-                            <p>Research shows <Link href="/blog/self-order-kiosks" className="text-primary hover:underline">kiosks increase average transaction values by 8–15%</Link>. But the mechanisms are pure behavioural gold:</p>
+                            <p>Research shows <Link href="/self-order-kiosks-guide" className="text-primary hover:underline">kiosks increase average transaction values by 8–15%</Link>. But the mechanisms are pure behavioural gold:</p>
                             <ul>
                                 <li><strong>Loss Aversion Architecture:</strong> The kiosk shows you a burger. Then it shows you that burger with cheese. You're not choosing whether to add cheese—you're choosing whether to lose the better version.</li>
                                 <li><strong>The Paradox of Choice (Weaponised):</strong> Clever kiosks group options into "Recommended," "Popular," and "Healthy." This isn't categorisation—it's social proof and permission structures.</li>
@@ -184,7 +184,7 @@ export default function IrrationalRestaurantPage() {
                                     <span>|</span>
                                     <Link href="/blog" className="hover:text-primary transition-colors">More Insights</Link>
                                     <span>|</span>
-                                    <Link href="/book-a-call" className="hover:text-primary transition-colors">Request a Demo</Link>
+                                    <Link href="/contact" className="hover:text-primary transition-colors">Request a Demo</Link>
                                 </div>
                             </footer>
                         </article>

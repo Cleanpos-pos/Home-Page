@@ -2,7 +2,7 @@ import { SolutionsLandingPage } from "@/components/solutions-landing-page";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Wake Park Booking & POS Software UK | Posso',
+  title: 'Wake Park Booking & POS Software UK',
   description: 'Specialized management for rental gear, liability waivers, and personal storage in wet environments.',
   keywords: [
     'wake park booking software',

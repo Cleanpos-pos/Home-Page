@@ -88,7 +88,7 @@ const oneOffPrices = [
 ];
 
 const ongoingPrices = [
-  ['Software licence', 'From £25 + VAT a month, covering the core system, updates and cloud features — your exact figure is confirmed on your quote'],
+  ['Software licence', 'From £35 + VAT a month, covering the core system, updates and cloud features — your exact figure is confirmed on your quote'],
   ['Online ordering on your own site', 'Included — the customer pays a 60p service fee per order; your business pays only card processing'],
   ['Just Eat / Uber Eats / Deliveroo integration', '£45/month, unlimited orders'],
   ['Own delivery drivers — driver app and dispatch', '30p per delivery, no per-driver licence fee'],
@@ -131,7 +131,7 @@ export default function EposPricingUkPage() {
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete EPOS systems from £499 + VAT</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Software from £25 + VAT a month</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Software from £35 + VAT a month</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Menu build, setup and training included</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
@@ -154,7 +154,7 @@ export default function EposPricingUkPage() {
                 Short answer
               </p>
               <p className="text-lg leading-relaxed text-slate-200">
-                A complete Posso EPOS system costs £499 + VAT up front — touchscreen till, kitchen printer, cash drawer, receipt printer and software, with menu build, staff training and a 2-year warranty included. Ongoing costs are the software fee from £25 + VAT a month, plus optional extras: £45/month for marketplace integration, 30p per delivery for your own drivers, and card processing from 1% + 10p, quoted on your turnover. Finance is available from £24.92 per week.
+                A complete Posso EPOS system costs £499 + VAT up front — touchscreen till, kitchen printer, cash drawer, receipt printer and software, with menu build, staff training and a 2-year warranty included. Ongoing costs are the software fee from £35 + VAT a month, plus optional extras: £45/month for marketplace integration, 30p per delivery for your own drivers, and card processing from 1% + 10p, quoted on your turnover. Finance is available from £24.92 per week.
               </p>
             </div>
           </div>
@@ -291,6 +291,14 @@ export default function EposPricingUkPage() {
                   <p className="font-semibold text-white">Posso vs Epos Now</p>
                   <p className="text-slate-400 text-sm mt-1">Honest side-by-side</p>
                 </Link>
+                <Link href="/self-order-kiosk-cost" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Self-Order Kiosk Cost</p>
+                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT, itemised</p>
+                </Link>
+                <Link href="/kitchen-display-system-cost" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Kitchen Display Cost</p>
+                  <p className="text-slate-400 text-sm mt-1">£399 + VAT per screen</p>
+                </Link>
               </div>
             </div>
           </div>
@@ -298,7 +306,7 @@ export default function EposPricingUkPage() {
 
         <FAQSection title="EPOS Pricing UK — Frequently Asked Questions" faqs={[
           { question: 'How much does an EPOS system cost in the UK?', answer: 'A complete Posso EPOS system costs £499 + VAT, including the touchscreen till, kitchen printer, cash drawer, receipt printer, software licence, menu build and staff training. Self-order kiosks start at £699 + VAT, a 21-inch kitchen display screen is £399 + VAT, and extra kitchen printers are £99 each. Finance is available from £24.92 per week.' },
-          { question: 'Are there monthly software fees?', answer: 'Yes — software is from £25 + VAT a month, covering the core system, software updates and cloud features, with your exact figure confirmed on your quote. The other fixed monthly charge is the £45/month Just Eat, Uber Eats and Deliveroo integration — and only if you use it.' },
+          { question: 'Are there monthly software fees?', answer: 'Yes — software is from £35 + VAT a month, covering the core system, software updates and cloud features, with your exact figure confirmed on your quote. The other fixed monthly charge is the £45/month Just Eat, Uber Eats and Deliveroo integration — and only if you use it.' },
           { question: 'What does online ordering cost?', answer: 'Branded online ordering on your own domain is included with the system. A 60p service fee is added to the customer’s order at checkout, so on direct orders the only cost your business pays is card processing. A full branded website with online table booking is £450 if you need one built, with hosting free.' },
           { question: 'How much does the card processing cost?', answer: 'Card processing runs through Posso Pay, Posso’s own merchant service. Rates start from 1% + 10p, quoted on your card turnover rather than one flat figure for everyone, and the same rate applies to in-store terminals and the online payment gateway. Ask for your quote in writing based on your real monthly takings.' },
           { question: 'What does delivery management cost?', answer: 'Marketplace integration for Just Eat, Uber Eats and Deliveroo is £45/month with unlimited orders. Running your own drivers — driver app, zones, assignment and dispatch — costs 30p per delivery with no per-driver licence fee. AI phone ordering is £1 per order with a free dedicated number.' },

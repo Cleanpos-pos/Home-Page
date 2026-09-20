@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Best POS for Pizza Restaurant & Shops in the UK | Posso',
+  title: 'Best POS for Pizza Restaurant & Shops in the UK',
   description: 'Find the best ePOS system for your pizza shop. Our guide covers essential features like custom toppings, delivery management, and online ordering.',
   alternates: {
     canonical: '/blog/pos-for-pizza-restaurant-best-system-for-pizza-shops',

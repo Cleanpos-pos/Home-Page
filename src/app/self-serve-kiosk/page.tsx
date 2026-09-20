@@ -206,7 +206,7 @@ export default function SelfServeKioskPage() {
                   <p className="font-semibold text-white">Kiosk POS</p>
                   <p className="text-slate-400 text-sm mt-1">Hybrid kiosk + counter</p>
                 </Link>
-                <Link href="/self-ordering-kiosk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Ordering Kiosk</p>
                   <p className="text-slate-400 text-sm mt-1">Interactive ordering</p>
                 </Link>

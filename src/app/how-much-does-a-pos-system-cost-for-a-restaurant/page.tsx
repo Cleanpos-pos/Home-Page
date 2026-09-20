@@ -241,7 +241,7 @@ export default function PosSystemCostPage() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-white mb-3">Self-Order Kiosks</h3>
-                <p>Adding kiosks increases the upfront cost but typically pays for itself within 3–6 months through increased average order value (20–30% higher) and reduced labour costs.</p>
+                <p>Adding kiosks increases the upfront cost. Payback depends on your order volume and gross margin — the gain comes from a consistent upsell on every order and a lower labour cost per order.</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-white mb-3">Online Ordering</h3>
@@ -285,8 +285,8 @@ export default function PosSystemCostPage() {
         <FAQSection title="POS System Cost — FAQs" faqs={[
           { question: 'What is the cheapest POS system for a restaurant in the UK?', answer: 'The cheapest professional restaurant POS system starts from around £499 + VAT for a touchscreen till with software, receipt printing, and integrated card payments. Tablet-based solutions using an iPad can be cheaper (from £200–£300) but lack features like thermal printing and cash drawer integration.' },
           { question: 'Is it better to buy or lease a POS system?', answer: 'Both options work. Buying outright (from £499) gives you ownership with no ongoing payments. Leasing/finance (from £24.92/week on a 5-year plan) spreads the cost and can be claimed as a business expense for tax relief at 19% corporation tax.' },
-          { question: 'Are there monthly fees for POS software?', answer: 'This varies by provider. Some charge £30–£100/month for software access. Posso charges from £25 + VAT a month for software alongside the hardware price, covering the core system and updates — confirmed line by line on your quote.' },
-          { question: 'How much does a self-order kiosk cost?', answer: 'Self-order kiosks for restaurants typically cost from £699 + VAT for a 21" touchscreen with integrated card payment. Most restaurants see a return on investment within 3–6 months through increased average order value (20–30% higher) and reduced staffing needs.' },
+          { question: 'Are there monthly fees for POS software?', answer: 'This varies by provider. Some charge £30–£100/month for software access. Posso charges from £35 + VAT a month for software alongside the hardware price, covering the core system and updates — confirmed line by line on your quote.' },
+          { question: 'How much does a self-order kiosk cost?', answer: 'Self-order kiosks for restaurants typically cost from £699 + VAT for a 21" touchscreen with integrated card payment. Payback depends on your order volume and gross margin — the gain comes from a consistent upsell on every order and a lower staffing cost per order.' },
           { question: 'Does the POS price include installation and training?', answer: 'Not always — many providers charge £200–£500 extra for setup. Posso includes free on-site installation, menu import, and staff training with every hardware purchase. We also include a 2-year warranty and UK-based support.' },
           { question: 'What ongoing costs should I budget for?', answer: 'Beyond the hardware, budget for: card processing fees (1.2–1.75% per transaction), internet connection, receipt paper rolls (around £20/month), and any optional add-ons like online ordering or delivery integration.' },
         ]} />

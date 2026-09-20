@@ -11,7 +11,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Best ePOS System for Takeaway | What to Look For in 2026',
   description:
-    'How to choose the best ePOS system for takeaway — feature checklist, comparison criteria, and why 1,000+ UK takeaways chose Posso. Offline mode, delivery integration, caller ID, KDS, online ordering. From £499 + VAT.',
+    'How to choose the best ePOS system for takeaway — feature checklist, comparison criteria, and how Posso handles collection and delivery workflows. Offline mode, delivery integration, caller ID, KDS, online ordering. From £499 + VAT.',
   keywords: [
     'best epos system for takeaway',
     'best takeaway epos',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Best ePOS System for Takeaway | Posso UK',
     description:
-      'Feature checklist for choosing the best takeaway ePOS — offline mode, delivery integration, caller ID, kitchen display, and online ordering. 1,000+ UK installs.',
+      'Feature checklist for choosing the best takeaway ePOS — offline mode, delivery integration, caller ID, kitchen display, and online ordering. Built for UK takeaways.',
     url: 'https://www.posso.co.uk/best-epos-system-for-takeaway',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -45,7 +45,7 @@ const pageSchema = [
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web, Windows',
     description:
-      'The best ePOS system for takeaways with offline operation, delivery integration, caller ID, kitchen display, online ordering, and multi-language support. 1,000+ UK installs with 2-year warranty.',
+      'The best ePOS system for takeaways with offline operation, delivery integration, caller ID, kitchen display, online ordering, and multi-language support. Includes a 2-year hardware warranty.',
     url: 'https://www.posso.co.uk/best-epos-system-for-takeaway',
     offers: {
       '@type': 'AggregateOffer',
@@ -88,7 +88,7 @@ const featureChecklist = [
 ];
 
 const trustSignals = [
-  { stat: '1,000+', label: 'UK takeaway installs' },
+  { stat: 'Offline', label: 'Keeps taking orders if broadband drops' },
   { stat: '2 years', label: 'Hardware warranty included' },
   { stat: 'UK-based', label: 'Support team — no overseas call centres' },
   { stat: '24 hours', label: 'Average time from delivery to going live' },
@@ -122,7 +122,7 @@ export default function BestEposSystemForTakeawayPage() {
             <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-6">
               <Badge variant="outline" className="border-primary/50 text-primary/80 bg-primary/10 py-1 px-3">
                 <Zap className="w-3 h-3 mr-2" />
-                1,000+ UK TAKEAWAY INSTALLS
+                BUILT FOR UK TAKEAWAYS
               </Badge>
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl !leading-tight">
                 <span className="bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
@@ -221,7 +221,7 @@ export default function BestEposSystemForTakeawayPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl sm:text-4xl font-bold gradient-text text-center mb-8">
-                Why 1,000+ Takeaways Chose Posso
+                Why Takeaways Choose Posso
               </h2>
               <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                 <p>

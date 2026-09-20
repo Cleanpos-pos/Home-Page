@@ -2,7 +2,7 @@ import { SolutionsLandingPage } from "@/components/solutions-landing-page";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zoo Ticketing System & Aquarium Admission Software UK | Posso',
+  title: 'Zoo Ticketing System & Aquarium Admission Software UK',
   description: 'Advanced ticketing and secure entry systems for zoos and aquariums. From daily passes to annual memberships, Posso handles timed entry, access control and multi-outlet F&B EPOS for UK attractions.',
   keywords: [
     'zoo ticketing system',

@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
 
 export const metadata: Metadata = {
-    title: 'Speed Up Your Coffee Line with a Smart Cafe POS | Posso',
+    title: 'Speed Up Your Coffee Line with a Smart Cafe POS',
     description: 'Master the morning rush with Posso\'s high-speed cafe POS system. Features one-tap ordering, automated upselling, and customer-facing displays.',
     keywords: 'cafe pos system, coffee shop epos uk, speedy till systems, barista pos software, loyalty epos for cafe',
     alternates: {

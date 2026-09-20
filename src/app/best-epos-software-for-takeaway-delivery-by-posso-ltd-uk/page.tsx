@@ -294,7 +294,7 @@ export default function TakeawayDeliveryLandingPage() {
                                 Scale Your Delivery Without the <span className="text-blue-500 underline decoration-blue-500/30">Hefty Commission Fees.</span>
                             </h2>
                             <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                                Join 1,000+ UK takeaways that have reclaimed their profits with the best delivery EPOS software.
+                                Take delivery orders straight into your EPOS and keep the margin a marketplace commission would have taken.
                             </p>
                             <div className="pt-6">
                                 <SolutionEnquiryModal

@@ -70,7 +70,7 @@ export const posForDessertShop: Guide = {
       heading: "What owners say it actually costs",
       paragraphs: [
         "Real figures from the threads, in the currencies they were posted in. “Square seems nuts to me at 2.6% AND .10 per transaction” is the line that starts the small-tickets thread — that owner's own arithmetic put a 400-sandwich day at around $240 in card fees. The rule-of-thumb reply put the crossover where flat rate stops making sense at about $10,000 a month in card volume. In the older ice cream thread, a full single-register setup was quoted at just under $1,000 all-in; at the bottom end, a web-based till was pitched at $34 a month. None of these are UK prices — they are what owners report paying, which is the number vendor pages never print.",
-        "For the UK counter: our systems start at £499 + VAT including the terminal, software licence, menu build and staff training, with a 2-year warranty and UK phone support Monday to Friday, 9am to 9:30pm. Spread on finance that is from £24.92 a week, with software from £25 + VAT a month. Self-order kiosks start at £699 + VAT. Card processing runs through Posso Pay, our own merchant service — there is deliberately no flat rate to print here, because the rate is quoted on your card turnover and average ticket, and the same rate applies in store and on your online ordering. For a £4.50 average ticket, that quote conversation is precisely the one the threads say to have.",
+        "For the UK counter: our systems start at £499 + VAT including the terminal, software licence, menu build and staff training, with a 2-year warranty and UK phone support Monday to Friday, 9am to 9:30pm. Spread on finance that is from £24.92 a week, with software from £35 + VAT a month. Self-order kiosks start at £699 + VAT. Card processing runs through Posso Pay, our own merchant service — there is deliberately no flat rate to print here, because the rate is quoted on your card turnover and average ticket, and the same rate applies in store and on your online ordering. For a £4.50 average ticket, that quote conversation is precisely the one the threads say to have.",
       ],
     },
     {
@@ -176,7 +176,7 @@ export const posForDessertShop: Guide = {
   faqs: [
     {
       q: "How much does a dessert shop POS cost in the UK?",
-      a: "A complete Posso system starts at £499 + VAT including the touchscreen terminal, software licence, menu build and staff training, or from £24.92 a week on finance, plus software from £25 + VAT a month. Self-order kiosks start at £699 + VAT. Card processing through Posso Pay is quoted on your card turnover and average ticket rather than a flat rate — and at a £4–£6 dessert ticket, that quote matters more than the hardware price, which is exactly what owners in the threads keep discovering.",
+      a: "A complete Posso system starts at £499 + VAT including the touchscreen terminal, software licence, menu build and staff training, or from £24.92 a week on finance, plus software from £35 + VAT a month. Self-order kiosks start at £699 + VAT. Card processing through Posso Pay is quoted on your card turnover and average ticket rather than a flat rate — and at a £4–£6 dessert ticket, that quote matters more than the hardware price, which is exactly what owners in the threads keep discovering.",
     },
     {
       q: "Is Square enough for a bubble tea shop?",

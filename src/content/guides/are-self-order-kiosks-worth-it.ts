@@ -150,7 +150,7 @@ export const areSelfOrderKiosksWorthIt: Guide = {
     },
     {
       q: "How much does a self-order kiosk cost in the UK?",
-      a: "Posso kiosks start at £699 + VAT, running the same menu, modifiers, kitchen routing and card processing as the main till — so adding one is configuration, not a second system. The system behind it starts at £499 + VAT with software from £25 + VAT a month. A kiosk trial therefore risks hardware money only, and the kiosk keeps working as a second till even off-peak.",
+      a: "Posso kiosks start at £699 + VAT, running the same menu, modifiers, kitchen routing and card processing as the main till — so adding one is configuration, not a second system. The system behind it starts at £499 + VAT with software from £35 + VAT a month. A kiosk trial therefore risks hardware money only, and the kiosk keeps working as a second till even off-peak.",
     },
     {
       q: "Should the kiosk replace a staffed till?",

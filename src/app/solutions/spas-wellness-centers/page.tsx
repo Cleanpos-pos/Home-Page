@@ -2,7 +2,7 @@ import { SolutionsLandingPage } from "@/components/solutions-landing-page";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Spa & Wellness Centre Booking & POS System UK | Posso',
+  title: 'Spa & Wellness Centre Booking & POS System UK',
   description: 'Premium, relaxing experiences require hassle-free entry and highly secure storage. Posso handles treatment bookings, gift vouchers, memberships, RFID access and retail EPOS in one system.',
   keywords: [
     'spa booking system UK',

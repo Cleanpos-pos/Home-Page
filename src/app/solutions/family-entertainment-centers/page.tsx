@@ -2,7 +2,7 @@ import { SolutionsLandingPage } from "@/components/solutions-landing-page";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Family Entertainment Centre EPOS, Ticketing & Booking | Posso',
+  title: 'Family Entertainment Centre EPOS, Ticketing & Booking',
   description: 'From arcade games to go-karts, manage your entire facility with Posso’s all-in-one access, ticketing and storage solution for UK family entertainment centres.',
   keywords: [
     'family entertainment centre EPOS',

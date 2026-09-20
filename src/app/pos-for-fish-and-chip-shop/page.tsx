@@ -231,6 +231,13 @@ export default function PosForFishAndChipShopPage() {
                   <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
                   rather than separate products bolted together.
                 </p>
+                <p>
+                  Frying to order makes timing everything. A{' '}
+                  <Link href="/kitchen-display-system" className="text-primary hover:underline">kitchen display system</Link>{' '}
+                  shows how many portions are outstanding across every live ticket, so the range is loaded once rather than four times, and a{' '}
+                  <Link href="/self-order-kiosks-for-takeaways" className="text-primary hover:underline">self-order kiosk for takeaways</Link>{' '}
+                  keeps the Friday queue moving while the fryers stay the constraint.
+                </p>
               </div>
             </div>
           </div>

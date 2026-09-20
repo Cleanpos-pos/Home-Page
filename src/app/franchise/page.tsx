@@ -11,7 +11,7 @@ import { FAQSection } from '@/components/sections/faq-section';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Franchise ePOS Systems | Multi-Site Management & Kiosks | Posso',
+  title: 'Franchise ePOS Systems | Multi-Site Management & Kiosks',
   description: 'Scale your food franchise with Posso. Centralised menu management, real-time multi-site reporting, and unified stock control for growing brands.',
   keywords: [
     'franchise POS system',

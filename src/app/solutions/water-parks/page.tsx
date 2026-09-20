@@ -2,7 +2,7 @@ import { SolutionsLandingPage } from "@/components/solutions-landing-page";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Water Park POS & RFID Wristband Ticketing UK | Posso',
+  title: 'Water Park POS & RFID Wristband Ticketing UK',
   description: 'The waterproof solution for ticketing and storage. No keys, no coins, just seamless RFID convenience.',
   keywords: [
     'water park POS system',

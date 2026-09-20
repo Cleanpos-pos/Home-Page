@@ -2,7 +2,7 @@ import { SolutionsLandingPage } from "@/components/solutions-landing-page";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Climbing Gym Booking & POS System UK | Posso',
+  title: 'Climbing Gym Booking & POS System UK',
   description: 'Fast check-ins and secure storage for climbers, from bouldering beginners to lead-climbing pros. Online booking, digital waivers, memberships, shoe hire and café EPOS in one system.',
   keywords: [
     'climbing gym booking system',

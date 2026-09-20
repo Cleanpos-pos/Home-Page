@@ -59,7 +59,7 @@ const blogPosts = [
   },
   {
     title: 'The Benefits of Self-Ordering Kiosks for Restaurants: 18 Data-Backed Reasons (and the ROI)',
-    description: 'Self-ordering kiosks lift average order value 20–30%, cut errors below 1% and pay back in under 3 months. The full benefit list, a UK ROI calculator, and worked before/after scenarios.',
+    description: 'Self-ordering kiosks add a consistent upsell to every order and cut order errors. The full benefit list, a UK ROI calculator, and worked before/after scenarios.',
     href: '/blog/benefits-of-self-ordering-kiosks-for-restaurants',
     icon: <TrendingUp className="w-12 h-12 text-primary" />,
   },

@@ -85,7 +85,7 @@ const features = [
 
 const benefits = [
   { title: 'Eliminate Printing Costs', description: 'A restaurant that reprints menus monthly spends £2,000-5,000 per year on printing. Seasonal changes, price updates, new items — every change means a reprint. Digital signage eliminates printing entirely. Changes are free, instant, and unlimited. The system pays for itself within the first year through printing savings alone.' },
-  { title: 'Increase Sales With Visual Upselling', description: 'A photo of a dessert on a digital display sells more desserts than text on a printed menu. Research shows digital menu boards increase sales of featured items by 15-30%. Highlight your highest-margin items, promote add-ons, and rotate specials throughout the day. Visual merchandising drives impulse purchases that printed menus cannot match.' },
+  { title: 'Increase Sales With Visual Upselling', description: 'A photo of a dessert on a digital display sells more desserts than text on a printed menu. A bright, well-shot photo puts the item in front of every customer waiting at the counter, which a printed line of text does not. Highlight your highest-margin items, promote add-ons, and rotate specials throughout the day. Visual merchandising drives impulse purchases that printed menus cannot match.' },
   { title: 'Never Show an Unavailable Item', description: 'Nothing frustrates a customer more than ordering something that is sold out. POS-integrated digital signage automatically updates availability. When the last portion of fish pie sells, the menu board reflects it immediately. Customers only see what they can actually order. Fewer disappointments, fewer complaints, smoother service.' },
   { title: 'Save Staff Time on Menu Changes', description: 'Switching from lunch to dinner service used to mean replacing printed menus, changing blackboard specials, and updating window displays. With digital signage, the transition is automatic. The dinner menu appears at the scheduled time. Staff focus on service, not signage. Over a year, automated scheduling saves hundreds of hours of manual menu management.' },
 ];
@@ -202,7 +202,7 @@ export default function DigitalSignageSystemsPage() {
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore More Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/self-ordering-kiosk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
                   <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
                 </Link>

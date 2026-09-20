@@ -11,7 +11,7 @@ import Image from 'next/image';
 import { PageBreadcrumb } from '@/components/page-breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Teya Card Machine Application Form | Posso',
+  title: 'Teya Card Machine Application Form',
   description: 'Start your application for a Teya card machine. Posso provides the best rates and seamless integration for UK businesses. Apply online today.',
   alternates: {
     canonical: '/teya-card-machine-application-form',
