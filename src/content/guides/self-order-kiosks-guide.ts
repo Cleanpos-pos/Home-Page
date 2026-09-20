@@ -109,7 +109,7 @@ export const selfOrderKiosksGuide: Guide = {
       heading: "How much do self-order kiosks cost in the UK?",
       paragraphs: [
         "UK self-order kiosks are typically bought outright, from around £699 + VAT for a countertop unit up to £2,000 or more for a large freestanding floor kiosk with a built-in printer and card reader. Some suppliers instead bundle the kiosk into a monthly software subscription — cheaper to start, more over three years, so compare the total cost, not the headline.",
-        "On top of the hardware there's the software it runs (usually the same licence as your till) and card processing on the payments taken at the screen. Posso self-order kiosks start at £699 + VAT and run the same menu, kitchen routing and card processing as your main Posso till, so adding one is configuration rather than a second system — and the software fee is the same £35 + VAT a month whether the order comes from the counter or the kiosk. Finance is available from around £24.92 a week.",
+        "On top of the hardware there's the software it runs (usually the same licence as your till) and card processing on the payments taken at the screen. Posso self-order kiosks start at £699 + VAT and run the same menu, kitchen routing and card processing as your main Posso till, so adding one is configuration rather than a second system — and the software fee is the same £25 + VAT a month whether the order comes from the counter or the kiosk. Finance is available from around £24.92 a week.",
       ],
     },
     {
@@ -189,7 +189,7 @@ export const selfOrderKiosksGuide: Guide = {
     },
     {
       q: "How much does a self-order kiosk cost in the UK?",
-      a: "UK kiosks are usually bought outright, from around £699 + VAT for a countertop unit to £2,000 or more for a large freestanding floor kiosk. Some suppliers bundle the kiosk into a monthly subscription instead — cheaper up front, more over three years. On top there's the software licence and card processing. Posso kiosks start at £699 + VAT and share the same software fee (£35 + VAT a month) and card processing as your till.",
+      a: "UK kiosks are usually bought outright, from around £699 + VAT for a countertop unit to £2,000 or more for a large freestanding floor kiosk. Some suppliers bundle the kiosk into a monthly subscription instead — cheaper up front, more over three years. On top there's the software licence and card processing. Posso kiosks start at £699 + VAT and share the same software fee (£25 + VAT a month) and card processing as your till.",
     },
     {
       q: "Do self-order kiosks increase sales?",

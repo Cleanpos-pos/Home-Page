@@ -71,7 +71,7 @@ const costRows: [string, string][] = [
   ['Twin-screen upgrade', '+£150'],
   ['Complete EPOS system behind it', '£499 + VAT — touchscreen till, kitchen printer, cash drawer, receipt printer'],
   ['Per-screen software licence', 'None — screens run under the standard software fee'],
-  ['Software and support', 'From £35 + VAT a month for the platform, however many screens you run'],
+  ['Software and support', 'From £25 + VAT a month for the platform, however many screens you run'],
   ['Menu build, configuration and staff training', 'Included'],
   ['Extra kitchen or prep printer, if you keep paper', '£99 each'],
   ['On-site installation', 'Quoted separately — depends on site, cabling and mounting'],
@@ -113,7 +113,7 @@ export default function KitchenDisplaySystemCostPage() {
                   A 21-inch kitchen display screen costs <strong className="text-white">£399 + VAT</strong> as a one-off, running
                   on a complete Posso EPOS system from <strong className="text-white">£499 + VAT</strong>. There is
                   <strong className="text-white"> no separate per-screen licence</strong> — screens run under the standard
-                  software fee from £35 + VAT a month, however many you add. Installation is quoted separately.
+                  software fee from £25 + VAT a month, however many you add. Installation is quoted separately.
                 </p>
               </div>
             </div>
@@ -200,7 +200,7 @@ export default function KitchenDisplaySystemCostPage() {
                   three years that single line can cost more than the screens did.
                 </p>
                 <p>
-                  Posso does not charge per screen. The screens run under the standard platform fee from £35 + VAT a month,
+                  Posso does not charge per screen. The screens run under the standard platform fee from £25 + VAT a month,
                   which is the same figure whether you run one screen or three. When you compare quotes, the question to ask is
                   not <em>what does a screen cost</em> but <strong className="text-white">what does the third screen cost me
                   every month</strong> — that is where the difference actually lives.
@@ -281,12 +281,12 @@ export default function KitchenDisplaySystemCostPage() {
             {
               question: 'How much does a kitchen display system cost?',
               answer:
-                'A 21-inch kitchen display screen is £399 + VAT as a one-off purchase. It runs on a complete Posso EPOS system from £499 + VAT, so a single-screen kitchen starts at £898 + VAT. Software and support are from £35 + VAT a month for the platform, and there is no additional charge per screen.',
+                'A 21-inch kitchen display screen is £399 + VAT as a one-off purchase. It runs on a complete Posso EPOS system from £499 + VAT, so a single-screen kitchen starts at £898 + VAT. Software and support are from £25 + VAT a month for the platform, and there is no additional charge per screen.',
             },
             {
               question: 'Is there a monthly fee per kitchen screen?',
               answer:
-                'Not with Posso. Screens run under the standard software fee from £35 + VAT a month, whether you run one screen or three. Many providers do charge a monthly licence per device, so when comparing quotes ask specifically what the second and third screens add to the monthly bill, not just the hardware price.',
+                'Not with Posso. Screens run under the standard software fee from £25 + VAT a month, whether you run one screen or three. Many providers do charge a monthly licence per device, so when comparing quotes ask specifically what the second and third screens add to the monthly bill, not just the hardware price.',
             },
             {
               question: 'How many kitchen screens does a kitchen need?',

@@ -71,7 +71,7 @@ export const takeawayEposWhatOwnersSay: Guide = {
       heading: "What the costs actually look like",
       paragraphs: [
         "The threads are blunter about costs than any vendor page. The pizza-specialist verdict — “not cheap but the best I've seen in 20+ years” — is the honest shape of the trade-off at the top end. At the other end, owners warn that cheap generic tills cost you back in retyped aggregator orders and kitchen chaos. And around all of it sits the number owners resent most: marketplace commission, which UK operators typically put at 14% to 35% of every order that arrives through Just Eat, Deliveroo or Uber Eats before marketing add-ons.",
-        "For the UK counter, our own numbers, stated the same way we ask other vendors to state theirs: a complete Posso system is £499 + VAT including the terminal, kitchen printer, menu build and staff training, with finance from £24.92 a week. Software runs from £35 + VAT a month. Marketplace integration — Just Eat, Deliveroo and Uber Eats orders arriving inside the till and printing straight to the kitchen — is £45 a month, only if you use it. Deliveries through your own drivers cost 30p each. Bag and box label printing is included in the order flow, which for a takeaway is not a luxury: it is how order 47 stops going home with order 48's curry.",
+        "For the UK counter, our own numbers, stated the same way we ask other vendors to state theirs: a complete Posso system is £499 + VAT including the terminal, kitchen printer, menu build and staff training, with finance from £24.92 a week. Software runs from £25 + VAT a month. Marketplace integration — Just Eat, Deliveroo and Uber Eats orders arriving inside the till and printing straight to the kitchen — is £45 a month, only if you use it. Deliveries through your own drivers cost 30p each. Bag and box label printing is included in the order flow, which for a takeaway is not a luxury: it is how order 47 stops going home with order 48's curry.",
       ],
     },
     {
@@ -191,7 +191,7 @@ export const takeawayEposWhatOwnersSay: Guide = {
     },
     {
       q: "What does a takeaway EPOS cost in the UK?",
-      a: "Posso's numbers, stated plainly: £499 + VAT for the complete system including kitchen printer, menu build and training; software from £35 + VAT a month; £45 a month for marketplace integration if you use it; 30p per delivery through your own drivers; finance from £24.92 a week. The threads' costing advice is right: compare total monthly cost at your real order volume — commissions included — not the hardware sticker price.",
+      a: "Posso's numbers, stated plainly: £499 + VAT for the complete system including kitchen printer, menu build and training; software from £25 + VAT a month; £45 a month for marketplace integration if you use it; 30p per delivery through your own drivers; finance from £24.92 a week. The threads' costing advice is right: compare total monthly cost at your real order volume — commissions included — not the hardware sticker price.",
     },
     {
       q: "What do owners warn about most in these threads?",

@@ -228,7 +228,7 @@ export default function AboutPage() {
               {[
                 ['One supplier', 'Till, kiosks, ordering, phones and payments built to work as one — not stitched together from five vendors.'],
                 ['A human answers', 'UK-based support on the phone Monday to Friday, 9am–9:30pm. No tickets into the void.'],
-                ['Honest pricing', 'Real numbers stated plainly — hardware from £499 + VAT, software from £35 + VAT a month, card processing from 1% + 10p quoted on your turnover.'],
+                ['Honest pricing', 'Real numbers stated plainly — hardware from £499 + VAT, software from £25 + VAT a month, card processing from 1% + 10p quoted on your turnover.'],
                 ['You own it', 'Own your hardware, own your customers, own your data — not rented back to you by a platform.'],
               ].map(([title, desc]) => (
                 <div key={title} className="glass-card rounded-2xl border border-slate-700/50 p-6">

@@ -9,7 +9,7 @@ import type { Guide } from "@/lib/guides";
  *
  * Verified claims used: Teya partnership terms as published on live pages
  * (competitive rates, no long-term contracts, no hidden fees, no monthly
- * minimums); Posso Pay quoted on turnover; £499 + VAT system; £35 + VAT/mo
+ * minimums); Posso Pay quoted on turnover; £499 + VAT system; £25 + VAT/mo
  * software; support Mon–Fri 9am–9:30pm.
  * ⚠️ CONFIRM before strengthening: whether a customer's EXISTING Teya
  * account/terminals can connect to Posso One, or whether Teya supply runs
@@ -29,11 +29,11 @@ export const eposWithTeya: Guide = {
   highlights: [
     "Native Teya integration — amounts push from the basket, nothing retyped",
     "Till totals and Teya settlement reconcile at close",
-    "Complete EPOS from £499 + VAT, software from £35 + VAT a month",
+    "Complete EPOS from £499 + VAT, software from £25 + VAT a month",
   ],
   breadcrumb: "EPOS with Teya",
   quickAnswer:
-    "Yes — Posso One works with Teya. Card machines supplied through our Teya partnership integrate natively with the till: the amount pushes from the basket to the terminal, so nothing is typed twice, and end-of-day totals reconcile against the Teya settlement automatically. The partnership terms are the ones Teya is chosen for — competitive rates with no long-term contracts, no hidden fees and no monthly minimums. The complete EPOS is £499 + VAT with software from £35 + VAT a month.",
+    "Yes — Posso One works with Teya. Card machines supplied through our Teya partnership integrate natively with the till: the amount pushes from the basket to the terminal, so nothing is typed twice, and end-of-day totals reconcile against the Teya settlement automatically. The partnership terms are the ones Teya is chosen for — competitive rates with no long-term contracts, no hidden fees and no monthly minimums. The complete EPOS is £499 + VAT with software from £25 + VAT a month.",
   sections: [
     {
       kind: "prose",
@@ -72,7 +72,7 @@ export const eposWithTeya: Guide = {
       kicker: "The numbers",
       heading: "What it costs, plainly",
       paragraphs: [
-        "The complete Posso system is £499 + VAT including the terminal, menu build and staff training, with software from £35 + VAT a month and finance from £24.92 a week. Teya card processing is quoted on your actual card turnover — deliberately not a flat rate printed here, because a £5-average counter and a £30-average restaurant should not pay the same structure. Bring your current card statement and we will put our quote next to it in writing.",
+        "The complete Posso system is £499 + VAT including the terminal, menu build and staff training, with software from £25 + VAT a month and finance from £24.92 a week. Teya card processing is quoted on your actual card turnover — deliberately not a flat rate printed here, because a £5-average counter and a £30-average restaurant should not pay the same structure. Bring your current card statement and we will put our quote next to it in writing.",
         "Already on Teya, or weighing it against your current provider? Talk to us before you change anything — we will tell you honestly how your existing setup fits, and the application for a Teya machine through Posso takes minutes. If you are comparing the wider market first, our community-research page on card machines collects what owners actually say about every major provider, warnings included.",
       ],
     },
@@ -110,7 +110,7 @@ export const eposWithTeya: Guide = {
     },
     {
       q: "How do I get a Teya card machine with a Posso till?",
-      a: "The application form on this site takes minutes, or call 0808 175 3956 and we will handle it with your EPOS order — machine, till, menu build and training arrive as one setup. The complete system is £499 + VAT with software from £35 + VAT a month, and the card machine is configured to the till before it reaches your counter.",
+      a: "The application form on this site takes minutes, or call 0808 175 3956 and we will handle it with your EPOS order — machine, till, menu build and training arrive as one setup. The complete system is £499 + VAT with software from £25 + VAT a month, and the card machine is configured to the till before it reaches your counter.",
     },
   ],
 };
