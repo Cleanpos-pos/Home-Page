@@ -13,7 +13,7 @@ const PAGE_URL = 'https://www.posso.co.uk/self-order-kiosk-cost';
 export const metadata: Metadata = {
   title: 'How Much Does a Self-Order Kiosk Cost in the UK?',
   description:
-    'Self-order kiosk cost, itemised: hardware from £699 + VAT, software from £35 + VAT a month, card processing from 1% + 10p. Worked configurations for one to four kiosks.',
+    'Self-order kiosk cost, itemised: hardware from £699 + VAT, software from £25 + VAT a month, card processing from 1% + 10p. Worked configurations for one to four kiosks.',
   keywords: [
     'self order kiosk cost',
     'self order kiosk price uk',
@@ -91,7 +91,7 @@ const upfrontPrices: [string, string][] = [
 ];
 
 const ongoingPrices: [string, string][] = [
-  ['Software and support', 'From £35 + VAT a month, covering the core system, updates and cloud features'],
+  ['Software and support', 'From £25 + VAT a month, covering the core system, updates and cloud features'],
   ['Card processing — Posso Pay', 'From 1% + 10p, quoted on your card turnover — same rate at the kiosk and the counter'],
   ['Just Eat / Uber Eats / Deliveroo integration', '£45/month, unlimited orders'],
   ['Finance, if you spread the hardware', 'From £24.92 per week over 12, 24 or 36 months, subject to status'],
@@ -133,7 +133,7 @@ export default function SelfOrderKioskCostPage() {
                 <p className="text-slate-200 text-lg leading-relaxed">
                   A standard indoor self-order kiosk costs <strong className="text-white">£699 + VAT</strong> outright, on top of a
                   complete EPOS system from <strong className="text-white">£499 + VAT</strong>. Software and support run from
-                  <strong className="text-white"> £35 + VAT a month</strong>, and card processing starts at
+                  <strong className="text-white"> £25 + VAT a month</strong>, and card processing starts at
                   <strong className="text-white"> 1% + 10p</strong>. Menu build, configuration and staff training are included;
                   on-site installation is quoted separately.
                 </p>
@@ -215,7 +215,7 @@ export default function SelfOrderKioskCostPage() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Software, menu build and configuration — from £35 + VAT a month</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">Software, menu build and configuration — from £25 + VAT a month</h3>
                   <p>
                     The monthly fee covers the ordering software, updates and the cloud back office. Building your menu — the
                     categories, images, modifiers and upsell prompts — plus configuration and staff training is included in the
@@ -303,7 +303,7 @@ export default function SelfOrderKioskCostPage() {
                 </table>
               </div>
               <p className="text-slate-400 mt-6">
-                Add £35 + VAT a month for software on top of any of these, plus card processing on what you take.
+                Add £25 + VAT a month for software on top of any of these, plus card processing on what you take.
               </p>
             </div>
           </div>
@@ -362,7 +362,7 @@ export default function SelfOrderKioskCostPage() {
                   </ul>
                   <p className="mt-4">
                     Extra gross profit per day = 80 × £0.80 × 0.65 = <strong className="text-white">£41.60</strong>. Against a
-                    £699 + VAT kiosk, that is roughly 17 trading days to cover the hardware. The £35 + VAT monthly software fee
+                    £699 + VAT kiosk, that is roughly 17 trading days to cover the hardware. The £25 + VAT monthly software fee
                     is an ongoing cost rather than part of the payback, but it does mean the kiosk has to clear about £1.35 a
                     day before it contributes anything at all.
                   </p>
@@ -410,12 +410,12 @@ export default function SelfOrderKioskCostPage() {
             {
               question: 'How much does a self-order kiosk cost in the UK?',
               answer:
-                'A standard indoor self-order kiosk is £699 + VAT per unit, bought outright. Behind it you need a complete EPOS system from £499 + VAT, so a single-kiosk setup starts at £1,198 + VAT. Software and support are from £35 + VAT a month, and card processing starts at 1% + 10p on your turnover.',
+                'A standard indoor self-order kiosk is £699 + VAT per unit, bought outright. Behind it you need a complete EPOS system from £499 + VAT, so a single-kiosk setup starts at £1,198 + VAT. Software and support are from £25 + VAT a month, and card processing starts at 1% + 10p on your turnover.',
             },
             {
               question: 'Is there a monthly fee for a self-order kiosk?',
               answer:
-                'Yes. Software and support run from £35 + VAT a month, covering the ordering software, updates, the cloud back office and UK support. That figure is the same whether the order comes from the kiosk or the counter, so adding a kiosk does not add a second software fee to your bill.',
+                'Yes. Software and support run from £25 + VAT a month, covering the ordering software, updates, the cloud back office and UK support. That figure is the same whether the order comes from the kiosk or the counter, so adding a kiosk does not add a second software fee to your bill.',
             },
             {
               question: 'What is included in the kiosk price?',
@@ -430,7 +430,7 @@ export default function SelfOrderKioskCostPage() {
             {
               question: 'Can I pay for a self-order kiosk monthly?',
               answer:
-                'The hardware is bought rather than rented, but you can spread it on finance from £24.92 per week over 12, 24 or 36 months, subject to status. The software fee of £35 + VAT a month is separate and ongoing. There is no long-term contract lock-in and no punitive early exit fee.',
+                'The hardware is bought rather than rented, but you can spread it on finance from £24.92 per week over 12, 24 or 36 months, subject to status. The software fee of £25 + VAT a month is separate and ongoing. There is no long-term contract lock-in and no punitive early exit fee.',
             },
             {
               question: 'What happens if I stop paying the monthly fee?',

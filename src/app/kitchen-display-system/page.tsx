@@ -222,7 +222,7 @@ export default function KitchenDisplaySystemPage() {
               </h2>
               <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                 <p>
-                  A 21-inch kitchen display screen is <strong className="text-white">£399 + VAT</strong>, one-off, per screen, running on the Posso EPOS from <strong className="text-white">£499 + VAT</strong>. There is <strong className="text-white">no separate per-screen licence</strong> — screens run under the standard software fee from £35 + VAT a month, however many you add. The twin-screen upgrade is +£150, and on-site installation is quoted separately.
+                  A 21-inch kitchen display screen is <strong className="text-white">£399 + VAT</strong>, one-off, per screen, running on the Posso EPOS from <strong className="text-white">£499 + VAT</strong>. There is <strong className="text-white">no separate per-screen licence</strong> — screens run under the standard software fee from £25 + VAT a month, however many you add. The twin-screen upgrade is +£150, and on-site installation is quoted separately.
                 </p>
                 <p>
                   <Link href="/kitchen-display-system-cost" className="text-primary hover:underline">Full kitchen display system costs</Link>{' '}
