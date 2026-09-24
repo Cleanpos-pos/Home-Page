@@ -11,7 +11,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Downloads — Posso One Desktop, Apps, Brochures & Docs',
   description:
-    'Download Posso One for Windows and Android, the Waiter Pad app, Printer Helper, PrintAssist for Citaq H10, brochures, and support docs for Posso ePOS users.',
+    'Download Posso One for Windows and Android, the Waiter Pad app, CashCow Fast Food POS, Printer Helper, PrintAssist for Citaq H10, brochures, and support docs for Posso ePOS users.',
   keywords: [
     'Posso downloads',
     'Posso One Android app',
@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     'Posso printer helper APK',
     'PrintAssist Citaq H10',
     'Citaq H10 printer app',
+    'CashCow POS APK',
+    'CashCow fast food POS',
     'Posso Android app',
     'Posso product brochure',
     'Posso ePOS downloads',
@@ -121,6 +123,17 @@ const downloads: DownloadItem[] = [
     fileSize: '6.7 MB',
     platform: 'Citaq H10-1 / H10-2 / H10-3',
     badge: 'v1.0 — Latest',
+  },
+  {
+    icon: Smartphone,
+    title: 'CashCow Fast Food POS (Android)',
+    description:
+      'CashCow point-of-sale app for fast food and quick-service counters on Android tills and tablets. Take orders, print receipts and kitchen tickets over USB, Bluetooth or network printers, and manage your menu and sales reports. Sideload install — no Play Store account required.',
+    fileName: 'cashcow-fastfood-17.871.apk',
+    fileUrl: '/downloads/cashcow-fastfood-17.871.apk',
+    fileSize: '35 MB',
+    platform: 'Android 4.1+',
+    badge: 'v17.871 — Latest',
   },
   {
     icon: FileText,
