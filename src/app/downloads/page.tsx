@@ -55,6 +55,25 @@ type DownloadItem = {
   fileSize: string;
   platform: string;
   badge?: string;
+  theme?: 'cashcow';
+};
+
+// Third-party apps get their own palette so they read as separate from Posso products.
+const tileStyles = {
+  default: {
+    card: 'glass-card border-slate-700/50',
+    iconWrap: 'bg-primary/10',
+    icon: 'text-primary',
+    badge: 'bg-primary/10 text-primary border-primary/30',
+    button: 'bg-gradient-to-r from-primary to-accent text-white',
+  },
+  cashcow: {
+    card: 'bg-gradient-to-br from-red-950 via-red-900/80 to-red-950 border-amber-400/60 shadow-lg shadow-red-900/40',
+    iconWrap: 'bg-amber-400/15 ring-1 ring-amber-400/50',
+    icon: 'text-amber-400',
+    badge: 'bg-amber-400/15 text-amber-300 border-amber-400/50',
+    button: 'bg-gradient-to-r from-amber-500 to-yellow-400 text-red-950 font-semibold hover:from-amber-400 hover:to-yellow-300',
+  },
 };
 
 const downloads: DownloadItem[] = [
@@ -128,12 +147,13 @@ const downloads: DownloadItem[] = [
     icon: Smartphone,
     title: 'CashCow Fast Food POS (Android)',
     description:
-      'CashCow point-of-sale app for fast food and quick-service counters on Android tills and tablets. Take orders, print receipts and kitchen tickets over USB, Bluetooth or network printers, and manage your menu and sales reports. Sideload install — no Play Store account required.',
+      'CashCow is an Android fast food POS app, distributed and supported in the UK by Posso. Built for takeaways and quick-service counters on Android tills and tablets: take orders, print receipts and kitchen tickets over USB, Bluetooth or network printers, and manage your menu and sales reports. Sideload install — no Play Store account required.',
     fileName: 'cashcow-fastfood-17.871.apk',
     fileUrl: '/downloads/cashcow-fastfood-17.871.apk',
     fileSize: '35 MB',
     platform: 'Android 4.1+',
     badge: 'v17.871 — Latest',
+    theme: 'cashcow',
   },
   {
     icon: FileText,
@@ -177,21 +197,24 @@ export default function DownloadsPage() {
         <section className="py-16">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <div className="space-y-6">
-              {downloads.map((item) => (
-                <div key={item.fileName} className="glass-card rounded-2xl border border-slate-700/50 p-6 md:p-8">
+              {downloads.map((item) => {
+                const s = tileStyles[item.theme ?? 'default'];
+                const themed = item.theme !== undefined;
+                return (
+                <div key={item.fileName} className={`${s.card} rounded-2xl border p-6 md:p-8`}>
                   <div className="flex flex-col md:flex-row gap-6 items-start">
-                    <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <item.icon className="h-7 w-7 text-primary" />
+                    <div className={`h-14 w-14 rounded-xl ${s.iconWrap} flex items-center justify-center shrink-0`}>
+                      <item.icon className={`h-7 w-7 ${s.icon}`} />
                     </div>
                     <div className="flex-1 w-full">
                       <div className="flex flex-wrap items-center gap-3 mb-2">
-                        <h2 className="text-xl font-bold text-white">{item.title}</h2>
+                        <h2 className={`text-xl font-bold ${themed ? 'text-amber-300' : 'text-white'}`}>{item.title}</h2>
                         {item.badge && (
-                          <Badge className="bg-primary/10 text-primary border-primary/30">{item.badge}</Badge>
+                          <Badge className={s.badge}>{item.badge}</Badge>
                         )}
                       </div>
-                      <p className="text-slate-400 mb-4">{item.description}</p>
-                      <div className="flex flex-wrap gap-4 text-sm text-slate-500 mb-4">
+                      <p className={`${themed ? 'text-red-100/80' : 'text-slate-400'} mb-4`}>{item.description}</p>
+                      <div className={`flex flex-wrap gap-4 text-sm ${themed ? 'text-amber-200/60' : 'text-slate-500'} mb-4`}>
                         <span className="flex items-center gap-1">
                           <FileText className="h-4 w-4" /> {item.fileName}
                         </span>
@@ -200,7 +223,7 @@ export default function DownloadsPage() {
                           <Smartphone className="h-4 w-4" /> {item.platform}
                         </span>
                       </div>
-                      <Button asChild className="bg-gradient-to-r from-primary to-accent text-white">
+                      <Button asChild className={s.button}>
                         <a href={item.fileUrl} download>
                           <Download className="mr-2 h-4 w-4" /> Download
                         </a>
@@ -208,7 +231,8 @@ export default function DownloadsPage() {
                     </div>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
