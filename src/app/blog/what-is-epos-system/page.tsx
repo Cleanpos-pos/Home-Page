@@ -81,6 +81,7 @@ export default function EposSystemGuidePage() {
             "offers": {
                 "@type": "AggregateOffer",
                 "url": "https://www.posso.co.uk",
+                "lowPrice": "499",
                 "priceCurrency": "GBP",
                 "availability": "https://schema.org/InStock"
             },
