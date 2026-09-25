@@ -54,6 +54,7 @@ const pageSchema = [
     },
     offers: {
       '@type': 'AggregateOffer',
+      lowPrice: '0',
       priceCurrency: 'GBP',
       availability: 'https://schema.org/InStock',
       seller: {
