@@ -107,6 +107,40 @@ export default function AiFoodImageGeneratorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <Header />
       <main className="flex-1 pt-20">
+        {/* Promo banner — AI voice orders (Dial4.food) */}
+        <a
+          href="https://www.dial4.food"
+          className="group block border-b border-primary/20 bg-gradient-to-r from-primary/15 via-slate-900/50 to-accent/15 transition-colors hover:from-primary/25 hover:to-accent/25"
+        >
+          <div className="container mx-auto px-4 md:px-6 py-4 md:py-5">
+            <div className="flex flex-col items-center gap-4 sm:flex-row md:gap-6">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/posso_caller_id_delivery.png"
+                alt="A food order arriving by phone call, ready to print in the restaurant kitchen"
+                width={224}
+                height={128}
+                loading="eager"
+                className="hidden h-24 w-40 shrink-0 rounded-lg border border-slate-700/50 object-cover sm:block md:h-28 md:w-56"
+              />
+              <div className="flex-1 text-center sm:text-left">
+                <span className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-primary">
+                  <Phone className="h-3 w-3" /> New · Powered by Posso AI
+                </span>
+                <p className="text-lg font-bold leading-tight text-white md:text-2xl">
+                  Let AI answer the phone and take the order
+                </p>
+                <p className="mt-1 text-sm text-slate-300 md:text-base">
+                  <strong className="text-white">Dial4.food</strong> takes food orders by natural phone conversation and sends them straight to your kitchen — no app, no account for your customers.
+                </p>
+              </div>
+              <span className="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-md bg-gradient-to-r from-primary to-accent px-6 py-3 font-medium text-white shadow-lg shadow-primary/30 transition-transform group-hover:scale-105">
+                Explore Dial4.food <ArrowRight className="ml-2 h-4 w-4" />
+              </span>
+            </div>
+          </div>
+        </a>
+
         <BreadcrumbNav items={[{ label: 'AI Food Image Generator' }]} />
 
         {/* Hero */}
