@@ -97,6 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/self-order-kiosks-guide',
     '/xero-integration',
     '/event-bookings',
+    '/ai-food-image-generator',
     '/food-truck-epos-system',
     '/kitchen-display-system',
     '/kitchen-display-system-cost',
