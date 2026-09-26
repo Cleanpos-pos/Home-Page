@@ -109,7 +109,7 @@ export default function AiFoodImageGeneratorPage() {
       <main className="flex-1 pt-20">
         {/* Promo banner — AI voice orders (Dial4.food) */}
         <a
-          href="https://www.dial4.food"
+          href="/dial4-food"
           className="group block border-b border-primary/20 bg-gradient-to-r from-primary/15 via-slate-900/50 to-accent/15 transition-colors hover:from-primary/25 hover:to-accent/25"
         >
           <div className="container mx-auto px-4 md:px-6 py-4 md:py-5">
