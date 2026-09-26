@@ -98,6 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/xero-integration',
     '/event-bookings',
     '/ai-food-image-generator',
+    '/dial4-food',
     '/food-truck-epos-system',
     '/kitchen-display-system',
     '/kitchen-display-system-cost',

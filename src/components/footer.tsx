@@ -35,6 +35,7 @@ export function Footer() {
                             <li><Link href="/online-ordering" className="hover:text-primary transition-colors">Online Ordering</Link></li>
                             <li><Link href="/ai-phone-ordering" className="hover:text-primary transition-colors">AI Phone Ordering</Link></li>
                             <li><Link href="/ai-food-image-generator" className="hover:text-primary transition-colors font-semibold text-primary/80">AI Food Images</Link></li>
+                            <li><Link href="/dial4-food" className="hover:text-primary transition-colors font-semibold text-primary/80">AI Voice Ordering</Link></li>
                             <li><Link href="/gloriafood-alternative" className="hover:text-primary transition-colors">GloriaFood Alternative</Link></li>
                             <li><Link href="/credit-card-machines" className="hover:text-primary transition-colors">Card Machines</Link></li>
                             <li><Link href="/delivery-integrations" className="hover:text-primary transition-colors">Delivery Integrations</Link></li>
