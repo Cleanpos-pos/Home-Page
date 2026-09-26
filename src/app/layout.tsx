@@ -190,7 +190,7 @@ const structuredData = {
   ],
   "sameAs": [
     "https://x.com/posso_uk",
-    "https://www.linkedin.com/company/posso-uk"
+    "https://www.linkedin.com/in/paul-robinson-b158bb293"
   ],
   "knowsAbout": [
     "Restaurant ePOS Systems",
