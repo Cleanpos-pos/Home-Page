@@ -68,6 +68,7 @@ const hospitalityLinks = [
   { href: '/epos-pricing-uk', label: 'EPOS Pricing' },
   { href: '/online-ordering', label: 'Online Ordering' },
   { href: '/ai-phone-ordering', label: 'AI Phone Ordering' },
+  { href: '/ai-food-image-generator', label: 'Free AI Food Images' },
   { href: '/delivery-integrations', label: 'Delivery Integrations' },
   { href: '/drink-order-app', label: 'Table Ordering & Waiter Pad' },
   { href: '/credit-card-machines', label: 'Card Machines' },

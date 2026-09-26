@@ -33,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ticketing',
     '/digital-signage',
     '/tablemaestro',
+    '/ai-food-image-generator',
     '/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now',
     '/pizza-pos-system',
     '/epos-system-for-indian-takeaway',
