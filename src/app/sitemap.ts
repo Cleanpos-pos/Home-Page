@@ -229,7 +229,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/benefits-of-a-mobile-pos-device-for-restaurants',
     '/blog/best-food-delivery-app-uk',
     '/blog/pos-for-pizza-restaurant-best-system-for-pizza-shops',
-    '/blog/cafe-coffee-shop-epos-systems-uk',
     '/blog/pos-and-self-order-kiosk-solutions',
     '/blog/free-epos-software-uk-truth',
     '/blog/portable-card-machine-hospitality',

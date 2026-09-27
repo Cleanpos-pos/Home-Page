@@ -142,8 +142,8 @@ export default function CafePosBlog() {
                         More Insights for Cafe Owners
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <Link href="/blog/cafe-coffee-shop-epos-systems-uk" className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/50 transition-all group flex justify-between items-center">
-                            <span className="text-slate-200">Choosing the Best ePOS for your Cafe</span>
+                        <Link href="/pos-for-cafe" className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/50 transition-all group flex justify-between items-center">
+                            <span className="text-slate-200">Café POS System — UK Buyer&apos;s Guide</span>
                             <ArrowRight className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
                         </Link>
                         <Link href="/blog/best-card-machine-for-small-business" className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/50 transition-all group flex justify-between items-center">

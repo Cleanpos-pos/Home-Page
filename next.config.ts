@@ -108,6 +108,9 @@ const nextConfig: NextConfig = {
       { source: '/cafe-epos-system', destination: '/pos-for-cafe', permanent: true },
       { source: '/cafe-pos', destination: '/pos-for-cafe', permanent: true },
       { source: '/coffee-pos-system', destination: '/pos-for-cafe', permanent: true },
+      // Thin ~400-word post titled "Best ePOS System for UK Coffee Shops & Cafes"
+      // — same intent as the guide, which covers all of it in more depth.
+      { source: '/blog/cafe-coffee-shop-epos-systems-uk', destination: '/pos-for-cafe', permanent: true },
 
       // Old-domain equity capture. posso.uk 301s path-for-path onto this site,
       // so an old URL with no equivalent here lands on a 404 and its ranking is

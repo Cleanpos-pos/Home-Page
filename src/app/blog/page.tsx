@@ -208,9 +208,9 @@ const blogPosts = [
     icon: <Pizza className="w-12 h-12 text-primary" />,
   },
   {
-    title: 'Choosing the Best ePOS System for Your Coffee Shop or Cafe',
-    description: 'Looking for an ePOS for your cafe? Our guide covers essential features like loyalty schemes, speedy payments, and multi-location management for UK coffee shops.',
-    href: '/blog/cafe-coffee-shop-epos-systems-uk',
+    title: "Café POS System: The UK Coffee Shop Buyer's Guide",
+    description: 'What a coffee shop till needs: peak-rush speed measured in taps, priced drink modifiers, eat-in/takeaway pricing and loyalty on customer data you own.',
+    href: '/pos-for-cafe',
     icon: <Coffee className="w-12 h-12 text-primary" />,
   },
   {
