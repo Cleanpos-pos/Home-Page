@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer';
 import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { DemoEnquiry } from '@/components/sections/demo-enquiry';
 import { FAQSection } from '@/components/sections/faq-section';
+import { QuickAnswer } from '@/components/quick-answer';
 import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Search, CheckCheck, Layers, Inbox, Split, Timer, WifiOff } from 'lucide-react';
 import Link from 'next/link';
@@ -140,6 +141,15 @@ export default function KitchenDisplaySystemPage() {
             </div>
           </div>
         </section>
+
+        <QuickAnswer>
+          A kitchen display system (KDS) is a screen that replaces or supplements printed tickets: it shows every
+          live order in one queue, ages each ticket so late orders stand out, tracks items as they are made, and
+          shows production totals so the kitchen can batch. The test that matters is peak service — whether
+          delivery-app, website, kiosk and counter orders all land in the same queue, and whether it keeps working
+          offline. On Posso they do: a 21-inch kitchen screen is £399 + VAT with no per-screen licence, running on
+          the Posso EPOS from £499 + VAT.
+        </QuickAnswer>
 
         <section className="py-20 bg-slate-900/30">
           <div className="container mx-auto px-4 md:px-6">

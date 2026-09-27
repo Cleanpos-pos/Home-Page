@@ -5,6 +5,7 @@ import { CreditCardMachinesHero } from '@/components/credit-card-machines-hero';
 import { CreditCardMachinesContent } from '@/components/sections/credit-card-machines-content';
 import { Contact } from '@/components/sections/contact';
 import { FAQSection } from '@/components/sections/faq-section';
+import { QuickAnswer } from '@/components/quick-answer';
 import { CreditCard, Smartphone, Layers, Banknote, ShieldCheck, Wifi } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -109,6 +110,14 @@ export default function CreditCardMachinesPage() {
       <main className="flex-1 pt-20">
         <BreadcrumbNav items={[{ label: 'Card Machines' }]} />
         <CreditCardMachinesHero />
+        <QuickAnswer>
+          The right card machine for a hospitality business is one integrated with your EPOS: the bill total goes
+          to the terminal automatically, so there is no re-keying and takings reconcile against your sales reports.
+          Posso supplies and integrates Teya, Dojo and Clover terminals alongside Posso Pay, Posso&apos;s own
+          merchant service — all accepting contactless, Apple Pay, Google Pay and chip &amp; PIN, with portable
+          readers for table service. Card rates depend on the provider, your card mix and turnover, so compare
+          quotes on your real monthly card takings and average transaction, not a headline rate.
+        </QuickAnswer>
         <CreditCardMachinesContent />
 
         {/* Why UK Businesses Choose Posso Card Machines */}
