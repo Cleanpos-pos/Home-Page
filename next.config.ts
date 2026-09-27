@@ -97,15 +97,26 @@ const nextConfig: NextConfig = {
       { source: '/cafe-online-ordering-system', destination: '/coffee-shop-ordering-app', permanent: true },
       { source: '/restaurant-epos-systems-uk', destination: '/restaurant-epos', permanent: true },
 
-      // Café/coffee-shop EPOS consolidation (2026-09-11, per audit): four
-      // near-duplicate "cafe/coffee EPOS/POS" till pages, none ranking top-10
-      // (checked live), splitting authority. Folded into the strongest
-      // survivor — /coffee-shop-cafe-epos-systems (most content, broadest
-      // keyword set, already schema-upgraded). /pos-for-cafe (guide layer)
-      // kept — different, informational intent.
-      { source: '/cafe-epos-system', destination: '/coffee-shop-cafe-epos-systems', permanent: true },
-      { source: '/cafe-pos', destination: '/coffee-shop-cafe-epos-systems', permanent: true },
-      { source: '/coffee-pos-system', destination: '/coffee-shop-cafe-epos-systems', permanent: true },
+      // Café/coffee-shop consolidation, round 2 (2026-09-27). Round 1 (09-11)
+      // folded four café product pages into /coffee-shop-cafe-epos-systems and
+      // kept /pos-for-cafe as a separate guide — but live google.co.uk SERPs
+      // then showed NEITHER page in the top 30 for any café query: two weak
+      // pages splitting one intent. Everything café now folds into the single
+      // /pos-for-cafe page (the AEO-structured one); redirects are flattened
+      // so nothing chains.
+      { source: '/coffee-shop-cafe-epos-systems', destination: '/pos-for-cafe', permanent: true },
+      { source: '/cafe-epos-system', destination: '/pos-for-cafe', permanent: true },
+      { source: '/cafe-pos', destination: '/pos-for-cafe', permanent: true },
+      { source: '/coffee-pos-system', destination: '/pos-for-cafe', permanent: true },
+
+      // Old-domain equity capture. posso.uk 301s path-for-path onto this site,
+      // so an old URL with no equivalent here lands on a 404 and its ranking is
+      // thrown away. /best-pos-for-small-retail still ranks #6 on google.co.uk
+      // for "coffee shop pos system uk" (checked 2026-09-27) — route it into
+      // the café page instead of the 404.
+      { source: '/best-pos-for-small-retail', destination: '/pos-for-cafe', permanent: true },
+      { source: '/online-ordering-gets-social', destination: '/online-ordering', permanent: true },
+      { source: '/best-food-online-ordering-by-posso-ltd-uk', destination: '/online-ordering', permanent: true },
 
       // These 17 used to be client-side `router.replace()` stubs. A JS redirect is not
       // a 301: Google has to render the page to find it, little equity passes, and the
@@ -203,8 +214,8 @@ const nextConfig: NextConfig = {
       { source: '/best-table-service-app-by-posso-ltd-uk', destination: '/restaurant-order-at-table-app', permanent: true },
       { source: '/best-self-ordering-system-by-posso-ltd-uk', destination: '/self-order-kiosks', permanent: true },
       { source: '/best-pos-software-by-posso-ltd-uk', destination: '/pos-software', permanent: true },
-      { source: '/best-coffee-pos-by-posso-ltd-uk', destination: '/coffee-shop-cafe-epos-systems', permanent: true },
-      { source: '/best-coffee-pos-system-by-posso-ltd-uk', destination: '/coffee-shop-cafe-epos-systems', permanent: true },
+      { source: '/best-coffee-pos-by-posso-ltd-uk', destination: '/pos-for-cafe', permanent: true },
+      { source: '/best-coffee-pos-system-by-posso-ltd-uk', destination: '/pos-for-cafe', permanent: true },
       { source: '/best-pizza-epos-by-posso-ltd-uk', destination: '/pizza-epos', permanent: true },
       // Flattened to the guide (was /pizza-shop-pos, which now redirects there)
       { source: '/best-pizza-shop-pos-software-by-posso-ltd-uk', destination: '/pos-for-pizza-shop', permanent: true },

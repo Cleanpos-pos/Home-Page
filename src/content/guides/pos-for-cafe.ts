@@ -10,12 +10,12 @@ import type { Guide } from "@/lib/guides";
 
 export const posForCafe: Guide = {
   slug: "pos-for-cafe",
-  title: "POS for Café & Coffee Shop",
+  title: "Café & Coffee Shop POS System UK",
   metaDescription:
-    "POS for Café — buyer's guide covering what to look for in a coffee shop till system. Drink modifiers, morning rush speed, loyalty and takeaway orders. From £499 + VAT.",
+    "Café POS system UK buyer's guide: what a coffee shop till needs — peak-rush speed, priced drink modifiers, eat-in/takeaway pricing and loyalty. From £499 + VAT.",
   eyebrow: "Buyer's guide",
-  h1: "POS for café and coffee shop",
-  h1Split: ["POS for", "café and coffee shop"],
+  h1: "Café POS system: the UK coffee shop buyer's guide",
+  h1Split: ["Café POS system:", "the UK coffee shop buyer's guide"],
   standfirst:
     "A café till has a different job from a restaurant till. Low ticket values, high transaction counts, a queue that forms in a twenty-minute window, and almost every order modified. Here is what to look for.",
   highlights: [
@@ -23,9 +23,9 @@ export const posForCafe: Guide = {
     "What to ask before you buy",
     "Café POS systems from £499 + VAT",
   ],
-  breadcrumb: "POS for Café",
+  breadcrumb: "Café POS System",
   quickAnswer:
-    "The most important thing in a café POS is speed at peak, measured in taps per transaction. At a £6 average spend, three extra seconds per order is the difference between the queue clearing and the queue reaching the door. After that: priced drink modifiers one tap deep, eat-in and takeaway pricing, and customer data you own.",
+    "The best café POS system is the one that is fastest at peak — measured in taps per transaction, not in features. A busy independent café can run around 300 transactions a day at roughly £6 each, with a large share packed into the morning rush, so three extra seconds per order is the difference between the queue clearing and the queue reaching the door. After speed, look for priced drink modifiers one tap deep (oat milk, extra shots, syrups), eat-in and takeaway pricing handled in one step, order-ahead for collection, and loyalty built on customer data you own. Posso café POS systems start from £499 + VAT.",
   sections: [
     {
       kind: "prose",
@@ -35,6 +35,24 @@ export const posForCafe: Guide = {
         "A restaurant does 80 covers with an average spend of £30 over four hours. A café does 300 transactions with an average spend of £6, and 120 of them arrive between 8am and 9:20am. The system that handles the first well can be actively bad at the second.",
         "Three consequences follow, and they should drive your whole evaluation. Taps per order is the metric that matters — at a £6 average spend, an extra three seconds per transaction is not a rounding error. Almost every order is modified, so if modifiers are buried two screens deep, staff will stop applying them and your stock and pricing will drift. And your customers come back constantly — a café customer might visit 200 times a year, which makes repeat-visit marketing worth far more per customer than it is to a takeaway.",
       ],
+    },
+    {
+      kind: "table",
+      heading: "Café POS vs restaurant POS",
+      intro:
+        "The same EPOS can serve both, but the priorities invert. Illustrative figures for a typical independent site:",
+      columns: ["", "Café / coffee shop", "Restaurant"],
+      rows: [
+        ["Transactions per day", "~300", "~80 covers"],
+        ["Average spend", "~£6", "~£30"],
+        ["Peak window", "Morning rush — ~120 orders in 80 minutes", "Spread over a 3–4 hour service"],
+        ["Metric that matters", "Taps and seconds per transaction", "Table turn time and course pacing"],
+        ["Modifiers", "On almost every order (milk, shots, syrups)", "Occasional (cooking preference, allergens)"],
+        ["Card-fee sensitivity", "High — pence-per-transaction fees bite on £6 tickets", "Lower — spread over larger bills"],
+        ["Features you can skip", "Course firing, split-by-seat, complex floor plans", "Rarely any — table service needs them"],
+        ["Repeat-visit value", "Very high — regulars may visit 200 times a year", "Moderate — occasion-driven visits"],
+      ],
+      firstColIsHeader: true,
     },
     {
       kind: "features",
@@ -122,8 +140,12 @@ export const posForCafe: Guide = {
       ],
     },
   ],
-  faqHeading: "POS for café — frequently asked questions",
+  faqHeading: "Café POS system — frequently asked questions",
   faqs: [
+    {
+      q: "What is the best POS system for a café in the UK?",
+      a: "The best café POS system is the one that is fastest at your peak, prices drink modifiers properly and keeps your customer data in your hands — not the one with the longest feature list. Shortlist systems that put your most-ordered items on one screen, make oat milk, extra shots and syrups a single priced tap, handle eat-in and takeaway pricing in one step, and support order-ahead for collection. Then run twenty real transactions at your actual pace on the demo before you buy. Posso café systems start from £499 + VAT, including hardware, menu build and training.",
+    },
     {
       q: "What is the most important feature in a café POS?",
       a: "Speed at peak, measured in taps per transaction. A café's economics are high transaction count at low ticket value, concentrated into a short morning window, so three extra seconds per order compounds into a queue that reaches the door. Time a full modified drink order on the demo and count the taps before you compare anything else.",
