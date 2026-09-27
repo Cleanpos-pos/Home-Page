@@ -4,6 +4,7 @@ import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { OnlineOrderingHero } from '@/components/sections/online-ordering-hero';
 import { OnlineOrderingFeatures } from '@/components/sections/online-ordering-features';
 import { FAQSection } from '@/components/sections/faq-section';
+import { QuickAnswer } from '@/components/quick-answer';
 import { Contact } from '@/components/sections/contact';
 import { Percent, Globe, Monitor, RefreshCw, Users, Truck } from 'lucide-react';
 import Link from 'next/link';
@@ -111,6 +112,14 @@ export default function OnlineOrderingPage() {
           { label: 'Online Ordering' },
         ]} />
         <OnlineOrderingHero />
+        <QuickAnswer>
+          Commission-free online ordering means customers order collection or delivery from your own branded
+          website and app, and you pay a fixed monthly fee instead of a percentage of every order. Marketplaces
+          such as Just Eat, Uber Eats and Deliveroo typically charge 14–30% commission per order, so on direct
+          orders that margin — and the customer data — stays with you. With Posso, online and app orders flow
+          straight into your POS and kitchen with no second tablet, and most restaurants and takeaways go live in
+          under 24 hours.
+        </QuickAnswer>
         <OnlineOrderingFeatures />
 
         {/* Why Restaurants & Takeaways Choose Posso */}

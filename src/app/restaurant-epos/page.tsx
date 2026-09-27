@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer';
 import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { Contact } from '@/components/sections/contact';
 import { FAQSection } from '@/components/sections/faq-section';
+import { QuickAnswer } from '@/components/quick-answer';
 import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, CreditCard, BarChart3, Phone, ArrowRight, Utensils, Users, LayoutGrid, Split, Tablet } from 'lucide-react';
 import Link from 'next/link';
@@ -154,6 +155,15 @@ export default function RestaurantEposPage() {
             </div>
           </div>
         </section>
+
+        <QuickAnswer>
+          A restaurant EPOS is a till system built around table service: a visual floor plan showing every
+          table&apos;s status, course firing so mains go to the kitchen when starters are cleared, waiter pads for
+          ordering at the table, and bills split by item, seat, equal shares or custom amounts. Those are the
+          features to test on a demo — a counter-service till with tables bolted on struggles on a full Saturday.
+          Posso restaurant EPOS includes all of them, runs offline-first, and starts from £499 + VAT for a complete
+          touchscreen terminal with integrated card payments.
+        </QuickAnswer>
 
         {/* Dine-In Features */}
         <section className="py-20 bg-slate-900/30">

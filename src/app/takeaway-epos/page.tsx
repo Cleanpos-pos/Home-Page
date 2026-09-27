@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer';
 import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { Contact } from '@/components/sections/contact';
 import { FAQSection } from '@/components/sections/faq-section';
+import { QuickAnswer } from '@/components/quick-answer';
 import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, CreditCard, BarChart3, Phone, ArrowRight, Printer, Banknote, Globe } from 'lucide-react';
 import Link from 'next/link';
@@ -154,6 +155,15 @@ export default function TakeawayEposPage() {
             </div>
           </div>
         </section>
+
+        <QuickAnswer>
+          A takeaway EPOS is a touchscreen till built for high-volume collection, delivery and phone orders: fast
+          order entry, caller ID for repeat phone customers, kitchen printing, cash management and your own online
+          ordering. The priorities are speed at the counter, staying up when the internet drops, and taking orders
+          direct — marketplaces such as Just Eat, Uber Eats and Deliveroo typically charge 14–30% commission per
+          order. Posso takeaway EPOS is offline-first, includes a branded ordering website, and starts from £499 +
+          VAT; most takeaways go live within 24 hours.
+        </QuickAnswer>
 
         {/* Speed Features */}
         <section className="py-20 bg-slate-900/30">

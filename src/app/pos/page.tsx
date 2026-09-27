@@ -4,6 +4,7 @@ import { PosHero } from '@/components/sections/pos-hero';
 import { Contact } from '@/components/sections/contact';
 import { EposFeatures } from '@/components/sections/epos-features';
 import { FAQSection } from '@/components/sections/faq-section';
+import { QuickAnswer } from '@/components/quick-answer';
 import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { PossoEposSystemDiagram } from '@/components/posso-epos-system-diagram';
 import Link from 'next/link';
@@ -446,6 +447,14 @@ export default function PosPage() {
       <main className="flex-1 pt-20">
         <BreadcrumbNav items={[{ label: 'ePOS Systems' }]} />
         <PosHero />
+        <QuickAnswer>
+          An EPOS (electronic point of sale) system is the touchscreen till and software that takes orders, sends
+          them to the kitchen, handles payments and reports on trading — EPOS is simply the UK term for POS. For
+          hospitality, what matters most is that it keeps working when the internet drops, handles every order
+          type (counter, table, takeaway, delivery, kiosk and online) in one queue, and does not lock you into a
+          single card processor. Posso&apos;s hospitality EPOS is offline-first, trusted by 500+ UK businesses, and
+          starts from £499 + VAT, with UK support Monday to Friday, 9am–9:30pm.
+        </QuickAnswer>
 
         {/* Definitional intent — front-loaded, because "epos meaning" and
             "epos full form" cluster into the same entity space as the

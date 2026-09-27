@@ -5,6 +5,7 @@ import { KiosksHero } from '@/components/sections/kiosks-hero';
 import { KioskDemo } from '@/components/sections/kiosk-demo';
 import { Contact } from '@/components/sections/contact';
 import { FAQSection } from '@/components/sections/faq-section';
+import { QuickAnswer } from '@/components/quick-answer';
 import { TrendingUp, Clock, CheckCircle2, Sparkles, Languages, CreditCard, ArrowRight, PlayCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -123,6 +124,14 @@ export default function KiosksPage() {
           { label: 'Self-Order Kiosks' },
         ]} />
         <KiosksHero />
+        <QuickAnswer>
+          A self-order kiosk is a touchscreen where customers browse the menu, customise their order and pay by
+          card or phone without queuing at the counter; the order goes straight to the kitchen screen or printer.
+          Kiosks take several orders at once and prompt an upsell on every one — independent studies and large
+          quick-service chains commonly report a 20–30% uplift in average order value after introducing them.
+          Posso kiosks share one menu with your Posso POS, come in countertop, freestanding and IP65 outdoor
+          formats, and start from £699 + VAT, with finance from around £24.92/week.
+        </QuickAnswer>
         <KioskDemo />
 
         {/* Why UK Restaurants & Takeaways Choose Self-Order Kiosks */}
