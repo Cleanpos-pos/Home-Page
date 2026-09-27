@@ -179,7 +179,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/branded-self-serve-coffee-cart',
     '/facebook-food-ordering-system',
     '/dry-cleaning-pickup-delivery-app',
-    '/coffee-shop-cafe-epos-systems',
     '/table-ordering-app-uk',
     '/credit-card-machine-clover-by-posso-ltd-uk',
     '/downloads',

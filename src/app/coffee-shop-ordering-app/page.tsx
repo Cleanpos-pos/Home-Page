@@ -202,9 +202,9 @@ export default function CoffeeShopOrderingAppPage() {
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore More Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/coffee-shop-cafe-epos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">Coffee Shop &amp; Caf&eacute; EPOS</p>
-                  <p className="text-slate-400 text-sm mt-1">Full coffee shop &amp; caf&eacute; POS</p>
+                <Link href="/kitchen-display-system" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">Barista Display Screens</p>
+                  <p className="text-slate-400 text-sm mt-1">App orders straight to the bar</p>
                 </Link>
                 <Link href="/mobile-ordering-apps" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Mobile Ordering Apps</p>
@@ -215,8 +215,8 @@ export default function CoffeeShopOrderingAppPage() {
                   <p className="text-slate-400 text-sm mt-1">QR-based self-ordering</p>
                 </Link>
                 <Link href="/pos-for-cafe" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">POS for Caf&eacute;s</p>
-                  <p className="text-slate-400 text-sm mt-1">Buyer&apos;s guide</p>
+                  <p className="font-semibold text-white">Caf&eacute; POS System</p>
+                  <p className="text-slate-400 text-sm mt-1">Tills built for the morning rush</p>
                 </Link>
               </div>
             </div>
