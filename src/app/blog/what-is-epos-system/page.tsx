@@ -126,7 +126,7 @@ export default function EposSystemGuidePage() {
                             <ul>
                                 <li><strong>For Retail Shops:</strong> <Link href="/solutions/kiosks-for-retail" className="text-primary hover:underline">EPOS systems for retail</Link> provide real-time sales tracking and automated inventory management</li>
                                 <li><strong>For Hospitality:</strong> <Link href="/pos" className="text-primary hover:underline">Hospitality POS systems</Link> include advanced features like table management, order tracking, and kitchen integration</li>
-                                <li><strong>For Takeaways and Bars:</strong> Specialized <Link href="/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk" className="text-primary hover:underline">EPOS solutions for takeaways</Link> and bars streamline online ordering and stock control</li>
+                                <li><strong>For Takeaways and Bars:</strong> Specialized <Link href="/epos-software-for-takeaway-delivery" className="text-primary hover:underline">EPOS solutions for takeaways</Link> and bars streamline online ordering and stock control</li>
                             </ul>
 
                             <h2>How Does an EPOS System Work?</h2>
@@ -176,7 +176,7 @@ export default function EposSystemGuidePage() {
                             </ul>
 
                             <p>
-                                For example, <Link href="/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk" className="text-primary hover:underline">retail POS software</Link> can automatically alert managers when stock levels fall below predetermined thresholds, while a <Link href="/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk" className="text-primary hover:underline">takeaway EPOS system</Link> seamlessly integrates online orders from multiple delivery platforms directly into your workflow.
+                                For example, <Link href="/epos-software-for-takeaway-delivery" className="text-primary hover:underline">retail POS software</Link> can automatically alert managers when stock levels fall below predetermined thresholds, while a <Link href="/epos-software-for-takeaway-delivery" className="text-primary hover:underline">takeaway EPOS system</Link> seamlessly integrates online orders from multiple delivery platforms directly into your workflow.
                             </p>
 
                             <h2>Key Advantages of an EPOS System in 2026</h2>
@@ -238,9 +238,9 @@ export default function EposSystemGuidePage() {
                             <h3>3. EPOS for Takeaways and Bars</h3>
 
                             <ul>
-                                <li><Link href="/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk" className="text-primary hover:underline">Takeaway EPOS systems</Link> reduce order processing time by 20%</li>
+                                <li><Link href="/epos-software-for-takeaway-delivery" className="text-primary hover:underline">Takeaway EPOS systems</Link> reduce order processing time by 20%</li>
                                 <li>Seamless integration of online orders from Deliveroo, Uber Eats, Just Eat, and your own website</li>
-                                <li><Link href="/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk" className="text-primary hover:underline">Bar EPOS solutions</Link> monitor inventory during peak hours to prevent costly stockouts</li>
+                                <li><Link href="/epos-software-for-takeaway-delivery" className="text-primary hover:underline">Bar EPOS solutions</Link> monitor inventory during peak hours to prevent costly stockouts</li>
                                 <li>Age verification features for alcohol sales compliance</li>
                             </ul>
 

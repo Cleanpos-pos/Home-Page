@@ -298,13 +298,14 @@ export const siteRedirects: Redirect[] = [
   { source: '/pizza-epos', destination: '/pos-for-pizza-shop', permanent: true },
   { source: '/epos-system-for-indian-takeaway', destination: '/pos-for-indian-takeaway', permanent: true },
 
-  // PROPOSED — awaiting Paul's approval, not live. The last four
-  // `-by-posso-ltd-uk` routes that still render (each self-canonicalises and
-  // competes with a clean page). Uncomment once approved.
-  // { source: '/best-best-pos-system-for-coffee-shop-uk-by-posso-ltd-uk', destination: '/pos-for-cafe', permanent: true },
-  // { source: '/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk', destination: '/epos-software-for-takeaway-delivery', permanent: true },
-  // { source: '/best-best-online-ordering-software-by-posso-ltd-uk', destination: '/online-ordering', permanent: true },
-  // { source: '/credit-card-machine-clover-by-posso-ltd-uk', destination: '/credit-card-machines', permanent: true },
+  // The last four `-by-posso-ltd-uk` routes that still rendered (each
+  // self-canonicalised and competed with a clean page). Approved by Paul,
+  // October 2026. The best-best-online-ordering stub used a server redirect()
+  // — a temporary 307 to another alias; this permanent rule now wins over it.
+  { source: '/best-best-pos-system-for-coffee-shop-uk-by-posso-ltd-uk', destination: '/pos-for-cafe', permanent: true },
+  { source: '/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk', destination: '/epos-software-for-takeaway-delivery', permanent: true },
+  { source: '/best-best-online-ordering-software-by-posso-ltd-uk', destination: '/online-ordering', permanent: true },
+  { source: '/credit-card-machine-clover-by-posso-ltd-uk', destination: '/credit-card-machines', permanent: true },
 ];
 
 /** Paths that redirect (source side only, host-conditional rules excluded). */
