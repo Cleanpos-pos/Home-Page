@@ -8,6 +8,7 @@ import { FAQSection } from '@/components/sections/faq-section';
 import { QuickAnswer } from '@/components/quick-answer';
 import type { Metadata } from 'next';
 import { PageBreadcrumb } from '@/components/page-breadcrumb';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Digital Signage & Menu Boards for Hospitality UK',
@@ -49,7 +50,7 @@ const faqs = [
   {
     question: 'How much does digital signage cost?',
     answer:
-      'The Posso POS that drives it starts from £499 + VAT. Screen packages are quoted on the number of screens and sites you need, and you can use commercial displays you already own. Book a free demo for a quote based on your layout.',
+      `The Posso POS that drives it starts from ${posso.posPrice} + VAT. Screen packages are quoted on the number of screens and sites you need, and you can use commercial displays you already own. Book a free demo for a quote based on your layout.`,
   },
 ];
 
@@ -66,7 +67,7 @@ export default function DigitalSignagePage() {
           boards, promotions and queue screens you update from any device instead of reprinting. The features to
           look for are time-of-day scheduling (breakfast, lunch and dinner menus switching automatically),
           multi-screen and multi-site control, and a link to your till, so price changes and sold-out items update
-          on screen by themselves. Posso signage connects to the Posso POS (from £499 + VAT), and we can supply
+          on screen by themselves. Posso signage connects to the Posso POS (from {posso.posPrice} + VAT), and we can supply
           the screens or set it up on commercial displays you already own.
         </QuickAnswer>
         <DigitalSignageFeatures />

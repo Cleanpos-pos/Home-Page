@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Phone, ArrowRight, Pizza, Monitor, Smartphone, Truck, Globe, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Does Domino\'s Use a POS System? (Pulse Explained)',
   description:
-    'Yes, Domino\'s uses a proprietary POS system called Pulse. Learn what it does, how it works, and how independent pizza shops can get similar features with Posso from £499 + VAT.',
+    `Yes, Domino's uses a proprietary POS system called Pulse. Learn what it does, how it works, and how independent pizza shops can get similar features with Posso from ${posso.posPrice} + VAT.`,
   keywords: [
     'does Dominos use a POS system',
     'Dominos POS system',
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/does-dominos-use-a-pos-system' },
   openGraph: {
     title: 'Does Domino\'s Use a POS System? (Pulse Explained)',
-    description: 'Domino\'s uses a proprietary POS called Pulse. Learn how independent pizza shops can access similar pizza-specific POS features from £499 + VAT.',
+    description: `Domino's uses a proprietary POS called Pulse. Learn how independent pizza shops can access similar pizza-specific POS features from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/does-dominos-use-a-pos-system',
     type: 'article',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -38,8 +40,8 @@ const pageSchema = [
     '@type': 'Article',
     headline: 'Does Domino\'s Use a POS System?',
     description: 'Exploring Domino\'s proprietary Pulse POS system and how independent pizza shops can access similar pizza-specific POS features.',
-    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://www.posso.co.uk' },
-    publisher: { '@type': 'Organization', name: 'Posso Ltd', logo: { '@type': 'ImageObject', url: 'https://www.posso.co.uk/icon-512x512.png' } },
+    author: { '@id': 'https://www.posso.co.uk/#organization' },
+    publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     datePublished: '2026-04-08',
     dateModified: '2026-04-08',
     url: 'https://www.posso.co.uk/does-dominos-use-a-pos-system',
@@ -111,8 +113,8 @@ export default function DominosPosSystemPage() {
               <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                 Get Pizza POS Features <ArrowRight className="ml-2 h-5 w-5" />
               </a>
-              <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+              <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                <Phone className="mr-2 h-5 w-5" /> {posso.phone}
               </a>
             </div>
           </div>
@@ -166,7 +168,7 @@ export default function DominosPosSystemPage() {
             </h2>
             <p className="text-slate-400 text-lg text-center mb-10 max-w-2xl mx-auto">
               You do not need Domino&apos;s budget to get a pizza-specific POS.{' '}
-              <Link href="/pizza-epos" className="text-primary hover:underline font-semibold">Posso&apos;s Pizza POS</Link>{' '}
+              <Link href="/pos-for-pizza-shop" className="text-primary hover:underline font-semibold">Posso&apos;s Pizza POS</Link>{' '}
               gives independent pizza shops many of the same core capabilities — at a fraction of the cost.
             </p>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -183,11 +185,11 @@ export default function DominosPosSystemPage() {
             <div className="glass-card rounded-2xl border border-primary/20 p-8 mt-10">
               <div className="grid sm:grid-cols-3 gap-6 text-center">
                 <div>
-                  <p className="text-3xl font-bold text-primary">£499</p>
+                  <p className="text-3xl font-bold text-primary">{posso.posPrice}</p>
                   <p className="text-slate-400 text-sm mt-1">POS from (+ VAT)</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-white">£699</p>
+                  <p className="text-3xl font-bold text-white">{posso.kioskPrice}</p>
                   <p className="text-slate-400 text-sm mt-1">Kiosks from (+ VAT)</p>
                 </div>
                 <div>
@@ -228,8 +230,8 @@ export default function DominosPosSystemPage() {
               </div>
               <p>
                 Ready to bring pizza-specific POS technology to your shop?{' '}
-                <Link href="/pizza-epos" className="text-primary hover:underline font-semibold">Explore Posso&apos;s Pizza POS system</Link>{' '}
-                or call <a href="tel:+448081753956" className="text-primary hover:underline">0808 175 3956</a> for a free demo.
+                <Link href="/pos-for-pizza-shop" className="text-primary hover:underline font-semibold">Explore Posso&apos;s Pizza POS system</Link>{' '}
+                or call <a href={posso.phoneHref} className="text-primary hover:underline">{posso.phone}</a> for a free demo.
               </p>
             </div>
           </div>
@@ -241,7 +243,7 @@ export default function DominosPosSystemPage() {
             <div className="glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore Pizza POS Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pos-for-pizza-shop" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza POS System</p>
                   <p className="text-slate-400 text-sm mt-1">Visual pizza builder</p>
                 </Link>
@@ -255,20 +257,22 @@ export default function DominosPosSystemPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.kioskPrice} + VAT</p>
                 </Link>
               </div>
             </div>
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Domino's POS System — FAQs" faqs={[
           { question: 'What POS system does Domino\'s use?', answer: 'Domino\'s uses a proprietary POS system called Pulse. It was custom-built for Domino\'s franchise operations and handles order management, delivery tracking, kitchen display, inventory, and customer data. Pulse is not available for purchase — it is an internal system used exclusively by Domino\'s stores.' },
-          { question: 'Can I buy the Domino\'s Pulse POS system?', answer: 'No. Pulse is a proprietary system developed by and for Domino\'s. It is not sold or licensed to other businesses. However, you can get similar pizza-specific POS features from providers like Posso, whose pizza builder offers visual pizza building, split-sided ordering, and delivery management from £499 + VAT.' },
+          { question: 'Can I buy the Domino\'s Pulse POS system?', answer: `No. Pulse is a proprietary system developed by and for Domino's. It is not sold or licensed to other businesses. However, you can get similar pizza-specific POS features from providers like Posso, whose pizza builder offers visual pizza building, split-sided ordering, and delivery management from ${posso.posPrice} + VAT.` },
           { question: 'What makes a pizza POS different from a regular POS?', answer: 'A pizza POS understands pizza as a product — it handles size-based pricing, split-sided toppings (half-and-half), visual pizza building, per-topping pricing by size, and kitchen tickets with full pizza specs. A regular POS treats pizza as a simple menu item with text-based modifiers.' },
-          { question: 'How can an independent pizza shop compete with Domino\'s technology?', answer: 'By investing in a pizza-specific POS system. Posso offers a visual pizza builder, online ordering with the builder built in, self-order kiosks, delivery management, and kitchen displays — the same core capabilities Domino\'s built into Pulse, but at a price point independent shops can afford (from £499 + VAT).' },
+          { question: 'How can an independent pizza shop compete with Domino\'s technology?', answer: `By investing in a pizza-specific POS system. Posso offers a visual pizza builder, online ordering with the builder built in, self-order kiosks, delivery management, and kitchen displays — the same core capabilities Domino's built into Pulse, but at a price point independent shops can afford (from ${posso.posPrice} + VAT).` },
           { question: 'Is it worth getting a pizza-specific POS for a small pizza shop?', answer: 'Absolutely. Even a single-location pizza shop benefits from faster ordering (10 seconds vs 30–60 with a generic POS), fewer errors from visual building, higher online order value from the pizza builder, and proper delivery management. The time saved per order adds up to hours every week.' },
-          { question: 'How much does a pizza POS cost compared to Domino\'s Pulse?', answer: 'Domino\'s invested tens of millions developing Pulse. An independent pizza shop can get a pizza-specific POS from Posso starting at £499 + VAT for the till hardware with pizza builder software, or £699 + VAT for a self-order kiosk. Free setup and training are included.' },
+          { question: 'How much does a pizza POS cost compared to Domino\'s Pulse?', answer: `Domino's invested tens of millions developing Pulse. An independent pizza shop can get a pizza-specific POS from Posso starting at ${posso.posPrice} + VAT for the till hardware with pizza builder software, or ${posso.kioskPrice} + VAT for a self-order kiosk. Free setup and training are included.` },
         ]} />
 
         <Contact />

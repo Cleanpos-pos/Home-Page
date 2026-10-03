@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Smartphone, QrCode, Bell, CreditCard, BarChart3, Utensils } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Mobile Ordering Apps',
   description:
-    'Mobile Ordering Apps for restaurants and cafes — QR code ordering, push notifications, mobile payments, and real-time kitchen integration. Mobile-first ordering from £499 + VAT.',
+    `Mobile Ordering Apps for restaurants and cafes — QR code ordering, push notifications, mobile payments, and real-time kitchen integration. Mobile-first ordering from ${posso.posPrice} + VAT.`,
   keywords: [
     'mobile ordering apps',
     'mobile ordering app uk',
@@ -124,14 +125,14 @@ export default function MobileOrderingAppsPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> QR code ordering — no app download needed</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Push notifications with 65% open rates</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS integration from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS integration from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -216,7 +217,7 @@ export default function MobileOrderingAppsPage() {
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function MobileOrderingAppsPage() {
           { question: 'Can I send push notifications?', answer: 'Yes, to customers who have downloaded your branded app. Segment notifications by order history, last visit date, or preferred items. Send a lunch deal at 11:30am, a coffee offer at 7:30am, or a weekend dinner promotion on Friday afternoon. Push notifications have average open rates of 65%, making them the most effective marketing channel for repeat business.' },
           { question: 'Does mobile ordering integrate with my POS?', answer: 'Yes. All mobile orders — whether from QR code table ordering, the branded app, or web ordering — arrive directly on your Posso POS and kitchen display system. No separate tablets, no re-keying. Sales data from all channels is consolidated in one dashboard for reporting and analysis.' },
           { question: 'Will mobile ordering reduce my staffing costs?', answer: 'Most venues reduce front-of-house staff requirements by 1-2 people per shift when mobile ordering reaches 50-70% adoption. Staff are freed from order-taking to focus on food delivery, hospitality, and upselling. The savings in labour costs typically exceed the cost of the mobile ordering system within the first month.' },
-          { question: 'How much does a mobile ordering system cost?', answer: 'The Posso mobile ordering platform integrates with POS systems from £499 + VAT. Mobile ordering operates on low commission per order. QR code table ordering, web ordering, and app ordering are all included. Free setup, menu configuration, QR code printing, and staff training included with a 2-year warranty.' },
+          { question: 'How much does a mobile ordering system cost?', answer: `The Posso mobile ordering platform integrates with POS systems from ${posso.posPrice} + VAT. Mobile ordering operates on low commission per order. QR code table ordering, web ordering, and app ordering are all included. Free setup, menu configuration, QR code printing, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

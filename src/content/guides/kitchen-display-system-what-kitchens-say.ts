@@ -1,4 +1,5 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 /**
  * Community-research page (SERP-gap batch 2, August 2026). Sources: the five
@@ -23,7 +24,7 @@ export const kitchenDisplaySystemWhatKitchensSay: Guide = {
   highlights: [
     "The chef's view, the owner's view and the IT view — sources linked",
     "What owners say goes wrong with kitchen screens",
-    "Posso KDS: 21-inch screen £399 + VAT, covered by the standard software fee",
+    `Posso KDS: 21-inch screen ${posso.kdsPrice} + VAT, covered by the standard software fee`,
   ],
   breadcrumb: "KDS — What Kitchens Say",
   quickAnswer:
@@ -58,7 +59,7 @@ export const kitchenDisplaySystemWhatKitchensSay: Guide = {
         },
         {
           title: "When people try to build their own, pricing is the tell",
-          body: "There is a whole thread of self-hosters hunting for an open-source KDS — real-time orders, prep timers, station views. When operators would rather run their own server than pay for a screen, the market's per-screen pricing has drifted from what the hardware is. It is a fair complaint, and our answer to it is structural: the screen is a one-off £399 + VAT, and the software behind it is the same standard fee that runs the till — not a separate per-month, per-screen toll.",
+          body: `There is a whole thread of self-hosters hunting for an open-source KDS — real-time orders, prep timers, station views. When operators would rather run their own server than pay for a screen, the market's per-screen pricing has drifted from what the hardware is. It is a fair complaint, and our answer to it is structural: the screen is a one-off ${posso.kdsPrice} + VAT, and the software behind it is the same standard fee that runs the till — not a separate per-month, per-screen toll.`,
         },
       ],
     },
@@ -68,7 +69,7 @@ export const kitchenDisplaySystemWhatKitchensSay: Guide = {
       heading: "What a kitchen screen actually costs",
       paragraphs: [
         "The market pattern owners describe is a monthly add-on per screen — Epos Now's KDS, for example, is reported by users at around £19 a month on top of the software plan, which is £228 a year for one screen before you have bought anything. The self-hosted thread is the reaction to exactly that structure.",
-        "Posso prices it the other way: the 21-inch kitchen screen is £399 + VAT once, and it runs under the same standard software fee as the rest of the system — from £25 + VAT a month for the platform, not per screen. Orders from the counter, phone, your own online ordering and the £45-a-month marketplace integration all land on the same display in the same queue, which is the coordination loop the owner thread asked for. If you already run our till, adding the screen is hardware plus configuration, not a new subscription.",
+        `Posso prices it the other way: the 21-inch kitchen screen is ${posso.kdsPrice} + VAT once, and it runs under the same standard software fee as the rest of the system — from ${posso.softwareMonthly} + VAT a month for the platform, not per screen. Orders from the counter, phone, your own online ordering and the ${posso.deliveryIntegrationMonthly}-a-month marketplace integration all land on the same display in the same queue, which is the coordination loop the owner thread asked for. If you already run our till, adding the screen is hardware plus configuration, not a new subscription.`,
       ],
     },
     {
@@ -123,7 +124,7 @@ export const kitchenDisplaySystemWhatKitchensSay: Guide = {
   faqs: [
     {
       q: "Is a KDS worth it for a small restaurant or takeaway?",
-      a: "Use the threads' own threshold: multiple order channels arriving at once, prep timing affecting service, and mistakes happening in the kitchen-to-floor handoff. Tick two of three and a screen earns its £399 + VAT quickly — a takeaway with aggregator orders usually ticks all three. One channel and a short pass, and a kitchen printer is honestly fine; we will say so on the demo.",
+      a: `Use the threads' own threshold: multiple order channels arriving at once, prep timing affecting service, and mistakes happening in the kitchen-to-floor handoff. Tick two of three and a screen earns its ${posso.kdsPrice} + VAT quickly — a takeaway with aggregator orders usually ticks all three. One channel and a short pass, and a kitchen printer is honestly fine; we will say so on the demo.`,
     },
     {
       q: "KDS or kitchen printer — which should I start with?",
@@ -131,7 +132,7 @@ export const kitchenDisplaySystemWhatKitchensSay: Guide = {
     },
     {
       q: "How much does a kitchen display system cost in the UK?",
-      a: "The market pattern is a monthly per-screen add-on — around £19 a month is reported for Epos Now's — which compounds forever. Posso's 21-inch screen is £399 + VAT one-off and runs under the standard software fee (from £25 + VAT a month for the platform), not a separate per-screen subscription. On a three-year view the one-off screen is the cheaper structure by some distance.",
+      a: `The market pattern is a monthly per-screen add-on — around £19 a month is reported for Epos Now's — which compounds forever. Posso's 21-inch screen is ${posso.kdsPrice} + VAT one-off and runs under the standard software fee (from ${posso.softwareMonthly} + VAT a month for the platform), not a separate per-screen subscription. On a three-year view the one-off screen is the cheaper structure by some distance.`,
     },
     {
       q: "What goes wrong with kitchen display systems?",
@@ -139,7 +140,7 @@ export const kitchenDisplaySystemWhatKitchensSay: Guide = {
     },
     {
       q: "Do Just Eat and Deliveroo orders show on the kitchen screen?",
-      a: "On Posso, yes — that is half the point. With the £45-a-month marketplace integration, aggregator orders land in the same kitchen queue as counter, phone and your own online orders, sequenced together instead of shouted from a tablet. The wall-of-tablets problem that dominates the takeaway threads is, in the kitchen, precisely what a KDS exists to end.",
+      a: `On Posso, yes — that is half the point. With the ${posso.deliveryIntegrationMonthly}-a-month marketplace integration, aggregator orders land in the same kitchen queue as counter, phone and your own online orders, sequenced together instead of shouted from a tablet. The wall-of-tablets problem that dominates the takeaway threads is, in the kitchen, precisely what a KDS exists to end.`,
     },
     {
       q: "Will kitchen staff actually use it?",

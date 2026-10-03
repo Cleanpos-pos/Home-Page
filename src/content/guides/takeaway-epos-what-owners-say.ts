@@ -1,4 +1,5 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 /**
  * Community-research page (SERP-gap batch, August 2026). Every theme, number
@@ -24,7 +25,7 @@ export const takeawayEposWhatOwnersSay: Guide = {
   highlights: [
     "Synthesised from owner threads, with every source linked",
     "The aggregator problem, in owners' own words",
-    "Takeaway-ready EPOS from £499 + VAT when you want our version",
+    `Takeaway-ready EPOS from ${posso.posPrice} + VAT when you want our version`,
   ],
   breadcrumb: "Takeaway EPOS — Owners' View",
   quickAnswer:
@@ -71,7 +72,7 @@ export const takeawayEposWhatOwnersSay: Guide = {
       heading: "What the costs actually look like",
       paragraphs: [
         "The threads are blunter about costs than any vendor page. The pizza-specialist verdict — “not cheap but the best I've seen in 20+ years” — is the honest shape of the trade-off at the top end. At the other end, owners warn that cheap generic tills cost you back in retyped aggregator orders and kitchen chaos. And around all of it sits the number owners resent most: marketplace commission, which UK operators typically put at 14% to 35% of every order that arrives through Just Eat, Deliveroo or Uber Eats before marketing add-ons.",
-        "For the UK counter, our own numbers, stated the same way we ask other vendors to state theirs: a complete Posso system is £499 + VAT including the terminal, kitchen printer, menu build and staff training, with finance from £24.92 a week. Software runs from £25 + VAT a month. Marketplace integration — Just Eat, Deliveroo and Uber Eats orders arriving inside the till and printing straight to the kitchen — is £45 a month, only if you use it. Deliveries through your own drivers cost 30p each. Bag and box label printing is included in the order flow, which for a takeaway is not a luxury: it is how order 47 stops going home with order 48's curry.",
+        `For the UK counter, our own numbers, stated the same way we ask other vendors to state theirs: a complete Posso system is ${posso.posPrice} + VAT including the terminal, kitchen printer, menu build and staff training, with finance from ${posso.financeWeekly} a week. Software runs from ${posso.softwareMonthly} + VAT a month. Marketplace integration — Just Eat, Deliveroo and Uber Eats orders arriving inside the till and printing straight to the kitchen — is ${posso.deliveryIntegrationMonthly} a month, only if you use it. Deliveries through your own drivers cost ${posso.driverAppPerDelivery} each. Bag and box label printing is included in the order flow, which for a takeaway is not a luxury: it is how order 47 stops going home with order 48's curry.`,
       ],
     },
     {
@@ -116,7 +117,7 @@ export const takeawayEposWhatOwnersSay: Guide = {
       kicker: "Our stake",
       heading: "Where Posso fits — and where it doesn't",
       paragraphs: [
-        "Posso is a UK hospitality EPOS with 500+ UK businesses on the system, and the takeaway workflow is our home ground: aggregator integration that puts Just Eat, Deliveroo and Uber Eats orders on the same screen and kitchen queue as everything else, caller ID for phone orders, your own commission-light online ordering to shift regulars off the platforms, kitchen displays, and printed labels for bags and boxes. That list maps one-to-one onto what the threads ask for, which is why we built this page around them.",
+        `Posso is a UK hospitality EPOS with ${posso.businessCount} UK businesses on the system, and the takeaway workflow is our home ground: aggregator integration that puts Just Eat, Deliveroo and Uber Eats orders on the same screen and kitchen queue as everything else, caller ID for phone orders, your own commission-light online ordering to shift regulars off the platforms, kitchen displays, and printed labels for bags and boxes. That list maps one-to-one onto what the threads ask for, which is why we built this page around them.`,
         "Where we are not the answer, in the threads' own spirit: if you are in the US, the pizza-specialist systems praised in those threads serve you better than any UK supplier. If you are a cash-only chippy doing steady trade with a queue out the door and no delivery ambitions, a card machine and a basic till may genuinely be all the modernisation you need this year — start there, not with a full system. And if most of your revenue is dine-in, you want our restaurant configuration, not the takeaway one; they are different jobs.",
       ],
     },
@@ -175,11 +176,11 @@ export const takeawayEposWhatOwnersSay: Guide = {
   faqs: [
     {
       q: "What is the best EPOS for a takeaway in the UK?",
-      a: "The threads agree on the shape before any brand: aggregator orders integrated into one screen, kitchen printing that holds up on a Friday night, and delivery workflow — labels, driver handling, order timing — built in rather than bolted on. UK owners name ICRTouch and Lightspeed as established but expensive; Posso's takeaway configuration covers the same checklist from £499 + VAT with marketplace integration at £45 a month. Judge any of them on a demo run at Friday speed.",
+      a: `The threads agree on the shape before any brand: aggregator orders integrated into one screen, kitchen printing that holds up on a Friday night, and delivery workflow — labels, driver handling, order timing — built in rather than bolted on. UK owners name ICRTouch and Lightspeed as established but expensive; Posso's takeaway configuration covers the same checklist from ${posso.posPrice} + VAT with marketplace integration at ${posso.deliveryIntegrationMonthly} a month. Judge any of them on a demo run at Friday speed.`,
     },
     {
       q: "How do Just Eat, Deliveroo and Uber Eats integrations actually work?",
-      a: "Instead of one tablet per platform, platform orders arrive inside the EPOS: they appear on the same screen as counter and phone orders, print to the same kitchen queue, and menu changes push from one place. With Posso the integration is £45 a month, and only if you use it. What integration does not change is the commission the platforms charge on each order — the only fix for that is shifting regulars to your own ordering channel.",
+      a: `Instead of one tablet per platform, platform orders arrive inside the EPOS: they appear on the same screen as counter and phone orders, print to the same kitchen queue, and menu changes push from one place. With Posso the integration is ${posso.deliveryIntegrationMonthly} a month, and only if you use it. What integration does not change is the commission the platforms charge on each order — the only fix for that is shifting regulars to your own ordering channel.`,
     },
     {
       q: "Do fish and chip shops still get away with cash-only?",
@@ -191,7 +192,7 @@ export const takeawayEposWhatOwnersSay: Guide = {
     },
     {
       q: "What does a takeaway EPOS cost in the UK?",
-      a: "Posso's numbers, stated plainly: £499 + VAT for the complete system including kitchen printer, menu build and training; software from £25 + VAT a month; £45 a month for marketplace integration if you use it; 30p per delivery through your own drivers; finance from £24.92 a week. The threads' costing advice is right: compare total monthly cost at your real order volume — commissions included — not the hardware sticker price.",
+      a: `Posso's numbers, stated plainly: ${posso.posPrice} + VAT for the complete system including kitchen printer, menu build and training; software from ${posso.softwareMonthly} + VAT a month; ${posso.deliveryIntegrationMonthly} a month for marketplace integration if you use it; ${posso.driverAppPerDelivery} per delivery through your own drivers; finance from ${posso.financeWeekly} a week. The threads' costing advice is right: compare total monthly cost at your real order volume — commissions included — not the hardware sticker price.`,
     },
     {
       q: "What do owners warn about most in these threads?",

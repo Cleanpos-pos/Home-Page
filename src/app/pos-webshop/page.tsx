@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, ShoppingCart, RefreshCw, Package, Globe, BarChart3, CreditCard } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'POS Webshop',
   description:
-    'POS Webshop with integrated online store, real-time product sync, unified inventory, and combined reporting. Sell in-store and online from one system. POS from £499 + VAT.',
+    `POS Webshop with integrated online store, real-time product sync, unified inventory, and combined reporting. Sell in-store and online from one system. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'pos webshop',
     'pos with online store',
@@ -122,7 +124,7 @@ export default function PosWebshopPage() {
                 Sell in-store and online from one system. Products, stock, and pricing sync in real time between your POS and your webshop. No separate ecommerce platform needed.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS with integrated webshop from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS with integrated webshop from {posso.posPrice} + VAT</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Real-time stock sync across all channels</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission on online payments</li>
               </ul>
@@ -130,8 +132,8 @@ export default function PosWebshopPage() {
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function PosWebshopPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="POS Webshop — Frequently Asked Questions" faqs={[
           { question: 'How does the POS webshop sync products?', answer: 'Products are entered once on the POS. The webshop pulls product data — name, description, images, price, stock level — in real time. When you update a price or stock count on the POS, the webshop reflects the change instantly. There is no manual import/export or scheduled sync. It is one shared product catalogue.' },
           { question: 'Can customers order online for collection?', answer: 'Yes. Click-and-collect is built in. Customers place their order on the webshop and select a collection time. The order appears on your POS with the customer name and collection slot. Staff pick and prepare the order, and the customer receives a notification when it is ready to collect.' },
           { question: 'What payment methods does the webshop accept?', answer: 'The webshop accepts Visa, Mastercard, American Express, Apple Pay, Google Pay, and bank transfers. Payments are processed with low commission and settle directly into your bank account. The payment system is PCI-compliant and built into the Posso platform — no third-party gateway required.' },
           { question: 'Do I need a separate hosting provider?', answer: 'No. The webshop is hosted on the Posso platform. You get a branded URL (yourshop.posso.co.uk) or connect your own domain. Hosting, SSL certificate, and ongoing maintenance are included. No separate hosting fees, no technical setup, no CMS to manage.' },
           { question: 'Can I use the webshop for food ordering?', answer: 'Yes. Restaurants, takeaways, and food businesses use the webshop as a branded online ordering platform. Customers browse the menu with images, select items and modifiers, choose delivery or collection, and pay online. Orders fire directly to the kitchen display.' },
-          { question: 'How much does a POS webshop cost?', answer: 'The POS system with integrated webshop starts from £499 + VAT. Online payment processing is available at low commission with no monthly gateway fees. Finance available from £24.92 per week. Free setup, product upload assistance, and staff training included.' },
+          { question: 'How much does a POS webshop cost?', answer: `The POS system with integrated webshop starts from ${posso.posPrice} + VAT. Online payment processing is available at low commission with no monthly gateway fees. Finance available from ${posso.financeWeekly} per week. Free setup, product upload assistance, and staff training included.` },
         ]} />
 
         <Contact />

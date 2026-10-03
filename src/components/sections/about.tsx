@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
+import { posso } from '@/lib/possoFacts';
 
 export function About() {
   const teamImage = PlaceHolderImages.find(p => p.id === 'team-photo');
@@ -29,10 +30,10 @@ export function About() {
             Posso Ltd is a UK-based technology company specialising in <strong className="text-slate-100">restaurant ePOS systems</strong>, <strong className="text-slate-100">self-order kiosks</strong>, and integrated hospitality solutions. Founded to empower independent restaurants, takeaway chains, and leisure venues with enterprise-grade technology at affordable prices.
           </p>
           <p className="text-lg text-slate-300">
-            Our team of engineers, designers, and hospitality specialists has helped <strong className="text-slate-100">over 500 businesses</strong> across the UK streamline operations, reduce labour costs, and increase revenue. From single-site takeaways to multi-location franchises, we deliver tailored solutions that scale with your business.
+            Our team of engineers, designers, and hospitality specialists has helped <strong className="text-slate-100">{posso.businessCount} businesses</strong> across the UK streamline operations, reduce labour costs, and increase revenue. From single-site takeaways to multi-location franchises, we deliver tailored solutions that scale with your business.
           </p>
           <p className="text-lg text-slate-300">
-            Every Posso system includes free installation, staff training, and ongoing UK-based support. We believe great technology should be accessible to every hospitality business, regardless of size.
+            Every Posso system includes free setup (menu build + configuration), staff training and ongoing UK-based support; on-site installation for larger sites is priced on application. We believe great technology should be accessible to every hospitality business, regardless of size.
           </p>
           <div className="flex gap-4 pt-2">
             <Link

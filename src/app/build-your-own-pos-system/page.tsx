@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Cpu, HardDrive, MonitorSmartphone, CircleDollarSign, Timer, Blocks } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Build Your Own POS System',
   description:
-    'Build Your Own POS System — DIY approach pros and cons, hardware requirements, software options, and why a turnkey solution is faster and cheaper. POS from £499 + VAT.',
+    `Build Your Own POS System — DIY approach pros and cons, hardware requirements, software options, and why a turnkey solution is faster and cheaper. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'build your own pos system',
     'diy pos system',
@@ -45,7 +47,7 @@ const pageSchema = [
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
-      'Turnkey POS system that eliminates the complexity of building your own. Pre-configured hardware, tested software, integrated payments, and UK-based support from £499 + VAT.',
+      `Turnkey POS system that eliminates the complexity of building your own. Pre-configured hardware, tested software, integrated payments, and UK-based support from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/build-your-own-pos-system',
     offers: {
       '@type': 'AggregateOffer',
@@ -58,9 +60,9 @@ const pageSchema = [
       'Pre-tested compatible hardware',
       'Software pre-installed and configured',
       'Integrated payment processing',
-      'Free installation and training',
+      `Free setup and training`,
       'UK-based telephone support',
-      '2-year hardware warranty',
+      `${posso.warrantyYears}-year hardware warranty`,
     ],
   },
   {
@@ -79,7 +81,7 @@ const features = [
   { icon: Cpu, title: 'Software Options', description: 'Software choices for a DIY POS include open source projects (Floreant, Unicenta), cloud-based free tiers (Square, SumUp), or building from scratch. Open source requires a developer. Free tiers have feature limitations. Building from scratch requires months of development and thousands in developer costs. None include support.' },
   { icon: MonitorSmartphone, title: 'The Raspberry Pi Approach', description: 'Raspberry Pi POS projects are popular online. A Pi costs £50, add a touchscreen for £60, and install open source POS software. Sounds great — until you need a receipt printer driver that does not exist, a card reader that will not pair, and discover the Pi cannot handle 50 orders per hour without overheating.' },
   { icon: Timer, title: 'Realistic Time Commitment', description: 'Building a functional POS from components takes 60–100+ hours for someone technically competent. Hardware assembly, software installation, driver configuration, menu setup, payment integration, printer testing, and staff training. For a restaurant owner already working 60-hour weeks, this is an unacceptable time cost.' },
-  { icon: CircleDollarSign, title: 'The Real Cost Calculation', description: 'Components: £550–£1,450. Developer time (if hiring): £500–£3,000. Your own time at opportunity cost: 60–100 hours. Ongoing maintenance and troubleshooting: 2–5 hours per month. Total first-year cost: £1,500–£5,000+. A complete Posso system: from £499 + VAT with everything included and working on day one.' },
+  { icon: CircleDollarSign, title: 'The Real Cost Calculation', description: `Components: £550–£1,450. Developer time (if hiring): £500–£3,000. Your own time at opportunity cost: 60–100 hours. Ongoing maintenance and troubleshooting: 2–5 hours per month. Total first-year cost: £1,500–£5,000+. A complete Posso system: from ${posso.posPrice} + VAT with everything included and working on day one.` },
   { icon: Blocks, title: 'Why Turnkey Wins', description: 'A turnkey POS system like Posso eliminates every DIY headache. Hardware is tested and compatible. Software is pre-installed. Payments are integrated. Your menu is pre-configured. Installation takes under 2 hours. Support answers the phone when something goes wrong. You skip the project and go straight to trading.' },
 ];
 
@@ -122,16 +124,16 @@ export default function BuildYourOwnPosSystemPage() {
                 Building a POS from scratch appeals to the tinkerer in all of us. But when you add up the hardware, software, time, and ongoing maintenance, a turnkey system is faster, cheaper, and more reliable.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Turnkey POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Turnkey POS system from {posso.posPrice} + VAT</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pre-tested hardware and software</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> 2-year warranty and UK support</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> {posso.warrantyYears}-year warranty and UK support</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -190,7 +192,7 @@ export default function BuildYourOwnPosSystemPage() {
                   <strong className="text-white">Do not build your own if</strong> you need a working POS for a real business with real customers. The time investment is enormous, the reliability is questionable, and the feature gap compared to commercial systems is significant. Kitchen displays, online ordering, inventory management, and multi-terminal sync require professional software.
                 </p>
                 <p>
-                  <strong className="text-white">The smart middle ground</strong> is a turnkey system from Posso. From £499 + VAT, you get commercial hardware, professional software, integrated payments, free installation, staff training, and UK-based support. It costs less than most DIY builds and works better from day one.
+                  <strong className="text-white">The smart middle ground</strong> is a turnkey system from Posso. From {posso.posPrice} + VAT, you get commercial hardware, professional software, integrated payments, free setup, staff training and UK-based support, with software from {posso.softwareMonthly} + VAT a month. It costs less than most DIY builds and works better from day one.
                 </p>
               </div>
             </div>
@@ -223,10 +225,12 @@ export default function BuildYourOwnPosSystemPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Build Your Own POS System — Frequently Asked Questions" faqs={[
           { question: 'Can I build a POS system with a Raspberry Pi?', answer: 'Technically yes, but practically it is problematic. Raspberry Pi units overheat under continuous use, receipt printer driver support is limited, card payment integration is difficult, and the performance degrades with more than 20–30 menu items. It works as a hobby project but is not reliable enough for a business handling real money.' },
           { question: 'What hardware do I need to build a POS system?', answer: 'At minimum: a touchscreen display (15–22 inch), a computer or single-board computer, a thermal receipt printer, a cash drawer, a card payment terminal, mounting hardware, and cables. Optionally: a barcode scanner, kitchen display screen, and customer-facing display. Component sourcing and compatibility testing adds significant time.' },
-          { question: 'How much does a DIY POS system cost?', answer: 'Hardware components: £550–£1,450. Software (open source or subscriptions): £0–£30/month. Developer time if hiring: £500–£3,000. Your own time: 60–100+ hours. First-year total: £1,500–£5,000+. A complete Posso turnkey system starts from £499 + VAT including hardware, software, installation, and support.' },
+          { question: 'How much does a DIY POS system cost?', answer: `Hardware components: £550–£1,450. Software (open source or subscriptions): £0–£30/month. Developer time if hiring: £500–£3,000. Your own time: 60–100+ hours. First-year total: £1,500–£5,000+. A complete Posso turnkey system starts from ${posso.posPrice} + VAT including hardware, software, installation, and support.` },
           { question: 'What software do I need for a DIY POS?', answer: 'Options include open source POS software (Floreant, Unicenta, Odoo), cloud-based free tiers (Square POS, SumUp), or custom-built software. Open source requires Linux knowledge and developer skills. Free tiers have transaction fees and feature limits. Custom builds require professional development — the most expensive option.' },
           { question: 'Is a DIY POS system reliable?', answer: 'Reliability depends on your technical ability and component quality. Consumer hardware in a commercial environment fails more frequently than commercial-grade equipment. Without warranty coverage and professional support, every failure means lost trading time while you diagnose and fix the problem yourself.' },
           { question: 'How long does it take to build a POS from scratch?', answer: 'For a technically competent person: 60–100+ hours spread across several weeks. This includes hardware sourcing, assembly, software installation, driver configuration, menu setup, payment terminal integration, printer testing, and staff training. A Posso system installs in under 2 hours, fully pre-configured.' },

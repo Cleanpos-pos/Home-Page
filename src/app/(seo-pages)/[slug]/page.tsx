@@ -8,6 +8,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { SolutionEnquiryModal } from '@/components/solution-enquiry-modal';
 import { allSeoPages, getPageBySlug, getAllSlugs, type SeoPageData } from '@/lib/seo-pages-data';
+import { posso } from '@/lib/possoFacts';
 
 const featureIcons = [Zap, Smartphone, Globe, ShieldCheck, BarChart3, ArrowRight];
 
@@ -65,7 +66,7 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
     "operatingSystem": "Web, iOS, Android",
     "applicationCategory": page.category,
     "description": page.description,
-    "author": { "@type": "Organization", "name": "Posso Ltd" },
+    "author": { '@id': 'https://www.posso.co.uk/#organization' },
     "url": `https://www.posso.co.uk/${page.slug}`
   };
 
@@ -101,11 +102,7 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
       "duration": page.video.durationISO,
       "contentUrl": `https://www.posso.co.uk/videos/${page.slug}.mp4`,
       "embedUrl": base,
-      "publisher": {
-        "@type": "Organization",
-        "name": "Posso Ltd",
-        "logo": { "@type": "ImageObject", "url": "https://www.posso.co.uk/icon-512x512.png" },
-      },
+      "publisher": { '@id': 'https://www.posso.co.uk/#organization' },
       "hasPart": ch.map((c, i) => ({
         "@type": "Clip",
         "name": c.name,
@@ -292,7 +289,7 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
               </div>
               <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
                 <p className="text-3xl font-bold text-emerald-400 mb-2">Mon–Fri</p>
-                <p className="text-slate-500 text-sm">UK-Based Support, 9am–9:30pm</p>
+                <p className="text-slate-500 text-sm">UK-Based Support, {posso.supportTime}</p>
               </div>
             </div>
           </div>
@@ -360,7 +357,7 @@ export default async function SeoPage({ params }: { params: Promise<{ slug: stri
                 />
                 <Link href="tel:08081753956">
                   <Button size="lg" variant="outline" className="h-14 px-10 text-lg rounded-full border-slate-700 hover:bg-slate-800 text-white">
-                    Call 0808 175 3956
+                    Call {posso.phone}
                   </Button>
                 </Link>
               </div>

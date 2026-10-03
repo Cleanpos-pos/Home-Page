@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Beer, QrCode, CreditCard, ListPlus, Clock, Percent } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Bar Ordering App',
   description:
-    'Bar Ordering App with QR table ordering, tab management, drink modifiers, happy hour pricing, and mobile payments. Built for bars and pubs. POS from £499 + VAT.',
+    `Bar Ordering App with QR table ordering, tab management, drink modifiers, happy hour pricing, and mobile payments. Built for bars and pubs. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'bar ordering app',
     'bar order app',
@@ -124,14 +125,14 @@ export default function BarOrderingAppPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> QR ordering — no app download needed</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Happy hour pricing runs automatically</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Bar POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Bar POS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function BarOrderingAppPage() {
           { question: 'Can I set up happy hour automatically?', answer: 'Yes. Define happy hour schedules in the POS — for example, all cocktails two-for-one from 5–7pm on weekdays, 20% off pints on Tuesdays. Prices change automatically when happy hour starts and revert when it ends. No staff intervention needed. Your reports show the exact revenue impact of each promotion.' },
           { question: 'How are drink modifiers handled?', answer: 'Every drink can have modifiers: mixer type and brand, single or double measure, ice preference, garnish. Each modifier can have its own price. A Hendrick\'s gin with Fever-Tree tonic, double, with cucumber — the system prices it correctly and the bar display shows the full specification. No ambiguity, no mistakes.' },
           { question: 'Does it work alongside traditional bar service?', answer: 'Yes. QR ordering runs alongside your normal bar service. Some customers will scan and order from their table. Others will walk up to the bar and order with staff. Both routes feed into the same POS and bar display. You are adding a channel, not replacing one. Over time, more customers gravitate to QR ordering because it is faster.' },
-          { question: 'How much does the bar ordering app cost?', answer: 'The bar POS with QR ordering starts from £499 + VAT including touchscreen terminal, bar display, and QR ordering setup. We provide printed QR code table cards. Low commission on mobile orders. Finance from £24.92 per week. Free setup, menu configuration, and staff training with a 2-year warranty.' },
+          { question: 'How much does the bar ordering app cost?', answer: `The bar POS with QR ordering starts from ${posso.posPrice} + VAT including touchscreen terminal, bar display, and QR ordering setup. We provide printed QR code table cards. Low commission on mobile orders. Finance from ${posso.financeWeekly} per week. Free setup, menu configuration, and staff training with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Globe, ShoppingBag, Truck, Bell, CreditCard, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Online Ordering POS',
   description:
-    'Online Ordering POS with built-in website ordering, delivery and collection management, and no third-party commission. Own your customer data. POS from £499 + VAT.',
+    `Online Ordering POS with built-in website ordering, delivery and collection management, and no third-party commission. Own your customer data. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'online ordering pos',
     'pos with online ordering',
@@ -124,14 +126,14 @@ export default function OnlineOrderingPosPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Branded ordering website included</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Delivery and collection with live tracking</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Online ordering POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Online ordering POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function OnlineOrderingPosPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Online Ordering POS — Frequently Asked Questions" faqs={[
           { question: 'Do I need a separate website for online ordering?', answer: 'No. The Posso POS includes a branded online ordering website that is generated from your existing menu. Customers access it via your domain or a Posso subdomain. The website is mobile-optimised, fast, and designed to convert browsers into buyers. No web developer needed.' },
           { question: 'How much commission do you charge on online orders?', answer: 'Posso charges low commission on online orders — significantly less than the 25-35% charged by third-party marketplaces. The exact rate depends on your plan. There are no hidden fees, no per-order surcharges, and no monthly minimums. You keep the vast majority of your revenue.' },
           { question: 'Can I manage delivery zones and minimum orders?', answer: 'Yes. Set up delivery zones by postcode or radius. Each zone can have its own delivery charge and minimum order value. If a customer enters an address outside your delivery area, the system offers collection instead. You control the zones from your dashboard and can adjust them at any time.' },
           { question: 'Do online orders appear on my kitchen display?', answer: 'Yes. Online orders sync to your kitchen display in real time alongside walk-in, phone, and kiosk orders. Each order is labelled with its source and type — delivery or collection. The kitchen works from one queue, regardless of how the order was placed.' },
           { question: 'Can customers track their delivery?', answer: 'Yes. After placing an order, customers receive live status updates: order confirmed, preparing, ready, out for delivery. If you use your own drivers, the system provides estimated delivery times based on your zone configuration. Customers stay informed without needing to call your restaurant.' },
-          { question: 'How much does an online ordering POS cost?', answer: 'The complete POS with built-in online ordering starts from £499 + VAT including touchscreen terminal, cloud software, and branded ordering website. Online orders are processed at low commission. Free setup, menu configuration, and staff training included with a 2-year warranty.' },
+          { question: 'How much does an online ordering POS cost?', answer: `The complete POS with built-in online ordering starts from ${posso.posPrice} + VAT including touchscreen terminal, cloud software, and branded ordering website. Online orders are processed at low commission. Free setup, menu configuration, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, AlertTriangle, Scale, TrendingUp, Shield, Zap, DollarSign } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Restaurant Software Free',
   description:
-    'Restaurant Software Free — what free restaurant POS software really offers, the limitations you need to know, hidden costs, and when to upgrade to a full system. POS from £499 + VAT.',
+    `Restaurant Software Free — what free restaurant POS software really offers, the limitations you need to know, hidden costs, and when to upgrade to a full system. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'restaurant software free',
     'free restaurant pos',
@@ -60,7 +61,7 @@ const pageSchema = [
       'Kitchen display system with course firing',
       'Online ordering at low commission',
       'Full inventory and recipe costing',
-      'Affordable upgrade from £499 + VAT',
+      `Affordable upgrade from ${posso.posPrice} + VAT`,
     ],
   },
   {
@@ -79,15 +80,15 @@ const features = [
   { icon: Scale, title: 'The Limitations You Hit', description: 'Free tiers typically cap the number of products, users, or transactions. Kitchen display systems, table management, online ordering, and detailed analytics are locked behind paid plans. Support is community forums, not a phone line. When service breaks down on a Saturday night, there is no one to call. The "free" label hides the cost of lost revenue from missing features.' },
   { icon: DollarSign, title: 'Hidden Costs of Free', description: 'Free POS software often monetises through payment processing fees that are 0.5-1% higher than standard rates. On £500,000 annual card turnover, that is £2,500-£5,000 extra per year in processing fees alone. Add the cost of workarounds for missing features — spreadsheets for stock, paper for kitchen orders — and free becomes expensive quickly.' },
   { icon: TrendingUp, title: 'When to Upgrade', description: 'The moment you need kitchen printing, table management, online ordering, staff permissions, or detailed reporting, free software runs out. If you are processing more than 50 orders per day, the limitations will cost you more in inefficiency than a proper system costs in monthly fees. The right time to upgrade is before the limitations start losing you money.' },
-  { icon: Zap, title: 'The Posso Upgrade Path', description: 'Posso offers a full restaurant POS from £499 + VAT with everything free software lacks — KDS, table management, online ordering at low commission, inventory control, and UK phone support. Finance from £24.92 per week. Free setup and training included. You get a system built for restaurants, not a generic tool with restaurant features bolted on.' },
-  { icon: Shield, title: 'UK Support and Compliance', description: 'A proper restaurant POS comes with UK-based phone support, HMRC-compliant reporting, GDPR data handling, and a 2-year hardware warranty. Free software offers none of these. When HMRC requires Making Tax Digital compliance or a card terminal stops working during service, you need a provider who answers the phone — not a community forum.' },
+  { icon: Zap, title: 'The Posso Upgrade Path', description: `Posso offers a full restaurant POS from ${posso.posPrice} + VAT with everything free software lacks — KDS, table management, online ordering at low commission, inventory control, and UK phone support. Finance from ${posso.financeWeekly} per week. Free setup and training included. You get a system built for restaurants, not a generic tool with restaurant features bolted on.` },
+  { icon: Shield, title: 'UK Support and Compliance', description: `A proper restaurant POS comes with UK-based phone support, HMRC-compliant reporting, GDPR data handling, and a ${posso.warrantyYears}-year hardware warranty. Free software offers none of these. When HMRC requires Making Tax Digital compliance or a card terminal stops working during service, you need a provider who answers the phone — not a community forum.` },
 ];
 
 const benefits = [
   { title: 'Start Free, Scale Smart', description: 'There is nothing wrong with starting on free software to test your concept. But plan your upgrade path from day one. Choose a provider that offers a free demo or trial of the full system so you can compare what free gives you versus what you actually need. The gap between free and paid is often smaller than the cost of the workarounds.' },
-  { title: 'Calculate the True Cost', description: 'Compare the total cost: free software with higher processing fees and missing features versus a paid system at £499 + VAT with standard processing rates. Factor in the staff time spent on manual workarounds, the orders lost to missing online ordering, and the waste from no inventory tracking. In most cases, the paid system is cheaper within three months.' },
+  { title: 'Calculate the True Cost', description: `Compare the total cost: free software with higher processing fees and missing features versus a paid system at ${posso.posPrice} + VAT with standard processing rates. Factor in the staff time spent on manual workarounds, the orders lost to missing online ordering, and the waste from no inventory tracking. In most cases, the paid system is cheaper within three months.` },
   { title: 'Get Proper Kitchen Operations', description: 'Free restaurant software rarely includes a kitchen display system. That means paper tickets, shouted orders, and missed courses. A proper KDS routes orders to the right station, fires courses on time, and tracks preparation speed. The efficiency gain alone — fewer remakes, faster table turns — pays for the upgrade.' },
-  { title: 'Own Your Customer Data', description: 'Free POS platforms often retain rights over your customer data or limit your ability to export it. A system you own from £499 + VAT means your customer database, transaction history, and business intelligence belong to you. When you switch providers or scale up, your data comes with you.' },
+  { title: 'Own Your Customer Data', description: `Free POS platforms often retain rights over your customer data or limit your ability to export it. A system you own from ${posso.posPrice} + VAT means your customer database, transaction history, and business intelligence belong to you. When you switch providers or scale up, your data comes with you.` },
 ];
 
 export default function RestaurantSoftwareFreePage() {
@@ -123,15 +124,15 @@ export default function RestaurantSoftwareFreePage() {
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Honest comparison of free vs paid POS</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full restaurant POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full restaurant POS from {posso.posPrice} + VAT</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Free demo available — no commitment</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -187,7 +188,7 @@ export default function RestaurantSoftwareFreePage() {
                   Free restaurant software is a <strong className="text-white">marketing strategy, not a business model</strong>. The provider needs to make money somewhere — usually through higher payment processing fees, premium feature upsells, or advertising. Understanding where the revenue comes from tells you where the hidden costs lie.
                 </p>
                 <p>
-                  A restaurant doing <strong className="text-white">£8,000 per week in card payments</strong> might pay 1.5% on a free POS versus 1.0% on a paid system. That 0.5% difference is £40 per week, or £2,080 per year. The Posso POS costs £499 + VAT. The maths is straightforward — the paid system saves money from month five onwards.
+                  A restaurant doing <strong className="text-white">£8,000 per week in card payments</strong> might pay 1.5% on a free POS versus 1.0% on a paid system. That 0.5% difference is £40 per week, or £2,080 per year. The Posso POS costs {posso.posPrice} + VAT. The maths is straightforward — the paid system saves money from month five onwards.
                 </p>
                 <p>
                   Beyond fees, consider the <strong className="text-white">operational cost of missing features</strong>. No KDS means paper tickets and verbal communication — leading to wrong orders and remakes. No table management means manual floor plans and double-bookings. No online ordering means losing customers to competitors who offer it. Each missing feature has a revenue cost.
@@ -212,7 +213,7 @@ export default function RestaurantSoftwareFreePage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
@@ -227,7 +228,7 @@ export default function RestaurantSoftwareFreePage() {
           { question: 'Is free restaurant software really free?', answer: 'The software itself may cost nothing to download, but free POS systems typically generate revenue through higher payment processing fees (0.5-1% above standard rates), premium feature upsells, and limited support. A restaurant processing £400,000 in card payments annually could pay £2,000-£4,000 extra in fees compared to a system with standard rates.' },
           { question: 'What features are missing from free restaurant POS?', answer: 'Free tiers typically exclude kitchen display systems, table management with floor plans, online ordering integration, detailed inventory control, staff management with permissions, advanced reporting, and phone support. These are the features that drive efficiency in a busy restaurant — and they are usually locked behind a paid subscription.' },
           { question: 'When should I upgrade from free to paid?', answer: 'Upgrade when you are processing more than 50 orders per day, need kitchen printing or a KDS, want online ordering, require table management for reservations, or need reliable phone support. If your staff are using spreadsheets or paper to fill gaps in the free software, you have already passed the tipping point.' },
-          { question: 'How much does a proper restaurant POS cost?', answer: 'The Posso restaurant POS starts from £499 + VAT for the complete system including touchscreen terminal, kitchen display software, table management, and UK phone support. Finance is available from £24.92 per week. Online ordering is available at low commission. Free setup, menu configuration, and staff training are included.' },
+          { question: 'How much does a proper restaurant POS cost?', answer: `The Posso restaurant POS starts from ${posso.posPrice} + VAT for the complete system including touchscreen terminal, kitchen display software, table management, and UK phone support. Finance is available from ${posso.financeWeekly} per week. Online ordering is available at low commission. Free setup, menu configuration, and staff training are included.` },
           { question: 'Can I migrate my data from free software to Posso?', answer: 'Yes. The Posso team handles data migration as part of the free setup process. Your product catalogue, customer database, and pricing structure are transferred to the new system. The transition is managed to minimise disruption — typically completed in one day with training for your staff included.' },
           { question: 'Do you offer a free trial?', answer: 'Yes. Posso offers a free demo where we set up the full system with your menu and show you exactly how it works in your environment. You see every feature working with your actual products before making any commitment. There is no obligation and no card details required for the demo.' },
         ]} />

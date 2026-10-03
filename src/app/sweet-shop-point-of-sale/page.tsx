@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Store, Image, Heart, Receipt, Layers, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Sweet Shop Point of Sale',
   description:
-    'Sweet Shop Point of Sale — complete till system with product images, customer loyalty, pick and mix, gift cards, and stock tracking for sweet shops and confectioners. From £499 + VAT.',
+    `Sweet Shop Point of Sale — complete till system with product images, customer loyalty, pick and mix, gift cards, and stock tracking for sweet shops and confectioners. From ${posso.posPrice} + VAT.`,
   keywords: [
     'sweet shop point of sale',
     'sweet shop till',
@@ -124,14 +126,14 @@ export default function SweetShopPointOfSalePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Product images on till for quick identification</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Loyalty, gift cards, and customer rewards</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Sweet shop point of sale from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Sweet shop point of sale from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function SweetShopPointOfSalePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Sweet Shop Point of Sale — Frequently Asked Questions" faqs={[
           { question: 'How do product images work on the till?', answer: 'Every product in your catalogue can have a photograph displayed on the touchscreen. When staff browse categories or search for a product, they see the image alongside the name and price. This is especially valuable in sweet shops with 200+ loose sweet varieties — staff identify products visually without needing to memorise every name. Images are uploaded during setup or added via the cloud portal.' },
           { question: 'How does the loyalty programme work?', answer: 'Customers register with a phone number or email. Each purchase earns points automatically — typically 1 point per £1 spent. When they reach the reward threshold (e.g., 100 points), they can redeem for a free product, a discount, or a specific reward you define. Points balances are checked at the till instantly. The dashboard shows customer visit frequency, average spend, and favourite products.' },
           { question: 'Can I sell and manage gift cards?', answer: 'Yes. Sell physical or digital gift cards in any denomination from the till. Cards are activated at the point of sale and can be redeemed against any product. Check balances instantly by scanning or entering the card number. Track total gift card sales, redemptions, and outstanding balances in your reports. Partially used cards retain their remaining balance for future visits.' },
           { question: 'Does it handle seasonal products?', answer: 'Yes. Create seasonal categories that appear on the till during specific date ranges — Easter eggs from February to April, Christmas selection boxes from October to December, Halloween treats in October. Year-over-year comparison reports show exactly what sold last season, helping you plan orders accurately and avoid overstock that gets discounted or wasted.' },
           { question: 'Can it manage age-restricted products?', answer: 'Yes. If you sell any age-restricted confectionery products (such as items containing alcohol), the POS prompts for age verification at the point of sale. The prompt cannot be bypassed without manager authorisation. This ensures compliance with licensing regulations and protects your business from accidental underage sales.' },
-          { question: 'How much does a sweet shop point of sale cost?', answer: 'The complete sweet shop point of sale starts from £499 + VAT including touchscreen terminal, barcode scanner, receipt printer, and scale connection. Loyalty programme, gift card management, and stock tracking are included. Finance from £24.92 per week. Free setup with product images configured and staff training included with a 2-year warranty.' },
+          { question: 'How much does a sweet shop point of sale cost?', answer: `The complete sweet shop point of sale starts from ${posso.posPrice} + VAT including touchscreen terminal, barcode scanner, receipt printer, and scale connection. Loyalty programme, gift card management, and stock tracking are included. Finance from ${posso.financeWeekly} per week. Free setup with product images configured and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

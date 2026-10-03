@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Search, Ruler, ClipboardList, Package, ShieldAlert, Zap, Clock } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
-  title: 'Fish & Chip Shop EPOS & Till System — from £499',
+  title: `Fish & Chip Shop EPOS & Till System — from ${posso.posPrice}`,
   description:
-    'Choosing an EPOS for a fish & chip shop? What actually matters — portion pricing, condiment prompts, meal deals and peak-hour speed — plus real costs. Posso tills from £499 + VAT, UK support.',
+    `Choosing an EPOS for a fish & chip shop? What actually matters — portion pricing, condiment prompts, meal deals and peak-hour speed — plus real costs. Posso tills from ${posso.posPrice} + VAT, UK support.`,
   keywords: [
     'pos for fish and chip shop',
     'fish and chip shop epos',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Fish & Chip Shop EPOS & Till System | Posso UK',
     description:
-      'Fish & chip shop EPOS buyer\'s guide — the six things that actually matter, what to test before you buy, and what it costs. Posso tills from £499 + VAT.',
+      `Fish & chip shop EPOS buyer's guide — the six things that actually matter, what to test before you buy, and what it costs. Posso tills from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/pos-for-fish-and-chip-shop',
     type: 'website',
     // TODO: replace with a bespoke 1200×630 chip shop card once artwork exists
@@ -147,14 +149,14 @@ export default function PosForFishAndChipShopPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Six features a chippy actually needs</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> What to test before you sign anything</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Fish and chip shop POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Fish and chip shop POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -227,7 +229,7 @@ export default function PosForFishAndChipShopPage() {
                   The system is <strong className="text-white">offline-first</strong>. If the broadband drops mid-service you keep taking orders, taking cash and printing tickets, and everything syncs when the connection returns.
                 </p>
                 <p>
-                  Pricing starts at <strong className="text-white">£499 + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a two-year warranty. On-site installation is quoted separately if you want it. Orders through your own website or app carry a 60p service fee paid by the customer at checkout, so there is no percentage commission on your own trade; you pay card processing only. Card payments run through Posso Pay. It is all one{' '}
+                  Pricing starts at <strong className="text-white">{posso.posPrice} + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a {posso.warrantyYearsWord}-year warranty. On-site installation for larger sites is priced on application. Orders through your own website or app carry a 60p service fee paid by the customer at checkout, so there is no percentage commission on your own trade; you pay card processing only. Card payments run through Posso Pay. It is all one{' '}
                   <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
                   rather than separate products bolted together.
                 </p>
@@ -274,10 +276,12 @@ export default function PosForFishAndChipShopPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="POS for Fish and Chip Shops — Frequently Asked Questions" faqs={[
           { question: 'What is a fish and chip shop POS system?', answer: 'A fish and chip shop POS system is point-of-sale software built around the counter-service workflow of a chippy — portion and size pricing for fish and chips, compulsory prompts for salt, vinegar and wrapping, meal deals priced as single items, allergen tagging for fried menus, kitchen printing, card payments, and timed collection or delivery ordering.' },
           { question: 'Does a chip shop really need a specialist POS?', answer: 'Not a specialist system, but a specialist configuration. A general retail till will take money and print a receipt. What it will not do is price six portion variants on one screen, force a wrapping prompt, price a meal deal as one line, or hold a collection order for half six. Those are the four things that decide whether service runs smoothly at peak.' },
-          { question: 'How much does a fish and chip shop POS cost in the UK?', answer: 'A complete system with a touchscreen terminal, kitchen printing and online ordering typically starts around £499 + VAT upfront, with monthly software from roughly £30. Add kitchen display screens, extra printers or a kiosk and the upfront figure rises. The number that matters over three years is usually online ordering commission, not hardware — a percentage-based platform on a busy shop will outspend the terminal several times over.' },
+          { question: 'How much does a fish and chip shop POS cost in the UK?', answer: `A complete system with a touchscreen terminal, kitchen printing and online ordering typically starts around ${posso.posPrice} + VAT upfront, with monthly software from roughly £30. Add kitchen display screens, extra printers or a kiosk and the upfront figure rises. The number that matters over three years is usually online ordering commission, not hardware — a percentage-based platform on a busy shop will outspend the terminal several times over.` },
           { question: 'Can a chip shop POS handle a kebab or burger menu as well?', answer: 'Yes, and it should. Many chippies run a second menu off the same range. What to check is whether each menu section can carry its own modifier sets — salt and vinegar on one side, salad and sauces on the other — without the two interfering. Posso handles both on one screen.' },
           { question: 'Can online orders and Just Eat orders come into the same system?', answer: 'Yes. Orders from your own website, from the counter, from the phone and from Just Eat, Uber Eats or Deliveroo can all arrive in one queue on the POS and one list on the kitchen display. Without that, staff are re-typing marketplace orders from separate tablets during the busiest hour of the week.' },
           { question: 'Can the POS hold a collection order for a specific time?', answer: 'Yes. Collection orders can be scheduled into time slots with a limit on how many the system will accept per slot, so a burst of online orders is spread across the service instead of arriving together. This matters far more to a chip shop than delivery routing does.' },

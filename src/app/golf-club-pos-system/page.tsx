@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Users, ShoppingBag, Wine, Utensils, CalendarDays, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Golf Club POS System',
   description:
-    'Golf Club POS System for pro shop, bar, restaurant, member accounts, and event catering. Multi-venue management, member charging, and club-specific reporting. POS from £499 + VAT.',
+    `Golf Club POS System for pro shop, bar, restaurant, member accounts, and event catering. Multi-venue management, member charging, and club-specific reporting. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'golf club pos system',
     'golf club epos',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Golf Club POS System | Posso UK',
     description:
-      'Golf Club POS System for pro shop, bar, restaurant, and member accounts. Multi-venue POS for golf clubs. From £499 + VAT.',
+      `Golf Club POS System for pro shop, bar, restaurant, and member accounts. Multi-venue POS for golf clubs. From ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/golf-club-pos-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -124,14 +126,14 @@ export default function GolfClubPosSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Member account charging across all outlets</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pro shop, bar & restaurant on one system</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Golf club POS from £499 + VAT per outlet</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Golf club POS from {posso.posPrice} + VAT per outlet</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -219,13 +221,15 @@ export default function GolfClubPosSystemPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Golf Club POS System — Frequently Asked Questions" faqs={[
           { question: 'Can members charge purchases to their account?', answer: 'Yes. Members swipe their member card or enter their member number at any POS terminal — pro shop, bar, or restaurant. The charge is added to their account. Monthly statements detail every transaction with date, time, outlet, and items. The treasurer gets a consolidated report for all members.' },
           { question: 'Does it handle pro shop retail and bar/restaurant service?', answer: 'Yes. The pro shop POS includes barcode scanning, stock management, and retail workflows. The bar and restaurant POS includes tab management, table service, kitchen display, and hospitality features. Both run on the same Posso platform with shared member accounts and unified reporting.' },
           { question: 'How does event catering management work?', answer: 'Create an event (competition day, society visit, wedding) and set up the catering package — pre-ordered meals, bar arrangements, dietary requirements. Track consumption during the event. Generate an invoice with a detailed breakdown for the organiser. Save configurations for recurring events.' },
           { question: 'Can we see reports across all club outlets?', answer: 'Yes. The cloud dashboard shows revenue, sales mix, and performance for each outlet — pro shop, bar, restaurant, events — and a consolidated view across the whole club. Compare outlets, track seasonal patterns, and export data for committee meetings and financial reporting.' },
           { question: 'Is it suitable for clubs with visitors and non-members?', answer: 'Yes. The POS handles member and non-member transactions. Members charge to their account or pay at the point of sale. Visitors and society members pay by card or cash. Reporting separates member spend from visitor spend so you can track both revenue streams.' },
-          { question: 'How much does the golf club POS cost?', answer: 'The golf club POS starts from £499 + VAT per outlet. A club with pro shop, bar, and restaurant would have three outlets. Multi-outlet packages are available. Finance options from £24.92 per week per outlet. Free setup, training, and menu configuration included with a 2-year warranty.' },
+          { question: 'How much does the golf club POS cost?', answer: `The golf club POS starts from ${posso.posPrice} + VAT per outlet. A club with pro shop, bar, and restaurant would have three outlets. Multi-outlet packages are available. Finance options from ${posso.financeWeekly} per week per outlet. Free setup, training, and menu configuration included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

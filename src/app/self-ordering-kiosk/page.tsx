@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Monitor, CreditCard, TrendingUp, ChefHat, Paintbrush, ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Self Ordering Kiosk',
   description:
-    'Self Ordering Kiosk with 21-inch touchscreen, integrated card payment, custom branding, upselling prompts, and kitchen integration. Reduce queues and increase order value. Kiosks from £699 + VAT.',
+    `Self Ordering Kiosk with 21-inch touchscreen, integrated card payment, custom branding, upselling prompts, and kitchen integration. Reduce queues and increase order value. Kiosks from ${posso.kioskPrice} + VAT.`,
   keywords: [
     'self ordering kiosk',
     'self order kiosk',
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Self Ordering Kiosk | Posso UK',
     description:
-      'Self Ordering Kiosk with 21" touchscreen, card payment, branding, upselling, and kitchen integration. Kiosks from £699 + VAT.',
+      `Self Ordering Kiosk with 21" touchscreen, card payment, branding, upselling, and kitchen integration. Kiosks from ${posso.kioskPrice} + VAT.`,
     url: 'https://www.posso.co.uk/self-ordering-kiosk',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -124,14 +125,14 @@ export default function SelfOrderingKioskPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> 21" touchscreen with integrated payment</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Upselling prompts fire on every order</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Self ordering kiosks from £699 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Self ordering kiosks from {posso.kioskPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function SelfOrderingKioskPage() {
           { question: 'Can I customise the kiosk with my branding?', answer: 'Yes. Upload your logo, set your brand colours, add product images, and configure the menu layout. The entire ordering interface reflects your brand identity. You can also add promotional banners and featured items to the home screen.' },
           { question: 'Does the kiosk accept contactless payment?', answer: 'Yes. The integrated payment terminal accepts contactless card, chip and PIN, Apple Pay, and Google Pay. Payment processes in under 2 seconds. The terminal is built into the kiosk unit — no separate device to manage or charge.' },
           { question: 'How does the kiosk connect to the kitchen?', answer: 'When a customer completes their order on the kiosk, it appears on the kitchen display system within 2 seconds. The kitchen ticket shows all items, modifiers, and the order number. The customer receives a printed receipt with their number to collect when ready.' },
-          { question: 'How much does a self ordering kiosk cost?', answer: 'Self ordering kiosks start from £699 + VAT including the 21-inch touchscreen, payment terminal, receipt printer, and kiosk software. Finance options available. Free setup, menu configuration, and staff training included. The kiosk menu syncs with your POS — one menu to manage.' },
+          { question: 'How much does a self ordering kiosk cost?', answer: `Self ordering kiosks start from ${posso.kioskPrice} + VAT including the 21-inch touchscreen, payment terminal, receipt printer, and kiosk software. Finance options available. Free setup, menu configuration, and staff training included. The kiosk menu syncs with your POS — one menu to manage.` },
         ]} />
 
         <Contact />

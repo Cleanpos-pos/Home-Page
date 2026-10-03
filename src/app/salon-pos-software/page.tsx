@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Calendar, Users, ShoppingBag, CreditCard, Clock, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Salon POS Software',
   description:
-    'Salon POS Software with appointment booking, staff scheduling, product retail, client records, and integrated card payments. Built for hair salons, beauty salons, and spas. POS from £499 + VAT.',
+    `Salon POS Software with appointment booking, staff scheduling, product retail, client records, and integrated card payments. Built for hair salons, beauty salons, and spas. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'salon pos software',
     'salon pos system',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Salon POS Software | Posso UK',
     description:
-      'Salon POS Software with appointment booking, staff scheduling, product retail, and client records. POS from £499 + VAT.',
+      `Salon POS Software with appointment booking, staff scheduling, product retail, and client records. POS from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/salon-pos-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -124,14 +126,14 @@ export default function SalonPosSoftwarePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Online booking reduces no-shows by 30%</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Client records with service history & formulas</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Salon POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Salon POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -221,13 +223,15 @@ export default function SalonPosSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Salon POS Software — Frequently Asked Questions" faqs={[
           { question: 'Can clients book appointments online?', answer: 'Yes. Clients book through your online booking page — select a service, choose a stylist or therapist, pick a time slot, and confirm. The appointment appears in your calendar immediately. Clients receive confirmation and reminder messages. Online booking reduces phone calls and fills gaps in the schedule.' },
           { question: 'How does the client record system work?', answer: 'Every client has a profile storing their service history, colour formulas, product purchases, preferences, and notes. When a client arrives, the stylist pulls up their profile and sees exactly what was done last time. Notes like "prefers shorter on the sides" or "sensitive scalp" help deliver consistently personal service.' },
           { question: 'Does it track staff commission?', answer: 'Yes. Set commission rates per staff member — percentage of services, percentage of product sales, or fixed amounts per service. The POS calculates commission automatically based on services performed and products sold. Commission reports show each team member\'s earnings for the period.' },
           { question: 'Can I sell retail products alongside services?', answer: 'Yes. Barcode scan products at the till to add them to the service bill. Track stock levels, set reorder points, and see which products sell best. Reports show product sales by stylist so you can identify who is best at retail and share their approach with the team.' },
           { question: 'How do appointment reminders reduce no-shows?', answer: 'Automated SMS and email reminders are sent before the appointment — typically 24 hours and 2 hours before. Clients can confirm or reschedule directly from the message. Salons using reminders see no-show rates drop by 25-30%, recovering thousands in lost revenue per year.' },
-          { question: 'How much does salon POS software cost?', answer: 'The salon POS starts from £499 + VAT including appointment booking, client records, product retail, staff management, and card payment integration. Online booking is included. No per-booking fees. Free setup, service import, and training with a 2-year warranty. Finance from £24.92 per week.' },
+          { question: 'How much does salon POS software cost?', answer: `The salon POS starts from ${posso.posPrice} + VAT including appointment booking, client records, product retail, staff management, and card payment integration. Online booking is included. No per-booking fees. Free setup, service import, and training with a ${posso.warrantyYears}-year warranty. Finance from ${posso.financeWeekly} per week.` },
         ]} />
 
         <Contact />

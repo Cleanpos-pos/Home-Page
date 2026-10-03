@@ -7,6 +7,7 @@
  */
 
 import { videoPages } from './video-pages-data';
+import { posso } from '@/lib/possoFacts';
 
 export interface SeoPageData {
   slug: string;
@@ -137,10 +138,10 @@ export const seoPages: SeoPageData[] = [
       { q: "How much does Posso POS software cost?", a: "Plans are flexible based on your needs. Contact us for a personalised quote. There's no upfront hardware cost on most plans." },
       { q: "Can I use my existing hardware?", a: "Yes. Posso runs on Android tablets and Windows PCs. We can also supply a full hardware kit if needed." },
       { q: "Is there a contract?", a: "We offer flexible terms. No long lock-in contracts required." },
-      { q: "Do you provide training?", a: "Yes. Every installation includes on-site or remote training for your team, plus UK phone support Monday to Friday, 9am–9:30pm." },
+      { q: "Do you provide training?", a: `Yes. Every installation includes on-site or remote training for your team, plus UK phone support Monday to Friday, ${posso.supportTime}.` },
     ],
     ctaHeading: "Ready for the Best POS Software in the UK?",
-    ctaText: "Book a free demo and see why 500+ UK restaurants trust Posso for their point of sale.",
+    ctaText: `Book a free demo and see why ${posso.businessCount} UK restaurants trust Posso for their point of sale.`,
     relatedSlugs: ["best-free-pos-system-by-posso-ltd-uk", "best-touch-screen-pos-software-by-posso-ltd-uk", "best-cloud-epos-software-by-posso-ltd-uk"],
   },
   {
@@ -428,7 +429,7 @@ function generateAutoPage(slug: string): SeoPageData {
     sections: [
       {
         heading: `Why Choose Posso for ${cleanTitle}`,
-        content: `Posso has been trusted by 500+ UK businesses for ${cleanTitle.toLowerCase()} solutions. We combine cutting-edge technology with hands-on support, ensuring your system works perfectly from day one. Our platform is built specifically for UK hospitality and retail — not adapted from generic software. That means features designed around how your business actually works.`
+        content: `Posso has been trusted by ${posso.businessCount} UK businesses for ${cleanTitle.toLowerCase()} solutions. We combine cutting-edge technology with hands-on support, ensuring your system works perfectly from day one. Our platform is built specifically for UK hospitality and retail — not adapted from generic software. That means features designed around how your business actually works.`
       },
       {
         heading: "All-in-One Platform",

@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Zap, TrendingUp, Timer, CreditCard, Monitor, ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Self Order Kiosk Fast Food',
   description:
-    'Self Order Kiosk Fast Food with speed-optimised ordering, upselling prompts, combo meal builder, queue reduction, and kitchen integration. Increase throughput and average order value. Kiosks from £699 + VAT.',
+    `Self Order Kiosk Fast Food with speed-optimised ordering, upselling prompts, combo meal builder, queue reduction, and kitchen integration. Increase throughput and average order value. Kiosks from ${posso.kioskPrice} + VAT.`,
   keywords: [
     'self order kiosk fast food',
     'fast food kiosk',
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Self Order Kiosk Fast Food | Posso UK',
     description:
-      'Self Order Kiosk Fast Food with speed ordering, upselling, combo meals, and queue reduction. Kiosks from £699 + VAT.',
+      `Self Order Kiosk Fast Food with speed ordering, upselling, combo meals, and queue reduction. Kiosks from ${posso.kioskPrice} + VAT.`,
     url: 'https://www.posso.co.uk/self-order-kiosk-fast-food',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -68,7 +69,7 @@ const pageSchema = [
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.posso.co.uk' },
-      { '@type': 'ListItem', position: 2, name: 'Kiosks', item: 'https://www.posso.co.uk/kiosks' },
+      { '@type': 'ListItem', position: 2, name: 'Kiosks', item: 'https://www.posso.co.uk/self-order-kiosks' },
       { '@type': 'ListItem', position: 3, name: 'Self Order Kiosk Fast Food', item: 'https://www.posso.co.uk/self-order-kiosk-fast-food' },
     ],
   },
@@ -97,7 +98,7 @@ export default function SelfOrderKioskFastFoodPage() {
       <Header />
       <main className="flex-1 pt-20">
         <BreadcrumbNav items={[
-          { label: 'Kiosks', href: '/kiosks' },
+          { label: 'Kiosks', href: '/self-order-kiosks' },
           { label: 'Self Order Kiosk Fast Food' },
         ]} />
 
@@ -124,14 +125,14 @@ export default function SelfOrderKioskFastFoodPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete an order in a handful of taps</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Upsell prompt fires on every order</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Fast food kiosks from £699 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Fast food kiosks from {posso.kioskPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -199,7 +200,7 @@ export default function SelfOrderKioskFastFoodPage() {
                     <li>Assume a gross margin of 65%.</li>
                   </ul>
                   <p className="mt-4">
-                    Extra gross profit per day = 80 × £0.80 × 0.65 = <strong className="text-white">£41.60</strong>. Against a £699 + VAT kiosk that is roughly 17 trading days before the hardware is covered, and longer once the monthly software fee is included.
+                    Extra gross profit per day = 80 × £0.80 × 0.65 = <strong className="text-white">£41.60</strong>. Against a {posso.kioskPrice} + VAT kiosk that is roughly 17 trading days before the hardware is covered, and longer once the monthly software fee is included.
                   </p>
                   <p className="mt-4 text-slate-400 text-base">
                     Change any one of those assumptions and the answer moves a long way. A thinner margin, a smaller uplift or fewer kiosk orders turns weeks into months. Posso does not promise a payback period — the point of the method is that you can work out your own.
@@ -245,7 +246,7 @@ export default function SelfOrderKioskFastFoodPage() {
           { question: 'How many kiosks do I need for my fast food restaurant?', answer: 'Most fast food restaurants start with 2 kiosks alongside their counter till. Two kiosks handle the ordering throughput of approximately 3 counter staff during peak hours. For very high-volume locations, 3-4 kiosks are recommended. We assess your peak traffic during the consultation.' },
           { question: 'Do kiosk orders go straight to the kitchen?', answer: 'Yes. When a customer completes their order and pays, it appears on the kitchen display straight away. The ticket shows items, customisations, and the order number. Kiosk and counter orders are interleaved by submission time so the kitchen works one unified queue.' },
           { question: 'Can I customise the kiosk with meal deals and combos?', answer: 'Yes. Set up meal deals with configurable choices — pick a main, pick a side, pick a drink — with automatic combo pricing. Feature seasonal promotions on the home screen. Upselling prompts are configurable per product. The entire interface reflects your brand colours and imagery.' },
-          { question: 'How much does a fast food kiosk cost?', answer: 'Fast food self order kiosks start from £699 + VAT including the 21-inch touchscreen, integrated payment terminal, receipt printer, and kiosk software. The kiosk menu syncs with your POS — one menu to manage. Finance options available. Free setup and training included.' },
+          { question: 'How much does a fast food kiosk cost?', answer: `Fast food self order kiosks start from ${posso.kioskPrice} + VAT including the 21-inch touchscreen, integrated payment terminal, receipt printer, and kiosk software. The kiosk menu syncs with your POS — one menu to manage. Finance options available. Free setup and training included.` },
         ]} />
 
         <Contact />

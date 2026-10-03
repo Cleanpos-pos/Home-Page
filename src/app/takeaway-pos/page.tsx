@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, UtensilsCrossed, PhoneCall, Truck, Printer, Clock, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Takeaway POS',
   description:
-    'Takeaway POS system with caller ID, fast ordering, delivery management, kitchen printing, online ordering integration, and driver tracking. Built for takeaways. From £499 + VAT.',
+    `Takeaway POS system with caller ID, fast ordering, delivery management, kitchen printing, online ordering integration, and driver tracking. Built for takeaways. From ${posso.posPrice} + VAT.`,
   keywords: [
     'takeaway pos',
     'takeaway pos system',
@@ -124,14 +126,14 @@ export default function TakeawayPosPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Caller ID pulls up customer history instantly</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Online ordering at low commission</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Takeaway POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Takeaway POS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function TakeawayPosPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Takeaway POS — Frequently Asked Questions" faqs={[
           { question: 'How does caller ID work with the POS?', answer: 'When a customer calls your takeaway, their phone number is matched against your customer database instantly. Their name, delivery address, order history, and any notes appear on screen before you answer. For a regular customer, you can re-order their last meal in a single tap. New callers are added to the database after their first order with address and preferences saved for next time.' },
           { question: 'Can I set up delivery zones and charges?', answer: 'Yes. Define delivery zones on a map and set minimum order values and delivery charges for each zone. A 1-mile radius might have free delivery on orders over £15. A 3-mile radius might charge £2.50 with a £20 minimum. The POS enforces the rules automatically — no manual checking of postcodes during a busy service.' },
           { question: 'How does online ordering integrate?', answer: 'Online orders from your branded website or app arrive on the POS automatically. They appear alongside phone orders on the same screen. The kitchen prints them through the same printers. There is one workflow for all order sources. Low commission on online orders means you keep significantly more than you would with third-party delivery platforms.' },
           { question: 'Does it work for Chinese, Indian, and fish and chip takeaways?', answer: 'Yes. The menu system is fully customisable for any cuisine. Chinese takeaways use set meal builders with dish selections. Indian takeaways use spice level modifiers and meal deals. Fish and chip shops use portion sizes and extras. The interface adapts to your menu structure, not the other way around.' },
           { question: 'Can I track my delivery drivers?', answer: 'Yes. Assign orders to drivers from the dispatch screen. Each driver sees their delivery queue on a mobile device with addresses and estimated times. The system calculates optimal dispatch timing so food arrives hot. You see which deliveries are in progress, completed, or running late. Customers can receive a tracking link if you enable the feature.' },
-          { question: 'How much does a takeaway POS cost?', answer: 'The complete takeaway POS starts from £499 + VAT including touchscreen terminal, caller ID integration, kitchen printers, and delivery management software. Online ordering is available at low commission. Finance from £24.92 per week. Free setup, menu configuration, and staff training are included with a 2-year warranty.' },
+          { question: 'How much does a takeaway POS cost?', answer: `The complete takeaway POS starts from ${posso.posPrice} + VAT including touchscreen terminal, caller ID integration, kitchen printers, and delivery management software. Online ordering is available at low commission. Finance from ${posso.financeWeekly} per week. Free setup, menu configuration, and staff training are included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

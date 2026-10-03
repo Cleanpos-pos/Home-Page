@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Phone, ArrowRight, PoundSterling, Monitor, Smartphone, Globe, CreditCard, Printer, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
-  title: '💰 How Much Does a POS System Cost for a Restaurant? (2026 UK Guide)',
+  title: 'How Much Does a POS System Cost for a Restaurant? (2026 UK Guide)',
   description:
-    'Restaurant POS system costs in the UK range from £499 to £4,500+ depending on hardware, software, and features. Full 2026 pricing breakdown with finance options from £24.92/week.',
+    `Restaurant POS system costs in the UK range from ${posso.posPrice} to £4,500+ depending on hardware, software, and features. Full 2026 pricing breakdown with finance options from ${posso.financeWeekly}/week.`,
   keywords: [
     'how much does a POS system cost',
     'restaurant POS system cost',
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/how-much-does-a-pos-system-cost-for-a-restaurant' },
   openGraph: {
     title: 'How Much Does a POS System Cost for a Restaurant? (2026 UK Guide)',
-    description: 'Complete UK pricing guide: POS hardware from £499, kiosks from £699, online ordering from £350. Finance from £24.92/week.',
+    description: `Complete UK pricing guide: POS hardware from ${posso.posPrice}, kiosks from ${posso.kioskPrice}, online ordering from £350. Finance from ${posso.financeWeekly}/week.`,
     url: 'https://www.posso.co.uk/how-much-does-a-pos-system-cost-for-a-restaurant',
     type: 'article',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -38,8 +40,8 @@ const pageSchema = [
     '@type': 'Article',
     headline: 'How Much Does a POS System Cost for a Restaurant in 2026?',
     description: 'Complete UK pricing guide for restaurant POS systems. Hardware, software, payment processing, and total cost of ownership breakdown.',
-    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://www.posso.co.uk' },
-    publisher: { '@type': 'Organization', name: 'Posso Ltd', logo: { '@type': 'ImageObject', url: 'https://www.posso.co.uk/icon-512x512.png' } },
+    author: { '@id': 'https://www.posso.co.uk/#organization' },
+    publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     datePublished: '2026-04-08',
     dateModified: '2026-04-08',
     url: 'https://www.posso.co.uk/how-much-does-a-pos-system-cost-for-a-restaurant',
@@ -56,8 +58,8 @@ const pageSchema = [
 ];
 
 const pricingTable = [
-  { item: 'POS Touchscreen Till', price: 'From £499', note: '15" capacitive, fanless, IP54 rated' },
-  { item: 'Self-Order Kiosk', price: 'From £699', note: '21" touchscreen, floor-standing or wall-mount' },
+  { item: 'POS Touchscreen Till', price: `From ${posso.posPrice}`, note: '15" capacitive, fanless, IP54 rated' },
+  { item: 'Self-Order Kiosk', price: `From ${posso.kioskPrice}`, note: '21" touchscreen, floor-standing or wall-mount' },
   { item: 'Kitchen Display Screen', price: 'From £199', note: 'Wall-mounted, HDMI, runs KDS in browser' },
   { item: 'Receipt Printer', price: 'From £89', note: '80mm thermal, USB or LAN, 250mm/s' },
   { item: 'Kitchen Printer', price: 'From £129', note: 'Heat/splash resistant, loud buzzer alert' },
@@ -72,7 +74,7 @@ const hiddenCosts = [
   { title: 'Monthly Software Fees', description: 'Some providers charge £30–£100/month for software. Ask if this is included in the upfront price.' },
   { title: 'Commission on Online Orders', description: 'Marketplaces like Just Eat charge 25–35% per order. With your own ordering website, commission is a fraction of this.' },
   { title: 'Setup & Installation', description: 'Many providers charge £200–£500 for installation. Posso includes free on-site setup and training.' },
-  { title: 'Support & Maintenance', description: 'Check if support is included or charged extra. Posso includes UK-based support with a 2-year warranty.' },
+  { title: 'Support & Maintenance', description: `Check if support is included or charged extra. Posso includes UK-based support with a ${posso.warrantyYears}-year warranty.` },
   { title: 'Menu Updates', description: 'Some providers charge per menu change. With Posso, you manage your own menu anytime — no extra cost.' },
 ];
 
@@ -100,15 +102,15 @@ export default function PosSystemCostPage() {
             {/* Featured Snippet Answer — direct, concise, structured */}
             <div className="mt-8 glass-card rounded-2xl border border-primary/30 p-8">
               <p className="text-xl text-white font-semibold mb-4">
-                A restaurant POS system in the UK costs between <span className="text-primary">£499 and £4,500+</span> depending on what you need:
+                A restaurant POS system in the UK costs between <span className="text-primary">{posso.posPrice} and £4,500+</span> depending on what you need:
               </p>
               <ul className="space-y-3 text-lg text-slate-300">
-                <li className="flex items-start gap-3"><Check className="h-5 w-5 text-green-400 mt-1 shrink-0" /> <strong className="text-white">Basic POS till:</strong> £499–£799 (touchscreen, software, receipt printer)</li>
+                <li className="flex items-start gap-3"><Check className="h-5 w-5 text-green-400 mt-1 shrink-0" /> <strong className="text-white">Basic POS till:</strong> {posso.posPrice}–£799 (touchscreen, software, receipt printer)</li>
                 <li className="flex items-start gap-3"><Check className="h-5 w-5 text-green-400 mt-1 shrink-0" /> <strong className="text-white">POS + kiosk bundle:</strong> £1,200–£2,500 (till + self-order kiosk + KDS)</li>
                 <li className="flex items-start gap-3"><Check className="h-5 w-5 text-green-400 mt-1 shrink-0" /> <strong className="text-white">Full restaurant package:</strong> £3,000–£4,500 (2 kiosks + till + KDS + printers + card machine + online ordering)</li>
               </ul>
               <p className="text-slate-400 mt-4">
-                Finance options available from <strong className="text-white">£24.92/week</strong> (5-year plan). Free setup and training included with Posso.
+                Finance options available from <strong className="text-white">{posso.financeWeekly}/week</strong> (5-year plan). Free setup and training included with Posso.
               </p>
             </div>
 
@@ -116,8 +118,8 @@ export default function PosSystemCostPage() {
               <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                 Get a Custom Quote <ArrowRight className="ml-2 h-5 w-5" />
               </a>
-              <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+              <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                <Phone className="mr-2 h-5 w-5" /> {posso.phone}
               </a>
             </div>
           </div>
@@ -196,7 +198,7 @@ export default function PosSystemCostPage() {
                   <div className="glass-card rounded-xl p-4 border border-slate-700/50">
                     <p className="text-sm text-slate-400">5-Year Finance</p>
                     <p className="text-2xl font-bold text-white">£108/mo</p>
-                    <p className="text-xs text-slate-500">£24.92/week</p>
+                    <p className="text-xs text-slate-500">{posso.financeWeekly}/week</p>
                   </div>
                 </div>
               </div>
@@ -263,7 +265,7 @@ export default function PosSystemCostPage() {
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
                 <Link href="/epos-pricing-uk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">EPOS Pricing</p>
@@ -271,7 +273,7 @@ export default function PosSystemCostPage() {
                 </Link>
                 <Link href="/finance" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Finance Calculator</p>
-                  <p className="text-slate-400 text-sm mt-1">From £24.92/week</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.financeWeekly}/week</p>
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Full Feature List</p>
@@ -282,12 +284,14 @@ export default function PosSystemCostPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="POS System Cost — FAQs" faqs={[
-          { question: 'What is the cheapest POS system for a restaurant in the UK?', answer: 'The cheapest professional restaurant POS system starts from around £499 + VAT for a touchscreen till with software, receipt printing, and integrated card payments. Tablet-based solutions using an iPad can be cheaper (from £200–£300) but lack features like thermal printing and cash drawer integration.' },
-          { question: 'Is it better to buy or lease a POS system?', answer: 'Both options work. Buying outright (from £499) gives you ownership with no ongoing payments. Leasing/finance (from £24.92/week on a 5-year plan) spreads the cost and can be claimed as a business expense for tax relief at 19% corporation tax.' },
-          { question: 'Are there monthly fees for POS software?', answer: 'This varies by provider. Some charge £30–£100/month for software access. Posso charges from £25 + VAT a month for software alongside the hardware price, covering the core system and updates — confirmed line by line on your quote.' },
-          { question: 'How much does a self-order kiosk cost?', answer: 'Self-order kiosks for restaurants typically cost from £699 + VAT for a 21" touchscreen with integrated card payment. Payback depends on your order volume and gross margin — the gain comes from a consistent upsell on every order and a lower staffing cost per order.' },
-          { question: 'Does the POS price include installation and training?', answer: 'Not always — many providers charge £200–£500 extra for setup. Posso includes free on-site installation, menu import, and staff training with every hardware purchase. We also include a 2-year warranty and UK-based support.' },
+          { question: 'What is the cheapest POS system for a restaurant in the UK?', answer: `The cheapest professional restaurant POS system starts from around ${posso.posPrice} + VAT for a touchscreen till with software, receipt printing, and integrated card payments. Tablet-based solutions using an iPad can be cheaper (from £200–£300) but lack features like thermal printing and cash drawer integration.` },
+          { question: 'Is it better to buy or lease a POS system?', answer: `Both options work. Buying outright (from ${posso.posPrice} + VAT) means you own the hardware; software is from ${posso.softwareMonthly} + VAT a month either way. Finance (from ${posso.financeWeekly} a week over 12, 24 or 36 months, subject to status) spreads the hardware cost. Finance and lease payments are usually treated differently for tax from an outright purchase — check with your accountant.` },
+          { question: 'Are there monthly fees for POS software?', answer: `This varies by provider. Some charge £30–£100/month for software access. Posso charges from ${posso.softwareMonthly} + VAT a month for software alongside the hardware price, covering the core system and updates — confirmed line by line on your quote.` },
+          { question: 'How much does a self-order kiosk cost?', answer: `Self-order kiosks for restaurants typically cost from ${posso.kioskPrice} + VAT for a 21" touchscreen with integrated card payment. Payback depends on your order volume and gross margin — the gain comes from a consistent upsell on every order and a lower staffing cost per order.` },
+          { question: 'Does the POS price include installation and training?', answer: `Not always — many providers charge £200–£500 extra for setup. Posso includes free setup (menu build + configuration) and staff training with every system; on-site installation for larger sites is priced on application. We also include a ${posso.warrantyYears}-year warranty and UK-based support.` },
           { question: 'What ongoing costs should I budget for?', answer: 'Beyond the hardware, budget for: card processing fees (1.2–1.75% per transaction), internet connection, receipt paper rolls (around £20/month), and any optional add-ons like online ordering or delivery integration.' },
         ]} />
 

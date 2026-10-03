@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Code, Plug, Palette, Settings, Shield, Workflow } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Bespoke ePOS Software',
   description:
-    'Bespoke ePOS Software custom-built for businesses with unique requirements. API integration, white-label options, and tailored workflows. From £499 + VAT.',
+    `Bespoke ePOS Software custom-built for businesses with unique requirements. API integration, white-label options, and tailored workflows. From ${posso.posPrice} + VAT.`,
   keywords: [
     'bespoke epos software',
     'custom epos system',
@@ -124,14 +126,14 @@ export default function BespokeEposSoftwarePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Built around your workflows, not templates</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full API integration with your existing systems</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Bespoke ePOS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Bespoke ePOS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -212,7 +214,7 @@ export default function BespokeEposSoftwarePage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self Service ePOS</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/pdq-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">PDQ Systems</p>
@@ -223,13 +225,15 @@ export default function BespokeEposSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Bespoke ePOS Software — Frequently Asked Questions" faqs={[
           { question: 'How long does a bespoke ePOS build take?', answer: 'A typical bespoke ePOS project takes 6 to 12 weeks from discovery to go-live. Simple customisations on our existing platform can be delivered in 2 to 4 weeks. Complex multi-site projects with extensive integrations may take longer. We provide a detailed timeline during the scoping phase so you know exactly what to expect.' },
           { question: 'Can you integrate with my existing software?', answer: 'Yes. If your existing systems have an API — accounting software, CRM, warehouse management, delivery platforms, loyalty providers — we integrate them. Data flows automatically between the ePOS and your other systems. We have experience integrating with Xero, Sage, QuickBooks, Salesforce, and hundreds of other platforms.' },
           { question: 'What does white-label branding include?', answer: 'White-label branding covers the POS screen, customer-facing displays, self-service kiosks, digital receipts, and any customer-facing app. Your logo, colours, and brand name appear on everything. We remove all Posso branding. Ideal for franchises, resellers, and businesses that want a fully branded experience.' },
           { question: 'Do I own the software?', answer: 'You own the bespoke elements built specifically for your business. The underlying platform is licensed. This means you get a system that is maintained, updated, and supported without needing your own development team. If your requirements change, we build new features on the same foundation.' },
           { question: 'Can it scale to multiple locations?', answer: 'Yes. The architecture is built for multi-site operation from the start. Add new locations without rebuilding. Each site operates independently at the till, but data rolls up to a central dashboard. Stock, pricing, staff, and reporting are managed centrally or per-location as you prefer.' },
-          { question: 'How much does bespoke ePOS software cost?', answer: 'Bespoke ePOS projects start from £499 + VAT per terminal for the base platform, with development costs quoted based on your specific requirements. We provide a detailed fixed-price quote after the discovery session. Finance options are available. Free on-site installation and training included.' },
+          { question: 'How much does bespoke ePOS software cost?', answer: `Bespoke ePOS projects start from ${posso.posPrice} + VAT per terminal for the base platform, with development costs quoted based on your specific requirements. We provide a detailed fixed-price quote after the discovery session. Finance options are available. ${posso.setupStatement} Training is included.` },
         ]} />
 
         <Contact />

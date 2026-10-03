@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Wrench, Building2, BarChart3, Network, Shield, Layers } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Custom POS System',
   description:
-    'Custom POS System with bespoke development for chains, franchise management, multi-site analytics, and tailored workflows. Built for businesses that need more than off-the-shelf. From £499 + VAT.',
+    `Custom POS System with bespoke development for chains, franchise management, multi-site analytics, and tailored workflows. Built for businesses that need more than off-the-shelf. From ${posso.posPrice} + VAT.`,
   keywords: [
     'custom pos system',
     'custom pos software',
@@ -124,14 +126,14 @@ export default function CustomPosSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Franchise management with central control</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Multi-site analytics in real time</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Custom POS from £499 + VAT per terminal</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Custom POS from {posso.posPrice} + VAT per terminal</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -212,7 +214,7 @@ export default function CustomPosSystemPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self Service ePOS</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/order-counter-pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Counter POS</p>
@@ -223,13 +225,15 @@ export default function CustomPosSystemPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Custom POS System — Frequently Asked Questions" faqs={[
           { question: 'What makes a custom POS different from off-the-shelf?', answer: 'Off-the-shelf POS systems offer the same features to every business. A custom POS is built around your specific workflows, integrations, and requirements. If you have a unique pricing model, a specialist loyalty programme, or complex franchise rules, the custom system handles them natively instead of forcing workarounds.' },
           { question: 'How do you manage franchisee access?', answer: 'Each franchisee gets access to their own location data — sales, stock, staff, and reports. They cannot see other franchisees\' data. Head office controls what franchisees can change — for example, they might adjust staff schedules but not menu pricing. Permissions are granular and enforced by the system.' },
           { question: 'Can I see data across all locations in real time?', answer: 'Yes. The multi-site dashboard shows live data from every location. Revenue, transaction counts, average order value, product mix, and staff performance update in real time. Compare locations side by side. Drill down into any site for detailed analysis. The dashboard is accessible from any device with a browser.' },
           { question: 'What systems can you integrate with?', answer: 'If it has an API, we can integrate it. Common integrations include Xero, Sage, QuickBooks for accounting; Deliveroo, Uber Eats, Just Eat for delivery; and various CRM, HR, and supply chain systems. We also build custom APIs if your existing system does not have one. Data flows automatically between systems.' },
           { question: 'How long does a custom POS project take?', answer: 'A typical custom POS project takes 8 to 16 weeks from discovery to rollout. Simpler configurations on our existing platform can be delivered faster. Complex multi-site projects with extensive integrations may take longer. We provide a detailed timeline and fixed-price quote after the discovery session.' },
-          { question: 'How much does a custom POS system cost?', answer: 'Custom POS starts from £499 + VAT per terminal for the base platform. Development costs depend on the scope of customisation, number of integrations, and number of locations. We provide a fixed-price quote after understanding your requirements. Finance options available. Installation and training included.' },
+          { question: 'How much does a custom POS system cost?', answer: `Custom POS starts from ${posso.posPrice} + VAT per terminal for the base platform. Development costs depend on the scope of customisation, number of integrations, and number of locations. We provide a fixed-price quote after understanding your requirements. Finance options available. ${posso.setupStatement} Staff training is included.` },
         ]} />
 
         <Contact />

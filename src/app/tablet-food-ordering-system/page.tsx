@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Tablet, ClipboardList, Utensils, Timer, Split, Wifi } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Tablet Food Ordering System',
   description:
-    'Tablet Food Ordering System for restaurants with waiter pad ordering, customer table tablets, kitchen integration, and real-time menu sync. Runs on iPad and Android. From £499 + VAT.',
+    `Tablet Food Ordering System for restaurants with waiter pad ordering, customer table tablets, kitchen integration, and real-time menu sync. Runs on iPad and Android. From ${posso.posPrice} + VAT.`,
   keywords: [
     'tablet food ordering system',
     'tablet ordering system restaurant',
@@ -124,14 +125,14 @@ export default function TabletFoodOrderingSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Waiter pad and customer table tablets</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Direct kitchen display integration</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Tablet ordering system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Tablet ordering system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function TabletFoodOrderingSystemPage() {
           { question: 'Does it integrate with the kitchen display?', answer: 'Yes. Every order from a waiter pad or customer table tablet fires directly to the kitchen display. Items are grouped by course and colour-coded by table number. The kitchen display is identical to what they see from counter orders — one unified queue regardless of how the order was placed.' },
           { question: 'Can servers control course timing?', answer: 'Yes. Servers can hold courses on their tablet and fire them to the kitchen when the table is ready. Take all courses at once but hold mains until starters are cleared. One tap sends the "fire" signal. The kitchen sees exactly when to start preparing each course — no shouting across the pass.' },
           { question: 'How does bill splitting work on tablets?', answer: 'Split by item (each person pays for what they ordered), by seat (assigned at order time), or by equal shares. The server or customer selects the split method on the tablet, and payment is taken tableside with a portable card reader. Tips can be added on screen before payment.' },
-          { question: 'How much does the tablet ordering system cost?', answer: 'The tablet ordering system starts from £499 + VAT including the POS software, waiter pad app licences, and kitchen display. Tablets are available from £349 each or use your own. Customer table tablets include protective cases and stands. Finance from £24.92 per week. Free setup and staff training included.' },
+          { question: 'How much does the tablet ordering system cost?', answer: `The tablet ordering system starts from ${posso.posPrice} + VAT including the POS software, waiter pad app licences, and kitchen display. Tablets are available from £349 each or use your own. Customer table tablets include protective cases and stands. Finance from ${posso.financeWeekly} per week. Free setup and staff training included.` },
         ]} />
 
         <Contact />

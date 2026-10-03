@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Truck, MapPin, Smartphone, Globe, LayoutGrid, Timer } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Food Delivery Ordering',
   description:
-    'Food Delivery Ordering system with zone management, driver app, Just Eat/Uber Eats/Deliveroo integration, and branded online ordering. From £499 + VAT with low commission.',
+    `Food Delivery Ordering system with zone management, driver app, Just Eat/Uber Eats/Deliveroo integration, and branded online ordering. From ${posso.posPrice} + VAT with low commission.`,
   keywords: [
     'food delivery ordering',
     'food delivery ordering system',
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Food Delivery Ordering | Posso UK',
     description:
-      'Food Delivery Ordering with zone management, driver app, Just Eat/Uber Eats/Deliveroo integration, and branded ordering. From £499 + VAT.',
+      `Food Delivery Ordering with zone management, driver app, Just Eat/Uber Eats/Deliveroo integration, and branded ordering. From ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/food-delivery-ordering',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -124,14 +125,14 @@ export default function FoodDeliveryOrderingPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Just Eat, Uber Eats, and Deliveroo on one screen</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Branded ordering at low commission</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Delivery POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Delivery POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function FoodDeliveryOrderingPage() {
           { question: 'How does the driver app work?', answer: 'Drivers download the app on their phone. When you assign a delivery from the POS, it appears on their app with the customer address, order details, and navigation. They tap to start the delivery and tap again to mark it complete. You see all driver statuses in real time: available, assigned, out for delivery. Track average delivery times per driver.' },
           { question: 'What commission do you charge on online orders?', answer: 'Posso charges low commission on orders through your branded website and app — significantly less than the 25–35% charged by Just Eat, Uber Eats, and Deliveroo. The exact rate depends on your plan. On a £20 order, the saving compared to platform commission is typically £5–7. The more orders you shift direct, the more you save.' },
           { question: 'Can customers track their delivery?', answer: 'Yes. Customers see real-time status updates: order received, being prepared, ready for dispatch, out for delivery. The estimated delivery time updates based on kitchen queue and driver progress. This transparency reduces "where is my food?" calls and sets accurate expectations. Customers receive a notification when the driver is en route.' },
-          { question: 'How much does the delivery ordering system cost?', answer: 'The complete system starts from £499 + VAT including POS terminal, delivery management software, driver app, and online ordering. Delivery platform integration (Just Eat, Uber Eats, Deliveroo) included. Low commission on direct orders. Finance from £24.92 per week. Free setup, menu configuration, and training with a 2-year warranty.' },
+          { question: 'How much does the delivery ordering system cost?', answer: `The complete system starts from ${posso.posPrice} + VAT including POS terminal, delivery management software, driver app, and online ordering. Delivery platform integration (Just Eat, Uber Eats, Deliveroo) included. Low commission on direct orders. Finance from ${posso.financeWeekly} per week. Free setup, menu configuration, and training with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

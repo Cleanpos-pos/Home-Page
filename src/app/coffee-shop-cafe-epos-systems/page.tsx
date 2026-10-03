@@ -25,6 +25,7 @@ import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SolutionEnquiryModal } from '@/components/solution-enquiry-modal';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
     title: 'Coffee Shop & Cafe ePOS Systems UK',
@@ -54,13 +55,13 @@ const schema = {
     "@type": "Product",
     "name": "Posso Coffee Shop & Cafe ePOS System",
     "description": "Complete ePOS system for coffee shops and cafes. Includes 15-inch touchscreen, customer display, thermal printer, cash drawer, kitchen display and affordable monthly software licence.",
-    "brand": { "@type": "Organization", "name": "Posso Ltd" },
+    "brand": { '@id': 'https://www.posso.co.uk/#organization' },
     "category": "ePOS Systems",
     "offers": {
         "@type": "Offer",
         "priceCurrency": "GBP",
         "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "Posso Ltd" }
+        "seller": { '@id': 'https://www.posso.co.uk/#organization' }
     },
 };
 
@@ -163,7 +164,7 @@ export default function CoffeeShopEposPage() {
                                 />
                                 <Link href="tel:08081753956">
                                     <Button size="lg" variant="outline" className="h-12 px-8 border-slate-700 bg-slate-900/50 backdrop-blur-sm text-slate-100 hover:bg-slate-800 transition-all">
-                                        Call 0808 175 3956
+                                        Call {posso.phone}
                                     </Button>
                                 </Link>
                             </div>
@@ -370,7 +371,7 @@ export default function CoffeeShopEposPage() {
                         {
                             question: 'How much does a coffee shop EPOS system cost?',
                             answer:
-                                'Posso café EPOS runs on a low, predictable monthly software fee that covers the core system, updates, and cloud features like online ordering. Simple menus are programmed free of charge, and finance options are available on hardware — call 0808 175 3956 for a tailored quote.',
+                                `Posso café EPOS runs on a low, predictable monthly software fee that covers the core system, updates, and cloud features like online ordering. Simple menus are programmed free of charge, and finance options are available on hardware — call ${posso.phone} for a tailored quote.`,
                         },
                     ]}
                 />
@@ -423,7 +424,7 @@ export default function CoffeeShopEposPage() {
                                 />
                                 <Link href="tel:08081753956">
                                     <Button size="lg" variant="outline" className="h-14 px-10 text-lg rounded-full border-slate-700 hover:bg-slate-800 text-white">
-                                        Call 0808 175 3956
+                                        Call {posso.phone}
                                     </Button>
                                 </Link>
                             </div>

@@ -16,6 +16,7 @@ import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
 import { IframeDialog } from './iframe-dialog';
 import { cleanPhone, isValidPhone } from '@/lib/phone-validation';
+import { posso } from '@/lib/possoFacts';
 
 
 const cardMachineEnquirySchema = z.object({
@@ -84,7 +85,7 @@ export function CardMachineEnquiryForm({ onFormSubmit }: CardMachineEnquiryFormP
       console.error('Submission error:', err);
       setIsSubmitting(false);
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
-      setServerError(`Error sending enquiry: ${errorMessage}. Please try again or call us at 0808 175 3956.`);
+      setServerError(`Error sending enquiry: ${errorMessage}. Please try again or call us at ${posso.phone}.`);
     }
   };
 

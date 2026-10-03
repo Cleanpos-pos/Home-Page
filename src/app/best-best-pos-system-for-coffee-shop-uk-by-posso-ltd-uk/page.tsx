@@ -33,10 +33,7 @@ const schema = {
     "operatingSystem": "Android, iOS, Web, Windows",
     "applicationCategory": "Cafe Management System",
     "description": "Streamline your cafe with the best POS system for coffee shops in the UK by Posso Ltd. Integrated digital loyalty, KDS for baristas, and smart inventory management.",
-    "author": {
-        "@type": "Organization",
-        "name": "Posso Ltd"
-    },
+    "author": { '@id': 'https://www.posso.co.uk/#organization' },
     "offers": {
         "@type": "Offer",
         "priceCurrency": "GBP",

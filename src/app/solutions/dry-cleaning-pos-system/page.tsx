@@ -19,6 +19,7 @@ import {
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
     title: 'Dry Cleaning POS System | CleanPos Laundry & Dry Cleaning Software UK',
@@ -263,6 +264,8 @@ export default function DryCleaningPosPage() {
                         </div>
                     </div>
                 </section>
+
+                <EposClusterLinks />
 
                 <FAQSection title="Dry Cleaning POS — Frequently Asked Questions" faqs={[
                     { question: 'What is a dry cleaning POS system and how is it different from a standard till?', answer: 'A dry cleaning POS system (also called a laundry EPOS) is built around garment tracking rather than simple product sales. Instead of just ringing up an item, it creates a ticket for each order, tags individual garments, tracks them through cleaning and pressing, and tells you exactly which items are ready for collection. You also get customer accounts, automated SMS alerts, card payments, and reporting — all tailored to dry cleaners and laundries.' },

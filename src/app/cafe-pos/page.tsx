@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, CreditCard, Phone, ArrowRight, Coffee, Heart, Tablet, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Cafe POS System | Quick-Serve Counter POS for Coffee Shops',
   description:
-    'Posso cafe POS system for quick-serve coffee shops. Counter ordering, coffee modifiers, bakery items, digital loyalty, mobile payments, and compact hardware. From £499 + VAT.',
+    `Posso cafe POS system for quick-serve coffee shops. Counter ordering, coffee modifiers, bakery items, digital loyalty, mobile payments, and compact hardware. From ${posso.posPrice} + VAT.`,
   keywords: [
     'cafe pos',
     'cafe pos system',
@@ -130,14 +131,14 @@ export default function CafePosPage() {
                 <ul className="space-y-3 text-slate-300 text-lg">
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> 2-tap ordering for drinks with modifiers</li>
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Digital loyalty — buy 9, get 1 free</li>
-                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from £499 + VAT</li>
+                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from {posso.posPrice} + VAT</li>
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
                   <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                     Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-                  <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                    <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                  <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                    <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                   </a>
                 </div>
               </div>
@@ -239,7 +240,7 @@ export default function CafePosPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/online-ordering" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Online Ordering</p>
@@ -247,7 +248,7 @@ export default function CafePosPage() {
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
@@ -255,7 +256,7 @@ export default function CafePosPage() {
         </section>
 
         <FAQSection title="Cafe POS — Frequently Asked Questions" faqs={[
-          { question: 'What is the best POS system for a small cafe?', answer: 'The best cafe POS is fast at the counter, handles coffee modifiers without slowing you down, includes digital loyalty, and takes up minimal space. Posso is designed specifically for cafes — compact hardware, quick-serve interface, and built-in loyalty. Systems start from £499 + VAT.' },
+          { question: 'What is the best POS system for a small cafe?', answer: `The best cafe POS is fast at the counter, handles coffee modifiers without slowing you down, includes digital loyalty, and takes up minimal space. Posso is designed specifically for cafes — compact hardware, quick-serve interface, and built-in loyalty. Systems start from ${posso.posPrice} + VAT.` },
           { question: 'How does the cafe POS handle coffee modifiers and sizes?', answer: 'When you tap a drink, the modifier screen appears with milk options (oat, soy, almond, coconut, whole), sizes (small, regular, large), and extras (extra shot, decaf, syrup). Each modifier has its own price. The total updates instantly and the barista ticket shows the full spec.' },
           { question: 'Does the cafe POS include a loyalty programme?', answer: 'Yes. The built-in digital loyalty programme tracks stamps by customer phone number. Set up "Buy 9, get 1 free" or other reward structures. Stamps apply automatically — no paper cards, no separate apps, no admin.' },
           { question: 'Can the cafe POS handle food orders as well as drinks?', answer: 'Yes. Set up separate categories for pastries, sandwiches, salads, and meal deals alongside your drinks menu. Food items can have their own modifiers (toasted, heated, gluten-free option) and allergen tags.' },

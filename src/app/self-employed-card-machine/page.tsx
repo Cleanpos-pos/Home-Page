@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Briefcase, Wifi, PoundSterling, Battery, Smartphone, FileText } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Self Employed Card Machine',
   description:
-    'Self Employed Card Machine for sole traders and mobile businesses. No contract, low transaction fees, portable with 4G, next-day settlement, and receipt options. From £499 + VAT.',
+    `Self Employed Card Machine for sole traders and mobile businesses. No contract, low transaction fees, portable with 4G, next-day settlement, and receipt options. From ${posso.posPrice} + VAT.`,
   keywords: [
     'self employed card machine',
     'card machine for self employed',
@@ -124,14 +125,14 @@ export default function SelfEmployedCardMachinePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> No long-term contract — pay per transaction</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Built-in 4G — works anywhere with a signal</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from £499 + VAT, low transaction fees</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from {posso.posPrice} + VAT, low transaction fees</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get Started <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -225,11 +226,11 @@ export default function SelfEmployedCardMachinePage() {
 
         <FAQSection title="Self Employed Card Machine — FAQ" faqs={[
           { question: 'Can I get a card machine as a sole trader?', answer: 'Yes. You do not need a limited company. The application process is designed for sole traders and self-employed professionals. Provide your name, address, bank details, and a form of ID. Most applications are approved within 24–48 hours. No complex documentation required.' },
-          { question: 'Is there a monthly fee or contract?', answer: 'There is no long-term contract. You pay a per-transaction fee when you take a payment. If you have a quiet month, you pay less. There are no monthly minimums or cancellation penalties. The fee structure is designed for the variable income patterns of self-employed work.' },
+          { question: 'Is there a monthly fee or contract?', answer: 'There is no long-term contract. You pay a per-transaction fee when you take a payment. If you have a quiet month, you pay less. There are no monthly minimums or cancellation penalties. The fee structure is designed for the variable income patterns of self-employed work.' /* TODO: PAUL — this page makes the no-contract claim ~10 times (title, meta, bullets, FAQ). Confirm the card-processing contract terms before keeping any of them. */ },
           { question: 'Does it work without Wi-Fi?', answer: 'Yes. The card machine has a built-in 4G SIM that connects to UK mobile networks. You can take payments anywhere with mobile signal coverage — at a customer\'s home, on a market stall, at an outdoor event, or in a van. The SIM is included at no additional cost.' },
           { question: 'How quickly do I receive the money?', answer: 'Next-day settlement is standard. Payments taken on Monday are in your bank account on Tuesday. Weekend transactions settle on Monday. This gives you predictable cash flow without waiting days for funds to clear.' },
           { question: 'Can I use this for my tax return?', answer: 'Yes. Every card transaction is recorded with the date, time, amount, and a unique reference. You can export your full transaction history from the mobile app or dashboard. Hand this to your accountant or use it for your self-assessment return. Digital records are accepted by HMRC.' },
-          { question: 'What does the self employed card machine cost?', answer: 'The full POS system starts from £499 + VAT with low transaction fees per payment. For sole traders who need only a card machine without a full ePOS, standalone options are available. Contact us on 0808 175 3956 for pricing tailored to your expected transaction volume.' },
+          { question: 'What does the self employed card machine cost?', answer: `The full POS system starts from ${posso.posPrice} + VAT with low transaction fees per payment. For sole traders who need only a card machine without a full ePOS, standalone options are available. Contact us on ${posso.phone} for pricing tailored to your expected transaction volume.` },
         ]} />
 
         <Contact />

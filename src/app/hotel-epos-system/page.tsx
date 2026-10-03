@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Hotel, Utensils, Wine, Users, Building, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Hotel ePOS System',
   description:
-    'Hotel ePOS System for room service, restaurant, bar, conference catering, and multi-venue management. Charge to rooms, track revenue by outlet, and manage everything from one platform. POS from £499 + VAT.',
+    `Hotel ePOS System for room service, restaurant, bar, conference catering, and multi-venue management. Charge to rooms, track revenue by outlet, and manage everything from one platform. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'hotel epos system',
     'hotel pos system',
@@ -124,14 +126,14 @@ export default function HotelEposSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Room charge capability across all outlets</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Multi-venue consolidated reporting</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Hotel ePOS from £499 + VAT per outlet</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Hotel ePOS from {posso.posPrice} + VAT per outlet</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function HotelEposSystemPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Hotel ePOS System — Frequently Asked Questions" faqs={[
           { question: 'Can guests charge food and drinks to their room?', answer: 'Yes. Staff select the room number on the POS when processing an order, and the charge is assigned to that room. All F&B charges across restaurant, bar, and room service are consolidated. The data can be exported for posting to your property management system for guest checkout.' },
           { question: 'Does the system handle multiple outlets?', answer: 'Yes. Each outlet — restaurant, bar, lounge, room service, pool bar — runs its own POS with its own menu and workflow. Management sees consolidated reporting across all outlets from a single cloud dashboard. You can compare revenue, track stock, and manage staff across the entire F&B operation.' },
           { question: 'How does room service ordering work?', answer: 'Guests can order room service by scanning a QR code in the room or by calling reception. Orders route to the kitchen display with the room number clearly shown. The kitchen prepares the order, staff deliver it, and the charge posts to the room automatically.' },
           { question: 'Can we manage conference catering?', answer: 'Yes. Set up catering packages for conference rooms — tea and coffee breaks, working lunches, evening receptions. Track consumption against the booking and generate a detailed invoice for the conference organiser. Recurring conferences can reuse saved package configurations.' },
           { question: 'Does it integrate with our property management system?', answer: 'Posso exports F&B charge data that can be imported into your PMS. This keeps guest folios accurate without manual data entry. The integration works with most popular PMS platforms used by UK hotels. Contact us with your PMS details for confirmation.' },
-          { question: 'How much does the hotel ePOS system cost?', answer: 'The hotel ePOS starts from £499 + VAT per outlet. Multi-outlet packages are available for hotels with restaurant, bar, and room service operations. Finance options available. Free setup, menu import, and staff training included with a 2-year warranty.' },
+          { question: 'How much does the hotel ePOS system cost?', answer: `The hotel ePOS starts from ${posso.posPrice} + VAT per outlet. Multi-outlet packages are available for hotels with restaurant, bar, and room service operations. Finance options available. Free setup, menu import, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

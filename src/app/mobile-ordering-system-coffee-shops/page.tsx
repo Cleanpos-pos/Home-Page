@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Coffee, Smartphone, BellRing, MapPin, Zap, Heart } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Mobile Ordering System for Coffee Shops',
@@ -124,14 +125,14 @@ export default function MobileOrderingCoffeeShopsPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Order ahead and skip the queue</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Push notifications when drink is ready</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission — POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission — POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function MobileOrderingCoffeeShopsPage() {
           { question: 'Can customers save their favourite drinks?', answer: 'Yes. Customers save any drink with all its customisations (milk type, size, extra shots, syrups) as a favourite. Reordering is one tap — select the favourite, confirm pickup time, pay. For daily customers, this reduces the entire ordering process to under 15 seconds. Multiple favourites can be saved for different occasions.' },
           { question: 'Does it work with my existing POS?', answer: 'Yes. Mobile orders flow directly to your Posso POS and barista display in the same queue as counter orders. The barista works one unified queue. Menu updates on the POS reflect on mobile instantly. If you are not yet using Posso, the mobile ordering system is included when you switch.' },
           { question: 'How does loyalty tracking work on mobile?', answer: 'Every mobile order earns a loyalty stamp automatically. The customer sees their stamp count and progress toward the next reward on their order confirmation and in their account. Stamps earned in-store and on mobile count toward the same total. When they reach the reward threshold, it is redeemable on their next order — mobile or in-store.' },
-          { question: 'How much does the mobile ordering system cost?', answer: 'The mobile ordering system is included with the Posso coffee shop POS from £499 + VAT. Low commission per mobile order. Includes push notifications, favourite drinks, loyalty tracking, and POS integration. No separate app development cost. Free setup and configuration included. Call 0808 175 3956 for a personalised quote.' },
+          { question: 'How much does the mobile ordering system cost?', answer: `The mobile ordering system is included with the Posso coffee shop POS from ${posso.posPrice} + VAT. Low commission per mobile order. Includes push notifications, favourite drinks, loyalty tracking, and POS integration. No separate app development cost. Free setup and configuration included. Call ${posso.phone} for a personalised quote.` },
         ]} />
 
         <Contact />

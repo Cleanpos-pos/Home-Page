@@ -8,11 +8,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, CreditCard, BarChart3, Phone, ArrowRight, Utensils, Users, LayoutGrid, Split, Tablet } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Restaurant ePOS System | Table Management & Dine-In Features',
   description:
-    'Posso restaurant ePOS system with table management, floor plan, course firing, split bills, waiter pad, tab management, and pay-at-table. From £499 + VAT.',
+    `Posso restaurant ePOS system with table management, floor plan, course firing, split bills, waiter pad, tab management, and pay-at-table. From ${posso.posPrice} + VAT.`,
   keywords: [
     'restaurant epos',
     'restaurant epos system',
@@ -131,14 +133,14 @@ export default function RestaurantEposPage() {
                 <ul className="space-y-3 text-slate-300 text-lg">
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Visual floor plan with live table status</li>
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Course firing to the kitchen</li>
-                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from £499 + VAT</li>
+                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from {posso.posPrice} + VAT</li>
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
                   <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                     Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-                  <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                    <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                  <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                    <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                   </a>
                 </div>
               </div>
@@ -161,7 +163,7 @@ export default function RestaurantEposPage() {
           table&apos;s status, course firing so mains go to the kitchen when starters are cleared, waiter pads for
           ordering at the table, and bills split by item, seat, equal shares or custom amounts. Those are the
           features to test on a demo — a counter-service till with tables bolted on struggles on a full Saturday.
-          Posso restaurant EPOS includes all of them, runs offline-first, and starts from £499 + VAT for a complete
+          Posso restaurant EPOS includes all of them, runs offline-first, and starts from {posso.posPrice} + VAT for a complete
           touchscreen terminal with integrated card payments.
         </QuickAnswer>
 
@@ -260,7 +262,7 @@ export default function RestaurantEposPage() {
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
                 <Link href="/best-restaurant-epos-system-uk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Best Restaurant EPOS Systems UK</p>
@@ -271,13 +273,15 @@ export default function RestaurantEposPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Restaurant ePOS — Frequently Asked Questions" faqs={[
-          { question: 'What features does a restaurant ePOS need for dine-in service?', answer: 'A proper restaurant ePOS needs table management with a visual floor plan, course firing to coordinate kitchen timing, split bill functionality, waiter pad support for tableside ordering, tab management, and pay-at-table. Posso includes all of these from £499 + VAT.' },
+          { question: 'What features does a restaurant ePOS need for dine-in service?', answer: `A proper restaurant ePOS needs table management with a visual floor plan, course firing to coordinate kitchen timing, split bill functionality, waiter pad support for tableside ordering, tab management, and pay-at-table. Posso includes all of these from ${posso.posPrice} + VAT.` },
           { question: 'How does course firing work on the Posso restaurant ePOS?', answer: 'When a waiter takes an order, courses are grouped as starters, mains, and desserts. Starters fire to the kitchen immediately. When the waiter marks starters as cleared, mains fire automatically — or the waiter can fire manually. This keeps the kitchen paced correctly.' },
           { question: 'Can guests split the bill on the restaurant ePOS?', answer: 'Yes. Bills can be split by item (each guest picks what they ordered), by seat, by equal shares, or by custom amounts. Each split can be paid separately by card or cash.' },
           { question: 'Does the ePOS support waiter pad ordering?', answer: 'Yes. Waiters use a tablet or phone app to take orders tableside. The order fires directly to the kitchen display and the table\'s bill updates in real time. No need to walk back to the main terminal.' },
           { question: 'Can I see which tables are occupied and which are free?', answer: 'Yes. The visual floor plan shows every table colour-coded by status — green for available, amber for occupied and ordering, red for waiting for food, and blue for ready for bill. You can see your entire restaurant at a glance.' },
-          { question: 'How much does a restaurant ePOS system cost?', answer: 'Posso restaurant ePOS starts from £499 + VAT for a complete touchscreen terminal with table management, course firing, split bills, and integrated card payments. Additional waiter pad devices and kitchen displays can be added. Finance options are available.' },
+          { question: 'How much does a restaurant ePOS system cost?', answer: `Posso restaurant ePOS starts from ${posso.posPrice} + VAT for a complete touchscreen terminal with table management, course firing, split bills, and integrated card payments. Additional waiter pad devices and kitchen displays can be added. Finance options are available.` },
         ]} />
 
         <Contact />

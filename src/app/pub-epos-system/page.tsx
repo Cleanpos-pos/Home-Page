@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Beer, CreditCard, BarChart3, Package, Users, Percent } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Pub ePOS System',
   description:
-    'Pub ePOS System with tab management, cellar stock tracking, real ale management, drink modifiers, and pub-specific reporting. Built for wet-led and food-led pubs. POS from £499 + VAT.',
+    `Pub ePOS System with tab management, cellar stock tracking, real ale management, drink modifiers, and pub-specific reporting. Built for wet-led and food-led pubs. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'pub epos system',
     'pub epos',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pub ePOS System | Posso UK',
     description:
-      'Pub ePOS System with tab management, cellar stock, real ale management, and pub-specific reporting. POS from £499 + VAT.',
+      `Pub ePOS System with tab management, cellar stock, real ale management, and pub-specific reporting. POS from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/pub-epos-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -124,14 +126,14 @@ export default function PubEposSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Cellar stock tracking with yield monitoring</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Multi-till tab sync across the whole pub</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pub ePOS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pub ePOS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -221,13 +223,15 @@ export default function PubEposSystemPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Pub ePOS System — Frequently Asked Questions" faqs={[
           { question: 'How does cellar stock tracking work?', answer: 'Register kegs when they arrive in the cellar. The ePOS tracks pints sold per keg and calculates yield. When the expected number of pints is reached, you get an alert that the keg should be empty. If the keg runs out early, there is wastage or unrecorded sales to investigate.' },
           { question: 'Can I manage guest beer rotation on the ePOS?', answer: 'Yes. Add a new guest beer in seconds — enter the name, set the price, assign a category. When the cask is finished, remove it from the till in one tap. Sales reports show which guest beers sold best and at what rate, helping you make better purchasing decisions.' },
           { question: 'Do tabs sync across all tills in the pub?', answer: 'Yes. A tab opened at the main bar can have items added from the garden bar, function room, or any other till. Tabs sync in real time via the cloud. The customer can settle at any till. Tabs persist across shift changes.' },
           { question: 'Does the pub ePOS handle food orders too?', answer: 'Yes. Food orders route to the kitchen display while drink orders appear on the bar screen. A customer ordering a pint and a pie gets one order split automatically. Table management, course firing, and food modifiers are all available for food-led pubs and gastropubs.' },
           { question: 'Can I split reporting between wet and dry sales?', answer: 'Yes. The pub ePOS separates wet sales (drinks) from dry sales (food) in all reports. Track revenue, GP, and average spend for each category independently. Compare the wet-to-dry ratio over time to understand how your food offering is growing relative to bar sales.' },
-          { question: 'How much does the pub ePOS system cost?', answer: 'The pub ePOS starts from £499 + VAT including the touchscreen terminal and software. Additional tills for multi-bar setups, card terminals, and kitchen display screens are available. Finance from £24.92 per week. Free setup and training included with a 2-year warranty.' },
+          { question: 'How much does the pub ePOS system cost?', answer: `The pub ePOS starts from ${posso.posPrice} + VAT including the touchscreen terminal and software. Additional tills for multi-bar setups, card terminals, and kitchen display screens are available. Finance from ${posso.financeWeekly} per week. Free setup and training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

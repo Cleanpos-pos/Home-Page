@@ -8,6 +8,8 @@ import { Check, X, Minus, MessageSquare, Phone, ArrowRight, ShieldQuestion, Info
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 const SLUG = 'best-pos-system-reddit';
 const URL = `https://www.posso.co.uk/${SLUG}`;
@@ -57,11 +59,7 @@ const pageSchema = [
     description:
       'A summary of recurring themes in public Reddit discussions about restaurant and takeaway POS systems, with links to the original threads and a UK buyer’s checklist. Produced by Posso, a UK hospitality POS provider.',
     author: { '@type': 'Organization', name: 'Posso Editorial Team', url: 'https://www.posso.co.uk/about' },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Posso Ltd',
-      logo: { '@type': 'ImageObject', url: 'https://www.posso.co.uk/icon-512x512.png' },
-    },
+    publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     datePublished: PUBLISHED,
     dateModified: REVIEWED,
     url: URL,
@@ -479,7 +477,7 @@ export default function BestPosSystemRedditPage() {
               <Link href="/contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all hover:scale-105 text-lg px-8 py-3 font-medium">
                 Book a Posso One demonstration <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+              <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
                 <Phone className="mr-2 h-5 w-5" /> Talk to a UK POS specialist
               </a>
             </div>
@@ -508,6 +506,8 @@ export default function BestPosSystemRedditPage() {
             </div>
           </div>
         </section>
+
+        <EposClusterLinks />
 
         <FAQSection title="POS systems on Reddit — FAQs" faqs={[
           { question: 'What POS system do restaurant owners recommend on Reddit?', answer: 'There is no single answer — recommendations vary by business type. For full-service restaurants, Toast and Lightspeed come up often; for cafés and simple setups, Square is popular for its quick start; UK takeaways tend to prioritise systems with delivery-platform integration and UK support. The stronger takeaway is to match the system to your operation rather than chase a single "best".' },

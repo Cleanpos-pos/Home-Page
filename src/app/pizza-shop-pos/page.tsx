@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Pizza, Monitor, PhoneCall, Truck, Users, TabletSmartphone } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Pizza Shop POS',
   description:
-    'Pizza Shop POS with counter and delivery management, caller ID, driver tracking, kiosk ordering, and online integration. Complete pizza shop system from £499 + VAT.',
+    `Pizza Shop POS with counter and delivery management, caller ID, driver tracking, kiosk ordering, and online integration. Complete pizza shop system from ${posso.posPrice} + VAT.`,
   keywords: [
     'pizza shop pos',
     'pizza shop pos system',
@@ -78,7 +79,7 @@ const features = [
   { icon: Monitor, title: 'Counter & Delivery Management', description: 'One screen handles walk-in counter orders and delivery orders side by side. Counter orders are marked for collection with a ticket number. Delivery orders include the customer address, delivery zone, and estimated time. The kitchen works one unified queue regardless of how the order arrived.' },
   { icon: PhoneCall, title: 'Caller ID Integration', description: 'The phone rings and the customer details appear on screen before you pick up. Name, address, previous orders — all visible instantly. Returning customers reorder their usual in seconds. New callers have their details saved for next time. During a busy Friday night, caller ID turns a 3-minute phone order into a 45-second reorder.' },
   { icon: Truck, title: 'Driver Management', description: 'See all your drivers on one dashboard — who is available, who is out, and how long they have been gone. Assign deliveries to drivers with one tap. Drivers use a mobile app with the delivery address, order details, and navigation. Mark deliveries as complete and the driver returns to the available pool automatically.' },
-  { icon: TabletSmartphone, title: 'Self-Service Kiosk', description: 'Walk-in customers order at a kiosk without queuing at the counter. They browse the full menu, build custom pizzas, select sides and drinks, and pay by card. The order goes directly to the kitchen display. Kiosks reduce counter congestion during peak hours and increase average order value through visual upsells. Kiosks from £699 + VAT.' },
+  { icon: TabletSmartphone, title: 'Self-Service Kiosk', description: `Walk-in customers order at a kiosk without queuing at the counter. They browse the full menu, build custom pizzas, select sides and drinks, and pay by card. The order goes directly to the kitchen display. Kiosks reduce counter congestion during peak hours and increase average order value through visual upsells. Kiosks from ${posso.kioskPrice} + VAT.` },
   { icon: Users, title: 'Staff Management', description: 'Each staff member logs in with a PIN or swipe card. Track who processed each order, monitor individual sales performance, and manage shift clock-in and clock-out times. Set permission levels — counter staff can take orders while managers access reports, voids, and discounts. Shift reports show total sales by employee.' },
   { icon: Pizza, title: 'Kitchen Display System', description: 'Orders appear on the kitchen display in priority order. Each order shows the full specification — pizza sizes, toppings, sides, drinks, and special instructions. Collection orders have a ticket number. Delivery orders show the driver assignment and estimated dispatch time. The kitchen works through the queue systematically.' },
 ];
@@ -124,14 +125,14 @@ export default function PizzaShopPosPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Counter + delivery on one screen</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Caller ID pulls up customer history instantly</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete pizza shop POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete pizza shop POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -212,7 +213,7 @@ export default function PizzaShopPosPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/online-ordering" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Online Ordering</p>
@@ -226,10 +227,10 @@ export default function PizzaShopPosPage() {
         <FAQSection title="Pizza Shop POS — Frequently Asked Questions" faqs={[
           { question: 'Can it handle counter and delivery orders together?', answer: 'Yes. The POS manages counter orders and delivery orders from one interface. Counter orders receive a ticket number for collection. Delivery orders include the customer address, zone, and estimated time. The kitchen sees one unified queue. You do not need separate systems for counter service and delivery.' },
           { question: 'How does caller ID work?', answer: 'When a customer calls your shop, their phone number is matched against your customer database. Their name, delivery address, and previous orders appear on screen before you answer. For returning customers, reordering their usual takes two taps. New callers have their details saved automatically for their next order.' },
-          { question: 'Can walk-in customers use a kiosk?', answer: 'Yes. Self-service kiosks let walk-in customers browse the menu, build custom pizzas, add sides and drinks, and pay by card — without waiting for counter staff. Orders go directly to the kitchen display. Kiosks reduce queues during busy periods and increase average order value through visual menu presentation. Kiosks from £699 + VAT.' },
+          { question: 'Can walk-in customers use a kiosk?', answer: `Yes. Self-service kiosks let walk-in customers browse the menu, build custom pizzas, add sides and drinks, and pay by card — without waiting for counter staff. Orders go directly to the kitchen display. Kiosks reduce queues during busy periods and increase average order value through visual menu presentation. Kiosks from ${posso.kioskPrice} + VAT.` },
           { question: 'How do I manage delivery drivers?', answer: 'The driver dashboard shows all drivers and their status — available, assigned, or out on delivery. Assign orders to drivers with one tap. Drivers use a mobile app with delivery address, order details, and navigation. When they mark a delivery as complete, they return to the available pool. Track average delivery times and driver performance.' },
           { question: 'Does it integrate with delivery platforms?', answer: 'Yes. Orders from Just Eat, Uber Eats, and Deliveroo arrive directly on your POS and kitchen display. No separate tablets for each platform. All orders — phone, counter, kiosk, website, and delivery apps — appear in one queue. The kitchen works one workflow regardless of where the order originated.' },
-          { question: 'How much does the pizza shop POS cost?', answer: 'The complete pizza shop POS starts from £499 + VAT including touchscreen terminal, pizza builder, caller ID, and kitchen display software. Self-service kiosks from £699 + VAT. Online ordering at low commission. Finance from £24.92 per week. Free setup, menu import, and staff training with a 2-year warranty.' },
+          { question: 'How much does the pizza shop POS cost?', answer: `The complete pizza shop POS starts from ${posso.posPrice} + VAT including touchscreen terminal, pizza builder, caller ID, and kitchen display software. Self-service kiosks from ${posso.kioskPrice} + VAT. Online ordering at low commission. Finance from ${posso.financeWeekly} per week. Free setup, menu import, and staff training with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

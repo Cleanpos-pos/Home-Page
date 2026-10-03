@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, UtensilsCrossed, Users, Monitor, ShoppingBag, Globe, ClipboardList } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Pizza Restaurant Software',
   description:
-    'Pizza Restaurant Software for dine-in, delivery, self-service kiosks, and online ordering. Manage your entire pizza restaurant from one platform. From £499 + VAT.',
+    `Pizza Restaurant Software for dine-in, delivery, self-service kiosks, and online ordering. Manage your entire pizza restaurant from one platform. From ${posso.posPrice} + VAT.`,
   keywords: [
     'pizza restaurant software',
     'pizza restaurant management software',
@@ -77,7 +79,7 @@ const pageSchema = [
 const features = [
   { icon: UtensilsCrossed, title: 'Dine-In Table Management', description: 'Assign orders to tables, split bills between diners, and track table status from a visual floor plan. Servers use the pizza builder on handheld tablets to take orders tableside. Orders fire to the kitchen instantly — no walking back to a terminal. Table turn times are tracked automatically for capacity planning.' },
   { icon: ShoppingBag, title: 'Delivery Operations Centre', description: 'Manage delivery zones, fees, drivers, and live order tracking from one dispatch screen. See every active order — in prep, ready, dispatched, delivered. Assign drivers based on zone and workload. Drivers update status from their phones. Minimum order values and delivery fees adjust by zone and time of day.' },
-  { icon: Monitor, title: 'Self-Service Kiosks', description: 'Freestanding kiosks let customers build their own pizzas without queuing. The visual pizza builder walks them through size, crust, sauce, and toppings with images and prices. Kiosks from £699 + VAT. They upsell automatically — suggesting larger sizes, extra toppings, and meal deals. Average order values typically increase 15-25%.' },
+  { icon: Monitor, title: 'Self-Service Kiosks', description: `Freestanding kiosks let customers build their own pizzas without queuing. The visual pizza builder walks them through size, crust, sauce, and toppings with images and prices. Kiosks from ${posso.kioskPrice} + VAT. They upsell automatically — suggesting larger sizes, extra toppings, and meal deals. Average order values typically increase 15-25%.` },
   { icon: Globe, title: 'Online Ordering Portal', description: 'Your branded website with the full pizza builder for collection and delivery orders. Customers create accounts, save favourites, and reorder in two taps. Orders flow directly to your POS and kitchen. Low commission versus 35% on aggregator apps. You own the customer data and relationship.' },
   { icon: ClipboardList, title: 'Kitchen Display System', description: 'All orders from every channel — dine-in, counter, kiosk, website, delivery apps — appear on one kitchen display. Orders are colour-coded by type and prioritised by promised time. Each pizza shows its full specification. Prep timers track every order. The kitchen works a single, unified queue.' },
   { icon: Users, title: 'Staff & Labour Management', description: 'Clock in/out, rota scheduling, and labour cost reporting built into the software. See labour cost as a percentage of revenue in real time. Set staffing targets by day and hour. The system alerts you when labour costs exceed your threshold. Schedule shifts and notify staff by SMS directly from the platform.' },
@@ -123,15 +125,15 @@ export default function PizzaRestaurantSoftwarePage() {
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Dine-in, delivery, kiosk, and online in one system</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Self-service kiosks from £699 + VAT</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS terminals from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Self-service kiosks from {posso.kioskPrice} + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS terminals from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -206,7 +208,7 @@ export default function PizzaRestaurantSoftwarePage() {
                   <p className="font-semibold text-white">Pizza POS Software</p>
                   <p className="text-slate-400 text-sm mt-1">Pizza-specific POS</p>
                 </Link>
-                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pos-for-pizza-shop" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza ePOS</p>
                   <p className="text-slate-400 text-sm mt-1">Electronic POS for pizza</p>
                 </Link>
@@ -223,13 +225,15 @@ export default function PizzaRestaurantSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Pizza Restaurant Software — Frequently Asked Questions" faqs={[
           { question: 'Can it handle both dine-in and delivery?', answer: 'Yes. The software manages dine-in table service with visual floor plans and bill splitting alongside full delivery operations with zone management, driver tracking, and dispatch. Both channels feed into the same kitchen display. You run one system, not two separate platforms stitched together.' },
-          { question: 'How do self-service kiosks work for pizza?', answer: 'Customers use the visual pizza builder on a freestanding touchscreen to select size, crust, sauce, and toppings — including half-and-half. The kiosk shows images and prices at each step, suggests upsells, and takes card payment. Orders fire directly to the kitchen. Kiosks from £699 + VAT with pizza builder software included.' },
+          { question: 'How do self-service kiosks work for pizza?', answer: `Customers use the visual pizza builder on a freestanding touchscreen to select size, crust, sauce, and toppings — including half-and-half. The kiosk shows images and prices at each step, suggests upsells, and takes card payment. Orders fire directly to the kitchen. Kiosks from ${posso.kioskPrice} + VAT with pizza builder software included.` },
           { question: 'Does it include online ordering?', answer: 'Yes. Your branded ordering website features the full pizza builder with collection and delivery options. Customers create accounts, save favourites, and reorder quickly. Orders sync directly to your POS and kitchen display. Low commission compared to 35% on third-party delivery platforms. You keep the customer data.' },
           { question: 'Can I manage multiple pizza restaurant locations?', answer: 'Yes. Centralised menu management pushes updates to all locations simultaneously. Consolidated reporting shows performance across sites. Each location can have location-specific pricing, delivery zones, and staffing. Head office sees the full picture while each site operates independently day-to-day.' },
           { question: 'Does it track food and labour costs?', answer: 'Yes. Ingredient-level stock tracking shows actual versus theoretical food costs. Labour reports track staff hours and cost as a percentage of revenue. Waste logging highlights problem areas. Daily reports combine food cost, labour cost, and revenue so you see true profitability — not just sales.' },
-          { question: 'How much does pizza restaurant software cost?', answer: 'POS terminals start from £499 + VAT. Self-service kiosks from £699 + VAT. Online ordering included at low commission. The full package with POS, kitchen display, kiosk, and online ordering is available on finance from £29.95 per week. Free setup, menu import, and staff training included with a 2-year warranty.' },
+          { question: 'How much does pizza restaurant software cost?', answer: `POS terminals start from ${posso.posPrice} + VAT. Self-service kiosks from ${posso.kioskPrice} + VAT. Online ordering included at low commission. The full package with POS, kitchen display, kiosk, and online ordering is available on finance from £29.95 per week. Free setup, menu import, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

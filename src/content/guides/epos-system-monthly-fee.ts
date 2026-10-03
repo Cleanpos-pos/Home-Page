@@ -1,4 +1,5 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 /**
  * Community-research page (SERP-gap batch, August 2026). The highest-scoring
@@ -28,7 +29,7 @@ export const eposSystemMonthlyFee: Guide = {
   ],
   breadcrumb: "EPOS Monthly Fees",
   quickAnswer:
-    "In the owner threads, US operators report roughly $120+ per station per month for mainstream cloud POS, with small venues on $40–50 tiers and one owner paying $483 a month for two terminals and an iPad — a figure the thread agreed was too high. The same threads note UK and European pricing runs meaningfully lower. The traps owners flag are not the headline fee: they are inactivity charges, cancellation friction, per-station multipliers and card-rate lock-in. Compare systems on total monthly cost at your volume — software, integrations and card fees together. For UK calibration: Posso's software fee is from £25 + VAT a month, stated before you sign.",
+    `In the owner threads, US operators report roughly $120+ per station per month for mainstream cloud POS, with small venues on $40–50 tiers and one owner paying $483 a month for two terminals and an iPad — a figure the thread agreed was too high. The same threads note UK and European pricing runs meaningfully lower. The traps owners flag are not the headline fee: they are inactivity charges, cancellation friction, per-station multipliers and card-rate lock-in. Compare systems on total monthly cost at your volume — software, integrations and card fees together. For UK calibration: Posso's software fee is from ${posso.softwareMonthly} + VAT a month, stated before you sign.`,
   sections: [
     {
       kind: "prose",
@@ -70,7 +71,7 @@ export const eposSystemMonthlyFee: Guide = {
       heading: "The figures in one place — including ours",
       paragraphs: [
         "From the threads, in their original currencies: $120+ per station per month for mainstream US cloud POS; $40–50 a month for small-venue tiers; $483 a month for a two-terminal-plus-iPad setup one owner considered excessive; $7–8,000 for full multi-station installs; $15–20 a month claimed for bare-bones back-office tools; a 2001 benchmark of $33,000 for five terminals plus $2,500 a year in support; and in the UK, a card-rate offer of 0.6% debit and 0.8% credit that failed on integration. None of these are our prices — they are what owners report, which is the number vendor pages never show you.",
-        "Posso's own costs, stated the way we ask every vendor to state theirs: the system is £499 + VAT up front — terminal, kitchen printer, cash drawer, receipt printer, menu build, training and a 2-year warranty — or finance from £24.92 a week. Yes, there is a monthly software fee, and here is the number: from £25 + VAT a month, covering the core system, updates and cloud features, with your exact figure confirmed on your quote before you sign. The other fixed charge is £45 a month for Just Eat, Deliveroo and Uber Eats integration, only if you use it, plus 30p per delivery through your own drivers. Card processing runs through Posso Pay and is quoted on your card turnover — the same rate in store and online. Ask us for the total monthly figure at your volume and we will put it in writing; that is the comparison the threads teach you to demand.",
+        `Posso's own costs, stated the way we ask every vendor to state theirs: the system is ${posso.posPrice} + VAT up front — terminal, kitchen printer, cash drawer, receipt printer, menu build, training and a ${posso.warrantyYears}-year warranty — or finance from ${posso.financeWeekly} a week. Yes, there is a monthly software fee, and here is the number: from ${posso.softwareMonthly} + VAT a month, covering the core system, updates and cloud features, with your exact figure confirmed on your quote before you sign. The other fixed charge is ${posso.deliveryIntegrationMonthly} a month for Just Eat, Deliveroo and Uber Eats integration, only if you use it, plus ${posso.driverAppPerDelivery} per delivery through your own drivers. Card processing runs through Posso Pay and is quoted on your card turnover — the same rate in store and online. Ask us for the total monthly figure at your volume and we will put it in writing; that is the comparison the threads teach you to demand.`,
       ],
     },
     {
@@ -101,7 +102,7 @@ export const eposSystemMonthlyFee: Guide = {
         [
           "Buy the hardware, modest monthly software fee",
           "The structure UK owners in the threads keep circling back to: own the kit, pay a predictable software fee, keep control of the card relationship.",
-          "In whether the 'modest' fee is actually confirmed in writing. This is Posso's model — from £25 + VAT a month, on the quote before you sign.",
+          `In whether the 'modest' fee is actually confirmed in writing. This is Posso's model — from ${posso.softwareMonthly} + VAT a month, on the quote before you sign.`,
         ],
       ],
     },
@@ -110,7 +111,7 @@ export const eposSystemMonthlyFee: Guide = {
       kicker: "Our stake",
       heading: "Where Posso fits — and where it doesn't",
       paragraphs: [
-        "We built this page because the thread consensus is our argument: own your hardware (£499 + VAT, yours), pay a predictable monthly software fee you saw in writing before signing, and keep your card processing quoted on your real turnover rather than locked to a rate you never chose. If a competitor puts a sharper total in writing at your volume, take it to us — pricing conversations with real numbers on the table are the ones we win most often.",
+        `We built this page because the thread consensus is our argument: own your hardware (${posso.posPrice} + VAT, yours), pay a predictable monthly software fee you saw in writing before signing, and keep your card processing quoted on your real turnover rather than locked to a rate you never chose. If a competitor puts a sharper total in writing at your volume, take it to us — pricing conversations with real numbers on the table are the ones we win most often.`,
         "Where we are not the answer, in the threads' own spirit: a market stall or one-person operation taking a few hundred pounds a week should use a flat-rate reader and pay no monthly fee at all — the threads are right, and we say the same on our other pages. If you want zero ongoing costs forever, that genuinely exists only with an old-style outright purchase and no support behind it; the threads' 2001 veteran can tell you how that pricing ends. And if you are outside the UK, our numbers are not your numbers — read your local threads the way we read these.",
       ],
     },
@@ -161,7 +162,7 @@ export const eposSystemMonthlyFee: Guide = {
         { label: "Cheap EPOS software — honest limits", href: "/cheap-epos-software" },
         { label: "Epos Now alternative", href: "/epos-now-alternative" },
         { label: "Card machines", href: "/credit-card-machines" },
-        { label: "Finance from £24.92/week", href: "/finance" },
+        { label: `Finance from ${posso.financeWeekly}/week`, href: "/finance" },
       ],
     },
   ],
@@ -173,7 +174,7 @@ export const eposSystemMonthlyFee: Guide = {
     },
     {
       q: "Does Posso charge a monthly software fee?",
-      a: "Yes — from £25 + VAT a month, covering the core system, software updates and cloud features, with your exact figure confirmed on your quote. The hardware is bought outright from £499 + VAT, marketplace integration is £45 a month only if used, own-driver deliveries are 30p each, and card processing is quoted on your turnover. We would rather state that plainly than be the provider whose fees you discover on the first invoice — that provider has a thirty-comment thread about them, linked above.",
+      a: `Yes — from ${posso.softwareMonthly} + VAT a month, covering the core system, software updates and cloud features, with your exact figure confirmed on your quote. The hardware is bought outright from ${posso.posPrice} + VAT, marketplace integration is ${posso.deliveryIntegrationMonthly} a month only if used, own-driver deliveries are ${posso.driverAppPerDelivery} each, and card processing is quoted on your turnover. We would rather state that plainly than be the provider whose fees you discover on the first invoice — that provider has a thirty-comment thread about them, linked above.`,
     },
     {
       q: "What hidden fees should I check for before signing?",
@@ -189,7 +190,7 @@ export const eposSystemMonthlyFee: Guide = {
     },
     {
       q: "Should I pay monthly or buy my EPOS outright?",
-      a: "The structure UK owners in the threads keep arriving at is the split: buy the hardware outright so it is yours, pay a modest monthly fee for the software that has to keep evolving, and never accept card-rate captivity as part of the deal. That is the model we run — £499 + VAT for the kit, software from £25 + VAT a month, processing quoted on turnover. Pure rental means paying forever; pure purchase with no support behind it is how the 2001 veteran in the thread ended up telling war stories.",
+      a: `The structure UK owners in the threads keep arriving at is the split: buy the hardware outright so it is yours, pay a modest monthly fee for the software that has to keep evolving, and never accept card-rate captivity as part of the deal. That is the model we run — ${posso.posPrice} + VAT for the kit, software from ${posso.softwareMonthly} + VAT a month, processing quoted on turnover. Pure rental means paying forever; pure purchase with no support behind it is how the 2001 veteran in the thread ended up telling war stories.`,
     },
   ],
 };

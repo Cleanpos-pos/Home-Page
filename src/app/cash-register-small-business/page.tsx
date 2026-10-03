@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, ShoppingCart, TrendingUp, Receipt, CreditCard, BarChart3, RefreshCw } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Cash Register for Small Business',
   description:
-    'Cash Register for Small Business — modern ePOS vs traditional cash register, why small businesses are upgrading, what you get for £499 + VAT, and how to make the switch painlessly.',
+    `Cash Register for Small Business — modern ePOS vs traditional cash register, why small businesses are upgrading, what you get for ${posso.posPrice} + VAT, and how to make the switch painlessly.`,
   keywords: [
     'cash register small business',
     'cash register for small business',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cash Register for Small Business | Posso UK',
     description:
-      'Cash Register for Small Business — modern ePOS vs traditional till, upgrade guide, and what you get from £499 + VAT.',
+      `Cash Register for Small Business — modern ePOS vs traditional till, upgrade guide, and what you get from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/cash-register-small-business',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -119,19 +121,19 @@ export default function CashRegisterSmallBusinessPage() {
                 </span>
               </h1>
               <p className="text-xl text-slate-300 max-w-2xl">
-                The modern replacement for your cash register — touchscreen ePOS, integrated card payments, stock management, and sales reporting. Everything a small business needs from £499 + VAT.
+                The modern replacement for your cash register — touchscreen ePOS, integrated card payments, stock management, and sales reporting. Everything a small business needs from {posso.posPrice} + VAT.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Touchscreen ePOS replaces button-press tills</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Card payments built in — no separate terminal</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -184,7 +186,7 @@ export default function CashRegisterSmallBusinessPage() {
               </h2>
               <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                 <p>
-                  A traditional cash register costs £100-200. A Posso ePOS costs <strong className="text-white">from £499 + VAT</strong>. Why would a small business spend more? Because the cash register is costing you more than the purchase price every single month — in keying errors, lost stock, missed insights, and turned-away card customers.
+                  A traditional cash register costs £100-200. A Posso ePOS costs <strong className="text-white">from {posso.posPrice} + VAT</strong>. Why would a small business spend more? Because the cash register is costing you more than the purchase price every single month — in keying errors, lost stock, missed insights, and turned-away card customers.
                 </p>
                 <p>
                   A corner shop doing <strong className="text-white">150 transactions per day</strong> with a 1% keying error rate loses £30-50 per week in pricing mistakes alone. That is £1,500-2,500 per year — enough to pay for the ePOS system three times over. Add the stock that disappears without being tracked, the customers who leave because you cannot take card, and the hours spent on manual cashing up.
@@ -223,8 +225,10 @@ export default function CashRegisterSmallBusinessPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Cash Register for Small Business — Frequently Asked Questions" faqs={[
-          { question: 'How much does a modern cash register cost?', answer: 'The Posso ePOS system for small businesses starts from £499 + VAT. This includes the touchscreen terminal, POS software, receipt printer, and cash drawer. Integrated card payment terminal available. Finance from £24.92 per week. Free setup, product configuration, and staff training included with a 2-year hardware warranty.' },
+          { question: 'How much does a modern cash register cost?', answer: `The Posso ePOS system for small businesses starts from ${posso.posPrice} + VAT. This includes the touchscreen terminal, POS software, receipt printer, and cash drawer. Integrated card payment terminal available. Finance from ${posso.financeWeekly} per week. Free setup, product configuration, and staff training included with a ${posso.warrantyYears}-year hardware warranty.` },
           { question: 'Is it difficult to switch from a cash register to ePOS?', answer: 'No. The switch takes one afternoon. We set up the hardware, import your product list from a spreadsheet or enter it manually, configure categories and prices, and train your staff. Most staff are comfortable with the touchscreen interface within 30 minutes. You are trading on the new system by the next morning with zero disruption.' },
           { question: 'Can I still accept cash?', answer: 'Absolutely. The system comes with a cash drawer and handles cash transactions with automatic change calculation. The ePOS handles cash and card equally well. You get the benefit of tracking all sales — cash and card — in one system with full reporting. Cash management reports show expected cash versus counted cash at the end of every shift.' },
           { question: 'Do I need the internet for it to work?', answer: 'The system works offline for taking orders and processing cash payments. Card payments require an internet connection. Sales data syncs to the cloud when the connection is restored. This means a brief internet outage does not stop you trading. For areas with unreliable broadband, the system is designed to operate normally during connectivity interruptions.' },

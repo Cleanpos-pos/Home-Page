@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Search, Flame, Grid3x3, Users, MousePointerClick, Timer, FileText } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
-  title: 'Indian Takeaway EPOS & Till System — from £499',
+  title: `Indian Takeaway EPOS & Till System — from ${posso.posPrice}`,
   description:
-    'Choosing an EPOS for an Indian takeaway? What actually matters — spice levels, protein-by-curry pricing, banquet menus and collection times — plus real costs. Posso tills from £499 + VAT.',
+    `Choosing an EPOS for an Indian takeaway? What actually matters — spice levels, protein-by-curry pricing, banquet menus and collection times — plus real costs. Posso tills from ${posso.posPrice} + VAT.`,
   keywords: [
     'pos for indian takeaway',
     'indian takeaway epos',
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Indian Takeaway EPOS & Till System | Posso UK',
     description:
-      'Indian takeaway EPOS buyer\'s guide — the six things that actually matter, what to test before you buy, and what it costs. Posso tills from £499 + VAT.',
+      `Indian takeaway EPOS buyer's guide — the six things that actually matter, what to test before you buy, and what it costs. Posso tills from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/pos-for-indian-takeaway',
     type: 'website',
     // TODO: replace with a bespoke 1200×630 card once artwork exists
@@ -91,9 +92,10 @@ const benefits: { title: string; description: React.ReactNode }[] = [
     title: 'Separate the Guide from the Sales Pitch',
     description: (
       <>
-        Most Indian takeaway POS pages are product brochures. Work out your own requirements first — spice prompts, protein variants, banquet pricing, sundry speed — then judge each supplier against your list rather than theirs. When you are ready to look at a specific system, our{' '}
-        <Link href="/epos-system-for-indian-takeaway" className="text-primary hover:underline">Indian takeaway ePOS page</Link>{' '}
-        covers what Posso actually does.
+        Most Indian takeaway POS pages are product brochures. Work out your own requirements first — spice prompts, protein variants, banquet pricing, sundry speed — then judge each supplier against your list rather than theirs. When you are ready to look at a specific system, the Posso section below covers what our{' '}
+        <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
+        actually does, and every cost is on our{' '}
+        <Link href="/epos-pricing-uk" className="text-primary hover:underline">EPOS pricing page</Link>.
       </>
     ),
   },
@@ -145,14 +147,14 @@ export default function PosForIndianTakeawayPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Six features an Indian menu actually needs</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> What to test before you sign anything</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Indian takeaway POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Indian takeaway POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -219,7 +221,7 @@ export default function PosForIndianTakeawayPage() {
                   <strong className="text-white">Spice-level modifiers</strong> attach to a dish and fire at the point of entry, printing on the kitchen ticket alongside the dish name. Variants carry their own prices, so a protein change is a price change rather than a separate product. The combo builder prices meal deals and set menus as one line while still sending each component through to the kitchen, and all fourteen allergens are tagged per product from the same screen.
                 </p>
                 <p>
-                  Collection orders can be scheduled into <strong className="text-white">timed slots with a capacity limit</strong> on each, so an online rush is spread across the service rather than landing on the burners at once. Delivery zones, fees and minimum order values are drawn and set on a map. Caller ID brings up a returning customer&apos;s name, address and order history as the phone rings.
+                  Collection orders can be scheduled into <strong className="text-white">timed slots with a capacity limit</strong> on each, so an online rush is spread across the service rather than landing on the burners at once. Delivery zones, fees and minimum order values are drawn and set on a map. Caller ID brings up a returning customer&apos;s name, address, delivery notes and order history as the phone rings, and their usual order can be added again in one tap. Postcodes outside your delivery area are declined automatically.
                 </p>
                 <p>
                   Just Eat, Uber Eats and Deliveroo orders arrive in the same queue as counter, phone and website orders, and the{' '}
@@ -227,7 +229,7 @@ export default function PosForIndianTakeawayPage() {
                   shows one list with completion tracking. The system is offline-first, so a dropped connection mid-service does not stop you taking orders, taking cash or printing tickets.
                 </p>
                 <p>
-                  Pricing starts at <strong className="text-white">£499 + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a two-year warranty. On-site installation is quoted separately if you want it. Orders through your own website or app carry a 60p service fee paid by the customer at checkout, so there is no percentage commission on your own trade; you pay card processing only. Card payments run through Posso Pay. It is all one{' '}
+                  Pricing starts at <strong className="text-white">{posso.posPrice} + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a {posso.warrantyYearsWord}-year warranty. On-site installation for larger sites is priced on application. Orders through your own website or app carry a 60p service fee paid by the customer at checkout, so there is no percentage commission on your own trade; you pay card processing only. Card payments run through Posso Pay. It is all one{' '}
                   <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
                   rather than separate products bolted together.
                 </p>
@@ -248,9 +250,9 @@ export default function PosForIndianTakeawayPage() {
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore Indian Takeaway POS Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/epos-system-for-indian-takeaway" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">Indian Takeaway ePOS</p>
-                  <p className="text-slate-400 text-sm mt-1">The Posso system in full</p>
+                <Link href="/epos-pricing-uk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">EPOS Pricing</p>
+                  <p className="text-slate-400 text-sm mt-1">Every cost, published</p>
                 </Link>
                 <Link href="/ai-phone-ordering" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">AI Phone Ordering</p>
@@ -274,9 +276,10 @@ export default function PosForIndianTakeawayPage() {
           { question: 'How should a POS handle spice levels?', answer: 'As a compulsory modifier that fires when the dish is added and cannot be dismissed, printing on the kitchen ticket at the same weight as the dish name. Spice level is the most common cause of a remake on an Indian menu, and a free-text note is the first thing staff skip when there is a queue. Ask to see a ticket printed with a spice level on it before you buy.' },
           { question: 'Do I need a separate product for every protein and curry combination?', answer: 'No, and a system that requires it will cost you days of setup and make every price review painful. Chicken, lamb, prawn, king prawn, paneer and vegetable should be variants against a single curry, each carrying its own price. Ask how a price rise on king prawn across the whole menu is applied — if the answer is editing dozens of products by hand, that is your answer.' },
           { question: 'Can a POS price a banquet menu per person?', answer: 'It should. A banquet is a fixed price per head with choices at each course, so the system needs to multiply by covers, hold the per-head price as a single line, and still send every chosen dish through to the kitchen. Ringing in each component and discounting by hand loses margin on some orders, overcharges on others, and leaves your reports unable to say how many banquets you sold.' },
-          { question: 'How much does an Indian takeaway POS cost in the UK?', answer: 'A complete system with a touchscreen terminal, kitchen printing and online ordering typically starts around £499 + VAT upfront, with monthly software from roughly £30. Kitchen display screens, extra printers and kiosks add to that. Over three years marketplace commission is usually the largest single cost in the whole setup — model that before comparing hardware prices.' },
+          { question: 'How much does an Indian takeaway POS cost in the UK?', answer: `A complete system with a touchscreen terminal, kitchen printing and online ordering typically starts around ${posso.posPrice} + VAT upfront, with monthly software from roughly £30. Kitchen display screens, extra printers and kiosks add to that. Over three years marketplace commission is usually the largest single cost in the whole setup — model that before comparing hardware prices.` },
           { question: 'Can the POS quote a realistic collection time when the kitchen is busy?', answer: 'On a well-designed system, yes. Collection orders can be scheduled into time slots with a limit on how many the system accepts per slot, so a burst of online orders is spread across the service rather than landing on the burners together. A flat prep time quoted to every customer regardless of how busy the kitchen is will produce arguments at the counter on a Saturday.' },
-          { question: 'What is the difference between this guide and your Indian takeaway ePOS page?', answer: 'This page is a buyer\'s guide — what to look for in any Indian takeaway POS, what to test and what it should cost, whoever you end up buying from. The Indian takeaway ePOS page describes what the Posso system itself does, with features, pricing and a demo request. Start here if you are comparing, and go there when you want the detail on Posso.' },
+          { question: 'Can the POS bring up a regular customer when they ring?', answer: 'Yes, with caller ID. As the phone rings the till shows the caller’s name, address, delivery notes and previous orders, and their usual can be added again in one tap — which matters on a Friday when the same households order the same thing every week. Ask any supplier to demonstrate it with a real incoming call, not a mock-up.' },
+          { question: 'Can meal deals apply automatically?', answer: 'They should. A deal such as any curry with rice and a naan at a set price should apply itself when the qualifying items are added, rather than relying on staff to remember and discount by hand. On Posso the combo builder prices the deal as one line and still sends each dish to the kitchen.' },
         ]} />
 
         <DemoEnquiry />

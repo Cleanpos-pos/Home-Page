@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Monitor, Fingerprint, Shield, Cpu, Droplets, Wrench } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Touch Screen Till System',
   description:
-    'Touch Screen Till System with 15" capacitive touchscreen, IP54 rated, fanless design, built for hospitality. Fast, durable, and spill-resistant. From £499 + VAT.',
+    `Touch Screen Till System with 15" capacitive touchscreen, IP54 rated, fanless design, built for hospitality. Fast, durable, and spill-resistant. From ${posso.posPrice} + VAT.`,
   keywords: [
     'touch screen till system',
     'touchscreen till',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Touch Screen Till System | Posso UK',
     description:
-      'Touch Screen Till System — 15" capacitive, IP54 rated, fanless, built for hospitality. Durable and fast from £499 + VAT.',
+      `Touch Screen Till System — 15" capacitive, IP54 rated, fanless, built for hospitality. Durable and fast from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/touch-screen-till-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -60,7 +62,7 @@ const pageSchema = [
       'Fanless silent design',
       'Hospitality-grade durability',
       'Multi-touch gesture support',
-      '2-year hardware warranty',
+      `${posso.warrantyYears}-year hardware warranty`,
     ],
   },
   {
@@ -80,12 +82,12 @@ const features = [
   { icon: Droplets, title: 'IP54 Splash Protection', description: 'Rated IP54 for protection against dust and water splashes from any direction. A spilled pint on the bar, sauce splatter from the kitchen pass, cleaning spray during close-down — the till keeps working. In hospitality environments where liquid near electronics is inevitable, IP54 protection means your till survives the real conditions of daily service without faulting.' },
   { icon: Cpu, title: 'Fanless Silent Operation', description: 'No internal fan means no noise and no air intake. The system runs silently — no whirring, no humming, no dust being pulled inside. In a quiet cafe, the till is inaudible. More importantly, fanless design means no dust accumulation on internal components. A fan-cooled till in a flour-dusted bakery or a dusty stockroom clogs within months. A fanless till does not.' },
   { icon: Shield, title: 'Built for Hospitality', description: 'The hardware is designed for 16-hour service days, 7 days a week. Solid-state storage with no moving parts means no hard drive failures. The chassis is reinforced for accidental knocks. The stand is adjustable for height and angle — tilt it for standing service or angle it for seated operation. Cable management keeps the counter tidy. This is not consumer electronics repurposed — it is built for commercial use.' },
-  { icon: Wrench, title: 'Easy Maintenance & Connectivity', description: 'Standard USB ports for receipt printer, cash drawer, barcode scanner, and card terminal. Ethernet and Wi-Fi for network connectivity. The system is modular — if a component needs replacing, it is swapped without replacing the whole unit. Wall-mount and counter-mount options. 2-year hardware warranty covers all components. UK-based support for any hardware issues.' },
+  { icon: Wrench, title: 'Easy Maintenance & Connectivity', description: `Standard USB ports for receipt printer, cash drawer, barcode scanner, and card terminal. Ethernet and Wi-Fi for network connectivity. The system is modular — if a component needs replacing, it is swapped without replacing the whole unit. Wall-mount and counter-mount options. ${posso.warrantyYears}-year hardware warranty covers all components. UK-based support for any hardware issues.` },
 ];
 
 const benefits = [
   { title: 'Speed That Matches Your Busiest Service', description: 'A capacitive touchscreen registers taps instantly. Combined with an SSD and modern processor, the till responds without delay. During peak service, staff are tapping products, processing payments, and moving to the next customer in a continuous flow. Lag on a POS screen costs seconds per transaction. Over a 200-transaction Friday night, those seconds add up to 30+ minutes of lost service time.' },
-  { title: 'Hardware That Survives Hospitality', description: 'A consumer tablet lasts 12-18 months in a restaurant environment. It is not designed for grease, steam, splashes, and 16-hour days. The Posso touch screen till is built for exactly these conditions — IP54 rated, fanless, solid-state, reinforced chassis. The 2-year warranty reflects the durability. Most units run for 5+ years without hardware failure.' },
+  { title: 'Hardware That Survives Hospitality', description: `A consumer tablet lasts 12-18 months in a restaurant environment. It is not designed for grease, steam, splashes, and 16-hour days. The Posso touch screen till is built for exactly these conditions — IP54 rated, fanless, solid-state, reinforced chassis. The ${posso.warrantyYears}-year warranty reflects the durability. Most units run for 5+ years without hardware failure.` },
   { title: 'A Screen Your Staff Want to Use', description: 'Resistive touchscreens require pressure and precision. Staff press hard, aim carefully, and wait for the response. Capacitive touchscreens respond to a light tap — the same touch they use on their own phone. New staff learn the system faster because the interaction feels natural. Existing staff work faster because the screen keeps up with them.' },
   { title: 'Clean, Professional Counter Presence', description: 'The slim profile, adjustable stand, and integrated cable management create a clean counter setup. No rats-nest of cables, no bulky monitor, no external power bricks. The till looks professional from the customer side and is tidy from the staff side. In a cafe, restaurant, or shop where counter space is premium, the compact footprint matters.' },
 ];
@@ -124,14 +126,14 @@ export default function TouchScreenTillSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> 15" capacitive multi-touch display</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> IP54 rated — splash and dust protected</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete touch screen till from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete touch screen till from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -187,10 +189,10 @@ export default function TouchScreenTillSystemPage() {
                   A budget POS tablet costs £150-250. It looks appealing until it fails <strong className="text-white">mid-service on a Saturday night</strong>. The screen stops responding because it is a resistive panel that degrades with use. The battery swells because it was not designed for 16-hour days plugged in. Grease from the kitchen pass seeps into the charging port. You are down to pen and paper during your busiest shift.
                 </p>
                 <p>
-                  The Posso touch screen till is built for <strong className="text-white">commercial use from day one</strong>. The capacitive touchscreen is the same technology as flagship smartphones — accurate, responsive, and durable. IP54 means splashes and dust do not get in. Fanless means no dust accumulation inside. Solid-state storage means no moving parts to fail. The 2-year warranty is not optimistic — it reflects the engineering.
+                  The Posso touch screen till is built for <strong className="text-white">commercial use from day one</strong>. The capacitive touchscreen is the same technology as flagship smartphones — accurate, responsive, and durable. IP54 means splashes and dust do not get in. Fanless means no dust accumulation inside. Solid-state storage means no moving parts to fail. The {posso.warrantyYears}-year warranty is not optimistic — it reflects the engineering.
                 </p>
                 <p>
-                  Over a 5-year lifespan, a <strong className="text-white">£499 commercial till</strong> costs £100 per year. A £200 consumer tablet replaced every 18 months costs £133 per year — plus the cost of downtime, data transfer, and reconfiguration each time. The cheaper option is more expensive. The reliable option pays for itself through uninterrupted service.
+                  Over a 5-year lifespan, a <strong className="text-white">{posso.posPrice} commercial till</strong> costs £100 per year. A £200 consumer tablet replaced every 18 months costs £133 per year — plus the cost of downtime, data transfer, and reconfiguration each time. The cheaper option is more expensive. The reliable option pays for itself through uninterrupted service.
                 </p>
               </div>
             </div>
@@ -208,7 +210,7 @@ export default function TouchScreenTillSystemPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/hospitality-software-uk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Hospitality Software</p>
@@ -216,12 +218,14 @@ export default function TouchScreenTillSystemPage() {
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
           </div>
         </section>
+
+        <EposClusterLinks />
 
         <FAQSection title="Touch Screen Till System — Frequently Asked Questions" faqs={[
           { question: 'What size is the touchscreen?', answer: '15 inches diagonally with a 1024x768 resolution. The screen is bright, clear, and readable from wide viewing angles. The capacitive multi-touch panel responds to light taps and supports gestures like scrolling and swiping. The display is large enough to show a full product menu without excessive scrolling.' },
@@ -229,7 +233,7 @@ export default function TouchScreenTillSystemPage() {
           { question: 'Why does fanless design matter?', answer: 'A fan pulls air through the unit to cool it — and with the air comes dust, grease, flour, and moisture. In a bakery, kitchen, or dusty stockroom, fan-cooled electronics clog and overheat within months. Fanless design uses passive cooling with no air intake. The internals stay clean, the unit runs silently, and the lifespan is significantly longer in harsh environments.' },
           { question: 'What peripherals can I connect?', answer: 'Standard USB ports support receipt printers, cash drawers, barcode scanners, customer displays, and card payment terminals. Ethernet and Wi-Fi provide network connectivity. The system supports all standard POS peripherals. Multiple USB ports mean you can connect everything you need without a hub.' },
           { question: 'Is it suitable for retail as well as hospitality?', answer: 'Yes. The touch screen till works equally well in shops, salons, gyms, and any business that needs a point of sale. Barcode scanning, stock management, and product search are all supported. The IP54 rating and fanless design are valuable in any environment, not just hospitality. The 15-inch screen is ideal for both counter service and retail checkout.' },
-          { question: 'How much does a touch screen till system cost?', answer: 'The complete touch screen till system starts from £499 + VAT including the 15-inch capacitive touchscreen, POS software, receipt printer, and cash drawer. Card payment terminal available. Finance from £24.92 per week. Free setup, product configuration, and staff training included with a 2-year hardware warranty covering all components.' },
+          { question: 'How much does a touch screen till system cost?', answer: `The complete touch screen till system starts from ${posso.posPrice} + VAT including the 15-inch capacitive touchscreen, POS software, receipt printer, and cash drawer. Card payment terminal available. Finance from ${posso.financeWeekly} per week. Free setup, product configuration, and staff training included with a ${posso.warrantyYears}-year hardware warranty covering all components.` },
         ]} />
 
         <Contact />

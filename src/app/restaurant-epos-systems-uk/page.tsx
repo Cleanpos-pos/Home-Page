@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, CreditCard, BarChart3, Phone, ArrowRight, Shield, MapPin, Building2, Globe } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Restaurant ePOS Systems UK | British Support, GBP Pricing & VAT',
   description:
-    'UK restaurant ePOS systems by Posso. British-based support, GBP pricing, VAT reporting, HMRC compliance, and delivery zones covering London, Manchester, Birmingham, Leeds, and more. From £499 + VAT.',
+    `UK restaurant ePOS systems by Posso. British-based support, GBP pricing, VAT reporting, HMRC compliance, and delivery zones covering London, Manchester, Birmingham, Leeds, and more. From ${posso.posPrice} + VAT.`,
   keywords: [
     'restaurant epos systems uk',
     'restaurant pos system uk',
@@ -79,8 +80,8 @@ const pageSchema = [
 ];
 
 const ukFeatures = [
-  { icon: Phone, title: 'UK-Based Support', description: 'Call our British support team on 0808 175 3956. No overseas call centres, no language barriers. Real people who understand UK hospitality.' },
-  { icon: CreditCard, title: 'GBP Pricing, No Hidden Fees', description: 'POS from £499 + VAT. Kiosks from £699 + VAT. Prices in pounds sterling, software from £25 + VAT a month, and no per-transaction charges from Posso.' },
+  { icon: Phone, title: 'UK-Based Support', description: `Call our British support team on ${posso.phone}. No overseas call centres, no language barriers. Real people who understand UK hospitality.` },
+  { icon: CreditCard, title: 'GBP Pricing, No Hidden Fees', description: `POS from ${posso.posPrice} + VAT. Kiosks from ${posso.kioskPrice} + VAT. Prices in pounds sterling, software from ${posso.softwareMonthly} + VAT a month, and no per-transaction charges from Posso.` },
   { icon: BarChart3, title: 'VAT Reporting Built In', description: 'Automatic VAT calculation on every transaction. Generate VAT-ready reports for your accountant. Handles different VAT rates for eat-in vs takeaway food.' },
   { icon: Shield, title: 'HMRC Compliance', description: 'Sales reports, X and Z reads, cash management, and digital record-keeping that satisfy HMRC requirements. Your accountant will thank you.' },
   { icon: MapPin, title: 'UK Delivery Zones', description: 'Set delivery areas by UK postcode. Custom minimum order values and delivery charges per zone. Automatic postcode validation for every delivery order.' },
@@ -128,16 +129,16 @@ export default function RestaurantEposUkPage() {
                   A restaurant ePOS built for the UK market. British-based support you can actually call, GBP pricing with no surprises, VAT reporting that satisfies your accountant, and HMRC-compliant record-keeping. Serving restaurants from London to Glasgow.
                 </p>
                 <ul className="space-y-3 text-slate-300 text-lg">
-                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> UK telephone support: 0808 175 3956</li>
+                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> UK telephone support: {posso.phone}</li>
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Automatic VAT calculation & reporting</li>
-                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from £499 + VAT</li>
+                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from {posso.posPrice} + VAT</li>
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
                   <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                     Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-                  <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                    <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                  <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                    <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                   </a>
                 </div>
               </div>
@@ -261,7 +262,7 @@ export default function RestaurantEposUkPage() {
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
                 <Link href="/best-restaurant-epos-system-uk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Compare Restaurant EPOS Systems</p>
@@ -273,12 +274,12 @@ export default function RestaurantEposUkPage() {
         </section>
 
         <FAQSection title="UK Restaurant ePOS — Frequently Asked Questions" faqs={[
-          { question: 'Is Posso a UK-based ePOS company?', answer: 'Yes. Posso is a UK company with British-based support. Our team is available 7 days a week on 0808 175 3956. We deliver, install, and support ePOS systems to restaurants across England, Scotland, Wales, and Northern Ireland.' },
+          { question: 'Is Posso a UK-based ePOS company?', answer: `Yes. Posso is a UK company with British-based support. Our team is available 7 days a week on ${posso.phone}. We deliver, install, and support ePOS systems to restaurants across England, Scotland, Wales, and Northern Ireland.` },
           { question: 'Does the restaurant ePOS handle UK VAT correctly?', answer: 'Yes. Posso automatically applies the correct VAT rate for eat-in food and drink (20%), cold takeaway food (0%), and hot takeaway food (20%). VAT reports are generated automatically for your accountant.' },
           { question: 'Is the ePOS system HMRC compliant?', answer: 'Yes. Posso provides digital sales records, X and Z reads, cash management reports, and itemised transaction logs that satisfy HMRC requirements for restaurant businesses.' },
           { question: 'Do you deliver ePOS systems anywhere in the UK?', answer: 'Yes. We deliver and support ePOS systems nationwide — from central London to rural Scotland. Hardware is shipped with next-day delivery available, and remote setup support is included free.' },
           { question: 'Can I manage UK postcode delivery zones?', answer: 'Yes. Set delivery zones by postcode prefix (e.g. M1, M2, M3 for Manchester). Each zone can have its own minimum order value and delivery charge. The system validates postcodes automatically.' },
-          { question: 'How much does a UK restaurant ePOS system cost?', answer: 'Posso restaurant ePOS starts from £499 + VAT for a complete terminal. Self-order kiosks from £699 + VAT. All prices are in GBP, with software from £25 + VAT a month. Finance options are available from £24.92/week.' },
+          { question: 'How much does a UK restaurant ePOS system cost?', answer: `Posso restaurant ePOS starts from ${posso.posPrice} + VAT for a complete terminal. Self-order kiosks from ${posso.kioskPrice} + VAT. All prices are in GBP, with software from ${posso.softwareMonthly} + VAT a month. Finance options are available from ${posso.financeWeekly}/week.` },
         ]} />
 
         <Contact />

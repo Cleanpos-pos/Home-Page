@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Smartphone, Palette, MapPin, Bell, Star, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Mobile Ordering Platform for Coffee Shops',
   description:
-    'Mobile Ordering Platform for Coffee Shops with branded app experience, push notifications, chain management, loyalty stamps, and real-time barista routing. From £499 + VAT.',
+    `Mobile Ordering Platform for Coffee Shops with branded app experience, push notifications, chain management, loyalty stamps, and real-time barista routing. From ${posso.posPrice} + VAT.`,
   keywords: [
     'mobile ordering platform coffee shops',
     'coffee shop mobile ordering',
@@ -124,14 +125,14 @@ export default function MobileOrderingPlatformCoffeeShopsPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Branded mobile experience with your logo and colours</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Push notifications when drinks are ready</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS from £499 + VAT, low commission on mobile orders</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS from {posso.posPrice} + VAT, low commission on mobile orders</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function MobileOrderingPlatformCoffeeShopsPage() {
           { question: 'Can we send push notifications and promotions?', answer: 'Yes. Push notifications update customers on order status — accepted, being prepared, ready for collection. You can also schedule promotional pushes: happy hour alerts, new menu items, loyalty reward reminders, or weather-triggered promotions like iced drink offers on hot days.' },
           { question: 'How does this integrate with our existing POS?', answer: 'Mobile orders arrive on the same barista display as till orders. There is no separate tablet or system to manage. The order queue is unified — walk-in and mobile orders are processed in sequence. Stock levels and menu availability sync in real time between the POS and the mobile platform.' },
           { question: 'What does the loyalty programme look like on mobile?', answer: 'Customers see a visual stamp card in the app showing their progress — for example, 6 out of 9 stamps collected. When the reward triggers, it applies automatically at checkout. Customers can view their reward history and current balance at any time. The programme works across mobile, web, and in-store purchases.' },
-          { question: 'How much does the mobile ordering platform cost?', answer: 'The POS system starts from £499 + VAT. Mobile ordering is available at low commission per order — significantly less than third-party delivery platforms. The branded native app is an optional add-on. Contact us for pricing tailored to your number of locations and expected order volume.' },
+          { question: 'How much does the mobile ordering platform cost?', answer: `The POS system starts from ${posso.posPrice} + VAT. Mobile ordering is available at low commission per order — significantly less than third-party delivery platforms. The branded native app is an optional add-on. Contact us for pricing tailored to your number of locations and expected order volume.` },
         ]} />
 
         <Contact />

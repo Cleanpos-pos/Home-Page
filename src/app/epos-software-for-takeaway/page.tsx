@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, CreditCard, BarChart3, Phone, ArrowRight, Cloud, RefreshCw, Layers, WifiOff } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'ePOS Software for Takeaway | Cloud-Based Takeaway Management',
   description:
-    'Posso ePOS software for takeaways. Cloud-based, offline-first, multi-device, real-time sync, menu management, analytics dashboard, and X/Z reports. From £499 + VAT.',
+    `Posso ePOS software for takeaways. Cloud-based, offline-first, multi-device, real-time sync, menu management, analytics dashboard, and X/Z reports. From ${posso.posPrice} + VAT.`,
   keywords: [
     'epos software for takeaway',
     'takeaway epos software',
@@ -130,14 +132,14 @@ export default function TakeawaySoftwarePage() {
                 <ul className="space-y-3 text-slate-300 text-lg">
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Cloud-based with full offline mode</li>
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Real-time sync across all devices</li>
-                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from £499 + VAT</li>
+                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from {posso.posPrice} + VAT</li>
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
                   <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                     Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-                  <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                    <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                  <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                    <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                   </a>
                 </div>
               </div>
@@ -222,12 +224,14 @@ export default function TakeawaySoftwarePage() {
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
           </div>
         </section>
+
+        <EposClusterLinks />
 
         <FAQSection title="Takeaway ePOS Software — Frequently Asked Questions" faqs={[
           { question: 'Is the takeaway ePOS software cloud-based?', answer: 'Yes. Posso is fully cloud-based. Your menu, orders, customer data, and sales reports are stored securely in the cloud and accessible from any device. The software also works offline — orders continue to process even if the internet drops, and data syncs when the connection returns.' },

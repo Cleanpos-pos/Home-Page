@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Monitor, Receipt, DollarSign, Clock, Users, Printer } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Restaurant Till System',
   description:
-    'Restaurant Till System with touchscreen terminal, cash drawer, receipt printing, shift reports, and staff PIN login. Complete restaurant till from £499 + VAT.',
+    `Restaurant Till System with touchscreen terminal, cash drawer, receipt printing, shift reports, and staff PIN login. Complete restaurant till from ${posso.posPrice} + VAT.`,
   keywords: [
     'restaurant till system',
     'restaurant till',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Restaurant Till System | Posso UK',
     description:
-      'Restaurant Till System with touchscreen terminal, cash drawer, receipt printing, shift reports, and staff login. From £499 + VAT.',
+      `Restaurant Till System with touchscreen terminal, cash drawer, receipt printing, shift reports, and staff login. From ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/restaurant-till-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -124,14 +126,14 @@ export default function RestaurantTillSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Touchscreen terminal with intuitive layout</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> End-of-shift cash-up in minutes</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Restaurant till system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Restaurant till system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function RestaurantTillSystemPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Restaurant Till System — Frequently Asked Questions" faqs={[
-          { question: 'What is included in the restaurant till system?', answer: 'The complete system includes a touchscreen terminal, cash drawer, receipt printer, and till software from £499 + VAT. The software includes menu management, table layout, staff login, reporting, and payment processing. A kitchen printer can be added for sending orders directly to the kitchen. Free setup, menu configuration, and staff training included.' },
+          { question: 'What is included in the restaurant till system?', answer: `The complete system includes a touchscreen terminal, cash drawer, receipt printer, and till software from ${posso.posPrice} + VAT. The software includes menu management, table layout, staff login, reporting, and payment processing. A kitchen printer can be added for sending orders directly to the kitchen. Free setup, menu configuration, and staff training included.` },
           { question: 'How does the cash-up report work?', answer: 'At the end of a shift, the report shows total sales broken down by payment method: cash, card, contactless. The expected cash figure is calculated from all cash transactions, less any float change. Count your drawer, enter the actual total, and the report shows any variance. The process takes minutes and is accurate to the penny.' },
           { question: 'Can each staff member have their own login?', answer: 'Yes. Every staff member gets a unique PIN or swipe card. The system logs who processed each order, payment, void, and discount. Permission levels control what each role can do: waitstaff take orders, supervisors apply discounts, managers access reports and perform voids. All activity is fully auditable.' },
           { question: 'Does it support bill splitting?', answer: 'Yes. Split a bill by item (each person pays for what they ordered), by number of covers (divide evenly), or by custom amounts. Mixed payments are supported — one person pays by card, another by cash, a third by contactless. The system handles all combinations quickly during the bill-paying process.' },
           { question: 'Can I see reports remotely?', answer: 'Yes. All till data syncs to a cloud dashboard accessible from any device with a browser. Check today\'s sales from your phone, compare this week to last week from your laptop at home, and monitor live service data from anywhere. You do not need to be in the restaurant to see how the business is performing.' },
-          { question: 'How much does the restaurant till system cost?', answer: 'The complete restaurant till system starts from £499 + VAT including touchscreen terminal, cash drawer, receipt printer, and software. Kitchen printer and additional terminals available as add-ons. Finance from £24.92 per week. Free setup, menu configuration, and staff training with a 2-year warranty.' },
+          { question: 'How much does the restaurant till system cost?', answer: `The complete restaurant till system starts from ${posso.posPrice} + VAT including touchscreen terminal, cash drawer, receipt printer, and software. Kitchen printer and additional terminals available as add-ons. Finance from ${posso.financeWeekly} per week. Free setup, menu configuration, and staff training with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

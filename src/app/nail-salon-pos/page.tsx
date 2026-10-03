@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, CalendarDays, Sparkles, ShoppingBag, Users, ClipboardList, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Nail Salon POS',
   description:
-    'Nail Salon POS with appointment booking, treatment tracking, product retail, staff scheduling, and client records. Built for nail salons and beauty businesses. From £499 + VAT.',
+    `Nail Salon POS with appointment booking, treatment tracking, product retail, staff scheduling, and client records. Built for nail salons and beauty businesses. From ${posso.posPrice} + VAT.`,
   keywords: [
     'nail salon pos',
     'nail salon pos system',
@@ -124,14 +126,14 @@ export default function NailSalonPosPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Online booking with technician selection</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Client records with treatment history</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Nail salon POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Nail salon POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function NailSalonPosPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Nail Salon POS — Frequently Asked Questions" faqs={[
           { question: 'Can clients book appointments online?', answer: 'Yes. The online booking page lets clients choose a treatment, select their preferred technician, pick an available time slot, and confirm the appointment. They receive automatic confirmation and a reminder 24 hours before. Walk-in clients are added to the calendar from the POS. Both booking types appear on the same schedule.' },
           { question: 'Does it track treatment history per client?', answer: 'Yes. Every client has a profile showing their complete treatment history: dates, treatments, technician, colours used, duration, and any notes. When a returning client is booked in, the assigned technician can review their history before the appointment begins. This enables personalised service without relying on memory.' },
           { question: 'Can I sell retail products through the POS?', answer: 'Yes. The POS handles services and retail products in one transaction. A gel manicure plus a cuticle oil and a hand cream all appear on the same receipt. Retail stock is tracked separately from treatment supplies. Low-stock alerts ensure popular products are always available. Product suggestions at checkout encourage add-on sales.' },
           { question: 'How does staff commission tracking work?', answer: 'Commission structures are configured per staff member or per role. Options include a percentage of treatment revenue, flat rate per service, tiered rates based on volume, and separate rates for retail sales. The system calculates commission automatically and generates pay period reports. Staff can see their own earnings through their login.' },
           { question: 'Does the system send appointment reminders?', answer: 'Yes. Automated reminders are sent 24 hours before the appointment by SMS or email. After the appointment, the system can prompt clients to rebook based on the treatment cycle. Reminders reduce no-shows by up to 60% and rebooking prompts keep your calendar consistently full.' },
-          { question: 'How much does a nail salon POS cost?', answer: 'The nail salon POS starts from £499 + VAT including touchscreen terminal, booking software, client management, and retail sales module. Low commission on card transactions. Free setup, treatment and service configuration, and staff training included with a 2-year warranty. Call 0808 175 3956 for a demo.' },
+          { question: 'How much does a nail salon POS cost?', answer: `The nail salon POS starts from ${posso.posPrice} + VAT including touchscreen terminal, booking software, client management, and retail sales module. Low commission on card transactions. Free setup, treatment and service configuration, and staff training included with a ${posso.warrantyYears}-year warranty. Call ${posso.phone} for a demo.` },
         ]} />
 
         <Contact />

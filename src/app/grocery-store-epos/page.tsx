@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, ScanBarcode, Scale, Package, Truck, Heart, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Grocery Store ePOS',
   description:
-    'Grocery Store ePOS with barcode scanning, weigh scale integration, stock management, supplier ordering, and customer loyalty. Built for grocery and convenience stores. From £499 + VAT.',
+    `Grocery Store ePOS with barcode scanning, weigh scale integration, stock management, supplier ordering, and customer loyalty. Built for grocery and convenience stores. From ${posso.posPrice} + VAT.`,
   keywords: [
     'grocery store epos',
     'grocery pos system',
@@ -124,14 +126,14 @@ export default function GroceryStoreEposPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Barcode scanning with instant product lookup</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Weigh scale integration for loose produce</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Grocery store ePOS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Grocery store ePOS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function GroceryStoreEposPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Grocery Store ePOS — Frequently Asked Questions" faqs={[
           { question: 'Does the ePOS work with barcode scanners?', answer: 'Yes. The Posso grocery ePOS works with standard USB and Bluetooth barcode scanners. It reads EAN-13, UPC, Code 128, and other common formats. When a barcode is scanned, the system instantly retrieves the product name, price, VAT rate, and current stock level. We can supply scanners as part of your hardware package.' },
           { question: 'Can I connect weigh scales to the till?', answer: 'Yes. The ePOS integrates with compatible weigh scales for loose produce, deli items, and pick-and-mix. Place the item on the scale, select the product code, and the price calculates automatically by weight. The weight and price appear on the customer display and receipt. Scales are available as part of your hardware package.' },
           { question: 'How does stock management work?', answer: 'Stock levels update in real time as items are scanned at the till. Set low-stock thresholds for each product and receive alerts when reordering is needed. View stock reports by category, supplier, or shelf life. Perform stocktakes using a barcode scanner and the system highlights discrepancies between expected and actual stock.' },
           { question: 'Can I create purchase orders for suppliers?', answer: 'Yes. The supplier ordering module lets you create purchase orders based on stock levels and sales data. The system suggests reorder quantities based on how quickly items sell. Send orders to suppliers by email directly from the dashboard. When deliveries arrive, scan items in to update stock levels automatically.' },
           { question: 'Does it handle age-restricted products?', answer: 'Yes. When a restricted product is scanned — alcohol, tobacco, certain energy drinks, lottery, knives — the system prompts for age verification. The staff member confirms the check and the sale proceeds. Every verification is logged with a timestamp, staff ID, and outcome for compliance records. Challenge 25 prompts are configurable.' },
-          { question: 'How much does a grocery store ePOS cost?', answer: 'The complete grocery ePOS starts from £499 + VAT including touchscreen terminal, barcode scanner, stock management software, and loyalty programme. Scale integration and multi-till setups available. Low commission on card transactions. Free setup, product import, and staff training included with a 2-year warranty.' },
+          { question: 'How much does a grocery store ePOS cost?', answer: `The complete grocery ePOS starts from ${posso.posPrice} + VAT including touchscreen terminal, barcode scanner, stock management software, and loyalty programme. Scale integration and multi-till setups available. Low commission on card transactions. Free setup, product import, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

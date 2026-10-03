@@ -84,14 +84,8 @@ const pageSchema = [
         width: 1200,
         height: 800,
         encodingFormat: 'image/png',
-        creator: {
-            '@type': 'Organization',
-            name: 'Posso Ltd',
-        },
-        copyrightHolder: {
-            '@type': 'Organization',
-            name: 'Posso Ltd',
-        },
+        creator: { '@id': 'https://www.posso.co.uk/#organization' },
+        copyrightHolder: { '@id': 'https://www.posso.co.uk/#organization' },
     },
     {
         '@context': 'https://schema.org',

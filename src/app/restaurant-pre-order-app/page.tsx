@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Clock, CalendarDays, Users, Bell, Gauge, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Restaurant Pre-Order App',
   description:
-    'Restaurant Pre-Order App for advance ordering, scheduled pickup, time slot management, and capacity control. Customers order ahead and collect at their chosen time. From £499 + VAT.',
+    `Restaurant Pre-Order App for advance ordering, scheduled pickup, time slot management, and capacity control. Customers order ahead and collect at their chosen time. From ${posso.posPrice} + VAT.`,
   keywords: [
     'restaurant pre order app',
     'pre order app',
@@ -124,14 +125,14 @@ export default function RestaurantPreOrderAppPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Advance ordering with scheduled pickup</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Kitchen capacity limits per time slot</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pre-order app from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pre-order app from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function RestaurantPreOrderAppPage() {
           { question: 'Does the pre-order appear on the kitchen display?', answer: 'Yes. Pre-orders arrive on the kitchen display at the scheduled preparation time, not when the customer places them. A 12:30 pickup order appears in the kitchen at the right time based on your configured prep time. The kitchen works from one unified queue alongside walk-in and phone orders.' },
           { question: 'Are pre-orders prepaid?', answer: 'Yes. Customers pay by card when they place the order. This confirms the order and eliminates no-collection risk. Refunds are processed from the POS if a customer cancels within your cancellation window. Prepaid orders have a no-collection rate of under 2% — far lower than pay-on-collection orders.' },
           { question: 'Can I limit the number of pre-orders per slot?', answer: 'Yes. Capacity control is a core feature. Set the maximum number of orders per time slot based on your kitchen capacity. If your kitchen handles 15 orders per 15-minute window, the 16th customer is directed to the next available slot. This prevents the kitchen from being overwhelmed and maintains food quality.' },
-          { question: 'How much does the pre-order app cost?', answer: 'The restaurant pre-order app is included with the Posso POS from £499 + VAT. It integrates with your existing POS and kitchen display. Low commission on pre-orders. Free setup, time slot configuration, and staff training included with a 2-year warranty. Call 0808 175 3956 for a demo.' },
+          { question: 'How much does the pre-order app cost?', answer: `The restaurant pre-order app is included with the Posso POS from ${posso.posPrice} + VAT. It integrates with your existing POS and kitchen display. Low commission on pre-orders. Free setup, time slot configuration, and staff training included with a ${posso.warrantyYears}-year warranty. Call ${posso.phone} for a demo.` },
         ]} />
 
         <Contact />

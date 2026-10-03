@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Monitor, Cloud, CalendarClock, Palette, Wifi, LayoutGrid } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Digital Signage Systems',
@@ -124,14 +125,14 @@ export default function DigitalSignageSystemsPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Digital menu boards with real-time updates</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Scheduled content — breakfast to dinner automatic</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS integration from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS integration from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -204,7 +205,7 @@ export default function DigitalSignageSystemsPage() {
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/touch-screen-till-system" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Touch Screen Till</p>
@@ -216,7 +217,7 @@ export default function DigitalSignageSystemsPage() {
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function DigitalSignageSystemsPage() {
           { question: 'How does content scheduling work?', answer: 'Set time-based rules for when content appears. Breakfast menu from 7am to 11am, lunch from 11am to 3pm, dinner from 5pm onwards. Schedule promotional content for specific days — happy hour on Fridays, weekend brunch offers on Saturdays. Set start and end dates for seasonal content. Everything runs automatically once configured.' },
           { question: 'Can digital signage integrate with my POS?', answer: 'Yes. POS integration allows your digital menu boards to reflect real-time availability. When an item sells out on the POS, the menu board automatically marks it as unavailable. Price changes made in the POS can sync to the display. This ensures customers always see an accurate, up-to-date menu.' },
           { question: 'Is digital signage suitable for multi-site businesses?', answer: 'Absolutely. Manage signage across all locations from one dashboard. Push updates to every screen simultaneously or customise per site. Compare content performance across locations. A restaurant chain, retail group, or hotel chain can maintain brand consistency while allowing local customisation — all from a single platform.' },
-          { question: 'How much does a digital signage system cost?', answer: 'Digital signage integrates with POS systems from £499 + VAT. Complete hardware packages including commercial-grade displays are available. The cloud management platform is included. Multi-screen and multi-site packages offer volume pricing. Contact us for a quote tailored to your number of screens and locations.' },
+          { question: 'How much does a digital signage system cost?', answer: `Digital signage integrates with POS systems from ${posso.posPrice} + VAT. Complete hardware packages including commercial-grade displays are available. The cloud management platform is included. Multi-screen and multi-site packages offer volume pricing. Contact us for a quote tailored to your number of screens and locations.` },
         ]} />
 
         <Contact />

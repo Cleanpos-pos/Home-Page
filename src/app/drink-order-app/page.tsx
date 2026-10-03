@@ -6,9 +6,10 @@ import { FAQSection } from '@/components/sections/faq-section';
 import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Check, Smartphone, Monitor, CreditCard, QrCode, Utensils, Clock, Users, BarChart3, Globe } from 'lucide-react';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
-  title: '⭐ Drink Order App & Table Ordering Waiter Pad',
+  title: 'Drink Order App & Table Ordering Waiter Pad',
   description:
     'Posso drink order app and waiter pad for restaurants, bars, and pubs. Table ordering, QR ordering, floor plan management, split bills, and pay-at-table — all in one system.',
   keywords: [
@@ -158,8 +159,8 @@ export default function DrinkOrderAppPage() {
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-primary/50 text-lg px-8 py-3 font-medium">
                   Get a Free Demo
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  Call 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  Call {posso.phone}
                 </a>
               </div>
             </div>
@@ -268,7 +269,7 @@ export default function DrinkOrderAppPage() {
           { question: 'Do orders go straight to the kitchen and bar?', answer: 'Yes. Whether the order is taken on the waiter pad or placed by a customer via QR, Posso routes each item automatically — food to the kitchen display or printer, drinks to the bar. Nothing is re-keyed, so there are no lost tickets, no transcription errors, and no missed orders during busy service.' },
           { question: 'Can staff take orders on handheld devices?', answer: 'Absolutely. The Posso waiter pad runs on handheld terminals, Android phones, and tablets. Staff take orders at the table, add modifiers and dietary notes, fire courses, and split bills — all from one device. It works offline too, syncing automatically when the connection returns.' },
           { question: 'Will table ordering speed up table turnover?', answer: 'It does both. Sending orders straight to the kitchen and bar cuts the time between seating and service, and pay-at-table means customers settle up the moment they are ready instead of waiting for the bill. Faster ordering plus faster payment means more covers per shift and higher average spend through smart upsells.' },
-          { question: 'How much does the Posso table ordering and waiter pad system cost?', answer: 'Pricing depends on how many handhelds and QR ordering points you need. Book a free demo and we will build a quote around your venue, handle setup and menu import, and train your staff. Most venues are live within 24 hours. Call 0808 175 3956 to get started.' },
+          { question: 'How much does the Posso table ordering and waiter pad system cost?', answer: `Pricing depends on how many handhelds and QR ordering points you need. Book a free demo and we will build a quote around your venue, handle setup and menu import, and train your staff. ${posso.goLiveStatement} Call ${posso.phone} to get started.` },
         ]} />
 
         <Contact />

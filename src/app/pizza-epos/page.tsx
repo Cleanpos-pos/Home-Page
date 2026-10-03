@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Pizza, Layers, SplitSquareHorizontal, MapPin, Globe, DollarSign } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Pizza ePOS',
   description:
-    'Pizza ePOS with visual pizza builder, size-based pricing, split-side toppings, delivery zone management, and online ordering integration. Built for pizzerias. From £499 + VAT.',
+    `Pizza ePOS with visual pizza builder, size-based pricing, split-side toppings, delivery zone management, and online ordering integration. Built for pizzerias. From ${posso.posPrice} + VAT.`,
   keywords: [
     'pizza epos',
     'pizza epos system',
@@ -124,14 +125,14 @@ export default function PizzaEposPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Visual pizza builder with half-and-half support</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Size-based pricing across your full menu</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pizza ePOS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pizza ePOS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -231,7 +232,7 @@ export default function PizzaEposPage() {
           { question: 'Does it handle split-side (half and half) pizzas?', answer: 'Yes. The pizza builder supports selecting different toppings for each half. Each side is priced independently based on the toppings chosen. The kitchen display shows the left and right side toppings clearly so the pizza maker knows exactly what goes where. Online ordering customers can use the same split-side feature.' },
           { question: 'Can customers order online with the pizza builder?', answer: 'Yes. Your branded website includes the same pizza builder with full customisation. Customers choose size, crust, sauce, toppings, and split sides — then select collection or delivery. Orders flow directly to your POS and kitchen display. Low commission compared to 35% on third-party delivery platforms.' },
           { question: 'Does it manage delivery zones?', answer: 'Yes. Draw delivery zones on a map and set delivery charges and minimum order values per zone. Postcodes outside your zones are declined automatically. The system suggests collection as an alternative. Zone settings can be adjusted by time of day — for example, reducing your delivery radius during peak hours.' },
-          { question: 'How much does the pizza ePOS cost?', answer: 'The pizza ePOS starts from £499 + VAT including touchscreen terminal, pizza builder software, and kitchen display. Online ordering with pizza customisation is included at low commission. Finance from £24.92 per week. Free setup, full menu import, and staff training included with a 2-year warranty.' },
+          { question: 'How much does the pizza ePOS cost?', answer: `The pizza ePOS starts from ${posso.posPrice} + VAT including touchscreen terminal, pizza builder software, and kitchen display. Online ordering with pizza customisation is included at low commission. Finance from ${posso.financeWeekly} per week. Free setup, full menu import, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

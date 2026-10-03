@@ -11,13 +11,14 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 const PAGE_URL = 'https://www.posso.co.uk/cashless-catering-colleges-universities';
 
 export const metadata: Metadata = {
   title: 'Cashless Catering for Colleges & Universities',
   description:
-    'Cashless catering and payment systems for UK colleges, sixth forms and universities. Prepare for the September 2026 free school meals expansion with fast, anonymous, fully auditable payments. Bespoke software from Posso. Call 0808 175 3956.',
+    `Cashless catering and payment systems for UK colleges, sixth forms and universities. Prepare for the September 2026 free school meals expansion with fast, anonymous, fully auditable payments. Bespoke software from Posso. Call ${posso.phone}.`,
   keywords: [
     'cashless catering colleges',
     'cashless catering universities',
@@ -57,12 +58,7 @@ const pageSchema = [
     '@type': 'Service',
     name: 'Cashless Catering for Colleges & Universities',
     serviceType: 'Cashless catering and campus payment systems',
-    provider: {
-      '@type': 'Organization',
-      name: 'Posso Ltd',
-      url: 'https://www.posso.co.uk',
-      telephone: '+44-808-175-3956',
-    },
+    provider: { '@id': 'https://www.posso.co.uk/#organization' },
     areaServed: { '@type': 'Country', name: 'United Kingdom' },
     audience: {
       '@type': 'EducationalAudience',
@@ -83,12 +79,8 @@ const pageSchema = [
     headline: 'Cashless Catering for Colleges and Universities: Preparing for the 2026 Free School Meals Expansion',
     description:
       'How UK colleges, sixth forms and universities can move to cashless catering ahead of the September 2026 free school meals expansion, protecting student dignity while meeting funding and record-keeping rules.',
-    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://www.posso.co.uk' },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Posso Ltd',
-      logo: { '@type': 'ImageObject', url: 'https://www.posso.co.uk/icon-512x512.png' },
-    },
+    author: { '@id': 'https://www.posso.co.uk/#organization' },
+    publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     datePublished: '2026-06-14',
     dateModified: '2026-06-14',
     mainEntityOfPage: { '@type': 'WebPage', '@id': PAGE_URL },
@@ -198,9 +190,9 @@ const bespokeFeatures = [
 ];
 
 const relatedLinks = [
-  { href: '/self-service-epos', title: 'Self-Service ePOS', subtitle: 'Kiosks from £699 + VAT' },
+  { href: '/self-order-kiosk-cost', title: 'Self-Order Kiosk Costs', subtitle: `Kiosks from ${posso.kioskPrice} + VAT` },
   { href: '/bespoke-epos-software', title: 'Bespoke ePOS Software', subtitle: 'Custom-built for you' },
-  { href: '/kiosks', title: 'Self-Order Kiosks', subtitle: 'Faster service at peak' },
+  { href: '/self-order-kiosks', title: 'Self-Order Kiosks', subtitle: 'Faster service at peak' },
   { href: '/online-ordering', title: 'Online Ordering & Pre-Order', subtitle: 'Order ahead, collect fast' },
   { href: '/credit-card-machines', title: 'Card Payment Machines', subtitle: 'Contactless & mobile wallets' },
   { href: '/digital-signage', title: 'Digital Menu Signage', subtitle: 'Allergens & pricing on screen' },
@@ -249,8 +241,8 @@ export default function CashlessCateringCollegesUniversitiesPage() {
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Book a Discovery Call <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>

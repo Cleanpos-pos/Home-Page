@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, CreditCard, BarChart3, Phone, ArrowRight, ShieldCheck, Users, Utensils, Globe, PoundSterling } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
-  title: 'Affordable ePOS Systems for Restaurants | From £499 + VAT',
+  title: `Affordable ePOS Systems for Restaurants | From ${posso.posPrice} + VAT`,
   description:
-    'Cheap ePOS systems for restaurants from £499 + VAT — no hidden fees. Touchscreen till, card payments, kitchen display, and online ordering included. Finance from £24.92/week. 2-year warranty.',
+    `Cheap ePOS systems for restaurants from ${posso.posPrice} + VAT — no hidden fees. Touchscreen till, card payments, kitchen display, and online ordering included. Finance from ${posso.financeWeekly}/week. ${posso.warrantyYears}-year warranty.`,
   keywords: [
     'cheap epos systems for restaurants',
     'affordable restaurant epos',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Affordable ePOS Systems for Restaurants | Posso UK',
     description:
-      'Restaurant ePOS from £499 + VAT with touchscreen till, KDS, online ordering, and card payments. No hidden fees. Finance from £24.92/week.',
+      `Restaurant ePOS from ${posso.posPrice} + VAT with touchscreen till, KDS, online ordering, and card payments. No hidden fees. Finance from ${posso.financeWeekly}/week.`,
     url: 'https://www.posso.co.uk/cheap-epos-systems-for-restaurants',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -45,7 +47,7 @@ const pageSchema = [
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web, Windows',
     description:
-      'Affordable ePOS system for restaurants from £499 + VAT. Includes touchscreen till, kitchen display, card payments, online ordering, and table management with no hidden fees.',
+      `Affordable ePOS system for restaurants from ${posso.posPrice} + VAT. Includes touchscreen till, kitchen display, card payments, online ordering, and table management with no hidden fees.`,
     url: 'https://www.posso.co.uk/cheap-epos-systems-for-restaurants',
     offers: {
       '@type': 'AggregateOffer',
@@ -55,14 +57,14 @@ const pageSchema = [
     },
     brand: { '@type': 'Brand', name: 'Posso' },
     featureList: [
-      'Touchscreen till from £499 + VAT',
+      `Touchscreen till from ${posso.posPrice} + VAT`,
       'Kitchen display system included',
       'Integrated card payments',
       'Online ordering website',
       'Table management and floor plan',
       'Free setup and staff training',
-      '2-year hardware warranty',
-      'Finance from £24.92/week',
+      `${posso.warrantyYears}-year hardware warranty`,
+      `Finance from ${posso.financeWeekly}/week`,
       'Sales analytics and reporting',
       'Works offline',
     ],
@@ -93,7 +95,7 @@ const priceComparison = [
   { label: 'Kitchen display system', posso: 'Included', others: '£20–£50/month' },
   { label: 'Online ordering website', posso: 'Included', others: '£50–£150/month' },
   { label: 'Setup and training', posso: 'Free', others: '£200–£500' },
-  { label: 'Hardware warranty', posso: '2 years', others: '1 year or none' },
+  { label: 'Hardware warranty', posso: `${posso.warrantyYears} years`, others: '1 year or none' },
 ];
 
 export default function CheapEposSystemsPage() {
@@ -115,7 +117,7 @@ export default function CheapEposSystemsPage() {
             <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-6">
               <Badge variant="outline" className="border-primary/50 text-primary/80 bg-primary/10 py-1 px-3">
                 <Zap className="w-3 h-3 mr-2" />
-                FROM £499 + VAT — NO HIDDEN FEES
+                FROM {posso.posPrice} + VAT — NO HIDDEN FEES
               </Badge>
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl !leading-tight">
                 <span className="bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
@@ -126,19 +128,19 @@ export default function CheapEposSystemsPage() {
                 </span>
               </h1>
               <p className="text-xl text-slate-300 max-w-2xl">
-                A full restaurant ePOS system should not cost thousands. Posso gives you a touchscreen till, kitchen display, card payments, online ordering, and table management — all from £499 + VAT.
+                A full restaurant ePOS system should not cost thousands. Posso gives you a touchscreen till, kitchen display, card payments, online ordering, and table management — all from {posso.posPrice} + VAT.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete POS system from £499 + VAT</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Finance available from £24.92/week</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete POS system from {posso.posPrice} + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Finance available from {posso.financeWeekly}/week</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Free setup, menu import & staff training</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Quote <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -150,7 +152,7 @@ export default function CheapEposSystemsPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-14">
               <h2 className="text-3xl sm:text-4xl font-bold gradient-text">
-                What You Get for £499 + VAT
+                What You Get for {posso.posPrice} + VAT
               </h2>
               <p className="text-slate-400 mt-3 text-lg max-w-2xl mx-auto">
                 Other providers charge this much for software alone. With Posso, you get the hardware, the software, and the support — all in one price.
@@ -195,7 +197,7 @@ export default function CheapEposSystemsPage() {
                 ))}
                 <div className="grid grid-cols-3 gap-0 p-4 border-t border-slate-700/30 text-sm font-bold bg-slate-800/30">
                   <span className="text-white">Total first-year cost</span>
-                  <span className="text-center text-primary">From £499 + VAT</span>
+                  <span className="text-center text-primary">From {posso.posPrice} + VAT</span>
                   <span className="text-center text-slate-400">£1,500–£3,000+</span>
                 </div>
               </div>
@@ -218,7 +220,7 @@ export default function CheapEposSystemsPage() {
                   Posso is different. We keep the price low by selling direct — no reseller markup, no bloated sales team, no office in Mayfair. The savings go straight to you. The hardware is the same commercial-grade equipment used by chains paying three times the price.
                 </p>
                 <p>
-                  Every system includes a <strong className="text-white">2-year warranty</strong>, free setup, free menu import, and free staff training. There are no setup fees, no cancellation penalties, and no feature paywalls.
+                  Every system includes a <strong className="text-white">{posso.warrantyYears}-year warranty</strong>, free setup, free menu import, and free staff training. There are no setup fees, no cancellation penalties, and no feature paywalls.
                 </p>
               </div>
             </div>
@@ -230,7 +232,7 @@ export default function CheapEposSystemsPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-6">
-                Finance from £24.92 per Week
+                Finance from {posso.financeWeekly} per Week
               </h2>
               <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
                 Prefer to spread the cost? Our finance option lets you get the full system today and pay weekly. No large upfront investment, no balloon payments.
@@ -268,23 +270,25 @@ export default function CheapEposSystemsPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/finance" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Finance Options</p>
-                  <p className="text-slate-400 text-sm mt-1">From £24.92/week</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.financeWeekly}/week</p>
                 </Link>
               </div>
             </div>
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Affordable Restaurant ePOS — Frequently Asked Questions" faqs={[
-          { question: 'Is a £499 ePOS system good enough for a busy restaurant?', answer: 'Yes. The Posso system handles dine-in table service, takeaway, delivery, and online orders. It includes a kitchen display system, table management, split bills, and integrated card payments. The price is low because we sell direct — not because the system is basic.' },
-          { question: 'Are there any monthly fees on top of the £499?', answer: 'The POS software is included. Online ordering runs on a low commission model — you only pay when you receive orders. There are no mandatory monthly software subscriptions, no setup fees, and no cancellation penalties.' },
-          { question: 'What finance options are available?', answer: 'We offer finance from £24.92 per week with terms from 12 to 36 months. No large deposit required. You get the full system delivered and installed straight away, and pay a fixed amount weekly or monthly.' },
+          { question: `Is a ${posso.posPrice} ePOS system good enough for a busy restaurant?`, answer: 'Yes. The Posso system handles dine-in table service, takeaway, delivery, and online orders. It includes a kitchen display system, table management, split bills, and integrated card payments. The price is low because we sell direct — not because the system is basic.' },
+          { question: `Are there any monthly fees on top of the ${posso.posPrice}?`, answer: 'The POS software is included. Online ordering runs on a low commission model — you only pay when you receive orders. There are no mandatory monthly software subscriptions, no setup fees, and no cancellation penalties.' },
+          { question: 'What finance options are available?', answer: `We offer finance from ${posso.financeWeekly} per week with terms from 12 to 36 months. No large deposit required. You get the full system delivered and installed straight away, and pay a fixed amount weekly or monthly.` },
           { question: 'What is included in the free setup?', answer: 'We pre-configure the hardware, import your full menu with modifiers and pricing, set up your floor plan, configure your kitchen display, and provide remote staff training. The system is ready to go live when it arrives.' },
-          { question: 'How does the 2-year warranty work?', answer: 'Every piece of hardware — touchscreen, printer, cash drawer — is covered for two full years. If anything fails, we replace it. Most competitors offer 12 months or charge extra for extended warranties.' },
+          { question: `How does the ${posso.warrantyYears}-year warranty work?`, answer: 'Every piece of hardware — touchscreen, printer, cash drawer — is covered for two full years. If anything fails, we replace it. Most competitors offer 12 months or charge extra for extended warranties.' },
           { question: 'Can I add more tills or kiosks later?', answer: 'Yes. You can add additional POS terminals, kitchen displays, self-order kiosks, or card machines at any time. Everything connects to the same system, so menus, reports, and orders stay in sync across all devices.' },
         ]} />
 

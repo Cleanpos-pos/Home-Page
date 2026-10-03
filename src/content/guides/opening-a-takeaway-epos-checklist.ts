@@ -1,10 +1,11 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 export const openingATakeawayEposChecklist: Guide = {
   slug: "opening-a-takeaway-epos-checklist",
   title: "Opening a Takeaway in the UK: EPOS & Equipment Checklist (2026)",
   metaDescription:
-    "Opening a takeaway? A week-by-week checklist of the till, printers, card machine and ordering setup you actually need — with real UK prices. Complete systems from £499 + VAT.",
+    `Opening a takeaway? A week-by-week checklist of the till, printers, card machine and ordering setup you actually need — with real UK prices. Complete systems from ${posso.posPrice} + VAT.`,
   eyebrow: "Opening checklist",
   h1: "Opening a takeaway: EPOS and equipment checklist",
   h1Split: ["Opening a takeaway:", "EPOS and equipment checklist"],
@@ -13,11 +14,11 @@ export const openingATakeawayEposChecklist: Guide = {
   highlights: [
     "What to buy, and what can wait",
     "Real prices, not “contact us for a quote”",
-    "Complete systems from £499 + VAT",
+    `Complete systems from ${posso.posPrice} + VAT`,
   ],
   breadcrumb: "Opening a Takeaway: EPOS Checklist",
   quickAnswer:
-    "A new UK takeaway needs a touchscreen till, a receipt printer, a kitchen printer, a cash drawer, a card machine, and a way to take online orders. That is a complete system from £499 + VAT, and it can be live in under 24 hours once the hardware arrives. The rest is timing.",
+    `A new UK takeaway needs a touchscreen till, a receipt printer, a kitchen printer, a cash drawer, a card machine, and a way to take online orders. That is a complete system from ${posso.posPrice} + VAT, and it arrives preconfigured and plug-and-play. The rest is timing.`,
   sections: [
     {
       kind: "features",
@@ -114,21 +115,21 @@ export const openingATakeawayEposChecklist: Guide = {
       rows: [
         [
           "Complete EPOS system — touchscreen till, kitchen printer, cash drawer, receipt printer, software",
-          "From £499 + VAT",
+          `From ${posso.posPrice} + VAT`,
         ],
-        ["Twin-screen upgrade (customer-facing display)", "+£150"],
-        ["Extra kitchen printer", "£99 each"],
-        ["21-inch kitchen display screen", "£399 + VAT"],
-        ["Self-order kiosk", "From £699 + VAT"],
-        ["Handheld order device", "£259"],
-        ["Just Eat / Uber Eats / Deliveroo integration", "£45/month, unlimited orders"],
-        ["Own delivery drivers — driver app and dispatch", "30p per delivery"],
-        ["AI phone ordering", "£1 per order, free number, free setup"],
+        ["Twin-screen upgrade (customer-facing display)", `+${posso.twinScreenPrice}`],
+        ["Extra kitchen printer", `${posso.printerPrice} each`],
+        ["21-inch kitchen display screen", `${posso.kdsPrice} + VAT`],
+        ["Self-order kiosk", `From ${posso.kioskPrice} + VAT`],
+        ["Handheld order device", posso.waiterPadPrice],
+        ["Just Eat / Uber Eats / Deliveroo integration", `${posso.deliveryIntegrationMonthly}/month, unlimited orders`],
+        ["Own delivery drivers — driver app and dispatch", `${posso.driverAppPerDelivery} per delivery`],
+        ["AI phone ordering", `${posso.aiPhonePerOrder} per order, free number, free setup`],
         ["Branded website with online ordering", "£450 (hosting free with Posso ordering)"],
         ["Card processing — Posso Pay", "Rate quoted on your card turnover — same in store and online"],
         ["Menu build, configuration and staff training", "Included"],
-        ["Warranty", "2 years"],
-        ["Finance", "From £24.92 per week"],
+        ["Warranty", `${posso.warrantyYears} years`],
+        ["Finance", `From ${posso.financeWeekly} per week`],
       ],
     },
     {
@@ -179,11 +180,11 @@ export const openingATakeawayEposChecklist: Guide = {
   faqs: [
     {
       q: "What till system do I need for a new takeaway?",
-      a: "A takeaway till needs to handle counter, phone, collection and delivery orders from one screen, print to the kitchen, and take card payments. A complete Posso system — touchscreen till, kitchen printer, cash drawer, receipt printer and software — starts at £499 + VAT with menu build and staff training included.",
+      a: `A takeaway till needs to handle counter, phone, collection and delivery orders from one screen, print to the kitchen, and take card payments. A complete Posso system — touchscreen till, kitchen printer, cash drawer, receipt printer and software — starts at ${posso.posPrice} + VAT with menu build and staff training included.`,
     },
     {
       q: "How much does it cost to set up a takeaway till system in the UK?",
-      a: "A complete single-till setup starts at £499 + VAT. Adding a kitchen display screen (£399 + VAT), a second kitchen printer (£99) and marketplace integrations (£45/month) covers most new takeaways. Card processing is separate and ongoing — Posso Pay rates are quoted on your card turnover. Finance is available from £24.92 per week.",
+      a: `A complete single-till setup starts at ${posso.posPrice} + VAT. Adding a kitchen display screen (${posso.kdsPrice} + VAT), a second kitchen printer (${posso.printerPrice}) and marketplace integrations (${posso.deliveryIntegrationMonthly}/month) covers most new takeaways. Card processing is separate and ongoing — Posso Pay rates are quoted on your card turnover. Finance is available from ${posso.financeWeekly} per week.`,
     },
     {
       q: "Should I launch on Just Eat and Deliveroo or build my own ordering site?",
@@ -191,11 +192,11 @@ export const openingATakeawayEposChecklist: Guide = {
     },
     {
       q: "How long before opening should I order my EPOS?",
-      a: "Four weeks is comfortable. The hardware itself has a short lead time and can be live within 24 hours of arriving, but finalising your menu — every item, size, modifier and price — takes longer than most people expect. Order once your menu is settled, and the system arrives with it already configured.",
+      a: `Four weeks is comfortable. The hardware itself has a short lead time and ships preconfigured and plug-and-play, but finalising your menu — every item, size, modifier and price — takes longer than most people expect. Order once your menu is settled, and the system arrives with it already configured.`,
     },
     {
       q: "Do I need a kitchen display screen or will a printer do?",
-      a: "For a new single-kitchen takeaway, a kitchen printer is usually enough, and one is included in the complete system. Kitchen display screens earn their place when ticket volume starts causing errors, when you have multiple prep stations, or when orders arrive from several channels at once and the printer becomes a bottleneck. A 21-inch screen is £399 + VAT when you are ready.",
+      a: `For a new single-kitchen takeaway, a kitchen printer is usually enough, and one is included in the complete system. Kitchen display screens earn their place when ticket volume starts causing errors, when you have multiple prep stations, or when orders arrive from several channels at once and the printer becomes a bottleneck. A 21-inch screen is ${posso.kdsPrice} + VAT when you are ready.`,
     },
     {
       q: "What happens if the internet goes down on opening night?",

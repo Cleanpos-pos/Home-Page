@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Home, ScanBarcode, Package, ShoppingBag, MapPin, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Homeware POS',
   description:
-    'Homeware POS system with barcode scanning, stock management, supplier ordering, and multi-location support. Built for homeware shops and home furnishing retailers. From £499 + VAT.',
+    `Homeware POS system with barcode scanning, stock management, supplier ordering, and multi-location support. Built for homeware shops and home furnishing retailers. From ${posso.posPrice} + VAT.`,
   keywords: [
     'homeware pos',
     'homeware pos system',
@@ -124,14 +126,14 @@ export default function HomewarePosPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Real-time stock tracking across all locations</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Supplier ordering built into the POS</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Homeware POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Homeware POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function HomewarePosPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Homeware POS — Frequently Asked Questions" faqs={[
           { question: 'Can it handle a large product catalogue?', answer: 'Yes. The system is designed for retailers with thousands of SKUs. Every product has a barcode, description, cost price, sale price, category, and supplier. You can import your catalogue from a spreadsheet during setup. Search, filter, and manage products from a single screen — whether you stock 500 items or 10,000.' },
           { question: 'How does supplier ordering work?', answer: 'Create purchase orders from the POS based on stock levels and sales data. The system suggests reorders when products fall below minimum thresholds. Send orders to suppliers electronically. When deliveries arrive, scan items in to update stock counts, costs, and margin calculations automatically.' },
           { question: 'Does it support multi-location inventory?', answer: 'Yes. Stock levels sync across all your shops in real time via the cloud. Transfer stock between locations with a digital transfer note. Head office sees inventory at every site. Each shop operates independently at the till, but inventory data is always up to date across the group.' },
           { question: 'Can I track margins and profitability?', answer: 'Yes. The system records cost price and sale price for every product. Reports show margin by product, category, supplier, and location. Identify your most profitable lines and spot products that sell well but barely break even. Use this data to negotiate better terms with suppliers or adjust pricing.' },
           { question: 'Is customer loyalty included?', answer: 'Yes. Customers can join your loyalty programme and earn points or rewards with every purchase. The system tracks their purchase history and preferences. Send targeted promotions when new stock arrives in categories they have bought from before. Loyalty features are included at no extra cost.' },
-          { question: 'How much does a homeware POS cost?', answer: 'The complete homeware POS system starts from £499 + VAT including touchscreen terminal, barcode scanner, receipt printer, and stock management software. Multi-location features are included. Finance from £24.92 per week. Free setup, product import, and staff training included with a 2-year warranty.' },
+          { question: 'How much does a homeware POS cost?', answer: `The complete homeware POS system starts from ${posso.posPrice} + VAT including touchscreen terminal, barcode scanner, receipt printer, and stock management software. Multi-location features are included. Finance from ${posso.financeWeekly} per week. Free setup, product import, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

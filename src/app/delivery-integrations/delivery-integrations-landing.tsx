@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import { submitGeneralEnquiry } from '@/app/actions';
 import { cleanPhone, isValidPhone } from '@/lib/phone-validation';
+import { posso } from '@/lib/possoFacts';
 
 const leadSchema = z.object({
   name: z.string().min(2, 'Name is required.'),
@@ -177,8 +178,8 @@ export function DeliveryIntegrationsLanding() {
                 Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button size="lg" variant="outline" asChild className="text-lg px-8">
-                <a href="tel:+448081753956">
-                  <Phone className="mr-2 h-5 w-5" /> Call 0808 175 3956
+                <a href={posso.phoneHref}>
+                  <Phone className="mr-2 h-5 w-5" /> Call {posso.phone}
                 </a>
               </Button>
             </div>
@@ -348,8 +349,8 @@ export function DeliveryIntegrationsLanding() {
               Get Started <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button size="lg" variant="outline" asChild className="text-lg px-8">
-              <a href="tel:+448081753956">
-                <Phone className="mr-2 h-5 w-5" /> Call 0808 175 3956
+              <a href={posso.phoneHref}>
+                <Phone className="mr-2 h-5 w-5" /> Call {posso.phone}
               </a>
             </Button>
           </div>
@@ -364,7 +365,7 @@ export function DeliveryIntegrationsLanding() {
       >
         <div className="flex gap-3 p-3">
           <Button asChild className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold">
-            <a href="tel:+448081753956">
+            <a href={posso.phoneHref}>
               <Phone className="mr-2 h-5 w-5" /> Call Now
             </a>
           </Button>
@@ -412,7 +413,7 @@ function DeliveryLeadForm() {
       }
     } catch {
       setIsSubmitting(false);
-      setServerError('Connection error. Please try again or call us at 0808 175 3956.');
+      setServerError(`Connection error. Please try again or call us at ${posso.phone}.`);
     }
   };
 
@@ -471,8 +472,8 @@ function DeliveryLeadForm() {
       </form>
 
       <div className="text-center mt-6">
-        <a href="tel:+448081753956" className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold text-lg transition-colors">
-          <Phone className="h-5 w-5" /> Or call now: 0808 175 3956
+        <a href={posso.phoneHref} className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold text-lg transition-colors">
+          <Phone className="h-5 w-5" /> Or call now: {posso.phone}
         </a>
       </div>
     </div>

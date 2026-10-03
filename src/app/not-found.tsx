@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react';
 
 const hospitalityLinks = [
   { href: '/pos', title: 'ePOS Systems' },
-  { href: '/kiosks', title: 'Self-Order Kiosks' },
+  { href: '/self-order-kiosks', title: 'Self-Order Kiosks' },
   { href: '/digital-signage', title: 'Kitchen Displays' },
   { href: '/online-ordering', title: 'Online Ordering' },
   { href: '/franchise', title: 'Franchise Solutions' },

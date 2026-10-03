@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Globe, CreditCard, FileText, PieChart, Link2, Layers } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Website POS Finance Software',
   description:
-    'Website POS Finance Software — POS with integrated website and finance/payment management. One platform for in-store sales, online orders, and financial reporting. POS from £499 + VAT.',
+    `Website POS Finance Software — POS with integrated website and finance/payment management. One platform for in-store sales, online orders, and financial reporting. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'website pos finance software',
     'pos with website integration',
@@ -86,7 +88,7 @@ const features = [
 const benefits = [
   { title: 'Replace Three Systems with One', description: 'Most businesses run separate systems for POS, website, and finance. Each has its own subscription, login, support team, and learning curve. Data lives in silos. Reconciliation is manual. Posso combines all three into one platform. One product catalogue, one payment system, one set of reports, one support number.' },
   { title: 'See the Full Financial Picture', description: 'When POS, online sales, and payment data live in one system, financial reporting is automatic and accurate. You see total revenue across all channels, payment settlement timelines, VAT liability, and profit margins — all in real time. No waiting for month-end, no manual data entry, no spreadsheet errors.' },
-  { title: 'Save on Multiple Subscriptions', description: 'A separate website (£20–£50/month), payment gateway (£20–£30/month plus transaction fees), accounting sync plugin (£10–£30/month), and POS subscription (£30–£60/month) totals £80–£170/month in subscriptions alone. Posso replaces all of these with one integrated system from £499 + VAT upfront.' },
+  { title: 'Save on Multiple Subscriptions', description: `A separate website (£20–£50/month), payment gateway (£20–£30/month plus transaction fees), accounting sync plugin (£10–£30/month), and POS subscription (£30–£60/month) totals £80–£170/month in subscriptions alone. Posso replaces all of these with one integrated system from ${posso.posPrice} + VAT upfront.` },
   { title: 'Simplify Your Technology Stack', description: 'Every separate system is another thing to learn, another login to manage, another support team to call when it breaks, and another integration point that can fail. Reducing from four systems to one cuts complexity dramatically. Staff learn one interface. You manage one platform. Problems have one support number.' },
 ];
 
@@ -122,7 +124,7 @@ export default function WebsitePosFinanceSoftwarePage() {
                 One platform for your POS, website, and business finances. Sell in-store and online, process payments, and generate financial reports — all from a single system.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS + website + finance from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS + website + finance from {posso.posPrice} + VAT</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission on all payments</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Xero, QuickBooks, Sage integration</li>
               </ul>
@@ -130,8 +132,8 @@ export default function WebsitePosFinanceSoftwarePage() {
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,12 +225,14 @@ export default function WebsitePosFinanceSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Website POS Finance Software — Frequently Asked Questions" faqs={[
           { question: 'What does "all-in-one" include?', answer: 'The Posso all-in-one platform includes: POS software for in-store sales, a branded website/webshop for online sales, integrated payment processing for card and online payments, financial reporting with VAT summaries, accounting software integration (Xero, QuickBooks, Sage), and a cloud dashboard for managing everything. One system, one login.' },
           { question: 'Does it integrate with my accounting software?', answer: 'Yes. Posso integrates with Xero, QuickBooks, and Sage. Sales data, payment records, and financial summaries sync automatically. Your accountant sees up-to-date figures without manual data entry. Daily sales, payment settlements, and VAT calculations flow directly into your accounting software.' },
           { question: 'How does payment processing work?', answer: 'In-store payments (card, contactless, Apple Pay, Google Pay) and online payments (card, bank transfer) are all processed through the Posso platform with low commission. Daily settlement reports show every transaction by channel and payment method. Funds settle into your bank account on a regular schedule.' },
           { question: 'Can I see financial reports in real time?', answer: 'Yes. The dashboard shows live sales data, payment settlements, and financial summaries. Revenue by channel, payment method breakdown, VAT liability, product margins, and daily cash flow update in real time. Weekly and monthly reports generate automatically. All reports export to CSV for external analysis.' },
-          { question: 'How much does the all-in-one platform cost?', answer: 'The complete platform — POS, website, payments, and financial reporting — starts from £499 + VAT. Low commission on payment processing with no separate gateway fees. Finance available from £24.92 per week. Free installation, setup, and training included. Software runs from £25 + VAT a month.' },
+          { question: 'How much does the all-in-one platform cost?', answer: `The complete platform — POS, website, payments, and financial reporting — starts from ${posso.posPrice} + VAT. Low commission on payment processing with no separate gateway fees. Finance available from ${posso.financeWeekly} per week. ${posso.setupStatement} Training is included. Software runs from ${posso.softwareMonthly} + VAT a month.` },
           { question: 'Do I still need separate accounting software?', answer: 'For basic bookkeeping, the built-in financial reporting may be sufficient — it generates VAT summaries, revenue reports, and payment reconciliation. For full accounting (payroll, tax returns, balance sheets), you will still use dedicated accounting software. The Posso integration ensures data flows automatically, eliminating manual data entry.' },
         ]} />
 

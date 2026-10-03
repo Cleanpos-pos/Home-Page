@@ -1,4 +1,5 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 /**
  * ⚠️ THREE UNVERIFIED CLAIMS ON THIS PAGE — confirm before publish:
@@ -12,7 +13,7 @@ export const posForCafe: Guide = {
   slug: "pos-for-cafe",
   title: "Café & Coffee Shop POS System UK",
   metaDescription:
-    "Café POS system UK buyer's guide: what a coffee shop till needs — peak-rush speed, priced drink modifiers, eat-in/takeaway pricing and loyalty. From £499 + VAT.",
+    `Café POS system UK buyer's guide: what a coffee shop till needs — peak-rush speed, priced drink modifiers, eat-in/takeaway pricing and loyalty. From ${posso.posPrice} + VAT.`,
   eyebrow: "Buyer's guide",
   h1: "Café POS system: the UK coffee shop buyer's guide",
   h1Split: ["Café POS system:", "the UK coffee shop buyer's guide"],
@@ -21,11 +22,11 @@ export const posForCafe: Guide = {
   highlights: [
     "The features that matter in a café specifically",
     "What to ask before you buy",
-    "Café POS systems from £499 + VAT",
+    `Café POS systems from ${posso.posPrice} + VAT`,
   ],
   breadcrumb: "Café POS System",
   quickAnswer:
-    "The best café POS system is the one that is fastest at peak — measured in taps per transaction, not in features. A busy independent café can run around 300 transactions a day at roughly £6 each, with a large share packed into the morning rush, so three extra seconds per order is the difference between the queue clearing and the queue reaching the door. After speed, look for priced drink modifiers one tap deep (oat milk, extra shots, syrups), eat-in and takeaway pricing handled in one step, order-ahead for collection, and loyalty built on customer data you own. Posso café POS systems start from £499 + VAT.",
+    `The best café POS system is the one that is fastest at peak — measured in taps per transaction, not in features. A busy independent café can run around 300 transactions a day at roughly £6 each, with a large share packed into the morning rush, so three extra seconds per order is the difference between the queue clearing and the queue reaching the door. After speed, look for priced drink modifiers one tap deep (oat milk, extra shots, syrups), eat-in and takeaway pricing handled in one step, order-ahead for collection, and loyalty built on customer data you own. Posso café POS systems start from ${posso.posPrice} + VAT.`,
   sections: [
     {
       kind: "prose",
@@ -114,7 +115,7 @@ export const posForCafe: Guide = {
         "For a café, the relevant parts are touchscreen ordering with full modifier and combo management, eat in / takeaway / collection order types with their own workflows, QR and app ordering for order-ahead and at-table, split bills, and integrated card payments.",
         "Customer data stays with you. The CMS is built in, with 2,000 marketing emails a month included, so your regulars are yours to market to rather than a third party's list. TableMaestro adds booking and promotional campaigns if you take reservations at weekends.",
         "Card processing runs through Posso Pay, Posso's own merchant service. Rates are quoted on your card turnover rather than fixed, and the same rate applies in store and on the online payment gateway — which matters more in a café than almost anywhere else, because low-value transactions are where badly structured card fees bite hardest. Get your quote worked out on your real average transaction, not a £30 one.",
-        "Systems start at £499 + VAT, including hardware, software licence, menu build and staff training. A 2-year warranty is standard, with UK phone support.",
+        `Systems start at ${posso.posPrice} + VAT, including hardware, software licence, menu build and staff training. A ${posso.warrantyYears}-year warranty is standard, with UK phone support.`,
       ],
     },
     {
@@ -144,7 +145,7 @@ export const posForCafe: Guide = {
   faqs: [
     {
       q: "What is the best POS system for a café in the UK?",
-      a: "The best café POS system is the one that is fastest at your peak, prices drink modifiers properly and keeps your customer data in your hands — not the one with the longest feature list. Shortlist systems that put your most-ordered items on one screen, make oat milk, extra shots and syrups a single priced tap, handle eat-in and takeaway pricing in one step, and support order-ahead for collection. Then run twenty real transactions at your actual pace on the demo before you buy. Posso café systems start from £499 + VAT, including hardware, menu build and training.",
+      a: `The best café POS system is the one that is fastest at your peak, prices drink modifiers properly and keeps your customer data in your hands — not the one with the longest feature list. Shortlist systems that put your most-ordered items on one screen, make oat milk, extra shots and syrups a single priced tap, handle eat-in and takeaway pricing in one step, and support order-ahead for collection. Then run twenty real transactions at your actual pace on the demo before you buy. Posso café systems start from ${posso.posPrice} + VAT, including hardware, menu build and training.`,
     },
     {
       q: "What is the most important feature in a café POS?",
@@ -160,11 +161,11 @@ export const posForCafe: Guide = {
     },
     {
       q: "How much does a café till system cost in the UK?",
-      a: "A complete Posso system starts at £499 + VAT, including the touchscreen terminal, software licence, menu build and staff training. Card processing runs through Posso Pay, Posso's own merchant service — rates are quoted on your card turnover and apply the same in store and online. At a low average spend, the card rate is often the larger ongoing cost, so get your quote based on your real average transaction value.",
+      a: `A complete Posso system starts at ${posso.posPrice} + VAT, including the touchscreen terminal, software licence, menu build and staff training. Card processing runs through Posso Pay, Posso's own merchant service — rates are quoted on your card turnover and apply the same in store and online. At a low average spend, the card rate is often the larger ongoing cost, so get your quote based on your real average transaction value.`,
     },
     {
       q: "Do I need a self-order kiosk in a café?",
-      a: "Only if your morning queue is genuinely costing you customers. Kiosks earn their place in high-volume counter operations where people walk away rather than wait, and they typically lift average order value through consistent upselling. For a café with a queue that clears in five minutes, order-ahead through your own app usually solves more for less. Kiosks start at £699 + VAT when you are ready.",
+      a: `Only if your morning queue is genuinely costing you customers. Kiosks earn their place in high-volume counter operations where people walk away rather than wait, and they typically lift average order value through consistent upselling. For a café with a queue that clears in five minutes, order-ahead through your own app usually solves more for less. Kiosks start at ${posso.kioskPrice} + VAT when you are ready.`,
     },
     {
       q: "Can customers order ahead and collect?",

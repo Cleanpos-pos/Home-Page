@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Monitor, CreditCard, Clock, Tv, Smartphone, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Self Serve Kiosk',
   description:
-    'Self Serve Kiosk for unattended ordering with 24/7 operation, card-only payment, attract screen, and vending-style automation. No staff required. Kiosks from £699 + VAT.',
+    `Self Serve Kiosk for unattended ordering with 24/7 operation, card-only payment, attract screen, and vending-style automation. No staff required. Kiosks from ${posso.kioskPrice} + VAT.`,
   keywords: [
     'self serve kiosk',
     'self service kiosk',
@@ -124,14 +125,14 @@ export default function SelfServeKioskPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Operates 24/7 without staff supervision</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Card-only with contactless and mobile pay</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Self serve kiosks from £699 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Self serve kiosks from {posso.kioskPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function SelfServeKioskPage() {
           { question: 'What is the attract screen?', answer: 'The attract screen is an animated display that runs when no customer is actively ordering. It shows your menu, promotions, daily specials, or brand content on a looping animation. The purpose is to draw in passing foot traffic and encourage spontaneous orders. You update the content remotely from your dashboard.' },
           { question: 'How do I manage the kiosk remotely?', answer: 'The cloud dashboard lets you manage every kiosk from any device. Update menus, change prices, add or remove items, and push promotions — all remotely. Real-time monitoring shows live order feeds, revenue, and kiosk status. If a kiosk goes offline, you receive an instant notification.' },
           { question: 'What happens if an item is out of stock?', answer: 'You can mark items as unavailable from the dashboard and they disappear from the kiosk menu instantly. The system can also be configured to automatically hide items when stock reaches zero. Customers only see what is actually available, preventing orders that cannot be fulfilled.' },
-          { question: 'How much does a self serve kiosk cost?', answer: 'Self serve kiosks start from £699 + VAT including the touchscreen terminal, kiosk software, card payment integration, and attract screen functionality. Low commission on transactions. Free setup, menu configuration, and remote training included with a 2-year warranty.' },
+          { question: 'How much does a self serve kiosk cost?', answer: `Self serve kiosks start from ${posso.kioskPrice} + VAT including the touchscreen terminal, kiosk software, card payment integration, and attract screen functionality. Low commission on transactions. Free setup, menu configuration, and remote training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

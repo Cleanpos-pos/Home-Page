@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, Truck, CreditCard, BarChart3, Phone, ArrowRight, Utensils, ShieldCheck, Printer, Package } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'ePOS Systems for Takeaways | Complete Hardware & Software Bundle',
   description:
-    'Complete ePOS systems for takeaways — touchscreen till, kitchen printer, cash drawer, receipt printer, and software in one bundle. Collection and delivery workflows with online ordering. From £499 + VAT.',
+    `Complete ePOS systems for takeaways — touchscreen till, kitchen printer, cash drawer, receipt printer, and software in one bundle. Collection and delivery workflows with online ordering. From ${posso.posPrice} + VAT.`,
   keywords: [
     'epos systems for takeaways',
     'takeaway epos system',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ePOS Systems for Takeaways | Posso UK',
     description:
-      'Complete takeaway ePOS bundles with touchscreen till, kitchen printer, cash drawer, and integrated online ordering. From £499 + VAT.',
+      `Complete takeaway ePOS bundles with touchscreen till, kitchen printer, cash drawer, and integrated online ordering. From ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/epos-systems-for-takeaways',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -127,7 +129,7 @@ export default function EposSystemsForTakeawaysPage() {
                 Everything you need in one box — touchscreen till, kitchen printer, cash drawer, receipt printer, card terminal, and takeaway software. Not just software. The full package.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete hardware + software bundle from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete hardware + software bundle from {posso.posPrice} + VAT</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Collection, delivery & online ordering built in</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Free setup, menu import & staff training</li>
               </ul>
@@ -135,8 +137,8 @@ export default function EposSystemsForTakeawaysPage() {
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Quote <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -224,8 +226,8 @@ export default function EposSystemsForTakeawaysPage() {
               </h2>
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
-                  { icon: ShieldCheck, title: '2-Year Warranty', desc: 'Every piece of hardware covered for two full years. If it breaks, we replace it.' },
-                  { icon: Clock, title: 'Go Live in 24 Hours', desc: 'We pre-configure everything. Plug in, switch on, and start taking orders the same day.' },
+                  { icon: ShieldCheck, title: `${posso.warrantyYears}-Year Warranty`, desc: 'Every piece of hardware covered for two full years. If it breaks, we replace it.' },
+                  { icon: Clock, title: `Preconfigured, Plug-and-Play`, desc: `${posso.goLiveStatement}` },
                   { icon: BarChart3, title: 'Real-Time Sales Reports', desc: 'Track your best sellers, peak hours, and revenue by channel — collection, delivery, and online.' },
                   { icon: Smartphone, title: 'Low Commission Online Ordering', desc: 'Your own ordering website with low commission rates. Keep more of every order compared to third-party apps.' },
                 ].map((b) => (
@@ -283,20 +285,22 @@ export default function EposSystemsForTakeawaysPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.kioskPrice} + VAT</p>
                 </Link>
               </div>
             </div>
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="ePOS Systems for Takeaways — Frequently Asked Questions" faqs={[
           { question: 'What hardware is included in the takeaway ePOS bundle?', answer: 'The complete bundle includes a 15.6-inch touchscreen till, thermal kitchen printer with auto-cut, receipt printer, cash drawer, and all cables. The Posso takeaway software comes pre-installed. Card terminals are available separately through our Teya integration with low transaction rates.' },
           { question: 'Can I use the ePOS system for both collection and delivery orders?', answer: 'Yes. The system has separate workflows for collection, delivery, walk-in counter orders, and online orders. Delivery orders auto-calculate fees by postcode zone, and you can assign drivers and print delivery labels directly from the till.' },
           { question: 'Does the system work with Just Eat, Uber Eats, and Deliveroo?', answer: 'Yes. Orders from all major delivery platforms appear on your till and kitchen printer automatically through our delivery integration module. You manage everything from one screen instead of juggling multiple tablets.' },
-          { question: 'How long does setup take?', answer: 'We pre-configure all hardware and load your menu before shipping. Most takeaways go live within 24 hours of receiving the equipment. Free setup assistance and staff training are included with every system.' },
+          { question: 'How long does setup take?', answer: `We pre-configure all hardware and load your menu before shipping. ${posso.goLiveStatement} ${posso.setupStatement}` },
           { question: 'What happens if the internet goes down during a busy period?', answer: 'The Posso ePOS system works offline. You can continue taking orders, processing cash payments, and printing kitchen tickets. Everything syncs automatically when the connection is restored.' },
-          { question: 'How much does a complete takeaway ePOS system cost?', answer: 'Our POS systems start from £499 + VAT for the complete hardware and software bundle. Self-order kiosks start from £699 + VAT. Finance is available from £24.92 per week with free setup and a 2-year warranty included.' },
+          { question: 'How much does a complete takeaway ePOS system cost?', answer: `Our POS systems start from ${posso.posPrice} + VAT for the complete hardware and software bundle. Self-order kiosks start from ${posso.kioskPrice} + VAT. Finance is available from ${posso.financeWeekly} per week with free setup and a ${posso.warrantyYears}-year warranty included.` },
         ]} />
 
         <Contact />

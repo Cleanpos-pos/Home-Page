@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Hotel, UtensilsCrossed, Wine, Ticket, MapPin, Settings } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Hospitality Kiosks',
   description:
-    'Hospitality Kiosks for hotels, restaurants, bars, events, and visitor attractions. Self-service ordering, check-in, and ticketing. Kiosks from £699 + VAT.',
+    `Hospitality Kiosks for hotels, restaurants, bars, events, and visitor attractions. Self-service ordering, check-in, and ticketing. Kiosks from ${posso.kioskPrice} + VAT.`,
   keywords: [
     'hospitality kiosks',
     'hotel self service kiosk',
@@ -122,7 +123,7 @@ export default function HospitalityKiosksPage() {
                 Self-service kiosks for hotels, restaurants, bars, events, and visitor attractions. Reduce queues, cut staffing costs, and serve more guests per hour.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Hospitality kiosks from £699 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Hospitality kiosks from {posso.kioskPrice} + VAT</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Multi-language and contactless payment</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Cloud-managed across all locations</li>
               </ul>
@@ -130,8 +131,8 @@ export default function HospitalityKiosksPage() {
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -204,7 +205,7 @@ export default function HospitalityKiosksPage() {
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/self-order-kiosks-for-restaurants" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Restaurant Self Ordering</p>
@@ -225,7 +226,7 @@ export default function HospitalityKiosksPage() {
 
         <FAQSection title="Hospitality Kiosks — Frequently Asked Questions" faqs={[
           { question: 'What types of hospitality venues use kiosks?', answer: 'Hotels use kiosks for self-service check-in and room service ordering. Restaurants and food courts use them for self-service food ordering. Bars and event venues use them to process drink orders without queuing. Cinemas, visitor attractions, and leisure centres use them for ticketing. Any hospitality venue with queues or high footfall benefits from self-service kiosks.' },
-          { question: 'How much do hospitality kiosks cost?', answer: 'Posso hospitality kiosks start from £699 + VAT per unit. This includes the touchscreen hardware, payment terminal, kiosk software, and cloud management dashboard. Volume discounts are available for multi-unit deployments. Finance is available from £24.92 per week with free installation and training.' },
+          { question: 'How much do hospitality kiosks cost?', answer: `Posso hospitality kiosks start from ${posso.kioskPrice} + VAT per unit. This includes the touchscreen hardware, payment terminal, kiosk software, and cloud management dashboard. Volume discounts are available for multi-unit deployments. Finance is available from ${posso.financeWeekly} per week with free installation and training.` },
           { question: 'Can I manage kiosks across multiple locations?', answer: 'Yes. The cloud dashboard lets you manage every kiosk from one login. Update menus, change pricing, push promotions, and monitor kiosk uptime across all locations. Each site can have its own menu and settings, but group-level reporting rolls everything up into one view.' },
           { question: 'Do kiosks support multiple languages?', answer: 'Yes. Customers select their preferred language on the welcome screen. The entire interface — menus, prompts, modifier names, and receipts — displays in the chosen language. Languages can be added or removed from the cloud dashboard. Essential for venues serving international visitors.' },
           { question: 'What payment methods do kiosks accept?', answer: 'Kiosks accept contactless card payments (tap to pay), Apple Pay, Google Pay, Samsung Pay, and chip-and-PIN. Cash is not required. Payment processes before the order reaches the kitchen or service point. All transactions appear in your POS reporting dashboard in real time.' },

@@ -15,6 +15,7 @@ import { Textarea } from './ui/textarea';
 import { useRouter } from 'next/navigation';
 import { IframeDialog } from './iframe-dialog';
 import { cleanPhone, isValidPhone } from '@/lib/phone-validation';
+import { posso } from '@/lib/possoFacts';
 
 
 const HangerIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -97,7 +98,7 @@ export function GeneralEnquiryForm() {
       console.error('Submission error:', err);
       setIsSubmitting(false);
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
-      setServerError(`Connection Error: ${errorMessage}. Please try again or call us at 0808 175 3956.`);
+      setServerError(`Connection Error: ${errorMessage}. Please try again or call us at ${posso.phone}.`);
     }
   };
 

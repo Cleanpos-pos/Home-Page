@@ -24,11 +24,12 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Best Dark Kitchen Software UK (2026) — ePOS, Online Ordering & KDS',
   description:
-    'The best dark kitchen software for UK ghost kitchens in 2026. Posso One combines ePOS, online ordering, kitchen display, delivery integration, and multi-brand support in one system. From £499 + VAT.',
+    `The best dark kitchen software for UK ghost kitchens in 2026. Posso One combines ePOS, online ordering, kitchen display, delivery integration, and multi-brand support in one system. From ${posso.posPrice} + VAT.`,
   keywords: [
     'best dark kitchen software',
     'dark kitchen software UK',
@@ -80,7 +81,7 @@ const pageSchema = [
       'Caller ID for phone orders',
       'Offline-first operation',
       'Real-time analytics and reporting',
-      'Setup in under 24 hours',
+      `Preconfigured, plug-and-play setup`,
     ],
   },
   {
@@ -88,8 +89,8 @@ const pageSchema = [
     '@type': 'Article',
     headline: 'Best Dark Kitchen Software UK (2026)',
     description: 'In-depth guide to choosing the best dark kitchen software in the UK. Features, pricing, and why Posso One is the top choice for ghost kitchens.',
-    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://www.posso.co.uk' },
-    publisher: { '@type': 'Organization', name: 'Posso Ltd', logo: { '@type': 'ImageObject', url: 'https://www.posso.co.uk/icon-512x512.png' } },
+    author: { '@id': 'https://www.posso.co.uk/#organization' },
+    publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     datePublished: '2026-04-08',
     dateModified: '2026-04-08',
     url: 'https://www.posso.co.uk/best-dark-kitchen-software-uk',
@@ -118,15 +119,15 @@ const essentialFeatures = [
 ];
 
 const whyPosso = [
-  'Setup in under 24 hours — we handle everything',
+  `Preconfigured and shipped plug-and-play`,
   'All delivery platforms on one screen — no tablet juggling',
   'Low commission on your own ordering website — a fraction of marketplace fees',
   'Multi-brand support — run 2, 3, or 10 brands from one kitchen',
   'Driver app integration via Shipday for your own deliveries',
   'Delivery zone management with custom fees per zone',
   'Free setup, menu import, and staff training',
-  '2-year warranty and UK-based support',
-  'Finance available from £24.92/week',
+  `${posso.warrantyYears}-year warranty and UK-based support`,
+  `Finance available from ${posso.financeWeekly}/week`,
   'Works offline — no internet outage stops your service',
 ];
 
@@ -189,7 +190,7 @@ export default function BestDarkKitchenSoftwarePage() {
                 What is the best software for a dark kitchen?
               </p>
               <p className="text-slate-300 text-lg leading-relaxed">
-                <strong className="text-primary">Posso One</strong> is the best dark kitchen software for UK ghost kitchens. It combines a full ePOS till, kitchen display system, branded online ordering website, and direct integration with Just Eat, Uber Eats, and Deliveroo — all in one platform. It supports multi-brand operation (run multiple virtual restaurants from one kitchen) and includes delivery zone management, driver app integration, and caller ID for phone orders. Setup takes under 24 hours with free training and UK support. Hardware starts from <strong className="text-white">£499 + VAT</strong> with finance from £24.92/week.
+                <strong className="text-primary">Posso One</strong> is the best dark kitchen software for UK ghost kitchens. It combines a full ePOS till, kitchen display system, branded online ordering website, and direct integration with Just Eat, Uber Eats, and Deliveroo — all in one platform. It supports multi-brand operation (run multiple virtual restaurants from one kitchen) and includes delivery zone management, driver app integration, and caller ID for phone orders. Systems arrive preconfigured and plug-and-play, with free setup, training and UK support. Hardware starts from <strong className="text-white">{posso.posPrice} + VAT</strong> with finance from {posso.financeWeekly}/week.
               </p>
             </div>
 
@@ -197,8 +198,8 @@ export default function BestDarkKitchenSoftwarePage() {
               <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                 Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
               </a>
-              <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+              <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                <Phone className="mr-2 h-5 w-5" /> {posso.phone}
               </a>
             </div>
 
@@ -359,7 +360,7 @@ export default function BestDarkKitchenSoftwarePage() {
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
@@ -367,10 +368,10 @@ export default function BestDarkKitchenSoftwarePage() {
         </section>
 
         <FAQSection title="Dark Kitchen Software — FAQs" faqs={[
-          { question: 'What is the best software for running a dark kitchen?', answer: 'The best dark kitchen software combines ePOS, kitchen display, online ordering, and delivery platform integration in one system. Posso One is the top choice for UK ghost kitchens — it includes all of these plus multi-brand support, delivery zone management, and driver app integration. Setup takes under 24 hours.' },
+          { question: 'What is the best software for running a dark kitchen?', answer: `The best dark kitchen software combines ePOS, kitchen display, online ordering, and delivery platform integration in one system. Posso One is the top choice for UK ghost kitchens — it includes all of these plus multi-brand support, delivery zone management, and driver app integration. ${posso.goLiveStatement}` },
           { question: 'Can I run multiple brands from one dark kitchen?', answer: 'Yes — Posso One supports multi-brand operation. Each brand can have its own menu, branding, and online ordering website while sharing the same POS and kitchen display. Orders from all brands appear on one screen, colour-coded by brand.' },
           { question: 'How does dark kitchen software integrate with Just Eat and Uber Eats?', answer: 'Posso connects directly to Just Eat, Uber Eats, and Deliveroo. Orders from all platforms flow into your POS automatically and print to your kitchen display. No extra tablets on the counter, no manual re-keying.' },
-          { question: 'How much does dark kitchen software cost?', answer: 'A complete Posso One dark kitchen setup starts from £499 + VAT for the POS till. Add a kitchen display screen from £199, online ordering from £350 (or free with Teya card machines). Finance available from £24.92/week. Free setup and training included.' },
+          { question: 'How much does dark kitchen software cost?', answer: `A complete Posso One dark kitchen setup starts from ${posso.posPrice} + VAT for the POS till. Add a kitchen display screen from £199, online ordering from £350 (or free with Teya card machines). Finance available from ${posso.financeWeekly}/week. Free setup and training included.` },
           { question: 'Do I need a separate tablet for each delivery app?', answer: 'No. With Posso One, all delivery platform orders appear on your POS screen and kitchen display. You can remove the individual aggregator tablets from your counter entirely.' },
           { question: 'Can dark kitchen software work without internet?', answer: 'The Posso ePOS is built offline-first — take orders and process cash payments even when the internet drops. However, online ordering and delivery platform integrations require an active internet connection to receive orders.' },
         ]} />

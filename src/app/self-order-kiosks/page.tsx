@@ -11,6 +11,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { videoPages } from '@/lib/video-pages-data';
+import { posso } from '@/lib/possoFacts';
 
 const kioskFeatures = [
   { icon: TrendingUp, title: 'Higher Average Order Value', description: 'The screen never forgets to suggest a meal deal, a side, or a dessert — and it asks on every order, including the last one of a busy night. Customers browse at their own pace without feeling watched.' },
@@ -106,7 +107,7 @@ const kioskImageSchema = kioskScreenshots.map((s) => ({
   name: s.alt,
   caption: s.cap,
   creditText: 'Posso Ltd',
-  creator: { '@type': 'Organization', name: 'Posso Ltd' },
+  creator: { '@id': 'https://www.posso.co.uk/#organization' },
   copyrightNotice: '© Posso Ltd',
 }));
 
@@ -130,7 +131,7 @@ export default function KiosksPage() {
           Kiosks take several orders at once and prompt an upsell on every one — independent studies and large
           quick-service chains commonly report a 20–30% uplift in average order value after introducing them.
           Posso kiosks share one menu with your Posso POS, come in countertop, freestanding and IP65 outdoor
-          formats, and start from £699 + VAT, with finance from around £24.92/week.
+          formats, and start from {posso.kioskPrice} + VAT, with finance from around {posso.financeWeekly}/week.
         </QuickAnswer>
         <KioskDemo />
 
@@ -397,11 +398,11 @@ export default function KiosksPage() {
           { question: 'Are Posso self-order kiosks suitable for UK restaurants and takeaways?', answer: 'Yes. Posso self-order kiosks are built for UK restaurants, takeaways, quick-service venues, coffee shops, and casual dining. They handle GBP pricing, UK VAT, contactless and chip & PIN card payments, and integrate with the same menu you use on your Posso POS — so prices and items stay in sync across every till and kiosk.' },
           { question: 'What hardware comes with a Posso self-order kiosk?', answer: 'Each kiosk includes a large touchscreen display, an integrated card payment terminal for contactless, Apple Pay and Google Pay, and an optional receipt printer. We offer freestanding floor kiosks and countertop/wall-mounted units so you can match the format to your floor space. All hardware is supplied, configured, and supported by Posso.' },
           { question: 'Do the kiosks integrate with my kitchen and POS system?', answer: 'Yes. Every order placed on a kiosk goes straight to your kitchen display system (KDS) or kitchen printer, exactly like an order taken at the counter. Kiosks share one central menu with your Posso POS, so a price or menu change updates everywhere at once — no double entry and no mismatched menus.' },
-          { question: 'How much do self-order kiosks cost and is finance available?', answer: 'Posso self-order kiosks start from £699 + VAT, with finance options available from around £24.92/week to spread the cost. Pricing depends on whether you choose freestanding or countertop units and how many you need. Book a free demo and we will quote based on your venue and order volumes.' },
-          { question: 'How long does it take to set up a self-order kiosk?', answer: 'Setup is fast. Because the kiosk uses your existing Posso menu, we can configure and deploy in well under 24 hours in most cases. Posso handles menu import, payment setup, and staff training, so your team is comfortable before you go live — and ongoing UK-based support is included.' },
+          { question: 'How much do self-order kiosks cost and is finance available?', answer: `Posso self-order kiosks start from ${posso.kioskPrice} + VAT, with finance options available from around ${posso.financeWeekly}/week to spread the cost. Pricing depends on whether you choose freestanding or countertop units and how many you need. Book a free demo and we will quote based on your venue and order volumes.` },
+          { question: 'How long does it take to set up a self-order kiosk?', answer: `Because the kiosk uses your existing Posso menu, there is nothing separate to build. ${posso.goLiveStatement} Posso handles menu import, payment setup, and staff training, so your team is comfortable before you go live — and ongoing UK-based support is included.` },
           { question: 'Do you offer outdoor self-order kiosks?', answer: 'Yes. Posso outdoor self-order kiosks are IP65 rated — water and dust resistant — with bright, sunlight-readable screens, so they keep trading in rain, sun and cold. They are ideal for food trucks, beer gardens, stadiums, markets and festivals, and run on 4G with no fixed Wi-Fi needed.' },
           { question: 'Are self-order kiosks suitable for coffee shops and quick-service restaurants?', answer: 'Absolutely. Self-ordering kiosks work brilliantly for coffee shops, quick-service restaurants (QSR), fast food and casual dining. Customers customise drinks and meals with modifiers, the kiosk automatically upsells sides and extras, and orders fire straight to the barista station or kitchen display — keeping queues short at peak.' },
-          { question: 'Are self-order kiosks worth it for a small business?', answer: 'Yes. Even a single self-order kiosk adds a consistent upsell prompt to every order and frees staff at busy times. Many small UK restaurants and takeaways start with one countertop or freestanding kiosk and add more as they grow — kiosks start from £699 + VAT with finance available.' },
+          { question: 'Are self-order kiosks worth it for a small business?', answer: `Yes. Even a single self-order kiosk adds a consistent upsell prompt to every order and frees staff at busy times. Many small UK restaurants and takeaways start with one countertop or freestanding kiosk and add more as they grow — kiosks start from ${posso.kioskPrice} + VAT with finance available.` },
           { question: 'Self-order kiosk vs counter service — which is better?', answer: 'Self-order kiosks do not replace your team — they remove the ordering bottleneck. Counter service handles one customer at a time, while a self-service kiosk lets several customers order and pay at once, cutting queues and freeing staff to prepare food and serve. Most venues run kiosks alongside a staffed counter for the best of both.' },
         ]} />
         <Contact />

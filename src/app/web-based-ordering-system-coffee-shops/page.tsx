@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Coffee, Globe, Clock, ShoppingBag, Palette, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Web Based Ordering System for Coffee Shops',
@@ -124,14 +125,14 @@ export default function WebBasedOrderingCoffeeShopsPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Click-and-collect with time slot management</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full drink customisation online</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission — POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission — POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function WebBasedOrderingCoffeeShopsPage() {
           { question: 'How does click-and-collect work?', answer: 'Customers select their drinks, choose a collection time slot (e.g. 8:20am), and pay online. The order appears on the barista display at the right time for preparation. The drink is ready when the customer arrives. No queuing, no waiting. A notification can alert the customer when their drink is ready for pickup.' },
           { question: 'Can I limit orders during busy periods?', answer: 'Yes. Time slot management lets you cap the number of online orders per slot (e.g. maximum 8 orders per 15-minute window). When a slot is full, customers see the next available time. This prevents the barista station from being overwhelmed and ensures every drink — counter and online — is prepared promptly.' },
           { question: 'Does it integrate with loyalty rewards?', answer: 'Yes. Loyalty stamps are tracked across in-store and online purchases. A customer buying their 9th coffee online gets the 10th free, just like buying at the counter. Points balances appear in the customer\'s online account. Loyalty drives repeat online ordering and increases customer lifetime value.' },
-          { question: 'How much does the web ordering system cost?', answer: 'The web ordering system is included with the Posso coffee shop POS from £499 + VAT. Low commission per online order. No separate monthly fee for the ordering platform. Includes branded design, drink customisation, time slot management, and POS integration. Free setup and menu configuration included.' },
+          { question: 'How much does the web ordering system cost?', answer: `The web ordering system is included with the Posso coffee shop POS from ${posso.posPrice} + VAT. Low commission per online order. No separate monthly fee for the ordering platform. Includes branded design, drink customisation, time slot management, and POS integration. Free setup and menu configuration included.` },
         ]} />
 
         <Contact />

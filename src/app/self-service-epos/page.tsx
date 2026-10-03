@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Monitor, QrCode, Clock, Users, Scan, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Self Service ePOS',
   description:
-    'Self Service ePOS with unattended ordering kiosks, QR code ordering, reduced staffing requirements, and 24/7 operation. Kiosks from £699 + VAT. Low commission.',
+    `Self Service ePOS with unattended ordering kiosks, QR code ordering, reduced staffing requirements, and 24/7 operation. Kiosks from ${posso.kioskPrice} + VAT. Low commission.`,
   keywords: [
     'self service epos',
     'self service pos',
@@ -122,7 +123,7 @@ export default function SelfServiceEposPage() {
                 Unattended ordering kiosks, QR code ordering, reduced staffing, and 24/7 operation — let customers order and pay without staff assistance.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Self-ordering kiosks from £699 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Self-ordering kiosks from {posso.kioskPrice} + VAT</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> QR code ordering with zero hardware cost</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Average order value increases 15-25%</li>
               </ul>
@@ -130,8 +131,8 @@ export default function SelfServiceEposPage() {
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -224,7 +225,7 @@ export default function SelfServiceEposPage() {
         </section>
 
         <FAQSection title="Self Service ePOS — Frequently Asked Questions" faqs={[
-          { question: 'How much does a self-ordering kiosk cost?', answer: 'Self-ordering kiosks start from £699 + VAT including the touchscreen hardware, kiosk software, integrated contactless payment terminal, and kitchen display integration. QR code ordering can be added at low commission per order with zero hardware cost. Finance options available. Free installation, menu setup, and training included.' },
+          { question: 'How much does a self-ordering kiosk cost?', answer: `Self-ordering kiosks start from ${posso.kioskPrice} + VAT including the touchscreen hardware, kiosk software, integrated contactless payment terminal, and kitchen display integration. QR code ordering can be added at low commission per order with zero hardware cost. Finance options available. Free installation, menu setup, and training included.` },
           { question: 'Do customers need to download an app for QR ordering?', answer: 'No. QR code ordering works in the customer\'s mobile browser. They scan the code, the menu loads, they order and pay — all without downloading anything. This removes the biggest barrier to adoption. Works on any smartphone with a camera and a browser, which covers virtually every customer.' },
           { question: 'How much does self-service increase average order value?', answer: 'Businesses using self-service kiosks typically see average order values increase by 15 to 25 percent. The visual interface shows upsell prompts — "Add a drink for £1.50?" — with photos. Customers browse the full menu rather than ordering the first thing they see. The result is larger, more customised orders.' },
           { question: 'Can kiosks integrate with the kitchen display?', answer: 'Yes. Kiosk orders appear on the kitchen display alongside counter orders. The kitchen sees one unified queue regardless of where the order originated. Each order shows whether it came from the kiosk, the counter, or QR ordering. The kitchen works through them in sequence.' },

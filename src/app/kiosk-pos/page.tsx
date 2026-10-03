@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Monitor, Users, UtensilsCrossed, Settings, LayoutGrid, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Kiosk POS',
   description:
-    'Kiosk POS combining self-service kiosk and counter POS in one system. Staff override mode, kitchen integration, and hybrid ordering for restaurants and takeaways. From £699 + VAT.',
+    `Kiosk POS combining self-service kiosk and counter POS in one system. Staff override mode, kitchen integration, and hybrid ordering for restaurants and takeaways. From ${posso.kioskPrice} + VAT.`,
   keywords: [
     'kiosk pos',
     'kiosk pos system',
@@ -124,14 +126,14 @@ export default function KioskPosPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Switch between kiosk and counter mode instantly</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Kitchen display shows unified order queue</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Kiosk POS from £699 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Kiosk POS from {posso.kioskPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -208,7 +210,7 @@ export default function KioskPosPage() {
                 </Link>
                 <Link href="/self-order-kiosk-cost" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Kiosk Costs</p>
-                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT, itemised</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.kioskPrice} + VAT, itemised</p>
                 </Link>
                 <Link href="/self-order-app" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order App</p>
@@ -223,13 +225,15 @@ export default function KioskPosPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Kiosk POS — Frequently Asked Questions" faqs={[
           { question: 'How does the hybrid kiosk/POS mode work?', answer: 'The touchscreen defaults to kiosk mode where customers browse the menu, select items, customise with modifiers, and pay by card. When a staff member enters their PIN, the screen switches to full POS mode with access to refunds, discounts, reporting, and order management. After a configurable timeout, it returns to kiosk mode automatically.' },
           { question: 'Can orders from the kiosk and counter go to the same kitchen?', answer: 'Yes. Orders from every source — kiosk, counter, online, and phone — feed into one unified kitchen display. The kitchen sees a single queue with each order labelled by source. Preparation priority and order sequencing work identically regardless of where the customer placed their order.' },
           { question: 'What happens if a customer needs help at the kiosk?', answer: 'A staff member can assist the customer directly at the kiosk screen without switching modes. For more complex requests, the staff member enters their PIN to access the full POS interface and handles the order from there. The system is designed for flexibility — not every customer interaction needs to be fully self-service.' },
           { question: 'Does the kiosk screen show upsell suggestions?', answer: 'Yes. After a customer selects a main item, the screen suggests complementary additions: drinks, sides, upgrades, and meal deal completions. These prompts are configurable — you choose which items trigger which suggestions and set the display timing. Businesses typically see a 15-25% lift in average order value.' },
           { question: 'Can I use the kiosk for table service?', answer: 'Yes. The kiosk can prompt customers to enter a table number after ordering. The kitchen display shows the table number on the ticket, and staff deliver the food. This works well for casual dining where customers order at the kiosk but sit at a table to eat.' },
-          { question: 'How much does a kiosk POS system cost?', answer: 'Kiosk POS starts from £699 + VAT including the touchscreen terminal, kiosk and POS software, and kitchen display integration. Counter-only POS starts from £499 + VAT. Low commission on orders. Free setup, menu configuration, and staff training included with a 2-year warranty.' },
+          { question: 'How much does a kiosk POS system cost?', answer: `Kiosk POS starts from ${posso.kioskPrice} + VAT including the touchscreen terminal, kiosk and POS software, and kitchen display integration. Counter-only POS starts from ${posso.posPrice} + VAT. Low commission on orders. Free setup, menu configuration, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

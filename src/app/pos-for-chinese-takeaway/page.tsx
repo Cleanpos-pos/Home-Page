@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Search, Hash, ListFilter, Package, Flame, PhoneCall, ToggleLeft } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
-  title: 'Chinese Takeaway EPOS & Till System — from £499',
+  title: `Chinese Takeaway EPOS & Till System — from ${posso.posPrice}`,
   description:
-    'Choosing an EPOS for a Chinese takeaway? What actually matters — dish numbers, 200-item menus, set meals, station printing and phone ordering — plus real costs. Posso tills from £499 + VAT.',
+    `Choosing an EPOS for a Chinese takeaway? What actually matters — dish numbers, 200-item menus, set meals, station printing and phone ordering — plus real costs. Posso tills from ${posso.posPrice} + VAT.`,
   keywords: [
     'pos for chinese takeaway',
     'chinese takeaway epos',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chinese Takeaway EPOS & Till System | Posso UK',
     description:
-      'Chinese takeaway EPOS buyer\'s guide — the six things that actually matter on a 200-item menu, what to test before you buy, and what it costs. Posso tills from £499 + VAT.',
+      `Chinese takeaway EPOS buyer's guide — the six things that actually matter on a 200-item menu, what to test before you buy, and what it costs. Posso tills from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/pos-for-chinese-takeaway',
     type: 'website',
     // TODO: replace with a bespoke 1200×630 card once artwork exists
@@ -143,14 +145,14 @@ export default function PosForChineseTakeawayPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Six features a long menu actually needs</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> What to test before you sign anything</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Chinese takeaway POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Chinese takeaway POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -225,7 +227,7 @@ export default function PosForChineseTakeawayPage() {
                   Just Eat, Uber Eats and Deliveroo orders arrive in the same queue as counter, phone and website orders, and the kitchen display shows one list with completion tracking. The interface ships in <strong className="text-white">five languages including Simplified Chinese</strong>. The system is offline-first, so a dropped connection mid-rush does not stop you taking orders, taking cash or printing tickets.
                 </p>
                 <p>
-                  Pricing starts at <strong className="text-white">£499 + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a two-year warranty. On-site installation is quoted separately if you want it. Orders through your own website or app carry a 60p service fee paid by the customer at checkout, so there is no percentage commission on your own trade; you pay card processing only. Card payments run through Posso Pay. It is all one{' '}
+                  Pricing starts at <strong className="text-white">{posso.posPrice} + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a {posso.warrantyYearsWord}-year warranty. On-site installation for larger sites is priced on application. Orders through your own website or app carry a 60p service fee paid by the customer at checkout, so there is no percentage commission on your own trade; you pay card processing only. Card payments run through Posso Pay. It is all one{' '}
                   <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
                   rather than separate products bolted together.
                 </p>
@@ -267,13 +269,15 @@ export default function PosForChineseTakeawayPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="POS for Chinese Takeaways — Frequently Asked Questions" faqs={[
           { question: 'What is a Chinese takeaway POS system?', answer: 'A Chinese takeaway POS system is point-of-sale software built for long menus and high phone-order volume — dish-number entry and search across two hundred or more items, set meals priced as a single line with substitution rules, kitchen tickets routed to the wok, fryer and rice stations separately, caller ID for repeat customers, card payments, and online and delivery app orders arriving in one queue.' },
           { question: 'How should a POS handle ordering by dish number?', answer: 'The number should be something staff can type directly, from any screen, with the dish landing in the basket on entry — not a label printed next to the item that still has to be found by tapping through categories. On a seven-item order the difference is the whole call. Ask to watch someone ring in three dishes by number without touching a category tab.' },
           { question: 'Can a POS cope with a menu of two hundred dishes?', answer: 'Yes, but not by adding more categories. What works on a long menu is a flat text search combined with pinned favourites covering the twenty or so dishes that make up most of the trade. If the answer to a bigger menu is a deeper menu tree, every order gets slower as the menu grows.' },
           { question: 'How should set meals and substitutions be priced?', answer: 'The bundle should hold its fixed price as a single line while still sending each component to the kitchen, with a price rule that applies only when a substitution costs more. Ringing a set meal in as separate items and applying a manual discount drifts on every swap and leaves your reports unable to tell you how many set meals you actually sold.' },
           { question: 'Can kitchen tickets be split between the wok and the fryer?', answer: 'They should be. A Chinese kitchen works as stations rather than a single line, so an eight-item order needs each station to receive only its own dishes rather than a full copy of the ticket. Look for printing and kitchen display routing configured per menu category, and ask what happens to a dish that belongs to two stations.' },
-          { question: 'How much does a Chinese takeaway POS cost in the UK?', answer: 'A complete system with a touchscreen terminal, kitchen printing and online ordering typically starts around £499 + VAT upfront, with monthly software from roughly £30. Extra station printers, kitchen display screens and kiosks add to that. Over three years marketplace commission is usually the largest single cost in the setup — model that before comparing hardware prices.' },
+          { question: 'How much does a Chinese takeaway POS cost in the UK?', answer: `A complete system with a touchscreen terminal, kitchen printing and online ordering typically starts around ${posso.posPrice} + VAT upfront, with monthly software from roughly £30. Extra station printers, kitchen display screens and kiosks add to that. Over three years marketplace commission is usually the largest single cost in the setup — model that before comparing hardware prices.` },
           { question: 'What happens if the internet goes down mid-service?', answer: 'On an offline-first system, nothing stops. Posso stores products, orders and settings locally, so you carry on taking orders, taking cash and printing kitchen tickets without a connection, and everything syncs once you are back online. Ask any supplier this question specifically — cloud-only systems stop dead.' },
         ]} />
 

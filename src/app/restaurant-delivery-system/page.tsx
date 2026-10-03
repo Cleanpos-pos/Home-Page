@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Truck, MapPin, Clock, Globe, BarChart3, Users } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Restaurant Delivery System',
   description:
-    'Restaurant Delivery System with delivery zones, driver app, Just Eat, Uber Eats and Deliveroo integration, order tracking, and route management. POS from £499 + VAT.',
+    `Restaurant Delivery System with delivery zones, driver app, Just Eat, Uber Eats and Deliveroo integration, order tracking, and route management. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'restaurant delivery system',
     'restaurant delivery software',
@@ -124,14 +125,14 @@ export default function RestaurantDeliverySystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Just Eat, Uber Eats & Deliveroo in one queue</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Driver tracking app with navigation</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete delivery POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete delivery POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -214,7 +215,7 @@ export default function RestaurantDeliverySystemPage() {
                   <p className="font-semibold text-white">ePOS Systems</p>
                   <p className="text-slate-400 text-sm mt-1">Full POS features</p>
                 </Link>
-                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pos-for-pizza-shop" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza POS</p>
                   <p className="text-slate-400 text-sm mt-1">Pizza delivery features</p>
                 </Link>
@@ -229,7 +230,7 @@ export default function RestaurantDeliverySystemPage() {
           { question: 'Can I set different delivery fees by distance?', answer: 'Yes. Draw delivery zones on a map and set fees per zone — for example, free within 1 mile, £2 within 3 miles, £4 within 5 miles. You can also set minimum order values per zone. Customers see their delivery fee before they start ordering.' },
           { question: 'Does the system handle both delivery and collection orders?', answer: 'Yes. Customers choose delivery or collection when ordering. Collection orders show a pickup time. Delivery orders show the estimated delivery time based on the zone. The kitchen display distinguishes between delivery and collection orders so staff prepare accordingly.' },
           { question: 'Can I use my own drivers and delivery platforms together?', answer: 'Yes. For direct orders through your website and phone, use your own drivers with the Posso driver app. For marketplace orders, the platform handles delivery. Both types appear on the same kitchen display. You choose the best delivery method per channel.' },
-          { question: 'How much does the restaurant delivery system cost?', answer: 'The delivery system is included with the Posso POS from £499 + VAT. Delivery zone management, driver tracking, and platform integration are all part of the standard system. Online ordering is included at low commission. Free setup and training with a 2-year warranty.' },
+          { question: 'How much does the restaurant delivery system cost?', answer: `The delivery system is included with the Posso POS from ${posso.posPrice} + VAT. Delivery zone management, driver tracking, and platform integration are all part of the standard system. Online ordering is included at low commission. Free setup and training with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

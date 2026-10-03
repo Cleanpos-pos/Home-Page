@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, MonitorSmartphone, CreditCard, ChefHat, ShoppingCart, BarChart3, Accessibility } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Food Ordering Machine',
   description:
-    'Food Ordering Machine for self-service restaurants, takeaways, and fast food. Freestanding kiosks with touchscreen ordering, card payment, and kitchen integration. Kiosks from £699 + VAT.',
+    `Food Ordering Machine for self-service restaurants, takeaways, and fast food. Freestanding kiosks with touchscreen ordering, card payment, and kitchen integration. Kiosks from ${posso.kioskPrice} + VAT.`,
   keywords: [
     'food ordering machine',
     'self service food ordering machine',
@@ -124,14 +125,14 @@ export default function FoodOrderingMachinePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Freestanding touchscreen with card payment</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Direct kitchen display integration</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Food ordering machines from £699 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Food ordering machines from {posso.kioskPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -228,7 +229,7 @@ export default function FoodOrderingMachinePage() {
           { question: 'Do customers need to download an app?', answer: 'No. The food ordering machine is a physical touchscreen that customers walk up to and use. No app download, no QR code scanning, no account creation. Tap the screen to start browsing, select items, customise, pay by card — done. The barrier to use is as low as physically possible.' },
           { question: 'How does payment work?', answer: 'A card reader is integrated into the machine. Customers pay by contactless tap (card or phone), chip and PIN, or Apple Pay / Google Pay. Payment is the final step in the ordering flow. The transaction completes in under 3 seconds. An optional receipt prints or is emailed to the customer.' },
           { question: 'Does it connect to my existing kitchen setup?', answer: 'Yes. Orders from the food ordering machine appear on your existing kitchen display or printer in the same format as counter orders. If you already use a Posso POS, the kiosk integrates seamlessly. If you use a different POS, we can discuss integration options. The kitchen workflow does not change.' },
-          { question: 'How much do food ordering machines cost?', answer: 'Food ordering machines start from £699 + VAT including the touchscreen display, pedestal or wall mount, integrated card reader, and ordering software. Volume discounts available for multiple machines. Finance from £34.95 per week. Free installation, menu setup, and on-site training included.' },
+          { question: 'How much do food ordering machines cost?', answer: `Food ordering machines start from ${posso.kioskPrice} + VAT including the touchscreen display, pedestal or wall mount, integrated card reader, and ordering software. Volume discounts available for multiple machines. Finance from £34.95 per week. Free installation, menu setup, and on-site training included.` },
           { question: 'Do they actually increase order values?', answer: 'Yes. Data from our installed base shows average order values increase 15-25% on kiosk orders compared to counter orders. The combination of visual menus with food photography, automated upsell prompts, and customers browsing at their own pace consistently leads to larger orders. The machine pays for itself quickly.' },
         ]} />
 

@@ -306,3 +306,32 @@ Sitemap: **211 URLs**, no aliases, no duplicates, no redirecting URLs, valid XML
 - Video sitemap XML escaping — cleared the Search Console parsing error.
 - Header nav moved to `xl:` and carousel arrows repositioned, fixing sitewide
   horizontal scroll at 768–1279px.
+
+---
+
+## 9. POS/EPOS cluster rules (October 2026)
+
+Full audit, redirect map and open TODOs: `docs/pos-cluster-audit-2026-10.md`.
+
+- **Never type a Posso fact into a page.** Prices, rates, warranty, support hours,
+  business count and phone number live in `src/lib/possoFacts.ts`; import `posso`
+  and interpolate (`${posso.posPrice} + VAT`, `{posso.phone}`). Schema prices
+  come from `possoPrices` (numbers). Standard sentences are there too:
+  `posso.setupStatement`, `posso.goLiveStatement`, `posso.ownershipNote`.
+- **Redirects live in `src/lib/redirects.ts`.** `next.config.ts` serves that list
+  and `src/app/sitemap.ts` drops every source in it, so a redirected URL cannot
+  reappear in the sitemap. Flatten chains when you add one.
+- **One job per page.** `/pos` is the pillar; `/pos-systems` = packages and
+  quotes; `/pos-companies-uk` = choosing a provider; `/buy-epos-system-uk` =
+  buying vs leasing. Do not give two pages the same head term.
+- **Competitor pages** (`src/content/guides/competitors.ts`) state no competitor
+  fact until it has been read on the competitor's own UK site. Each page is
+  `noindex` and out of the sitemap until its `verified` flag is set, and they
+  emit BreadcrumbList + FAQPage only (no Review/Product/Rating about a rival).
+- **Organization schema is on the homepage only.** Inner pages reference it as
+  `{ '@id': 'https://www.posso.co.uk/#organization' }`. The root layout no longer
+  sets a canonical, og:title or twitter:title — every page sets its own.
+- **Vertical pages link up** to `/pos` with the anchor "EPOS system" and to
+  `/epos-pricing-uk` — `<EposClusterLinks />` does this for page-file routes and
+  `GuidePage` renders it for typed guides.
+- Typed-guide strings support inline links: `[anchor text](/path)`.

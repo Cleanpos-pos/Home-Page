@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, ArrowRight, Phone, Monitor, Smartphone, Globe, CreditCard, Truck, BarChart3, Clock, Users } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: "How Domino's Became a Tech Company — And Why You Don't Need To in 2026",
@@ -38,8 +39,8 @@ const pageSchema = [
     '@type': 'BlogPosting',
     headline: "How Domino's Became a Tech Company — And Why You Don't Need To in 2026",
     description: "Domino's invested millions in building proprietary POS technology. Here's what independent restaurants can learn — and how Posso One delivers the same capabilities off the shelf.",
-    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://www.posso.co.uk' },
-    publisher: { '@type': 'Organization', name: 'Posso Ltd', logo: { '@type': 'ImageObject', url: 'https://www.posso.co.uk/icon-512x512.png' } },
+    author: { '@id': 'https://www.posso.co.uk/#organization' },
+    publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     datePublished: '2026-04-08',
     dateModified: '2026-04-08',
     url: 'https://www.posso.co.uk/blog/how-dominos-became-a-tech-company',
@@ -197,7 +198,7 @@ export default function DominosTechBlogPage() {
                 In 2026, that&apos;s no longer true. <strong className="text-white">Everything Domino&apos;s built over two decades is now available in a single system — ready to install, not build.</strong>
               </p>
               <p>
-                Posso One is the Pulse for the rest of us. A unified POS, kitchen display, kiosk, and online ordering platform built specifically for restaurants, takeaways, and pizza shops. It took Domino&apos;s 15 years and millions of pounds to get where they are. With Posso, you can get there in under 24 hours.
+                Posso One is the Pulse for the rest of us. A unified POS, kitchen display, kiosk, and online ordering platform built specifically for restaurants, takeaways, and pizza shops. It took Domino&apos;s 15 years and millions of pounds to get where they are. With Posso, the system arrives preconfigured and plug-and-play.
               </p>
             </div>
           </div>
@@ -286,8 +287,8 @@ export default function DominosTechBlogPage() {
               <Link href="/pos-systems" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all hover:scale-105 text-lg px-8 py-3 font-medium">
                 Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                <Phone className="mr-2 h-5 w-5" /> Call 0808 175 3956
+              <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                <Phone className="mr-2 h-5 w-5" /> Call {posso.phone}
               </a>
             </div>
           </div>
@@ -299,7 +300,7 @@ export default function DominosTechBlogPage() {
             <div className="glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Related</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pos-for-pizza-shop" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza POS System</p>
                   <p className="text-slate-400 text-sm mt-1">Visual pizza builder</p>
                 </Link>
@@ -322,9 +323,9 @@ export default function DominosTechBlogPage() {
 
         <FAQSection title="Restaurant Technology — FAQs" faqs={[
           { question: "What POS system does Domino's use?", answer: "Domino's uses a proprietary system called Pulse, built in-house starting in 2002. It's custom-built for their franchise model and not available to other restaurants. Independent pizza shops can get equivalent capabilities with off-the-shelf systems like Posso One." },
-          { question: 'Can a small restaurant afford the same tech as a big chain?', answer: "Yes. In 2026, restaurant technology that would have cost millions to develop 10 years ago is available off the shelf. A complete Posso One setup — POS, KDS, online ordering, delivery integration — starts from £499 + VAT, with finance from £24.92/week." },
+          { question: 'Can a small restaurant afford the same tech as a big chain?', answer: `Yes. In 2026, restaurant technology that would have cost millions to develop 10 years ago is available off the shelf. A complete Posso One setup — POS, KDS, online ordering, delivery integration — starts from ${posso.posPrice} + VAT, with finance from ${posso.financeWeekly}/week.` },
           { question: 'Do you build custom POS systems for restaurant chains?', answer: "Yes — Posso works with growing chains and franchises to build bespoke systems. Custom integrations, branded ordering flows, franchise-level analytics, and multi-location management. Contact us to discuss your requirements." },
-          { question: 'How quickly can I go live with a POS system?', answer: "Domino's took years to roll out Pulse. With Posso, we go from signup to live orders in under 24 hours. We handle hardware setup, menu import, staff training, and ongoing support — all included free." },
+          { question: 'How quickly can I go live with a POS system?', answer: `Domino's took years to roll out Pulse. With Posso: ${posso.goLiveStatement} ${posso.setupStatement}` },
           { question: 'What makes Posso different from generic POS systems?', answer: "Posso One is built specifically for restaurants and takeaways. It includes a visual pizza builder with split-sided ordering, kitchen display system, self-order kiosks, online ordering, delivery platform integration (Just Eat, Uber Eats, Deliveroo), caller ID, and offline operation — all in one system." },
           { question: 'Is it worth investing in restaurant technology?', answer: "Absolutely. Domino's attributes much of their sales growth to technology investment. Digital ordering, self-service kiosks, and delivery integration directly increase revenue. Most Posso customers see ROI within 3–6 months through higher average order values and reduced labour costs." },
         ]} />

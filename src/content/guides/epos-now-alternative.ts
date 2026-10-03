@@ -1,10 +1,11 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 export const eposNowAlternative: Guide = {
   slug: "epos-now-alternative",
   title: "Epos Now Alternative for UK Takeaways & Restaurants (2026)",
   metaDescription:
-    "Looking for an Epos Now alternative? Compare contracts, add-on costs and online ordering commission. UK hospitality EPOS from £499 + VAT with no add-on ladder.",
+    `Looking for an Epos Now alternative? Compare contracts, add-on costs and online ordering commission. UK hospitality EPOS from ${posso.posPrice} + VAT with no add-on ladder.`,
   eyebrow: "Switching guide",
   h1: "Epos Now alternative for UK takeaways and restaurants",
   h1Split: ["Epos Now alternative", "for UK takeaways and restaurants"],
@@ -13,11 +14,11 @@ export const eposNowAlternative: Guide = {
   highlights: [
     "The four costs that decide whether switching is worth it",
     "What to get in writing before you cancel",
-    "UK hospitality EPOS from £499 + VAT",
+    `UK hospitality EPOS from ${posso.posPrice} + VAT`,
   ],
   breadcrumb: "Epos Now Alternative",
   quickAnswer:
-    "For a UK takeaway or restaurant, the deciding factor is usually whether online ordering and kitchen display are included in the system or charged as monthly add-ons. Posso includes branded online ordering, sells the kitchen display as a one-off, and publishes its pricing — systems start at £499 + VAT with menu build and staff training included.",
+    `For a UK takeaway or restaurant, the deciding factor is usually whether online ordering and kitchen display are included in the system or charged as monthly add-ons. Posso includes branded online ordering, sells the kitchen display as a one-off, and publishes its pricing — systems start at ${posso.posPrice} + VAT with menu build and staff training included.`,
   sections: [
     {
       kind: "features",
@@ -82,8 +83,8 @@ export const eposNowAlternative: Guide = {
         "Posso is a UK hospitality-only EPOS platform, built in Leicester and supported from the UK.",
         "Online ordering is part of the system, not an add-on. Your branded ordering site and app run on your own domain with the menu synced from the till. The 60p service fee is added to the customer's order — so on direct orders, the only fee your business pays is card processing.",
         "One vendor covers the whole stack: EPOS till, kitchen display, self-order kiosks, online ordering, delivery integrations and card payments, on one support number. No integration fees and no vendor blame games.",
-        "Pricing is published. Systems start at £499 + VAT including hardware, software licence, menu and product setup, and staff training. Kiosks from £699 + VAT. A 21-inch kitchen display screen is £399 + VAT. Extra kitchen printers are £99. Just Eat, Uber Eats and Deliveroo integration is £45/month with unlimited orders. Finance is available from £24.92 per week.",
-        "Card processing runs through Posso Pay, Posso's own merchant service — rates are quoted on your card turnover, and the same rate applies in store and on the online payment gateway. Every system carries a 2-year warranty.",
+        `Pricing is published. Systems start at ${posso.posPrice} + VAT including hardware, menu and product setup, and staff training, with software from ${posso.softwareMonthly} + VAT a month. Kiosks from ${posso.kioskPrice} + VAT. A 21-inch kitchen display screen is ${posso.kdsPrice} + VAT. Extra kitchen printers are ${posso.printerPrice}. Just Eat, Uber Eats and Deliveroo integration is ${posso.deliveryIntegrationMonthly}/month with unlimited orders. Finance is available from ${posso.financeWeekly} per week.`,
+        `Card processing runs through Posso Pay, Posso's own merchant service — rates are quoted on your card turnover, and the same rate applies in store and on the online payment gateway. Every system carries a ${posso.warrantyYears}-year warranty.`,
       ],
     },
     {
@@ -160,7 +161,7 @@ export const eposNowAlternative: Guide = {
     },
     {
       q: "How much does it cost to switch EPOS provider?",
-      a: "The switching cost is the sum of three things: any early termination fee on your existing contract, the cost of the new system, and any menu rebuild charges. With Posso the system starts at £499 + VAT and the menu build and staff training are included, so the main variable is your existing contract. Finance from £24.92 per week is available if the upfront cost is the obstacle.",
+      a: `The switching cost is the sum of three things: any early termination fee on your existing contract, the cost of the new system, and any menu rebuild charges. With Posso the system starts at ${posso.posPrice} + VAT and the menu build and staff training are included, so the main variable is your existing contract. Finance from ${posso.financeWeekly} per week is available if the upfront cost is the obstacle.`,
     },
     {
       q: "Do I need to buy new hardware?",
@@ -168,7 +169,7 @@ export const eposNowAlternative: Guide = {
     },
     {
       q: "How long does the switch take?",
-      a: "From confirmed order to taking your first live order is typically under 24 hours once the hardware is with you, because the menu build and configuration happen before shipping. The realistic planning window is one to two weeks from first conversation, mostly spent on menu review and choosing an install slot that does not clash with your busiest service.",
+      a: `${posso.goLiveStatement} The menu build and configuration happen before shipping. The realistic planning window is one to two weeks from first conversation, mostly spent on menu review and choosing an install slot that does not clash with your busiest service.`,
     },
   ],
 };

@@ -1,4 +1,5 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 /**
  * Community-research page (SERP-gap batch, August 2026). Every theme, number
@@ -14,7 +15,7 @@ export const posForDessertShop: Guide = {
   slug: "pos-for-dessert-shop",
   title: "Dessert & Bubble Tea Shop POS",
   metaDescription:
-    "What dessert and bubble tea shop owners say about POS systems, synthesised from the threads Google ranks — with the numbers. Dessert EPOS from £499 + VAT.",
+    `What dessert and bubble tea shop owners say about POS systems, synthesised from the threads Google ranks — with the numbers. Dessert EPOS from ${posso.posPrice} + VAT.`,
   eyebrow: "Community research",
   h1: "Dessert and bubble tea shop POS: what owners actually say",
   h1Split: ["Dessert and bubble tea shop POS:", "what owners actually say"],
@@ -23,7 +24,7 @@ export const posForDessertShop: Guide = {
   highlights: [
     "Synthesised from owner discussions, with every source linked",
     "The numbers owners actually mention, including card fees on a £5 ticket",
-    "Dessert-ready EPOS from £499 + VAT when you want our version",
+    `Dessert-ready EPOS from ${posso.posPrice} + VAT when you want our version`,
   ],
   breadcrumb: "Dessert & Bubble Tea POS",
   quickAnswer:
@@ -70,7 +71,7 @@ export const posForDessertShop: Guide = {
       heading: "What owners say it actually costs",
       paragraphs: [
         "Real figures from the threads, in the currencies they were posted in. “Square seems nuts to me at 2.6% AND .10 per transaction” is the line that starts the small-tickets thread — that owner's own arithmetic put a 400-sandwich day at around $240 in card fees. The rule-of-thumb reply put the crossover where flat rate stops making sense at about $10,000 a month in card volume. In the older ice cream thread, a full single-register setup was quoted at just under $1,000 all-in; at the bottom end, a web-based till was pitched at $34 a month. None of these are UK prices — they are what owners report paying, which is the number vendor pages never print.",
-        "For the UK counter: our systems start at £499 + VAT including the terminal, software licence, menu build and staff training, with a 2-year warranty and UK phone support Monday to Friday, 9am to 9:30pm. Spread on finance that is from £24.92 a week, with software from £25 + VAT a month. Self-order kiosks start at £699 + VAT. Card processing runs through Posso Pay, our own merchant service — there is deliberately no flat rate to print here, because the rate is quoted on your card turnover and average ticket, and the same rate applies in store and on your online ordering. For a £4.50 average ticket, that quote conversation is precisely the one the threads say to have.",
+        `For the UK counter: our systems start at ${posso.posPrice} + VAT including the terminal, software licence, menu build and staff training, with a ${posso.warrantyYears}-year warranty and UK phone support Monday to Friday, ${posso.supportTime}. Spread on finance that is from ${posso.financeWeekly} a week, with software from ${posso.softwareMonthly} + VAT a month. Self-order kiosks start at ${posso.kioskPrice} + VAT. Card processing runs through Posso Pay, our own merchant service — there is deliberately no flat rate to print here, because the rate is quoted on your card turnover and average ticket, and the same rate applies in store and on your online ordering. For a £4.50 average ticket, that quote conversation is precisely the one the threads say to have.`,
       ],
     },
     {
@@ -115,9 +116,9 @@ export const posForDessertShop: Guide = {
       kicker: "Our stake",
       heading: "Where Posso fits — and where it doesn't",
       paragraphs: [
-        "You will not find Posso in these threads. They are mostly American, and we are a UK company with 500+ UK businesses on the system — so judge us on a demo against the checklist above, not on our absence from Reddit.",
-        "Where we fit the thread consensus: toppings, sugar levels and ice levels as priced modifiers one tap deep, with combo management for meal-deal-style builds. The printing ask that keeps appearing in the boba threads — a kitchen ticket plus a label for each sealed cup — is exactly how Posso runs a drinks counter: the order prints to the make station and each cup gets its own label, so the right drink reaches the right customer. Add self-order kiosks for the weekend queue, which in a dessert shop also quietly fix the sugar-level conversation, because customers dial in their own; order-ahead and delivery through your own branded ordering rather than a commission app; and your customer list held in the built-in CMS with 2,000 marketing emails a month included — dessert shops run on regulars and birthdays. Hardware carries a 2-year warranty with UK phone support, which is our answer to the registers-die-every-season thread.",
-        "Where we are not the answer, in the threads' own spirit: a single-person stall or market cart should buy a flat-rate card reader and keep the £499 — the threads are right about that. A bakery that is mostly packaged retail with barcodes wants a retail-first platform, not a hospitality EPOS. And if you are reading this from the US or Canada, the Toast and Square answers in the threads will serve you better than a UK supplier can.",
+        `You will not find Posso in these threads. They are mostly American, and we are a UK company with ${posso.businessCount} UK businesses on the system — so judge us on a demo against the checklist above, not on our absence from Reddit.`,
+        `Where we fit the thread consensus: toppings, sugar levels and ice levels as priced modifiers one tap deep, with combo management for meal-deal-style builds. The printing ask that keeps appearing in the boba threads — a kitchen ticket plus a label for each sealed cup — is exactly how Posso runs a drinks counter: the order prints to the make station and each cup gets its own label, so the right drink reaches the right customer. Add self-order kiosks for the weekend queue, which in a dessert shop also quietly fix the sugar-level conversation, because customers dial in their own; order-ahead and delivery through your own branded ordering rather than a commission app; and your customer list held in the built-in CMS with 2,000 marketing emails a month included — dessert shops run on regulars and birthdays. Hardware carries a ${posso.warrantyYears}-year warranty with UK phone support, which is our answer to the registers-die-every-season thread.`,
+        `Where we are not the answer, in the threads' own spirit: a single-person stall or market cart should buy a flat-rate card reader and keep the ${posso.posPrice} — the threads are right about that. A bakery that is mostly packaged retail with barcodes wants a retail-first platform, not a hospitality EPOS. And if you are reading this from the US or Canada, the Toast and Square answers in the threads will serve you better than a UK supplier can.`,
       ],
     },
     {
@@ -176,7 +177,7 @@ export const posForDessertShop: Guide = {
   faqs: [
     {
       q: "How much does a dessert shop POS cost in the UK?",
-      a: "A complete Posso system starts at £499 + VAT including the touchscreen terminal, software licence, menu build and staff training, or from £24.92 a week on finance, plus software from £25 + VAT a month. Self-order kiosks start at £699 + VAT. Card processing through Posso Pay is quoted on your card turnover and average ticket rather than a flat rate — and at a £4–£6 dessert ticket, that quote matters more than the hardware price, which is exactly what owners in the threads keep discovering.",
+      a: `A complete Posso system starts at ${posso.posPrice} + VAT including the touchscreen terminal, software licence, menu build and staff training, or from ${posso.financeWeekly} a week on finance, plus software from ${posso.softwareMonthly} + VAT a month. Self-order kiosks start at ${posso.kioskPrice} + VAT. Card processing through Posso Pay is quoted on your card turnover and average ticket rather than a flat rate — and at a £4–£6 dessert ticket, that quote matters more than the hardware price, which is exactly what owners in the threads keep discovering.`,
     },
     {
       q: "Is Square enough for a bubble tea shop?",
@@ -192,7 +193,7 @@ export const posForDessertShop: Guide = {
     },
     {
       q: "Do dessert shops need a self-order kiosk?",
-      a: "Only if the queue is genuinely costing you customers — kiosks earn their place in high-volume counter operations, and dessert shops at weekends are exactly that. They also fit boba specifically: customers set their own sugar and ice levels on screen, which removes the slowest conversation at the counter, and consistent prompting lifts attachment on toppings. Posso kiosks start at £699 + VAT.",
+      a: `Only if the queue is genuinely costing you customers — kiosks earn their place in high-volume counter operations, and dessert shops at weekends are exactly that. They also fit boba specifically: customers set their own sugar and ice levels on screen, which removes the slowest conversation at the counter, and consistent prompting lifts attachment on toppings. Posso kiosks start at ${posso.kioskPrice} + VAT.`,
     },
     {
       q: "What do owners complain about most in the threads?",

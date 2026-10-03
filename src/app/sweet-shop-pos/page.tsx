@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Scale, Barcode, Package, CreditCard, ShoppingBag, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Sweet Shop POS System',
   description:
-    'Sweet Shop POS System with weigh-and-pay, barcode scanning, pick and mix pricing, stock management, and integrated card payments. Built for sweet shops and confectionery retail. POS from £499 + VAT.',
+    `Sweet Shop POS System with weigh-and-pay, barcode scanning, pick and mix pricing, stock management, and integrated card payments. Built for sweet shops and confectionery retail. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'sweet shop pos',
     'sweet shop pos system',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sweet Shop POS System | Posso UK',
     description:
-      'Sweet Shop POS System with weigh-and-pay, barcode scanning, pick & mix pricing, and stock management. POS from £499 + VAT.',
+      `Sweet Shop POS System with weigh-and-pay, barcode scanning, pick & mix pricing, and stock management. POS from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/sweet-shop-pos',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -124,14 +126,14 @@ export default function SweetShopPosPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Weigh-and-pay with connected scale</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pick & mix pricing per 100g or per kg</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Sweet shop POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Sweet shop POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -219,13 +221,15 @@ export default function SweetShopPosPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Sweet Shop POS System — Frequently Asked Questions" faqs={[
           { question: 'How does weigh-and-pay work for pick and mix?', answer: 'Connect a compatible scale to the POS. When a customer fills a bag of pick and mix, place it on the scale. The POS reads the weight and calculates the price based on your per-100g or per-kg rate. Different categories can have different rates — premium fudge at one price, standard sweets at another.' },
           { question: 'Can I scan barcodes on packaged sweets?', answer: 'Yes. The POS supports barcode scanning for all pre-packed items — chocolate bars, sweet bags, gift boxes. Scan the barcode and the product, price, and stock update automatically. For loose items without barcodes, use the visual product grid or weigh-and-pay function.' },
           { question: 'Does the POS track stock for loose sweets?', answer: 'Yes. Track loose sweet stock by weight — record how much you receive from the wholesaler and the POS deducts as you sell. When stock drops below your reorder level, you get an alert. This prevents empty jars and helps you plan wholesale orders accurately.' },
           { question: 'Can I accept card payments for small transactions?', answer: 'Yes. There is no minimum transaction amount. Sweet shop purchases of £1-2 are processed at the same speed as larger transactions. Contactless payment takes under 2 seconds. Apple Pay and Google Pay are supported alongside chip and PIN for larger amounts.' },
           { question: 'Can I sell sweets online through the same system?', answer: 'Yes. Posso supports online ordering so customers can order gift boxes, pick and mix selections, and packaged sweets for delivery or collection. Online orders arrive on your POS for fulfilment. One menu manages both counter and online sales.' },
-          { question: 'How much does the sweet shop POS cost?', answer: 'The sweet shop POS starts from £499 + VAT including the touchscreen terminal, POS software, and barcode scanner. Scale integration for weigh-and-pay is available. Card terminals available separately. Free setup, product import, and training included with a 2-year warranty.' },
+          { question: 'How much does the sweet shop POS cost?', answer: `The sweet shop POS starts from ${posso.posPrice} + VAT including the touchscreen terminal, POS software, and barcode scanner. Scale integration for weigh-and-pay is available. Card terminals available separately. Free setup, product import, and training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

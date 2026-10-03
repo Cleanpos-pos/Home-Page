@@ -85,7 +85,7 @@ export default function TicketingPage() {
             url: 'https://www.posso.co.uk/images/posso-ticketing-kiosk-copenhagen.jpg',
             caption: 'A Posso self-service ticketing kiosk on the Copenhagen harbourfront selling tours and event tickets.',
             creditText: 'Posso Ltd',
-            creator: { '@type': 'Organization', name: 'Posso Ltd' },
+            creator: { '@id': 'https://www.posso.co.uk/#organization' },
             copyrightNotice: '© Posso Ltd',
           }) }} />
           <div className="container mx-auto px-4 md:px-6">

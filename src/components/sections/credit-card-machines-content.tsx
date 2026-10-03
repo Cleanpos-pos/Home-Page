@@ -2,6 +2,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { Button } from '../ui/button';
 import { Smartphone, Wallet, Clock, Tag, Phone, ShieldCheck } from 'lucide-react';
+import { posso } from '@/lib/possoFacts';
 
 const cloverFeatures = [
     {
@@ -50,7 +51,7 @@ export function CreditCardMachinesContent() {
                  <Button size="lg" asChild>
                     <a href="tel:08081753956">
                         <Phone className="mr-2 h-5 w-5" />
-                        Call 0808 175 3956
+                        Call {posso.phone}
                     </a>
                 </Button>
             </div>

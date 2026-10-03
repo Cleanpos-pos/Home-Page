@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Phone, ArrowRight, Coffee, Smartphone, Heart, Clock, CreditCard, Gift } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Coffee Ordering App',
   description:
-    'Coffee Ordering App for coffee shops and cafes. Mobile ordering, loyalty stamps, milk and syrup modifiers, pickup scheduling, and QR table ordering. POS from £499 + VAT.',
+    `Coffee Ordering App for coffee shops and cafes. Mobile ordering, loyalty stamps, milk and syrup modifiers, pickup scheduling, and QR table ordering. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'coffee ordering app',
     'coffee shop ordering app',
@@ -124,14 +125,14 @@ export default function CoffeeOrderingAppPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Mobile order-ahead with pickup scheduling</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Digital loyalty stamps — no paper cards</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete coffee shop POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete coffee shop POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -230,7 +231,7 @@ export default function CoffeeOrderingAppPage() {
           { question: 'How does the loyalty stamp system work?', answer: 'Digital loyalty stamps replace paper cards. Each qualifying purchase earns a stamp automatically. When the customer reaches the target (e.g., buy 9 get 10th free), the reward applies on their next order. You set the rules — which products qualify, how many stamps needed, and what the reward is.' },
           { question: 'Can I control how many mobile orders come in during the morning rush?', answer: 'Yes. Pickup time scheduling lets you set capacity per time slot. If you can handle 10 mobile orders between 8:00 and 8:15, set that as the limit. When slots fill up, customers see the next available time. This prevents overwhelming your barista during peak periods.' },
           { question: 'How do milk and syrup modifiers work?', answer: 'Each drink can have modifier groups — milk choice (regular, oat, soy, almond, coconut) with optional price adjustments, syrup choice (vanilla, caramel, hazelnut), size (small, regular, large), and extras (extra shot, decaf). Customers select modifiers when ordering, and the barista sees the full specification on the kitchen display.' },
-          { question: 'How much does the coffee ordering app cost?', answer: 'The coffee ordering app is included with the Posso POS system from £499 + VAT. There is no separate monthly fee for mobile ordering or loyalty features. You get POS, mobile ordering, loyalty, and kitchen display all in one system with low commission on orders.' },
+          { question: 'How much does the coffee ordering app cost?', answer: `The coffee ordering app is included with the Posso POS system from ${posso.posPrice} + VAT. There is no separate monthly fee for mobile ordering or loyalty features. You get POS, mobile ordering, loyalty, and kitchen display all in one system with low commission on orders.` },
           { question: 'Can I use it across multiple coffee shop locations?', answer: 'Yes. Manage menus centrally while each location controls its own availability and stock. Loyalty stamps work across all locations — customers earn and redeem at any branch. Reporting shows performance by location and across your entire chain.' },
         ]} />
 

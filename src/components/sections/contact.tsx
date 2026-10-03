@@ -10,6 +10,7 @@ import {
   DialogClose,
 } from '@/components/ui/dialog';
 import { Calendar, Phone, X } from 'lucide-react';
+import { posso } from '@/lib/possoFacts';
 
 export function ContactDialog({ children }: { children: React.ReactNode }) {
   return (
@@ -56,9 +57,9 @@ export function Contact() {
           </Button>
         </ContactDialog>
         <Button size="lg" variant="outline" asChild>
-          <a href="tel:+448081753956">
+          <a href={posso.phoneHref}>
             <Phone className="mr-2 h-5 w-5" />
-            Call 0808 175 3956
+            Call {posso.phone}
           </a>
         </Button>
       </div>

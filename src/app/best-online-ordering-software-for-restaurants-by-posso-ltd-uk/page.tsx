@@ -21,10 +21,7 @@ const schema = {
     "operatingSystem": "Web, iOS, Android",
     "applicationCategory": "Restaurant Ordering System",
     "description": "Discover the best online ordering software for restaurants by Posso Ltd UK. Boost profits with low commission, branded apps, and seamless EPOS integration.",
-    "author": {
-        "@type": "Organization",
-        "name": "Posso Ltd"
-    },
+    "author": { '@id': 'https://www.posso.co.uk/#organization' },
     "offers": {
         "@type": "Offer",
         "priceCurrency": "GBP",

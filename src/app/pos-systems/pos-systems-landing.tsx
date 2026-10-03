@@ -31,6 +31,7 @@ import {
 import { ContactDialog } from '@/components/sections/contact';
 import { submitGeneralEnquiry } from '@/app/actions';
 import { cleanPhone, isValidPhone } from '@/lib/phone-validation';
+import { posso } from '@/lib/possoFacts';
 
 /* ─── Form Schema ─── */
 const leadSchema = z.object({
@@ -45,32 +46,43 @@ type LeadFormValues = z.infer<typeof leadSchema>;
 
 /* ─── Data ─── */
 const trustStats = [
-  { icon: Users, value: 'Nationwide', label: 'Installation & Support' },
-  { icon: Shield, value: '2 Year', label: 'Warranty Included' },
-  { icon: Headphones, value: 'UK Based', label: 'Support Team' },
+  { icon: Users, value: posso.businessCount, label: 'UK businesses on Posso' },
+  { icon: Shield, value: `${posso.warrantyYears} Year`, label: 'Warranty Included' },
+  { icon: Headphones, value: 'UK Based', label: `Support ${posso.supportDaysShort} ${posso.supportTime}` },
 ];
 
+// Package contents for Full Service and Fast Food Growth are not published
+// anywhere on the site yet, so the cards say what is confirmed and no more.
+// TODO: PAUL — list what is in the Restaurant Full Service (£899) and Fast Food
+// Growth (£1,250) packages so the cards and /pos can itemise them.
 const products = [
   {
     title: 'POS System',
-    price: 'From £499 + VAT',
+    price: `From ${posso.posPrice} + VAT`,
     icon: Monitor,
-    image: '/images/posso_dashboard_analytics.png',
-    features: ['Touchscreen till', 'Integrated card payments', 'Reporting & stock management'],
+    image: '/images/posso-epos-order-types-till.png',
+    features: ['Single-screen touchscreen till', 'Kitchen printer, receipt printer and cash drawer', 'Menu build and configuration included'],
+  },
+  {
+    title: 'Restaurant Full Service',
+    price: `${posso.fullServicePrice} + VAT`,
+    icon: Users,
+    image: '/images/posso-epos-dashboard.png',
+    features: ['Package for table-service restaurants', 'Single-screen POS as standard', 'Exact contents itemised on your quote'],
+  },
+  {
+    title: 'Fast Food Growth',
+    price: `${posso.fastFoodGrowthPrice} + VAT`,
+    icon: TrendingUp,
+    image: '/images/posso-epos-add-delivery-order.png',
+    features: ['Package for counter and takeaway trade', 'Single-screen POS as standard', 'Exact contents itemised on your quote'],
   },
   {
     title: 'Self-Order Kiosk',
-    price: 'From £699 + VAT',
+    price: `From ${posso.kioskPrice} + VAT`,
     icon: Smartphone,
     image: '/images/posso_coffee_shop_hero.png',
-    features: ['21" touchscreen display', 'Payment integration built-in', 'Consistent upsell prompt on every order'],
-  },
-  {
-    title: 'Online Ordering',
-    price: 'From £350 or FREE with Teya',
-    icon: Globe,
-    image: '/images/posso_online_ordering_hero.png',
-    features: ['Your own website + ordering', 'Delivery & collection', 'Fraction of marketplace commission'],
+    features: ['Indoor floor-standing or wall-mounted', 'Runs the same menu as the till', 'Orders go straight to the kitchen'],
   },
 ];
 
@@ -82,9 +94,9 @@ const benefits = [
 ];
 
 const steps = [
-  { number: '1', title: 'We Install', description: 'Professional on-site installation anywhere in the UK.' },
-  { number: '2', title: 'Menu Setup', description: 'We configure your full menu, prices, and modifiers.' },
-  { number: '3', title: 'Start Taking Orders', description: 'Go live same day with training and ongoing support.' },
+  { number: '1', title: 'Pick a Package', description: 'Choose a published package, or tell us about your site and we itemise a quote.' },
+  { number: '2', title: 'We Build Your Menu', description: 'Setup (menu build + configuration) is free — your prices and modifiers are loaded for you.' },
+  { number: '3', title: 'Plug In and Trade', description: posso.goLiveStatement },
 ];
 
 /* ─── Component ─── */
@@ -118,30 +130,32 @@ export function PosSystemsLanding() {
           >
             <Badge variant="outline" className="border-primary/50 text-primary/80 bg-primary/10 py-1 px-3">
               <Zap className="w-3 h-3 mr-2" />
-              UK&apos;S #1 RESTAURANT POS PROVIDER
+              {/* The previous "UK's #1 restaurant POS provider" badge was an
+                  unsubstantiated ranking claim (CAP code 3.7) and has been removed. */}
+              EPOS PACKAGES &amp; QUOTES
             </Badge>
 
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl !leading-tight">
               <span className="bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
-                POS Systems for Restaurants &amp; Takeaways{' '}
+                POS System Packages{' '}
               </span>
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">UK</span>
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">&amp; Quotes</span>
             </h1>
 
             <p className="text-xl font-semibold text-white">
-              Complete EPOS, Self-Order Kiosks &amp; Online Ordering{' '}
-              <span className="text-primary">from £499 + VAT</span>
+              Published package prices for UK restaurants and takeaways{' '}
+              <span className="text-primary">from {posso.posPrice} + VAT</span>
             </p>
 
             <ul className="space-y-3 text-slate-300 text-lg">
               <li className="flex items-center gap-3">
-                <Check className="h-5 w-5 text-green-400 shrink-0" /> Upsell prompt on every order
+                <Check className="h-5 w-5 text-green-400 shrink-0" /> Every package price published
               </li>
               <li className="flex items-center gap-3">
-                <Check className="h-5 w-5 text-green-400 shrink-0" /> Reduce queues with self-service kiosks
+                <Check className="h-5 w-5 text-green-400 shrink-0" /> Software from {posso.softwareMonthly} + VAT a month
               </li>
               <li className="flex items-center gap-3">
-                <Check className="h-5 w-5 text-green-400 shrink-0" /> Full UK setup, training &amp; support
+                <Check className="h-5 w-5 text-green-400 shrink-0" /> Free setup: menu build &amp; configuration
               </li>
             </ul>
 
@@ -159,10 +173,10 @@ export function PosSystemsLanding() {
             </div>
 
             <a
-              href="tel:+448081753956"
+              href={posso.phoneHref}
               className="flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold text-lg mt-2 transition-colors"
             >
-              <Phone className="h-5 w-5" /> Call Free: 0808 175 3956
+              <Phone className="h-5 w-5" /> Call Free: {posso.phone}
             </a>
           </motion.div>
 
@@ -205,13 +219,15 @@ export function PosSystemsLanding() {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold gradient-text">Everything You Need to Run Your Business</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold gradient-text">POS System Packages and Prices</h2>
             <p className="text-slate-400 mt-3 text-lg max-w-2xl mx-auto">
-              Simple, powerful solutions — choose one or bundle them all.
+              Posso packages start at {posso.posPrice} + VAT for a single-screen POS, with software from{' '}
+              {posso.softwareMonthly} + VAT a month on top. Every package price is single-screen; twin-screen is a{' '}
+              {posso.twinScreenPrice} upgrade.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {products.map((product, i) => (
               <motion.div
                 key={product.title}
@@ -288,7 +304,7 @@ export function PosSystemsLanding() {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold gradient-text">Up &amp; Running in 3 Simple Steps</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold gradient-text">How Buying a Package Works</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {steps.map((step, i) => (
@@ -327,8 +343,7 @@ export function PosSystemsLanding() {
             <div className="flex items-center gap-2">
               <Clock className="h-5 w-5 text-primary" />
               <span className="text-white font-semibold text-lg">
-                Free setup &amp; training included{' '}
-                <span className="text-primary">(limited time)</span>
+                Free setup &amp; training included with every package
               </span>
             </div>
             <Button onClick={scrollToForm} className="bg-gradient-to-r from-primary to-accent text-white">
@@ -345,7 +360,7 @@ export function PosSystemsLanding() {
             Ready to Upgrade Your POS System?
           </h2>
           <p className="text-slate-400 text-lg mb-8 max-w-xl mx-auto">
-            Join 500+ UK businesses already using Posso to increase revenue and speed up service.
+            Join {posso.businessCount} UK businesses already using Posso to increase revenue and speed up service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ContactDialog>
@@ -357,9 +372,9 @@ export function PosSystemsLanding() {
               </Button>
             </ContactDialog>
             <Button size="lg" variant="outline" asChild className="text-lg px-8">
-              <a href="tel:+448081753956">
+              <a href={posso.phoneHref}>
                 <Phone className="mr-2 h-5 w-5" />
-                Call 0808 175 3956
+                Call {posso.phone}
               </a>
             </Button>
           </div>
@@ -374,7 +389,7 @@ export function PosSystemsLanding() {
       >
         <div className="flex gap-3 p-3">
           <Button asChild className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold">
-            <a href="tel:+448081753956">
+            <a href={posso.phoneHref}>
               <Phone className="mr-2 h-5 w-5" /> Call Now
             </a>
           </Button>
@@ -422,7 +437,7 @@ function LeadCaptureForm() {
       }
     } catch {
       setIsSubmitting(false);
-      setServerError('Connection error. Please try again or call us at 0808 175 3956.');
+      setServerError(`Connection error. Please try again or call us at ${posso.phone}.`);
     }
   };
 
@@ -444,11 +459,11 @@ function LeadCaptureForm() {
     <div className="glass-card rounded-2xl border border-primary/30 p-8 md:p-10 shadow-lg shadow-primary/5">
       <div className="text-center mb-8">
         <Badge className="bg-red-500/10 text-red-400 border-red-500/30 mb-4">
-          <Clock className="w-3 h-3 mr-1" /> Limited Time Offer
+          <Clock className="w-3 h-3 mr-1" /> Itemised quote
         </Badge>
-        <h2 className="text-2xl sm:text-3xl font-bold text-white">Get Your Free POS Setup Quote</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white">Get Your Itemised POS Quote</h2>
         <p className="text-slate-400 mt-2">
-          Free setup &amp; training included — no obligation, no pressure.
+          Free setup &amp; training included — no obligation, no pressure.{/* TODO: PAUL — confirm the "call back within 2 hours" promise below is a service level you can meet. */}
         </p>
       </div>
 
@@ -515,10 +530,10 @@ function LeadCaptureForm() {
 
       <div className="text-center mt-6">
         <a
-          href="tel:+448081753956"
+          href={posso.phoneHref}
           className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold text-lg transition-colors"
         >
-          <Phone className="h-5 w-5" /> Or call now: 0808 175 3956
+          <Phone className="h-5 w-5" /> Or call now: {posso.phone}
         </a>
       </div>
     </div>

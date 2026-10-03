@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, PoundSterling, Package, ShieldCheck, Layers, HeadphonesIcon, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Cheap ePOS Software',
   description:
-    'Cheap ePOS Software with no hidden fees, full feature set, cloud reporting, integrated payments, and free training. Affordable POS from £499 + VAT. Compare what you get for the price.',
+    `Cheap ePOS Software with no hidden fees, full feature set, cloud reporting, integrated payments, and free training. Affordable POS from ${posso.posPrice} + VAT. Compare what you get for the price.`,
   keywords: [
     'cheap epos software',
     'cheap epos system',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cheap ePOS Software',
     description:
-      'Cheap ePOS Software with no hidden fees, full features, cloud reporting, integrated payments, and free training. From £499 + VAT.',
+      `Cheap ePOS Software with no hidden fees, full features, cloud reporting, integrated payments, and free training. From ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/cheap-epos-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -45,7 +47,7 @@ const pageSchema = [
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
-      'Affordable ePOS software with full feature set including cloud reporting, integrated card payments, inventory management, staff management, and online ordering — all from £499 + VAT with no hidden fees.',
+      `Affordable ePOS software with full feature set including cloud reporting, integrated card payments, inventory management, staff management, and online ordering — all from ${posso.posPrice} + VAT with no hidden fees.`,
     url: 'https://www.posso.co.uk/cheap-epos-software',
     offers: {
       '@type': 'AggregateOffer',
@@ -55,7 +57,7 @@ const pageSchema = [
     },
     brand: { '@type': 'Brand', name: 'Posso' },
     featureList: [
-      'Full ePOS feature set from £499 + VAT',
+      `Full ePOS feature set from ${posso.posPrice} + VAT`,
       'No hidden fees or surprise charges',
       'Cloud reporting and analytics',
       'Integrated card payments',
@@ -75,7 +77,7 @@ const pageSchema = [
 ];
 
 const features = [
-  { icon: PoundSterling, title: 'Genuinely Affordable Pricing', description: 'The complete ePOS software starts from £499 + VAT. That includes the touchscreen terminal, software licence, menu setup, and staff training. No setup fee hidden in the small print, no "activation charge" added at checkout. The price you see is the price you pay. Finance options from £24.92 per week make it accessible for any budget.' },
+  { icon: PoundSterling, title: 'Genuinely Affordable Pricing', description: `The complete ePOS software starts from ${posso.posPrice} + VAT. That includes the touchscreen terminal, software licence, menu setup, and staff training. No setup fee hidden in the small print, no "activation charge" added at checkout. The price you see is the price you pay. Finance options from ${posso.financeWeekly} per week make it accessible for any budget.` },
   { icon: Package, title: 'Full Feature Set Included', description: 'Cheap does not mean stripped down. You get sales reporting, inventory management, staff permissions, table management, kitchen display, online ordering integration, loyalty programme, and card payment integration. Every feature that expensive competitors charge extra for is included as standard. Nothing is paywalled behind a premium tier.' },
   { icon: BarChart3, title: 'Cloud Reporting & Analytics', description: 'Access your sales data from any device, anywhere. See daily revenue, best-selling items, peak trading hours, staff performance, and payment method breakdowns. Compare this week to last week. Export reports for your accountant. The cloud dashboard is included — not a paid add-on that doubles your monthly cost.' },
   { icon: ShieldCheck, title: 'No Hidden Fees', description: 'No per-terminal surcharge for additional screens. No separate charge for software updates — they are covered by the monthly software fee — from £25 + VAT, stated upfront. The ePOS industry has a reputation for hidden costs — we list every charge before you commit. Ask us to break down the total cost and we will, line by line.' },
@@ -84,9 +86,9 @@ const features = [
 ];
 
 const benefits = [
-  { title: 'Get Premium Features at a Budget Price', description: 'Other ePOS providers charge £1,500–£3,000 for the same features Posso includes from £499. Cloud reporting, kitchen display, loyalty programmes, and online ordering are standard — not premium add-ons. You get the tools that drive revenue without the price tag that eats into your profit.' },
+  { title: 'Get Premium Features at a Budget Price', description: `Other ePOS providers charge £1,500–£3,000 for the same features Posso includes from ${posso.posPrice}. Cloud reporting, kitchen display, loyalty programmes, and online ordering are standard — not premium add-ons. You get the tools that drive revenue without the price tag that eats into your profit.` },
   { title: 'Avoid the Hidden Cost Trap', description: 'The cheapest-looking ePOS system is often the most expensive once you add monthly fees, per-terminal charges, update costs, and premium feature unlocks. Posso prices transparently. The quote includes everything. No surprises on your first invoice, your sixth, or your sixtieth.' },
-  { title: 'Start Trading Without Large Capital Outlay', description: 'A new restaurant or shop should not spend thousands on a till system before serving a single customer. From £499 + VAT — or from £24.92 per week on finance — you have a complete ePOS system running from day one. Keep your capital for stock, fit-out, and marketing where it makes a bigger impact.' },
+  { title: 'Start Trading Without Large Capital Outlay', description: `A new restaurant or shop should not spend thousands on a till system before serving a single customer. From ${posso.posPrice} + VAT — or from ${posso.financeWeekly} per week on finance — you have a complete ePOS system running from day one. Keep your capital for stock, fit-out, and marketing where it makes a bigger impact.` },
   { title: 'Scale Without Cost Escalation', description: 'Adding a second terminal, a kitchen display, or online ordering does not trigger a massive price increase. The software is designed to scale with your business. A single-site cafe and a five-location chain both run the same software — the cost scales proportionally, not exponentially.' },
 ];
 
@@ -119,19 +121,19 @@ export default function CheapEposSoftwarePage() {
                 </span>
               </h1>
               <p className="text-xl text-slate-300 max-w-2xl">
-                Full-featured ePOS software from £499 + VAT. Cloud reporting, integrated payments, kitchen display, loyalty, and online ordering — all included. No hidden fees, no feature paywalls, no surprises.
+                Full-featured ePOS software from {posso.posPrice} + VAT. Cloud reporting, integrated payments, kitchen display, loyalty, and online ordering — all included. No hidden fees, no feature paywalls, no surprises.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete ePOS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete ePOS system from {posso.posPrice} + VAT</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Every feature included — nothing paywalled</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Free setup, training, and 2-year warranty</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Free setup, training, and {posso.warrantyYears}-year warranty</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Quote <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -212,7 +214,7 @@ export default function CheapEposSoftwarePage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
@@ -223,13 +225,15 @@ export default function CheapEposSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Cheap ePOS Software — FAQ" faqs={[
-          { question: 'What is included in the £499 + VAT price?', answer: 'The price includes the touchscreen POS terminal, ePOS software licence, cloud reporting dashboard, menu setup and configuration, staff training, and a 2-year warranty. Features like kitchen display, table management, loyalty programme, and online ordering integration are all included as standard. There are no hidden activation or setup fees.' },
+          { question: `What is included in the ${posso.posPrice} + VAT price?`, answer: `The price includes the touchscreen POS terminal, ePOS software licence, cloud reporting dashboard, menu setup and configuration, staff training, and a ${posso.warrantyYears}-year warranty. Features like kitchen display, table management, loyalty programme, and online ordering integration are all included as standard. There are no hidden activation or setup fees.` },
           { question: 'Are there monthly fees on top of the purchase price?', answer: 'There is a modest monthly subscription for cloud services, software updates, and ongoing support. This is clearly stated before purchase — it is not a surprise charge. The monthly fee covers continuous development, security updates, and access to the cloud dashboard. There are no per-terminal surcharges or feature unlock fees.' },
           { question: 'How does this compare to more expensive ePOS systems?', answer: 'Feature for feature, Posso matches ePOS systems costing £1,500–£3,000. Cloud reporting, kitchen display integration, staff management, loyalty programmes, online ordering, and card payment integration are all included. The lower price reflects efficient operations, not missing features. We encourage you to compare feature lists side by side.' },
-          { question: 'Is there a finance option?', answer: 'Yes. Finance is available from £24.92 per week, making the system accessible for startups and businesses managing cash flow carefully. The finance agreement is straightforward with clear terms. You can start trading with the full system without a large upfront payment.' },
-          { question: 'What support is included?', answer: 'Phone and remote support are included in your subscription. If something goes wrong, call 0808 175 3956 and speak to a support agent. Remote access allows our team to diagnose and fix issues without a site visit in most cases. Hardware support and replacement are covered under the 2-year warranty.' },
-          { question: 'Can I add more terminals or features later?', answer: 'Yes. Add additional terminals, kitchen displays, or kiosks from £699 + VAT as your business grows. The software scales with you — the same cloud dashboard manages one terminal or ten. There is no penalty for starting small and expanding later. Pricing for additional hardware is proportional, not punitive.' },
+          { question: 'Is there a finance option?', answer: `Yes. Finance is available from ${posso.financeWeekly} per week, making the system accessible for startups and businesses managing cash flow carefully. The finance agreement is straightforward with clear terms. You can start trading with the full system without a large upfront payment.` },
+          { question: 'What support is included?', answer: `Phone and remote support are included in your subscription. If something goes wrong, call ${posso.phone} and speak to a support agent. Remote access allows our team to diagnose and fix issues without a site visit in most cases. Hardware support and replacement are covered under the ${posso.warrantyYears}-year warranty.` },
+          { question: 'Can I add more terminals or features later?', answer: `Yes. Add additional terminals, kitchen displays, or kiosks from ${posso.kioskPrice} + VAT as your business grows. The software scales with you — the same cloud dashboard manages one terminal or ten. There is no penalty for starting small and expanding later. Pricing for additional hardware is proportional, not punitive.` },
         ]} />
 
         <Contact />

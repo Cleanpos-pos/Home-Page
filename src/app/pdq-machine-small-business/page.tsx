@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, CreditCard, Wifi, Percent, Smartphone, Zap, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'PDQ Machine for Small Business',
@@ -76,7 +77,7 @@ const pageSchema = [
 
 const features = [
   { icon: CreditCard, title: 'Card Payment Terminals', description: 'Accept Visa, Mastercard, American Express, and all major card brands. Chip and PIN for inserted cards, contactless for tap payments. The terminal processes transactions in seconds and prints or emails a receipt. A small business that accepts cards from day one captures sales that would otherwise walk out the door.' },
-  { icon: Wifi, title: 'Teya Integration', description: 'Posso partners with Teya for payment processing. Teya provides competitive rates, fast settlement, and a transparent fee structure. No hidden charges, no long-term lock-in contracts. The integration means the POS and card terminal communicate automatically — the payment amount transfers to the terminal without manual entry.' },
+  { icon: Wifi, title: 'Teya Integration', description: 'Posso partners with Teya for payment processing. Teya provides competitive rates, fast settlement, and a transparent fee structure. No hidden charges, no long-term lock-in contracts. The integration means the POS and card terminal communicate automatically — the payment amount transfers to the terminal without manual entry.' /* TODO: PAUL — confirm the card-processing contract terms before keeping this no-lock-in claim. */ },
   { icon: Smartphone, title: 'Contactless & Mobile Payments', description: 'Accept Apple Pay, Google Pay, Samsung Pay, and contactless cards. Over 80% of in-store transactions in the UK are now contactless. A tap takes under 2 seconds. For amounts over £100, the customer enters their PIN. Your business accepts every way a customer wants to pay — fast, secure, and without friction.' },
   { icon: Percent, title: 'Competitive Transaction Rates', description: 'Low commission on every transaction. No monthly minimums, no hidden fees, no penalties for low volume. The rate you are quoted is the rate you pay. For a small business processing £5,000 per month, competitive rates mean hundreds of pounds saved annually compared to high-street bank terminal deals.' },
   { icon: Zap, title: 'Fast Settlement', description: 'Funds settle into your bank account quickly. Next-day settlement is available so your cash flow stays healthy. No waiting 3 to 5 working days for your money. For a small business where every pound matters, fast settlement means you can pay suppliers, cover rent, and reinvest without delays.' },
@@ -124,14 +125,14 @@ export default function PdqMachineSmallBusinessPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Contactless, chip and PIN, Apple Pay, Google Pay</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission with transparent pricing</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Quote <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -190,7 +191,7 @@ export default function PdqMachineSmallBusinessPage() {
                   For businesses that want the full picture, <strong className="text-white">integrate the PDQ machine with a Posso POS</strong>. The sale amount transfers automatically from the till to the terminal. No re-keying, no errors. Every transaction is recorded with the items sold, the payment method, and the settlement status.
                 </p>
                 <p>
-                  Either way, you get <strong className="text-white">competitive rates, fast settlement, and low commission</strong> through our Teya partnership. No long-term contracts. No hidden fees. If you find a better rate, we will review it.
+                  Either way, you get <strong className="text-white">competitive rates, fast settlement, and low commission</strong> through our Teya partnership. No long-term contracts. No hidden fees.{/* TODO: PAUL — confirm the card-processing contract terms before keeping this claim. */} If you find a better rate, we will review it.
                 </p>
               </div>
             </div>
@@ -228,8 +229,8 @@ export default function PdqMachineSmallBusinessPage() {
           { question: 'What are the transaction rates?', answer: 'We offer competitive rates through our Teya partnership. Rates are transparent with no hidden fees, no monthly minimums, and no penalties for low volume. The exact rate depends on your business type and expected transaction volume. Contact us for a personalised quote — we are confident our rates will be competitive.' },
           { question: 'How fast is settlement?', answer: 'Next-day settlement is available. The money from today\'s card transactions can be in your bank account tomorrow. Standard settlement is 1 to 2 working days. Fast settlement keeps your cash flow healthy and means you can pay suppliers and cover costs without waiting.' },
           { question: 'Do I need a POS system to use the PDQ machine?', answer: 'No. The PDQ machine works as a standalone terminal. Simply key in the amount and the customer pays. However, integrating with a Posso POS gives you automatic amount transfer, itemised transaction records, and simplified end-of-day reconciliation. The integration is included at no extra cost.' },
-          { question: 'Is there a long-term contract?', answer: 'No long-term lock-in contracts. We believe in keeping your business because you are happy, not because you are contractually obligated. Terms are straightforward and transparent. If your circumstances change, you can adjust your arrangement without penalty.' },
-          { question: 'How quickly can I start accepting card payments?', answer: 'Setup is fast. Once approved, your terminal is configured and delivered within days. Plug it in, connect to WiFi or 4G, and start accepting payments. If you are combining it with a Posso POS system from £499 + VAT, we configure the integration during installation.' },
+          { question: 'Is there a long-term contract?', answer: 'No long-term lock-in contracts. We believe in keeping your business because you are happy, not because you are contractually obligated. Terms are straightforward and transparent. If your circumstances change, you can adjust your arrangement without penalty.' /* TODO: PAUL — confirm the card-processing contract terms before keeping this claim. */ },
+          { question: 'How quickly can I start accepting card payments?', answer: `Setup is fast. Once approved, your terminal is configured and delivered within days. Plug it in, connect to WiFi or 4G, and start accepting payments. If you are combining it with a Posso POS system from ${posso.posPrice} + VAT, we configure the integration during installation.` },
         ]} />
 
         <Contact />

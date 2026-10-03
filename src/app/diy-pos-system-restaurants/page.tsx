@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Hammer, Calculator, Clock, AlertTriangle, Wrench, ThumbsUp } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'DIY POS System for Restaurants',
   description:
-    'DIY POS System for Restaurants — build your own vs buy ready-made. Honest cost comparison, time investment, and hidden pitfalls. Restaurant POS from £499 + VAT.',
+    `DIY POS System for Restaurants — build your own vs buy ready-made. Honest cost comparison, time investment, and hidden pitfalls. Restaurant POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'diy pos system restaurants',
     'build your own restaurant pos',
@@ -45,7 +47,7 @@ const pageSchema = [
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
-      'Ready-made restaurant POS system that replaces DIY solutions with professional hardware, pre-configured software, kitchen display integration, and UK-based support from £499 + VAT.',
+      `Ready-made restaurant POS system that replaces DIY solutions with professional hardware, pre-configured software, kitchen display integration, and UK-based support from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/diy-pos-system-restaurants',
     offers: {
       '@type': 'AggregateOffer',
@@ -59,7 +61,7 @@ const pageSchema = [
       'Kitchen display system included',
       'Table management and floor plans',
       'Online ordering integration',
-      'Free installation and staff training',
+      `Free setup (menu build + configuration) and staff training`,
       'UK-based telephone support',
     ],
   },
@@ -76,15 +78,15 @@ const pageSchema = [
 
 const features = [
   { icon: Calculator, title: 'The True Cost of DIY', description: 'A DIY restaurant POS typically involves: an iPad or tablet (£300–£500), a card reader (£50–£100), a receipt printer (£150–£250), a cash drawer (£50–£100), free or cheap POS app (£0–£30/month), plus time spent configuring everything. Total hardware: £550–£950. But then you need to add a kitchen display, online ordering, and reporting — each adding cost and complexity.' },
-  { icon: Clock, title: 'Time Investment Reality', description: 'Setting up a DIY POS for a restaurant takes 20–40 hours of your time. Researching compatible hardware, installing software, configuring menus with modifiers, setting up printers, testing payment processing, training yourself — then training your staff. That is a full working week before you take a single order. A Posso system installs in under 2 hours.' },
+  { icon: Clock, title: 'Time Investment Reality', description: `Setting up a DIY POS for a restaurant takes 20–40 hours of your time. Researching compatible hardware, installing software, configuring menus with modifiers, setting up printers, testing payment processing, training yourself — then training your staff. That is a full working week before you take a single order. ${posso.goLiveStatement}` },
   { icon: AlertTriangle, title: 'What DIY Cannot Do', description: 'Most DIY POS setups lack critical restaurant features: kitchen display integration, split bills, table management, online ordering, multi-terminal sync, staff permissions, and detailed reporting. Adding these features means patching together multiple apps and services — each with its own cost, login, and support channel.' },
   { icon: Wrench, title: 'Maintenance Falls on You', description: 'When a DIY POS breaks — and it will — you are the IT department. Printer stops working? Your problem. App crashes during service? Your problem. Card reader disconnects from the tablet? Your problem. Every minute spent troubleshooting is a minute not spent running your restaurant.' },
   { icon: Hammer, title: 'Hardware Compatibility Issues', description: 'DIY means choosing your own hardware. But not every receipt printer works with every POS app. Not every cash drawer connects to every tablet. Not every card reader pairs reliably over Bluetooth. Compatibility testing is time-consuming, frustrating, and the answers are not always clear until you have already spent the money.' },
-  { icon: ThumbsUp, title: 'The Ready-Made Alternative', description: 'A Posso restaurant POS arrives pre-configured with your menu, modifiers, table layout, and kitchen display routing. Hardware is tested and compatible. Software is installed and updated. Payment processing is connected. Staff training is included. You open the box and start taking orders. From £499 + VAT.' },
+  { icon: ThumbsUp, title: 'The Ready-Made Alternative', description: `A Posso restaurant POS arrives pre-configured with your menu, modifiers, table layout, and kitchen display routing. Hardware is tested and compatible. Software is installed and updated. Payment processing is connected. Staff training is included. You open the box and start taking orders. From ${posso.posPrice} + VAT.` },
 ];
 
 const benefits = [
-  { title: 'Save 40+ Hours of Setup Time', description: 'DIY POS setup for a restaurant — researching, buying, configuring, testing, troubleshooting — takes 40+ hours minimum. A Posso system is pre-configured and installed in under 2 hours. Your time is worth more spent on menu development, staff training, and marketing than wrestling with Bluetooth printer drivers.' },
+  { title: 'Save 40+ Hours of Setup Time', description: `DIY POS setup for a restaurant — researching, buying, configuring, testing, troubleshooting — takes 40+ hours minimum. ${posso.goLiveStatement} Your time is worth more spent on menu development, staff training, and marketing than wrestling with Bluetooth printer drivers.` },
   { title: 'Get Features That DIY Cannot Match', description: 'Kitchen display systems, multi-terminal sync, split billing, table management, online ordering, real-time reporting — these features require a purpose-built platform. Stitching together free apps and consumer hardware cannot replicate what a commercial restaurant POS delivers out of the box.' },
   { title: 'Reliability During Service', description: 'A Friday night with 80 covers is not the time for your DIY POS to crash. Consumer tablets overheat, Bluetooth drops, and free apps freeze under load. Posso uses commercial-grade hardware tested for continuous use. The system is designed for peak-service pressure — not casual home use.' },
   { title: 'Support That Answers the Phone', description: 'DIY POS means you are your own support team. When something breaks at 7pm on a Saturday, you diagnose and fix it yourself — or you operate without a POS until Monday. Posso provides UK-based telephone support. Call, describe the problem, get it fixed while your restaurant is still serving.' },
@@ -122,16 +124,16 @@ export default function DiyPosSystemRestaurantsPage() {
                 Building your own restaurant POS seems like a way to save money. Here is why it usually costs more in time, stress, and missed features — and what to do instead.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Ready-made restaurant POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Ready-made restaurant POS from {posso.posPrice} + VAT</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Kitchen display, online ordering, split bills included</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Installs in under 2 hours, not 40+</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Arrives preconfigured and plug-and-play</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -184,10 +186,10 @@ export default function DiyPosSystemRestaurantsPage() {
               </h2>
               <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                 <p>
-                  <strong className="text-white">Hardware cost:</strong> DIY involves sourcing a tablet, printer, cash drawer, card reader, and kitchen screen separately — typically £700–£1,200 total with no guarantee of compatibility. Posso provides a tested, compatible hardware bundle from £499 + VAT with everything included.
+                  <strong className="text-white">Hardware cost:</strong> DIY involves sourcing a tablet, printer, cash drawer, card reader, and kitchen screen separately — typically £700–£1,200 total with no guarantee of compatibility. Posso provides a tested, compatible hardware bundle from {posso.posPrice} + VAT with everything included.
                 </p>
                 <p>
-                  <strong className="text-white">Setup time:</strong> DIY takes 40+ hours of research, purchasing, configuration, and testing. Many restaurant owners report spending entire weekends just getting the printer to work with their tablet. Posso installs in under 2 hours — pre-configured with your menu, table layout, and kitchen routing.
+                  <strong className="text-white">Setup time:</strong> DIY takes 40+ hours of research, purchasing, configuration, and testing. Many restaurant owners report spending entire weekends just getting the printer to work with their tablet. Posso systems arrive preconfigured with your menu, table layout and kitchen routing, and are plug-and-play.
                 </p>
                 <p>
                   <strong className="text-white">Ongoing support:</strong> DIY means self-support. When the card reader disconnects mid-service, you troubleshoot it yourself between serving tables. Posso provides UK-based telephone support from engineers who can remote into your system and fix problems while you continue serving.
@@ -223,13 +225,15 @@ export default function DiyPosSystemRestaurantsPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="DIY POS System for Restaurants — Frequently Asked Questions" faqs={[
           { question: 'Can I use an iPad as a restaurant POS?', answer: 'You can, but consumer tablets have limitations for restaurant use. iPads overheat during long service hours, Bluetooth connections to printers and card readers drop intermittently, and screen size limits the number of items visible at once. Commercial POS terminals are built for continuous use in hot, busy environments.' },
-          { question: 'How much does a DIY restaurant POS cost?', answer: 'Typical DIY costs: tablet £300–£500, receipt printer £150–£250, cash drawer £50–£100, card reader £50–£100, POS app £0–£30/month. Total hardware: £550–£950. But adding kitchen display, online ordering, and proper reporting pushes the total past £1,200. A complete Posso system starts from £499 + VAT.' },
+          { question: 'How much does a DIY restaurant POS cost?', answer: `Typical DIY costs: tablet £300–£500, receipt printer £150–£250, cash drawer £50–£100, card reader £50–£100, POS app £0–£30/month. Total hardware: £550–£950. But adding kitchen display, online ordering, and proper reporting pushes the total past £1,200. A complete Posso system starts from ${posso.posPrice} + VAT.` },
           { question: 'What POS app should I use for a DIY setup?', answer: 'Popular options include Square, SumUp, and iZettle for basic setups. These work for simple operations but lack restaurant-specific features like kitchen displays, table management, and split billing. Adding these features requires additional apps and services, each with their own cost and complexity.' },
           { question: 'Can I add a kitchen display to a DIY POS?', answer: 'Not easily. Most DIY POS apps do not support kitchen display systems. Adding one requires a separate app, a second tablet or screen, and a way to route orders between devices. This is where DIY setups become fragile — multiple disconnected systems that break independently. Posso includes kitchen display integration as a core feature.' },
           { question: 'Is DIY POS reliable enough for a busy restaurant?', answer: 'For a quiet cafe serving 30 covers, a DIY POS may suffice. For a busy restaurant handling 100+ covers with modifiers, split bills, kitchen routing, and card payments, DIY systems buckle under the pressure. Consumer hardware and free apps are not designed for peak-service intensity.' },
-          { question: 'How long does it take to set up a DIY POS?', answer: 'Plan for 40+ hours minimum. This includes researching hardware compatibility, purchasing equipment, downloading and configuring software, building your menu with modifiers and pricing, connecting printers and card readers, testing payment processing, and training staff. A Posso system installs in under 2 hours with your menu pre-loaded.' },
+          { question: 'How long does it take to set up a DIY POS?', answer: `Plan for 40+ hours minimum. This includes researching hardware compatibility, purchasing equipment, downloading and configuring software, building your menu with modifiers and pricing, connecting printers and card readers, testing payment processing, and training staff. ${posso.goLiveStatement} Your menu is pre-loaded.` },
         ]} />
 
         <Contact />

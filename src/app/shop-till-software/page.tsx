@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, ShoppingBag, Package, BarChart3, ScanBarcode, Building2, Monitor } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Shop Till Software',
   description:
-    'Shop Till Software for retail and hospitality with stock control, barcode scanning, real-time reporting, and multi-location management. From £499 + VAT.',
+    `Shop Till Software for retail and hospitality with stock control, barcode scanning, real-time reporting, and multi-location management. From ${posso.posPrice} + VAT.`,
   keywords: [
     'shop till software',
     'till software',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Shop Till Software | Posso UK',
     description:
-      'Shop Till Software for retail and hospitality — stock control, barcode scanning, reporting, and multi-location support. From £499 + VAT.',
+      `Shop Till Software for retail and hospitality — stock control, barcode scanning, reporting, and multi-location support. From ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/shop-till-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -124,14 +126,14 @@ export default function ShopTillSoftwarePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Automatic stock tracking with low-stock alerts</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Barcode scanning for instant product lookup</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Shop till software from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Shop till software from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function ShopTillSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Shop Till Software — Frequently Asked Questions" faqs={[
           { question: 'Does the till software work for both retail and hospitality?', answer: 'Yes. The core till software handles sales, stock, and reporting for any business type. For retail, enable barcode scanning, stock variants, and purchase orders. For hospitality, enable modifiers, kitchen printing, and table management. One platform configured to your specific needs — you only see the features relevant to your business.' },
           { question: 'How does stock control work?', answer: 'Stock levels update automatically as items are sold. Set reorder points for each product and receive low-stock alerts by email or on the dashboard. View stock valuations, track wastage, and see supplier purchase history. For products with variants (sizes, colours), stock is tracked at the variant level so you know exactly which variants need reordering.' },
           { question: 'Can I use barcode scanning?', answer: 'Yes. Connect a barcode scanner to the till and scan existing manufacturer barcodes to add items to a sale instantly. For non-barcoded products, generate and print barcodes from the system. Barcode scanning is the fastest way to process sales — essential for shops with large product ranges.' },
           { question: 'Can I manage multiple shops?', answer: 'Yes. The cloud dashboard shows all your shops on one screen. Standardise or customise product lists per location. Compare sales between shops, track group-level stock, and transfer inventory between sites. Each shop operates independently during service, but data rolls up to one central view.' },
           { question: 'Does it work offline?', answer: 'Yes. The till software stores data locally, so it continues working if the internet drops. Sales, payments, and receipts process normally. When connectivity returns, all data syncs to the cloud automatically. No lost transactions and no interrupted service.' },
-          { question: 'How much does shop till software cost?', answer: 'The complete setup including touchscreen terminal, cash drawer, receipt printer, and software starts from £499 + VAT. Barcode scanner available as an add-on. Finance from £24.92 per week. Free setup, product import, and staff training included with a 2-year warranty.' },
+          { question: 'How much does shop till software cost?', answer: `The complete setup including touchscreen terminal, cash drawer, receipt printer, and software starts from ${posso.posPrice} + VAT. Barcode scanner available as an add-on. Finance from ${posso.financeWeekly} per week. Free setup, product import, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

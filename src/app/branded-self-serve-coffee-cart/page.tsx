@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, ShoppingCart, Palette, MapPin, Zap, CreditCard, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Branded Self Serve Coffee Cart',
   description:
-    'Branded Self Serve Coffee Cart with mobile POS, branded kiosk interface, event-ready setup, pop-up deployment, and contactless payment for mobile coffee businesses. Kiosks from £699 + VAT.',
+    `Branded Self Serve Coffee Cart with mobile POS, branded kiosk interface, event-ready setup, pop-up deployment, and contactless payment for mobile coffee businesses. Kiosks from ${posso.kioskPrice} + VAT.`,
   keywords: [
     'branded self serve coffee cart',
     'mobile coffee cart pos',
@@ -124,14 +125,14 @@ export default function BrandedSelfServeCoffeeCartPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Branded kiosk with your logo and colours</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> 4G connectivity — works anywhere</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Coffee cart kiosks from £699 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Coffee cart kiosks from {posso.kioskPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function BrandedSelfServeCoffeeCartPage() {
           { question: 'How long does battery last for the payment terminal?', answer: 'The contactless payment terminal runs for a full trading day on a single charge — typically 12+ hours or 300+ transactions, whichever comes first. For multi-day events, recharge overnight from any USB power source. The kiosk screen can run from the cart power supply or a portable battery pack. The entire setup is designed for off-grid operation.' },
           { question: 'Can I use different menus for different events?', answer: 'Yes. Create multiple menu profiles in the cloud dashboard — one for weekday office locations with standard pricing, another for weekend festivals with event pricing, another for corporate functions with a simplified premium menu. Switch between profiles in one tap from the kiosk or remotely from your phone before the event starts.' },
           { question: 'How do I track performance across events?', answer: 'The cloud dashboard records every transaction with location, time, and products sold. After each event, review total revenue, average transaction value, peak hours, and best-selling drinks. Compare events side by side over weeks and months. Identify your most profitable locations and optimise your event calendar based on actual revenue data.' },
-          { question: 'How much does a branded coffee cart kiosk cost?', answer: 'The branded self-serve coffee cart kiosk starts from £699 + VAT including the touchscreen, contactless payment terminal, 4G connectivity, branded interface setup, and cloud dashboard. The coffee machine and cart are sourced separately or supplied as a complete package. Finance available. Free branding setup, menu configuration, and training included.' },
+          { question: 'How much does a branded coffee cart kiosk cost?', answer: `The branded self-serve coffee cart kiosk starts from ${posso.kioskPrice} + VAT including the touchscreen, contactless payment terminal, 4G connectivity, branded interface setup, and cloud dashboard. The coffee machine and cart are sourced separately or supplied as a complete package. Finance available. Free branding setup, menu configuration, and training included.` },
         ]} />
 
         <Contact />

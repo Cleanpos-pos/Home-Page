@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Monitor, Cloud, BarChart3, Package, Wifi, WifiOff } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'POS Software',
   description:
-    'POS Software with cloud-based management, touchscreen interface, real-time reporting, stock control, multi-device sync, and offline-first reliability. From £499 + VAT.',
+    `POS Software with cloud-based management, touchscreen interface, real-time reporting, stock control, multi-device sync, and offline-first reliability. From ${posso.posPrice} + VAT.`,
   keywords: [
     'pos software',
     'pos software uk',
@@ -124,14 +126,14 @@ export default function PosSoftwarePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Real-time cloud dashboard from any device</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Keeps working offline — syncs when reconnected</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS software from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS software from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function PosSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="POS Software — Frequently Asked Questions" faqs={[
           { question: 'Is the POS software cloud-based?', answer: 'Yes. All data is stored in the cloud and accessible from any device with a browser. Sales, stock, and reports update in real time. You can view your dashboard from home, make menu changes remotely, and manage multiple locations from one login. The software also works offline — transactions continue during internet outages and sync when connectivity returns.' },
-          { question: 'What hardware do I need?', answer: 'The software runs on touchscreen terminals, tablets, and laptops. For a full setup, we supply a touchscreen terminal, receipt printer, and cash drawer from £499 + VAT. You can also run it on your existing iPad or Android tablet if you prefer a lower-cost start.' },
+          { question: 'What hardware do I need?', answer: `The software runs on touchscreen terminals, tablets, and laptops. For a full setup, we supply a touchscreen terminal, receipt printer, and cash drawer from ${posso.posPrice} + VAT. You can also run it on your existing iPad or Android tablet if you prefer a lower-cost start.` },
           { question: 'Can I use it for both retail and hospitality?', answer: 'Yes. The core POS software handles sales, stock, and reporting for any business type. Hospitality features like table management, kitchen displays, and online ordering can be enabled. Retail features like barcode scanning, stock variants, and purchase orders are also available. One platform, configured to your needs.' },
           { question: 'How does offline mode work?', answer: 'The POS stores transaction data locally on the device. If the internet drops, sales, payments, and receipts continue as normal. When connectivity returns, all data syncs to the cloud automatically. No lost transactions, no interrupted service. Designed for the reality that broadband is not always reliable.' },
           { question: 'Can I manage multiple locations?', answer: 'Yes. The cloud dashboard provides group-level reporting across all locations. Standardise menus, compare performance between sites, and manage everything from one login. Each location operates independently during service, so a network issue at one site does not affect the others.' },
-          { question: 'How much does the POS software cost?', answer: 'POS software starts from £499 + VAT including a touchscreen terminal and full software licence. Online ordering is available at low commission. Finance options from £24.92 per week. Free setup, menu configuration, and staff training included with a 2-year warranty.' },
+          { question: 'How much does the POS software cost?', answer: `POS software starts from ${posso.posPrice} + VAT including a touchscreen terminal and full software licence. Online ordering is available at low commission. Finance options from ${posso.financeWeekly} per week. Free setup, menu configuration, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

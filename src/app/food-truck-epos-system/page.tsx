@@ -8,13 +8,15 @@ import { WifiOff, BatteryCharging, CreditCard, MonitorSmartphone, ChefHat, MapPi
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 const UPDATED = '2026-09-08';
 
 export const metadata: Metadata = {
   title: 'Food Truck EPOS System UK — Tills & Kiosks for Trailers & Mobile Catering',
   description:
-    'Food truck EPOS that runs without fixed wifi — works on 4G, takes card payments anywhere, and drives self-order kiosks. Built for trailers, burger vans and street food. From £499 + VAT.',
+    `Food truck EPOS that runs without fixed wifi — works on 4G, takes card payments anywhere, and drives self-order kiosks. Built for trailers, burger vans and street food. From ${posso.posPrice} + VAT.`,
   keywords: [
     'food truck epos system uk',
     'epos for food truck uk',
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Food Truck & Trailer EPOS UK | Posso',
     description:
-      'An EPOS built for the pitch, not the high street — runs on 4G with no fixed wifi, takes card anywhere, and powers self-order kiosks. For food trucks, trailers, burger vans and street food. From £499 + VAT.',
+      `An EPOS built for the pitch, not the high street — runs on 4G with no fixed wifi, takes card anywhere, and powers self-order kiosks. For food trucks, trailers, burger vans and street food. From ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/food-truck-epos-system',
     type: 'website',
     images: [{ url: '/images/posso-kiosk-krispy-kreme-food-trailer.jpg', width: 800, height: 600, alt: 'Krispy Kreme food trailer with two Posso self-order kiosks' }],
@@ -80,14 +82,14 @@ const pageSchema = [
     url: `https://www.posso.co.uk${s.src}`,
     caption: s.cap,
     creditText: 'Posso Ltd',
-    creator: { '@type': 'Organization', name: 'Posso Ltd' },
+    creator: { '@id': 'https://www.posso.co.uk/#organization' },
     copyrightNotice: '© Posso Ltd',
   })),
 ];
 
 const features = [
   { icon: WifiOff, title: 'Runs with no fixed wifi', body: 'A pitch rarely has broadband. Posso runs on 4G and keeps taking orders and card payments even when signal drops, syncing everything the moment it returns — so a dead spot never stops a sale.' },
-  { icon: CreditCard, title: 'Take card anywhere', body: 'Integrated card payments through Posso Pay (from 1% + 10p, quoted on your turnover) or Teya — contactless, Apple Pay and Google Pay, with the amount pushed from the till so nothing is retyped at a busy hatch.' },
+  { icon: CreditCard, title: 'Take card anywhere', body: `Integrated card payments through Posso Pay (from ${posso.possoPayRate}, quoted on your turnover) or Teya — contactless, Apple Pay and Google Pay, with the amount pushed from the till so nothing is retyped at a busy hatch.` },
   { icon: MonitorSmartphone, title: 'Self-order kiosks', body: 'Add a weatherproof self-order kiosk to the side of the trailer — like Krispy Kreme and Chaiiwala do — to bust the queue at peak and lift average spend. The full outdoor kiosk system, with kitchen display, POS and printer built in, is from £2,500 + VAT.' },
   { icon: BatteryCharging, title: 'Portable, low-power hardware', body: 'Compact touchscreen tills and printers that run off your trailer’s power. Pack down at the end of the event, set up at the next pitch in minutes — no engineer, no fixed install.' },
   { icon: MapPin, title: 'One menu, every pitch', body: 'Change a price or sell-out once and it updates across every till and kiosk, at every event. Run the same menu at a festival on Saturday and a retail park on Monday.' },
@@ -95,11 +97,11 @@ const features = [
 ];
 
 const faqs = [
-  { question: 'How much does a food truck EPOS cost in the UK?', answer: 'It depends on the setup. A simple till at the hatch is from £499 + VAT. The full weatherproof outdoor kiosk system — a self-order kiosk with the kitchen display, POS and printer built in, like the Krispy Kreme and Chaiiwala trailers run — is from £2,500 + VAT. Software is £25 + VAT a month, and card processing through Posso Pay is from 1% + 10p quoted on your turnover. Bring your numbers for a written quote.' },
+  { question: 'How much does a food truck EPOS cost in the UK?', answer: `It depends on the setup. A simple till at the hatch is from ${posso.posPrice} + VAT. The full weatherproof outdoor kiosk system — a self-order kiosk with the kitchen display, POS and printer built in, like the Krispy Kreme and Chaiiwala trailers run — is from £2,500 + VAT. Software is ${posso.softwareMonthly} + VAT a month, and card processing through Posso Pay is from ${posso.possoPayRate} quoted on your turnover. Bring your numbers for a written quote.` },
   { question: 'Does a food truck EPOS work without wifi?', answer: 'Yes. Posso is built for pitches with no broadband — it runs on 4G and keeps taking orders and card payments through short signal drops, then syncs sales, stock and reports automatically when the connection returns. You never stop trading because the wifi did.' },
-  { question: 'Can I take card payments on a food truck or trailer?', answer: 'Yes — integrated card payments are built in through Posso Pay or the Teya partnership, taking contactless, Apple Pay, Google Pay and chip & PIN. The amount pushes from the till to the reader so nothing is keyed twice, and it settles the same rate in store and online. Rates from 1% + 10p, quoted on your card turnover.' },
+  { question: 'Can I take card payments on a food truck or trailer?', answer: `Yes — integrated card payments are built in through Posso Pay or the Teya partnership, taking contactless, Apple Pay, Google Pay and chip & PIN. The amount pushes from the till to the reader so nothing is keyed twice, and it settles the same rate in store and online. Rates from ${posso.possoPayRate}, quoted on your card turnover.` },
   { question: 'Is there a free POS for a food truck?', answer: 'For a one-person stall taking a few hundred pounds a week, a flat-rate reader from SumUp or Square is genuinely the cheapest way to start, and we’ll say so. A proper food truck EPOS earns its place once you run kiosks, need offline card payments, sell across multiple pitches, or want one menu and real reporting — that’s where Posso fits.' },
-  { question: 'Do you do self-order kiosks for food trailers?', answer: 'Yes — it’s one of the most popular setups. Brands like Krispy Kreme and Chaiiwala run Posso self-order kiosks mounted on the side of the trailer to cut the queue at peak and lift average order value. Kiosks share the same menu and card processing as the till, from £699 + VAT.' },
+  { question: 'Do you do self-order kiosks for food trailers?', answer: `Yes — it’s one of the most popular setups. Brands like Krispy Kreme and Chaiiwala run Posso self-order kiosks mounted on the side of the trailer to cut the queue at peak and lift average order value. Kiosks share the same menu and card processing as the till, from ${posso.kioskPrice} + VAT.` },
   { question: 'Can one menu run across several pitches or events?', answer: 'Yes. Your menu, prices and modifiers live centrally, so a change updates every till and kiosk at once, wherever they’re trading. Run the same setup at a festival, a retail park and a private event without rebuilding anything — and see the takings from each in one place.' },
 ];
 
@@ -131,7 +133,7 @@ export default function FoodTruckEposPage() {
                   An EPOS built for the pitch, not the high street. Runs on 4G with no fixed wifi, takes card anywhere, and powers the self-order kiosks brands like Krispy Kreme and Chaiiwala bolt onto the trailer.
                 </p>
                 <ul className="space-y-3 text-slate-300 text-lg mt-6">
-                  {['Works offline & on 4G — a dead spot never stops a sale', 'Card payments built in, from 1% + 10p', 'Hatch till from £499 · full outdoor kiosk system from £2,500 + VAT'].map((h) => (
+                  {['Works offline & on 4G — a dead spot never stops a sale', `Card payments built in, from ${posso.possoPayRate}`, `Hatch till from ${posso.posPrice} · full outdoor kiosk system from £2,500 + VAT`].map((h) => (
                     <li key={h} className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> {h}</li>
                   ))}
                 </ul>
@@ -139,8 +141,8 @@ export default function FoodTruckEposPage() {
                   <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all hover:scale-105 text-lg px-8 py-3 font-medium">
                     Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-                  <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                    <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                  <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                    <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                   </a>
                 </div>
               </div>
@@ -158,7 +160,7 @@ export default function FoodTruckEposPage() {
             <div className="max-w-3xl mx-auto glass-card rounded-xl border border-primary/30 p-6">
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">Short answer</p>
               <p className="text-lg leading-relaxed text-slate-200">
-                A food truck EPOS is a till system built to trade without fixed broadband: it runs on 4G, keeps taking orders and card payments through signal drops, and syncs when the connection returns. The right one for a UK mobile operation takes card anywhere, drives self-order kiosks, and runs one menu across every pitch. A simple Posso hatch till starts at £499 + VAT; the full weatherproof outdoor kiosk system — the self-order kiosk with a kitchen display, POS and printer built in — is from £2,500 + VAT, with card processing from 1% + 10p quoted on your turnover.
+                A food truck EPOS is a till system built to trade without fixed broadband: it runs on 4G, keeps taking orders and card payments through signal drops, and syncs when the connection returns. The right one for a UK mobile operation takes card anywhere, drives self-order kiosks, and runs one menu across every pitch. A simple Posso hatch till starts at {posso.posPrice} + VAT; the full weatherproof outdoor kiosk system — the self-order kiosk with a kitchen display, POS and printer built in — is from £2,500 + VAT, with card processing from {posso.possoPayRate} quoted on your turnover.
               </p>
             </div>
           </div>
@@ -221,7 +223,7 @@ export default function FoodTruckEposPage() {
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 gradient-text">What it costs</h2>
             <div className="space-y-5 text-lg text-slate-300 leading-relaxed">
-              <p>A simple till at the hatch is <strong className="text-white">£499 + VAT</strong> — touchscreen, printer, menu build and training. The setup most trailers want, though, is the full weatherproof <strong className="text-white">outdoor kiosk system — the self-order kiosk with a kitchen display, POS and printer built in — from £2,500 + VAT</strong>. Software is <strong className="text-white">£25 + VAT a month</strong>, finance is available from £24.92 a week, and card processing through Posso Pay is <strong className="text-white">from 1% + 10p</strong>, quoted on your turnover and the same rate in store and online.</p>
+              <p>A simple till at the hatch is <strong className="text-white">{posso.posPrice} + VAT</strong> — touchscreen, printer, menu build and training. The setup most trailers want, though, is the full weatherproof <strong className="text-white">outdoor kiosk system — the self-order kiosk with a kitchen display, POS and printer built in — from £2,500 + VAT</strong>. Software is <strong className="text-white">{posso.softwareMonthly} + VAT a month</strong>, finance is available from {posso.financeWeekly} a week, and card processing through Posso Pay is <strong className="text-white">from {posso.possoPayRate}</strong>, quoted on your turnover and the same rate in store and online.</p>
               <p>Being honest about where we don’t fit: if you’re a one-person stall taking a few hundred pounds a week, a flat-rate reader from SumUp or Square is the cheaper start. Posso earns its place when you add kiosks, need offline card payments, trade across several pitches, or want one menu and real reporting.</p>
             </div>
             <div className="flex flex-wrap gap-3 mt-8">
@@ -231,6 +233,8 @@ export default function FoodTruckEposPage() {
             </div>
           </div>
         </section>
+
+        <EposClusterLinks />
 
         <FAQSection title="Food Truck EPOS — Frequently Asked Questions" faqs={faqs} />
 

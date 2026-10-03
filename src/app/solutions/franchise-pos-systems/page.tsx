@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
     title: 'Franchise POS System | Multi-Unit Franchise ePOS Software UK',
@@ -213,6 +214,8 @@ export default function FranchisePosPage() {
                         </div>
                     </div>
                 </section>
+
+                <EposClusterLinks />
 
                 <FAQSection title="Franchise POS Systems — Frequently Asked Questions" faqs={[
                     { question: 'What is a franchise POS system?', answer: 'A franchise POS system is a multi-site EPOS platform designed to run a network of locations under one brand. As well as everyday till functions at each site, it gives head office central control over the menu and pricing, group-wide and per-site reporting, royalty and fee tracking, and consistent branding — so the whole estate runs to the same standard.' },

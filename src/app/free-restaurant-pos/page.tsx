@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, AlertTriangle, Eye, Scale, Shield, PoundSterling, Zap } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Free Restaurant POS',
   description:
-    'Free Restaurant POS — what is actually free, hidden costs exposed, and how to find the best value POS for your restaurant. Honest comparison. POS from £499 + VAT.',
+    `Free Restaurant POS — what is actually free, hidden costs exposed, and how to find the best value POS for your restaurant. Honest comparison. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'free restaurant pos',
     'free pos system restaurant',
@@ -59,8 +61,8 @@ const pageSchema = [
       'All features included from day one',
       'Low commission on card transactions',
       'Free setup and staff training',
-      'No long-term contract lock-in',
-      '2-year hardware warranty included',
+      'No long-term contract lock-in' /* TODO: PAUL — confirm contract terms before keeping this no-lock-in claim (see possoContract in src/lib/possoFacts.ts). */,
+      `${posso.warrantyYears}-year hardware warranty included`,
     ],
   },
   {
@@ -84,10 +86,10 @@ const features = [
 ];
 
 const benefits = [
-  { title: 'Know Your True Cost From Day One', description: 'Posso pricing is transparent. The POS system starts from £499 + VAT with all features included. Transaction fees are low commission — clearly stated before you sign up. There are no escalation clauses, no annual price increases tied to inflation, and no surprise charges six months in. You know exactly what you are paying before you commit.' },
+  { title: 'Know Your True Cost From Day One', description: `Posso pricing is transparent. The POS system starts from ${posso.posPrice} + VAT with all features included. Transaction fees are low commission — clearly stated before you sign up. There are no escalation clauses, no annual price increases tied to inflation, and no surprise charges six months in. You know exactly what you are paying before you commit.` },
   { title: 'Stop Overpaying on Transactions', description: 'A restaurant processing £40,000 per month in card payments at 2.5% pays £1,000 monthly in transaction fees to a "free" POS provider. At low commission with Posso, the saving is significant — potentially thousands of pounds per year. The POS hardware pays for itself in saved transaction fees within months.' },
   { title: 'Get Every Feature Without Upgrading', description: 'Free POS tiers often lack essential restaurant features: table management might require a £30/month add-on, kitchen display needs a £25/month upgrade, and online ordering costs extra. With Posso, table management, KDS, online ordering, reporting, and loyalty are all included. No nickel-and-diming, no feature fatigue.' },
-  { title: 'Support That Does Not Cost Extra', description: 'Many "free" POS providers offer support only on paid plans or charge per support ticket. Posso includes phone and remote support with every system. When something goes wrong during a busy Friday service, you call 0808 175 3956 and speak to someone who can help. No support tier, no ticket queue, no extra charge.' },
+  { title: 'Support That Does Not Cost Extra', description: `Many "free" POS providers offer support only on paid plans or charge per support ticket. Posso includes phone and remote support with every system. When something goes wrong during a busy Friday service, you call ${posso.phone} and speak to someone who can help. No support tier, no ticket queue, no extra charge.` },
 ];
 
 export default function FreeRestaurantPosPage() {
@@ -124,14 +126,14 @@ export default function FreeRestaurantPosPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> All features included — no paywalls</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission on card transactions</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete restaurant POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete restaurant POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -190,7 +192,7 @@ export default function FreeRestaurantPosPage() {
                   Then there are the <strong className="text-white">feature paywalls</strong>. The free tier gives you basic ordering. Want table management? That is £30/month. Kitchen display? Another £25/month. Online ordering? £50/month. Loyalty programme? £20/month. By the time you have the features you need, you are paying more than a system that includes everything.
                 </p>
                 <p>
-                  Posso takes a different approach: <strong className="text-white">transparent pricing with everything included</strong>. From £499 + VAT, you get the hardware, the software, every feature, setup, training, and a 2-year warranty. Low commission on transactions. No hidden costs. No feature upgrades to buy. The total cost of ownership is lower than most "free" alternatives.
+                  Posso takes a different approach: <strong className="text-white">transparent pricing with everything included</strong>. From {posso.posPrice} + VAT, you get the hardware, the software, every feature, setup, training, and a {posso.warrantyYears}-year warranty. Low commission on transactions. No hidden costs. No feature upgrades to buy. The total cost of ownership is lower than most "free" alternatives.
                 </p>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function FreeRestaurantPosPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Free Restaurant POS — Frequently Asked Questions" faqs={[
           { question: 'Is there a genuinely free restaurant POS?', answer: 'Some providers offer free software, but the total cost includes hardware, transaction fees, and premium feature charges. A system advertised as free that charges 2.5% per transaction costs a busy restaurant thousands per year. Truly free POS systems with no catches are extremely rare — the cost is always recovered somewhere.' },
           { question: 'What hidden costs should I look for?', answer: 'Check transaction fee percentages (especially on card payments), hardware costs, monthly software fees for essential features, support charges, contract termination fees, and price escalation clauses. Add these up over 2 years and compare against the total cost of a transparent system like Posso.' },
-          { question: 'How does Posso compare to free POS options?', answer: 'Posso charges a clear upfront price from £499 + VAT with all features included and low commission on transactions. Over 2 years, the total cost is typically lower than "free" systems that charge higher transaction fees and monthly add-on charges for essential features like KDS, table management, and online ordering.' },
+          { question: 'How does Posso compare to free POS options?', answer: `Posso charges a clear upfront price from ${posso.posPrice} + VAT with all features included and low commission on transactions. Over 2 years, the total cost is typically lower than "free" systems that charge higher transaction fees and monthly add-on charges for essential features like KDS, table management, and online ordering.` },
           { question: 'Are there any long-term contracts?', answer: 'Posso does not lock you into long-term contracts with punitive exit fees. The terms are clear and straightforward. Many "free" POS providers require 2-3 year commitments with early termination fees of £1,000+. Always read the contract terms before signing up for any POS system, free or paid.' },
           { question: 'What features are included in the Posso restaurant POS?', answer: 'Everything: table management, kitchen display, online ordering, delivery management, staff login and permissions, reporting and analytics, loyalty programmes, booking management, card payment processing, and multi-site dashboard. There are no premium tiers and no feature unlocks to purchase.' },
-          { question: 'How much does Posso restaurant POS cost?', answer: 'From £499 + VAT for the complete system including hardware, software, all features, setup, training, and a 2-year warranty. Card transactions at low commission. No hidden fees, no escalating costs, and software from £25 + VAT a month confirmed on your quote. Call 0808 175 3956 for a personalised quote.' },
+          { question: 'How much does Posso restaurant POS cost?', answer: `From ${posso.posPrice} + VAT for the complete system including hardware, software, all features, setup, training, and a ${posso.warrantyYears}-year warranty. Card transactions at low commission. No hidden fees, no escalating costs, and software from ${posso.softwareMonthly} + VAT a month confirmed on your quote. Call ${posso.phone} for a personalised quote.` },
         ]} />
 
         <Contact />
