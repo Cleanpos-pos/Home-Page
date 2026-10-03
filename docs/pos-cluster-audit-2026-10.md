@@ -96,10 +96,10 @@ All redirects are permanent (`permanent: true` → HTTP 308, which Google treats
 | `/best-epos-system-for-indian-takeaway-by-posso-ltd-uk` | `/pos-for-indian-takeaway` | Flattened (was → `/epos-system-for-indian-takeaway`) |
 | `/cafe-epos-system` | `/pos-for-cafe` | Already live since Sept 2026 — no change |
 | `/best-order-counter-pos-system-by-posso-ltd-uk` | `/order-counter-pos` | Already live — no change |
-| `/best-best-pos-system-for-coffee-shop-uk-by-posso-ltd-uk` | `/pos-for-cafe` | **Proposed — awaiting approval** (commented out) |
-| `/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk` | `/epos-software-for-takeaway-delivery` | **Proposed — awaiting approval** |
-| `/best-best-online-ordering-software-by-posso-ltd-uk` | `/online-ordering` | **Proposed — awaiting approval** (currently a 307 server redirect to another alias) |
-| `/credit-card-machine-clover-by-posso-ltd-uk` | `/credit-card-machines` | **Proposed — awaiting approval** |
+| `/best-best-pos-system-for-coffee-shop-uk-by-posso-ltd-uk` | `/pos-for-cafe` | **Live** — approved by Paul (Oct 2026) |
+| `/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk` | `/epos-software-for-takeaway-delivery` | **Live** — approved by Paul (Oct 2026) |
+| `/best-best-online-ordering-software-by-posso-ltd-uk` | `/online-ordering` | **Live** — approved by Paul (Oct 2026); replaces the old temporary 307 |
+| `/credit-card-machine-clover-by-posso-ltd-uk` | `/credit-card-machines` | **Live** — approved by Paul (Oct 2026) |
 
 Also: one exact duplicate rule (`/best-self-order-kiosk-fast-food-by-posso-ltd-uk`) removed; redirect chains: 0. Internal links that pointed at redirected URLs (`/pizza-epos` ×11, `/epos-system-for-indian-takeaway` ×6, `/kiosks` ×4, `/self-service-epos`, `/restaurant-self-ordering-system`, two blog-index entries) now point at the final URL; the built site has **0 internal links to a redirecting URL**.
 
@@ -278,7 +278,7 @@ Every live page targeting a POS/EPOS head term, plus the redirected pair pages a
 
 ## 9. `-by-posso-ltd-uk` programmatic aliases — full inventory
 
-None deleted. 169 of 173 already 308 to a real page. The 4 that still render have a proposed target, commented out in `src/lib/redirects.ts` until approved.
+None deleted. All 173 now 308 to a real page (the last 4 were approved and switched on in October 2026).
 
 | Alias URL | Status | Target |
 |---|---|---|
@@ -292,11 +292,11 @@ None deleted. 169 of 173 already 308 to a real page. The 4 that still render hav
 | `/best-best-epos-system-review-uk-by-posso-ltd-uk` | Already 308 (live) | `/best-restaurant-epos-system-uk` |
 | `/best-best-food-delivery-app-uk-by-posso-ltd-uk` | Already 308 (live) | `/blog/best-food-delivery-app-uk` |
 | `/best-best-free-epos-software-by-posso-ltd-uk` | Already 308 (live) | `/free-restaurant-pos` |
-| `/best-best-online-ordering-software-by-posso-ltd-uk` | **Still renders — PROPOSED 301, awaiting approval** | `/online-ordering` |
+| `/best-best-online-ordering-software-by-posso-ltd-uk` | 308 (approved Oct 2026) | `/online-ordering` |
 | `/best-best-pizza-pos-by-posso-ltd-uk` | Already 308 (live) | `/pizza-pos-software` |
 | `/best-best-pizza-pos-system-2020-by-posso-ltd-uk` | Already 308 (live) | `/pizza-pos-software` |
 | `/best-best-pos-for-pizza-delivery-by-posso-ltd-uk` | Already 308 (live) | `/pizza-delivery-pos` |
-| `/best-best-pos-system-for-coffee-shop-uk-by-posso-ltd-uk` | **Still renders — PROPOSED 301, awaiting approval** | `/pos-for-cafe` |
+| `/best-best-pos-system-for-coffee-shop-uk-by-posso-ltd-uk` | 308 (approved Oct 2026) | `/pos-for-cafe` |
 | `/best-best-pos-system-for-pizza-shop-by-posso-ltd-uk` | Already 308 (live) | `/pos-for-pizza-shop` |
 | `/best-branded-self-serve-coffee-cart-by-posso-ltd-uk` | Already 308 (live) | `/branded-self-serve-coffee-cart` |
 | `/best-build-your-own-pos-system-by-posso-ltd-uk` | Already 308 (live) | `/build-your-own-pos-system` |
@@ -336,7 +336,7 @@ None deleted. 169 of 173 already 308 to a real page. The 4 that still render hav
 | `/best-epos-now-handheld-by-posso-ltd-uk` | Already 308 (live) | `/epos-now-alternative` |
 | `/best-epos-now-ordering-app-by-posso-ltd-uk` | Already 308 (live) | `/epos-now-alternative` |
 | `/best-epos-portal-by-posso-ltd-uk` | Already 308 (live) | `/epos-portal` |
-| `/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk` | **Still renders — PROPOSED 301, awaiting approval** | `/epos-software-for-takeaway-delivery` |
+| `/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk` | 308 (approved Oct 2026) | `/epos-software-for-takeaway-delivery` |
 | `/best-epos-software-free-by-posso-ltd-uk` | Already 308 (live) | `/free-restaurant-pos` |
 | `/best-epos-system-for-indian-takeaway-by-posso-ltd-uk` | Already 308 (live) | `/pos-for-indian-takeaway` |
 | `/best-epos-system-restaurant-by-posso-ltd-uk` | Already 308 (live) | `/best-restaurant-epos-system-uk` |
@@ -454,7 +454,7 @@ None deleted. 169 of 173 already 308 to a real page. The 4 that still render hav
 | `/best-web-based-ordering-system-for-coffee-shops-by-posso-ltd-uk` | Already 308 (live) | `/coffee-shop-ordering-app` |
 | `/best-website-pos-finance-software-by-posso-ltd-uk` | Already 308 (live) | `/website-pos-finance-software` |
 | `/best-windows-10-coa-by-posso-ltd-uk` | Already 308 (live) | `/pos` |
-| `/credit-card-machine-clover-by-posso-ltd-uk` | **Still renders — PROPOSED 301, awaiting approval** | `/credit-card-machines` |
+| `/credit-card-machine-clover-by-posso-ltd-uk` | 308 (approved Oct 2026) | `/credit-card-machines` |
 
 ## 10. TODO list for Paul, grouped by page
 
@@ -499,11 +499,8 @@ For each: read the official UK pages listed in `sources`, fill `facts` verbatim 
 - [ ] `/toast-pos-alternative` — pos.toasttab.com/uk/pricing, …/products/payments
 - [ ] Contract row in the comparison table — replace "Set out on your quote" once Posso's terms are confirmed.
 
-### Redirects awaiting approval (`src/lib/redirects.ts`, commented out)
-- [ ] `/best-best-pos-system-for-coffee-shop-uk-by-posso-ltd-uk` → `/pos-for-cafe`
-- [ ] `/best-epos-software-for-takeaway-delivery-by-posso-ltd-uk` → `/epos-software-for-takeaway-delivery`
-- [ ] `/best-best-online-ordering-software-by-posso-ltd-uk` → `/online-ordering`
-- [ ] `/credit-card-machine-clover-by-posso-ltd-uk` → `/credit-card-machines` (this one is also in the sitemap's core list, filtered out as an alias)
+### Redirects awaiting approval — done
+- [x] The four remaining `-by-posso-ltd-uk` routes now 308 to `/pos-for-cafe`, `/epos-software-for-takeaway-delivery`, `/online-ordering` and `/credit-card-machines` (approved October 2026).
 
 ### Consolidation candidates (from the cannibalisation table — nothing done, approval needed)
 - [ ] Takeaway: fold `/takeaway-pos`, `/epos-system-for-takeaway`, `/epos-systems-for-takeaways`, `/epos-software-for-takeaway` into `/takeaway-epos`; `/epos-software-for-takeaway-delivery` and `/delivery-pos-software` into `/delivery-management-pos`.

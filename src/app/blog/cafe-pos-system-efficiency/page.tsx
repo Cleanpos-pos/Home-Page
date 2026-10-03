@@ -73,7 +73,7 @@ export default function CafePosBlog() {
                                     ))}
                                 </div>
                                 <Button size="lg" className="rounded-full h-14 px-10 text-lg group" asChild>
-                                    <Link href="/best-best-pos-system-for-coffee-shop-uk-by-posso-ltd-uk">
+                                    <Link href="/pos-for-cafe">
                                         View Cafe Solutions <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
                                     </Link>
                                 </Button>
