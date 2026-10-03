@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Candy, Scale, Barcode, Package, Calculator, Tags } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'POS for Sweet Shop',
   description:
-    'POS for Sweet Shop with weigh-and-pay, pick and mix pricing, barcode scanning, stock management, and customer loyalty. Built for sweet shops and confectionery retailers. From £499 + VAT.',
+    `POS for Sweet Shop with weigh-and-pay, pick and mix pricing, barcode scanning, stock management, and customer loyalty. Built for sweet shops and confectionery retailers. From ${posso.posPrice} + VAT.`,
   keywords: [
     'pos for sweet shop',
     'sweet shop pos',
@@ -124,14 +126,14 @@ export default function PosForSweetShopPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Integrated scale for weigh-and-pay</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pick and mix per-gram pricing</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Sweet shop POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Sweet shop POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function PosForSweetShopPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="POS for Sweet Shop — Frequently Asked Questions" faqs={[
           { question: 'How does weigh-and-pay work?', answer: 'Connect a digital scale to the POS via USB. Select the pick and mix category, place the bag on the scale, and the weight reads automatically. The POS calculates the price based on your per-gram rate — for example, 250g at £1.20 per 100g equals £3.00. No manual entry, no calculator, no errors. Different product categories can have different per-gram rates.' },
           { question: 'Can I manage hundreds of sweet lines?', answer: 'Yes. The POS supports unlimited products organised into categories and subcategories. Each product can have an image for visual identification on the till screen. Loose sweets are tracked in grams, packaged products in units. Barcode scanning handles pre-packaged items. Search by name or scan to find any product in your range instantly.' },
           { question: 'Does it handle pick and mix with different prices?', answer: 'Yes. You can set different per-gram rates for different pick and mix sections. Premium imported sweets might be £1.50 per 100g while traditional favourites are £1.00 per 100g. The system can also handle per-scoop pricing for items like fudge or chocolate-covered nuts. Mixed bags with items from different price categories are calculated accurately.' },
           { question: 'Can I print barcode labels?', answer: 'Yes. Print custom barcode labels for own-brand products, pre-packed bags, and gift boxes. Labels include product name, weight, price, barcode, and allergen information. Print labels individually or in batches. When you make a batch of 50 fudge bags, print 50 labels in one go. Labels scan at the till like any branded product.' },
           { question: 'How does stock tracking work for loose sweets?', answer: 'Loose sweets are tracked in grams. When you receive a delivery of 5kg of cola bottles, add 5000g to stock. Each sale deducts the weight sold. Set a reorder point at 500g and receive an alert when stock drops below that level. Monthly stock reports show consumption, waste, and reorder requirements for every line in your range.' },
-          { question: 'How much does a sweet shop POS cost?', answer: 'The complete sweet shop POS starts from £499 + VAT including touchscreen terminal, integrated scale connection, barcode scanner, and receipt printer. Stock management, loyalty programme, and gift vouchers are included. Finance from £24.92 per week. Free setup, product configuration with images, and staff training included with a 2-year warranty.' },
+          { question: 'How much does a sweet shop POS cost?', answer: `The complete sweet shop POS starts from ${posso.posPrice} + VAT including touchscreen terminal, integrated scale connection, barcode scanner, and receipt printer. Stock management, loyalty programme, and gift vouchers are included. Finance from ${posso.financeWeekly} per week. Free setup, product configuration with images, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

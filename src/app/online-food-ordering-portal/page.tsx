@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Globe, UserCircle, History, CreditCard, Bell, Repeat } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Online Food Ordering Portal',
@@ -124,14 +125,14 @@ export default function OnlineFoodOrderingPortalPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Customer accounts with saved details</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Order history and one-tap reordering</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission — POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission — POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -227,9 +228,9 @@ export default function OnlineFoodOrderingPortalPage() {
           { question: 'Is the portal branded to my restaurant?', answer: 'Yes. The portal uses your restaurant name, logo, brand colours, and food photography. It can live on your own domain (e.g. order.yourrestaurant.co.uk) or as a subdomain. Customers see your brand throughout the entire ordering experience — not a generic platform. Google indexes your portal for local search visibility.' },
           { question: 'How do customer accounts work?', answer: 'Customers sign up with their email, name, phone number, and delivery address. They can save payment methods for faster checkout. Past orders are stored in their account for easy reordering. You have full access to the customer database for email marketing, loyalty programmes, and order analysis.' },
           { question: 'Does it sync with my POS?', answer: 'Yes. The portal connects directly to your Posso POS. Menu items, prices, modifiers, and availability sync in real time. Orders placed online appear on your POS and kitchen display instantly — no manual acceptance required. Sales reports combine in-store and online transactions in one dashboard.' },
-          { question: 'What commission do you charge?', answer: 'Low commission compared to aggregator platforms that charge up to 35% per order. The exact rate depends on your transaction volume — contact us on 0808 175 3956 for a personalised quote. There are no signup fees, no monthly minimums, and no hidden charges.' },
+          { question: 'What commission do you charge?', answer: `Low commission compared to aggregator platforms that charge up to 35% per order. The exact rate depends on your transaction volume — contact us on ${posso.phone} for a personalised quote. There are no signup fees, no monthly minimums, and no hidden charges.` },
           { question: 'Can customers reorder previous meals?', answer: 'Yes. Every order is saved in the customer\'s account. They can view their full order history and reorder any previous meal with two taps — select the order and confirm. The reorder includes all original customisations and modifiers. For regular customers, this reduces ordering time from minutes to seconds.' },
-          { question: 'How much does the ordering portal cost?', answer: 'The online ordering portal is included with the Posso POS system from £499 + VAT. There is no separate setup fee for the portal. You pay low commission per online order. The portal includes branded design, customer accounts, order history, payment processing, and POS integration. Free setup and menu upload included.' },
+          { question: 'How much does the ordering portal cost?', answer: `The online ordering portal is included with the Posso POS system from ${posso.posPrice} + VAT. There is no separate setup fee for the portal. You pay low commission per online order. The portal includes branded design, customer accounts, order history, payment processing, and POS integration. Free setup and menu upload included.` },
         ]} />
 
         <Contact />

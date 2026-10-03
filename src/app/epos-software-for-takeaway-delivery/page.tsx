@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, CreditCard, Phone, ArrowRight, Truck, MapPin, Timer, Route, Package, Navigation } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'ePOS Software for Takeaway Delivery | Driver App & Zone Management',
   description:
-    'Posso ePOS software for takeaway delivery. Delivery zone management, Shipday driver app, Just Eat/Uber Eats/Deliveroo integration, order tracking, estimated delivery times, and delivery fee management. From £499 + VAT.',
+    `Posso ePOS software for takeaway delivery. Delivery zone management, Shipday driver app, Just Eat/Uber Eats/Deliveroo integration, order tracking, estimated delivery times, and delivery fee management. From ${posso.posPrice} + VAT.`,
   keywords: [
     'epos software for takeaway delivery',
     'takeaway delivery software',
@@ -130,14 +132,14 @@ export default function TakeawayDeliverySoftwarePage() {
                 <ul className="space-y-3 text-slate-300 text-lg">
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Postcode-based delivery zones</li>
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Shipday driver app with GPS tracking</li>
-                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from £499 + VAT</li>
+                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from {posso.posPrice} + VAT</li>
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
                   <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                     Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-                  <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                    <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                  <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                    <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                   </a>
                 </div>
               </div>
@@ -257,12 +259,14 @@ export default function TakeawayDeliverySoftwarePage() {
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
           </div>
         </section>
+
+        <EposClusterLinks />
 
         <FAQSection title="Takeaway Delivery Software — Frequently Asked Questions" faqs={[
           { question: 'How does delivery zone management work in the ePOS?', answer: 'You define zones by UK postcode prefix (e.g. LS1, LS2, LS3 for Leeds city centre). Each zone has its own delivery charge, minimum order value, and estimated delivery time. When a customer enters their postcode, the system validates it against your zones and applies the correct fee automatically.' },
@@ -270,7 +274,7 @@ export default function TakeawayDeliverySoftwarePage() {
           { question: 'Can I use my own drivers and delivery apps at the same time?', answer: 'Yes. Posso handles your own driver fleet through Shipday alongside Just Eat, Uber Eats, and Deliveroo orders. For aggregator orders, the aggregator handles delivery. For your own website orders, you dispatch your own drivers through Shipday.' },
           { question: 'How are estimated delivery times calculated?', answer: 'The system factors in the delivery zone distance, current kitchen order volume, and average prep time for the items ordered. This gives customers a realistic delivery estimate rather than a fixed "30-45 minutes" guess.' },
           { question: 'Can customers track their delivery order?', answer: 'Yes. When you dispatch a driver through Shipday, customers receive a tracking link where they can see the driver\'s real-time location and estimated arrival time.' },
-          { question: 'How much does the delivery ePOS software cost?', answer: 'The complete POS system with delivery management starts from £499 + VAT. This includes zone management, driver dispatch, aggregator integration, and all delivery features. The Shipday driver app is included. Finance options are available.' },
+          { question: 'How much does the delivery ePOS software cost?', answer: `The complete POS system with delivery management starts from ${posso.posPrice} + VAT. This includes zone management, driver dispatch, aggregator integration, and all delivery features. The Shipday driver app is included. Finance options are available.` },
         ]} />
 
         <Contact />

@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Smartphone, Wifi, Utensils, ShoppingBag, MapPin, BatteryFull } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Mobile POS System UK',
   description:
-    'Mobile POS System UK with handheld devices, tableside ordering, pop-up and event support, WiFi and 4G connectivity, and portable card payments. From £499 + VAT.',
+    `Mobile POS System UK with handheld devices, tableside ordering, pop-up and event support, WiFi and 4G connectivity, and portable card payments. From ${posso.posPrice} + VAT.`,
   keywords: [
     'mobile pos system uk',
     'mobile pos system',
@@ -124,14 +126,14 @@ export default function MobilePosSystemUkPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS in a handheld device with all-day battery</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> WiFi and 4G so you trade anywhere</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Mobile POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Mobile POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -216,12 +218,14 @@ export default function MobilePosSystemUkPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self Service ePOS</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
               </div>
             </div>
           </div>
         </section>
+
+        <EposClusterLinks />
 
         <FAQSection title="Mobile POS System UK — Frequently Asked Questions" faqs={[
           { question: 'Does the mobile POS work without WiFi?', answer: 'Yes. The device has a built-in 4G SIM that provides connectivity anywhere with a mobile signal. When WiFi is available, it connects via WiFi for the fastest performance. When WiFi is not available — at markets, events, or outdoor locations — 4G keeps you fully operational. Orders, payments, and syncing all work over 4G.' },
@@ -229,7 +233,7 @@ export default function MobilePosSystemUkPage() {
           { question: 'Can I take card payments on the handheld?', answer: 'Yes. The device has a built-in card reader that accepts contactless, chip and PIN, Apple Pay, and Google Pay. No separate terminal needed. The customer taps or inserts their card directly on the handheld device. Low commission on every transaction through our Teya partnership. Payments are processed and settled like any standard card terminal.' },
           { question: 'Is it the same software as the fixed POS?', answer: 'Yes. The mobile device runs the full Posso POS software — not a simplified version. Menu, modifiers, discounts, loyalty, and reporting are identical to the countertop system. Data syncs to the same cloud dashboard. A sale made on the handheld appears alongside sales from your fixed terminals.' },
           { question: 'Can I use it for tableside ordering in a restaurant?', answer: 'Yes. Servers carry the handheld device and take orders directly at the table. Orders are sent to the kitchen display in real time. Payment is processed at the table — no waiting for a bill. Tips can be added on screen. Tableside ordering speeds up service and reduces errors from handwritten orders.' },
-          { question: 'How much does a mobile POS system cost?', answer: 'The mobile POS system starts from £499 + VAT including the handheld device, POS software, built-in card reader, and 4G SIM. Low commission on card payments. Finance from £24.92 per week. Free setup, menu configuration, and staff training included with a 2-year warranty.' },
+          { question: 'How much does a mobile POS system cost?', answer: `The mobile POS system starts from ${posso.posPrice} + VAT including the handheld device, POS software, built-in card reader, and 4G SIM. Low commission on card payments. Finance from ${posso.financeWeekly} per week. Free setup, menu configuration, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

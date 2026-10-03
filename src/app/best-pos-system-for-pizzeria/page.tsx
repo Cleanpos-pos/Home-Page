@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Phone, ArrowRight, Pizza, Monitor, Smartphone, Truck, CreditCard, BarChart3, X } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Best POS System for a Pizzeria (2026 UK Guide)',
   description:
-    'What is the best POS system for a pizzeria? A pizza-specific POS with a visual pizza builder, split-sided ordering, size-based pricing, delivery management, and kiosk ordering. From £499 + VAT.',
+    `What is the best POS system for a pizzeria? A pizza-specific POS with a visual pizza builder, split-sided ordering, size-based pricing, delivery management, and kiosk ordering. From ${posso.posPrice} + VAT.`,
   keywords: [
     'best POS system for pizzeria',
     'best POS for pizza shop',
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/best-pos-system-for-pizzeria' },
   openGraph: {
     title: 'Best POS System for a Pizzeria (2026 UK Guide)',
-    description: 'Find the best POS system for your pizzeria. Pizza builder, split-sided ordering, delivery zones, and kiosk ordering from £499 + VAT.',
+    description: `Find the best POS system for your pizzeria. Pizza builder, split-sided ordering, delivery zones, and kiosk ordering from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/best-pos-system-for-pizzeria',
     type: 'article',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -38,8 +40,8 @@ const pageSchema = [
     '@type': 'Article',
     headline: 'What Is the Best POS System for a Pizzeria?',
     description: 'Comprehensive guide to choosing the best POS system for a pizzeria in the UK. Covers pizza builder features, split-sided ordering, delivery management, and pricing.',
-    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://www.posso.co.uk' },
-    publisher: { '@type': 'Organization', name: 'Posso Ltd', logo: { '@type': 'ImageObject', url: 'https://www.posso.co.uk/icon-512x512.png' } },
+    author: { '@id': 'https://www.posso.co.uk/#organization' },
+    publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     datePublished: '2026-04-08',
     dateModified: '2026-04-08',
     url: 'https://www.posso.co.uk/best-pos-system-for-pizzeria',
@@ -107,7 +109,7 @@ export default function BestPosSystemForPizzeriaPage() {
               </p>
               <p className="text-lg text-slate-300">
                 Most generic POS systems treat a pizza like any other menu item — forcing staff to type toppings into a notes field or add dozens of modifiers manually. A pizza-specific POS like{' '}
-                <Link href="/pizza-epos" className="text-primary hover:underline font-semibold">Posso&apos;s Pizza POS</Link>{' '}
+                <Link href="/pos-for-pizza-shop" className="text-primary hover:underline font-semibold">Posso&apos;s Pizza POS</Link>{' '}
                 handles the complexity natively, reducing order errors and speeding up service.
               </p>
             </div>
@@ -116,8 +118,8 @@ export default function BestPosSystemForPizzeriaPage() {
               <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                 Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
               </a>
-              <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+              <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                <Phone className="mr-2 h-5 w-5" /> {posso.phone}
               </a>
             </div>
           </div>
@@ -207,7 +209,7 @@ export default function BestPosSystemForPizzeriaPage() {
             </h2>
             <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
               <p>
-                Posso built a dedicated <Link href="/pizza-epos" className="text-primary hover:underline font-semibold">pizza builder interface</Link> from the ground up. It is not a bolt-on or a plugin — the pizza builder is a core part of the POS that works on till screens, self-order kiosks, and your online ordering website.
+                Posso built a dedicated <Link href="/pos-for-pizza-shop" className="text-primary hover:underline font-semibold">pizza builder interface</Link> from the ground up. It is not a bolt-on or a plugin — the pizza builder is a core part of the POS that works on till screens, self-order kiosks, and your online ordering website.
               </p>
               <p>
                 Staff tap to add toppings to a visual pizza graphic. They select whole, left half, or right half for each topping. The price updates instantly based on the selected size. The finished order is sent to the kitchen display with a full spec sheet — size, base, sauce, every topping by position, and any special notes.
@@ -219,11 +221,11 @@ export default function BestPosSystemForPizzeriaPage() {
             <div className="glass-card rounded-2xl border border-primary/20 p-8 mt-10">
               <div className="grid sm:grid-cols-3 gap-6 text-center">
                 <div>
-                  <p className="text-3xl font-bold text-primary">£499</p>
+                  <p className="text-3xl font-bold text-primary">{posso.posPrice}</p>
                   <p className="text-slate-400 text-sm mt-1">POS from (+ VAT)</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-white">£699</p>
+                  <p className="text-3xl font-bold text-white">{posso.kioskPrice}</p>
                   <p className="text-slate-400 text-sm mt-1">Kiosks from (+ VAT)</p>
                 </div>
                 <div>
@@ -246,7 +248,7 @@ export default function BestPosSystemForPizzeriaPage() {
                 Self-order kiosks increase average order value by 20&ndash;30% in pizza shops. When customers build their own pizza on screen, they add more toppings and upgrade to larger sizes because they can see the price difference in real time without feeling rushed.
               </p>
               <p>
-                Posso kiosks from £699 + VAT feature the same visual pizza builder as the POS till. Customers tap toppings, choose sides, pick a size, and pay by card — all without queuing at the counter. Orders go straight to the kitchen display.
+                Posso kiosks from {posso.kioskPrice} + VAT feature the same visual pizza builder as the POS till. Customers tap toppings, choose sides, pick a size, and pay by card — all without queuing at the counter. Orders go straight to the kitchen display.
               </p>
               <p>
                 For busy Friday and Saturday nights, kiosks eliminate the order queue bottleneck. Two customers can build complex pizza orders simultaneously on separate kiosks while your staff focus on making pizzas and managing deliveries.
@@ -261,17 +263,17 @@ export default function BestPosSystemForPizzeriaPage() {
             <div className="glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore Pizza POS Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pos-for-pizza-shop" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza POS System</p>
                   <p className="text-slate-400 text-sm mt-1">Full pizza builder details</p>
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/online-ordering" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Online Ordering</p>
@@ -282,11 +284,13 @@ export default function BestPosSystemForPizzeriaPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Pizza POS System — FAQs" faqs={[
-          { question: 'What is the best POS system for a pizza shop in the UK?', answer: 'The best POS for a pizza shop is one with a dedicated pizza builder interface — not a generic POS with modifier lists. Posso offers a visual pizza builder with split-sided ordering, size-based pricing (9", 14", 18"), delivery zone management, and integrated online ordering. POS hardware starts from £499 + VAT.' },
+          { question: 'What is the best POS system for a pizza shop in the UK?', answer: `The best POS for a pizza shop is one with a dedicated pizza builder interface — not a generic POS with modifier lists. Posso offers a visual pizza builder with split-sided ordering, size-based pricing (9", 14", 18"), delivery zone management, and integrated online ordering. POS hardware starts from ${posso.posPrice} + VAT.` },
           { question: 'Can a pizza POS handle half-and-half pizzas?', answer: 'Yes — a proper pizza POS like Posso supports split-sided pizzas natively. Staff (or customers on a kiosk) select toppings for the whole pizza, left half, or right half. Each side is priced independently, and the kitchen ticket shows the full split build.' },
           { question: 'Do I need a special POS for pizza delivery?', answer: 'A pizza-specific POS with built-in delivery management is strongly recommended. It handles delivery zones, custom delivery fees, minimum order values, estimated delivery times, and driver tracking — features that generic POS systems rarely include out of the box.' },
-          { question: 'How much does a pizza POS system cost?', answer: 'A Posso pizza POS starts from £499 + VAT for a touchscreen till with the pizza builder software. Self-order kiosks with the same pizza builder start from £699 + VAT. Finance options are available from under £25/week.' },
+          { question: 'How much does a pizza POS system cost?', answer: `A Posso pizza POS starts from ${posso.posPrice} + VAT for a touchscreen till with the pizza builder software. Self-order kiosks with the same pizza builder start from ${posso.kioskPrice} + VAT. Finance options are available from under £25/week.` },
           { question: 'Can customers build their own pizza online?', answer: 'Yes. With Posso, your online ordering website includes the same visual pizza builder that your staff use. Customers select a size, choose toppings by side, see the price update in real time, and the order goes directly to your kitchen display.' },
           { question: 'What should I look for when comparing pizza POS systems?', answer: 'Prioritise these six features: (1) visual pizza builder, (2) split-sided topping support, (3) size-based pricing with per-topping adjustment, (4) delivery zone management, (5) online ordering with the pizza builder, and (6) kitchen display tickets showing full pizza specs. If a POS lacks any of these, it was not designed for pizza.' },
         ]} />

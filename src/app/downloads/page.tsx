@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Download, Smartphone, FileText, Printer, Phone, ArrowRight, ClipboardList, Monitor, Bike } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Downloads — Posso One Desktop, Apps, Brochures & Docs',
@@ -255,7 +256,7 @@ export default function DownloadsPage() {
               </ol>
               <p className="text-slate-400 text-sm mt-6">
                 Need help installing? Call our UK support team on{' '}
-                <a href="tel:+448081753956" className="text-primary hover:underline">0808 175 3956</a>.
+                <a href={posso.phoneHref} className="text-primary hover:underline">{posso.phone}</a>.
               </p>
             </div>
           </div>
@@ -267,12 +268,12 @@ export default function DownloadsPage() {
             <div className="glass-card rounded-2xl border border-slate-700/50 p-8 text-center">
               <h2 className="text-2xl font-bold text-white mb-3">Need Support?</h2>
               <p className="text-slate-400 mb-6">
-                Our UK support team is available Monday to Friday, 9am–9:30pm.
+                Our UK support team is available Monday to Friday, {posso.supportTime}.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-white">
-                  <a href="tel:+448081753956">
-                    <Phone className="mr-2 h-5 w-5" /> Call 0808 175 3956
+                  <a href={posso.phoneHref}>
+                    <Phone className="mr-2 h-5 w-5" /> Call {posso.phone}
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline">

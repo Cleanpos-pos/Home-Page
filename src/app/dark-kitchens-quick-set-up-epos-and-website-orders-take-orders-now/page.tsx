@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Globe, Monitor, Smartphone, Clock, Truck, CreditCard, BarChart3, Utensils, Phone, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
-  title: '🚀 Dark Kitchen ePOS & Online Ordering | Quick Setup',
+  title: 'Dark Kitchen ePOS & Online Ordering | Quick Setup',
   description:
-    'Launch your dark kitchen fast with Posso ePOS and low-commission online ordering. Take delivery, collection, and marketplace orders from one system. Setup in under 24 hours.',
+    `Launch your dark kitchen fast with Posso ePOS and low-commission online ordering. Take delivery, collection, and marketplace orders from one system. Preconfigured and plug-and-play.`,
   keywords: [
     'dark kitchen POS',
     'ghost kitchen EPOS',
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Dark Kitchen ePOS & Online Ordering — Take Orders Now',
     description:
-      'Complete ePOS, online ordering website, and delivery integration for dark kitchens. Low commission — a fraction of marketplace fees. Setup in under 24 hours.',
+      `Complete ePOS, online ordering website, and delivery integration for dark kitchens. Low commission — a fraction of marketplace fees. Preconfigured and plug-and-play.`,
     url: 'https://www.posso.co.uk/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -82,7 +84,7 @@ const steps = [
 const benefits = [
   'Commission around 1/10th of marketplace fees',
   'All delivery platforms in one POS — no tablet juggling',
-  'Setup in under 24 hours — we handle everything',
+  `Preconfigured and shipped plug-and-play`,
   'Works offline — no internet? No problem',
   'Delivery driver app integration via Shipday',
   'Caller ID for phone orders with customer history',
@@ -117,14 +119,14 @@ export default function DarkKitchensPage() {
                 </span>
               </h1>
               <p className="text-xl text-slate-300 mt-6 max-w-2xl mx-auto">
-                Launch your dark kitchen in under 24 hours. Low-commission online ordering, delivery platform integration, kitchen display, and full ePOS — everything you need to take orders now.
+                Launch your dark kitchen on a system that arrives preconfigured and plug-and-play. Low-commission online ordering, delivery platform integration, kitchen display, and full ePOS — everything you need to take orders now.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get Started Today <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> Call 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> Call {posso.phone}
                 </a>
               </div>
 
@@ -140,7 +142,7 @@ export default function DarkKitchensPage() {
                 </div>
                 <div className="text-center">
                   <p className="text-2xl font-bold text-primary">Mon–Fri</p>
-                  <p className="text-slate-400 text-sm">UK Support, 9am–9:30pm</p>
+                  <p className="text-slate-400 text-sm">UK Support, {posso.supportTime}</p>
                 </div>
               </div>
             </div>
@@ -162,7 +164,7 @@ export default function DarkKitchensPage() {
                   Posso gives you everything in one system: a <strong className="text-white">low-commission ordering website</strong> (around 1/10th the cost of marketplaces), direct integration with <Link href="/delivery-integrations" className="text-primary hover:underline">Just Eat, Uber Eats, and Deliveroo</Link>, a kitchen display system, and a full ePOS till. All orders — from your website, phone, or delivery apps — appear on one screen and print to your kitchen automatically.
                 </p>
                 <p>
-                  Whether you&apos;re launching a new dark kitchen or converting an existing restaurant to delivery-only, we go from signup to live orders in <strong className="text-white">under 24 hours</strong>. We handle menu setup, printer configuration, and staff training — included free.
+                  Whether you&apos;re launching a new dark kitchen or converting an existing restaurant to delivery-only, the system arrives <strong className="text-white">preconfigured and plug-and-play</strong>. We handle menu setup, printer configuration, and staff training — included free.
                 </p>
               </div>
             </div>
@@ -250,16 +252,18 @@ export default function DarkKitchensPage() {
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection faqs={[
           { question: 'What is a dark kitchen?', answer: 'A dark kitchen (also called a ghost kitchen, cloud kitchen, or virtual restaurant) is a food preparation facility that produces meals exclusively for delivery. There\'s no dine-in or walk-in service — all orders come through online ordering, delivery apps, or phone.' },
-          { question: 'How quickly can I set up a dark kitchen with Posso?', answer: 'We go from signup to live orders in under 24 hours. We handle your menu setup, printer configuration, online ordering website, and delivery app integration remotely. You just need your kitchen and equipment ready.' },
+          { question: 'How quickly can I set up a dark kitchen with Posso?', answer: `${posso.goLiveStatement} We handle your menu setup, printer configuration, online ordering website, and delivery app integration remotely. You just need your kitchen and equipment ready.` },
           { question: 'Do I need a separate tablet for each delivery app?', answer: 'No — Posso integrates Just Eat, Uber Eats, and Deliveroo directly into your POS. All orders from every platform appear on one screen and auto-print to your kitchen. No extra tablets.' },
           { question: 'How much commission do you charge on online orders?', answer: 'Our commission is around 1/10th the cost of marketplaces like Just Eat or Deliveroo, which typically charge 25–35% per order. With Posso, you keep significantly more of every order placed through your own website.' },
           { question: 'Can I run multiple brands from one dark kitchen?', answer: 'Yes — Posso supports multi-brand operation from a single kitchen. Each brand can have its own menu, branding, and ordering website while sharing the same POS and kitchen display.' },

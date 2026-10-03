@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Cloud, RefreshCw, Shield, Monitor, Wifi, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Cloud ePOS System',
   description:
-    'Cloud ePOS System with real-time sync, multi-device operation, PowerSync technology, offline-first architecture, and remote management. Access your POS from anywhere. POS from £499 + VAT.',
+    `Cloud ePOS System with real-time sync, multi-device operation, PowerSync technology, offline-first architecture, and remote management. Access your POS from anywhere. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'cloud epos system',
     'cloud pos system',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cloud ePOS System | Posso UK',
     description:
-      'Cloud ePOS System with real-time sync, multi-device, PowerSync, offline-first, and remote management. POS from £499 + VAT.',
+      `Cloud ePOS System with real-time sync, multi-device, PowerSync, offline-first, and remote management. POS from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/cloud-epos-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -124,14 +126,14 @@ export default function CloudEposSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> PowerSync — sub-second data synchronisation</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Offline-first — works without internet</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Cloud ePOS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Cloud ePOS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -221,13 +223,15 @@ export default function CloudEposSystemPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Cloud ePOS System — Frequently Asked Questions" faqs={[
           { question: 'What happens if the internet goes down?', answer: 'The Posso cloud ePOS keeps working. The offline-first architecture stores data locally and processes orders without internet. When connectivity returns, everything syncs automatically. You never lose a sale because of an internet outage. Kitchen printing works over the local network even without internet.' },
           { question: 'What is PowerSync and why does it matter?', answer: 'PowerSync is the synchronisation technology that keeps all devices updated in real time — under 200 milliseconds. Unlike traditional cloud POS systems that poll for changes every few seconds, PowerSync pushes changes instantly. This means a menu update appears on all devices immediately, and orders sync to the kitchen display in milliseconds.' },
           { question: 'Can I manage my POS remotely?', answer: 'Yes. The cloud dashboard is accessible from any device with a browser. Check today\'s sales from your phone, update the menu from your laptop, review staff performance from your tablet — all remotely. Multi-site operators manage all locations from one centralised dashboard.' },
           { question: 'Is my data secure in the cloud?', answer: 'Yes. Data is encrypted in transit and at rest. The cloud infrastructure uses enterprise-grade security with automatic backups. Your data is replicated across multiple data centres so it is safe even if one centre experiences issues. This is significantly more secure than a local server in the back office.' },
           { question: 'How many devices can connect to the cloud POS?', answer: 'As many as you need. Tablets, desktops, phones, kiosks, and kitchen displays all connect through the cloud. There are no per-device licensing fees. Add devices during busy periods and remove them when things quiet down. Every device shares the same data in real time.' },
-          { question: 'How much does the cloud ePOS system cost?', answer: 'The cloud ePOS starts from £499 + VAT including the software, PowerSync, offline mode, and cloud dashboard. Use your own hardware or purchase through us. Multi-site packages are available. Free setup and training included with a 2-year warranty. No hidden cloud hosting fees.' },
+          { question: 'How much does the cloud ePOS system cost?', answer: `The cloud ePOS starts from ${posso.posPrice} + VAT including the software, PowerSync, offline mode, and cloud dashboard. Use your own hardware or purchase through us. Multi-site packages are available. Free setup and training included with a ${posso.warrantyYears}-year warranty. No hidden cloud hosting fees.` },
         ]} />
 
         <Contact />

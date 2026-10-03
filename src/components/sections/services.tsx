@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CreditCard, MonitorPlay, Smartphone, ShoppingCart, Ticket, DownloadCloud, Tv2, Globe, Lock, Search, Megaphone, MapPin } from 'lucide-react';
 import Link from 'next/link';
+import { posso } from '@/lib/possoFacts';
 
 const services = [
   {
@@ -72,7 +73,7 @@ const services = [
   {
     icon: <DownloadCloud className="h-8 w-8 text-accent" />,
     title: 'UK-Based Support',
-    description: 'Dedicated UK support team for remote and on-site assistance, Monday to Friday, 9am–9:30pm. Average response time under 15 minutes for critical issues.',
+    description: `Dedicated UK support team for remote and on-site assistance, Monday to Friday, ${posso.supportTime}. Average response time under 15 minutes for critical issues.`,
     href: '/support'
   },
 ];

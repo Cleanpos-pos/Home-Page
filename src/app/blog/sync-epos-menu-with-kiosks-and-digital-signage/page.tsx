@@ -19,6 +19,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 const SLUG = 'sync-epos-menu-with-kiosks-and-digital-signage';
 const URL = `https://www.posso.co.uk/blog/${SLUG}`;
@@ -309,14 +310,14 @@ export default function SyncEposMenuBlogPage() {
           <div className="container mx-auto px-4 md:px-6 max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-white mb-4">One menu. Every screen. Every channel.</h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Posso One runs the till, kiosks, signage, kitchen screens, online ordering, the marketplaces and the AI phone line from a single menu. Software is £25 + VAT a month, setup is free, and we build your menu before you go live.
+              Posso One runs the till, kiosks, signage, kitchen screens, online ordering, the marketplaces and the AI phone line from a single menu. Software is {posso.softwareMonthly} + VAT a month, setup is free, and we build your menu before you go live.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all hover:scale-105 text-lg px-8 py-3 font-medium">
                 Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                <Phone className="mr-2 h-5 w-5" /> Call 0808 175 3956
+              <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                <Phone className="mr-2 h-5 w-5" /> Call {posso.phone}
               </a>
             </div>
           </div>
@@ -328,7 +329,7 @@ export default function SyncEposMenuBlogPage() {
           { question: 'Do Just Eat, Deliveroo and Uber Eats menus sync with the POS?', answer: 'With Posso delivery integrations, items, prices and availability are kept aligned between the Posso POS and the connected marketplaces, and orders from all three arrive on the till and kitchen display automatically instead of on separate tablets.' },
           { question: 'Does AI phone ordering use the same menu as the till?', answer: 'Yes. Posso AI phone ordering is trained on the live Posso One menu, including prices, portions, modifiers and out-of-stock items, so it never offers a caller something the kitchen has run out of. Orders go straight to the till and kitchen display.' },
           { question: 'What happens to menu sync if the internet goes down?', answer: 'Posso One is built offline-first. The till and kitchen keep taking and cooking orders locally and re-sync with the cloud when the connection returns. Online, marketplace and phone orders resume as soon as the line is back.' },
-          { question: 'How long does it take to set up a synced menu?', answer: 'Posso builds your menu and configures your equipment before you go live. Setup is free and the software is £25 + VAT a month. Most single-site takeaways are live within a day or two of the hardware arriving; the AI phone line typically goes live within a day or two as well.' },
+          { question: 'How long does it take to set up a synced menu?', answer: `Posso builds your menu and configures your equipment before you go live. Setup is free and the software is ${posso.softwareMonthly} + VAT a month. ${posso.goLiveStatement} The AI phone line typically goes live within a day or two.` },
         ]} />
 
         {/* Author box */}

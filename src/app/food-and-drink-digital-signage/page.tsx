@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Tv, Clock, PoundSterling, Sun, Layers, Megaphone } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Food and Drink Digital Signage',
   description:
-    'Food and Drink Digital Signage with dynamic menu boards for restaurants, bars, and cafes. Daypart menus, dynamic pricing, allergen display, and multi-screen control. From £499 + VAT.',
+    `Food and Drink Digital Signage with dynamic menu boards for restaurants, bars, and cafes. Daypart menus, dynamic pricing, allergen display, and multi-screen control. From ${posso.posPrice} + VAT.`,
   keywords: [
     'food and drink digital signage',
     'digital menu board restaurant',
@@ -124,14 +125,14 @@ export default function FoodAndDrinkDigitalSignagePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Daypart menus switch automatically</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Dynamic pricing for happy hours and promotions</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function FoodAndDrinkDigitalSignagePage() {
           { question: 'How does dynamic pricing work for happy hour?', answer: 'Set a pricing rule: cocktails are £6.50 from 5pm to 7pm on weekdays, for example. The digital signage shows the reduced price during that window and reverts to the standard price afterwards. The POS applies the same pricing rule simultaneously, ensuring the price on screen matches the price charged.' },
           { question: 'Can I display allergen information on the boards?', answer: 'Yes. Each menu item can display allergen icons — gluten, nuts, dairy, shellfish, etc. — directly on the digital menu board. Dietary labels like vegan, vegetarian, and gluten-free are also supported. When you update a recipe or change an ingredient, the allergen tags update across all screens immediately.' },
           { question: 'How do I manage signage across multiple locations?', answer: 'The cloud dashboard provides centralised control over all screens at all locations. Push brand-wide templates, promotions, and pricing rules to every site. Each location can also have site-specific content — local specials, different opening hours, or location-specific stock availability. Changes take effect in seconds.' },
-          { question: 'What does food and drink digital signage cost?', answer: 'The POS system with digital signage software starts from £499 + VAT. Signage content management is included in the subscription. Screen hardware is available through us or sourced independently. Setup includes template design, menu layout, daypart configuration, and training. Multi-site packages available.' },
+          { question: 'What does food and drink digital signage cost?', answer: `The POS system with digital signage software starts from ${posso.posPrice} + VAT. Signage content management is included in the subscription. Screen hardware is available through us or sourced independently. Setup includes template design, menu layout, daypart configuration, and training. Multi-site packages available.` },
         ]} />
 
         <Contact />

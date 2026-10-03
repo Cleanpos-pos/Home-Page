@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Coffee, Monitor, Building, Clock, CreditCard, Wifi } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Self Serve Coffee Bar',
   description:
-    'Self Serve Coffee Bar with kiosk ordering, unmanned operation, contactless payment, remote monitoring, and branded interface for offices, hotel lobbies, and co-working spaces. Kiosks from £699 + VAT.',
+    `Self Serve Coffee Bar with kiosk ordering, unmanned operation, contactless payment, remote monitoring, and branded interface for offices, hotel lobbies, and co-working spaces. Kiosks from ${posso.kioskPrice} + VAT.`,
   keywords: [
     'self serve coffee bar',
     'self service coffee station',
@@ -124,14 +125,14 @@ export default function SelfServeCoffeeBarPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Unmanned operation with contactless payment</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Remote monitoring and stock alerts</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Self-serve kiosks from £699 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Self-serve kiosks from {posso.kioskPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -212,7 +213,7 @@ export default function SelfServeCoffeeBarPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
@@ -229,7 +230,7 @@ export default function SelfServeCoffeeBarPage() {
           { question: 'Can I monitor sales remotely?', answer: 'Yes. The cloud dashboard shows real-time sales, cup counts, popular drinks, revenue by hour, and stock levels. You receive push alerts when bean levels drop below your threshold or when a machine reports an error. Multiple self-serve locations appear on one dashboard. You manage everything from your phone without visiting the station.' },
           { question: 'Is it suitable for offices?', answer: 'Perfectly suited. Office self-serve coffee bars provide quality coffee on every floor without the cost of staffing a cafe. Set the kiosk to operate during office hours and display an out-of-hours message on evenings and weekends. Pricing can be subsidised by the employer or charged to individuals. Company accounts allow departments to track their coffee spend.' },
           { question: 'What about hotels and co-working spaces?', answer: 'Hotels benefit from 24/7 lobby coffee service without early morning or late night staffing. The kiosk matches hotel branding. Co-working spaces use self-serve coffee as a premium amenity that justifies membership pricing. The kiosk can be configured for member-only access using QR codes or membership cards.' },
-          { question: 'How much does a self-serve coffee kiosk cost?', answer: 'Self-serve coffee kiosks start from £699 + VAT including the touchscreen kiosk, contactless payment terminal, software, and cloud dashboard. The bean-to-cup machine is sourced separately or supplied as part of a complete package. Finance available. Free installation, configuration, and training. Remote monitoring and software updates are included.' },
+          { question: 'How much does a self-serve coffee kiosk cost?', answer: `Self-serve coffee kiosks start from ${posso.kioskPrice} + VAT including the touchscreen kiosk, contactless payment terminal, software, and cloud dashboard. The bean-to-cup machine is sourced separately or supplied as part of a complete package. Finance available. ${posso.setupStatement} Training is included. Remote monitoring and software updates are included.` },
         ]} />
 
         <Contact />

@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 const SLUG = 'how-independent-chippies-compete-with-chains';
 const URL = `https://www.posso.co.uk/blog/${SLUG}`;
@@ -512,10 +513,10 @@ export default function IndependentChippiesVsChainsBlogPage() {
                 See Fish &amp; Chip Shop POS <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <a
-                href="tel:+448081753956"
+                href={posso.phoneHref}
                 className="inline-flex items-center justify-center rounded-md border border-slate-700 text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors"
               >
-                <Phone className="mr-2 h-5 w-5" /> Call 0808 175 3956
+                <Phone className="mr-2 h-5 w-5" /> Call {posso.phone}
               </a>
             </div>
           </div>

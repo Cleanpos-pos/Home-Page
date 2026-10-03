@@ -72,7 +72,7 @@ const blogPosts = [
   {
     title: "POS & Self-Order Kiosk Solutions",
     description: "Transform your business with POSSO's cutting-edge POS systems, EPOS solutions, and self-order kiosks. AI-powered technology for the modern hospitality industry.",
-    href: "/blog/pos-and-self-order-kiosk-solutions",
+    href: "/self-order-kiosks",
     icon: <Rocket className="w-12 h-12 text-primary" />,
   },
   {
@@ -168,7 +168,7 @@ const blogPosts = [
   {
     title: 'POSSO Self-Order Kiosks – Reduce Queues & Increase Order Value in Minutes',
     description: 'Learn how POSSO Self-Order Kiosks boost sales, cut queue time and reduce staff pressure. Perfect for UK takeaways and fast-food restaurants.',
-    href: '/blog/self-order-kiosks',
+    href: '/self-order-kiosks-guide',
     icon: <Smartphone className="w-12 h-12 text-primary" />,
   },
   {

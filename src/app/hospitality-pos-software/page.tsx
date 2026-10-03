@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Utensils, Hotel, Wine, Coffee, CalendarDays, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Hospitality POS Software',
   description:
-    'Hospitality POS Software for restaurants, hotels, bars, cafes, venues, and events. Table management, kitchen display, online ordering, and multi-site reporting. POS from £499 + VAT.',
+    `Hospitality POS Software for restaurants, hotels, bars, cafes, venues, and events. Table management, kitchen display, online ordering, and multi-site reporting. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'hospitality pos software',
     'hospitality epos',
@@ -124,14 +126,14 @@ export default function HospitalityPosSoftwarePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Sector-specific features for every hospitality type</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Multi-site management from one dashboard</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Hospitality POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Hospitality POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -221,13 +223,15 @@ export default function HospitalityPosSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Hospitality POS Software — Frequently Asked Questions" faqs={[
           { question: 'Does the POS work for different hospitality sectors?', answer: 'Yes. Posso has sector-specific features for restaurants (table management, course firing), bars (tab management, speed-pour), cafes (quick service, loyalty), hotels (room charging, multi-outlet), and events (portable, battery-powered). You activate the features you need for your business type.' },
           { question: 'Can I manage multiple hospitality sites from one dashboard?', answer: 'Yes. The cloud dashboard provides multi-site reporting, central menu management, and cross-location analytics. Each site runs independently while head office sees consolidated data. You can standardise menus across sites or allow local variations.' },
           { question: 'Does it include online ordering and delivery integration?', answer: 'Yes. Online ordering through your branded website and integration with Just Eat, Uber Eats, and Deliveroo are included. All orders appear on the same POS and kitchen display regardless of channel. Low commission on direct online orders.' },
-          { question: 'Can I add kiosks and table ordering to my existing POS?', answer: 'Yes. Self-order kiosks from £699 + VAT and QR table ordering plug into the same platform. One menu manages all channels — POS, kiosk, online, and table ordering. No separate systems, no duplicate menu management.' },
+          { question: 'Can I add kiosks and table ordering to my existing POS?', answer: `Yes. Self-order kiosks from ${posso.kioskPrice} + VAT and QR table ordering plug into the same platform. One menu manages all channels — POS, kiosk, online, and table ordering. No separate systems, no duplicate menu management.` },
           { question: 'Is it suitable for hospitality groups with different venue types?', answer: 'Yes. A group running a hotel, restaurant, bar, and event venue can use Posso across all of them. Each venue has its own configuration and workflow while group reporting consolidates everything. Staff trained on one venue can work at any other.' },
-          { question: 'How much does hospitality POS software cost?', answer: 'The hospitality POS starts from £499 + VAT per site. Self-order kiosks from £699 + VAT. Multi-site packages are available for hospitality groups. Online ordering, kitchen display, and delivery integration are included. Free setup and training with a 2-year warranty.' },
+          { question: 'How much does hospitality POS software cost?', answer: `The hospitality POS starts from ${posso.posPrice} + VAT per site. Self-order kiosks from ${posso.kioskPrice} + VAT. Multi-site packages are available for hospitality groups. Online ordering, kitchen display, and delivery integration are included. Free setup and training with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

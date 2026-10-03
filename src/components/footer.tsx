@@ -1,5 +1,6 @@
 import { Code } from 'lucide-react';
 import Link from 'next/link';
+import { posso } from '@/lib/possoFacts';
 
 export function Footer() {
     return (
@@ -16,8 +17,8 @@ export function Footer() {
                             UK provider of restaurant ePOS systems, self-order kiosks, ticketing, and digital signage for hospitality and entertainment venues.
                         </p>
                         <p className="text-sm text-slate-400">
-                            <a href="tel:+448081753956" className="hover:text-primary transition-colors font-medium">
-                                0808 175 3956
+                            <a href={posso.phoneHref} className="hover:text-primary transition-colors font-medium">
+                                {posso.phone}
                             </a>{' '}
                             (Free call)
                         </p>
@@ -65,6 +66,19 @@ export function Footer() {
                             <li><Link href="/how-to-get-a-credit-card-machine" className="hover:text-primary transition-colors">How to Get a Card Machine</Link></li>
                             <li><Link href="/self-order-kiosks-guide" className="hover:text-primary transition-colors">Self-Order Kiosks Guide</Link></li>
                             <li><Link href="/food-truck-epos-system" className="hover:text-primary transition-colors">Food Truck &amp; Trailer EPOS</Link></li>
+                            <li><Link href="/retail-pos-system" className="hover:text-primary transition-colors">Retail POS System</Link></li>
+                            <li><Link href="/small-business-pos-system" className="hover:text-primary transition-colors">Small Business POS</Link></li>
+                            <li><Link href="/pos-companies-uk" className="hover:text-primary transition-colors">Choosing a POS Company</Link></li>
+                            <li><Link href="/buy-epos-system-uk" className="hover:text-primary transition-colors">Buy or Lease an EPOS</Link></li>
+                        </ul>
+                        <h4 className="font-bold text-slate-50 mb-4 mt-8">Compare</h4>
+                        <ul className="space-y-2 text-sm text-slate-400">
+                            <li><Link href="/epos-now-alternative" className="hover:text-primary transition-colors">Epos Now Alternative</Link></li>
+                            <li><Link href="/square-pos-alternative" className="hover:text-primary transition-colors">Square POS Alternative</Link></li>
+                            <li><Link href="/sumup-pos-alternative" className="hover:text-primary transition-colors">SumUp POS Alternative</Link></li>
+                            <li><Link href="/lightspeed-alternative" className="hover:text-primary transition-colors">Lightspeed Alternative</Link></li>
+                            <li><Link href="/zettle-alternative" className="hover:text-primary transition-colors">Zettle Alternative</Link></li>
+                            <li><Link href="/toast-pos-alternative" className="hover:text-primary transition-colors">Toast POS Alternative</Link></li>
                         </ul>
                     </nav>
 
@@ -123,7 +137,7 @@ export function Footer() {
                     <div className="text-center md:text-left">
                         <p className="text-sm text-slate-400">&copy; {new Date().getFullYear()} Posso Ltd. All rights reserved.</p>
                         <p className="text-sm text-slate-400">
-                            Free call: <a href="tel:+448081753956" className="hover:text-primary transition-colors">0808 175 3956</a>
+                            Free call: <a href={posso.phoneHref} className="hover:text-primary transition-colors">{posso.phone}</a>
                         </p>
                         <div className="mt-3 text-xs text-slate-500">
                             <p className="font-medium text-slate-400">Registered office address</p>

@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Monitor, RefreshCw, Calendar, Palette, Wifi, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'POS Signage',
   description:
-    'POS Signage with live menu updates from your till, promotional scheduling, daypart switching, multi-screen management, and cloud-based content control. From £499 + VAT.',
+    `POS Signage with live menu updates from your till, promotional scheduling, daypart switching, multi-screen management, and cloud-based content control. From ${posso.posPrice} + VAT.`,
   keywords: [
     'pos signage',
     'pos digital signage',
@@ -124,14 +126,14 @@ export default function PosSignagePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Menu and prices sync live from the POS</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Sold-out items removed automatically</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -208,7 +210,7 @@ export default function PosSignagePage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/restaurant-pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Restaurant POS</p>
@@ -223,13 +225,15 @@ export default function PosSignagePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="POS Signage — FAQ" faqs={[
           { question: 'How does the signage sync with the POS?', answer: 'The signage software connects to your POS through the cloud. When you change a price, add an item, or mark something as sold out on the till, the signage updates within seconds. There is no manual step — the sync is automatic and continuous. Both systems share the same menu database.' },
           { question: 'What screens do I need?', answer: 'Any commercial-grade display with an HDMI input works. We recommend commercial displays rated for all-day use — domestic TVs are not designed to run 12+ hours daily. We can supply screens or connect to hardware you already own. Screen sizes from 32 inches to 65 inches are most common.' },
           { question: 'Can I show different content on different screens?', answer: 'Yes. Each screen is independently managed. The counter menu board shows your full menu with prices. A window display shows promotions to attract passers-by. A queue-facing screen shows wait times or upsell offers. All controlled from one dashboard, each showing content appropriate to its location.' },
           { question: 'How does promotional scheduling work?', answer: 'Set promotions to appear at specific times, days, or date ranges. A happy hour offer shows from 4–7pm on weekdays. A Christmas menu appears from 1st December. A lunch deal shows Monday to Friday, 12–2pm. Promotions start and end automatically — no staff action required during service.' },
           { question: 'Can I manage signage across multiple locations?', answer: 'Yes. The cloud dashboard lets you manage screens across all your sites. Push a brand-wide promotion to every location at once, or update a single site individually. Each location\'s screens reflect its own POS data — stock levels, local prices, and availability — while maintaining consistent branding.' },
-          { question: 'What does POS signage cost?', answer: 'The POS system starts from £499 + VAT. Digital signage software is included with the POS subscription. You supply the screens or purchase them through us. Setup includes template design, screen configuration, and training on the content management dashboard. Multi-site pricing available on request.' },
+          { question: 'What does POS signage cost?', answer: `The POS system starts from ${posso.posPrice} + VAT. Digital signage software is included with the POS subscription. You supply the screens or purchase them through us. Setup includes template design, screen configuration, and training on the content management dashboard. Multi-site pricing available on request.` },
         ]} />
 
         <Contact />

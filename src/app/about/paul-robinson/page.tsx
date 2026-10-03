@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { UserRound, Phone, ArrowRight, Building2, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Paul Robinson — Managing Director, Posso Ltd',
@@ -82,7 +83,7 @@ export default function PaulRobinsonPage() {
               Paul Robinson is the Managing Director of Posso Ltd, the Leicester-based hospitality
               technology company behind the Posso One EPOS platform. Posso supplies EPOS tills,
               self-order kiosks, kitchen displays, online ordering and integrated card payments to
-              500+ restaurants, takeaways, cafés and venues across the UK.
+              {posso.businessCount} restaurants, takeaways, cafés and venues across the UK.
             </p>
             <p>
               Paul oversees Posso&apos;s product direction, on-site installations and UK support
@@ -107,8 +108,8 @@ export default function PaulRobinsonPage() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center !mt-10">
               <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-white">
-                <a href="tel:+448081753956">
-                  <Phone className="mr-2 h-5 w-5" /> Call 0808 175 3956
+                <a href={posso.phoneHref}>
+                  <Phone className="mr-2 h-5 w-5" /> Call {posso.phone}
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline">

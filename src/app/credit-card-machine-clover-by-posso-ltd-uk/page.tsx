@@ -39,10 +39,7 @@ const schema = {
         "@type": "Organization",
         "name": "Fiserv"
     },
-    "author": {
-        "@type": "Organization",
-        "name": "Posso Ltd"
-    },
+    "author": { '@id': 'https://www.posso.co.uk/#organization' },
     "url": "https://www.posso.co.uk/credit-card-machine-clover-by-posso-ltd-uk"
 };
 

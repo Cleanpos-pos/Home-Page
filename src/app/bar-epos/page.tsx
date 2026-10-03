@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Clock, CreditCard, BarChart3, Phone, ArrowRight, Users, ShieldCheck, Wine, Split, Timer, Percent } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Bar ePOS System | Tab Management, Speed Ordering & Split Bills',
   description:
-    'Bar ePOS system with tab management, speed-pour ordering, drink modifiers, split bills, cocktail menus, and happy hour scheduling. Built for high-volume bar service. From £499 + VAT.',
+    `Bar ePOS system with tab management, speed-pour ordering, drink modifiers, split bills, cocktail menus, and happy hour scheduling. Built for high-volume bar service. From ${posso.posPrice} + VAT.`,
   keywords: [
     'bar epos',
     'bar epos system',
@@ -129,14 +131,14 @@ export default function BarEposPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Open, add to, and settle tabs in seconds</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Happy hour pricing runs automatically</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete bar POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete bar POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -287,13 +289,15 @@ export default function BarEposPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Bar ePOS — Frequently Asked Questions" faqs={[
           { question: 'How does tab management work on the Posso bar POS?', answer: 'Open a tab by swiping a card or entering a customer name. Add drinks to the tab from any till in the venue. The tab stays open across shift changes. When the customer is ready to leave, pull up the tab, review the items, and settle by card, cash, or split payment.' },
           { question: 'Can I set up happy hour pricing automatically?', answer: 'Yes. Set happy hour rules by day of the week, start time, end time, and product category. The POS automatically switches to discounted pricing when happy hour starts and reverts to normal pricing when it ends. No manual intervention required.' },
           { question: 'Does the bar screen show different orders to the kitchen screen?', answer: 'Yes. The Posso ePOS routes orders to the correct preparation screen by category. Drinks orders appear on the bar display. Food orders appear on the kitchen display. Each station only sees what they need to prepare, reducing clutter and confusion during busy periods.' },
           { question: 'How do drink modifiers work for spirits?', answer: 'When staff tap a spirit, they see modifier options — single or double, choice of mixer (tonic, lemonade, cola, soda), and garnish. The price adjusts automatically based on the selections. This ensures consistent pricing and speeds up the ordering process.' },
           { question: 'Can customers split the bill at the end of the night?', answer: 'Yes. Posso supports split by item (each person pays for their own drinks), equal split (divide the total equally), split by seat, or custom amounts. Staff can combine card and cash payments on the same bill.' },
-          { question: 'How much does the bar ePOS system cost?', answer: 'The complete bar POS system starts from £499 + VAT including the touchscreen till and software. Additional tills for multi-bar setups, card terminals, and bar display screens are available. Finance from £24.92 per week. Free setup and training included with a 2-year warranty.' },
+          { question: 'How much does the bar ePOS system cost?', answer: `The complete bar POS system starts from ${posso.posPrice} + VAT including the touchscreen till and software. Additional tills for multi-bar setups, card terminals, and bar display screens are available. Finance from ${posso.financeWeekly} per week. Free setup and training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

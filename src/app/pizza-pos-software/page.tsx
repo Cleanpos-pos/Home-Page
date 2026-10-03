@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Pizza, Layers, Grid3X3, Truck, MonitorSmartphone, Printer } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Pizza POS Software',
   description:
-    'Pizza POS Software with visual pizza builder, size and topping matrix, delivery management, kitchen ticket printing, and online ordering. Purpose-built for pizzerias. From £499 + VAT.',
+    `Pizza POS Software with visual pizza builder, size and topping matrix, delivery management, kitchen ticket printing, and online ordering. Purpose-built for pizzerias. From ${posso.posPrice} + VAT.`,
   keywords: [
     'pizza pos software',
     'pizza point of sale software',
@@ -124,14 +126,14 @@ export default function PizzaPosSoftwarePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Visual pizza builder with split-side toppings</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Size and topping pricing matrix</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pizza POS software from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pizza POS software from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -202,7 +204,7 @@ export default function PizzaPosSoftwarePage() {
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore More Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pos-for-pizza-shop" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza ePOS</p>
                   <p className="text-slate-400 text-sm mt-1">Complete ePOS system</p>
                 </Link>
@@ -223,13 +225,15 @@ export default function PizzaPosSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Pizza POS Software — Frequently Asked Questions" faqs={[
           { question: 'What makes pizza POS software different from regular POS?', answer: 'Pizza POS software treats each pizza as a configurable product with size, crust, sauce, and toppings — each affecting the price. Regular POS systems use flat modifiers that cannot handle size-based topping pricing or split-side orders natively. The visual builder, pricing matrix, and structured kitchen tickets are specific to how pizzerias operate.' },
           { question: 'Can I configure the size and topping pricing matrix?', answer: 'Yes. You set a base price per size (e.g. 10-inch £7.99, 14-inch £11.99, 18-inch £15.99) and a topping price per size (e.g. extra cheese £1.00 on small, £1.50 on large). The matrix supports unlimited sizes and unlimited toppings. Changes apply instantly across counter and online ordering.' },
           { question: 'Does it print detailed kitchen tickets?', answer: 'Yes. Each pizza ticket prints the full specification: size, crust type, sauce, every topping with portion size, split-side detail (left/right), and special instructions. Tickets are formatted for rapid reading so pizza makers can build without asking questions. Non-pizza items print on separate tickets if needed.' },
           { question: 'Can I manage deliveries from the same software?', answer: 'Yes. The delivery module includes zone drawing, fee configuration, minimum order values, driver management, and live order tracking. The dispatch screen shows all active orders with time elapsed. Drivers update delivery status from their phones. No separate delivery management system needed.' },
           { question: 'Does it support online ordering with pizza customisation?', answer: 'Yes. Your branded ordering website includes the full visual pizza builder. Customers select size, crust, sauce, toppings, and split sides. Orders flow directly into the POS and kitchen display. Low commission compared to aggregator platforms. Customers can save favourite orders for quick reordering.' },
-          { question: 'How much does pizza POS software cost?', answer: 'Pizza POS software starts from £499 + VAT including the touchscreen terminal, pizza builder software, kitchen ticket printer, and delivery management module. Online ordering included at low commission. Finance available from £24.92 per week. Free setup, menu configuration, and staff training included.' },
+          { question: 'How much does pizza POS software cost?', answer: `Pizza POS software starts from ${posso.posPrice} + VAT including the touchscreen terminal, pizza builder software, kitchen ticket printer, and delivery management module. Online ordering included at low commission. Finance available from ${posso.financeWeekly} per week. Free setup, menu configuration, and staff training included.` },
         ]} />
 
         <Contact />

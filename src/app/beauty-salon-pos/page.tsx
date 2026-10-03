@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Sparkles, Calendar, Users, ShoppingBag, Heart, Globe } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Beauty Salon POS',
   description:
-    'Beauty Salon POS with treatment booking, staff scheduling, client records, retail product sales, loyalty programmes, and online booking. Purpose-built for salons. From £499 + VAT.',
+    `Beauty Salon POS with treatment booking, staff scheduling, client records, retail product sales, loyalty programmes, and online booking. Purpose-built for salons. From ${posso.posPrice} + VAT.`,
   keywords: [
     'beauty salon pos',
     'salon pos system',
@@ -124,14 +126,14 @@ export default function BeautySalonPosPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full treatment menu with durations and pricing</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Client records with allergy notes and history</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Beauty salon POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Beauty salon POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -208,7 +210,7 @@ export default function BeautySalonPosPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/touch-screen-till-system" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Touch Screen Till</p>
@@ -223,13 +225,15 @@ export default function BeautySalonPosPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Beauty Salon POS — Frequently Asked Questions" faqs={[
           { question: 'Can I manage treatment bookings and payments in one system?', answer: 'Yes. The Posso beauty salon POS combines your appointment diary, treatment menu, payment processing, and client records in a single system. When a client arrives, you see their booking, take payment at checkout, and the treatment is recorded to their profile automatically. No separate booking software needed.' },
           { question: 'How does staff scheduling work?', answer: 'Set working hours, break times, holidays, and days off for each team member. The booking calendar only offers appointment slots when the selected therapist is available. If someone calls in sick, block their column and all their bookings are flagged for rescheduling. View and publish the weekly rota from one screen.' },
           { question: 'Can I track retail product sales?', answer: 'Yes. Add your full retail range — shampoos, serums, skincare, tools — with stock counts and reorder levels. The POS tracks every sale and updates stock in real time. Link product recommendations to treatments so your team can suggest aftercare at checkout. Retail revenue is reported separately so you can set and track targets.' },
           { question: 'Does it support online booking?', answer: 'Yes. Clients book through your website or a branded booking page. They choose their treatment, preferred therapist, and time slot. Bookings sync instantly with your salon diary. Automated SMS and email confirmations go out immediately, with a reminder 24 hours before the appointment including a cancellation link to reduce no-shows.' },
           { question: 'How does the loyalty programme work?', answer: 'Clients earn points for every pound spent on treatments and products. Points accumulate automatically and can be redeemed against future services or retail purchases. You set the earn rate and redemption value. Run bonus point promotions during quiet periods. The dashboard shows your most loyal clients ranked by spend and visit frequency.' },
-          { question: 'How much does a beauty salon POS cost?', answer: 'The complete beauty salon POS starts from £499 + VAT including the touchscreen terminal, booking module, client records, and loyalty programme. Online booking integration is included at no extra cost. Finance available from £24.92 per week. Free setup, treatment menu configuration, and staff training included with a 2-year warranty.' },
+          { question: 'How much does a beauty salon POS cost?', answer: `The complete beauty salon POS starts from ${posso.posPrice} + VAT including the touchscreen terminal, booking module, client records, and loyalty programme. Online booking integration is included at no extra cost. Finance available from ${posso.financeWeekly} per week. Free setup, treatment menu configuration, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

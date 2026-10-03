@@ -1,6 +1,7 @@
 import { GeneralEnquiryForm } from '@/components/general-enquiry-form';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Phone } from 'lucide-react';
+import { posso } from '@/lib/possoFacts';
 
 /**
  * Demo CTA that submits the site's main enquiry form directly on the page.
@@ -28,8 +29,8 @@ export function DemoEnquiry({
           </p>
           <p className="mt-4 text-slate-400">
             Prefer to talk?{' '}
-            <a href="tel:+448081753956" className="text-primary hover:underline inline-flex items-center gap-1.5">
-              <Phone className="h-4 w-4" /> 0808 175 3956
+            <a href={posso.phoneHref} className="text-primary hover:underline inline-flex items-center gap-1.5">
+              <Phone className="h-4 w-4" /> {posso.phone}
             </a>
           </p>
         </div>

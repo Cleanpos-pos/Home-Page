@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Dry Cleaning Pickup & Delivery App UK',
@@ -154,8 +155,8 @@ export default function DryCleaningAppPage() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild className="text-lg px-8">
-                <a href="tel:+448081753956">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref}>
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </Button>
             </div>

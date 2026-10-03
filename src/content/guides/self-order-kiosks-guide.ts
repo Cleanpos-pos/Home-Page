@@ -1,4 +1,5 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 /**
  * AEO / AI-Overview explainer for the "self order kiosks" query cluster
@@ -31,11 +32,11 @@ export const selfOrderKiosksGuide: Guide = {
   highlights: [
     "The definition, the benefits and the real UK cost in one place",
     "Where kiosks pay off — and where they don't",
-    "Posso self-order kiosks from £699 + VAT",
+    `Posso self-order kiosks from ${posso.kioskPrice} + VAT`,
   ],
   breadcrumb: "Self-Order Kiosks Guide",
   quickAnswer:
-    "A self-order kiosk is a freestanding or countertop touchscreen that lets customers browse the menu, customise their order, and pay for it themselves without staff. In UK restaurants and takeaways they cut queues at peak, lift average order value — independent studies and large quick-service chains commonly report a 20–30% uplift, because the screen prompts every extra consistently, on every order — and free staff to work the kitchen. UK kiosks start from around £699 + VAT outright; the main rule is to run them alongside a staffed till, never instead of one. Posso self-order kiosks start at £699 + VAT and share the same menu, kitchen screen and card processing as the main till.",
+    `A self-order kiosk is a freestanding or countertop touchscreen that lets customers browse the menu, customise their order, and pay for it themselves without staff. In UK restaurants and takeaways they cut queues at peak, lift average order value — independent studies and large quick-service chains commonly report a 20–30% uplift, because the screen prompts every extra consistently, on every order — and free staff to work the kitchen. UK kiosks start from around ${posso.kioskPrice} + VAT outright; the main rule is to run them alongside a staffed till, never instead of one. Posso self-order kiosks start at ${posso.kioskPrice} + VAT and share the same menu, kitchen screen and card processing as the main till.`,
   sections: [
     {
       kind: "prose",
@@ -109,8 +110,8 @@ export const selfOrderKiosksGuide: Guide = {
       kicker: "The numbers",
       heading: "How much do self-order kiosks cost in the UK?",
       paragraphs: [
-        "UK self-order kiosks are typically bought outright, from around £699 + VAT for a countertop unit up to £2,000 or more for a large freestanding floor kiosk with a built-in printer and card reader. Some suppliers instead bundle the kiosk into a monthly software subscription — cheaper to start, more over three years, so compare the total cost, not the headline.",
-        "On top of the hardware there's the software it runs (usually the same licence as your till) and card processing on the payments taken at the screen. Posso self-order kiosks start at £699 + VAT and run the same menu, kitchen routing and card processing as your main Posso till, so adding one is configuration rather than a second system — and the software fee is the same £25 + VAT a month whether the order comes from the counter or the kiosk. Finance is available from around £24.92 a week.",
+        `UK self-order kiosks are typically bought outright, from around ${posso.kioskPrice} + VAT for a countertop unit up to £2,000 or more for a large freestanding floor kiosk with a built-in printer and card reader. Some suppliers instead bundle the kiosk into a monthly software subscription — cheaper to start, more over three years, so compare the total cost, not the headline.`,
+        `On top of the hardware there's the software it runs (usually the same licence as your till) and card processing on the payments taken at the screen. Posso self-order kiosks start at ${posso.kioskPrice} + VAT and run the same menu, kitchen routing and card processing as your main Posso till, so adding one is configuration rather than a second system — and the software fee is the same ${posso.softwareMonthly} + VAT a month whether the order comes from the counter or the kiosk. Finance is available from around ${posso.financeWeekly} a week.`,
       ],
     },
     {
@@ -129,7 +130,7 @@ export const selfOrderKiosksGuide: Guide = {
         [
           "Countertop kiosk",
           "Cafés, takeaways and smaller footprints",
-          "Sits on the counter; the lowest-cost way in, from ~£699 + VAT",
+          `Sits on the counter; the lowest-cost way in, from ~${posso.kioskPrice} + VAT`,
         ],
         [
           "Wall-mounted kiosk",
@@ -165,7 +166,7 @@ export const selfOrderKiosksGuide: Guide = {
       kicker: "Where Posso fits",
       heading: "Self-order kiosks with Posso",
       paragraphs: [
-        "Posso is a UK hospitality technology company with 500+ UK businesses on the system, supported from Leicester. Our self-order kiosks start at £699 + VAT and run the same menu, priced modifiers, kitchen display and card processing as your main Posso till — so prices and items stay in sync everywhere, orders route straight to the kitchen, and adding a kiosk is configuration, not a separate system. Freestanding, countertop and outdoor (IP65, 4G) formats are available, with contactless, Apple Pay and Google Pay built in, UK phone support Monday to Friday 9am–9:30pm, and finance from around £24.92 a week.",
+        `Posso is a UK hospitality technology company with ${posso.businessCount} UK businesses on the system, supported from Leicester. Our self-order kiosks start at ${posso.kioskPrice} + VAT and run the same menu, priced modifiers, kitchen display and card processing as your main Posso till — so prices and items stay in sync everywhere, orders route straight to the kitchen, and adding a kiosk is configuration, not a separate system. Freestanding, countertop and outdoor (IP65, 4G) formats are available, with contactless, Apple Pay and Google Pay built in, UK phone support Monday to Friday ${posso.supportTime}, and finance from around ${posso.financeWeekly} a week.`,
         "The sensible way to buy is a single kiosk beside your staffed till for a busy month, judged on your own numbers. If it earns its place, add more; if your counter is quiet, we'll tell you a kiosk won't help yet — the same honest answer this guide gives.",
       ],
     },
@@ -190,7 +191,7 @@ export const selfOrderKiosksGuide: Guide = {
     },
     {
       q: "How much does a self-order kiosk cost in the UK?",
-      a: "UK kiosks are usually bought outright, from around £699 + VAT for a countertop unit to £2,000 or more for a large freestanding floor kiosk. Some suppliers bundle the kiosk into a monthly subscription instead — cheaper up front, more over three years. On top there's the software licence and card processing. Posso kiosks start at £699 + VAT and share the same software fee (£25 + VAT a month) and card processing as your till.",
+      a: `UK kiosks are usually bought outright, from around ${posso.kioskPrice} + VAT for a countertop unit to £2,000 or more for a large freestanding floor kiosk. Some suppliers bundle the kiosk into a monthly subscription instead — cheaper up front, more over three years. On top there's the software licence and card processing. Posso kiosks start at ${posso.kioskPrice} + VAT and share the same software fee (${posso.softwareMonthly} + VAT a month) and card processing as your till.`,
     },
     {
       q: "Do self-order kiosks increase sales?",

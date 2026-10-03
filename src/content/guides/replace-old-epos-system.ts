@@ -1,10 +1,11 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 export const replaceOldEposSystem: Guide = {
   slug: "replace-old-epos-system",
   title: "Replacing an Old EPOS System: Migration Guide for UK Hospitality",
   metaDescription:
-    "Replacing an ageing till system? What transfers, what you lose, how to check your contract, and how to switch without closing for a day. UK EPOS from £499 + VAT.",
+    `Replacing an ageing till system? What transfers, what you lose, how to check your contract, and how to switch without closing for a day. UK EPOS from ${posso.posPrice} + VAT.`,
   eyebrow: "Migration guide",
   h1: "Replacing an old EPOS system",
   h1Split: ["Replacing an", "old EPOS system"],
@@ -122,7 +123,7 @@ export const replaceOldEposSystem: Guide = {
         },
         {
           title: "6. First live order",
-          body: "Typically under 24 hours from hardware arriving. Setup — menu build and configuration — is included at no cost.",
+          body: `${posso.goLiveStatement} ${posso.setupStatement}`,
         },
       ],
     },
@@ -130,10 +131,10 @@ export const replaceOldEposSystem: Guide = {
       kind: "prose",
       heading: "What you are replacing it with",
       paragraphs: [
-        "Posso is a UK hospitality-only EPOS built in Leicester. Terminals run Windows 11 Pro with 8GB RAM and a 128GB SSD, and carry a 2-year warranty.",
+        `Posso is a UK hospitality-only EPOS built in Leicester. Terminals run Windows 11 Pro with 8GB RAM and a 128GB SSD, and carry a ${posso.warrantyYears}-year warranty.`,
         "The parallel systems collapse into one: counter, phone, your own website, Just Eat, Uber Eats and Deliveroo orders all arrive on one screen and in one kitchen queue.",
         "It works when the internet does not. Offline-first means orders, cash payments and receipts continue without a connection and sync when it returns — often the single biggest upgrade from an older cloud-only system.",
-        "Pricing is published: from £499 + VAT including hardware, software licence, menu setup and training, with finance from £24.92 per week and UK phone support.",
+        `Pricing is published: from ${posso.posPrice} + VAT including hardware, menu setup and training, software from ${posso.softwareMonthly} + VAT a month, finance from ${posso.financeWeekly} per week and UK phone support.`,
       ],
     },
     {
@@ -165,7 +166,7 @@ export const replaceOldEposSystem: Guide = {
     },
     {
       q: "How long does an EPOS migration take?",
-      a: "From hardware arriving to your first live order is typically under 24 hours, because the menu build and configuration happen before shipping. The realistic overall window is one to two weeks, most of which is menu review and choosing an install slot. Keep your old system running alongside until you are confident.",
+      a: `${posso.goLiveStatement} The menu build and configuration happen before shipping. The realistic overall window is one to two weeks, most of which is menu review and choosing an install slot. Keep your old system running alongside until you are confident.`,
     },
     {
       q: "Do I have to close the shop to switch EPOS systems?",

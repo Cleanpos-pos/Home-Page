@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, AlertTriangle, Scale, ShieldCheck, Zap, CreditCard, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Free ePOS Software',
   description:
-    'Free ePOS Software — what is really free vs hidden costs. Compare free POS options against Posso and find the best value ePOS for your restaurant. POS from £499 + VAT with no hidden fees.',
+    `Free ePOS Software — what is really free vs hidden costs. Compare free POS options against Posso and find the best value ePOS for your restaurant. POS from ${posso.posPrice} + VAT with no hidden fees.`,
   keywords: [
     'free epos software',
     'free pos software',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free ePOS Software | Posso UK',
     description:
-      'Free ePOS Software — what is really free vs hidden costs. Compare options and find the best value POS. From £499 + VAT.',
+      `Free ePOS Software — what is really free vs hidden costs. Compare options and find the best value POS. From ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/free-epos-software',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -45,7 +47,7 @@ const pageSchema = [
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
-      'Posso ePOS software — best value alternative to free POS systems. Full features including online ordering, kitchen display, delivery integration, and kiosk support with transparent pricing from £499 + VAT.',
+      `Posso ePOS software — best value alternative to free POS systems. Full features including online ordering, kitchen display, delivery integration, and kiosk support with transparent pricing from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/free-epos-software',
     offers: {
       '@type': 'AggregateOffer',
@@ -60,7 +62,7 @@ const pageSchema = [
       'Online ordering with low commission',
       'Kitchen display system included',
       'Delivery platform integration included',
-      'Free setup and training with 2-year warranty',
+      `Free setup and training with ${posso.warrantyYears}-year warranty`,
     ],
   },
   {
@@ -75,7 +77,7 @@ const pageSchema = [
 ];
 
 const features = [
-  { icon: ShieldCheck, title: 'Transparent Pricing', description: 'No free tier with forced upgrades. No features locked behind paywalls. No surprise charges after the trial ends. The Posso POS from £499 + VAT includes everything — POS, kitchen display, online ordering, and delivery integration. One price, all features.' },
+  { icon: ShieldCheck, title: 'Transparent Pricing', description: `No free tier with forced upgrades. No features locked behind paywalls. No surprise charges after the trial ends. The Posso POS from ${posso.posPrice} + VAT includes everything — POS, kitchen display, online ordering, and delivery integration. One price, all features.` },
   { icon: Zap, title: 'Full Features From Day One', description: 'Free POS systems restrict features to push you to paid plans. Posso includes table management, waiter pad, course firing, modifier workflows, split bills, and allergen tracking from day one. No feature gates, no premium tier, no "upgrade to unlock."' },
   { icon: CreditCard, title: 'Low Commission Online Orders', description: 'Some "free" POS systems make their money through high commission on online orders — 5-10% per transaction adds up fast. Posso charges low commission on online orders, so you keep more of every sale. Transparent pricing you can plan around.' },
   { icon: BarChart3, title: 'No Data Ransom', description: 'Free POS systems hold your data hostage. Want to export your sales history? Upgrade. Want detailed reports? Upgrade. Posso gives you full access to all your data, all reports, and full export capability included in the base price.' },
@@ -86,8 +88,8 @@ const features = [
 const benefits = [
   { title: 'The Real Cost of "Free"', description: 'Free POS software has to make money somewhere. Common hidden costs include: 3-10% commission on online orders, paid premium features (table management, reporting, loyalty), forced hardware purchases at marked-up prices, and premium support charges. Add these up and "free" often costs more than a paid system.' },
   { title: 'Why Restaurants Switch From Free POS', description: 'Restaurants outgrow free POS quickly. The first time they need a feature that is locked behind a paywall, the first time support cannot help on a busy night, the first time they realise they are paying 8% commission on every online order — that is when they look for a better option.' },
-  { title: 'One Price, Everything Included', description: 'Posso POS from £499 + VAT includes the full feature set: POS, kitchen display, online ordering, delivery integration, table management, reporting, and support. No paid tiers, no feature unlocks, no premium plans. The price you see is the price you pay.' },
-  { title: 'Finance Makes It Affordable', description: 'If £499 upfront is too much, finance from £24.92 per week spreads the cost. You get the full system from day one and pay over time. Compare that to a "free" POS charging 8% commission on £3,000 per month in online orders — that is £240 per month in hidden costs.' },
+  { title: 'One Price, Everything Included', description: `Posso POS from ${posso.posPrice} + VAT includes the full feature set: POS, kitchen display, online ordering, delivery integration, table management, reporting, and support. No paid tiers, no feature unlocks, no premium plans. The price you see is the price you pay.` },
+  { title: 'Finance Makes It Affordable', description: `If ${posso.posPrice} upfront is too much, finance from ${posso.financeWeekly} per week spreads the cost. You get the full system from day one and pay over time. Compare that to a "free" POS charging 8% commission on £3,000 per month in online orders — that is £240 per month in hidden costs.` },
 ];
 
 export default function FreeEposSoftwarePage() {
@@ -124,14 +126,14 @@ export default function FreeEposSoftwarePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> All features included — no paid upgrades</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission on online orders</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete ePOS from £499 + VAT — no hidden fees</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete ePOS from {posso.posPrice} + VAT — no hidden fees</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -188,7 +190,7 @@ export default function FreeEposSoftwarePage() {
                   <strong className="text-white">Free POS option:</strong> £0 software + 8% online order commission (£400/month) + premium features £49/month + premium support £29/month = <strong className="text-white">£5,736 per year</strong> in ongoing costs alone.
                 </p>
                 <p>
-                  <strong className="text-white">Posso:</strong> £499 + VAT one-off + low commission on online orders = <strong className="text-white">significantly less per year</strong>. All features included. Real support included. No premium tier. The maths speaks for itself.
+                  <strong className="text-white">Posso:</strong> {posso.posPrice} + VAT one-off + low commission on online orders = <strong className="text-white">significantly less per year</strong>. All features included. Real support included. No premium tier. The maths speaks for itself.
                 </p>
                 <p>
                   The free POS costs more in 2 months of commission than the entire Posso system. After 12 months, the gap is thousands of pounds. "Free" is the most expensive option.
@@ -213,7 +215,7 @@ export default function FreeEposSoftwarePage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/delivery-integrations" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Delivery Integration</p>
@@ -224,13 +226,15 @@ export default function FreeEposSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Free ePOS Software — Frequently Asked Questions" faqs={[
           { question: 'Is there really free ePOS software?', answer: 'Yes, some providers offer free plans — but they restrict features and charge commission on transactions. Table management, advanced reporting, kitchen display, and online ordering are typically locked behind paid plans. The "free" plan covers basic counter sales only. For a restaurant that needs hospitality features, the free plan is rarely sufficient.' },
           { question: 'What are the hidden costs of free POS software?', answer: 'Common hidden costs include: high commission on online orders (5-10%), paid premium features (table management, reporting, loyalty programmes), hardware markup (forced to buy from the provider at inflated prices), premium support charges (phone support costs extra), and data export fees. These add up to thousands per year.' },
-          { question: 'How does Posso compare to free POS software?', answer: 'Posso costs £499 + VAT with all features included — POS, kitchen display, online ordering, delivery integration, table management, and reporting. No feature gates, no premium tiers, no high commission. For most restaurants, Posso costs less in the first year than a "free" POS system.' },
+          { question: 'How does Posso compare to free POS software?', answer: `Posso costs ${posso.posPrice} + VAT with all features included — POS, kitchen display, online ordering, delivery integration, table management, and reporting. No feature gates, no premium tiers, no high commission. For most restaurants, Posso costs less in the first year than a "free" POS system.` },
           { question: 'Does Posso charge commission on orders?', answer: 'Posso charges low commission on online orders through your branded website. This is significantly less than the 5-10% charged by free POS providers and the 15-35% charged by delivery platforms. The exact rate depends on your plan. There is no commission on in-store POS transactions.' },
           { question: 'Is there a free trial of Posso?', answer: 'We offer a free demo so you can see the full system in action before committing. The demo covers POS, kitchen display, online ordering, and all features. This lets you evaluate the system properly rather than committing to a free plan that limits what you can test.' },
-          { question: 'Can I switch from a free POS to Posso?', answer: 'Yes. We import your menu, configure your settings, and set up the system. If your current POS allows data export, we can import your historical data too. Free setup and training are included — most restaurants are fully switched over within 48 hours.' },
+          { question: 'Can I switch from a free POS to Posso?', answer: `Yes. We import your menu, configure your settings, and set up the system. Your customer database can come across; historic sales data does not, so export your old reports first. ${posso.setupStatement} ${posso.goLiveStatement}` },
         ]} />
 
         <Contact />

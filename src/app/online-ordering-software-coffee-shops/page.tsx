@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Coffee, Award, Calendar, Smartphone, TrendingUp, Users } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Online Ordering Software for Coffee Shops',
@@ -124,14 +125,14 @@ export default function OnlineOrderingSoftwareCoffeeShopsPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Built-in loyalty programme and rewards</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Advance and recurring scheduled orders</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission — POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission — POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function OnlineOrderingSoftwareCoffeeShopsPage() {
           { question: 'Does it integrate with our existing POS?', answer: 'Yes. Online orders flow directly into your Posso POS and barista display. Menu items, prices, and availability sync in real time. Sales reports combine in-store and online transactions. Loyalty stamps accumulate across both channels. If you are considering switching your POS, the online ordering software is included in the package.' },
           { question: 'Can I run promotional offers?', answer: 'Yes. Create time-limited promotions — happy hour pricing, free syrup shot days, double loyalty points, new customer welcome offers. Schedule them in advance and they activate automatically. Track redemption rates and revenue impact in the analytics dashboard. A/B test different offers to find what works best for your customer base.' },
           { question: 'How does customer segmentation work?', answer: 'The software automatically categorises customers: daily regulars, weekly visitors, monthly visitors, dormant (no order in 30 days), new (first order in last 7 days), high spenders, and low spenders. You can create custom segments based on drink preferences, visit frequency, or average spend. Send targeted communications to each segment.' },
-          { question: 'How much does the online ordering software cost?', answer: 'Online ordering software is included with the Posso coffee shop POS from £499 + VAT. Low commission per online order — significantly less than aggregator platforms. Includes loyalty programme, scheduled ordering, customer accounts, analytics, and POS integration. No setup fee. Free configuration and training included.' },
+          { question: 'How much does the online ordering software cost?', answer: `Online ordering software is included with the Posso coffee shop POS from ${posso.posPrice} + VAT. Low commission per online order — significantly less than aggregator platforms. Includes loyalty programme, scheduled ordering, customer accounts, analytics, and POS integration. No setup fee. Free configuration and training included.` },
         ]} />
 
         <Contact />

@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, UtensilsCrossed, QrCode, Truck, Palette, ShieldCheck, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Restaurant Ordering App',
   description:
-    'Restaurant Ordering App for dine-in QR ordering, takeaway, and delivery — branded, POS-integrated, low commission, with customer data ownership. From £499 + VAT.',
+    `Restaurant Ordering App for dine-in QR ordering, takeaway, and delivery — branded, POS-integrated, low commission, with customer data ownership. From ${posso.posPrice} + VAT.`,
   keywords: [
     'restaurant ordering app',
     'restaurant ordering system',
@@ -124,14 +125,14 @@ export default function RestaurantOrderingAppPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> QR dine-in ordering — no app download needed</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission on every direct order</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS from £499 + VAT with full integration</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS from {posso.posPrice} + VAT with full integration</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -216,7 +217,7 @@ export default function RestaurantOrderingAppPage() {
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
@@ -228,7 +229,7 @@ export default function RestaurantOrderingAppPage() {
           { question: 'Can the app handle both takeaway and delivery?', answer: 'Yes. The app supports dine-in QR ordering, takeaway collection, and delivery. Each channel has separate menu configuration, pricing, and availability settings. Delivery zones are configurable by postcode or radius with minimum order values and delivery charges. All orders from all channels arrive on the same POS and kitchen display.' },
           { question: 'Is the app branded to my restaurant?', answer: 'Fully. Your restaurant name, logo, colour scheme, and menu photography are used throughout. The app on the App Store and Google Play carries your restaurant name. The web ordering page sits on your domain. Customers interact with your brand at every touchpoint, not a generic ordering platform.' },
           { question: 'How much commission do I pay on orders?', answer: 'Posso operates at low commission — significantly less than the 25-35% charged by marketplace apps. The exact rate depends on your setup. Most restaurants find that switching even 30% of their marketplace orders to their own app generates enough savings to cover the entire system cost within the first month.' },
-          { question: 'Does it integrate with my kitchen display?', answer: 'Yes. All orders — dine-in, takeaway, and delivery — appear on the Posso kitchen display system. Orders are queued by time, colour-coded by type, and include all modifications and special instructions. The kitchen team works from one screen regardless of how the customer ordered. POS systems start from £499 + VAT.' },
+          { question: 'Does it integrate with my kitchen display?', answer: `Yes. All orders — dine-in, takeaway, and delivery — appear on the Posso kitchen display system. Orders are queued by time, colour-coded by type, and include all modifications and special instructions. The kitchen team works from one screen regardless of how the customer ordered. POS systems start from ${posso.posPrice} + VAT.` },
           { question: 'Can I send promotions through the app?', answer: 'Yes. Send push notifications to app users, run in-app promotions, and offer loyalty rewards. Segment customers by order history, frequency, and spend. A "we miss you" offer to customers who have not ordered in 3 weeks can reactivate lapsed regulars. Push notifications are the most cost-effective marketing channel for repeat restaurant business.' },
         ]} />
 

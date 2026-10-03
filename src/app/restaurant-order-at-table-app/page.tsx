@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Clock, CreditCard, BarChart3, Phone, ArrowRight, QrCode, Utensils, Smartphone, MapPin, ChefHat, Users } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Restaurant Order at Table App',
   description:
-    'Restaurant Order at Table App with QR code ordering, waiter pad mode, pay-at-table, floor plan management, and course firing. Let diners order and pay from their phone. POS from £499 + VAT.',
+    `Restaurant Order at Table App with QR code ordering, waiter pad mode, pay-at-table, floor plan management, and course firing. Let diners order and pay from their phone. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'restaurant order at table app',
     'order at table app',
@@ -125,14 +126,14 @@ export default function RestaurantOrderAtTableAppPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> QR ordering with no app download needed</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pay-at-table with card, Apple Pay, Google Pay</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete POS with table ordering from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete POS with table ordering from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -262,7 +263,7 @@ export default function RestaurantOrderAtTableAppPage() {
           { question: 'Can I use table ordering alongside traditional waiter service?', answer: 'Yes. You can run both simultaneously. Some tables order via QR while others are served by staff using the waiter pad app. Both order types appear on the same kitchen display in the same format, so the kitchen workflow stays consistent.' },
           { question: 'How does pay-at-table work?', answer: 'When guests are ready to pay, they tap the payment button on their phone. They can pay by card, Apple Pay, or Google Pay. Tips can be added on screen before payment. The table status updates automatically on the floor plan, so staff know the table is ready to be cleared.' },
           { question: 'Does the QR ordering menu show allergen information?', answer: 'Yes. Every menu item can include allergen tags (gluten, dairy, nuts, etc.) and dietary labels (vegan, vegetarian, halal). Guests can filter the menu by dietary requirement to see only suitable items. This information syncs from the same menu data used on your POS.' },
-          { question: 'How much does the restaurant order at table app cost?', answer: 'Table ordering is included with the Posso POS system from £499 + VAT. There is no separate monthly fee for the QR ordering feature. You get the POS, kitchen display, table ordering, and online ordering all in one system with low commission on orders.' },
+          { question: 'How much does the restaurant order at table app cost?', answer: `Table ordering is included with the Posso POS system from ${posso.posPrice} + VAT. There is no separate monthly fee for the QR ordering feature. You get the POS, kitchen display, table ordering, and online ordering all in one system with low commission on orders.` },
           { question: 'Can multiple people at the same table order separately?', answer: 'Yes. Group ordering allows multiple guests to scan the same QR code and add items to a shared order. Each person selects what they want, and the kitchen receives one consolidated ticket. At payment time, guests can split the bill by item or pay equal shares.' },
         ]} />
 

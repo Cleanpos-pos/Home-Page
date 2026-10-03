@@ -1,4 +1,5 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 /**
  * ⚠️ ONE UNVERIFIED CLAIM ON THIS PAGE — confirm before publish:
@@ -10,7 +11,7 @@ export const multiSiteEposUk: Guide = {
   slug: "multi-site-epos-uk",
   title: "Multi-Site EPOS for UK Takeaways & Restaurant Groups",
   metaDescription:
-    "Multi-site EPOS with central menu control, cross-site reporting and synced permissions. What breaks when you open site two — and what to fix before site three. From £499 + VAT per site.",
+    `Multi-site EPOS with central menu control, cross-site reporting and synced permissions. What breaks when you open site two — and what to fix before site three. From ${posso.posPrice} + VAT per site.`,
   eyebrow: "Scaling guide",
   h1: "Multi-site EPOS for UK takeaways and restaurant groups",
   h1Split: ["Multi-site EPOS", "for UK takeaways and restaurant groups"],
@@ -23,7 +24,7 @@ export const multiSiteEposUk: Guide = {
   ],
   breadcrumb: "Multi-Site EPOS",
   quickAnswer:
-    "For hospitality groups of roughly two to twenty sites, four things decide the system: central menu control, consolidated reporting, synced user permissions, and how many vendors you are managing. Posso covers all four and supplies the whole stack — till, kiosks, kitchen display, ordering and payments — from one supplier at £499 + VAT per site.",
+    `For hospitality groups of roughly two to twenty sites, four things decide the system: central menu control, consolidated reporting, synced user permissions, and how many vendors you are managing. Posso covers all four and supplies the whole stack — till, kiosks, kitchen display, ordering and payments — from one supplier at ${posso.posPrice} + VAT per site.`,
   sections: [
     {
       kind: "features",
@@ -87,14 +88,14 @@ export const multiSiteEposUk: Guide = {
       columns: ["Item", "Price"],
       firstColIsHeader: true,
       rows: [
-        ["EPOS terminals — Windows 11 Pro, 2-year warranty", "From £499 + VAT per site"],
-        ["Self-order kiosks", "From £699 + VAT"],
-        ["21-inch kitchen display screen", "£399 + VAT"],
+        [`EPOS terminals — Windows 11 Pro, ${posso.warrantyYears}-year warranty`, `From ${posso.posPrice} + VAT per site`],
+        ["Self-order kiosks", `From ${posso.kioskPrice} + VAT`],
+        ["21-inch kitchen display screen", `${posso.kdsPrice} + VAT`],
         ["Branded online ordering on your own domain", "Included; 60p customer-paid service fee"],
-        ["Just Eat / Uber Eats / Deliveroo integration", "£45/month, unlimited orders"],
-        ["Own-fleet delivery management", "30p per delivery"],
+        ["Just Eat / Uber Eats / Deliveroo integration", `${posso.deliveryIntegrationMonthly}/month, unlimited orders`],
+        ["Own-fleet delivery management", `${posso.driverAppPerDelivery} per delivery`],
         ["Card processing — Posso Pay", "Rate quoted on your card turnover — same in store and online"],
-        ["AI phone ordering", "£1 per order"],
+        ["AI phone ordering", `${posso.aiPhonePerOrder} per order`],
         ["Menu build, configuration and staff training", "Included"],
       ],
     },
@@ -131,7 +132,7 @@ export const multiSiteEposUk: Guide = {
   faqs: [
     {
       q: "What is the best multi-site EPOS system in the UK?",
-      a: "The right answer depends on estate size and format mix. For hospitality groups of roughly two to twenty sites, the deciding factors are central menu control, consolidated reporting, synced permissions and how many vendors you are managing. Posso covers all four and supplies the whole stack — till, kiosks, kitchen display, ordering and payments — from one supplier at £499 + VAT per site. For very large estates or mixed retail-and-food groups, enterprise platforms with deeper retail or franchise financial reporting are likely a better fit.",
+      a: `The right answer depends on estate size and format mix. For hospitality groups of roughly two to twenty sites, the deciding factors are central menu control, consolidated reporting, synced permissions and how many vendors you are managing. Posso covers all four and supplies the whole stack — till, kiosks, kitchen display, ordering and payments — from one supplier at ${posso.posPrice} + VAT per site. For very large estates or mixed retail-and-food groups, enterprise platforms with deeper retail or franchise financial reporting are likely a better fit.`,
     },
     {
       q: "Can I update menus across all my sites at once?",
@@ -143,7 +144,7 @@ export const multiSiteEposUk: Guide = {
     },
     {
       q: "Do I need a separate EPOS licence for each site?",
-      a: "Each site needs its own terminals and system, starting at £499 + VAT per site, with menu build and training included. The advantage for an existing group is that a new site inherits the group menu template rather than being configured from scratch, which shortens the opening timeline considerably.",
+      a: `Each site needs its own terminals and system, starting at ${posso.posPrice} + VAT per site, with menu build and training included. The advantage for an existing group is that a new site inherits the group menu template rather than being configured from scratch, which shortens the opening timeline considerably.`,
     },
     {
       q: "Can managers who cover several sites use one login?",

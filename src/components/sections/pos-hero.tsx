@@ -4,12 +4,10 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from '../ui/badge';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { SolutionEnquiryModal } from '../solution-enquiry-modal';
+import { posso } from '@/lib/possoFacts';
 
 export function PosHero() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'pos-system-hero');
-
   return (
     <section className="relative w-full flex items-center overflow-hidden py-16 md:py-24">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-slate-950 opacity-90" />
@@ -32,7 +30,7 @@ export function PosHero() {
                 </p>
                 <p className="max-w-xl text-slate-400">
                     Everything is built and supported in the UK, from our base in Leicester. Systems are plug-and-play
-                    with free setup, covering menu building and equipment configuration, and carry a two-year warranty.
+                    with free setup, covering menu building and equipment configuration, and carry a {posso.warrantyYearsWord}-year warranty.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                     <SolutionEnquiryModal
@@ -44,8 +42,8 @@ export function PosHero() {
                         }
                     />
                     <Button asChild size="lg" variant="outline" className="border-slate-700 text-white hover:bg-slate-800">
-                        <a href="tel:+448081753956">
-                            <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                        <a href={posso.phoneHref}>
+                            <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                         </a>
                     </Button>
                 </div>
@@ -58,16 +56,18 @@ export function PosHero() {
                 </p>
             </div>
 
-            <div className="min-w-0 relative flex items-center justify-center h-[500px]">
-              {heroImage && (
-                <img
-                  src={heroImage.imageUrl}
-                  alt={heroImage.description}
-                  width={800}
-                  height={600}
-                  className="rounded-lg object-cover w-full h-full max-h-[500px] max-w-2xl glass-card p-2"
-                />
-              )}
+            {/* A real Posso One screen, not stock photography (was an Unsplash image
+                of a generic till). It is also the page's likely LCP element, so it
+                loads eagerly with high fetch priority. */}
+            <div className="min-w-0 relative flex items-center justify-center">
+              <img
+                src="/images/posso-epos-order-types-till.png"
+                alt="Posso EPOS till order-types screen with Eat In, Takeaway and Delivery plus manager operations"
+                width={1914}
+                height={912}
+                fetchPriority="high"
+                className="rounded-lg w-full h-auto max-w-2xl glass-card p-2"
+              />
             </div>
         </div>
     </section>

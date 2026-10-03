@@ -1,4 +1,5 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 /**
  * High-intent offer page in the guide format (August 2026). Product facts are
@@ -89,7 +90,7 @@ export const cloudPhoneForRestaurants: Guide = {
       kicker: "Our stake",
       heading: "Where this fits — and where it doesn't",
       paragraphs: [
-        "The reason to take phones and internet from your EPOS supplier is integration and one throat to choke: the same connection runs the till, the card machine, the kitchen screen and the phones; caller ID can pop the customer up on the Posso till as the phone rings; and AI phone ordering can catch the calls you miss or take orders after hours on the same number. When something misbehaves at 6pm on Friday, you call one number — ours, Monday to Friday 9am to 9:30pm — and nobody can blame the other supplier.",
+        `The reason to take phones and internet from your EPOS supplier is integration and one throat to choke: the same connection runs the till, the card machine, the kitchen screen and the phones; caller ID can pop the customer up on the Posso till as the phone rings; and AI phone ordering can catch the calls you miss or take orders after hours on the same number. When something misbehaves at 6pm on Friday, you call one number — ours, Monday to Friday ${posso.supportTime} — and nobody can blame the other supplier.`,
         "Where this is not the answer, in the threads' own spirit: a one-person business working from home is well served by an app-based second number at a few pounds a month — the threads recommend several and they are right for that job. A multi-site group with a booking centre needs a proper unified-communications project, not a bundle. And if you already have fibre you love on contract, we can usually run the phones over it — ask, rather than paying twice.",
       ],
     },
@@ -164,7 +165,7 @@ export const cloudPhoneForRestaurants: Guide = {
     },
     {
       q: "Does it work with the Posso till and AI phone ordering?",
-      a: "Yes — that is the point of buying it from your EPOS supplier. Caller ID can bring the customer up on the till as the phone rings, and AI phone ordering can answer overflow calls or take orders after hours on the same number, feeding them into the same kitchen queue as everything else. One connection, one supplier, one support number: Mon–Fri, 9am–9:30pm, UK-based.",
+      a: `Yes — that is the point of buying it from your EPOS supplier. Caller ID can bring the customer up on the till as the phone rings, and AI phone ordering can answer overflow calls or take orders after hours on the same number, feeding them into the same kitchen queue as everything else. One connection, one supplier, one support number: Mon–Fri, ${posso.supportTime}, UK-based.`,
     },
   ],
 };

@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Globe, Smartphone, MapPin, Clock, CreditCard, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Online Food Ordering Software',
   description:
-    'Online Food Ordering Software with branded website, mobile-first design, delivery zones, time slot management, and POS integration. Take direct orders with low commission. POS from £499 + VAT.',
+    `Online Food Ordering Software with branded website, mobile-first design, delivery zones, time slot management, and POS integration. Take direct orders with low commission. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'online food ordering software',
     'online ordering software',
@@ -124,14 +125,14 @@ export default function OnlineFoodOrderingSoftwarePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Branded website on your domain</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission — keep more per order</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete POS with online ordering from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete POS with online ordering from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function OnlineFoodOrderingSoftwarePage() {
           { question: 'What commission does Posso charge on online orders?', answer: 'Posso charges low commission on online orders through your branded website. This is significantly less than the 15-35% charged by Just Eat, Uber Eats, and Deliveroo. The exact rate depends on your plan — contact us for a quote tailored to your order volume.' },
           { question: 'Do online orders appear on my POS and kitchen display?', answer: 'Yes. Online orders arrive directly on your POS and kitchen display in the same format as counter orders. Staff do not need to re-type anything. The kitchen sees the full order with items, modifiers, and collection or delivery time — all automated.' },
           { question: 'Can customers pay online?', answer: 'Yes. Secure online payments via card, Apple Pay, and Google Pay are supported. Payments settle directly to your bank account. Customers can also choose pay-on-collection if you enable that option. Refunds can be processed in one click from the Posso dashboard.' },
-          { question: 'How much does the online food ordering software cost?', answer: 'Online ordering is included with the Posso POS system from £499 + VAT. There is no separate monthly fee for the ordering website. You get POS, online ordering, kitchen display, and delivery integration all in one system. Low commission on orders, not high platform fees.' },
+          { question: 'How much does the online food ordering software cost?', answer: `Online ordering is included with the Posso POS system from ${posso.posPrice} + VAT. There is no separate monthly fee for the ordering website. You get POS, online ordering, kitchen display, and delivery integration all in one system. Low commission on orders, not high platform fees.` },
         ]} />
 
         <Contact />

@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Smile, Zap, MousePointerClick, UserCheck, Clock, Settings } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Easy POS System',
   description:
-    'Easy POS System with intuitive touchscreen interface, minimal staff training, plug-and-play setup, and simple daily operations. Designed for businesses that want simplicity. From £499 + VAT.',
+    `Easy POS System with intuitive touchscreen interface, minimal staff training, plug-and-play setup, and simple daily operations. Designed for businesses that want simplicity. From ${posso.posPrice} + VAT.`,
   keywords: [
     'easy pos system',
     'easy to use pos system',
@@ -84,7 +86,7 @@ const features = [
 ];
 
 const benefits = [
-  { title: 'Get Running the Same Day', description: 'Other systems need days of configuration, IT support, and training sessions. The Posso easy POS system goes from unboxing to live sales in under an hour. The setup wizard handles the technical configuration. You focus on entering your products and prices. Free remote support is available if you get stuck on any step.' },
+  { title: `Plug-and-Play From Day One`, description: `Other systems need days of configuration, IT support, and training sessions. ${posso.goLiveStatement} We build your products and prices into the system before it ships, so you are not configuring it yourself. Free remote support is available if you get stuck on any step.` },
   { title: 'Stop Losing Sales to Complexity', description: 'Every second a cashier spends searching through menus or figuring out a function is a second a customer waits. An easy interface means faster transactions, shorter queues, and fewer abandoned orders. When the system is intuitive, staff serve customers instead of fighting the technology.' },
   { title: 'Reduce Training Costs', description: 'High staff turnover in hospitality and retail means constant retraining. With a 15-minute learning curve instead of a full-day training session, new starters are productive from their first shift. No printed manuals. No complicated login procedures. The system is as easy as using a smartphone.' },
   { title: 'Focus on Your Business, Not IT', description: 'Automatic updates happen overnight. Cloud backup runs continuously. Card reader firmware updates itself. You never need to think about software versions, server maintenance, or database backups. The technology stays invisible so you can focus entirely on running your business.' },
@@ -124,14 +126,14 @@ export default function EasyPosSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Intuitive interface — 15-minute staff training</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Plug-and-play setup — live in under an hour</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Easy POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Easy POS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function EasyPosSystemPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Easy POS System — Frequently Asked Questions" faqs={[
           { question: 'How long does it take to set up?', answer: 'Under an hour for most businesses. Unbox the terminal, connect to Wi-Fi, follow the setup wizard to add your products and prices, pair the card reader, and you are live. We pre-load your menu if you send it to us before delivery — in that case, setup takes under 15 minutes.' },
           { question: 'How quickly can staff learn to use it?', answer: 'Most staff are comfortable within 15 minutes. The interface uses large buttons with product images, familiar tap-and-swipe gestures, and a logical left-to-right layout. Training mode lets new starters practise without affecting real data. We have never had a business report that staff could not learn the system.' },
           { question: 'Is it too simple for a busy business?', answer: 'No. Simple interface does not mean limited functionality. The system handles split payments, multi-tax rates, refunds, discounts, stock tracking, staff permissions, kitchen printing, and cloud reporting. The simplicity is in how staff interact with the system — the powerful features work in the background.' },
-          { question: 'Do I need IT support to maintain it?', answer: 'No. Updates install automatically overnight. Cloud backup runs continuously. The card reader firmware updates itself. If something needs attention, the system shows a plain-English notification with a one-tap fix. Free phone support on 0808 175 3956 is available if you ever need help.' },
+          { question: 'Do I need IT support to maintain it?', answer: `No. Updates install automatically overnight. Cloud backup runs continuously. The card reader firmware updates itself. If something needs attention, the system shows a plain-English notification with a one-tap fix. Free phone support on ${posso.phone} is available if you ever need help.` },
           { question: 'Can I change my menu easily?', answer: 'Yes. Add a product in under 30 seconds: tap Add Product, type the name, set the price, choose a category. Change prices with two taps. Mark items sold out with one tap. Schedule daily specials in advance. No technical knowledge required — if you can use a smartphone, you can manage your menu.' },
-          { question: 'How much does the easy POS system cost?', answer: 'The easy POS system starts from £499 + VAT including touchscreen terminal, POS software, and card reader. Finance available from £24.92 per week. Free setup, menu import, and staff training included. Online ordering available at low commission. 2-year warranty on all hardware.' },
+          { question: 'How much does the easy POS system cost?', answer: `The easy POS system starts from ${posso.posPrice} + VAT including touchscreen terminal, POS software, and card reader. Finance available from ${posso.financeWeekly} per week. Free setup, menu import, and staff training included. Online ordering available at low commission. ${posso.warrantyYears}-year warranty on all hardware.` },
         ]} />
 
         <Contact />

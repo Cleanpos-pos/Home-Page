@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Pizza, Search, Scale, Star, Shield, Lightbulb } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'POS for Pizza Shop',
@@ -86,8 +87,8 @@ const features = [
 const benefits = [
   { title: 'Avoid Paying for Features You Do Not Need', description: 'Some POS providers bundle hotel management, spa booking, and retail features into a hospitality package. You are paying for complexity your pizza shop will never use. Choose a system built for food service with pizza-specific features. A simpler, focused system is faster to learn, easier to use, and costs less.' },
   { title: 'Test Before You Commit', description: 'Any reputable POS provider will offer a demo or trial. Run through your actual workflow: take a phone order with caller ID, build a custom pizza with split toppings, assign a delivery, process an online order. If any step feels clunky or requires workarounds, it will be worse under Friday night pressure.' },
-  { title: 'Factor in Total Cost of Ownership', description: 'The upfront hardware cost is only part of the picture. Monthly software fees, online ordering commission, payment processing rates, and support costs all add up. A system that costs £499 upfront with low ongoing fees may be significantly cheaper over 3 years than a "free" system with higher monthly charges and commission.' },
-  { title: 'Ensure Proper Support is Included', description: 'When your POS goes down on a Saturday night, response time matters. Ask about support hours — is it 24/7 or business hours only? Is support by phone or just email? What is the average response time? A POS is only as good as the support behind it. Posso includes free phone support and a 2-year warranty as standard.' },
+  { title: 'Factor in Total Cost of Ownership', description: `The upfront hardware cost is only part of the picture. Monthly software fees, online ordering commission, payment processing rates, and support costs all add up. A system that costs ${posso.posPrice} upfront with low ongoing fees may be significantly cheaper over 3 years than a "free" system with higher monthly charges and commission.` },
+  { title: 'Ensure Proper Support is Included', description: `When your POS goes down on a Saturday night, response time matters. Ask about support hours — is it 24/7 or business hours only? Is support by phone or just email? What is the average response time? A POS is only as good as the support behind it. Posso includes free phone support and a ${posso.warrantyYears}-year warranty as standard.` },
 ];
 
 export default function PosForPizzaShopPage() {
@@ -124,14 +125,14 @@ export default function PosForPizzaShopPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Must-have features for pizza shops</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> What to ask before you buy</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pizza POS systems from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Pizza POS systems from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -189,8 +190,18 @@ export default function PosForPizzaShopPage() {
                 <p>
                   The system handles <strong className="text-white">counter orders, phone orders, online orders, and delivery app orders</strong> from one interface. The kitchen sees one queue. Drivers are managed on one screen. Reports cover all channels in one dashboard. No juggling separate tools for each part of the business.
                 </p>
+                {/* Merged from /pizza-epos (301'd here, October 2026) — the product-page detail the guide did not already carry. */}
                 <p>
-                  Pricing is straightforward: <strong className="text-white">POS from £499 + VAT</strong> with online ordering at low commission. No hidden fees, no surprise charges after 6 months. Free setup, menu import, staff training, and a 2-year warranty. Phone support when you need it — not just email tickets that take 48 hours to answer.
+                  The <strong className="text-white">pizza builder runs the same way on the till and on your ordering website</strong>: size, then crust, then sauce, then toppings, with half-and-half toppings priced side by side. Prices sit in a <strong className="text-white">size-based matrix</strong> — a base price per size and a topping price per size — so an extra topping on a 14-inch costs more than on a 9-inch without anyone looking it up. The kitchen sees the full specification, split sides included.
+                </p>
+                <p>
+                  Delivery zones are drawn on a map with a fee and a minimum order per zone. Postcodes outside your area are declined with collection offered instead, and the radius can be tightened by time of day when the kitchen is at capacity. It is the same{' '}
+                  <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
+                  behind every Posso setup, configured for pizza.
+                </p>
+                <p>
+                  Pricing is straightforward: <strong className="text-white">POS from {posso.posPrice} + VAT</strong> with online ordering at low commission. Software is from {posso.softwareMonthly} + VAT a month, and every cost is on our{' '}
+                  <Link href="/epos-pricing-uk" className="text-primary hover:underline">EPOS pricing page</Link>. Free setup, menu import, staff training, and a {posso.warrantyYears}-year warranty. Phone support when you need it — not just email tickets that take 48 hours to answer.
                 </p>
               </div>
             </div>
@@ -202,9 +213,9 @@ export default function PosForPizzaShopPage() {
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore Pizza POS Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
-                  <p className="font-semibold text-white">Pizza ePOS</p>
-                  <p className="text-slate-400 text-sm mt-1">Pizza-specific ePOS</p>
+                <Link href="/epos-pricing-uk" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                  <p className="font-semibold text-white">EPOS Pricing</p>
+                  <p className="text-slate-400 text-sm mt-1">Every cost, published</p>
                 </Link>
                 <Link href="/pizza-pos-software" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza POS Software</p>
@@ -231,10 +242,12 @@ export default function PosForPizzaShopPage() {
         <FAQSection title="POS for Pizza Shop — Frequently Asked Questions" faqs={[
           { question: 'What is the most important feature in a pizza shop POS?', answer: 'The pizza builder. A pizza is a configurable product with sizes, crusts, sauces, and toppings — each affecting the price. A generic POS forces workarounds: separate items for each size, manual notes for toppings, no split-side support. A pizza-specific builder handles all of this natively and sends the full specification to the kitchen display.' },
           { question: 'Do I need caller ID integration?', answer: 'If you take phone orders, yes. Caller ID saves 1–2 minutes per returning customer order. On a busy night with 80+ phone calls, that is over 2 hours of staff time saved. It also improves accuracy — the address is already on file, so there are no postcode errors. The investment pays for itself within weeks.' },
-          { question: 'How much should a pizza shop POS cost?', answer: 'A complete pizza shop POS with touchscreen terminal, pizza builder, caller ID, kitchen display, and online ordering typically ranges from £499 to £1,500 upfront depending on hardware choices. Monthly software fees range from £30 to £100. Online ordering commission varies from 0% to 5%. Always calculate the total cost over 2–3 years, not just the upfront price.' },
+          { question: 'How much should a pizza shop POS cost?', answer: `A complete pizza shop POS with touchscreen terminal, pizza builder, caller ID, kitchen display, and online ordering typically ranges from ${posso.posPrice} to £1,500 upfront depending on hardware choices. Monthly software fees range from £30 to £100. Online ordering commission varies from 0% to 5%. Always calculate the total cost over 2–3 years, not just the upfront price.` },
           { question: 'Should I choose a pizza-specific POS or a general one?', answer: 'Pizza-specific. A general hospitality POS can take orders and process payments, but it lacks the pizza builder, size-based pricing matrix, split-side toppings, and delivery zone management that pizza shops need daily. These features are not nice-to-haves — they are essential for efficient pizza shop operations.' },
           { question: 'How important is delivery platform integration?', answer: 'If you use Just Eat, Uber Eats, or Deliveroo, integration is very important. Without it, you are manually re-typing every marketplace order from a separate tablet — slow, error-prone, and inefficient. With integration, marketplace orders arrive automatically on your POS and kitchen display alongside phone and website orders.' },
-          { question: 'What support should I expect?', answer: 'Look for phone support (not just email), clear response time commitments, and coverage during your operating hours. A pizza shop POS issue at 8pm on a Saturday cannot wait until Monday morning for an email response. Posso includes free phone support and a 2-year warranty as standard with every system.' },
+          { question: 'Can toppings be priced by pizza size?', answer: 'They should be, and on Posso they are. Each pizza carries a base price per size and each topping carries its own price per size, so extra mozzarella on a 14-inch costs more than on a 9-inch automatically. The same matrix drives the till and the online ordering site, so the price a customer sees online is the price rung in at the counter.' },
+          { question: 'Can delivery zones change during a busy night?', answer: 'Yes. The delivery radius can be reduced by time of day, so a stretched kitchen stops accepting orders it cannot get out hot. Each zone is drawn on a map with its own delivery fee and minimum order, and postcodes outside your zones are declined with collection offered instead.' },
+          { question: 'What support should I expect?', answer: `Look for phone support (not just email), clear response time commitments, and coverage during your operating hours. A pizza shop POS issue at 8pm on a Saturday cannot wait until Monday morning for an email response. Posso includes free phone support and a ${posso.warrantyYears}-year warranty as standard with every system.` },
         ]} />
 
         <Contact />

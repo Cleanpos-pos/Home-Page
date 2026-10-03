@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Clock, CreditCard, BarChart3, Phone, ArrowRight, ShoppingCart, Globe, Smartphone, Truck, TabletSmartphone, Users } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Food Ordering System',
   description:
-    'Food Ordering System for restaurants, takeaways, and cafes. Online ordering, self-order kiosks, POS, phone orders, and delivery app integration in one platform. POS from £499 + VAT.',
+    `Food Ordering System for restaurants, takeaways, and cafes. Online ordering, self-order kiosks, POS, phone orders, and delivery app integration in one platform. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'food ordering system',
     'food ordering system uk',
@@ -76,7 +77,7 @@ const pageSchema = [
 
 const features = [
   { icon: Globe, title: 'Online Ordering Website', description: 'Your own branded ordering website where customers browse your menu, customise items, choose collection or delivery, and pay online. Mobile-first design ensures 95% of customers can order without zooming or scrolling sideways.' },
-  { icon: TabletSmartphone, title: 'Self-Order Kiosks', description: 'Touchscreen kiosks from £699 + VAT let customers order and pay in-store. Upselling prompts appear on every order rather than only when staff have time to ask. The queue moves faster because customers order at their own pace while staff focus on preparation.' },
+  { icon: TabletSmartphone, title: 'Self-Order Kiosks', description: `Touchscreen kiosks from ${posso.kioskPrice} + VAT let customers order and pay in-store. Upselling prompts appear on every order rather than only when staff have time to ask. The queue moves faster because customers order at their own pace while staff focus on preparation.` },
   { icon: Monitor, title: 'POS Counter Ordering', description: 'The touchscreen POS handles counter orders, table service, and phone orders. Visual product grid with one-tap ordering keeps the queue moving. Modifiers, combos, and meal deals are built into the ordering flow.' },
   { icon: Smartphone, title: 'Phone Order Entry', description: 'When a customer calls to order, staff enter the order on the POS with caller ID lookup. Previous orders are recalled instantly so regulars can reorder their usual. The order prints in the kitchen just like any other channel.' },
   { icon: Truck, title: 'Delivery App Integration', description: 'Just Eat, Uber Eats, and Deliveroo orders arrive directly on your POS and kitchen display. No separate tablets, no manual re-entry. Accept, prepare, and dispatch from the same screen as your walk-in orders.' },
@@ -125,14 +126,14 @@ export default function FoodOrderingSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Online, kiosk, POS, phone & delivery apps unified</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Single menu syncs across all channels</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete food ordering system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete food ordering system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -237,8 +238,8 @@ export default function FoodOrderingSystemPage() {
           { question: 'Do I need to update menus separately for each channel?', answer: 'No. You manage one menu and it syncs across all channels — POS, kiosk, website, and delivery apps. Change a price, add a new item, or mark something out of stock and it updates everywhere within seconds. No duplicate data entry.' },
           { question: 'How does the kitchen handle orders from different channels?', answer: 'Every order appears on the same kitchen display system in the same format, regardless of which channel it came from. The kitchen ticket shows the order source (online, kiosk, counter, Just Eat, etc.) so staff can prioritise, but the format is consistent so there is no confusion.' },
           { question: 'What commission do you charge on online orders?', answer: 'Posso charges low commission on online orders through your branded website. This is significantly less than the 15-35% charged by delivery platforms like Just Eat and Uber Eats. The exact rate depends on your plan — contact us for a quote.' },
-          { question: 'Can I start with just the POS and add other channels later?', answer: 'Yes. Many customers start with the POS from £499 + VAT and add online ordering, kiosks, or delivery integration as their business grows. Each channel plugs into the same system with the same menu — no migration or data transfer needed.' },
-          { question: 'How long does it take to set up the food ordering system?', answer: 'Most restaurants are fully set up within 48 hours. We import your menu, configure your ordering channels, set up the kitchen display, and train your staff. Hardware ships pre-configured so it works out of the box. Free setup and training are included.' },
+          { question: 'Can I start with just the POS and add other channels later?', answer: `Yes. Many customers start with the POS from ${posso.posPrice} + VAT and add online ordering, kiosks, or delivery integration as their business grows. Each channel plugs into the same system with the same menu — no migration or data transfer needed.` },
+          { question: 'How long does it take to set up the food ordering system?', answer: `${posso.goLiveStatement} We import your menu, configure your ordering channels, set up the kitchen display, and train your staff. ${posso.setupStatement}` },
         ]} />
 
         <Contact />

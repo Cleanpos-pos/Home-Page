@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
     title: 'Self-Service Kiosk UK | UK Manufacturers & Software for Kiosks',
@@ -53,14 +54,7 @@ export default function KioskUkPage() {
             "@context": "https://schema.org",
             "@type": "Service",
             "serviceType": "Self-Service Kiosk Solutions",
-            "provider": {
-                "@type": "LocalBusiness",
-                "name": "POSSO LTD",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressCountry": "UK"
-                }
-            },
+            "provider": { '@id': 'https://www.posso.co.uk/#organization' },
             "areaServed": "United Kingdom",
             "hasOfferCatalog": {
                 "@type": "OfferCatalog",
@@ -175,7 +169,7 @@ export default function KioskUkPage() {
                                         "Bespoke hardware branding available",
                                         "Zero-latency software optimized for UK networks",
                                         "Integration with local accounting & CRM systems",
-                                        "UK-based phone and remote support, Mon–Fri 9am–9:30pm"
+                                        `UK-based phone and remote support, Mon–Fri ${posso.supportTime}`
                                     ].map((li, i) => (
                                         <li key={i} className="flex items-center gap-3 text-slate-200 font-medium">
                                             <CheckCircle2 className="w-5 h-5 text-primary" />
@@ -226,7 +220,7 @@ export default function KioskUkPage() {
                         },
                         {
                             question: "Are POSSO self-service kiosks made and supported in the UK?",
-                            answer: "Yes. We supply, configure and install self-service kiosks throughout the UK and back them with a nationwide team of engineers offering on-site maintenance plus UK-based phone and remote support Monday to Friday, 9am–9:30pm, so help is always close at hand.",
+                            answer: `Yes. We supply, configure and install self-service kiosks throughout the UK and back them with a nationwide team of engineers offering on-site maintenance plus UK-based phone and remote support Monday to Friday, ${posso.supportTime}, so help is always close at hand.`,
                         },
                         {
                             question: "How do self-service kiosks benefit my business?",

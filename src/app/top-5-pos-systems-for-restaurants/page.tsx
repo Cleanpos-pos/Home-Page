@@ -7,9 +7,11 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Phone, ArrowRight, Star, X, Monitor, Globe, Smartphone, CreditCard, Truck } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
-  title: '⭐ Top 5 POS Systems for Restaurants UK (2026 Comparison)',
+  title: 'Top 5 POS Systems for Restaurants UK (2026 Comparison)',
   description:
     'Compare the top 5 POS systems for UK restaurants in 2026: Posso, Square, Lightspeed, Zettle, and TouchBistro. Features, pricing, and which is best for your restaurant.',
   keywords: [
@@ -38,8 +40,8 @@ const pageSchema = [
     '@type': 'Article',
     headline: 'Top 5 POS Systems for Restaurants UK (2026 Comparison)',
     description: 'Independent comparison of the best restaurant POS systems available in the UK, including pricing, features, and ideal use cases.',
-    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://www.posso.co.uk' },
-    publisher: { '@type': 'Organization', name: 'Posso Ltd', logo: { '@type': 'ImageObject', url: 'https://www.posso.co.uk/icon-512x512.png' } },
+    author: { '@id': 'https://www.posso.co.uk/#organization' },
+    publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     datePublished: '2026-04-08',
     dateModified: '2026-04-08',
     url: 'https://www.posso.co.uk/top-5-pos-systems-for-restaurants',
@@ -86,7 +88,7 @@ const posSystems: PosSystem[] = [
     rank: 1,
     name: 'Posso One',
     bestFor: 'Restaurants, takeaways, and multi-site operations',
-    priceFrom: '£499 + VAT',
+    priceFrom: `${posso.posPrice} + VAT`,
     monthlyFee: 'Included with hardware',
     pros: [
       'Built-in pizza builder, KDS, kiosk mode, and online ordering',
@@ -236,7 +238,7 @@ export default function Top5PosPage() {
             <div className="mt-8 glass-card rounded-2xl border border-primary/30 p-8">
               <p className="text-lg text-white font-semibold mb-4">The top 5 POS systems for restaurants in the UK (2026):</p>
               <ol className="space-y-2 text-lg text-slate-300 list-decimal list-inside">
-                <li><strong className="text-primary">Posso One</strong> — Best overall for restaurants &amp; takeaways (from £499)</li>
+                <li><strong className="text-primary">Posso One</strong> — Best overall for restaurants &amp; takeaways (from {posso.posPrice})</li>
                 <li><strong className="text-white">Square for Restaurants</strong> — Best free option for small cafes</li>
                 <li><strong className="text-white">Lightspeed Restaurant</strong> — Best for fine dining &amp; analytics</li>
                 <li><strong className="text-white">Zettle by PayPal</strong> — Best for pop-ups &amp; market stalls</li>
@@ -373,7 +375,7 @@ export default function Top5PosPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
@@ -388,12 +390,14 @@ export default function Top5PosPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Restaurant POS — FAQs" faqs={[
-          { question: 'What is the best POS system for a small restaurant?', answer: 'For small UK restaurants, Posso One offers the best value — you get a full POS with KDS, online ordering, and card payments from £499 + VAT plus software from £25 + VAT a month. Square is a good free alternative but lacks features like kitchen display and delivery integration on the free plan.' },
+          { question: 'What is the best POS system for a small restaurant?', answer: `For small UK restaurants, Posso One offers the best value — you get a full POS with KDS, online ordering, and card payments from ${posso.posPrice} + VAT plus software from ${posso.softwareMonthly} + VAT a month. Square is a good free alternative but lacks features like kitchen display and delivery integration on the free plan.` },
           { question: 'What POS system do most restaurants use?', answer: 'In the UK, the most common restaurant POS systems are Square, Lightspeed, Posso, and Zettle. Takeaways and fast food outlets tend to prefer systems with delivery integration (Posso, Square), while fine dining restaurants often choose Lightspeed for its advanced table management.' },
-          { question: 'How much should I pay for a restaurant POS?', answer: 'A professional restaurant POS in the UK costs from £499 to £4,500+ depending on your setup. A basic single-till costs around £499–£799. A full package with kiosks, KDS, printers, and online ordering is typically £3,000–£4,500. Finance is available from £24.92/week.' },
+          { question: 'How much should I pay for a restaurant POS?', answer: `A professional restaurant POS in the UK costs from ${posso.posPrice} to £4,500+ depending on your setup. A basic single-till costs around ${posso.posPrice}–£799. A full package with kiosks, KDS, printers, and online ordering is typically £3,000–£4,500. Finance is available from ${posso.financeWeekly}/week.` },
           { question: 'Do I need a self-order kiosk for my restaurant?', answer: 'Kiosks are optional but highly recommended for fast food, takeaways, and casual dining. They add a smart upsell prompt to every order and reduce queue times. Payback depends on your order volume and gross margin.' },
-          { question: 'Can I switch POS systems mid-contract?', answer: 'Yes, though you should check your current provider for early termination fees. Posso offers free menu import and setup when switching — we can have you live on the new system within 24 hours while minimising disruption.' },
+          { question: 'Can I switch POS systems mid-contract?', answer: `Yes, though you should check your current provider for early termination fees. Posso offers free menu import and setup when switching — the system arrives preconfigured and plug-and-play to minimise disruption.` },
           { question: 'What features should I look for in a restaurant POS?', answer: 'Essential features: touchscreen ordering, integrated card payments, kitchen display, receipt printing, and reporting. Valuable extras: online ordering, self-order kiosks, delivery platform integration (Just Eat, Uber Eats, Deliveroo), table management, and offline operation.' },
         ]} />
 

@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, Truck, CreditCard, BarChart3, Phone, ArrowRight, Printer, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'ePOS System for Takeaway | Fast Order Entry & Delivery Management',
   description:
-    'Posso ePOS system for takeaways. Fast order entry, collection and delivery workflow, online ordering, kitchen display, receipt printing, and driver management. From £499 + VAT.',
+    `Posso ePOS system for takeaways. Fast order entry, collection and delivery workflow, online ordering, kitchen display, receipt printing, and driver management. From ${posso.posPrice} + VAT.`,
   keywords: [
     'epos system for takeaway',
     'takeaway epos system',
@@ -130,14 +132,14 @@ export default function TakeawayEposPage() {
                 <ul className="space-y-3 text-slate-300 text-lg">
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Orders entered in under 15 seconds</li>
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Collection & delivery workflow built in</li>
-                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from £499 + VAT</li>
+                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from {posso.posPrice} + VAT</li>
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
                   <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                     Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-                  <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                    <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                  <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                    <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                   </a>
                 </div>
               </div>
@@ -219,7 +221,7 @@ export default function TakeawayEposPage() {
                     <strong className="text-white">Posso is built for takeaways from the ground up.</strong> The order entry screen is optimised for speed. Collection and delivery have separate workflows. And your online ordering website is included — with low commission instead of the 30%+ that aggregators charge.
                   </p>
                   <p>
-                    We handle setup, menu import, and staff training. Most takeaways go live within 24 hours.
+                    We handle setup, menu import, and staff training. {posso.goLiveStatement}
                   </p>
                 </div>
               </div>
@@ -246,9 +248,9 @@ export default function TakeawayEposPage() {
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Related Takeaway Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/epos-system-for-indian-takeaway" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pos-for-indian-takeaway" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Indian Takeaway ePOS</p>
-                  <p className="text-slate-400 text-sm mt-1">Caller ID & multi-language</p>
+                  <p className="text-slate-400 text-sm mt-1">Caller ID, spice levels & banquets</p>
                 </Link>
                 <Link href="/delivery-integrations" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Delivery Integration</p>
@@ -260,20 +262,22 @@ export default function TakeawayEposPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.kioskPrice} + VAT</p>
                 </Link>
               </div>
             </div>
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Takeaway ePOS — Frequently Asked Questions" faqs={[
-          { question: 'What is the best ePOS system for a takeaway?', answer: 'The best takeaway ePOS handles phone orders, walk-ins, online orders, and delivery app orders from one screen. Posso does all of this with fast order entry, kitchen display, driver management, and integrated payments — starting from £499 + VAT.' },
+          { question: 'What is the best ePOS system for a takeaway?', answer: `The best takeaway ePOS handles phone orders, walk-ins, online orders, and delivery app orders from one screen. Posso does all of this with fast order entry, kitchen display, driver management, and integrated payments — starting from ${posso.posPrice} + VAT.` },
           { question: 'Can I manage both collection and delivery orders?', answer: 'Yes. Posso has separate workflows for collection and delivery. Collection orders show estimated ready times. Delivery orders include address details, delivery zones, fees, and driver assignment.' },
           { question: 'Does the takeaway ePOS include online ordering?', answer: 'Yes. You get your own branded online ordering website where customers can place collection or delivery orders. Orders go straight to your POS and kitchen display. Commission is low compared to the 30%+ charged by Just Eat and Uber Eats.' },
           { question: 'How fast can I enter orders on the POS?', answer: 'The Posso order entry screen uses category shortcuts, favourites, and quick-add buttons. Most staff enter a standard takeaway order in under 15 seconds after a short training session.' },
           { question: 'Does it work with delivery apps like Just Eat and Uber Eats?', answer: 'Yes. Posso integrates with Just Eat, Uber Eats, and Deliveroo. Orders from all platforms appear on your POS and kitchen display automatically — no separate tablets needed.' },
-          { question: 'How quickly can I set up a takeaway ePOS system?', answer: 'Most takeaways go live within 24 hours. We handle hardware setup, menu import, payment terminal configuration, and staff training. You can start taking orders the same day.' },
+          { question: 'How quickly can I set up a takeaway ePOS system?', answer: `${posso.goLiveStatement} We handle menu import, payment terminal configuration and staff training.` },
         ]} />
 
         <Contact />

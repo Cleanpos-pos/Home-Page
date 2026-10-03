@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, UtensilsCrossed, Leaf, Clock, ShoppingBag, Settings, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Cafe Online Ordering System',
   description:
-    'Cafe Online Ordering System with breakfast and lunch menus, dietary filters, allergen labelling, click-and-collect, and kitchen display integration. From £499 + VAT.',
+    `Cafe Online Ordering System with breakfast and lunch menus, dietary filters, allergen labelling, click-and-collect, and kitchen display integration. From ${posso.posPrice} + VAT.`,
   keywords: [
     'cafe online ordering system',
     'cafe ordering system',
@@ -124,14 +125,14 @@ export default function CafeOnlineOrderingSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Timed breakfast-to-lunch menu switching</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Dietary and allergen filters on every item</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Cafe POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Cafe POS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -212,7 +213,7 @@ export default function CafeOnlineOrderingSystemPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
@@ -229,7 +230,7 @@ export default function CafeOnlineOrderingSystemPage() {
           { question: 'How does click-and-collect scheduling work?', answer: 'Customers select a collection time when placing their order. Available slots are calculated based on your kitchen capacity — you set how many orders each 15-minute window can handle. When a slot is full, it becomes unavailable. This prevents the kitchen from being overwhelmed and ensures food is ready on time.' },
           { question: 'Does it integrate with our kitchen display?', answer: 'Yes. Online orders appear on the kitchen display alongside dine-in and counter orders. Each order shows items, modifiers, dietary notes, and the scheduled collection time. The kitchen works through a single unified queue. When the order is marked as ready, the customer receives a notification.' },
           { question: 'Can we mark items as sold out during the day?', answer: 'Yes. Tap an item in the menu management dashboard to mark it as sold out. It disappears from the online menu immediately. When you restock or prepare a new batch, mark it as available again. This prevents customers ordering items you cannot fulfil.' },
-          { question: 'What does the cafe online ordering system cost?', answer: 'The complete cafe POS system with online ordering starts from £499 + VAT. Online orders carry low commission — far less than third-party delivery platforms. Setup includes menu configuration, allergen tagging, kitchen display connection, and staff training. Finance options available.' },
+          { question: 'What does the cafe online ordering system cost?', answer: `The complete cafe POS system with online ordering starts from ${posso.posPrice} + VAT. Online orders carry low commission — far less than third-party delivery platforms. Setup includes menu configuration, allergen tagging, kitchen display connection, and staff training. Finance options available.` },
         ]} />
 
         <Contact />

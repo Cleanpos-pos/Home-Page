@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Coffee, Clock, Heart, Bell, CreditCard, Users } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Coffee Shop Ordering App',
   description:
-    'Coffee Shop Ordering App with skip-the-queue mobile ordering, loyalty stamp cards, pickup notifications, drink customisation, and barista display integration. From £499 + VAT.',
+    `Coffee Shop Ordering App with skip-the-queue mobile ordering, loyalty stamp cards, pickup notifications, drink customisation, and barista display integration. From ${posso.posPrice} + VAT.`,
   keywords: [
     'coffee shop ordering app',
     'coffee ordering app',
@@ -124,14 +125,14 @@ export default function CoffeeShopOrderingAppPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Order ahead and skip the queue</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Digital loyalty stamps — 10th coffee free</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS from £499 + VAT, low commission</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS from {posso.posPrice} + VAT, low commission</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -228,7 +229,7 @@ export default function CoffeeShopOrderingAppPage() {
           { question: 'How do digital loyalty stamps work in the app?', answer: 'Every qualifying purchase automatically adds a stamp to the customer\'s digital card in the app. After the set number of stamps (typically 9), the next drink is free. Customers see their stamp progress in the app. No physical cards to lose, no manual stamping. The system tracks everything automatically and applies the free drink when earned.' },
           { question: 'Do customers get notified when their drink is ready?', answer: 'Yes. When the barista taps "ready" on the kitchen display, a push notification is sent to the customer\'s phone with their order details. This eliminates the need to shout names, and customers can continue their commute or conversation until their phone buzzes. The notification includes the drink description so they can verify their order at collection.' },
           { question: 'Can customers customise their drinks in the app?', answer: 'Fully. Size, milk type (oat, soy, almond, coconut, whole, semi-skimmed), number of espresso shots, syrup flavour, temperature, and extras are all available. Prices update in real time. The barista receives the complete specification on their display — exactly as the customer ordered it.' },
-          { question: 'Does the app work with my existing POS?', answer: 'The ordering app integrates directly with the Posso POS and barista display system. Orders from the app appear alongside walk-in counter orders on the same display. All sales data — app and counter — is consolidated in one dashboard. POS systems start from £499 + VAT with the ordering app included at low commission.' },
+          { question: 'Does the app work with my existing POS?', answer: `The ordering app integrates directly with the Posso POS and barista display system. Orders from the app appear alongside walk-in counter orders on the same display. All sales data — app and counter — is consolidated in one dashboard. POS systems start from ${posso.posPrice} + VAT with the ordering app included at low commission.` },
           { question: 'How do I get customers to download the app?', answer: 'Place table cards and counter signs with a QR code linking to the app download. Offer an incentive: "Download our app and get your first coffee half price." Mention the loyalty stamps — 10th coffee free. Print the QR code on takeaway cups. Most coffee shops reach 30-40% app adoption within the first two months with these simple tactics.' },
         ]} />
 

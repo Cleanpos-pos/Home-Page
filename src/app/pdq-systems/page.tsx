@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, CreditCard, Monitor, Smartphone, Radio, RefreshCw, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'PDQ Systems',
@@ -86,7 +87,7 @@ const features = [
 const benefits = [
   { title: 'Accept Every Payment Method', description: 'Chip and PIN, contactless, Apple Pay, Google Pay, Amex — your PDQ system handles them all. Customers pay the way they want without friction. A business that accepts every payment method never loses a sale because a customer does not have the right card or enough cash.' },
   { title: 'Reduce Errors with POS Integration', description: 'Integrated PDQ means the sale amount transfers automatically to the terminal. No manual keying means no errors. A restaurant processing 200 transactions per day eliminates manual entry mistakes entirely. End-of-day cashing up matches perfectly because every payment is recorded against the corresponding sale.' },
-  { title: 'Competitive Rates, No Lock-In', description: 'Low commission on every transaction through our Teya partnership. No long-term contracts, no hidden fees, no monthly minimums. You stay because the service is excellent, not because of a contract. If your volume grows, your rates can improve.' },
+  { title: 'Competitive Rates, No Lock-In', description: 'Low commission on every transaction through our Teya partnership. No long-term contracts, no hidden fees, no monthly minimums. You stay because the service is excellent, not because of a contract. If your volume grows, your rates can improve.' /* TODO: PAUL — confirm the card-processing contract terms before keeping this no-lock-in claim. */ },
   { title: 'Hardware for Every Situation', description: 'Countertop for the till, portable for table service, mobile for events and deliveries. Choose the terminal type that fits how you operate. Mix and match across locations. A restaurant might use countertop at the bar and portable for table payments — all managed from one system.' },
 ];
 
@@ -124,14 +125,14 @@ export default function PdqSystemsPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Countertop, portable, and mobile terminals</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission with Teya partnership</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Quote <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -216,7 +217,7 @@ export default function PdqSystemsPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self Service ePOS</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function PdqSystemsPage() {
           { question: 'How does POS integration work?', answer: 'When integrated with a Posso POS, the sale amount transfers automatically from the till screen to the card terminal. The customer taps or inserts their card, and the transaction is recorded against the specific items sold. No manual amount entry, no discrepancies. Reconciliation is automatic.' },
           { question: 'What transaction rates do you offer?', answer: 'We offer competitive rates through our Teya partnership. Low commission, no hidden fees, no monthly minimums. Rates depend on your business type and transaction volume. Contact us for a personalised quote. We are confident our rates will be competitive with any provider in the market.' },
           { question: 'Can I manage multiple terminals?', answer: 'Yes. The management dashboard shows all terminals across all locations. Monitor transaction volumes, settlement status, and terminal health in real time. Add new terminals as you expand. A restaurant group with 10 locations and 30 terminals manages everything from one screen.' },
-          { question: 'How much does a PDQ system cost?', answer: 'Terminal costs depend on the type — countertop, portable, or mobile. When combined with a Posso POS from £499 + VAT, the integrated payment solution is competitively priced. No long-term contracts. Finance options available. Contact us for a detailed quote based on your requirements.' },
+          { question: 'How much does a PDQ system cost?', answer: `Terminal costs depend on the type — countertop, portable, or mobile. When combined with a Posso POS from ${posso.posPrice} + VAT, the integrated payment solution is competitively priced. No long-term contracts. Finance options available. Contact us for a detailed quote based on your requirements.` /* TODO: PAUL — confirm the card-processing contract terms before keeping this claim. */ },
         ]} />
 
         <Contact />

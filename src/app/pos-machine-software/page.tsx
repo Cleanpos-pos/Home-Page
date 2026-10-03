@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Monitor, Cpu, Touchpad, Wifi, Shield, RefreshCw } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'POS Machine Software',
   description:
-    'POS Machine Software optimised for touchscreen hardware, Windows and web compatible, with offline mode, peripheral support, and automatic updates. Runs on any POS terminal. From £499 + VAT.',
+    `POS Machine Software optimised for touchscreen hardware, Windows and web compatible, with offline mode, peripheral support, and automatic updates. Runs on any POS terminal. From ${posso.posPrice} + VAT.`,
   keywords: [
     'pos machine software',
     'pos terminal software',
@@ -124,14 +126,14 @@ export default function PosMachineSoftwarePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Touchscreen optimised for POS terminals</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Works on Windows, web, iOS, and Android</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS machine software from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS machine software from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function PosMachineSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="POS Machine Software — Frequently Asked Questions" faqs={[
           { question: 'What hardware does the software run on?', answer: 'The software runs on Windows POS terminals (Windows 10 and above), any device with a modern web browser (Chrome, Edge, Safari, Firefox), iPads, Android tablets, and purpose-built POS hardware. It is not locked to proprietary terminals. If you already own POS machines, the software almost certainly runs on them.' },
           { question: 'Does it work offline?', answer: 'Yes. When internet connectivity drops, the software continues operating in offline mode. You can take orders, process cash payments, and print receipts. All transactions are queued locally and sync automatically when the connection returns. Card payments require connectivity but cash sales are uninterrupted.' },
           { question: 'What peripherals does it support?', answer: 'Receipt printers (USB, Bluetooth, network), cash drawers, barcode scanners, kitchen printers, customer-facing displays, and card readers. Most standard POS peripherals are auto-detected — plug in and they work. The software supports Epson, Star, and Bixolon printers out of the box.' },
           { question: 'Can I use it on multiple terminals?', answer: 'Yes. Add terminals by logging into your account on each machine. Menu, prices, and settings sync automatically. All terminals share real-time inventory and feed into unified sales reports. There is no limit on the number of terminals per location.' },
           { question: 'How are software updates handled?', answer: 'Updates install automatically during off-hours — typically overnight. New features, security patches, and bug fixes arrive without manual intervention. Every terminal updates simultaneously so there are no version mismatches. You always have the latest software without any effort.' },
-          { question: 'How much does POS machine software cost?', answer: 'POS machine software starts from £499 + VAT including a touchscreen terminal with the software pre-installed. If you want to run the software on your existing hardware, software-only plans are available. Finance from £24.92 per week. Free setup, configuration, and training included.' },
+          { question: 'How much does POS machine software cost?', answer: `POS machine software starts from ${posso.posPrice} + VAT including a touchscreen terminal with the software pre-installed. If you want to run the software on your existing hardware, software-only plans are available. Finance from ${posso.financeWeekly} per week. Free setup, configuration, and training included.` },
         ]} />
 
         <Contact />

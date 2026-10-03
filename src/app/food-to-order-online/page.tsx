@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, UtensilsCrossed, Globe, Truck, CreditCard, Bell, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Food to Order Online',
   description:
-    'Food to Order Online — branded online ordering for restaurants and takeaways. Delivery, collection, and table ordering through your own website. Low commission. POS from £499 + VAT.',
+    `Food to Order Online — branded online ordering for restaurants and takeaways. Delivery, collection, and table ordering through your own website. Low commission. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'food to order online',
     'online food ordering system',
@@ -124,14 +125,14 @@ export default function FoodToOrderOnlinePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Branded ordering website included</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission on every order</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -225,7 +226,7 @@ export default function FoodToOrderOnlinePage() {
 
         <FAQSection title="Food to Order Online — Frequently Asked Questions" faqs={[
           { question: 'How does online food ordering work?', answer: 'Customers visit your branded ordering website on their phone or computer. They browse your menu with images and descriptions, select items and modifiers, choose delivery or collection, enter their details, and pay online. The order fires directly to your kitchen display with full item detail, modifiers, and fulfilment type.' },
-          { question: 'How much commission does Posso charge?', answer: 'Posso charges low commission on online orders — significantly less than the 15–35% charged by marketplace platforms like Deliveroo, Just Eat, and Uber Eats. The exact rate depends on your order volume. Contact us for a quote. The POS system itself starts from £499 + VAT.' },
+          { question: 'How much commission does Posso charge?', answer: `Posso charges low commission on online orders — significantly less than the 15–35% charged by marketplace platforms like Deliveroo, Just Eat, and Uber Eats. The exact rate depends on your order volume. Contact us for a quote. The POS system itself starts from ${posso.posPrice} + VAT.` },
           { question: 'Can I keep using Deliveroo and Just Eat alongside Posso?', answer: 'Yes. Many restaurants run marketplace listings alongside their own branded ordering site. Use marketplaces for discovery and new customers, then convert them to ordering directly through your site with incentives like exclusive deals or loyalty rewards. Over time, shift more volume to your own platform.' },
           { question: 'Do customers need to download an app?', answer: 'No. The ordering website works in any mobile browser — no app download required. Customers simply visit your URL, browse, and order. This removes the friction of asking customers to install yet another app. For repeat customers, they can save the site to their home screen for one-tap access.' },
           { question: 'How do I manage my delivery drivers?', answer: 'The system shows pending delivery orders with address, distance, and prep time. When the order is ready, you dispatch a driver from the screen. The driver receives the delivery details on their phone. If you do not have your own drivers, Posso can integrate with third-party delivery services.' },

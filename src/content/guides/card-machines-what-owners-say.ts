@@ -1,4 +1,5 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 /**
  * Community-research page (SERP-gap batch 2, August 2026). The most UK-heavy
@@ -71,7 +72,7 @@ export const cardMachinesWhatOwnersSay: Guide = {
       heading: "What the threads put on the table",
       paragraphs: [
         "Real figures and reports from the linked threads: a 0.9% flat fee described by its own holder as poor value; headline reader rates dismissed as beatable — one reply lists Zettle, SumUp and Dojo as all able to beat the rates the poster had been offered; a bank-backed quote reported as comfortably beating an established processor; Dojo described in one thread as popular with no contracts and in another as quoting higher than rivals with pushy follow-up — conflicting reports, both linked, decide for yourself. In Ireland, an owner warns the aggressive newcomer pricing comes with monthly fees to watch. The meta-lesson: nobody in these threads regrets getting three quotes; several regret getting one.",
-        "Posso's own position, stated plainly: our card machines run through our Teya partnership, and processing runs through Posso Pay — from 1% + 10p, quoted on your actual card turnover, because a £4.50-average dessert counter and a £30-average restaurant should not pay the same structure. The same rate applies in store and on your online ordering, and the machines integrate natively with the till — amounts push from the basket, so nothing is retyped and card-machine totals reconcile themselves. Bring us the best quote from your rate-shopping and we will tell you honestly whether we beat it at your volume; that conversation, per the threads, is the one that saves the most money.",
+        `Posso's own position, stated plainly: our card machines run through our Teya partnership, and processing runs through Posso Pay — from ${posso.possoPayRate}, quoted on your actual card turnover, because a £4.50-average dessert counter and a £30-average restaurant should not pay the same structure. The same rate applies in store and on your online ordering, and the machines integrate natively with the till — amounts push from the basket, so nothing is retyped and card-machine totals reconcile themselves. Bring us the best quote from your rate-shopping and we will tell you honestly whether we beat it at your volume; that conversation, per the threads, is the one that saves the most money.`,
       ],
     },
     {
@@ -79,7 +80,7 @@ export const cardMachinesWhatOwnersSay: Guide = {
       kicker: "Our stake",
       heading: "Where Posso fits — and where the reader keeps winning",
       paragraphs: [
-        "We fit at the graduation point the threads describe: steady card turnover, a till that the machine must talk to, and takings large enough that held funds would hurt. Integrated payments through Posso Pay mean the machine, the till, the kiosk and your online ordering all settle through one relationship with a human on the phone Monday to Friday, 9am to 9:30pm — which is the specific thing the platform-risk threads found missing when it mattered.",
+        `We fit at the graduation point the threads describe: steady card turnover, a till that the machine must talk to, and takings large enough that held funds would hurt. Integrated payments through Posso Pay mean the machine, the till, the kiosk and your online ordering all settle through one relationship with a human on the phone Monday to Friday, ${posso.supportTime} — which is the specific thing the platform-risk threads found missing when it mattered.`,
         "And where we are not the answer, one more time, because the threads are right: the potter at her first market, the barber taking twenty cards a week, the food trader testing a concept — buy a flat-rate reader, pay no monthly fee, and come back when the queue is steady. The honest boundary is volume and integration: below it the reader wins, above it the quoted rate and the native till link win, and any vendor who tells you otherwise in a forum thread is probably named Gemma and works for one of them.",
       ],
     },

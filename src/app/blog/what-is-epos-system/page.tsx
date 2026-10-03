@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap, CheckCircle2, LayoutDashboard } from 'lucide-react';
 import type { Metadata } from 'next';
 import { BlogBreadcrumb } from '@/components/blog-breadcrumb';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
     title: 'What Is an EPOS System? Transform Your Business in 2026',
@@ -25,19 +26,8 @@ export default function EposSystemGuidePage() {
             "image": "https://www.posso.co.uk/images/epos-system.jpg",
             "datePublished": "2026-01-29",
             "dateModified": "2026-01-29",
-            "author": {
-                "@type": "Organization",
-                "name": "Posso Ltd",
-                "url": "https://www.posso.co.uk"
-            },
-            "publisher": {
-                "@type": "Organization",
-                "name": "Posso Ltd",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://www.posso.co.uk/logo.png"
-                }
-            },
+            "author": { '@id': 'https://www.posso.co.uk/#organization' },
+            "publisher": { '@id': 'https://www.posso.co.uk/#organization' },
             "mainEntityOfPage": {
                 "@type": "WebPage",
                 "@id": "https://www.posso.co.uk/what-is-epos-system"
@@ -278,7 +268,7 @@ export default function EposSystemGuidePage() {
                                 <ul className="space-y-4 list-none p-0 m-0">
                                     {[
                                         "Complete Customization: Adapt every feature and function to match your specific industry requirements.",
-                                        "UK Expert Support: Access knowledgeable UK-based support, Monday to Friday 9am–9:30pm.",
+                                        `UK Expert Support: Access knowledgeable UK-based support, Monday to Friday ${posso.supportTime}.`,
                                         "Unlimited Scalability: Expand seamlessly as your business grows without system limitations.",
                                         "Continuous Innovation: Benefit from regular updates featuring the latest retail technology.",
                                         "Transparent Pricing: No hidden fees or surprise charges—just straightforward value."

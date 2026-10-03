@@ -25,6 +25,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import { posso } from '@/lib/possoFacts';
 
 const targetKeyword = "Table Ordering App UK";
 
@@ -33,11 +34,7 @@ const schema = {
     "@type": "Service",
     "name": targetKeyword,
     "serviceType": "Food Service",
-    "provider": {
-        "@type": "Organization",
-        "name": "Posso Ltd",
-        "url": "https://www.posso.co.uk"
-    },
+    "provider": { '@id': 'https://www.posso.co.uk/#organization' },
     "description": "Speed up service and boost spend per head with the best table ordering app in the UK. Low commission, seamless EPOS integration, and custom QR codes.",
     "areaServed": "Great Britain",
     "hasOfferCatalog": {
@@ -119,7 +116,7 @@ export default function TableOrderingLandingPage() {
                                             </div>
                                         ))}
                                     </div>
-                                    <p className="text-sm text-slate-500">Trusted by 500+ UK Hospitality Venues</p>
+                                    <p className="text-sm text-slate-500">Trusted by {posso.businessCount} UK Hospitality Venues</p>
                                 </div>
                             </div>
 

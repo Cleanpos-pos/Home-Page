@@ -9,6 +9,7 @@ import { QuickAnswer } from '@/components/quick-answer';
 import { CreditCard, Smartphone, Layers, Banknote, ShieldCheck, Wifi } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Integrated Credit Card Machines | Teya, Dojo, Clover',
@@ -58,10 +59,7 @@ const pageSchema = [
       lowPrice: '0',
       priceCurrency: 'GBP',
       availability: 'https://schema.org/InStock',
-      seller: {
-        '@type': 'Organization',
-        name: 'Posso Ltd',
-      },
+      seller: { '@id': 'https://www.posso.co.uk/#organization' },
     },
   },
   {
@@ -74,14 +72,8 @@ const pageSchema = [
     width: 1200,
     height: 1200,
     encodingFormat: 'image/png',
-    creator: {
-      '@type': 'Organization',
-      name: 'Posso Ltd',
-    },
-    copyrightHolder: {
-      '@type': 'Organization',
-      name: 'Posso Ltd',
-    },
+    creator: { '@id': 'https://www.posso.co.uk/#organization' },
+    copyrightHolder: { '@id': 'https://www.posso.co.uk/#organization' },
   },
   {
     '@context': 'https://schema.org',
@@ -146,7 +138,7 @@ export default function CreditCardMachinesPage() {
                     Choosing a <strong className="text-white">credit card machine</strong> is about more than tapping a card. UK businesses pick Posso because we supply <strong className="text-white">Clover card terminals</strong> — including the Clover Flex portable card machine and the Clover Mini countertop terminal — and match the right card reader to how you actually trade, whether that&apos;s tableside, on the counter, or out on deliveries.
                   </p>
                   <p>
-                    We are upfront about <strong className="text-white">transaction rates</strong>. Rather than hiding costs in confusing tariffs, we work with Teya, Dojo, and Clover to secure <strong className="text-white">competitive, transparent card machine transaction fees</strong>. Through Posso Pay, our own merchant service, rates start <strong className="text-white">from 1% + 10p</strong>, quoted on your monthly card turnover — so you always know exactly what you pay to accept payments.
+                    We are upfront about <strong className="text-white">transaction rates</strong>. Rather than hiding costs in confusing tariffs, we work with Teya, Dojo, and Clover to secure <strong className="text-white">competitive, transparent card machine transaction fees</strong>. Through Posso Pay, our own merchant service, rates start <strong className="text-white">from {posso.possoPayRate}</strong>, quoted on your monthly card turnover — so you always know exactly what you pay to accept payments.
                   </p>
                   <p>
                     Best of all, every <strong className="text-white">card machine with EPOS integration</strong> talks directly to your Posso till. The sale total is sent to the terminal automatically, so there&apos;s <strong className="text-white">no double-keying</strong> and no mismatched takings, while <strong className="text-white">fast next-day settlement</strong> keeps your cash flow healthy and your sales reports accurate across every location.

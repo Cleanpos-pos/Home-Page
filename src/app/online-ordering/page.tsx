@@ -49,14 +49,8 @@ const schema = [
     url: "https://www.posso.co.uk/online-ordering",
     name: "POSSO Online Ordering Website & Branded Mobile App",
     description: "Commission-free online ordering website and branded mobile app for UK takeaways and restaurants, with orders sent straight to the Posso POS and kitchen.",
-    creator: {
-      "@type": "Organization",
-      name: "Posso Ltd",
-    },
-    copyrightHolder: {
-      "@type": "Organization",
-      name: "Posso Ltd",
-    },
+    creator: { '@id': 'https://www.posso.co.uk/#organization' },
+    copyrightHolder: { '@id': 'https://www.posso.co.uk/#organization' },
   },
   {
     "@context": "https://schema.org",

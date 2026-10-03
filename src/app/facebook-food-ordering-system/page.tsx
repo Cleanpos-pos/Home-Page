@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Share2, ShoppingBag, Link2, BarChart3, Bell, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Facebook Food Ordering System',
   description:
-    'Facebook Food Ordering System — accept food orders via Facebook and social media, link to your online ordering page, track social commerce sales, and grow orders at low commission. From £499 + VAT.',
+    `Facebook Food Ordering System — accept food orders via Facebook and social media, link to your online ordering page, track social commerce sales, and grow orders at low commission. From ${posso.posPrice} + VAT.`,
   keywords: [
     'facebook food ordering system',
     'facebook food ordering',
@@ -124,14 +125,14 @@ export default function FacebookFoodOrderingSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Order Now button on Facebook and Instagram</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Low commission — no 30% platform fees</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS with social ordering from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS with social ordering from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function FacebookFoodOrderingSystemPage() {
           { question: 'What commission do you charge on social media orders?', answer: 'Posso charges low commission on online orders — significantly less than the 25-35% charged by third-party delivery platforms. The exact rate depends on your plan. For a restaurant processing 200 social media orders per month at £20 average, the commission savings compared to a third-party platform can exceed £800 per month.' },
           { question: 'Can I track which social posts generate orders?', answer: 'Yes. The dashboard shows order volume and revenue attributed to social media channels. Use unique tracking links for specific campaigns or posts to see exactly which content drives the most orders. Over time, the data shows which types of posts — food photos, offers, videos, stories — convert best for your business.' },
           { question: 'Do social media orders appear on the POS?', answer: 'Yes. Orders placed through your branded ordering page — whether the customer arrived from Facebook, Instagram, WhatsApp, or any other source — appear on the POS automatically. They print in the kitchen alongside walk-in and phone orders. There is no separate tablet or screen for online orders. One workflow handles all channels.' },
-          { question: 'How much does the Facebook ordering system cost?', answer: 'The online ordering system that powers Facebook and social media orders is included with the Posso POS from £499 + VAT. Low commission applies to online orders. The branded ordering page, social media link setup, and POS integration are included. Finance from £24.92 per week. Free setup and staff training included with a 2-year warranty.' },
+          { question: 'How much does the Facebook ordering system cost?', answer: `The online ordering system that powers Facebook and social media orders is included with the Posso POS from ${posso.posPrice} + VAT. Low commission applies to online orders. The branded ordering page, social media link setup, and POS integration are included. Finance from ${posso.financeWeekly} per week. Free setup and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

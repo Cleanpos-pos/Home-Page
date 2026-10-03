@@ -7,6 +7,8 @@ import { Check, Phone, ArrowRight, Trophy, Quote, CalendarCheck, X, Minus } from
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 const PAGE_URL = 'https://www.posso.co.uk/best-restaurant-epos-system-uk';
 const LAST_UPDATED_ISO = '2026-07-25';
@@ -15,7 +17,7 @@ const LAST_UPDATED_LABEL = 'July 2026';
 export const metadata: Metadata = {
   title: 'Best Restaurant EPOS Systems UK (2026): Guide + Comparison',
   description:
-    'Compare the best restaurant EPOS systems in the UK for 2026. What to look for, honest pricing, and why 500+ UK restaurants and takeaways run on Posso. Free demo.',
+    `Compare the best restaurant EPOS systems in the UK for 2026. What to look for, honest pricing, and why ${posso.businessCount} UK restaurants and takeaways run on Posso. Free demo.`,
   keywords: [
     'best restaurant EPOS UK',
     'best restaurant EPOS system',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Best Restaurant EPOS Systems UK (2026) | Posso',
     description:
-      'A practical 2026 buyer’s guide to UK restaurant EPOS: what to look for, comparison table, honest pricing, and why 500+ UK venues run on Posso.',
+      `A practical 2026 buyer’s guide to UK restaurant EPOS: what to look for, comparison table, honest pricing, and why ${posso.businessCount} UK venues run on Posso.`,
     url: PAGE_URL,
     type: 'article',
     images: [{ url: '/images/posso_epos_integration.png', width: 1200, height: 630 }],
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'How much does a restaurant EPOS system cost in the UK?',
-    a: 'Across the UK market, expect £25–£80 per month per till for software, plus hardware from around £300–£1,500 per station and card processing fees. Posso works differently: complete touchscreen EPOS terminals from £499 + VAT with setup, menu build and staff training included, or spread the cost on finance from £29.95 per week — with no lengthy auto-renewing leases.',
+    a: `Across the UK market, expect £25–£80 per month per till for software, plus hardware from around £300–£1,500 per station and card processing fees. Posso works differently: complete touchscreen EPOS terminals from ${posso.posPrice} + VAT with setup, menu build and staff training included, or spread the cost on finance from £29.95 per week — with no lengthy auto-renewing leases.`,
   },
   {
     q: 'What is the difference between EPOS and POS?',
@@ -60,7 +62,7 @@ const faqs = [
   },
   {
     q: 'Can Posso replace my current till without downtime?',
-    a: 'Yes. We build your menu in advance, install outside service hours where needed, and train your team on the day. Most single-site restaurants switch within one day.',
+    a: `Yes. We build your menu in advance, install outside service hours where needed, and train your team on the day. ${posso.goLiveStatement}`,
   },
   {
     q: 'Does Posso work for takeaways as well as dine-in restaurants?',
@@ -68,7 +70,7 @@ const faqs = [
   },
   {
     q: 'Is there a long contract?',
-    a: 'No. Posso doesn’t lock you into long-term contracts with punitive exit fees — terms are clear and flexible, and hardware comes with a 2-year warranty. That’s a deliberate contrast with the 3–5 year auto-renewing hardware leases common among the biggest UK providers.',
+    a: `No. Posso doesn’t lock you into long-term contracts with punitive exit fees — terms are clear and flexible, and hardware comes with a ${posso.warrantyYears}-year warranty. That’s a deliberate contrast with the 3–5 year auto-renewing hardware leases common among the biggest UK providers.`,
   },
 ];
 
@@ -141,7 +143,7 @@ const lookFor = [
     body: 'Ask any provider: what happens when the till goes down at 7pm Saturday? If the answer is a ticket queue, walk away.',
   },
   {
-    title: 'No punitive contracts.',
+    title: 'No punitive contracts.' /* TODO: PAUL — confirm contract terms before keeping this claim (see possoContract in src/lib/possoFacts.ts). */,
     body: 'Watch for 3–5 year hardware leases with rolling auto-renewal — the most common complaint against the biggest UK providers.',
   },
 ];
@@ -161,7 +163,7 @@ const comparisonRows: {
     highlight: true,
     bestFor: 'UK restaurants, takeaways & QSRs wanting one integrated platform',
     hospitality: { label: 'Yes — hospitality only', state: 'yes' },
-    ukSupport: { label: 'Yes — UK phone, Mon–Fri 9am–9:30pm', state: 'yes' },
+    ukSupport: { label: `Yes — UK phone, Mon–Fri ${posso.supportTime}`, state: 'yes' },
     builtIn: { label: 'Yes, native', state: 'yes' },
   },
   {
@@ -197,7 +199,7 @@ const comparisonRows: {
 const switchingSteps = [
   { step: '1', title: 'Free demo', body: '20 minutes, online or on-site.' },
   { step: '2', title: 'Menu build', body: 'We configure your full menu, modifiers and pricing.' },
-  { step: '3', title: 'Installation & training', body: 'On-site install and staff training, typically same day.' },
+  { step: '3', title: `Delivery & training`, body: `${posso.goLiveStatement} Staff training included; on-site installation for larger sites is priced on application.` },
   { step: '4', title: 'Go live with support', body: 'UK phone support from day one.' },
 ];
 
@@ -256,14 +258,14 @@ export default function BestRestaurantEposSystemUkPage() {
                   <strong className="text-white">In a hurry?</strong> Posso is a UK-based, hospitality-only EPOS
                   platform combining <Link href="/pos" className="text-primary hover:underline">EPOS till</Link>,
                   kitchen display, self-order kiosks, online ordering and card payments in one system, with UK
-                  phone support and on-site installation.
+                  phone support and free setup; on-site installation for larger sites is priced on application.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mt-5">
                   <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 px-6 py-3 font-medium">
                     Book a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-                  <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 px-6 py-3 font-medium transition-colors">
-                    <Phone className="mr-2 h-5 w-5" /> Call 0808 175 3956 — Free
+                  <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 px-6 py-3 font-medium transition-colors">
+                    <Phone className="mr-2 h-5 w-5" /> Call {posso.phone} — Free
                   </a>
                 </div>
               </div>
@@ -403,19 +405,19 @@ export default function BestRestaurantEposSystemUkPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-white mb-3">UK-based support and on-site installation</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">UK-based support and free setup</h3>
                 <p className="text-lg text-slate-300 leading-relaxed">
-                  Installation, menu build, staff training and ongoing support are handled by Posso&apos;s UK
-                  team, not an offshore ticket queue. Most sites go live in under a day.
+                  Menu build, configuration, staff training and ongoing support are handled by Posso&apos;s UK
+                  team, not an offshore ticket queue. {posso.goLiveStatement}
                 </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-semibold text-white mb-3">Honest pricing</h3>
                 <p className="text-lg text-slate-300 leading-relaxed">
-                  Complete touchscreen EPOS terminals from <strong className="text-white">£499 + VAT</strong> and
-                  self-order kiosks from <strong className="text-white">£699 + VAT</strong>, with setup, menu
-                  build and staff training included and a 2-year warranty. Spread the cost from{' '}
+                  Complete touchscreen EPOS terminals from <strong className="text-white">{posso.posPrice} + VAT</strong> and
+                  self-order kiosks from <strong className="text-white">{posso.kioskPrice} + VAT</strong>, with setup, menu
+                  build and staff training included and a {posso.warrantyYears}-year warranty. Spread the cost from{' '}
                   <strong className="text-white">£29.95 per week</strong> using the{' '}
                   <Link href="/finance" className="text-primary hover:underline">finance calculator</Link>. No
                   hidden transaction fees on your own online orders.
@@ -538,19 +540,21 @@ export default function BestRestaurantEposSystemUkPage() {
                 Ready to See the Best Restaurant EPOS in Action?
               </h2>
               <p className="text-xl text-slate-300">
-                Book a free, no-obligation demo and see why 500+ UK hospitality businesses run on Posso.
+                Book a free, no-obligation demo and see why {posso.businessCount} UK hospitality businesses run on Posso.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   <CalendarCheck className="mr-2 h-5 w-5" /> Book Your Free Demo
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> Call 0808 175 3956 — Free
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> Call {posso.phone} — Free
                 </a>
               </div>
             </div>
           </div>
         </section>
+
+        <EposClusterLinks />
 
         <Contact />
       </main>

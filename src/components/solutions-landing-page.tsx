@@ -59,11 +59,7 @@ export function SolutionsLandingPage({
             schemaDescription || subheadline,
           url: pageUrl,
           areaServed: { '@type': 'Country', name: 'United Kingdom' },
-          provider: {
-            '@type': 'Organization',
-            name: 'Posso Ltd',
-            url: 'https://www.posso.co.uk',
-          },
+          provider: { '@id': 'https://www.posso.co.uk/#organization' },
         },
         {
           '@context': 'https://schema.org',

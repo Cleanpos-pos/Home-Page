@@ -23,11 +23,12 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'GloriaFood Alternative UK — Switch Before the 2027 Shutdown',
   description:
-    'GloriaFood shuts down 30 April 2027. Switch to Posso — branded ordering website & app, full ePOS, delivery integrations, free migration. Call 0808 175 3956.',
+    `GloriaFood shuts down 30 April 2027. Switch to Posso — branded ordering website & app, full ePOS, delivery integrations, free migration. Call ${posso.phone}.`,
   keywords: [
     'gloriafood alternative',
     'gloriafood alternative uk',
@@ -74,7 +75,7 @@ const faqs = [
   {
     question: 'GloriaFood was free — how much does Posso cost?',
     answer:
-      'GloriaFood’s free plan was the hook, but the features most takeaways actually needed — branded apps, payment processing, promotions — sat in paid add-ons. Posso is transparent: a complete ePOS system from £499 + VAT, self-order kiosks from £699 + VAT, low-commission online ordering, and free setup and training. Finance is available from £24.92 per week.',
+      `GloriaFood’s free plan was the hook, but the features most takeaways actually needed — branded apps, payment processing, promotions — sat in paid add-ons. Posso is transparent: a complete ePOS system from ${posso.posPrice} + VAT, self-order kiosks from ${posso.kioskPrice} + VAT, low-commission online ordering, and free setup and training. Finance is available from ${posso.financeWeekly} per week.`,
   },
   {
     question: 'Can Posso import my menu from GloriaFood?',
@@ -221,7 +222,7 @@ const features = [
     icon: Headphones,
     title: 'Free Migration & UK Support',
     description:
-      'We import your GloriaFood menu, set up your delivery zones, brand your store, and train your team — setup and training are free. UK-based support on 0808 175 3956, with remote assistance when you need it.',
+      `We import your GloriaFood menu, set up your delivery zones, brand your store, and train your team — setup and training are free. UK-based support on ${posso.phone}, with remote assistance when you need it.`,
   },
 ];
 
@@ -231,7 +232,7 @@ const comparisonRows = [
   { feature: 'Branded mobile app', posso: 'iOS & Android app with your branding', gloria: 'Paid add-on, no longer developed', possoGood: true, gloriaGood: false },
   { feature: 'Full ePOS & kitchen display', posso: 'Included — one system for every order', gloria: 'Not offered — online ordering only', possoGood: true, gloriaGood: false },
   { feature: 'Just Eat, Uber Eats & Deliveroo integration', posso: 'Built in — orders land on your POS', gloria: 'Not offered', possoGood: true, gloriaGood: false },
-  { feature: 'Self-order kiosks & table ordering', posso: 'From £699 + VAT, fully integrated', gloria: 'Not offered', possoGood: true, gloriaGood: false },
+  { feature: 'Self-order kiosks & table ordering', posso: `From ${posso.kioskPrice} + VAT, fully integrated`, gloria: 'Not offered', possoGood: true, gloriaGood: false },
   { feature: 'Marketplace exposure', posso: 'FoodBooking marketplace listing included', gloria: 'None — your traffic only', possoGood: true, gloriaGood: false },
   { feature: 'Commission on your own orders', posso: 'Low commission — a fraction of aggregator fees', gloria: 'Free plan, but key features were paid add-ons', possoGood: true, gloriaGood: true },
   { feature: 'Customer data', posso: 'Yours — full access and export, always', gloria: 'Inaccessible after the shutdown', possoGood: true, gloriaGood: false },
@@ -244,7 +245,7 @@ const migrationSteps = [
     step: '1',
     title: 'Quick Chat',
     description:
-      'A short call to review your current GloriaFood setup — menu, delivery zones, payments, and what you want to keep or improve. Call 0808 175 3956 or book a free demo.',
+      `A short call to review your current GloriaFood setup — menu, delivery zones, payments, and what you want to keep or improve. Call ${posso.phone} or book a free demo.`,
   },
   {
     step: '2',
@@ -308,8 +309,8 @@ export default function GloriaFoodAlternativePage() {
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Plan My Switch — Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -429,7 +430,7 @@ export default function GloriaFoodAlternativePage() {
                 </div>
               </div>
               <p className="text-slate-500 text-sm text-center mt-4">
-                GloriaFood details reflect the platform&apos;s status following Oracle&apos;s shutdown announcement. Posso pricing: ePOS from £499 + VAT, kiosks from £699 + VAT, finance from £24.92/week.
+                GloriaFood details reflect the platform&apos;s status following Oracle&apos;s shutdown announcement. Posso pricing: ePOS from {posso.posPrice} + VAT, kiosks from {posso.kioskPrice} + VAT, finance from {posso.financeWeekly}/week.
               </p>
             </div>
           </div>
@@ -488,7 +489,7 @@ export default function GloriaFoodAlternativePage() {
               </div>
               <p className="text-slate-400 mt-8 text-lg">
                 One system for online ordering, ePOS, kiosks, and delivery — with free setup, free training, and UK-based support on{' '}
-                <a href="tel:+448081753956" className="text-primary hover:underline font-medium">0808 175 3956</a>.
+                <a href={posso.phoneHref} className="text-primary hover:underline font-medium">{posso.phone}</a>.
               </p>
             </div>
           </div>
@@ -506,7 +507,7 @@ export default function GloriaFoodAlternativePage() {
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
-                  <p className="text-slate-400 text-sm mt-1">From £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.posPrice} + VAT</p>
                 </Link>
                 <Link href="/delivery-integrations" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Delivery Integrations</p>
@@ -514,7 +515,7 @@ export default function GloriaFoodAlternativePage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.kioskPrice} + VAT</p>
                 </Link>
               </div>
             </div>
@@ -536,8 +537,8 @@ export default function GloriaFoodAlternativePage() {
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>

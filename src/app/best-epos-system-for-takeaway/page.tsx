@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, Truck, CreditCard, BarChart3, Phone, ArrowRight, ShieldCheck, Globe, Wifi, WifiOff, Languages, PhoneCall } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Best ePOS System for Takeaway | What to Look For in 2026',
   description:
-    'How to choose the best ePOS system for takeaway — feature checklist, comparison criteria, and how Posso handles collection and delivery workflows. Offline mode, delivery integration, caller ID, KDS, online ordering. From £499 + VAT.',
+    `How to choose the best ePOS system for takeaway — feature checklist, comparison criteria, and how Posso handles collection and delivery workflows. Offline mode, delivery integration, caller ID, KDS, online ordering. From ${posso.posPrice} + VAT.`,
   keywords: [
     'best epos system for takeaway',
     'best takeaway epos',
@@ -45,7 +47,7 @@ const pageSchema = [
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web, Windows',
     description:
-      'The best ePOS system for takeaways with offline operation, delivery integration, caller ID, kitchen display, online ordering, and multi-language support. Includes a 2-year hardware warranty.',
+      `The best ePOS system for takeaways with offline operation, delivery integration, caller ID, kitchen display, online ordering, and multi-language support. Includes a ${posso.warrantyYears}-year hardware warranty.`,
     url: 'https://www.posso.co.uk/best-epos-system-for-takeaway',
     offers: {
       '@type': 'AggregateOffer',
@@ -63,7 +65,7 @@ const pageSchema = [
       'Multi-language menu and interface',
       'Delivery zone management',
       'Sales analytics and reporting',
-      '2-year hardware warranty',
+      `${posso.warrantyYears}-year hardware warranty`,
       'UK-based support team',
     ],
   },
@@ -89,7 +91,7 @@ const featureChecklist = [
 
 const trustSignals = [
   { stat: 'Offline', label: 'Keeps taking orders if broadband drops' },
-  { stat: '2 years', label: 'Hardware warranty included' },
+  { stat: `${posso.warrantyYears} years`, label: 'Hardware warranty included' },
   { stat: 'UK-based', label: 'Support team — no overseas call centres' },
   { stat: '24 hours', label: 'Average time from delivery to going live' },
 ];
@@ -98,7 +100,7 @@ const comparisonCriteria = [
   { criteria: 'Does it work offline?', why: 'Cloud-only systems go down when your internet does. On a Friday night, that means lost orders and angry customers. Offline-first systems keep working regardless.' },
   { criteria: 'Is online ordering included or extra?', why: 'Some providers charge £50–£150/month for an ordering website on top of the POS. With Posso, your online ordering website is included with low commission — no monthly fee.' },
   { criteria: 'Who owns your customer data?', why: 'If your ePOS provider owns your customer database, you cannot leave without losing years of order history, customer details, and marketing lists. Make sure you own your data.' },
-  { criteria: 'What happens when hardware breaks?', why: 'A 2-year warranty matters. Some providers offer 90 days, then charge for replacements. Ask about warranty length and whether it covers the full system or just the software.' },
+  { criteria: 'What happens when hardware breaks?', why: `A ${posso.warrantyYears}-year warranty matters. Some providers offer 90 days, then charge for replacements. Ask about warranty length and whether it covers the full system or just the software.` },
   { criteria: 'Is delivery integration built in or bolted on?', why: 'Bolt-on integrations break. Native delivery integration means Just Eat, Uber Eats, and Deliveroo orders flow directly into your POS without middleware or extra fees.' },
   { criteria: 'Can you change provider without starting over?', why: 'Locked-in contracts with expensive exit fees are a red flag. The best providers earn your business every month — they do not need a contract to keep you.' },
 ];
@@ -138,14 +140,14 @@ export default function BestEposSystemForTakeawayPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Offline operation — never lose an order</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Delivery apps, caller ID & KDS built in</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete system from £499 + VAT with 2-year warranty</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete system from {posso.posPrice} + VAT with {posso.warrantyYears}-year warranty</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -228,7 +230,7 @@ export default function BestEposSystemForTakeawayPage() {
                   Most ePOS systems are designed for restaurants and adapted for takeaways as an afterthought. Posso was <strong className="text-white">built for takeaways from the ground up</strong>. Collection workflows, delivery zone management, caller ID, and kitchen printing are core features — not add-ons you pay extra for.
                 </p>
                 <p>
-                  Every system ships with a <strong className="text-white">2-year hardware warranty</strong>, free setup, free menu import, and free staff training. Our support team is UK-based — you speak to someone who understands the difference between a curry house and a fish and chip shop.
+                  Every system ships with a <strong className="text-white">{posso.warrantyYears}-year hardware warranty</strong>, free setup, free menu import, and free staff training. Our support team is UK-based — you speak to someone who understands the difference between a curry house and a fish and chip shop.
                 </p>
                 <p>
                   And with online ordering on a <strong className="text-white">low commission model</strong>, you keep more of every order than you would on a third-party marketplace. Your branding, your customer data, your business.
@@ -249,8 +251,8 @@ export default function BestEposSystemForTakeawayPage() {
                 {[
                   { icon: BarChart3, title: 'Sales Analytics', desc: 'Track revenue by channel, see your best sellers, identify peak hours, and measure average order value — all from your phone.' },
                   { icon: CreditCard, title: 'Integrated Payments', desc: 'Teya card terminal with contactless, chip & PIN, Apple Pay, and Google Pay. Payment amount sent from the POS — no re-keying.' },
-                  { icon: ShieldCheck, title: 'Free Setup & Training', desc: 'We configure the hardware, import your menu, and train your staff remotely. Most takeaways go live within 24 hours of delivery.' },
-                  { icon: Smartphone, title: 'Self-Order Kiosks', desc: 'Add customer-facing kiosks from £699 + VAT. Customers browse the menu and order themselves — reducing queue times during peak hours.' },
+                  { icon: ShieldCheck, title: 'Free Setup & Training', desc: `We configure the hardware, import your menu, and train your staff remotely. ${posso.goLiveStatement}` },
+                  { icon: Smartphone, title: 'Self-Order Kiosks', desc: `Add customer-facing kiosks from ${posso.kioskPrice} + VAT. Customers browse the menu and order themselves — reducing queue times during peak hours.` },
                 ].map((b) => (
                   <div key={b.title} className="glass-card rounded-xl p-6 border border-slate-700/50 flex gap-4">
                     <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
@@ -285,7 +287,7 @@ export default function BestEposSystemForTakeawayPage() {
                   <p className="font-semibold text-white">Delivery Integrations</p>
                   <p className="text-slate-400 text-sm mt-1">Just Eat, Uber Eats & more</p>
                 </Link>
-                <Link href="/epos-system-for-indian-takeaway" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pos-for-indian-takeaway" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Indian Takeaway ePOS</p>
                   <p className="text-slate-400 text-sm mt-1">Cuisine-specific features</p>
                 </Link>
@@ -294,13 +296,15 @@ export default function BestEposSystemForTakeawayPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Choosing the Best Takeaway ePOS — Frequently Asked Questions" faqs={[
           { question: 'What makes an ePOS system the best for takeaways specifically?', answer: 'A takeaway ePOS needs features that restaurant systems often lack — caller ID for phone orders, delivery zone management with automatic fee calculation, collection time estimation, and the ability to work offline during internet outages. Generic restaurant POS systems treat these as add-ons. The best takeaway ePOS includes them as standard.' },
           { question: 'Does the Posso ePOS really work offline?', answer: 'Yes. The system is built offline-first. If your internet drops during a busy Friday night, you can continue taking orders, printing kitchen tickets, and processing cash payments. Everything syncs automatically when the connection is restored. Card payments require connectivity, but order-taking and kitchen printing work without it.' },
           { question: 'How does caller ID work on the takeaway POS?', answer: 'When a customer calls your shop, their phone number is matched against your database. If they have ordered before, their name, address, and previous orders appear on screen before you answer. You can reorder their last meal in two taps, saving 30+ seconds per phone order.' },
           { question: 'Can I use the system with Just Eat, Uber Eats, and Deliveroo?', answer: 'Yes. Orders from all major delivery platforms are pulled directly into the Posso POS and printed on your kitchen printer. No extra tablets on the counter, no re-keying orders, and no missed orders. You manage all channels from one screen.' },
-          { question: 'What does the 2-year warranty cover?', answer: 'The warranty covers all hardware supplied by Posso — touchscreen till, kitchen printer, receipt printer, and cash drawer. If any component fails within two years, we replace it. Most competitors offer 12 months or charge extra for extended coverage.' },
-          { question: 'How does Posso compare on price to other takeaway ePOS systems?', answer: 'The complete system starts from £499 + VAT with all hardware and software included. Many competitors charge £499 for software alone, then require you to source hardware separately. Finance is available from £24.92 per week. Online ordering runs on a low commission model with no monthly subscription fee.' },
+          { question: `What does the ${posso.warrantyYears}-year warranty cover?`, answer: `The warranty covers all hardware supplied by Posso — touchscreen till, kitchen printer, receipt printer, and cash drawer. If any component fails within ${posso.warrantyYearsWord} years, we replace it. Most competitors offer 12 months or charge extra for extended coverage.` }, // TODO: PAUL — "most competitors offer 12 months" is an unsourced competitor claim (CAP code); source it or cut it.
+          { question: 'How does Posso compare on price to other takeaway ePOS systems?', answer: `The complete system starts from ${posso.posPrice} + VAT with all hardware and software included. Many competitors charge ${posso.posPrice} for software alone, then require you to source hardware separately. Finance is available from ${posso.financeWeekly} per week. Online ordering runs on a low commission model with no monthly subscription fee.` },
         ]} />
 
         <Contact />

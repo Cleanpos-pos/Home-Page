@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Code, AlertTriangle, Clock, Headphones, PoundSterling, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Open Source ePOS Software',
   description:
-    'Open Source ePOS Software — honest comparison of open source vs commercial POS. Hidden costs, support gaps, and security risks explained. Posso POS from £499 + VAT.',
+    `Open Source ePOS Software — honest comparison of open source vs commercial POS. Hidden costs, support gaps, and security risks explained. Posso POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'open source epos software',
     'open source pos system',
@@ -45,7 +47,7 @@ const pageSchema = [
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web, Windows, iOS, Android',
     description:
-      'Commercial ePOS software that eliminates the hidden costs and support gaps of open source POS. Includes hardware, installation, training, and UK-based support from £499 + VAT.',
+      `Commercial ePOS software that eliminates the hidden costs and support gaps of open source POS. Includes hardware, free setup, training and UK-based support from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/open-source-epos-software',
     offers: {
       '@type': 'AggregateOffer',
@@ -59,7 +61,7 @@ const pageSchema = [
       'UK-based telephone support included',
       'Automatic security updates',
       'Hardware and software warranty',
-      'Free installation and training',
+      `Free setup and training`,
       'PCI-compliant payment processing',
     ],
   },
@@ -79,12 +81,12 @@ const features = [
   { icon: Headphones, title: 'No Support When It Breaks', description: 'Open source projects have community forums, not support teams. When your POS crashes on a Saturday night, a forum post does not fix it. You wait for volunteers to respond — maybe in hours, maybe in days. Posso provides UK-based telephone support from engineers who know your system and can fix problems immediately.' },
   { icon: ShieldCheck, title: 'Security Update Gaps', description: 'Open source POS software relies on volunteer developers to find and patch security vulnerabilities. Patches are irregular and require manual installation. If you miss an update, your system is exposed. Posso applies security patches automatically. Your system is always running the latest, most secure version without any action from you.' },
   { icon: Clock, title: 'Setup Takes Weeks, Not Hours', description: 'Installing open source POS means downloading source code, setting up a database, configuring networking, installing drivers for your printer and cash drawer, and testing every feature manually. A Posso system arrives pre-configured. Plug it in, connect to Wi-Fi, and you are taking orders in under two hours.' },
-  { icon: PoundSterling, title: 'True Cost Comparison', description: 'Open source POS: server hosting £20–£50/month, developer setup £500–£2,000, ongoing maintenance £50–£100/month, zero support guarantee. Year-one cost: £1,500–£4,000+. Posso: complete system from £499 + VAT including hardware, software, installation, training, and support. The "free" option costs more.' },
+  { icon: PoundSterling, title: 'True Cost Comparison', description: `Open source POS: server hosting £20–£50/month, developer setup £500–£2,000, ongoing maintenance £50–£100/month, zero support guarantee. Year-one cost: £1,500–£4,000+. Posso: complete system from ${posso.posPrice} + VAT including hardware, setup, training and support, with software from ${posso.softwareMonthly} + VAT a month. The "free" option costs more.` },
   { icon: Code, title: 'No Developer? No POS.', description: 'Open source POS requires a developer to install, configure, customise, and maintain. If your developer leaves, gets busy, or raises their rates, you are stuck with a system nobody can fix. Posso is fully managed — updates, maintenance, and support are handled by the Posso team. You run your business; we run the technology.' },
 ];
 
 const benefits = [
-  { title: 'Spend Less Than Open Source', description: 'When you add up hosting, developer time, maintenance, and lost revenue from downtime, open source POS typically costs £1,500–£4,000 in the first year. A complete Posso system — hardware, software, installation, training, and support — starts from £499 + VAT. Better value, less risk, no technical skills needed.' },
+  { title: 'Spend Less Than Open Source', description: `When you add up hosting, developer time, maintenance, and lost revenue from downtime, open source POS typically costs £1,500–£4,000 in the first year. A complete Posso system — hardware, setup, training and support — starts from ${posso.posPrice} + VAT. Better value, less risk, no technical skills needed.` },
   { title: 'Get Support When You Need It', description: 'The biggest problem with open source POS is what happens when something goes wrong. Community forums are not support teams. Posso provides UK-based telephone and remote support from engineers who understand your system. Call, explain the problem, get it fixed. That is the support model a business needs.' },
   { title: 'Stay Secure Without Effort', description: 'POS systems handle payment card data. Security is not optional. Open source POS puts the burden of security updates on you. Miss one patch and customer card data could be at risk. Posso handles all security updates automatically. Your system is PCI-compliant and always running the latest security patches.' },
   { title: 'Focus on Running Your Business', description: 'Open source POS turns you into an unpaid IT administrator. Every update, every bug, every hardware compatibility issue falls on your desk. Posso is a fully managed system. You focus on serving customers, growing revenue, and managing your team. The technology runs itself.' },
@@ -122,7 +124,7 @@ export default function OpenSourceEposSoftwarePage() {
                 Open source POS is free to download but expensive to run. No support, no security guarantees, and a developer bill that exceeds the cost of a commercial system. Here is the honest comparison.
               </p>
               <ul className="space-y-3 text-slate-300 text-lg text-left">
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete POS system from {posso.posPrice} + VAT</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> UK-based support included</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> No developer or technical skills needed</li>
               </ul>
@@ -130,8 +132,8 @@ export default function OpenSourceEposSoftwarePage() {
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -190,7 +192,7 @@ export default function OpenSourceEposSoftwarePage() {
                   It does not work for <strong className="text-white">business owners who need reliability</strong>. When your restaurant is full on a Friday night and the POS freezes, you need a phone number to call — not a GitHub issue tracker. When a security vulnerability is discovered, you need an automatic patch — not a volunteer developer who may or may not fix it this month.
                 </p>
                 <p>
-                  The Posso approach is <strong className="text-white">commercial software at a fair price</strong>. From £499 + VAT, you get a complete system that is installed, configured, and supported. No developer fees. No hosting costs. No security risks. No weekends spent debugging. Just a POS system that works, backed by a team that answers the phone.
+                  The Posso approach is <strong className="text-white">commercial software at a fair price</strong>. From {posso.posPrice} + VAT, you get a complete system that is installed, configured, and supported. No developer fees. No hosting costs. No security risks. No weekends spent debugging. Just a POS system that works, backed by a team that answers the phone.
                 </p>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function OpenSourceEposSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Open Source ePOS Software — Frequently Asked Questions" faqs={[
-          { question: 'Is open source POS really free?', answer: 'The software download is free. But you need a server (£20–£50/month), a developer to install and configure it (£500–£2,000), ongoing maintenance (£50–£100/month), and your own time to manage updates and troubleshoot issues. Most businesses spend £1,500–£4,000 in the first year. A complete Posso system costs from £499 + VAT.' },
+          { question: 'Is open source POS really free?', answer: `The software download is free. But you need a server (£20–£50/month), a developer to install and configure it (£500–£2,000), ongoing maintenance (£50–£100/month), and your own time to manage updates and troubleshoot issues. Most businesses spend £1,500–£4,000 in the first year. A complete Posso system costs from ${posso.posPrice} + VAT.` },
           { question: 'What open source POS options are available?', answer: 'Popular open source POS projects include Floreant, Unicenta, and Odoo POS. Each has different features, installation requirements, and community activity levels. The challenge with all of them is the same: no guaranteed support, no automatic updates, and a significant technical skill requirement to install and maintain.' },
           { question: 'Can I get support for open source POS?', answer: 'Some open source POS projects have community forums where volunteers answer questions. Response times range from hours to weeks. Paid support options exist for some projects but typically cost £50–£150/month — which eliminates the cost advantage over commercial systems. Posso includes UK-based telephone support in the system price.' },
           { question: 'Is open source POS secure for payment processing?', answer: 'Security depends entirely on how well you maintain the system. Open source POS requires you to apply security patches manually, configure encryption correctly, and ensure PCI compliance yourself. Miss one update and customer payment data could be exposed. Posso handles all security updates automatically and is PCI-compliant by default.' },
           { question: 'How long does it take to set up open source POS?', answer: 'Expect 1–4 weeks for a technically competent person to download, install, configure, test, and customise an open source POS system. Hardware compatibility issues with printers, cash drawers, and payment terminals often cause delays. A Posso system is pre-configured and installs in under two hours.' },
-          { question: 'Should I use open source POS for my restaurant?', answer: 'For most restaurants, no. Restaurants need reliable, fast systems with immediate support when problems occur. Open source POS introduces unnecessary risk — downtime costs revenue, security gaps risk customer data, and troubleshooting takes time away from running the business. Posso provides a proven, supported system from £499 + VAT.' },
+          { question: 'Should I use open source POS for my restaurant?', answer: `For most restaurants, no. Restaurants need reliable, fast systems with immediate support when problems occur. Open source POS introduces unnecessary risk — downtime costs revenue, security gaps risk customer data, and troubleshooting takes time away from running the business. Posso provides a proven, supported system from ${posso.posPrice} + VAT.` },
         ]} />
 
         <Contact />

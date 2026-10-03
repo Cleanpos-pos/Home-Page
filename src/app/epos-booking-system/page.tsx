@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, CalendarDays, CreditCard, Clock, Users, Bell, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'ePOS Booking System',
   description:
-    'ePOS Booking System with table reservations, deposit collection, booking management, and calendar integration. Built for restaurants and hospitality. POS from £499 + VAT.',
+    `ePOS Booking System with table reservations, deposit collection, booking management, and calendar integration. Built for restaurants and hospitality. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'epos booking system',
     'pos booking system',
@@ -124,14 +126,14 @@ export default function EposBookingSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Deposits reduce no-shows by up to 70%</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Automated SMS and email reminders</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> ePOS booking system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> ePOS booking system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function EposBookingSystemPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="ePOS Booking System — Frequently Asked Questions" faqs={[
           { question: 'How do deposits work with the booking system?', answer: 'When a guest books online, they are prompted to pay a deposit by card. You set the deposit amount — per person or per booking. The deposit is held and automatically applied to the final bill when the guest dines. If the guest no-shows without cancelling, the deposit is retained. This significantly reduces no-show rates.' },
           { question: 'Can guests book online without calling?', answer: 'Yes. The booking system includes an online reservation page that guests access from your website or a direct link. They select a date, time, party size, and enter their details. Deposits are collected during the booking flow. The system confirms instantly and sends automated reminders. No phone call required.' },
           { question: 'Does the booking system prevent double-booking?', answer: 'Yes. The system tracks table availability in real time. When a table is booked for a time slot, it is no longer available for that period. The system accounts for estimated dining duration so tables become available again at the right time. Double-booking is physically prevented by the software.' },
           { question: 'Can I manage walk-ins alongside bookings?', answer: 'Yes. Walk-in guests are added to the floor plan alongside pre-booked guests. If no tables are available, guests join a waitlist. The system estimates wait times based on current table occupancy and upcoming departures. When a table opens, the next guest on the waitlist receives an SMS notification.' },
           { question: 'Does it integrate with Google Calendar?', answer: 'The booking system syncs with your cloud dashboard where all reservations are visible in a calendar view. Booking data can be exported and integrated with external calendar systems. The primary management interface is the POS floor plan and calendar, designed specifically for restaurant operations.' },
-          { question: 'How much does an ePOS booking system cost?', answer: 'The ePOS with integrated booking management starts from £499 + VAT including touchscreen terminal, booking software, floor plan management, and deposit collection. Low commission on online bookings. Free setup, floor plan configuration, and staff training included with a 2-year warranty.' },
+          { question: 'How much does an ePOS booking system cost?', answer: `The ePOS with integrated booking management starts from ${posso.posPrice} + VAT including touchscreen terminal, booking software, floor plan management, and deposit collection. Low commission on online bookings. Free setup, floor plan configuration, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

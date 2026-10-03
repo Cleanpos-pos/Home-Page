@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, Truck, CreditCard, BarChart3, Phone, ArrowRight, Globe, Users, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'ePOS System for Indian Takeaway',
   description:
-    'Posso ePOS system built for Indian takeaways. Caller ID phone ordering, delivery zone management, multi-language kitchen tickets, spice level modifiers, and Just Eat/Uber Eats/Deliveroo integration. From £499 + VAT.',
+    `Posso ePOS system built for Indian takeaways. Caller ID phone ordering, delivery zone management, multi-language kitchen tickets, spice level modifiers, and Just Eat/Uber Eats/Deliveroo integration. From ${posso.posPrice} + VAT.`,
   keywords: [
     'epos system for indian takeaway',
     'indian takeaway epos',
@@ -139,14 +140,14 @@ export default function IndianTakeawayEposPage() {
                 <ul className="space-y-3 text-slate-300 text-lg">
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Caller ID with one-tap reorder</li>
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Kitchen tickets in Hindi, Urdu, Bengali & more</li>
-                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from £499 + VAT</li>
+                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from {posso.posPrice} + VAT</li>
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
                   <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                     Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-                  <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                    <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                  <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                    <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                   </a>
                 </div>
               </div>
@@ -234,7 +235,7 @@ export default function IndianTakeawayEposPage() {
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
               <p className="text-slate-400 text-center mt-6">
@@ -252,7 +253,7 @@ export default function IndianTakeawayEposPage() {
           { question: 'How does delivery zone management work for Indian takeaways?', answer: 'You set delivery zones by postcode area with custom minimum order values and delivery charges. The system automatically checks the customer\'s postcode and applies the correct delivery fee — or rejects the order if they are outside your delivery area.' },
           { question: 'Does Posso integrate with Just Eat, Uber Eats, and Deliveroo?', answer: 'Yes. Orders from all three aggregators flow directly into your POS and kitchen display system. No separate tablets, no manual re-keying. You manage all channels from one screen.' },
           { question: 'Can I set up meal deals and combos for my Indian takeaway?', answer: 'Yes. Create meal deals like "Any Curry + Rice + Naan for £9.99" or "Family Feast for £24.99". The POS automatically applies the deal price when qualifying items are added to the order.' },
-          { question: 'How much does an Indian takeaway ePOS system cost?', answer: 'Our POS systems start from £499 + VAT for a complete touchscreen terminal with integrated card payments, receipt printer, and all Indian takeaway features. Self-order kiosks start from £699 + VAT. Finance options are available.' },
+          { question: 'How much does an Indian takeaway ePOS system cost?', answer: `Our POS systems start from ${posso.posPrice} + VAT for a complete touchscreen terminal with integrated card payments, receipt printer, and all Indian takeaway features. Self-order kiosks start from ${posso.kioskPrice} + VAT. Finance options are available.` },
         ]} />
 
         <Contact />

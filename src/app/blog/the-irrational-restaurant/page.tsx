@@ -22,19 +22,8 @@ export default function IrrationalRestaurantPage() {
         "headline": "The Irrational Restaurant: Why Your Customers Are Lying to You (And Your Tech Stack Knows It)",
         "description": "A behavioural economics approach to modern POS systems, self-service kiosks, and hospitality technology. Discover how Posso Ltd solves psychological pain points, not just operational ones.",
         "image": "https://www.posso.co.uk/images/irrational-restaurant-hero.jpg",
-        "author": {
-            "@type": "Organization",
-            "name": "Posso Ltd",
-            "url": "https://www.posso.co.uk"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Posso Ltd",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.posso.co.uk/images/posso-logo.png"
-            }
-        },
+        "author": { '@id': 'https://www.posso.co.uk/#organization' },
+        "publisher": { '@id': 'https://www.posso.co.uk/#organization' },
         "datePublished": "2026-02-01",
         "dateModified": "2026-02-01",
         "mainEntityOfPage": {

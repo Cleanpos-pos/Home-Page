@@ -7,6 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Search, ListOrdered, Ban, Scale, TrendingUp, Moon, Layers } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'POS for Kebab Shops',
@@ -88,7 +90,7 @@ const features = [
 
 const benefits = [
   { title: 'Late-Night Support Is the Only Support That Counts', description: 'Your problems happen at midnight, not at eleven on a Tuesday morning. Ask what hours support actually covers, whether it is phone or email only, and what specifically happens if the till goes down at half past eleven on a Saturday. A supplier offering business-hours email support is offering you nothing at all during the only hours that matter to you.' },
-  { title: 'Hardware Takes a Beating', description: 'Grease, heat, and hands coming straight off the grill. Ask about the screen coating and whether it responds to greasy or gloved fingers. Ask how quickly a failed printer or terminal is replaced and what you do in the meantime. A two-year warranty is worth checking for, but response time is worth more than warranty length.' },
+  { title: 'Hardware Takes a Beating', description: `Grease, heat, and hands coming straight off the grill. Ask about the screen coating and whether it responds to greasy or gloved fingers. Ask how quickly a failed printer or terminal is replaced and what you do in the meantime. A two-year warranty is worth checking for, but response time is worth more than warranty length.` },
   { title: 'Count the Taps on Your Top Three Orders', description: 'Build your three most-ordered kebabs on the demo system and count the taps for each. Most shops find one system takes roughly half the taps of another for identical output. Across two hundred orders on a Saturday, that difference is the queue moving or not moving. It is also the single easiest thing to test and the thing buyers most often skip.' },
   { title: 'Do the Real Three-Year Sum', description: 'Hardware, monthly software, card processing, marketplace commission, your own online ordering costs, printer rolls, support. For most kebab shops, marketplace commission dwarfs every other line by a wide margin — which makes the cost of pushing customers to your own ordering channel the number worth modelling first, before you compare terminal prices at all.' },
 ];
@@ -127,14 +129,14 @@ export default function PosForKebabShopPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Six features that matter at 1am</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> What to test before you sign anything</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Kebab shop POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Kebab shop POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -212,7 +214,7 @@ export default function PosForKebabShopPage() {
                   covers the other half of the counter.
                 </p>
                 <p>
-                  Pricing starts at <strong className="text-white">£499 + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a two-year warranty. On-site installation is quoted separately if you want it. Orders through your own website or app carry a 60p service fee paid by the customer at checkout, so there is no percentage commission on your own trade; you pay card processing only. Card payments run through Posso Pay. It is all one{' '}
+                  Pricing starts at <strong className="text-white">{posso.posPrice} + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a {posso.warrantyYearsWord}-year warranty. On-site installation for larger sites is priced on application. Orders through your own website or app carry a 60p service fee paid by the customer at checkout, so there is no percentage commission on your own trade; you pay card processing only. Card payments run through Posso Pay. It is all one{' '}
                   <Link href="/pos" className="text-primary hover:underline">EPOS system</Link>{' '}
                   rather than separate products bolted together.
                 </p>
@@ -254,10 +256,12 @@ export default function PosForKebabShopPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="POS for Kebab Shops — Frequently Asked Questions" faqs={[
           { question: 'What is a kebab shop POS system?', answer: 'A kebab shop POS system is point-of-sale software built around customised, high-speed takeaway orders — a build sequence that follows meat, bread, salad and sauces, clear printing of exclusions like "no onion", paid extras priced by size, late-night shift and cash handling, kitchen printing, card payments, and online and delivery app orders arriving in one queue.' },
           { question: 'How should a kebab POS handle "no salad" or "no onion"?', answer: 'As a negative modifier that prints as prominently as a paid addition. This is the most common source of remakes in a kebab shop. On a kitchen ticket or display, an exclusion in small grey text at the end of the line will be missed during a rush. Ask to see a ticket printed with an exclusion on it before you buy anything.' },
-          { question: 'How much does a kebab shop POS cost in the UK?', answer: 'A complete system with a touchscreen terminal, kitchen printing and online ordering typically starts around £499 + VAT upfront, with monthly software from roughly £30. Kitchen display screens, extra printers and kiosks add to that. Over three years, marketplace commission is usually the largest cost in the whole setup by a considerable distance — model that before you compare hardware prices.' },
+          { question: 'How much does a kebab shop POS cost in the UK?', answer: `A complete system with a touchscreen terminal, kitchen printing and online ordering typically starts around ${posso.posPrice} + VAT upfront, with monthly software from roughly £30. Kitchen display screens, extra printers and kiosks add to that. Over three years, marketplace commission is usually the largest cost in the whole setup by a considerable distance — model that before you compare hardware prices.` },
           { question: 'Can one system handle counter, phone, online and delivery app orders?', answer: 'Yes, and for a kebab shop it is close to essential. During the peak forty minutes, orders arrive simultaneously from the counter, the phone, your own site and up to three marketplace tablets. A system that consolidates them into one queue and one kitchen list removes the re-typing that causes most late-night mistakes.' },
           { question: 'Does a kebab shop POS support caller ID?', answer: 'Posso includes caller ID, which brings up a returning customer’s name, address and order history as the phone rings. For a shop with a high proportion of repeat phone trade, it removes the address-taking step entirely and cuts postcode errors on delivery orders.' },
           { question: 'Will the reports work if we trade past midnight?', answer: 'They need to, and it is worth testing. Posso handles shift-based reporting with opening float, cash drops, blind count closing and variance alerts, so a shift that runs from 5pm to 3am reconciles as one trading period rather than being split across two dates.' },

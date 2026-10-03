@@ -1,4 +1,5 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 /**
  * NOTE: every Epos Now figure below comes from independently published 2026
@@ -39,7 +40,7 @@ export const possoVsEposNow: Guide = {
         ["Built for", "Hospitality only", "Retail and hospitality"],
         [
           "Entry system price",
-          "From £499 + VAT (hardware, software licence, menu setup, training)",
+          `From ${posso.posPrice} + VAT (hardware, software licence, menu setup, training)`,
           "Complete POS bundle promoted from £249; hospitality bundles from £379",
         ],
         ["Software subscription", "Published — see pricing page", "Reported £25–£39/month; quote-led"],
@@ -53,7 +54,7 @@ export const possoVsEposNow: Guide = {
           "Included; customer pays a 60p service fee, business pays only card processing",
           "Reported as an add-on from ~£25/month",
         ],
-        ["Kitchen display", "21-inch screen £399 + VAT; covered by the standard software fee", "Reported as an add-on from ~£19/month"],
+        ["Kitchen display", `21-inch screen ${posso.kdsPrice} + VAT; covered by the standard software fee`, "Reported as an add-on from ~£19/month"],
         [
           "Loyalty / marketing",
           "Built-in CMS, 2,000 marketing emails a month included",
@@ -61,15 +62,15 @@ export const possoVsEposNow: Guide = {
         ],
         [
           "Marketplace integrations",
-          "Just Eat, Uber Eats, Deliveroo — £45/month, unlimited orders",
+          `Just Eat, Uber Eats, Deliveroo — ${posso.deliveryIntegrationMonthly}/month, unlimited orders`,
           "Available; costs vary by plan",
         ],
         [
           "Own delivery drivers",
-          "Driver app and dispatch built in, 30p per delivery",
+          `Driver app and dispatch built in, ${posso.driverAppPerDelivery} per delivery`,
           "Delivery product available; own-fleet dispatch depth varies",
         ],
-        ["AI phone ordering", "£1 per order, free dedicated number", "Not offered"],
+        ["AI phone ordering", `${posso.aiPhonePerOrder} per order, free dedicated number`, "Not offered"],
         [
           "Card processing",
           "Posso Pay — Posso's own merchant service; rate quoted on your card turnover, same in store and online",
@@ -82,7 +83,7 @@ export const possoVsEposNow: Guide = {
         ],
         [
           "Hardware",
-          "Windows 11 Pro terminals, 8GB RAM, 128GB SSD, 2-year warranty",
+          `Windows 11 Pro terminals, 8GB RAM, 128GB SSD, ${posso.warrantyYears}-year warranty`,
           "Proprietary terminals; iPad-based options available",
         ],
         [
@@ -91,10 +92,10 @@ export const possoVsEposNow: Guide = {
           "Strong — full retail inventory, barcode purchasing, supplier management",
         ],
         ["App marketplace", "Limited — integrations built in-house", "Large — extensive third-party ecosystem"],
-        ["Scale", "500+ UK venues", "80,000+ businesses, 70+ countries"],
+        ["Scale", `${posso.businessCount} UK venues`, "80,000+ businesses, 70+ countries"],
         [
           "Support",
-          "UK phone support, Mon–Fri 9am–9:30pm",
+          `UK phone support, Mon–Fri ${posso.supportTime}`,
           "UK-based; 24/7 tiers available on some plans",
         ],
       ],
@@ -118,7 +119,7 @@ export const possoVsEposNow: Guide = {
         },
         {
           title: "Out-of-hours support tiers",
-          body: "If you trade late seven nights a week, check both providers' support hours against your actual trading hours. Posso's phone support runs Monday to Friday, 9am to 9:30pm — evening service is covered on weekdays, but not weekends.",
+          body: `If you trade late seven nights a week, check both providers' support hours against your actual trading hours. Posso's phone support runs Monday to Friday, ${posso.supportTime} — evening service is covered on weekdays, but not weekends.`,
         },
       ],
     },
@@ -144,7 +145,7 @@ export const possoVsEposNow: Guide = {
         },
         {
           title: "AI phone ordering",
-          body: "Missed phone orders during service are lost revenue that never appears in any report. Posso answers them for £1 per order. Epos Now does not offer an equivalent.",
+          body: `Missed phone orders during service are lost revenue that never appears in any report. Posso answers them for ${posso.aiPhonePerOrder} per order. Epos Now does not offer an equivalent.`,
         },
         {
           title: "Offline-first operation",
@@ -177,7 +178,7 @@ export const possoVsEposNow: Guide = {
   faqs: [
     {
       q: "Is Posso cheaper than Epos Now?",
-      a: "Over three years, usually — for a hospitality business that needs online ordering and a kitchen display. The reason is structural rather than a discount: Epos Now's reported model layers those as monthly add-ons, where Posso includes ordering in the system and sells the kitchen display as a one-off £399 + VAT. For a retail business that needs neither, the comparison narrows considerably. Work out your own 36-month total including card processing before deciding.",
+      a: `Over three years, usually — for a hospitality business that needs online ordering and a kitchen display. The reason is structural rather than a discount: Epos Now's reported model layers those as monthly add-ons, where Posso includes ordering in the system and sells the kitchen display as a one-off ${posso.kdsPrice} + VAT. For a retail business that needs neither, the comparison narrows considerably. Work out your own 36-month total including card processing before deciding.`,
     },
     {
       q: "Can Posso do everything Epos Now does?",

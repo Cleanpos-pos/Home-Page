@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Shirt, Tag, Users, Truck, MessageSquare, Clock } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Dry Cleaning Software',
   description:
-    'Dry Cleaning Software for garment tracking, ticket printing, customer records, pickup and delivery scheduling, and SMS notifications. Purpose-built for dry cleaners. From £499 + VAT.',
+    `Dry Cleaning Software for garment tracking, ticket printing, customer records, pickup and delivery scheduling, and SMS notifications. Purpose-built for dry cleaners. From ${posso.posPrice} + VAT.`,
   keywords: [
     'dry cleaning software',
     'dry cleaning pos',
@@ -124,14 +125,14 @@ export default function DryCleaningSoftwarePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Barcode tracking for every garment from intake to collection</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Automated SMS when orders are ready</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Dry cleaning software from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Dry cleaning software from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function DryCleaningSoftwarePage() {
           { question: 'Does it support pickup and delivery?', answer: 'Yes. Customers book a pickup slot through your website or by phone. The system schedules drivers and tracks each collection and delivery. Drivers use a mobile app to scan garments at the customer doorstep. The customer receives confirmation at every stage — collected, in process, out for delivery, delivered.' },
           { question: 'Can I manage multiple branches?', answer: 'Yes. The cloud dashboard gives you a single view across all branches. You can transfer garments between locations, compare throughput, manage pricing centrally, and see staff performance. Each branch operates independently during service but reports to the same dashboard.' },
           { question: 'What ticket and tag printers are supported?', answer: 'The system works with standard thermal label printers for garment tags and receipt printers for customer tickets. Tags are designed to survive cleaning, pressing, and steaming. We supply compatible printers or integrate with your existing hardware during setup.' },
-          { question: 'How much does dry cleaning software cost?', answer: 'The complete dry cleaning software starts from £499 + VAT including the POS terminal, barcode scanner, label printer, and garment tracking software. SMS notifications are included. Finance from £24.92 per week. Free setup, configuration, and staff training included with a 2-year warranty.' },
+          { question: 'How much does dry cleaning software cost?', answer: `The complete dry cleaning software starts from ${posso.posPrice} + VAT including the POS terminal, barcode scanner, label printer, and garment tracking software. SMS notifications are included. Finance from ${posso.financeWeekly} per week. Free setup, configuration, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

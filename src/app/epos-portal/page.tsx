@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Globe, Monitor, BarChart3, RefreshCw, Building2, Shield } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'ePOS Portal',
   description:
-    'ePOS Portal for cloud-based management of your point of sale — remote menu updates, multi-site dashboard, real-time analytics, and staff management from any browser. From £499 + VAT.',
+    `ePOS Portal for cloud-based management of your point of sale — remote menu updates, multi-site dashboard, real-time analytics, and staff management from any browser. From ${posso.posPrice} + VAT.`,
   keywords: [
     'epos portal',
     'pos management portal',
@@ -124,14 +126,14 @@ export default function EposPortalPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Update menus remotely from any device</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Multi-site oversight on a single dashboard</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> ePOS portal included from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> ePOS portal included from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function EposPortalPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="ePOS Portal — Frequently Asked Questions" faqs={[
           { question: 'What can I do from the ePOS portal?', answer: 'The portal gives you full control of your POS from any browser. Edit menus and push changes to terminals instantly. View real-time sales analytics and product mix reports. Manage staff accounts, permissions, and clock times. Monitor stock levels and set reorder alerts. Run promotions and loyalty programmes. Export financial reports for your accountant.' },
           { question: 'Can I manage multiple sites from one portal?', answer: 'Yes. The multi-site dashboard shows all locations on a single screen. Compare sales between branches, standardise or customise menus per site, and view group-level reporting. Changes can be pushed to all sites simultaneously or to individual locations. One login gives you complete control over your entire operation.' },
           { question: 'How do remote menu updates work?', answer: 'Log into the portal from any device, edit your menu — add items, change prices, update descriptions, reorder categories — and click publish. The changes push to every connected terminal within seconds. No need to update each till individually. You can schedule menu changes in advance, such as switching to a weekend menu every Friday at 5pm.' },
           { question: 'Is the portal secure?', answer: 'Yes. The portal uses bank-grade encryption for data in transit and at rest. Role-based access control ensures each user sees only what their role permits. Every action is logged with a timestamp and user ID in an immutable audit trail. Two-factor authentication is available. Data is hosted in UK data centres compliant with GDPR.' },
           { question: 'Do I need to install any software?', answer: 'No. The ePOS portal runs entirely in your web browser — Chrome, Safari, Edge, or Firefox. There is nothing to download or install. It works on desktop, tablet, and mobile. Just log in from any device with an internet connection and you have full access to your business data and controls.' },
-          { question: 'How much does the ePOS portal cost?', answer: 'The ePOS portal is included with every Posso POS system from £499 + VAT. There is no additional subscription for portal access. Multi-site management, real-time analytics, remote menu editing, and staff management are all included. The portal is part of the core product, not an upsell.' },
+          { question: 'How much does the ePOS portal cost?', answer: `The ePOS portal is included with every Posso POS system from ${posso.posPrice} + VAT. There is no additional subscription for portal access. Multi-site management, real-time analytics, remote menu editing, and staff management are all included. The portal is part of the core product, not an upsell.` },
         ]} />
 
         <Contact />

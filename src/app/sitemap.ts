@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 import { allSeoPages } from '@/lib/seo-pages-data';
+import { redirectedPaths } from '@/lib/redirects';
+import { competitorPageVerified } from '@/content/guides/competitors';
 
 const URL = 'https://www.posso.co.uk';
 
@@ -35,7 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tablemaestro',
     '/dark-kitchens-quick-set-up-epos-and-website-orders-take-orders-now',
     '/pizza-pos-system',
-    '/epos-system-for-indian-takeaway',
     '/epos-system-for-takeaway',
     '/restaurant-epos',
     '/best-restaurant-epos-system-uk',
@@ -74,7 +75,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/sweet-shop-pos',
     '/salon-pos-software',
     '/pos-software',
-    '/pizza-epos',
     '/pizza-shop-pos',
     '/bar-ordering-app',
     '/pos-for-pizza-shop',
@@ -104,6 +104,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/kitchen-display-system-cost',
     '/epos-now-alternative',
     '/posso-vs-epos-now',
+    '/square-pos-alternative',
+    '/sumup-pos-alternative',
+    '/lightspeed-alternative',
+    '/zettle-alternative',
+    '/toast-pos-alternative',
+    '/retail-pos-system',
+    '/small-business-pos-system',
     '/epos-pricing-uk',
     '/opening-a-takeaway-epos-checklist',
     '/delivery-management-pos',
@@ -303,48 +310,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // already told it not to index. The routes still render — this only affects discovery.
   const isAlias = (path: string) => path.includes('-by-posso-ltd-uk');
 
-  // Routes that now serve a permanent redirect (see next.config.ts). Submitting a
-  // redirecting URL asks Google to crawl a hop rather than the destination.
-  const redirecting = new Set([
-    '/android-epos-systems-from-posso',
-    '/book-a-call',
-    '/cobways-tell-a-friend-scheme',
-    '/contact-posso-ltd',
-    '/credit-card-machine-clover-flex-uk',
-    '/digital-menu-boards-4',
-    '/digital-menu-boards-uk-my-signage',
-    '/dry-cleaning-epos-systems-uk',
-    '/food-order-app-comparison-tool',
-    '/franchise-epos',
-    '/hospitality-epos-systems-by-posso-uk-epos-systems',
-    '/portable-card-machines',
-    '/posso-epos',
-    '/self-order-kiosk-uk-2',
-    '/self-order-kiosks-uk',
-    '/skegness-pos-systems',
-    '/small-pos-magic-the-tiny-marvels-transforming-our-lives',
-    // Cluster consolidation, August 2026: pizza product duplicates fold into the
-    // /pos-for-pizza-shop guide; kiosk duplicates fold into /self-order-kiosks.
-    '/pizza-pos-system',
-    '/pizza-shop-pos',
-    '/self-service-epos',
-    '/solutions/restaurant-self-service-kiosk',
-    // Programmatic alias now redirecting; not caught by isAlias (no -by-posso-ltd-uk)
-    '/best-pos-software-free-download-full-version-crack-uk',
-    // Kiosk cluster consolidation, September 2026
-    '/self-ordering-kiosk',
-    '/self-serve-kiosk',
-    '/food-ordering-machine',
-    '/hospitality-kiosks',
-    '/solutions/self-service-kiosk-uk',
-    '/restaurant-self-ordering-system',
-    '/do-self-order-kiosks-increase-sales',
-    '/blog/self-order-kiosks',
-    '/blog/pos-and-self-order-kiosk-solutions',
-    '/outdoor-self-order-kiosks-food-truck-epos',
-  ]);
-
-  const isDropped = (path: string) => isAlias(path) || redirecting.has(path);
+  // Routes that serve a permanent redirect. Read from the same list next.config.ts
+  // serves (src/lib/redirects.ts), so the sitemap cannot drift out of step with it.
+  // Submitting a redirecting URL asks Google to crawl a hop rather than the destination.
+  // Competitor pages stay out until their figures are verified (they are noindex
+  // until then — see src/content/guides/competitors.ts).
+  const isUnverifiedCompetitor = (path: string) => competitorPageVerified[path] === false;
+  const isDropped = (path: string) =>
+    isAlias(path) || redirectedPaths.has(path) || isUnverifiedCompetitor(path);
 
   const entries: MetadataRoute.Sitemap = [
     // Homepage

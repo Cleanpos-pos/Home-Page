@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import type { Metadata } from 'next';
 import { PageBreadcrumb } from '@/components/page-breadcrumb';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Software Terms & Conditions',
@@ -135,7 +136,7 @@ export default function SoftwareTermsPage() {
                 <p><strong>8.2</strong> The Company uses an internal ticketing system across all support channels. All data collected via the ticketing system shall only be used for ticket prioritisation and producing reports for internal management and improvements. Any data used for internal reports shall be anonymised first. No data shall be distributed to any third party without prior consent from the User.</p>
                 <p><strong>8.3</strong> The customer support channels available to the User shall be dependent upon the User’s subscription level and detailed within the Quotation. In the unlikely event that a particular support channel experiences technical difficulty and becomes temporary unavailable, the User shall attempt to contact the Customer Support Team via a different support channel.</p>
                 <p><strong>8.4</strong> The User shall receive technical support in case of any issues with the Company’s software and or hardware within 24 hours of sending a request through telephone or email at support@posso.co.uk . For more complex issues, the request will be passed to our second line support team for resolution within 72 hours of the initial User’s request. In the unlikely event that the Technical Support Team encounters a new issue not dealt with before, the Company shall endeavour to keep the User informed on the expected timeframe for resolution and keep any disruption to the Services functionality to a minimum.</p>
-                <p><strong>8.5</strong> Telephone technical support (0808 175 3956) is available to the User free of charge for the first thirty (30) days of their license subscription. Should the User require telephone technical support for longer that the first thirty (30) days of their license subscription, this shall be charged as an additional cost to the User’s monthly/annual subscription OR shall be included in the Quotation.</p>
+                <p><strong>8.5</strong> Telephone technical support ({posso.phone}) is available to the User free of charge for the first thirty (30) days of their license subscription. Should the User require telephone technical support for longer that the first thirty (30) days of their license subscription, this shall be charged as an additional cost to the User’s monthly/annual subscription OR shall be included in the Quotation.</p>
                 <p><strong>8.6</strong> Remote training on the use of the Cloud services can be provided upon request by the User, depending on reasonable timeframes and availability of Company engineers. Repeat training may be charged at an additional cost to the User. Any such cost and payment process shall be communicated to the User in advance.</p>
                 <p><strong>8.7</strong> The Company does not offer on-site visits to the User’s locations as part of our technical support services. All technical support provided by the Company is on a remote basis only.</p>
                 <ul className="list-disc pl-8">
@@ -313,7 +314,7 @@ export default function SoftwareTermsPage() {
                 <p><strong>24.1</strong> This Agreement constitutes the entire Agreement between the Company and the User and supersedes any prior written or oral agreement with respect to the subject matter hereof.</p>
 
                 <h2 className="text-2xl font-bold text-slate-100 pt-4">25. Posso Ltd details</h2>
-                <p>Posso Ltd is a company incorporated in England and Wales with registered number 11813595 whose registered address is 57 The Oval, New Walk, Leicester LE1 7EA. You can contact Posso Ltd by email on info@posso.co.uk or by phone on 0808 175 3956.</p>
+                <p>Posso Ltd is a company incorporated in England and Wales with registered number 11813595 whose registered address is 57 The Oval, New Walk, Leicester LE1 7EA. You can contact Posso Ltd by email on info@posso.co.uk or by phone on {posso.phone}.</p>
             </div>
 
             <div className="mt-12">

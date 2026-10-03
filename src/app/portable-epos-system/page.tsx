@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Smartphone, Wifi, Battery, CreditCard, ShoppingBag, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Portable ePOS System',
   description:
-    'Portable ePOS System for events, pop-ups, market stalls, and mobile trading. WiFi and 4G operation, battery-powered, wireless payments, and offline mode. POS from £499 + VAT.',
+    `Portable ePOS System for events, pop-ups, market stalls, and mobile trading. WiFi and 4G operation, battery-powered, wireless payments, and offline mode. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'portable epos system',
     'portable pos system',
@@ -124,14 +126,14 @@ export default function PortableEposSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> WiFi and 4G — works without fixed internet</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Offline mode — sells even without signal</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete portable ePOS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete portable ePOS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -219,13 +221,15 @@ export default function PortableEposSystemPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Portable ePOS System — Frequently Asked Questions" faqs={[
           { question: 'Does the portable ePOS work without WiFi?', answer: 'Yes. The Posso portable ePOS works on WiFi, 4G mobile hotspot, or completely offline. In offline mode, orders are processed locally and sync to the cloud when connectivity returns. You never lose a sale because of a signal issue. Card payments require a data connection (WiFi or 4G).' },
           { question: 'How long does the battery last?', answer: 'A fully charged tablet runs the POS for 10+ hours of continuous use — a full trading day at a market or event. The Bluetooth card reader has its own battery that lasts all day. If you need longer runtime, a portable power bank extends the tablet battery further.' },
           { question: 'Can I take card payments at outdoor events?', answer: 'Yes. The wireless Bluetooth card reader accepts contactless, chip and PIN, Apple Pay, and Google Pay. It connects to the tablet via Bluetooth and processes payments via the data connection (WiFi or 4G). No wired terminal, no power cable — fully wireless payment processing.' },
           { question: 'Is it the same system as the fixed POS?', answer: 'Yes. The Posso portable ePOS runs the same software as the counter POS. Same menu, same reporting, same features. If you have a permanent location and trade at events, your menu and data are shared across both. Sales from the market appear in the same reports as shop sales.' },
           { question: 'How quickly can I set up at an event?', answer: 'Under 2 minutes. Take out the tablet, switch it on, connect to WiFi or 4G, and you are ready to sell. No cables, no alignment, no configuration. The card reader pairs automatically when switched on. At the end of the day, tablet in the bag and you are done.' },
-          { question: 'How much does the portable ePOS cost?', answer: 'The portable ePOS starts from £499 + VAT including the software and cloud sync. You can use your own tablet or purchase one through us. Wireless Bluetooth card readers are available separately. Free setup and training included with a 2-year warranty.' },
+          { question: 'How much does the portable ePOS cost?', answer: `The portable ePOS starts from ${posso.posPrice} + VAT including the software and cloud sync. You can use your own tablet or purchase one through us. Wireless Bluetooth card readers are available separately. Free setup and training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

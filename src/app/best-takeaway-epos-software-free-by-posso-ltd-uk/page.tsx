@@ -40,10 +40,7 @@ const schema = {
         "availability": "https://schema.org/InStock"
     },
     "description": "Start your takeaway business with the best free EPOS software by Posso Ltd UK. Full featured, low-commission ordering, and easy setup - for £0/month.",
-    "author": {
-        "@type": "Organization",
-        "name": "Posso Ltd"
-    },
+    "author": { '@id': 'https://www.posso.co.uk/#organization' },
     "url": "https://www.posso.co.uk/best-takeaway-epos-software-free-by-posso-ltd-uk"
 };
 

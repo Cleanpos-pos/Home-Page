@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Truck, MapPin, Clock, Plug, Users, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Delivery POS Software',
   description:
-    'Delivery POS Software with delivery zone management, driver tracking, estimated delivery times, and aggregator integration. Built for delivery businesses. POS from £499 + VAT.',
+    `Delivery POS Software with delivery zone management, driver tracking, estimated delivery times, and aggregator integration. Built for delivery businesses. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'delivery pos software',
     'delivery pos system',
@@ -124,14 +126,14 @@ export default function DeliveryPosSoftwarePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Delivery zones with automated charging</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Deliveroo, Uber Eats, Just Eat integration</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Delivery POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Delivery POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function DeliveryPosSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Delivery POS Software — Frequently Asked Questions" faqs={[
           { question: 'How do delivery zones work?', answer: 'You define zones by postcode prefix, radius from your location, or custom map boundaries. Each zone has its own delivery charge, minimum order value, and estimated delivery time. When a customer enters their address, the system identifies the zone and applies the correct charge automatically. Addresses outside all zones are offered collection instead.' },
           { question: 'Does it integrate with Deliveroo, Uber Eats, and Just Eat?', answer: 'Yes. Orders from all major aggregators arrive directly on your POS and kitchen display. No separate tablets, no manual re-entry. Each order is labelled with its source so you know where it came from. You manage all channels from one screen and one reporting dashboard.' },
           { question: 'How does driver tracking work?', answer: 'Drivers are assigned to orders from the POS. Each driver has a status: available, en route, delivering, or returning. You see all active deliveries on a dashboard with estimated times. Driver performance is tracked over time — average delivery time, deliveries per shift, and on-time percentage.' },
           { question: 'Can I set different delivery charges per zone?', answer: 'Yes. Each zone has its own delivery charge and minimum order value. You can also set free delivery thresholds — for example, free delivery on orders over £25. Promotional delivery offers like free delivery Tuesdays are configured in the dashboard and apply automatically during the set period.' },
           { question: 'How are estimated delivery times calculated?', answer: 'The system considers three factors: kitchen preparation time based on current order volume, travel time based on the delivery zone, and driver availability. If the kitchen is busy, the estimate extends. If all drivers are out, the estimate reflects the wait time. Customers see a realistic time, not an optimistic promise.' },
-          { question: 'How much does delivery POS software cost?', answer: 'The delivery POS starts from £499 + VAT including touchscreen terminal, delivery management software, and aggregator integration. Online orders processed at low commission. Free setup, zone configuration, and staff training included with a 2-year warranty.' },
+          { question: 'How much does delivery POS software cost?', answer: `The delivery POS starts from ${posso.posPrice} + VAT including touchscreen terminal, delivery management software, and aggregator integration. Online orders processed at low commission. Free setup, zone configuration, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

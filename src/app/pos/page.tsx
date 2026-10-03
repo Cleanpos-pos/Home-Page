@@ -10,21 +10,25 @@ import { PossoEposSystemDiagram } from '@/components/posso-epos-system-diagram';
 import Link from 'next/link';
 import { ArrowRight, Phone } from 'lucide-react';
 import type { Metadata } from 'next';
+import { posso, possoPrices } from '@/lib/possoFacts';
 
 const PAGE_URL = 'https://www.posso.co.uk/pos';
+// 59 characters. The brief's "EPOS System UK for Restaurants & Takeaways | From
+// £499 | Posso" is 62, so "for" became a colon to fit inside 60.
+const PAGE_TITLE = `EPOS System UK: Restaurants & Takeaways | From ${posso.posPrice} | Posso`;
 const DIAGRAM_SVG = 'https://www.posso.co.uk/images/posso-epos-system-diagram.svg';
 
 export const metadata: Metadata = {
   // The root layout applies a `%s | Posso` template; absolute keeps this
   // title at the exact 57 characters intended rather than doubling the suffix.
-  title: { absolute: 'EPOS System for Restaurants & Takeaways UK | Posso' },
+  title: { absolute: PAGE_TITLE },
   description:
     'UK EPOS systems for restaurants, takeaways, cafés and pubs. Tills, self-order kiosks, kitchen displays and card payments in one offline-first system.',
   alternates: {
     canonical: '/pos',
   },
   openGraph: {
-    title: 'EPOS System for Restaurants & Takeaways UK | Posso',
+    title: PAGE_TITLE,
     description:
       'UK EPOS systems for restaurants, takeaways, cafés and pubs. Tills, self-order kiosks, kitchen displays and card payments in one offline-first system.',
     url: PAGE_URL,
@@ -42,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EPOS System for Restaurants & Takeaways UK | Posso',
+    title: PAGE_TITLE,
     description:
       'Tills, self-order kiosks, kitchen displays, online ordering and integrated card payments in one offline-first UK EPOS system.',
     images: ['/images/posso-epos-system-diagram.png'],
@@ -52,8 +56,9 @@ export const metadata: Metadata = {
 /**
  * Page schema graph. Every @id is namespaced under /pos# so it cannot collide
  * with the vertical pages — duplicate IDs were flagged in the last technical
- * audit. #organization is defined once in the root layout; #website is defined
- * here so the WebPage's isPartOf reference resolves rather than dangling.
+ * audit. #organization is defined once, on the homepage, and referenced by @id
+ * here; #website is defined here so the WebPage's isPartOf reference resolves
+ * rather than dangling.
  *
  * The FAQPage node is not in this graph on purpose — FAQSection emits it (with
  * the #faq @id passed below) so there is exactly one FAQPage on the page and it
@@ -73,7 +78,7 @@ const pageSchema = {
       '@type': 'WebPage',
       '@id': `${PAGE_URL}#webpage`,
       url: PAGE_URL,
-      name: 'EPOS System for Restaurants & Takeaways UK | Posso',
+      name: PAGE_TITLE,
       description:
         'UK EPOS systems for restaurants, takeaways, cafés and pubs. Tills, self-order kiosks, kitchen displays and card payments in one offline-first system.',
       inLanguage: 'en-GB',
@@ -81,6 +86,17 @@ const pageSchema = {
       about: { '@id': `${PAGE_URL}#product` },
       primaryImageOfPage: { '@id': `${PAGE_URL}#diagram` },
       mainEntity: { '@id': `${PAGE_URL}#faq` },
+      // Matches the visible byline in PosHero: "Written by the Posso product
+      // team, reviewed by Paul Robinson, Managing Director".
+      author: { '@id': 'https://www.posso.co.uk/#organization' },
+      reviewedBy: {
+        '@type': 'Person',
+        '@id': 'https://www.posso.co.uk/about/paul-robinson#person',
+        name: 'Paul Robinson',
+        jobTitle: 'Managing Director',
+        url: 'https://www.posso.co.uk/about/paul-robinson',
+        worksFor: { '@id': 'https://www.posso.co.uk/#organization' },
+      },
     },
     {
       '@type': 'ImageObject',
@@ -105,7 +121,7 @@ const pageSchema = {
       offers: {
         '@type': 'AggregateOffer',
         priceCurrency: 'GBP',
-        lowPrice: '499',
+        lowPrice: String(possoPrices.pos),
         availability: 'https://schema.org/InStock',
         areaServed: 'GB',
         seller: { '@id': 'https://www.posso.co.uk/#organization' },
@@ -137,14 +153,14 @@ const posImageSchema = posScreenshots.map((s) => ({
   name: s.alt,
   caption: s.cap,
   creditText: 'Posso Ltd',
-  creator: { '@type': 'Organization', name: 'Posso Ltd' },
+  creator: { '@id': 'https://www.posso.co.uk/#organization' },
   copyrightNotice: '© Posso Ltd',
 }));
 
 const hardware = [
   {
     name: 'POS terminals',
-    body: 'All Posso PC terminals run Windows 11 Pro with 8GB RAM and a 128GB SSD. Single-screen as standard; twin-screen — so the customer sees their order as it is rung in — is a £150 upgrade on any package.',
+    body: `All Posso PC terminals run Windows 11 Pro with 8GB RAM and a 128GB SSD. Single-screen as standard; twin-screen — so the customer sees their order as it is rung in — is a ${posso.twinScreenPrice} upgrade on any package.`,
   },
   {
     name: 'Touchscreen tills',
@@ -152,19 +168,19 @@ const hardware = [
   },
   {
     name: 'Self-order kiosks',
-    body: 'Floor-standing and wall-mounted formats from £699 + VAT for indoor models. Outdoor IP65-rated kiosks for food trucks and forecourt sites are a special order rather than part of the standard offer.',
+    body: `Floor-standing and wall-mounted formats from ${posso.kioskPrice} + VAT for indoor models. Outdoor IP65-rated kiosks for food trucks and forecourt sites are a special order rather than part of the standard offer.`,
   },
   {
     name: 'Kitchen display screens',
-    body: 'A 21-inch kitchen display taking all orders through to the kitchen is £399 + VAT.',
+    body: `A 21-inch kitchen display taking all orders through to the kitchen is ${posso.kdsPrice} + VAT.`,
   },
   {
     name: 'Printers',
-    body: 'An 80mm kitchen printer is included with the standard packages. Additional kitchen or receipt printers are £99 each. Pizza sites can add a Zebra box label printer for £325.',
+    body: `An 80mm kitchen printer is included with the standard packages. Additional kitchen or receipt printers are ${posso.printerPrice} each. Pizza sites can add a Zebra box label printer for £325.`,
   },
   {
     name: 'Handheld waiter pads',
-    body: 'Table-side ordering devices at £259 as an optional add-on.',
+    body: `Table-side ordering devices at ${posso.waiterPadPrice} as an optional add-on.`,
   },
   {
     name: 'Card terminals',
@@ -246,7 +262,7 @@ const capabilitySections = [
     heading: 'AI Phone Ordering',
     paragraphs: [
       'Calls that ring out are orders lost. Posso’s AI phone ordering answers the phone when the line is busy or the counter is three deep, takes the order conversationally and drops it straight into the EPOS.',
-      'You get a free dedicated number to divert to or advertise, with free setup, at £1 per order taken.',
+      `You get a free dedicated number to divert to or advertise, with free setup, at ${posso.aiPhonePerOrder} per order taken.`,
     ],
     link: { href: '/ai-phone-ordering', label: 'AI phone ordering' },
   },
@@ -255,7 +271,7 @@ const capabilitySections = [
     heading: 'Card Payments and Posso Pay',
     paragraphs: [
       'Posso Pay is our integrated card payment service. Terminals take contactless, chip and PIN, Apple Pay and Google Pay, and they are integrated with the till — the amount pushes across automatically, so there are no keying errors and no end-of-day mismatch between the till and the terminal.',
-      'Posso Pay pricing starts from a guide rate of 1% + 10p, and the same rate applies to in-store terminals and the online payment gateway — so you are not paying a premium to take payments online. Your actual rate depends on card mix and turnover, and we quote it as part of your consultation.',
+      `Posso Pay pricing starts from a guide rate of ${posso.possoPayRate}, and the same rate applies to in-store terminals and the online payment gateway — so you are not paying a premium to take payments online. Your actual rate depends on card mix and turnover, and we quote it as part of your consultation.`,
       'Teya and Dojo are also supported as card machine partners where a site already has a relationship in place.',
     ],
     link: { href: '/credit-card-machines', label: 'Posso Pay card payments' },
@@ -264,8 +280,8 @@ const capabilitySections = [
     id: 'delivery',
     heading: 'Delivery, Drivers and Platform Integrations',
     paragraphs: [
-      'Delivery-zone management with custom fees by area, driver assignment and a live driver app at 30p per delivery. Caller ID integration pulls up a returning customer’s address as the phone rings.',
-      'Just Eat, Uber Eats and Deliveroo integration is available as an add-on to any package at £45/month with unlimited orders, so platform orders land on the same kitchen screen as everything else instead of on three separate tablets.',
+      `Delivery-zone management with custom fees by area, driver assignment and a live driver app at ${posso.driverAppPerDelivery} per delivery. Caller ID integration pulls up a returning customer’s address as the phone rings.`,
+      `Just Eat, Uber Eats and Deliveroo integration is available as an add-on to any package at ${posso.deliveryIntegrationMonthly}/month with unlimited orders, so platform orders land on the same kitchen screen as everything else instead of on three separate tablets.`,
       'Also integrates with HubRise, GloriaFood and Shipday.',
     ],
     link: { href: '/delivery-management-pos', label: 'Delivery management' },
@@ -291,15 +307,15 @@ const capabilitySections = [
 ];
 
 const priceRows: [string, string][] = [
-  ['POS system', '£499 + VAT'],
-  ['Self-order kiosk (indoor)', '£699 + VAT'],
-  ['Restaurant Full Service package', '£899 + VAT'],
-  ['Fast Food Growth package', '£1,250 + VAT'],
-  ['21-inch kitchen display', '£399 + VAT'],
-  ['Extra printer', '£99'],
-  ['Handheld waiter pad', '£259'],
-  ['Twin-screen upgrade', '£150'],
-  ['Software and support', 'From £25 + VAT a month'],
+  ['POS system', `${posso.posPrice} + VAT`],
+  ['Self-order kiosk (indoor)', `${posso.kioskPrice} + VAT`],
+  ['Restaurant Full Service package', `${posso.fullServicePrice} + VAT`],
+  ['Fast Food Growth package', `${posso.fastFoodGrowthPrice} + VAT`],
+  ['21-inch kitchen display', `${posso.kdsPrice} + VAT`],
+  ['Extra printer', posso.printerPrice],
+  ['Handheld waiter pad', posso.waiterPadPrice],
+  ['Twin-screen upgrade', posso.twinScreenPrice],
+  ['Software and support', `From ${posso.softwareMonthly} + VAT a month`],
 ];
 
 const comparisonChecks = [
@@ -329,6 +345,106 @@ const comparisonChecks = [
   },
 ];
 
+/** "What hardware does a POS system need?" — required vs optional, Posso prices from possoFacts. */
+const hardwareChecklist: { item: string; need: string; does: string; price: string }[] = [
+  {
+    item: 'Touchscreen terminal (the till)',
+    need: 'Required',
+    does: 'Takes orders, prices them and sends them to the kitchen.',
+    price: `POS system from ${posso.posPrice} + VAT — single-screen, with kitchen printer, receipt printer and cash drawer`,
+  },
+  {
+    item: 'Card reader',
+    need: 'Required if you take cards',
+    does: 'Takes contactless, chip and PIN and wallet payments; integrated, the till sends the amount across.',
+    // TODO: PAUL — card terminal hardware price or rental for Posso Pay, if there is one.
+    price: `Supplied through Posso Pay — processing from ${posso.possoPayRate}, quoted on turnover`,
+  },
+  {
+    item: 'Printers (receipt and kitchen)',
+    need: 'Required — unless the kitchen runs on screens',
+    does: 'Customer receipts at the counter; order tickets in the kitchen.',
+    price: `Included in the POS system; extra printers ${posso.printerPrice} each`,
+  },
+  {
+    item: 'Cash drawer',
+    need: 'Required if you take cash',
+    does: 'Opens on a cash sale and is counted against the X and Z reports.',
+    price: 'Included in the POS system',
+  },
+  {
+    item: 'Kitchen display system (KDS)',
+    need: 'Optional',
+    does: 'Replaces paper tickets with a live order screen, routed by station.',
+    price: `21-inch screen ${posso.kdsPrice} + VAT`,
+  },
+  {
+    item: 'Customer display',
+    need: 'Optional',
+    does: 'Shows the customer their order and total as it is rung in.',
+    price: `Twin-screen upgrade ${posso.twinScreenPrice}`,
+  },
+  {
+    item: 'Router / internet connection',
+    need: 'Required for card payments, online orders and cloud sync',
+    does: 'Connects the system; a Posso till keeps trading offline if it drops.',
+    // TODO: PAUL — Posso Connect (4G/WiFi router with multi-network SIM) price, if it should be listed.
+    price: 'Your broadband, or Posso Connect 4G/WiFi router where connectivity is unreliable',
+  },
+  {
+    item: 'Handheld waiter pad',
+    need: 'Optional',
+    does: 'Takes orders at the table and sends them straight to the kitchen.',
+    price: posso.waiterPadPrice,
+  },
+  {
+    item: 'Self-order kiosk',
+    need: 'Optional',
+    does: 'Lets customers order and pay themselves at peak.',
+    price: `From ${posso.kioskPrice} + VAT (indoor)`,
+  },
+];
+
+/** "Hidden fees to check on any POS quote" */
+const hiddenFees = [
+  {
+    q: 'Card rate lock-in',
+    a: 'Is the software conditional on one card processor? What is the rate after any introductory period, and can you move?',
+  },
+  {
+    q: 'Integration fees',
+    a: 'Delivery platforms, accounting, online ordering and loyalty are often monthly add-ons. List every one you need and get the monthly total.',
+  },
+  {
+    q: 'Per-order fees',
+    a: 'Online ordering, phone ordering and delivery dispatch are sometimes charged per order. Multiply by your real Friday volume, not a quiet Tuesday.',
+  },
+  {
+    q: 'Hardware lease',
+    a: 'Is the hardware bought, financed or leased? A lease can cost more over the term than buying, and the kit may not be yours at the end.',
+  },
+  {
+    q: 'Early termination',
+    a: 'What does it cost to leave in month 13? Ask for the minimum term, the notice period and whether the contract auto-renews.',
+  },
+  {
+    q: 'Support tiers',
+    a: 'Is evening and weekend support included, or a higher tier? Check the hours against when you actually trade.',
+  },
+];
+
+/** Competitor comparison pages linked from the "Compare" section. */
+const compareLinks = [
+  { href: '/epos-now-alternative', name: 'Epos Now alternative' },
+  { href: '/posso-vs-epos-now', name: 'Posso vs Epos Now' },
+  { href: '/square-pos-alternative', name: 'Square POS alternative' },
+  { href: '/sumup-pos-alternative', name: 'SumUp POS alternative' },
+  { href: '/lightspeed-alternative', name: 'Lightspeed alternative' },
+  { href: '/zettle-alternative', name: 'Zettle alternative' },
+  { href: '/toast-pos-alternative', name: 'Toast POS alternative' },
+  { href: '/pos-companies-uk', name: 'How to choose a POS company' },
+];
+
 const eposVerticals = [
   { href: '/best-restaurant-epos-system-uk', name: 'Best Restaurant EPOS UK', desc: '2026 buyer’s guide & comparison' },
   { href: '/restaurant-epos', name: 'Restaurant EPOS', desc: 'Table service, courses & split bills' },
@@ -336,8 +452,8 @@ const eposVerticals = [
   // Every café URL now 308s to /pos-for-cafe (the single café page) — link it
   // directly rather than sending the hub through a redirect.
   { href: '/pos-for-cafe', name: 'Café & Coffee Shop POS', desc: 'Peak-speed tills, drink modifiers & loyalty' },
-  { href: '/pizza-epos', name: 'Pizza POS', desc: 'Half & half, toppings & delivery' },
-  { href: '/pos-for-pizza-shop', name: 'Pizza POS Buyer’s Guide', desc: 'What to look for before you buy' },
+  // /pizza-epos now 308s here (Oct 2026) — one pizza card, not two.
+  { href: '/pos-for-pizza-shop', name: 'Pizza Shop POS', desc: 'Half & half, toppings, delivery & what to look for' },
   { href: '/pos-for-fish-and-chip-shop', name: 'Fish & Chip Shop POS', desc: 'Portions, prompts & peak-hour speed' },
   { href: '/pos-for-kebab-shop', name: 'Kebab Shop POS', desc: 'Build sequence, extras & late-night trade' },
   { href: '/pos-for-chinese-takeaway', name: 'Chinese Takeaway POS', desc: 'Dish numbers, long menus & set meals' },
@@ -353,8 +469,11 @@ const eposVerticals = [
   { href: '/pub-pos-system', name: 'Pub POS', desc: 'Tabs, rounds & fast bar service' },
   { href: '/bar-epos', name: 'Bar EPOS', desc: 'Rapid rounds & happy-hour pricing' },
   { href: '/hotel-epos-system', name: 'Hotel EPOS', desc: 'Room charging & multi-outlet' },
-  { href: '/epos-system-for-indian-takeaway', name: 'Indian Takeaway EPOS', desc: 'Heat levels, menus & delivery' },
   { href: '/salon-pos-software', name: 'Salon POS', desc: 'Appointments, deposits & tips' },
+  { href: '/retail-pos-system', name: 'Retail POS', desc: 'Barcodes, stock & variants — what to check' },
+  { href: '/small-business-pos-system', name: 'Small Business POS', desc: 'Starter package, finance & payback' },
+  { href: '/pos-systems', name: 'POS Packages & Quotes', desc: 'Every package price, itemised' },
+  { href: '/buy-epos-system-uk', name: 'Buy or Lease an EPOS', desc: 'Ownership, finance & total cost' },
   { href: '/cloud-epos-system', name: 'Cloud EPOS', desc: 'Manage every site from anywhere' },
   { href: '/self-order-kiosks', name: 'Self-Order Kiosks', desc: 'Self-service ordering that upsells' },
 ];
@@ -408,7 +527,7 @@ const faqs = [
   {
     question: 'How much does an EPOS system cost in the UK?',
     answer:
-      'Posso POS systems start at £499 plus VAT and self-order kiosks at £699 plus VAT, with package prices for single-screen setups. Software is from £25 + VAT a month, with your exact figure confirmed on your quote. Setup is free; on-site installation for larger sites is priced on application.',
+      `Posso POS systems start at ${posso.posPrice} plus VAT and self-order kiosks at ${posso.kioskPrice} plus VAT, with package prices for single-screen setups. Software is from ${posso.softwareMonthly} + VAT a month, with your exact figure confirmed on your quote. Setup is free; on-site installation for larger sites is priced on application.`,
   },
   {
     question: 'Is support included, or extra?',
@@ -423,16 +542,36 @@ const faqs = [
   {
     question: 'What card processing rate does Posso Pay charge?',
     answer:
-      'Posso Pay starts from a guide rate of 1% + 10p, and the same rate applies to in-store terminals and the online payment gateway. Your actual rate depends on card mix and turnover and is confirmed at consultation.',
+      `Posso Pay starts from a guide rate of ${posso.possoPayRate}, and the same rate applies to in-store terminals and the online payment gateway. Your actual rate depends on card mix and turnover and is confirmed at consultation.`,
   },
   {
     question: 'Is there a warranty?',
-    answer: 'Two years on the systems.',
+    answer: `Yes — ${posso.warrantyYearsWord} years on the systems.`,
   },
   {
     question: 'How long does it take to get running?',
+    answer: `${posso.goLiveStatement} Your menu is built for you during free setup.`,
+  },
+  {
+    question: 'What is the best POS system for a small business in the UK?',
     answer:
-      'Systems ship preconfigured and plug-and-play, with your menu built for you during free setup.',
+      'The best one is the system that fits your trade: quick for staff to learn, keeps working offline, integrates your card payments and has a monthly cost you know in advance. A market stall that only takes payments may need nothing more than a card reader; a food business taking orders from the counter, phone, kiosk and delivery apps is better served by a hospitality EPOS that puts them all in one kitchen queue.',
+  },
+  {
+    question: 'Can I lease a POS system?',
+    answer: `Yes — most UK providers offer lease or finance options, but leasing usually costs more over the term than buying, and the hardware may not be yours at the end. Posso hardware can be bought outright from ${posso.posPrice} + VAT or spread on finance from ${posso.financeWeekly} a week over 12, 24 or 36 months, subject to status.`,
+  },
+  {
+    // TODO: PAUL — once possoContract (src/lib/possoFacts.ts) is confirmed, add Posso's own minimum term and notice period to this answer.
+    question: 'How long are POS contracts?',
+    answer:
+      'It varies widely between providers, from rolling monthly agreements to multi-year minimum terms with early-termination fees. Ask every provider for the minimum term, the notice period, whether it auto-renews and the cost of leaving early, in writing. Posso sets out its terms on your quote.',
+  },
+  {
+    // TODO: PAUL — wording to be confirmed with the accountant; kept deliberately general until then.
+    question: 'Is a POS system tax deductible?',
+    answer:
+      'For a trading business, POS hardware and software are generally allowable business costs, but whether you buy, finance or lease changes how they are treated. Tax depends on your circumstances, so check with your accountant before you choose.',
   },
 ];
 
@@ -452,8 +591,8 @@ export default function PosPage() {
           them to the kitchen, handles payments and reports on trading — EPOS is simply the UK term for POS. For
           hospitality, what matters most is that it keeps working when the internet drops, handles every order
           type (counter, table, takeaway, delivery, kiosk and online) in one queue, and does not lock you into a
-          single card processor. Posso&apos;s hospitality EPOS is offline-first, trusted by 500+ UK businesses, and
-          starts from £499 + VAT, with UK support Monday to Friday, 9am–9:30pm.
+          single card processor. Posso&apos;s hospitality EPOS is offline-first, trusted by {posso.businessCount} UK businesses, and
+          starts from {posso.posPrice} + VAT, with UK support Monday to Friday, {posso.supportTime}.
         </QuickAnswer>
 
         {/* Definitional intent — front-loaded, because "epos meaning" and
@@ -576,6 +715,52 @@ export default function PosPage() {
           </div>
         </section>
 
+        {/* Hardware checklist — required vs optional, with Posso prices (Oct 2026) */}
+        <section id="pos-hardware-checklist" className="py-16 md:py-20">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-6">
+                What hardware does a POS system need?
+              </h2>
+              <p className="text-lg text-slate-300 leading-relaxed mb-8">
+                Every POS system needs a touchscreen terminal, a way to take cards, printers and — if you take cash — a
+                cash drawer, plus an internet connection for card payments and online orders. A kitchen display,
+                customer display, handhelds and kiosks are optional extras you add when the trade needs them.
+              </p>
+              <div className="glass-card rounded-2xl border border-slate-700/50 p-4 sm:p-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
+                    <caption className="sr-only">POS hardware checklist: required or optional, what each does, and Posso prices</caption>
+                    <thead>
+                      <tr className="border-b border-slate-700">
+                        <th scope="col" className="py-3 pr-4 font-semibold uppercase tracking-wide text-slate-400">Hardware</th>
+                        <th scope="col" className="py-3 pr-4 font-semibold uppercase tracking-wide text-slate-400">Required?</th>
+                        <th scope="col" className="py-3 pr-4 font-semibold uppercase tracking-wide text-slate-400">What it does</th>
+                        <th scope="col" className="py-3 pr-4 font-semibold uppercase tracking-wide text-slate-400">Posso price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {hardwareChecklist.map((h) => (
+                        <tr key={h.item} className="border-b border-slate-800 align-top last:border-b-0">
+                          <th scope="row" className="py-3 pr-4 font-medium text-white">{h.item}</th>
+                          <td className="py-3 pr-4 text-slate-300">{h.need}</td>
+                          <td className="py-3 pr-4 text-slate-400">{h.does}</td>
+                          <td className="py-3 pr-4 text-slate-300">{h.price}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-slate-400 mt-6 leading-relaxed">
+                Prices are one-off unless stated. Software is from {posso.softwareMonthly} + VAT a month on top, and every
+                cost is on the{' '}
+                <Link href="/epos-pricing-uk" className="text-primary hover:underline">EPOS pricing page</Link>.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Software, in prose — the feature matrix below carries the detail */}
         <section className="py-16 md:py-20">
           <div className="container mx-auto px-4 md:px-6">
@@ -690,7 +875,7 @@ export default function PosPage() {
               </div>
               <div className="space-y-5 text-slate-300 leading-relaxed mt-8">
                 <p>
-                  Software is from £25 + VAT a month, covering the core system, software updates and cloud
+                  Software is from {posso.softwareMonthly} + VAT a month, covering the core system, software updates and cloud
                   features, with your exact figure confirmed on your quote. UK-based support is included in
                   that — there is no separate support tier to buy. Setup — menu building and equipment
                   configuration — is free. Systems are plug-and-play with setup guidance; on-site installation
@@ -698,11 +883,79 @@ export default function PosPage() {
                 </p>
                 <p>
                   Add-ons priced separately: delivery platform integration (Just Eat, Uber Eats, Deliveroo) at
-                  £45/month with unlimited orders, AI phone ordering at £1 per order, and driver-app delivery at
-                  30p per delivery. Every cost we charge is set out on the{' '}
+                  {posso.deliveryIntegrationMonthly}/month with unlimited orders, AI phone ordering at {posso.aiPhonePerOrder} per order, and driver-app delivery at
+                  {posso.driverAppPerDelivery} per delivery. Every cost we charge is set out on the{' '}
                   <Link href="/epos-pricing-uk" className="text-primary hover:underline">EPOS pricing page</Link>.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Free POS — answers "free pos system" / "free epos" honestly */}
+        <section id="free-pos-system" className="py-16 md:py-20">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-8">
+                Is there such a thing as a free POS system?
+              </h2>
+              <div className="space-y-5 text-lg text-slate-300 leading-relaxed">
+                <p>
+                  Not really. A &ldquo;free&rdquo; POS system usually means free software, with the cost moved somewhere
+                  else — the hardware you have to buy, a card-processing rate you are tied to, or monthly fees for the
+                  features a hospitality business actually needs.
+                </p>
+                <p>
+                  <strong className="text-white">Hardware still costs money.</strong> Free software needs a tablet or
+                  terminal, a printer, a cash drawer and a card reader, and consumer tablets are not built for a hot,
+                  greasy counter.
+                </p>
+                <p>
+                  <strong className="text-white">The card rate pays for it.</strong> Many free plans are funded by card
+                  processing. That is a fair model at low volumes, but the percentage you pay on every transaction can
+                  outweigh a software fee as takings grow — and you may not be able to move processor.
+                </p>
+                <p>
+                  <strong className="text-white">The features you need are often paid add-ons.</strong> Kitchen screens,
+                  online ordering, delivery-platform integration and phone support are where free tiers tend to stop.
+                  Price the system you would actually run, not the free starting point.
+                </p>
+                <p>
+                  Posso is not free: a POS system is {posso.posPrice} + VAT and software is from {posso.softwareMonthly} + VAT
+                  a month, with card processing quoted on your turnover rather than required. Every figure is on the{' '}
+                  <Link href="/epos-pricing-uk" className="text-primary hover:underline">EPOS pricing page</Link>, and
+                  there is more on the trade-offs in our guide to{' '}
+                  <Link href="/free-epos-software" className="text-primary hover:underline">free EPOS software</Link>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Hidden fees */}
+        <section id="hidden-pos-fees" className="py-16 md:py-20 bg-slate-900/30">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-6">Hidden fees to check on any POS quote</h2>
+              <p className="text-lg text-slate-300 leading-relaxed mb-8">
+                The fees that catch operators out are rarely in the headline price: card-rate lock-in, integration
+                and per-order fees, hardware leases, early-termination charges and paid support tiers. Ask for each
+                one in writing before you sign — from any provider, including us.
+              </p>
+              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {hiddenFees.map((f) => (
+                  <div key={f.q} className="glass-card rounded-2xl border border-slate-700/50 p-6">
+                    <dt className="text-lg font-bold text-white">{f.q}</dt>
+                    <dd className="text-slate-400 mt-2 leading-relaxed">{f.a}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="text-slate-300 leading-relaxed mt-8">
+                For how monthly fees stack up across UK providers, read{' '}
+                <Link href="/epos-system-monthly-fee" className="text-primary hover:underline">EPOS monthly fees: what operators actually pay</Link>
+                , and see every Posso cost on the{' '}
+                <Link href="/epos-pricing-uk" className="text-primary hover:underline">EPOS pricing page</Link>.
+              </p>
             </div>
           </div>
         </section>
@@ -791,6 +1044,76 @@ export default function PosPage() {
           </div>
         </section>
 
+        {/* Compare — competitor pages */}
+        <section id="compare-pos-systems" className="py-16 md:py-20 bg-slate-900/30">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-6">Compare Posso with other POS systems</h2>
+              <p className="text-lg text-slate-300 leading-relaxed mb-8">
+                Each comparison sets out what is included, how it is priced and who each system suits better — including
+                where the other provider is the better choice.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {compareLinks.map((c) => (
+                  <Link
+                    key={c.href}
+                    href={c.href}
+                    className="glass-card rounded-xl p-4 text-center border border-slate-700/50 hover:border-primary/50 transition-colors"
+                  >
+                    <p className="font-semibold text-white">{c.name}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Compliance */}
+        <section id="pos-compliance" className="py-16 md:py-20">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-8">
+                Compliance: VAT, Making Tax Digital and PCI DSS
+              </h2>
+              <div className="space-y-5 text-lg text-slate-300 leading-relaxed">
+                <p>
+                  A UK POS system has to record the right VAT on every item, produce X and Z reports, keep sales records
+                  you can hand to your accountant or VAT software, and take card payments in a way that keeps you within
+                  PCI DSS. Those four are the baseline; check each before you buy.
+                </p>
+                <p>
+                  <strong className="text-white">VAT-coded items.</strong> Each product needs the right VAT treatment —
+                  in hospitality, hot takeaway food is standard-rated while much cold takeaway food is zero-rated, and
+                  eat-in and takeaway can differ for the same item. Ask how the system applies VAT per item and per order
+                  type, and how a rate change is rolled out. Posso&apos;s menu management includes tax configuration.
+                </p>
+                <p>
+                  <strong className="text-white">X and Z reports.</strong> An X report shows takings so far without
+                  closing the day; a Z report closes the day and is your end-of-day record. Posso produces both for daily
+                  reconciliation.
+                </p>
+                <p>
+                  <strong className="text-white">Exportable records for Making Tax Digital.</strong> VAT-registered
+                  businesses keep digital records and file VAT returns through MTD-compatible software, and Making Tax
+                  Digital for Income Tax is being phased in for sole traders and landlords. A POS system is not usually
+                  the MTD software itself, so what matters is that its sales and VAT data get into your accounts without
+                  re-keying. Posso syncs sales, payment methods and VAT to{' '}
+                  <Link href="/xero-integration" className="text-primary hover:underline">Xero</Link>.
+                  {/* TODO: PAUL — confirm which other accounting integrations Posso supports (QuickBooks? Sage? FreeAgent?) and add them here. */}
+                </p>
+                <p>
+                  <strong className="text-white">PCI-compliant card handling.</strong> PCI DSS is the card industry&apos;s
+                  security standard. The simplest way to stay in scope is for card details never to touch the till: the
+                  till sends the amount to the card terminal, and the terminal and payment provider handle the card. Ask
+                  any supplier how card data flows and who is responsible for PCI compliance. Posso Pay terminals are
+                  integrated this way — the till sends the amount, the terminal takes the payment.
+                  {/* TODO: PAUL — confirm Posso Pay's PCI DSS position (provider's certification, whether card data ever touches the till) before adding any stronger claim. */}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Customer review */}
         <section className="py-16 bg-slate-900/30">
           <div className="container mx-auto px-4 md:px-6 max-w-3xl">
@@ -812,7 +1135,7 @@ export default function PosPage() {
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/delivery-integrations" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Delivery Integration</p>
@@ -824,7 +1147,7 @@ export default function PosPage() {
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
@@ -842,14 +1165,14 @@ export default function PosPage() {
               </h2>
               <p className="text-slate-300 mt-4 text-lg">
                 Book a free consultation and we will build your menu, configure the equipment and ship it
-                plug-and-play — with two years of warranty and UK-based support included.
+                plug-and-play — with {posso.warrantyYearsWord} years of warranty and UK-based support included.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                 <a
-                  href="tel:+448081753956"
+                  href={posso.phoneHref}
                   className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium"
                 >
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
                 <a
                   href="mailto:info@posso.co.uk"
@@ -858,7 +1181,7 @@ export default function PosPage() {
                   info@posso.co.uk
                 </a>
               </div>
-              <p className="text-slate-500 text-sm mt-5">Mon–Fri, 9am–9:30pm</p>
+              <p className="text-slate-500 text-sm mt-5">Mon–Fri, {posso.supportTime}</p>
             </div>
           </div>
         </section>

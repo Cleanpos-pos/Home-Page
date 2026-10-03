@@ -7,11 +7,12 @@ import { Button } from '@/components/ui/button';
 import { LifeBuoy, Phone, Download, MonitorSmartphone, ArrowRight, Clock, FileText } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Support — UK Help Desk & Remote Assistance',
   description:
-    'Get help with your Posso ePOS system. Call our UK support team on 0808 175 3956, start a remote support session via AnyDesk, or browse downloads and guides.',
+    `Get help with your Posso ePOS system. Call our UK support team on ${posso.phone}, start a remote support session via AnyDesk, or browse downloads and guides.`,
   alternates: { canonical: '/support' },
   openGraph: {
     title: 'Posso Support — UK Help Desk & Remote Assistance',
@@ -57,8 +58,8 @@ export default function SupportPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-white">
-                <a href="tel:+448081753956">
-                  <Phone className="mr-2 h-5 w-5" /> Call 0808 175 3956 — Free
+                <a href={posso.phoneHref}>
+                  <Phone className="mr-2 h-5 w-5" /> Call {posso.phone} — Free
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline">
@@ -104,8 +105,8 @@ export default function SupportPage() {
                 <div className="flex-1 w-full">
                   <h2 className="text-xl font-bold text-white mb-2">UK Phone Support</h2>
                   <p className="text-slate-400 mb-4">
-                    Speak to a real person on <a href="tel:+448081753956" className="text-primary hover:underline">0808 175 3956</a> (free from UK landlines and mobiles).
-                    Lines are staffed Monday to Friday, 9am–9:30pm, with an urgent line for critical
+                    Speak to a real person on <a href={posso.phoneHref} className="text-primary hover:underline">{posso.phone}</a> (free from UK landlines and mobiles).
+                    Lines are staffed Monday to Friday, {posso.supportTime}, with an urgent line for critical
                     till-down issues outside those hours — average response under 15 minutes.
                   </p>
                 </div>

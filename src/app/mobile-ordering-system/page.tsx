@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Smartphone, Clock, CreditCard, BarChart3, Phone, ArrowRight, QrCode, Globe, ShieldCheck, Tablet, MapPin, Users } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Mobile Ordering System for Restaurants | QR Code & App Ordering',
   description:
-    'Mobile ordering system for restaurants — QR code table ordering, mobile-responsive online ordering, waiter pad app, and mobile POS for events. Over 70% of orders come from mobile. From £499 + VAT.',
+    `Mobile ordering system for restaurants — QR code table ordering, mobile-responsive online ordering, waiter pad app, and mobile POS for events. Over 70% of orders come from mobile. From ${posso.posPrice} + VAT.`,
   keywords: [
     'mobile ordering system',
     'mobile ordering system for restaurants',
@@ -129,14 +130,14 @@ export default function MobileOrderingSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> QR code order & pay — no app download needed</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> 35% higher average order value vs counter ordering</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Works with your existing Posso POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Works with your existing Posso POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -274,7 +275,7 @@ export default function MobileOrderingSystemPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">From £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">From {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/restaurant-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Restaurant ePOS</p>
@@ -290,7 +291,7 @@ export default function MobileOrderingSystemPage() {
           { question: 'How does QR code table ordering work with my existing POS?', answer: 'QR code orders go directly to your Posso POS and kitchen display system. The order includes the table number automatically, so your kitchen knows exactly where to send the food. It works alongside counter orders and online orders on the same system.' },
           { question: 'Can I use the waiter pad app on any tablet?', answer: 'The Posso waiter pad app works on Android tablets and iPads. Staff browse the menu, take orders, apply modifiers, and send to the kitchen — all from the tablet. It connects to your main POS over Wi-Fi.' },
           { question: 'Is mobile ordering suitable for pop-ups and events?', answer: 'Yes. The Posso mobile POS works on any tablet with a mobile data connection. Pair it with a portable card terminal and you have a full POS for markets, festivals, food trucks, and outdoor events. No fixed broadband needed.' },
-          { question: 'How much does the mobile ordering system cost?', answer: 'Mobile ordering is included with your Posso POS system from £499 + VAT. QR code table ordering, the waiter pad app, and your online ordering website are all part of the platform. Online ordering runs on a low commission model.' },
+          { question: 'How much does the mobile ordering system cost?', answer: `Mobile ordering is included with your Posso POS system from ${posso.posPrice} + VAT. QR code table ordering, the waiter pad app, and your online ordering website are all part of the platform. Online ordering runs on a low commission model.` },
           { question: 'Does mobile ordering really increase average order value?', answer: 'Yes. Restaurants using Posso mobile ordering see an average 35% increase in order value compared to counter ordering. Customers browsing a visual menu with photos and descriptions tend to add more items, extras, and drinks.' },
         ]} />
 

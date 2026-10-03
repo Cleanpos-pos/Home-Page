@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Coffee, Monitor, Heart, Zap, CupSoda, Clock } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Coffee POS System',
   description:
-    'Coffee POS System with barista KDS, milk and size modifiers, loyalty stamp cards, morning rush mode, and takeaway cup management. Built for coffee shops. From £499 + VAT.',
+    `Coffee POS System with barista KDS, milk and size modifiers, loyalty stamp cards, morning rush mode, and takeaway cup management. Built for coffee shops. From ${posso.posPrice} + VAT.`,
   keywords: [
     'coffee pos system',
     'coffee shop pos',
@@ -124,14 +125,14 @@ export default function CoffeePosSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Barista display shows every drink specification</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Digital loyalty stamps replace paper cards</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Coffee POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Coffee POS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -212,7 +213,7 @@ export default function CoffeePosSystemPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
@@ -229,7 +230,7 @@ export default function CoffeePosSystemPage() {
           { question: 'How do digital loyalty stamps work?', answer: 'Customers link their phone number or email to your loyalty programme. Each qualifying purchase adds a digital stamp automatically. After the set number of stamps (e.g., 9), the next drink is free. Customers check their balance on their phone. You see loyalty data in your dashboard — visit frequency, favourite drinks, and retention rates.' },
           { question: 'What is morning rush mode?', answer: 'Rush mode reconfigures the POS screen to show only your top-selling items in large, easy-to-tap buttons. Regular latte, flat white, americano, cappuccino — one tap each. Combined with tap-to-pay card processing, you can complete a transaction in under 20 seconds. Designed for the 7:30–9:00am peak when speed is everything.' },
           { question: 'Does it support click-and-collect?', answer: 'Yes. Customers order and pay through your branded app or website. The order arrives on the barista display alongside walk-in orders. When the drink is ready, the customer receives a notification. They collect without queuing. During peak times, this reduces counter congestion and increases overall throughput.' },
-          { question: 'How much does a coffee POS system cost?', answer: 'The complete coffee POS system starts from £499 + VAT including touchscreen terminal, barista display software, and loyalty programme. Mobile ordering is available at low commission. Finance from £24.92 per week. Free setup, menu configuration, and staff training included with a 2-year warranty.' },
+          { question: 'How much does a coffee POS system cost?', answer: `The complete coffee POS system starts from ${posso.posPrice} + VAT including touchscreen terminal, barista display software, and loyalty programme. Mobile ordering is available at low commission. Finance from ${posso.financeWeekly} per week. Free setup, menu configuration, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

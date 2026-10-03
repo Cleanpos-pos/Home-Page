@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, MessageSquare, UserCheck, ClipboardList, Repeat, PhoneCall, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Text Ordering System',
   description:
-    'Text Ordering System with SMS order placement, caller ID integration, phone order management, repeat order recall, and kitchen display routing. From £499 + VAT.',
+    `Text Ordering System with SMS order placement, caller ID integration, phone order management, repeat order recall, and kitchen display routing. From ${posso.posPrice} + VAT.`,
   keywords: [
     'text ordering system',
     'sms ordering system',
@@ -124,14 +125,14 @@ export default function TextOrderingSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> SMS ordering with automated confirmation</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Caller ID recognition with order history</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function TextOrderingSystemPage() {
           { question: 'How does caller ID recognition work?', answer: 'When a customer calls, their phone number is matched against your customer database. If they have ordered before, their name, address, order history, and any notes appear on the POS screen instantly. Your staff can greet them by name and recall previous orders in one tap. New callers are added to the database after their first order.' },
           { question: 'Can customers reorder their usual by text?', answer: 'Yes. Customers can text "usual" or "same as last time" and the system recalls their most recent order. A confirmation SMS lists the items and total. The customer replies to confirm, and the order goes to the kitchen. Regular customers can place a repeat order in under 30 seconds.' },
           { question: 'Does this work alongside online ordering?', answer: 'Yes. Text orders, phone orders, online orders, and walk-in orders all flow into the same POS system and kitchen display. One unified queue, one set of reports. Your team manages all channels from a single screen. There is no need for separate systems or manual re-entry.' },
-          { question: 'What does the text ordering system cost?', answer: 'The POS system starts from £499 + VAT including the text ordering module, caller ID integration, phone order screen, and kitchen display connection. SMS costs are minimal — a few pence per message. Low commission on orders. Setup, training, and a 2-year warranty are included.' },
+          { question: 'What does the text ordering system cost?', answer: `The POS system starts from ${posso.posPrice} + VAT including the text ordering module, caller ID integration, phone order screen, and kitchen display connection. SMS costs are minimal — a few pence per message. Low commission on orders. Setup, training, and a ${posso.warrantyYears}-year warranty are included.` },
         ]} />
 
         <Contact />

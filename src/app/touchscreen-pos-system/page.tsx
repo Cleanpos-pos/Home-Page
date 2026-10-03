@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Monitor, Fingerprint, Shield, Zap, Grid3X3, CreditCard } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Touchscreen POS System',
   description:
-    'Touchscreen POS System with 15-inch capacitive display, IP54 rating, fanless design, visual product grid, and one-tap ordering. Built for restaurant and hospitality environments. POS from £499 + VAT.',
+    `Touchscreen POS System with 15-inch capacitive display, IP54 rating, fanless design, visual product grid, and one-tap ordering. Built for restaurant and hospitality environments. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'touchscreen pos system',
     'touchscreen epos',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Touchscreen POS System | Posso UK',
     description:
-      'Touchscreen POS System with 15" capacitive display, IP54 rating, fanless design, and one-tap ordering. POS from £499 + VAT.',
+      `Touchscreen POS System with 15" capacitive display, IP54 rating, fanless design, and one-tap ordering. POS from ${posso.posPrice} + VAT.`,
     url: 'https://www.posso.co.uk/touchscreen-pos-system',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -124,14 +126,14 @@ export default function TouchscreenPosSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> IP54 splash-proof for hospitality environments</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Fanless — silent and dust-proof</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Touchscreen POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Touchscreen POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -219,13 +221,15 @@ export default function TouchscreenPosSystemPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Touchscreen POS System — Frequently Asked Questions" faqs={[
           { question: 'What size is the touchscreen?', answer: 'The Posso touchscreen POS features a 15-inch capacitive display — the optimal size for counter POS use. It is large enough to show a full product grid with images, but compact enough not to dominate the counter. The screen is commercial-grade with high brightness and wide viewing angles.' },
           { question: 'Is the touchscreen waterproof?', answer: 'The enclosure has an IP54 rating, which means it is protected against splashes from any direction. It is not submersible, but it handles the spills, splashes, and steam that are part of daily restaurant life. The fanless design means there are no air vents for liquids to enter.' },
           { question: 'Why does fanless design matter in a restaurant?', answer: 'Fans pull in air — along with grease, dust, and steam. In a restaurant environment, fan-cooled computers clog quickly and overheat. Fanless design eliminates this problem entirely. No fan also means silent operation and no moving parts to fail.' },
           { question: 'How does the visual product grid work?', answer: 'Products display as colourful tiles with images, names, and prices. Staff find items by sight rather than searching through text lists. Categories are colour-coded — hot drinks in red, cold drinks in blue, starters in green. Popular items can be pinned to the home screen for one-tap access.' },
           { question: 'Can I add a customer-facing display?', answer: 'Yes. The customer-facing display shows the order building in real time, the running total, and your branding. Customers see exactly what is being rung up, reducing errors and disputes. It also serves as a promotional display when not actively showing an order.' },
-          { question: 'How much does the touchscreen POS cost?', answer: 'The touchscreen POS system starts from £499 + VAT including the 15-inch capacitive touchscreen, POS software, and 2-year warranty. Card terminals, receipt printers, and kitchen displays are available separately. Free setup and training included. Finance from £24.92 per week.' },
+          { question: 'How much does the touchscreen POS cost?', answer: `The touchscreen POS system starts from ${posso.posPrice} + VAT including the 15-inch capacitive touchscreen, POS software, and ${posso.warrantyYears}-year warranty. Card terminals, receipt printers, and kitchen displays are available separately. Free setup and training included. Finance from ${posso.financeWeekly} per week.` },
         ]} />
 
         <Contact />

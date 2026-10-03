@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Phone, ArrowRight, CreditCard, Clock, Beer, Users, Timer, Percent } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Pub POS System',
   description:
-    'Pub POS System with tab management, speed-pour ordering, drink modifiers, happy hour scheduling, and bar KDS. Built for fast-paced pub service. POS from £499 + VAT.',
+    `Pub POS System with tab management, speed-pour ordering, drink modifiers, happy hour scheduling, and bar KDS. Built for fast-paced pub service. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'pub pos system',
     'pub pos system uk',
@@ -124,14 +126,14 @@ export default function PubPosSystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Open and manage tabs from any till</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Happy hour runs automatically</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete pub POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete pub POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -227,13 +229,15 @@ export default function PubPosSystemPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Pub POS System — Frequently Asked Questions" faqs={[
           { question: 'How does tab management work on the pub POS?', answer: 'Open a tab by swiping a card or entering a customer name. Add drinks and food to the tab from any till in the pub. Tabs persist across shift changes. When the customer wants to settle, pull up the tab, review the items, and take payment by card, cash, or split between the group.' },
           { question: 'Can I run happy hour pricing automatically?', answer: 'Yes. Set happy hour rules by day of the week, start time, end time, and product category. The POS automatically applies discounted pricing during your happy hour window and reverts to full price when it ends. You can run different happy hours on different days.' },
           { question: 'Does it handle food orders as well as drinks?', answer: 'Yes. The Posso pub POS routes drinks orders to the bar display and food orders to the kitchen display. A customer ordering a pint and a pie gets one order that splits automatically. One bill, one payment, two preparation screens.' },
           { question: 'How do drink modifiers work?', answer: 'When staff select a spirit, they see options for single or double, choice of mixer, and garnish. The price adjusts automatically. This prevents undercharging for doubles and ensures every drink is rung up consistently, regardless of which member of staff serves it.' },
           { question: 'Can we split bills for groups?', answer: 'Yes. Split by item so each person pays for their own drinks, split equally between the group, or enter custom amounts. You can combine card and cash payments on the same bill. Staff can process a group split in under 30 seconds.' },
-          { question: 'How much does the pub POS system cost?', answer: 'The complete pub POS starts from £499 + VAT including the touchscreen terminal and software. Additional tills, card terminals, and bar display screens are available. Finance options from £24.92 per week. Free setup and training included with a 2-year warranty.' },
+          { question: 'How much does the pub POS system cost?', answer: `The complete pub POS starts from ${posso.posPrice} + VAT including the touchscreen terminal and software. Additional tills, card terminals, and bar display screens are available. Finance options from ${posso.financeWeekly} per week. Free setup and training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

@@ -34,10 +34,7 @@ const schema = {
     "operatingSystem": "Windows, Android, iOS, Web",
     "applicationCategory": "Restaurant Management System",
     "description": "Grow your Indian takeaway with the best EPOS system by Posso Ltd UK. Integrated online ordering, caller ID, postcode delivery management, and low commission.",
-    "author": {
-        "@type": "Organization",
-        "name": "Posso Ltd"
-    },
+    "author": { '@id': 'https://www.posso.co.uk/#organization' },
     "offers": {
         "@type": "Offer",
         "priceCurrency": "GBP",

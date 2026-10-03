@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Bot, PhoneCall, BookOpen, CalendarCheck, UserCheck, CreditCard, Headphones, BarChart3, Clock } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'AI Phone Ordering UK — 24/7 AI Phone Answering for Restaurants & Takeaways',
@@ -134,14 +135,14 @@ export default function AiPhoneOrderingPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Answers unlimited calls at once — never engaged</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Orders flow straight into your POS and kitchen display</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Built into Posso One — POS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Built into Posso One — POS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Hear It in Action — Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -220,7 +221,7 @@ export default function AiPhoneOrderingPage() {
                   the calls that go unanswered between eleven and three are the ones worth the most.
                 </p>
                 <p>
-                  And because Posso is a <strong className="text-white">UK company with UK-based support</strong>, your AI speaks naturally to British customers — pounds and pence, postcodes, collection and delivery — and our team on <a href="tel:+448081753956" className="text-primary hover:underline">0808 175 3956</a> sets it up with you end to end.
+                  And because Posso is a <strong className="text-white">UK company with UK-based support</strong>, your AI speaks naturally to British customers — pounds and pence, postcodes, collection and delivery — and our team on <a href={posso.phoneHref} className="text-primary hover:underline">{posso.phone}</a> sets it up with you end to end.
                 </p>
               </div>
             </div>
@@ -309,7 +310,7 @@ export default function AiPhoneOrderingPage() {
           { question: 'Do I have to change my phone number?', answer: 'No. You keep your existing number and simply forward it to your AI line — always, when busy, or only when unanswered, your choice. Customers call exactly as they always have. You can also advertise the AI line directly as a dedicated ordering number.' },
           { question: 'Where do the orders go?', answer: 'Straight into your Posso One POS. The order appears on the till, prints in the kitchen, and shows on the kitchen display exactly like a counter or online order, with the customer’s name, number, and address attached. The customer receives an SMS confirmation, and prepaid orders include a secure payment link.' },
           { question: 'How long does setup take?', answer: 'Typically one to two days. The AI reads your menu, prices, and opening hours from your Posso One system, we configure the greeting and call rules with you, and you test-call it before going live. Because it is built into the POS, there is no third-party integration project.' },
-          { question: 'What does AI phone ordering cost?', answer: 'It is an add-on to Posso One, with the POS system from £499 + VAT. Pricing for the AI phone service depends on call volume — in every case it costs a fraction of staffing the phone, and it pays for itself from the calls you currently miss. Book a free demo and we will price it for your business.' },
+          { question: 'What does AI phone ordering cost?', answer: `It is an add-on to Posso One, with the POS system from ${posso.posPrice} + VAT. Pricing for the AI phone service depends on call volume — in every case it costs a fraction of staffing the phone, and it pays for itself from the calls you currently miss. Book a free demo and we will price it for your business.` },
         ]} />
 
         <Contact />

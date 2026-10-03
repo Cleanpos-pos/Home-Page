@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import Image from 'next/image';
 import { IframeDialog } from '../iframe-dialog';
+import { posso } from '@/lib/possoFacts';
 
 
 export function Hero() {
@@ -44,7 +45,7 @@ export function Hero() {
                     <ul className="flex flex-col gap-2 text-sm text-slate-300" aria-label="Key benefits of Posso ePOS">
                         <li className="flex items-center gap-2">
                             <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
-                            <span>Trusted by <strong className="text-slate-100">500+ restaurants &amp; venues</strong> across the UK</span>
+                            <span>Trusted by <strong className="text-slate-100">{posso.businessCount} restaurants &amp; venues</strong> across the UK</span>
                         </li>
                         <li className="flex items-center gap-2">
                             <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
@@ -75,7 +76,7 @@ export function Hero() {
                     </div>
 
                     <p className="text-xs text-slate-500 mt-2">
-                        Or call free: <a href="tel:+448081753956" className="text-primary hover:underline font-medium">0808 175 3956</a> &mdash; Mon&ndash;Fri 9am&ndash;9:30pm
+                        Or call free: <a href={posso.phoneHref} className="text-primary hover:underline font-medium">{posso.phone}</a> &mdash; Mon&ndash;Fri 9am&ndash;9:30pm
                     </p>
                 </div>
 

@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Lock, Plug, Key, Coins, Settings, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'DIY Cash Drawer',
   description:
-    'DIY Cash Drawer setup guide — auto-kick POS integration, key management, denomination configuration, cash reconciliation, and choosing the right drawer for your business. POS from £499 + VAT.',
+    `DIY Cash Drawer setup guide — auto-kick POS integration, key management, denomination configuration, cash reconciliation, and choosing the right drawer for your business. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'diy cash drawer',
     'cash drawer setup',
@@ -124,14 +125,14 @@ export default function DiyCashDrawerPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Auto-kick drawer on cash transactions</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full audit trail for every drawer open</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS with cash drawer from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS with cash drawer from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function DiyCashDrawerPage() {
           { question: 'Can different staff members have separate drawers?', answer: 'Yes. The POS supports individual drawer assignment. Each staff member logs in with their own PIN and is assigned to a specific drawer. Their transactions, float, and cash reconciliation are tracked separately. At shift change, one staff member cashes up and the next starts with a fresh float. This creates clear accountability and makes variance investigation straightforward.' },
           { question: 'How do I set up the float?', answer: 'Set your opening float amount in the POS — typically £100-£150 in mixed denominations. A recommended float breakdown: 1x£20, 2x£10, 4x£5, 5x£2, 10x£1, 10x50p, 10x20p, 10x10p, 10x5p for a £100 float. Staff verify the float at shift start by counting and confirming. If the float is short, the variance is recorded before any transactions begin.' },
           { question: 'What if the drawer does not open?', answer: 'If the auto-kick fails, check the RJ11 cable connection between the drawer and receipt printer. Ensure the printer is powered on and connected. Try printing a test receipt — if the printer works but the drawer does not kick, the issue is the RJ11 cable or the drawer mechanism. Use the manual key to open the drawer in the interim and contact support for troubleshooting.' },
-          { question: 'How much does a POS with cash drawer cost?', answer: 'The complete POS system with auto-kick cash drawer starts from £499 + VAT. This includes the touchscreen terminal, receipt printer, cash drawer, POS software with cash reconciliation and audit trail, and all setup. Finance from £24.92 per week. A 2-year warranty covers both hardware and software. Free installation and staff training are included.' },
+          { question: 'How much does a POS with cash drawer cost?', answer: `The complete POS system with auto-kick cash drawer starts from ${posso.posPrice} + VAT. This includes the touchscreen terminal, receipt printer, cash drawer, POS software with cash reconciliation and audit trail, and all setup. Finance from ${posso.financeWeekly} per week. A ${posso.warrantyYears}-year warranty covers both hardware and software. ${posso.setupStatement} Staff training is included.` },
         ]} />
 
         <Contact />

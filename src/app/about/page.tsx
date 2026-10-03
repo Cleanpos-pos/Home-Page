@@ -10,11 +10,12 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'About Posso',
   description:
-    'Posso is a UK hospitality technology company: EPOS systems, self-order kiosks, online ordering, AI phone ordering, payments and more — built for 500+ restaurants, takeaways and cafés and supported from Leicester.',
+    `Posso is a UK hospitality technology company: EPOS systems, self-order kiosks, online ordering, AI phone ordering, payments and more — built for ${posso.businessCount} restaurants, takeaways and cafés and supported from Leicester.`,
   keywords: [
     'about posso',
     'posso ltd',
@@ -76,7 +77,7 @@ const services = [
   { icon: Globe, title: 'Online Ordering', desc: 'Your own branded, commission-light ordering website and app.', href: '/online-ordering' },
   { icon: Bot, title: 'AI Phone Ordering', desc: 'An AI receptionist that answers every call and takes the order 24/7.', href: '/ai-phone-ordering' },
   { icon: ChefHat, title: 'Kitchen Display Screens', desc: 'Every order from every channel, on one screen in the kitchen.', href: '/kitchen-display-system' },
-  { icon: CreditCard, title: 'Card Machines & Payments', desc: 'Posso Pay and Teya — integrated card processing from 1% + 10p.', href: '/credit-card-machines' },
+  { icon: CreditCard, title: 'Card Machines & Payments', desc: `Posso Pay and Teya — integrated card processing from ${posso.possoPayRate}.`, href: '/credit-card-machines' },
   { icon: PhoneCall, title: 'Cloud Phones', desc: 'A two-line business phone plus unlimited internet, on one bill.', href: '/cloud-phone-for-restaurants' },
   { icon: Tv, title: 'Digital Signage', desc: 'Menu boards and screens you update in seconds, not reprints.', href: '/digital-signage' },
   { icon: Truck, title: 'Delivery Management', desc: 'Aggregator orders and your own drivers, managed in one place.', href: '/delivery-management-pos' },
@@ -209,7 +210,7 @@ export default function AboutPage() {
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">Who we work with</h2>
             <p className="text-lg text-slate-400 leading-relaxed">
-              500+ UK businesses run on Posso — pizza shops, kebab and Indian takeaways, fish and chip shops,
+              {posso.businessCount} UK businesses run on Posso — pizza shops, kebab and Indian takeaways, fish and chip shops,
               cafés, dessert and bubble tea counters, restaurants and pubs, plus entertainment and event venues
               from trampoline parks to festivals. Whether you&apos;re a single counter or a multi-site group,
               the system scales with you and the support is the same either way.
@@ -227,8 +228,8 @@ export default function AboutPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 ['One supplier', 'Till, kiosks, ordering, phones and payments built to work as one — not stitched together from five vendors.'],
-                ['A human answers', 'UK-based support on the phone Monday to Friday, 9am–9:30pm. No tickets into the void.'],
-                ['Honest pricing', 'Real numbers stated plainly — hardware from £499 + VAT, software from £25 + VAT a month, card processing from 1% + 10p quoted on your turnover.'],
+                ['A human answers', `UK-based support on the phone Monday to Friday, ${posso.supportTime}. No tickets into the void.`],
+                ['Honest pricing', `Real numbers stated plainly — hardware from ${posso.posPrice} + VAT, software from ${posso.softwareMonthly} + VAT a month, card processing from ${posso.possoPayRate} quoted on your turnover.`],
                 ['You own it', 'Own your hardware, own your customers, own your data — not rented back to you by a platform.'],
               ].map(([title, desc]) => (
                 <div key={title} className="glass-card rounded-2xl border border-slate-700/50 p-6">
@@ -239,8 +240,8 @@ export default function AboutPage() {
               ))}
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mt-12">
-              <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all hover:scale-105 text-lg px-8 py-3 font-medium">
-                <Phone className="mr-2 h-5 w-5" /> Call 0808 175 3956
+              <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all hover:scale-105 text-lg px-8 py-3 font-medium">
+                <Phone className="mr-2 h-5 w-5" /> Call {posso.phone}
               </a>
               <Link href="/epos-pricing-uk" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
                 See our pricing <ArrowRight className="ml-2 h-5 w-5" />

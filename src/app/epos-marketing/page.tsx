@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Megaphone, Users, Target, BarChart3, Gift, Mail } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'ePOS Marketing',
   description:
-    'ePOS Marketing tools built into your point of sale — run promotions, loyalty programmes, customer segmentation, and targeted campaigns directly from your till system. From £499 + VAT.',
+    `ePOS Marketing tools built into your point of sale — run promotions, loyalty programmes, customer segmentation, and targeted campaigns directly from your till system. From ${posso.posPrice} + VAT.`,
   keywords: [
     'epos marketing',
     'pos marketing tools',
@@ -124,14 +126,14 @@ export default function EposMarketingPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Run promotions and loyalty from the till</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Targeted SMS and email campaigns</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> ePOS marketing system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> ePOS marketing system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -212,7 +214,7 @@ export default function EposMarketingPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
@@ -223,13 +225,15 @@ export default function EposMarketingPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="ePOS Marketing — Frequently Asked Questions" faqs={[
           { question: 'What marketing tools are built into the ePOS?', answer: 'The Posso ePOS includes a promotions engine for discounts, BOGOF, and bundle deals with scheduling. A digital loyalty programme with automatic stamp or point collection. Customer segmentation by spend, frequency, and product preference. Targeted SMS and email campaigns. Automated triggers for birthdays, lapsed customers, and milestones. Real-time marketing analytics with redemption tracking.' },
           { question: 'How does customer segmentation work?', answer: 'Every transaction builds a customer profile automatically. The system segments customers by total spend, visit frequency, favourite products, average basket value, and days since last visit. You can create custom segments — for example, customers who spend over £50 per month but have not visited in 14 days. Each segment can receive targeted offers.' },
           { question: 'Can I send SMS and email campaigns from the POS?', answer: 'Yes. From the cloud dashboard, select a customer segment and compose an SMS or email with a promotion code. The system tracks delivery, opens, and redemptions. You see exactly how many customers received the message, how many used the code, and how much incremental revenue the campaign generated.' },
           { question: 'How do automated marketing triggers work?', answer: 'You set the trigger once and it runs continuously. Examples: send a birthday offer 3 days before the customer birthday. Send a re-engagement message after 14 days of inactivity. Send a thank-you reward after the 10th visit. Each trigger has its own performance metrics so you can see which automations drive the most revenue.' },
           { question: 'Does ePOS marketing work for multi-site businesses?', answer: 'Yes. Marketing campaigns can be deployed across all sites from the central dashboard or customised per location. Loyalty programmes work across all your branches — a customer earns points at one site and redeems at another. Campaign performance is reported by site and as a group.' },
-          { question: 'How much does ePOS marketing cost?', answer: 'ePOS marketing tools are included with the Posso POS system from £499 + VAT. Loyalty programmes, promotions engine, customer segmentation, and analytics are all built in. SMS campaigns are charged per message at low rates. No separate marketing software subscription required.' },
+          { question: 'How much does ePOS marketing cost?', answer: `ePOS marketing tools are included with the Posso POS system from ${posso.posPrice} + VAT. Loyalty programmes, promotions engine, customer segmentation, and analytics are all built in. SMS campaigns are charged per message at low rates. No separate marketing software subscription required.` },
         ]} />
 
         <Contact />

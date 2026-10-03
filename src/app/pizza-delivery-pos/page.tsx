@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Pizza, Truck, MapPin, Globe, PhoneCall, Timer } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Pizza Delivery POS',
   description:
-    'Pizza Delivery POS with pizza builder, delivery zone management, driver tracking app, caller ID, and online ordering integration. Built for pizza delivery operations. POS from £499 + VAT.',
+    `Pizza Delivery POS with pizza builder, delivery zone management, driver tracking app, caller ID, and online ordering integration. Built for pizza delivery operations. POS from ${posso.posPrice} + VAT.`,
   keywords: [
     'pizza delivery pos',
     'pizza pos system',
@@ -124,14 +126,14 @@ export default function PizzaDeliveryPosPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Visual pizza builder with half-and-half</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Caller ID pulls up customer details instantly</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete pizza delivery POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete pizza delivery POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -202,7 +204,7 @@ export default function PizzaDeliveryPosPage() {
             <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Explore More Solutions</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pos-for-pizza-shop" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza POS System</p>
                   <p className="text-slate-400 text-sm mt-1">Full pizza POS features</p>
                 </Link>
@@ -223,13 +225,15 @@ export default function PizzaDeliveryPosPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Pizza Delivery POS — Frequently Asked Questions" faqs={[
           { question: 'How does the pizza builder work?', answer: 'The visual pizza builder lets customers (online) and staff (POS) build a pizza step by step: choose size, select base type, pick sauce, add toppings. Half-and-half toppings are supported — different toppings on each half. The price updates live as options are selected. The kitchen receives the full specification on the display.' },
           { question: 'Can I manage delivery zones and fees?', answer: 'Yes. Draw delivery zones on a map and set delivery fees and minimum order values per zone. For example, free delivery within 2 miles with a £10 minimum, £2 delivery within 4 miles with a £15 minimum. Orders outside your zones are automatically declined with a message suggesting collection.' },
           { question: 'How does caller ID work for phone orders?', answer: 'When a customer calls, their phone number is matched against your database. Their name, delivery address, and previous orders appear on screen before you answer. Returning customers can reorder their last order in two taps. New callers have their details saved automatically for their next call.' },
           { question: 'Does it integrate with Just Eat and Uber Eats?', answer: 'Yes. Orders from Just Eat, Uber Eats, and Deliveroo arrive directly on your POS and kitchen display. No separate tablets, no manual re-entry. All orders — phone, website, and delivery apps — appear in one queue so the kitchen works one consistent workflow.' },
           { question: 'How does driver tracking work?', answer: 'Assign deliveries to drivers from the POS. Drivers see their delivery queue on a mobile app with the customer address, order details, and navigation. They mark each delivery as complete. You see in real time which drivers are out, which are available, and track average delivery times.' },
-          { question: 'How much does the pizza delivery POS cost?', answer: 'The complete pizza delivery POS starts from £499 + VAT including touchscreen terminal, pizza builder software, and delivery management. Online ordering is included at low commission. Finance from £24.92 per week. Free setup, menu import, and staff training included with a 2-year warranty.' },
+          { question: 'How much does the pizza delivery POS cost?', answer: `The complete pizza delivery POS starts from ${posso.posPrice} + VAT including touchscreen terminal, pizza builder software, and delivery management. Online ordering is included at low commission. Finance from ${posso.financeWeekly} per week. Free setup, menu import, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

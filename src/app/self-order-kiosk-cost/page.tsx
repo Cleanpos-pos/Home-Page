@@ -8,13 +8,14 @@ import { PoundSterling } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { gbp, posso, possoPrices } from '@/lib/possoFacts';
 
 const PAGE_URL = 'https://www.posso.co.uk/self-order-kiosk-cost';
 
 export const metadata: Metadata = {
   title: 'How Much Does a Self-Order Kiosk Cost in the UK?',
   description:
-    'Self-order kiosk cost, itemised. Posso Fast Lane from £399 + VAT with a £199 + VAT order tablet, standard kiosks from £699 + VAT, software from £25 + VAT a month.',
+    `Self-order kiosk cost, itemised. Posso Fast Lane from £399 + VAT with a £199 + VAT order tablet, standard kiosks from ${posso.kioskPrice} + VAT, software from ${posso.softwareMonthly} + VAT a month.`,
   keywords: [
     'self order kiosk cost',
     'self order kiosk price uk',
@@ -44,7 +45,7 @@ const pageSchema = [
     '@type': 'Product',
     name: 'Posso Self-Order Kiosk',
     description:
-      'Touchscreen self-order kiosk for UK restaurants and takeaways, with integrated card payments, menu build and configuration included, and a 2-year hardware warranty. Posso Fast Lane runs standalone with an order tablet instead of a full EPOS system.',
+      `Touchscreen self-order kiosk for UK restaurants and takeaways, with integrated card payments, menu build and configuration included, and a ${posso.warrantyYears}-year hardware warranty. Posso Fast Lane runs standalone with an order tablet instead of a full EPOS system.`,
     brand: { '@type': 'Brand', name: 'Posso' },
     url: PAGE_URL,
     offers: {
@@ -83,21 +84,21 @@ const pageSchema = [
 const upfrontPrices: [string, string][] = [
   ['Posso Fast Lane kiosk', '£399 + VAT per kiosk — the entry price, runs standalone'],
   ['Fast Lane order tablet', '£199 + VAT — receives the orders, no separate till needed'],
-  ['Self-order kiosk (standard indoor)', '£699 + VAT per kiosk, floor-standing or wall-mounted'],
-  ['Complete EPOS system behind it', '£499 + VAT — only if you want a full till; Fast Lane does not need one'],
+  ['Self-order kiosk (standard indoor)', `${posso.kioskPrice} + VAT per kiosk, floor-standing or wall-mounted`],
+  ['Complete EPOS system behind it', `${posso.posPrice} + VAT — only if you want a full till; Fast Lane does not need one`],
   ['Menu build, configuration and staff training', 'Included'],
-  ['Extra kitchen or prep printer', '£99 each'],
-  ['21-inch kitchen display screen', '£399 + VAT'],
-  ['Twin-screen upgrade', '+£150'],
+  ['Extra kitchen or prep printer', `${posso.printerPrice} each`],
+  ['21-inch kitchen display screen', `${posso.kdsPrice} + VAT`],
+  ['Twin-screen upgrade', `+${posso.twinScreenPrice}`],
   ['On-site installation', 'Quoted separately — depends on site, cabling and access'],
-  ['Hardware warranty', '2 years, included'],
+  ['Hardware warranty', `${posso.warrantyYears} years, included`],
 ];
 
 const ongoingPrices: [string, string][] = [
-  ['Software and support', 'From £25 + VAT a month, covering the core system, updates and cloud features'],
-  ['Card processing — Posso Pay', 'From 1% + 10p, quoted on your card turnover — same rate at the kiosk and the counter'],
-  ['Just Eat / Uber Eats / Deliveroo integration', '£45/month, unlimited orders'],
-  ['Finance, if you spread the hardware', 'From £24.92 per week over 12, 24 or 36 months, subject to status'],
+  ['Software and support', `From ${posso.softwareMonthly} + VAT a month, covering the core system, updates and cloud features`],
+  ['Card processing — Posso Pay', `From ${posso.possoPayRate}, quoted on your card turnover — same rate at the kiosk and the counter`],
+  ['Just Eat / Uber Eats / Deliveroo integration', `${posso.deliveryIntegrationMonthly}/month, unlimited orders`],
+  ['Finance, if you spread the hardware', `From ${posso.financeWeekly} per week over 12, 24 or 36 months, subject to status`],
 ];
 
 const fastLaneConfigurations: { kiosks: string; detail: string; total: string }[] = [
@@ -107,10 +108,10 @@ const fastLaneConfigurations: { kiosks: string; detail: string; total: string }[
 ];
 
 const configurations: { kiosks: string; detail: string; total: string }[] = [
-  { kiosks: 'One kiosk', detail: '£499 + VAT system, plus 1 × £699 + VAT kiosk', total: '£1,198 + VAT' },
-  { kiosks: 'Two kiosks', detail: '£499 + VAT system, plus 2 × £699 + VAT kiosks', total: '£1,897 + VAT' },
-  { kiosks: 'Three kiosks', detail: '£499 + VAT system, plus 3 × £699 + VAT kiosks', total: '£2,596 + VAT' },
-  { kiosks: 'Four kiosks', detail: '£499 + VAT system, plus 4 × £699 + VAT kiosks', total: '£3,295 + VAT' },
+  { kiosks: 'One kiosk', detail: `${posso.posPrice} + VAT system, plus 1 × ${posso.kioskPrice} + VAT kiosk`, total: `${gbp(possoPrices.pos + possoPrices.kiosk)} + VAT` },
+  { kiosks: 'Two kiosks', detail: `${posso.posPrice} + VAT system, plus 2 × ${posso.kioskPrice} + VAT kiosks`, total: `${gbp(possoPrices.pos + 2 * possoPrices.kiosk)} + VAT` },
+  { kiosks: 'Three kiosks', detail: `${posso.posPrice} + VAT system, plus 3 × ${posso.kioskPrice} + VAT kiosks`, total: `${gbp(possoPrices.pos + 3 * possoPrices.kiosk)} + VAT` },
+  { kiosks: 'Four kiosks', detail: `${posso.posPrice} + VAT system, plus 4 × ${posso.kioskPrice} + VAT kiosks`, total: '£3,295 + VAT' },
 ];
 
 export default function SelfOrderKioskCostPage() {
@@ -143,8 +144,8 @@ export default function SelfOrderKioskCostPage() {
                   <strong className="text-white">Posso Fast Lane</strong> is the cheapest way in: a self-order kiosk from
                   <strong className="text-white"> £399 + VAT</strong> with a tablet to take the orders at
                   <strong className="text-white"> £199 + VAT</strong> — <strong className="text-white">£598 + VAT</strong> all in,
-                  running on its own with no separate till. A standard indoor kiosk on a full EPOS system is £699 + VAT plus
-                  £499 + VAT. Software and support run from £25 + VAT a month, and card processing starts at 1% + 10p.
+                  running on its own with no separate till. A standard indoor kiosk on a full EPOS system is {posso.kioskPrice} + VAT plus
+                  {posso.posPrice} + VAT. Software and support run from {posso.softwareMonthly} + VAT a month, and card processing starts at {posso.possoPayRate}.
                 </p>
               </div>
             </div>
@@ -216,7 +217,7 @@ export default function SelfOrderKioskCostPage() {
                 <p>
                   It suits a site that wants the queue split without rebuilding the counter: a coffee shop at the morning rush, a
                   burger counter at lunch, a second order point beside an existing till. If you later want a full EPOS with cash
-                  drawer and kitchen printing, the standard £699 + VAT kiosk on a £499 + VAT system is the step up, and the
+                  drawer and kitchen printing, the standard {posso.kioskPrice} + VAT kiosk on a {posso.posPrice} + VAT system is the step up, and the
                   monthly software fee is the same either way.
                 </p>
               </div>
@@ -247,7 +248,7 @@ export default function SelfOrderKioskCostPage() {
                 </table>
               </div>
               <p className="text-slate-400 mt-6">
-                Add £25 + VAT a month for software on top of any of these, plus card processing on what you take.
+                Add {posso.softwareMonthly} + VAT a month for software on top of any of these, plus card processing on what you take.
               </p>
             </div>
           </div>
@@ -305,14 +306,14 @@ export default function SelfOrderKioskCostPage() {
                   <h3 className="text-xl font-bold text-white mb-2">Kiosk hardware — from £399 + VAT per unit</h3>
                   <p>
 A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tablet. The standard indoor
-                    kiosk is £699 + VAT — floor-standing or wall-mounted, with the touchscreen, the card reader
-                    and the enclosure. It is a one-off purchase, not a rental, and it carries a 2-year hardware warranty. If you
+                    kiosk is {posso.kioskPrice} + VAT — floor-standing or wall-mounted, with the touchscreen, the card reader
+                    and the enclosure. It is a one-off purchase, not a rental, and it carries a {posso.warrantyYears}-year hardware warranty. If you
                     trade outdoors, that is a different specification — see the IP65 note below, because an indoor unit will not
                     survive weather and you should not budget as though it will.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Software, menu build and configuration — from £25 + VAT a month</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">Software, menu build and configuration — from {posso.softwareMonthly} + VAT a month</h3>
                   <p>
                     The monthly fee covers the ordering software, updates and the cloud back office. Building your menu — the
                     categories, images, modifiers and upsell prompts — plus configuration and staff training is included in the
@@ -321,7 +322,7 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Card payments — from 1% + 10p</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">Card payments — from {posso.possoPayRate}</h3>
                   <p>
                     Card processing through Posso Pay is quoted on your card turnover and runs at the same rate whether the order
                     is taken at the kiosk or at the counter. A kiosk shifts transactions from cash to card, so this line grows as
@@ -329,12 +330,12 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Printers — £99 per extra printer</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">Printers — {posso.printerPrice} per extra printer</h3>
                   <p>
                     The complete system includes a kitchen printer and a receipt printer. Kiosks often need one more, because a
-                    second prep station or a collection point wants its own ticket. Each additional printer is £99. If you would
-                    rather move the kitchen off paper altogether, a 21-inch kitchen display screen is £399 + VAT, with a
-                    twin-screen upgrade at +£150.
+                    second prep station or a collection point wants its own ticket. Each additional printer is {posso.printerPrice}. If you would
+                    rather move the kitchen off paper altogether, a 21-inch kitchen display screen is {posso.kdsPrice} + VAT, with a
+                    twin-screen upgrade at +{posso.twinScreenPrice}.
                   </p>
                 </div>
                 <div>
@@ -349,7 +350,7 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Support and warranty — included</h3>
                   <p>
-                    UK-based support and a 2-year hardware warranty come with the system rather than as a paid tier. A kiosk is a
+                    UK-based support and a {posso.warrantyYears}-year hardware warranty come with the system rather than as a paid tier. A kiosk is a
                     customer-facing device; when it stops taking orders, it stops taking money, so check what any provider means
                     by support hours before you compare their monthly fee with this one.
                   </p>
@@ -358,7 +359,7 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
                   <h3 className="text-xl font-bold text-white mb-2">Outdoor IP65 kiosks — a separate specification</h3>
                   <p>
                     An IP65 outdoor kiosk is dust-tight, water-resistant and built with a sunlight-readable screen. It is not the
-                    £699 + VAT indoor unit with a cover on it, and it is not priced from this page. If you are trading at a
+                    {posso.kioskPrice} + VAT indoor unit with a cover on it, and it is not priced from this page. If you are trading at a
                     market, a food truck pitch or a beer garden, start at the{' '}
                     <Link href="/outdoor-self-order-kiosks-ip65" className="text-primary hover:underline">outdoor IP65 kiosk page</Link>{' '}
                     and get that specification quoted on its own.
@@ -400,7 +401,7 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
                 </table>
               </div>
               <p className="text-slate-400 mt-6">
-                Add £25 + VAT a month for software on top of any of these, plus card processing on what you take.
+                Add {posso.softwareMonthly} + VAT a month for software on top of any of these, plus card processing on what you take.
               </p>
             </div>
           </div>
@@ -413,15 +414,15 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
               <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-8">Buying outright versus paying monthly</h2>
               <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                 <p>
-                  The hardware is bought, not rented. Once you have paid the £699 + VAT, the kiosk is yours, and if you would
-                  rather not pay it in one go, finance is available from £24.92 per week over 12, 24 or 36 months, subject to
+                  The hardware is bought, not rented. Once you have paid the {posso.kioskPrice} + VAT, the kiosk is yours, and if you would
+                  rather not pay it in one go, finance is available from {posso.financeWeekly} per week over 12, 24 or 36 months, subject to
                   status. The software is the part you pay monthly.
                 </p>
                 <p>
                   So what happens if you stop paying the monthly fee? You keep the kiosk — it is your property — but the
                   ordering software, the cloud back office and support stop with the subscription, which in practice means the
                   unit stops being useful as a kiosk. That is worth saying plainly, because it is the question people ask last
-                  and should ask first. There is no long-term lock-in and no punitive exit fee; the trade is simply that the
+                  and should ask first. There is no long-term lock-in and no punitive exit fee;{/* TODO: PAUL — confirm the actual software contract terms (minimum term, notice, exit fee) before keeping this no-lock-in claim. See possoContract in src/lib/possoFacts.ts. */} the trade is simply that the
                   software is a service, and the hardware is an asset.
                 </p>
               </div>
@@ -459,7 +460,7 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
                   </ul>
                   <p className="mt-4">
                     Extra gross profit per day = 80 × £0.80 × 0.65 = <strong className="text-white">£41.60</strong>. Against a
-                    £699 + VAT kiosk, that is roughly 17 trading days to cover the hardware. The £25 + VAT monthly software fee
+                    {posso.kioskPrice} + VAT kiosk, that is roughly 17 trading days to cover the hardware. The {posso.softwareMonthly} + VAT monthly software fee
                     is an ongoing cost rather than part of the payback, but it does mean the kiosk has to clear about £1.35 a
                     day before it contributes anything at all.
                   </p>
@@ -483,7 +484,7 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
                 <p>
                   <strong className="text-white">A casual-dining restaurant</strong> usually puts one or two kiosks by the door
                   to absorb the walk-in queue while table service carries on behind them. On the numbers above that is
-                  £1,198 + VAT or £1,897 + VAT upfront, and the kitchen is normally the constraint rather than the till — which
+                  {gbp(possoPrices.pos + possoPrices.kiosk)} + VAT or {gbp(possoPrices.pos + 2 * possoPrices.kiosk)} + VAT upfront, and the kitchen is normally the constraint rather than the till — which
                   is why a{' '}
                   <Link href="/kitchen-display-system" className="text-primary hover:underline">kitchen display system</Link>{' '}
                   tends to matter more here than a third kiosk.
@@ -491,7 +492,7 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
                 <p>
                   <strong className="text-white">A takeaway</strong> is a different shape. Collection peaks are short and sharp,
                   the menu is deeper in modifiers, and a lot of the volume already arrives through the marketplaces. One kiosk
-                  at £1,198 + VAT often covers the counter, and the £45/month delivery-app integration usually does more for the
+                  at {gbp(possoPrices.pos + possoPrices.kiosk)} + VAT often covers the counter, and the {posso.deliveryIntegrationMonthly}/month delivery-app integration usually does more for the
                   operation than a second screen. If that is you, start with{' '}
                   <Link href="/self-order-kiosks-for-takeaways" className="text-primary hover:underline">kiosks for takeaways</Link>.
                 </p>
@@ -507,7 +508,7 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
             {
               question: 'How much does a self-order kiosk cost in the UK?',
               answer:
-                'A standard indoor self-order kiosk is £699 + VAT per unit, bought outright. Behind it you need a complete EPOS system from £499 + VAT, so a single-kiosk setup starts at £1,198 + VAT. Software and support are from £25 + VAT a month, and card processing starts at 1% + 10p on your turnover.',
+                `A standard indoor self-order kiosk is ${posso.kioskPrice} + VAT per unit, bought outright. Behind it you need a complete EPOS system from ${posso.posPrice} + VAT, so a single-kiosk setup starts at ${gbp(possoPrices.pos + possoPrices.kiosk)} + VAT. Software and support are from ${posso.softwareMonthly} + VAT a month, and card processing starts at ${posso.possoPayRate} on your turnover.`,
             },
             {
               question: 'What is Posso Fast Lane?',
@@ -517,7 +518,7 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
             {
               question: 'Does Posso Fast Lane work without an EPOS system?',
               answer:
-                'Yes. The £199 + VAT tablet is the order point behind the counter, so there is no till to buy alongside it. Fast Lane is a system in its own right rather than an add-on. If you later want a full EPOS with cash drawer and kitchen printing, the standard £699 + VAT kiosk on a £499 + VAT system is the step up.',
+                `Yes. The £199 + VAT tablet is the order point behind the counter, so there is no till to buy alongside it. Fast Lane is a system in its own right rather than an add-on. If you later want a full EPOS with cash drawer and kitchen printing, the standard ${posso.kioskPrice} + VAT kiosk on a ${posso.posPrice} + VAT system is the step up.`,
             },
             {
               question: 'Do you still get reporting and accounting on Fast Lane?',
@@ -527,12 +528,12 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
             {
               question: 'Is there a monthly fee for a self-order kiosk?',
               answer:
-                'Yes. Software and support run from £25 + VAT a month, covering the ordering software, updates, the cloud back office and UK support. That figure is the same whether the order comes from the kiosk or the counter, so adding a kiosk does not add a second software fee to your bill.',
+                `Yes. Software and support run from ${posso.softwareMonthly} + VAT a month, covering the ordering software, updates, the cloud back office and UK support. That figure is the same whether the order comes from the kiosk or the counter, so adding a kiosk does not add a second software fee to your bill.`,
             },
             {
               question: 'What is included in the kiosk price?',
               answer:
-                'The £699 + VAT covers the kiosk hardware itself — touchscreen, card reader and enclosure — with a 2-year hardware warranty. Your menu build, system configuration and staff training are included at no extra charge. On-site physical installation is the one thing quoted separately, because it depends on your site.',
+                `The ${posso.kioskPrice} + VAT covers the kiosk hardware itself — touchscreen, card reader and enclosure — with a ${posso.warrantyYears}-year hardware warranty. Your menu build, system configuration and staff training are included at no extra charge. On-site physical installation is the one thing quoted separately, because it depends on your site.`,
             },
             {
               question: 'Does the kiosk price include installation?',
@@ -542,7 +543,7 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
             {
               question: 'Can I pay for a self-order kiosk monthly?',
               answer:
-                'The hardware is bought rather than rented, but you can spread it on finance from £24.92 per week over 12, 24 or 36 months, subject to status. The software fee of £25 + VAT a month is separate and ongoing. There is no long-term contract lock-in and no punitive early exit fee.',
+                `The hardware is bought rather than rented, but you can spread it on finance from ${posso.financeWeekly} per week over 12, 24 or 36 months, subject to status. The software fee of ${posso.softwareMonthly} + VAT a month is separate and ongoing. There is no long-term contract lock-in and no punitive early exit fee.` /* TODO: PAUL — confirm contract terms before keeping this no-lock-in claim (see possoContract in src/lib/possoFacts.ts). */,
             },
             {
               question: 'What happens if I stop paying the monthly fee?',
@@ -562,12 +563,12 @@ A Posso Fast Lane kiosk is £399 + VAT and pairs with the £199 + VAT order tabl
             {
               question: 'Do outdoor kiosks cost the same?',
               answer:
-                'No. An IP65 outdoor kiosk is a different specification — dust-tight, water-resistant and fitted with a sunlight-readable screen — and it is quoted separately from the £699 + VAT indoor unit. If you are trading at a market, a festival or a food truck pitch, budget for the outdoor spec rather than the indoor price.',
+                `No. An IP65 outdoor kiosk is a different specification — dust-tight, water-resistant and fitted with a sunlight-readable screen — and it is quoted separately from the ${posso.kioskPrice} + VAT indoor unit. If you are trading at a market, a festival or a food truck pitch, budget for the outdoor spec rather than the indoor price.`,
             },
             {
               question: 'Do I need a kitchen display system as well?',
               answer:
-                'Not necessarily. The complete system already includes a kitchen printer, and many takeaways run on paper perfectly well. A 21-inch kitchen display screen at £399 + VAT earns its place when ticket volume makes paper hard to track, particularly where kiosk, counter and delivery orders all land in one queue.',
+                `Not necessarily. The complete system already includes a kitchen printer, and many takeaways run on paper perfectly well. A 21-inch kitchen display screen at ${posso.kdsPrice} + VAT earns its place when ticket volume makes paper hard to track, particularly where kiosk, counter and delivery orders all land in one queue.`,
             },
           ]}
         />

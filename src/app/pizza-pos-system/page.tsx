@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Monitor, Smartphone, Clock, Truck, CreditCard, BarChart3, Utensils, Phone, ArrowRight, Pizza } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
-  title: '🍕 Pizza POS System UK | Pizza Builder Software',
+  title: 'Pizza POS System UK | Pizza Builder Software',
   description:
-    'Posso Pizza POS system with built-in pizza builder for UK pizza shops and takeaways. Split-sided pizzas, size pricing, toppings, and one-tap ordering. From £499 + VAT.',
+    `Posso Pizza POS system with built-in pizza builder for UK pizza shops and takeaways. Split-sided pizzas, size pricing, toppings, and one-tap ordering. From ${posso.posPrice} + VAT.`,
   keywords: [
     'pizza POS system',
     'pizza POS',
@@ -97,14 +98,8 @@ const pageSchema = [
     width: 1200,
     height: 1200,
     encodingFormat: 'image/avif',
-    creator: {
-      '@type': 'Organization',
-      name: 'Posso Ltd',
-    },
-    copyrightHolder: {
-      '@type': 'Organization',
-      name: 'Posso Ltd',
-    },
+    creator: { '@id': 'https://www.posso.co.uk/#organization' },
+    copyrightHolder: { '@id': 'https://www.posso.co.uk/#organization' },
   },
   {
     '@context': 'https://schema.org',
@@ -171,14 +166,14 @@ export default function PizzaPosPage() {
                 <ul className="space-y-3 text-slate-300 text-lg">
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Build complex pizzas 3x faster</li>
                   <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Split-sided with left/right half toppings</li>
-                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from £499 + VAT</li>
+                  <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Full POS from {posso.posPrice} + VAT</li>
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
                   <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                     Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-                  <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                    <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                  <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                    <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                   </a>
                 </div>
               </div>
@@ -346,7 +341,7 @@ export default function PizzaPosPage() {
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
@@ -358,7 +353,7 @@ export default function PizzaPosPage() {
           { question: 'Can customers build their own pizza on the kiosk or online?', answer: 'Yes. The pizza builder works on the self-order kiosk and your online ordering website. Customers select their size, choose whole or half toppings, and see the price update in real-time. The order goes straight to your kitchen display.' },
           { question: 'How does split-sided pizza ordering work?', answer: 'Tap "Left Half" or "Right Half" before adding toppings. Each side gets its own topping selection. The kitchen ticket prints the full build — e.g. "Left: Extra cheese, Pepperoni / Right: Mushroom, Peppers" — so there is no confusion.' },
           { question: 'Does the pizza POS integrate with delivery apps?', answer: 'Yes. Posso integrates with Just Eat, Uber Eats, and Deliveroo. Delivery orders appear on your POS and kitchen display automatically. You also get your own online ordering website and delivery zone management.' },
-          { question: 'How much does the pizza POS system cost?', answer: 'Our POS systems start from £499 + VAT for a complete touchscreen till with integrated payments, receipt printing, and the pizza builder. Self-order kiosks start from £699 + VAT. Finance options available from £24.92/week.' },
+          { question: 'How much does the pizza POS system cost?', answer: `Our POS systems start from ${posso.posPrice} + VAT for a complete touchscreen till with integrated payments, receipt printing, and the pizza builder. Self-order kiosks start from ${posso.kioskPrice} + VAT. Finance options available from ${posso.financeWeekly}/week.` },
           { question: 'Can I try the pizza builder before buying?', answer: 'Yes — book a free demo and we will show you the pizza builder live. We handle setup, menu import, and staff training. You can go live in under 24 hours.' },
         ]} />
 

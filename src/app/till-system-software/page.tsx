@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Monitor, Cloud, BarChart3, Coins, Users, Fingerprint } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Till System Software',
   description:
-    'Till System Software with cloud-based management, touchscreen interface, real-time reporting, cash management, and staff login. Modern till software for UK businesses. From £499 + VAT.',
+    `Till System Software with cloud-based management, touchscreen interface, real-time reporting, cash management, and staff login. Modern till software for UK businesses. From ${posso.posPrice} + VAT.`,
   keywords: [
     'till system software',
     'till software',
@@ -124,14 +126,14 @@ export default function TillSystemSoftwarePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Cloud dashboard with live sales data</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Cash reconciliation and shift management</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Till system software from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Till system software from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function TillSystemSoftwarePage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Till System Software — Frequently Asked Questions" faqs={[
-          { question: 'What hardware do I need for the till software?', answer: 'Posso till software runs on any touchscreen device — tablets, laptops, or dedicated POS terminals. Most businesses use a 15-inch touchscreen with a cash drawer and receipt printer. We supply complete hardware bundles from £499 + VAT, or you can use your existing compatible equipment.' },
+          { question: 'What hardware do I need for the till software?', answer: `Posso till software runs on any touchscreen device — tablets, laptops, or dedicated POS terminals. Most businesses use a 15-inch touchscreen with a cash drawer and receipt printer. We supply complete hardware bundles from ${posso.posPrice} + VAT, or you can use your existing compatible equipment.` },
           { question: 'Is the till software cloud-based?', answer: 'Yes. All data syncs to the cloud in real time. You access reports, manage products, and monitor sales from any web browser. The till also works offline if your internet drops — transactions queue locally and sync automatically when the connection returns.' },
           { question: 'How does cash management work?', answer: 'Staff declare their float at the start of each shift. Every cash transaction is logged with a timestamp and staff ID. At the end of the shift, the system calculates expected cash and the staff member declares the actual amount. Any discrepancy is flagged and recorded for review.' },
           { question: 'Can different staff have different permissions?', answer: 'Yes. Each staff member has their own login PIN. Roles control access — a cashier can process sales but cannot issue refunds or access reports. A supervisor can override prices and process returns. A manager has full access to everything including settings and financial data.' },
-          { question: 'How long does it take to set up?', answer: 'Most businesses are up and running within 24 hours. We configure your product catalogue, set up categories, and train your staff remotely or on site. The touchscreen interface is intuitive enough that new staff learn the basics in under 15 minutes.' },
-          { question: 'How much does till system software cost?', answer: 'The complete till system starts from £499 + VAT including touchscreen terminal, cloud software, and cash management tools. Multi-site licences and additional tills are available at discounted rates. Free setup, product configuration, and staff training included with a 2-year warranty.' },
+          { question: 'How long does it take to set up?', answer: `${posso.goLiveStatement} We configure your product catalogue, set up categories, and train your staff remotely or on site. The touchscreen interface is intuitive enough that new staff learn the basics in under 15 minutes.` },
+          { question: 'How much does till system software cost?', answer: `The complete till system starts from ${posso.posPrice} + VAT including touchscreen terminal, cloud software, and cash management tools. Multi-site licences and additional tills are available at discounted rates. Free setup, product configuration, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

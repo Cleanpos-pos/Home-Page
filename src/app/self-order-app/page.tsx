@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, QrCode, Smartphone, CreditCard, UtensilsCrossed, Timer, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Self Order App',
   description:
-    'Self Order App — customers order from their phone via QR code, no app download required. Table ordering and collection, mobile payments, and direct kitchen integration. From £499 + VAT.',
+    `Self Order App — customers order from their phone via QR code, no app download required. Table ordering and collection, mobile payments, and direct kitchen integration. From ${posso.posPrice} + VAT.`,
   keywords: [
     'self order app',
     'self ordering app',
@@ -124,14 +125,14 @@ export default function SelfOrderAppPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> QR code ordering — works in the browser</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Table ordering + collection mode</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS integration from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS integration from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -208,7 +209,7 @@ export default function SelfOrderAppPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/restaurant-ordering-app" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Restaurant Ordering App</p>
@@ -216,7 +217,7 @@ export default function SelfOrderAppPage() {
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function SelfOrderAppPage() {
           { question: 'Can customers pay from their phone?', answer: 'Yes. Apple Pay, Google Pay, and card payments are all supported within the browser. No separate app is needed. The customer reviews their order, selects a payment method, and completes the transaction in seconds. Tips can be added at checkout. For groups, split payment is available so each person can pay for their own items.' },
           { question: 'Does it work for collection ordering too?', answer: 'Yes. For takeaway counters, food halls, and fast-casual restaurants, the QR code can be placed on counter signs or wall posters. Customers scan, order, and pay. They receive a collection number. When the order is ready, they are notified on their phone or called by number. No app download needed — the same browser-based system works for both table and collection ordering.' },
           { question: 'How do orders reach the kitchen?', answer: 'Every order goes directly to the Posso kitchen display system within seconds of the customer paying. The kitchen sees the table number or collection number, all items, modifications, allergen notes, and any special instructions. Orders are queued by time and can be sorted by type. No printed tickets, no re-keying, no errors from manual transcription.' },
-          { question: 'How much does the self-order app cost?', answer: 'The self-order app integrates with POS systems from £499 + VAT. Low commission on orders. The QR code ordering system, menu builder, payment processing, and kitchen display integration are all included. Free setup, menu configuration, QR code printing, and staff training. 2-year hardware warranty on all POS equipment.' },
+          { question: 'How much does the self-order app cost?', answer: `The self-order app integrates with POS systems from ${posso.posPrice} + VAT. Low commission on orders. The QR code ordering system, menu builder, payment processing, and kitchen display integration are all included. Free setup, menu configuration, QR code printing, and staff training. ${posso.warrantyYears}-year hardware warranty on all POS equipment.` },
         ]} />
 
         <Contact />

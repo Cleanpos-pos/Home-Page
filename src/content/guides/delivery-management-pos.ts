@@ -1,4 +1,5 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 /**
  * ⚠️ TWO UNVERIFIED CLAIMS ON THIS PAGE — confirm before publish:
@@ -11,7 +12,7 @@ export const deliveryManagementPos: Guide = {
   slug: "delivery-management-pos",
   title: "POS with Driver Management & Delivery Zones (UK)",
   metaDescription:
-    "A POS that manages your own delivery drivers — zones, dispatch, driver app and live tracking built into the till. 30p per delivery. UK systems from £499 + VAT.",
+    `A POS that manages your own delivery drivers — zones, dispatch, driver app and live tracking built into the till. ${posso.driverAppPerDelivery} per delivery. UK systems from ${posso.posPrice} + VAT.`,
   eyebrow: "Buyer's guide",
   h1: "POS with driver management and delivery zones",
   h1Split: ["POS with", "driver management and delivery zones"],
@@ -20,11 +21,11 @@ export const deliveryManagementPos: Guide = {
   highlights: [
     "What own-fleet dispatch actually requires",
     "The economics of own drivers vs marketplace",
-    "Driver app and dispatch at 30p per delivery",
+    `Driver app and dispatch at ${posso.driverAppPerDelivery} per delivery`,
   ],
   breadcrumb: "Delivery Management POS",
   quickAnswer:
-    "Marketplace integration and delivery management are different things. Integration pulls Just Eat and Deliveroo orders onto your till, but their courier delivers. Delivery management is what you need when your drivers deliver your orders: zone mapping, driver assignment, a driver app and live tracking. Posso includes all four in the EPOS at 30p per delivery.",
+    `Marketplace integration and delivery management are different things. Integration pulls Just Eat and Deliveroo orders onto your till, but their courier delivers. Delivery management is what you need when your drivers deliver your orders: zone mapping, driver assignment, a driver app and live tracking. Posso includes all four in the EPOS at ${posso.driverAppPerDelivery} per delivery.`,
   sections: [
     {
       kind: "prose",
@@ -71,7 +72,7 @@ export const deliveryManagementPos: Guide = {
       heading: "The economics: own drivers vs marketplace",
       paragraphs: [
         "Worth doing the arithmetic before you scale either way.",
-        "A £25 order on a marketplace at 25% commission costs you £6.25, plus card processing. The same £25 order on your own site, delivered by your own driver, costs you the driver's time and 30p in dispatch. The 60p service fee on the order is added to the customer's total, so the only fee your business pays is card processing.",
+        `A £25 order on a marketplace at 25% commission costs you £6.25, plus card processing. The same £25 order on your own site, delivered by your own driver, costs you the driver's time and ${posso.driverAppPerDelivery} in dispatch. The 60p service fee on the order is added to the customer's total, so the only fee your business pays is card processing.`,
         "The marketplace is not a rip-off — it is buying you discovery and demand you would struggle to generate alone, particularly in year one. The mistake is staying marketplace-only once you have a customer base. Most established takeaways should be running both, and steadily shifting repeat customers to the direct channel where the margin is.",
         "A system that handles both from one screen is what makes that shift practical rather than theoretical.",
       ],
@@ -86,7 +87,7 @@ export const deliveryManagementPos: Guide = {
           body: "Per-zone delivery fees and minimum order values, applied automatically when an order address is matched to a zone.",
         },
         {
-          title: "Driver app at 30p per delivery",
+          title: `Driver app at ${posso.driverAppPerDelivery} per delivery`,
           body: "No per-driver licence fee. Assignment and dispatch run from a single active-orders screen.",
         },
         {
@@ -95,7 +96,7 @@ export const deliveryManagementPos: Guide = {
         },
         {
           title: "Marketplace orders alongside your own",
-          body: "Just Eat, Uber Eats and Deliveroo integration is £45/month with unlimited orders, and those orders land in the same queue as everything else.",
+          body: `Just Eat, Uber Eats and Deliveroo integration is ${posso.deliveryIntegrationMonthly}/month with unlimited orders, and those orders land in the same queue as everything else.`,
         },
         {
           title: "Branded online ordering",
@@ -112,7 +113,7 @@ export const deliveryManagementPos: Guide = {
       heading: "Where this is not the right fit",
       paragraphs: [
         "If you deliver fewer than about ten orders a night, own-fleet dispatch is solving a problem you do not have yet — a printed ticket and a driver who knows the area works fine.",
-        "And if you have no intention of ever running your own drivers, the marketplace integration on its own is the cheaper answer. Systems start at £499 + VAT including hardware, software licence, menu build and staff training.",
+        `And if you have no intention of ever running your own drivers, the marketplace integration on its own is the cheaper answer. Systems start at ${posso.posPrice} + VAT including hardware, software licence, menu build and staff training.`,
       ],
     },
     {
@@ -132,7 +133,7 @@ export const deliveryManagementPos: Guide = {
   faqs: [
     {
       q: "Can a POS system manage my own delivery drivers?",
-      a: "Some can, but far fewer than claim to. Many systems describe marketplace integration — pulling Just Eat and Deliveroo orders onto the till — as delivery, when the courier is the marketplace's. Own-fleet management means zone mapping, driver assignment, a driver app and live tracking. Posso includes all four in the EPOS at 30p per delivery.",
+      a: `Some can, but far fewer than claim to. Many systems describe marketplace integration — pulling Just Eat and Deliveroo orders onto the till — as delivery, when the courier is the marketplace's. Own-fleet management means zone mapping, driver assignment, a driver app and live tracking. Posso includes all four in the EPOS at ${posso.driverAppPerDelivery} per delivery.`,
     },
     {
       q: "How do delivery zones work in an EPOS?",
@@ -140,7 +141,7 @@ export const deliveryManagementPos: Guide = {
     },
     {
       q: "What does delivery management cost?",
-      a: "With Posso, the driver app and dispatch are 30p per delivery, with no per-driver licence fee. Marketplace integration for Just Eat, Uber Eats and Deliveroo is £45/month with unlimited orders. The EPOS itself starts at £499 + VAT. At 500 deliveries a month, dispatch costs £150 — against roughly £3,000 in commission if those same orders ran through a marketplace at 25%.",
+      a: `With Posso, the driver app and dispatch are ${posso.driverAppPerDelivery} per delivery, with no per-driver licence fee. Marketplace integration for Just Eat, Uber Eats and Deliveroo is ${posso.deliveryIntegrationMonthly}/month with unlimited orders. The EPOS itself starts at ${posso.posPrice} + VAT. At 500 deliveries a month, dispatch costs £150 — against roughly £3,000 in commission if those same orders ran through a marketplace at 25%.`,
     },
     {
       q: "Can I run my own drivers and Just Eat at the same time?",

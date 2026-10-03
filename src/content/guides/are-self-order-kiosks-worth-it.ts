@@ -1,4 +1,5 @@
 import type { Guide } from "@/lib/guides";
+import { posso } from '@/lib/possoFacts';
 
 /**
  * Community-research page (SERP-gap batch, August 2026). Unusual sourcing on
@@ -15,7 +16,7 @@ export const areSelfOrderKiosksWorthIt: Guide = {
   slug: "are-self-order-kiosks-worth-it",
   title: "Are Self-Order Kiosks Worth It?",
   metaDescription:
-    "What operators and customers actually say about self-order kiosks — the spend lift, the resistance, the accessibility question. Sources linked. Kiosks from £699 + VAT.",
+    `What operators and customers actually say about self-order kiosks — the spend lift, the resistance, the accessibility question. Sources linked. Kiosks from ${posso.kioskPrice} + VAT.`,
   eyebrow: "Community research",
   h1: "Are self-order kiosks worth it? What operators and customers say",
   h1Split: ["Are self-order kiosks worth it?", "What operators and customers say"],
@@ -24,7 +25,7 @@ export const areSelfOrderKiosksWorthIt: Guide = {
   highlights: [
     "Operator and customer threads, read together and linked",
     "The honest case against, straight from the threads",
-    "Posso kiosks from £699 + VAT when the case fits",
+    `Posso kiosks from ${posso.kioskPrice} + VAT when the case fits`,
   ],
   breadcrumb: "Are Kiosks Worth It?",
   quickAnswer:
@@ -70,7 +71,7 @@ export const areSelfOrderKiosksWorthIt: Guide = {
       heading: "What the numbers do and don't show",
       paragraphs: [
         "Honesty first: no operator in these threads posts a measured before-and-after number for kiosk revenue. The uplift claims all come from vendors — including us. What the threads supply instead is the mechanism everyone concedes: consistent prompting raises attachment and order size, and queues shrink when regulars self-serve. Treat any specific percentage a vendor quotes — ours included — as a claim to test, not a fact to bank.",
-        "So here is how to test it. A Posso kiosk is £699 + VAT and runs the same menu, modifiers and kitchen routing as the till, so a trial does not mean rebuilding anything. Put one beside the staffed till for a busy month, then read your own numbers: average order value at the kiosk versus the counter, attachment on the extras you care about, and queue length at peak. If the kiosk does not pay its way in your data, that is your answer — and it is a better answer than any thread or any vendor can give you.",
+        `So here is how to test it. A Posso kiosk is ${posso.kioskPrice} + VAT and runs the same menu, modifiers and kitchen routing as the till, so a trial does not mean rebuilding anything. Put one beside the staffed till for a busy month, then read your own numbers: average order value at the kiosk versus the counter, attachment on the extras you care about, and queue length at peak. If the kiosk does not pay its way in your data, that is your answer — and it is a better answer than any thread or any vendor can give you.`,
       ],
     },
     {
@@ -124,7 +125,7 @@ export const areSelfOrderKiosksWorthIt: Guide = {
         { label: "Self-order kiosks — complete guide", href: "/self-order-kiosks-guide" },
         { label: "Kiosks for fast food", href: "/self-order-kiosk-fast-food" },
         { label: "Dessert & bubble tea POS", href: "/pos-for-dessert-shop" },
-        { label: "Restaurant self-ordering", href: "/restaurant-self-ordering-system" },
+        { label: "Restaurant self-ordering", href: "/self-order-kiosks-for-restaurants" },
         { label: "Kitchen display system", href: "/kitchen-display-system" },
         { label: "EPOS pricing", href: "/epos-pricing-uk" },
       ],
@@ -134,7 +135,7 @@ export const areSelfOrderKiosksWorthIt: Guide = {
   faqs: [
     {
       q: "Are self-order kiosks worth it for a small takeaway or counter?",
-      a: "Worth it when a queue visibly costs you customers at peak — that is the case even kiosk-sceptics in the threads concede, because kiosks absorb the regulars and prompt extras consistently. Not worth it when the queue clears in minutes or when the welcome is the product. At £699 + VAT running the same menu as your till, the rational move is a one-month trial beside the staffed lane, judged on your own average-order and queue numbers.",
+      a: `Worth it when a queue visibly costs you customers at peak — that is the case even kiosk-sceptics in the threads concede, because kiosks absorb the regulars and prompt extras consistently. Not worth it when the queue clears in minutes or when the welcome is the product. At ${posso.kioskPrice} + VAT running the same menu as your till, the rational move is a one-month trial beside the staffed lane, judged on your own average-order and queue numbers.`,
     },
     {
       q: "Do customers actually use kiosks?",
@@ -150,7 +151,7 @@ export const areSelfOrderKiosksWorthIt: Guide = {
     },
     {
       q: "How much does a self-order kiosk cost in the UK?",
-      a: "Posso kiosks start at £699 + VAT, running the same menu, modifiers, kitchen routing and card processing as the main till — so adding one is configuration, not a second system. The system behind it starts at £499 + VAT with software from £25 + VAT a month. A kiosk trial therefore risks hardware money only, and the kiosk keeps working as a second till even off-peak.",
+      a: `Posso kiosks start at ${posso.kioskPrice} + VAT, running the same menu, modifiers, kitchen routing and card processing as the main till — so adding one is configuration, not a second system. The system behind it starts at ${posso.posPrice} + VAT with software from ${posso.softwareMonthly} + VAT a month. A kiosk trial therefore risks hardware money only, and the kiosk keeps working as a second till even off-peak.`,
     },
     {
       q: "Should the kiosk replace a staffed till?",

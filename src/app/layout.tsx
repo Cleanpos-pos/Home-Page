@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 import { CookieConsent } from '@/components/cookie-consent';
+import { posso } from '@/lib/possoFacts';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -16,8 +17,8 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
-const title = '🚀 Restaurant ePOS Systems & Self-Order Kiosks UK | Posso';
-const description = 'Posso provides ePOS systems, self-order kiosks, online ordering, ticketing, and digital signage for restaurants, takeaways, and venues across the UK. Call 0808 175 3956.';
+const title = 'Restaurant ePOS Systems & Self-Order Kiosks UK | Posso';
+const description = `Posso provides ePOS systems, self-order kiosks, online ordering, ticketing, and digital signage for restaurants, takeaways, and venues across the UK. Call ${posso.phone}.`;
 const url = 'https://www.posso.co.uk';
 
 export const metadata: Metadata = {
@@ -27,26 +28,11 @@ export const metadata: Metadata = {
     template: `%s | Posso`,
   },
   description: description,
-  keywords: [
-    'ePOS system UK',
-    'restaurant POS system',
-    'self-order kiosk',
-    'self-service kiosk UK',
-    'takeaway POS system',
-    'restaurant technology',
-    'hospitality ePOS',
-    'fast food POS',
-    'ticketing software',
-    'digital signage restaurant',
-    'card payment machine',
-    'online ordering system',
-    'kitchen display system',
-    'venue management software',
-  ],
+  // No title/description/url in openGraph or twitter on purpose: a page that does
+  // not declare its own block inherits this one wholesale, so before October 2026
+  // 363 pages shipped the HOMEPAGE's twitter:title and 62 its og:title. Pages set
+  // their own; the homepage sets its own in src/app/page.tsx.
   openGraph: {
-    title: title,
-    description: 'All-in-one ePOS, self-order kiosks, online ordering, and venue management for UK restaurants and hospitality. Trusted by 500+ businesses.',
-    url: url,
     siteName: 'Posso',
     images: [
       {
@@ -61,8 +47,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: title,
-    description: 'All-in-one ePOS, self-order kiosks, online ordering & venue management for UK restaurants. Trusted by 500+ businesses.',
     images: ['/og-image.png'],
     creator: '@posso_uk',
     site: '@posso_uk',
@@ -87,9 +71,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  alternates: {
-    canonical: url,
-  },
+  // No sitewide canonical: inherited by any page that forgot its own, it told
+  // Google that page was a duplicate of the homepage. Every page declares a
+  // self-referencing canonical; the homepage's is in src/app/page.tsx.
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -112,96 +96,6 @@ export const viewport: Viewport = {
   colorScheme: 'dark',
 }
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://www.posso.co.uk/#organization",
-  "name": "Posso Ltd",
-  "legalName": "Posso Ltd",
-  "url": "https://www.posso.co.uk",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://www.posso.co.uk/icon-512x512.png",
-    "width": 512,
-    "height": 512
-  },
-  "description": "UK provider of ePOS systems, self-order kiosks, ticketing, digital signage, and hospitality technology for restaurants, takeaways, and entertainment venues.",
-  "telephone": "+44-808-175-3956",
-  "contactPoint": [
-    {
-      "@type": "ContactPoint",
-      "telephone": "+44-808-175-3956",
-      "contactType": "Sales",
-      "areaServed": "GB",
-      "availableLanguage": "en"
-    },
-    {
-      "@type": "ContactPoint",
-      "telephone": "+44-808-175-3956",
-      "contactType": "Customer Support",
-      "areaServed": "GB",
-      "availableLanguage": "en"
-    }
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "The Oval, 57 New Walk",
-    "addressLocality": "Leicester",
-    "postalCode": "LE1 7EA",
-    "addressCountry": "GB"
-  },
-  "identifier": {
-    "@type": "PropertyValue",
-    "propertyID": "Companies House Number",
-    "value": "11813595"
-  },
-  "areaServed": [
-    { "@type": "Country", "name": "United Kingdom" },
-    { "@type": "City", "name": "London" },
-    { "@type": "City", "name": "Birmingham" },
-    { "@type": "City", "name": "Manchester" },
-    { "@type": "City", "name": "Leeds" },
-    { "@type": "City", "name": "Glasgow" },
-    { "@type": "City", "name": "Liverpool" },
-    { "@type": "City", "name": "Newcastle" },
-    { "@type": "City", "name": "Sheffield" },
-    { "@type": "City", "name": "Bristol" },
-    { "@type": "City", "name": "Edinburgh" },
-    { "@type": "City", "name": "Cardiff" },
-    { "@type": "City", "name": "Belfast" },
-    { "@type": "City", "name": "Nottingham" },
-    { "@type": "City", "name": "Southampton" },
-    { "@type": "City", "name": "Leicester" },
-    { "@type": "City", "name": "Brighton" },
-    { "@type": "City", "name": "Aberdeen" },
-    { "@type": "City", "name": "Derby" },
-    { "@type": "City", "name": "Plymouth" },
-    { "@type": "City", "name": "Wolverhampton" },
-    { "@type": "City", "name": "Swansea" },
-    { "@type": "City", "name": "Reading" },
-    { "@type": "City", "name": "Coventry" },
-    { "@type": "City", "name": "Cambridge" },
-    { "@type": "City", "name": "Oxford" },
-    { "@type": "City", "name": "York" },
-    { "@type": "City", "name": "Bath" },
-    { "@type": "City", "name": "Exeter" },
-    { "@type": "City", "name": "Norwich" },
-    { "@type": "City", "name": "Dundee" }
-  ],
-  "sameAs": [
-    "https://x.com/posso_uk",
-    "https://www.linkedin.com/company/posso-uk"
-  ],
-  "knowsAbout": [
-    "Restaurant ePOS Systems",
-    "Self-Order Kiosks",
-    "Hospitality Technology",
-    "Digital Signage",
-    "Ticketing Systems",
-    "Online Ordering",
-    "Payment Processing"
-  ]
-};
 
 export default function RootLayout({
   children,
@@ -212,10 +106,8 @@ export default function RootLayout({
     <html lang="en-GB" className={`dark ${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        {/* Organization schema lives on the homepage only (src/app/page.tsx);
+            inner pages reference it by @id. */}
       </head>
       <body className="font-body antialiased">
         {children}

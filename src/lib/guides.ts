@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { posso } from '@/lib/possoFacts';
 
 export const SITE = "https://www.posso.co.uk";
-export const PHONE = "0808 175 3956";
-export const PHONE_HREF = "tel:+448081753956";
+export const PHONE = posso.phone;
+export const PHONE_HREF = posso.phoneHref;
 
 /* ------------------------------------------------------------------ */
 /* Content model                                                       */
@@ -78,6 +79,18 @@ export interface Guide {
   faqs: Faq[];
   /** Optional short answer surfaced for AI extraction */
   quickAnswer?: string;
+  /**
+   * "article" (default) emits Article + BreadcrumbList; "faq-breadcrumb" emits
+   * BreadcrumbList only (FAQSection adds FAQPage). Competitor pages use the
+   * latter — no Article or Review markup about another company's product.
+   */
+  schema?: "article" | "faq-breadcrumb";
+  /**
+   * Keep the page out of the index (noindex, follow). Used while a competitor
+   * page is waiting for its figures to be verified — see
+   * src/content/guides/competitors.ts.
+   */
+  noindex?: boolean;
 }
 
 /* ------------------------------------------------------------------ */
@@ -92,6 +105,7 @@ export function guideMetadata(guide: Guide): Metadata {
     title: guide.title,
     description: guide.metaDescription,
     alternates: { canonical: `/${guide.slug}` },
+    ...(guide.noindex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: `${guide.title} | Posso UK`,
       description: guide.metaDescription,

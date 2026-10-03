@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Building2, Monitor, UtensilsCrossed, Tablet, Globe, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Hospitality Software UK',
   description:
-    'Hospitality Software UK — POS, kitchen display, booking, self-order kiosks, online ordering, and analytics in one integrated platform. Built for UK hospitality businesses. From £499 + VAT.',
+    `Hospitality Software UK — POS, kitchen display, booking, self-order kiosks, online ordering, and analytics in one integrated platform. Built for UK hospitality businesses. From ${posso.posPrice} + VAT.`,
   keywords: [
     'hospitality software uk',
     'hospitality technology uk',
@@ -77,7 +78,7 @@ const pageSchema = [
 const features = [
   { icon: Monitor, title: 'Hospitality POS System', description: 'A point of sale system designed for UK hospitality — table service, bar tabs, split bills, course management, and allergen flagging. The POS handles the complexity of restaurant and pub service: hold starters while the table finishes drinks, fire mains when the starters are cleared, split a bill six ways by item or equally. Built for the way UK hospitality actually operates.' },
   { icon: UtensilsCrossed, title: 'Kitchen Display System', description: 'Replace ticket printers with a kitchen display that shows every order in real time. Items are colour-coded by course and sorted by time. The kitchen team marks items as started and completed. The front-of-house team sees preparation status on their POS. Communication between kitchen and floor happens through the system — no shouting, no lost tickets, no confusion during a busy Friday service.' },
-  { icon: Tablet, title: 'Self-Order Kiosks', description: 'Customer-facing kiosks from £699 + VAT that take orders and payments without staff involvement. Customers browse the full menu with photos and descriptions, customise their order, pay by card or phone, and receive a ticket number. The order goes straight to the kitchen display. Kiosks add a visual upsell prompt to every order and reduce queue times during peak periods.' },
+  { icon: Tablet, title: 'Self-Order Kiosks', description: `Customer-facing kiosks from ${posso.kioskPrice} + VAT that take orders and payments without staff involvement. Customers browse the full menu with photos and descriptions, customise their order, pay by card or phone, and receive a ticket number. The order goes straight to the kitchen display. Kiosks add a visual upsell prompt to every order and reduce queue times during peak periods.` },
   { icon: Globe, title: 'Online Ordering Platform', description: 'A branded online ordering system for takeaway, delivery, and click-and-collect. Customers order through your website or app — not a third-party marketplace. Orders arrive directly on your POS and kitchen display. Low commission means you keep your margins. Delivery zone management, minimum order values, and estimated prep times are all configurable from the dashboard.' },
   { icon: Building2, title: 'Table Booking & Management', description: 'Accept online reservations through your website, Google, and social media. The booking system shows table availability in real time. Set covers per table, manage walk-ins alongside reservations, and track table turn times. Automated confirmation and reminder emails reduce no-shows. The floor plan view shows which tables are occupied, reserved, and available at a glance.' },
   { icon: BarChart3, title: 'Business Analytics Dashboard', description: 'Every transaction, order, and booking generates data. The analytics dashboard turns that data into actionable insights — best-selling items, peak trading hours, average spend per cover, staff performance, and revenue trends. Compare this week to last week, this month to last year. Identify your most profitable menu items and your loss leaders. Make decisions based on data, not gut feel.' },
@@ -124,14 +125,14 @@ export default function HospitalitySoftwareUkPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Complete hospitality tech stack in one platform</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> UK VAT, allergens, and compliance built in</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS from £499 + VAT, kiosks from £699 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> POS from {posso.posPrice} + VAT, kiosks from {posso.kioskPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -208,7 +209,7 @@ export default function HospitalitySoftwareUkPage() {
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosk</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/digital-signage-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Digital Signage</p>
@@ -216,7 +217,7 @@ export default function HospitalitySoftwareUkPage() {
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
               </div>
             </div>
@@ -225,11 +226,11 @@ export default function HospitalitySoftwareUkPage() {
 
         <FAQSection title="Hospitality Software UK — Frequently Asked Questions" faqs={[
           { question: 'Does the software handle UK VAT correctly?', answer: 'Yes. The system automatically applies the correct VAT rate based on whether an item is eat-in or takeaway. For mixed orders, each item is taxed at the appropriate rate. VAT reports are generated for your accountant with a single click. The system is fully compliant with HMRC digital records requirements.' },
-          { question: 'Can I start with just a POS and add more later?', answer: 'Absolutely. Start with a POS terminal from £499 + VAT. Add a kitchen display when you need it. Add online ordering, kiosks, or table booking as your business grows. Every component integrates automatically — there is no migration or data transfer needed. You build your tech stack over time without switching systems.' },
+          { question: 'Can I start with just a POS and add more later?', answer: `Absolutely. Start with a POS terminal from ${posso.posPrice} + VAT. Add a kitchen display when you need it. Add online ordering, kiosks, or table booking as your business grows. Every component integrates automatically — there is no migration or data transfer needed. You build your tech stack over time without switching systems.` },
           { question: 'How does allergen information work?', answer: 'Every menu item has allergen flags for the 14 major allergens required by UK law. When a customer asks about allergens, staff see the information on the POS screen. Online ordering and kiosk menus display allergen information automatically. Allergen data can be filtered so a customer with a nut allergy sees only safe options.' },
           { question: 'Is it suitable for multi-site hospitality groups?', answer: 'Yes. Manage all locations from one dashboard. Standardise menus, pricing, and promotions across sites or customise per location. Compare revenue, covers, average spend, and staff performance between venues. Central purchasing, stock management, and reporting with local operational flexibility. Designed for groups from 2 to 200+ sites.' },
-          { question: 'What support is available?', answer: 'UK-based support team available by phone, email, and live chat. Emergency support available during service hours for critical issues. Free onboarding including hardware setup, menu configuration, staff training, and go-live support. A dedicated account manager for multi-site businesses. 2-year hardware warranty included with all systems.' },
-          { question: 'How much does hospitality software cost?', answer: 'POS systems start from £499 + VAT. Self-order kiosks from £699 + VAT. Online ordering at low commission. Kitchen display, table booking, and analytics included with the POS. Finance available from £24.92 per week. Free setup, configuration, and training. No hidden fees, no long-term contracts required. Contact us for a tailored quote.' },
+          { question: 'What support is available?', answer: `UK-based support team available by phone, email, and live chat. Emergency support available during service hours for critical issues. Free onboarding including hardware setup, menu configuration, staff training, and go-live support. A dedicated account manager for multi-site businesses. ${posso.warrantyYears}-year hardware warranty included with all systems.` },
+          { question: 'How much does hospitality software cost?', answer: `POS systems start from ${posso.posPrice} + VAT. Self-order kiosks from ${posso.kioskPrice} + VAT. Online ordering at low commission. Kitchen display, table booking, and analytics included with the POS. Finance available from ${posso.financeWeekly} per week. Free setup, configuration, and training. No hidden fees, no long-term contracts required. Contact us for a tailored quote.` /* TODO: PAUL — confirm contract terms before keeping this no-long-term-contract claim (see possoContract in src/lib/possoFacts.ts). */ },
         ]} />
 
         <Contact />

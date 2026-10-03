@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Zap, Phone, ArrowRight, Pizza, Calculator, TrendingUp, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'What Is the 3/8 Rule for Pizza? (Sizing & Pricing Guide)',
@@ -38,8 +39,8 @@ const pageSchema = [
     '@type': 'Article',
     headline: 'What Is the 3/8 Rule for Pizza?',
     description: 'Explanation of the 3/8 pizza sizing rule, how it affects pricing, and how a POS system with automatic size-based pricing protects pizza shop margins.',
-    author: { '@type': 'Organization', name: 'Posso Ltd', url: 'https://www.posso.co.uk' },
-    publisher: { '@type': 'Organization', name: 'Posso Ltd', logo: { '@type': 'ImageObject', url: 'https://www.posso.co.uk/icon-512x512.png' } },
+    author: { '@id': 'https://www.posso.co.uk/#organization' },
+    publisher: { '@id': 'https://www.posso.co.uk/#organization' },
     datePublished: '2026-04-08',
     dateModified: '2026-04-08',
     url: 'https://www.posso.co.uk/what-is-the-3-8-rule-for-pizza',
@@ -106,8 +107,8 @@ export default function ThreeEighthsRulePage() {
               <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                 Get Size-Based Pricing POS <ArrowRight className="ml-2 h-5 w-5" />
               </a>
-              <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+              <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                <Phone className="mr-2 h-5 w-5" /> {posso.phone}
               </a>
             </div>
           </div>
@@ -232,7 +233,7 @@ export default function ThreeEighthsRulePage() {
                 </p>
               </div>
               <p>
-                <Link href="/pizza-epos" className="text-primary hover:underline font-semibold">Posso&apos;s pizza builder</Link>{' '}
+                <Link href="/pos-for-pizza-shop" className="text-primary hover:underline font-semibold">Posso&apos;s pizza builder</Link>{' '}
                 goes further: when a customer selects a 14&quot; pizza and adds extra mozzarella, the topping price adjusts to the 14&quot; rate automatically. Split-sided pizzas are priced correctly too — half toppings are charged at half the topping rate for that size.
               </p>
               <p>
@@ -269,7 +270,7 @@ export default function ThreeEighthsRulePage() {
                 </div>
               </div>
               <p>
-                A Posso POS starts from <strong className="text-white">£499 + VAT</strong>. The size-based pricing feature alone can pay for the entire system within the first month. Self-order kiosks from <strong className="text-white">£699 + VAT</strong> add further revenue by increasing average order value by 20&ndash;30%.
+                A Posso POS starts from <strong className="text-white">{posso.posPrice} + VAT</strong>. The size-based pricing feature alone can pay for the entire system within the first month. Self-order kiosks from <strong className="text-white">{posso.kioskPrice} + VAT</strong> add further revenue by increasing average order value by 20&ndash;30%.
               </p>
             </div>
           </div>
@@ -281,7 +282,7 @@ export default function ThreeEighthsRulePage() {
             <div className="glass-card rounded-2xl border border-slate-700/50 p-8">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">Get Size-Based Pricing for Your Pizza Shop</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/pizza-epos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
+                <Link href="/pos-for-pizza-shop" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Pizza POS System</p>
                   <p className="text-slate-400 text-sm mt-1">Visual builder + size pricing</p>
                 </Link>
@@ -291,11 +292,11 @@ export default function ThreeEighthsRulePage() {
                 </Link>
                 <Link href="/pos-systems" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Get a Quote</p>
-                  <p className="text-slate-400 text-sm mt-1">POS from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">POS from {posso.posPrice} + VAT</p>
                 </Link>
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self-Order Kiosks</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
               </div>
             </div>
@@ -307,7 +308,7 @@ export default function ThreeEighthsRulePage() {
           { question: 'How much bigger is a 14" pizza than a 9"?', answer: 'A 14" pizza has an area of about 153.9 square inches, while a 9" pizza has about 63.6 square inches. That makes the 14" pizza approximately 2.42 times larger — not 1.56 times as the diameter ratio would suggest. You get nearly 2.5 times more pizza.' },
           { question: 'Why do pizza shops lose money on large pizzas?', answer: 'Most pizza shops price larger sizes too cheaply because they scale prices linearly with diameter rather than with area. If a 9" costs £6.99, the 18" (which is 4x the area) should cost around £27.96 to maintain the same margin per square inch — but many shops charge only £13–15. The food cost quadruples while revenue only doubles.' },
           { question: 'How should I price pizza toppings by size?', answer: 'Topping prices should scale roughly with the area multiplier. If a topping costs £0.80 on a 9" pizza, it should cost approximately £1.20 on a 12" (1.78x area), £1.60 on a 14" (2.42x area), and £2.50 on an 18" (4x area). A POS with size-based pricing handles this automatically.' },
-          { question: 'Does Posso POS support size-based pricing?', answer: 'Yes. Posso\'s pizza builder has automatic size-based pricing built in. You set base prices and topping prices per size (e.g. 9", 14", 18"), and the POS calculates the correct total when staff or customers select a size. Split-sided toppings are also priced correctly at half the topping rate per side. POS from £499 + VAT.' },
+          { question: 'Does Posso POS support size-based pricing?', answer: `Yes. Posso's pizza builder has automatic size-based pricing built in. You set base prices and topping prices per size (e.g. 9", 14", 18"), and the POS calculates the correct total when staff or customers select a size. Split-sided toppings are also priced correctly at half the topping rate per side. POS from ${posso.posPrice} + VAT.` },
           { question: 'Is a larger pizza always better value for customers?', answer: 'In most pizza shops, yes — because larger sizes are typically under-priced relative to their area. A 14" pizza often costs only 60–70% more than a 9" but contains 142% more pizza. However, if a shop prices correctly using the 3/8 rule, the value per square inch should be similar across sizes, with perhaps a small volume discount on larger pizzas.' },
         ]} />
 

@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Smartphone, Truck, Bell, Heart, ShoppingBag, Clock } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Takeaway App',
   description:
-    'Takeaway App — branded takeaway ordering app with delivery and collection, push notifications, customer loyalty, and low commission. Built for takeaways. From £499 + VAT.',
+    `Takeaway App — branded takeaway ordering app with delivery and collection, push notifications, customer loyalty, and low commission. Built for takeaways. From ${posso.posPrice} + VAT.`,
   keywords: [
     'takeaway app',
     'takeaway ordering app',
@@ -124,14 +125,14 @@ export default function TakeawayAppPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Your brand, your app, your customers</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Push notifications drive orders during quiet times</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Takeaway POS from £499 + VAT with low commission</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Takeaway POS from {posso.posPrice} + VAT with low commission</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -229,7 +230,7 @@ export default function TakeawayAppPage() {
           { question: 'Can I send push notifications to customers?', answer: 'Yes. Send push notifications to all customers who have installed your app. Announce new dishes, limited-time offers, or quiet-period discounts. Push notifications are free to send and reach customers instantly. They are one of the most effective tools for driving orders during slow periods.' },
           { question: 'How does the loyalty programme work?', answer: 'Customers earn points or stamps with every qualifying order. After reaching the threshold (e.g., 10 orders), they receive a reward — free item, percentage discount, or money off. Progress is tracked automatically in the app. You configure the rules: which orders qualify, what the reward is, and how many orders are needed.' },
           { question: 'Does the app integrate with my POS?', answer: 'Yes. Orders placed through the app arrive directly on your POS and kitchen display. No manual re-entry, no separate tablet. The order includes all details: items, modifiers, delivery or collection, customer address, and payment confirmation. It works exactly like a phone order — except it is already paid and accurately recorded.' },
-          { question: 'How much does the takeaway app cost?', answer: 'The branded takeaway app is included with the Posso POS system from £499 + VAT. Low commission on app orders. The app is published to the App Store and Google Play under your brand. Finance from £24.92 per week. Free setup, menu configuration, and ongoing support with a 2-year warranty.' },
+          { question: 'How much does the takeaway app cost?', answer: `The branded takeaway app is included with the Posso POS system from ${posso.posPrice} + VAT. Low commission on app orders. The app is published to the App Store and Google Play under your brand. Finance from ${posso.financeWeekly} per week. Free setup, menu configuration, and ongoing support with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

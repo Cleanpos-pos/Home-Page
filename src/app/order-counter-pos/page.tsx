@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Zap, Monitor, ListOrdered, Timer, UtensilsCrossed, Users } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'Order Counter POS System',
   description:
-    'Order Counter POS System for counter-service restaurants, fast food, queue management, kitchen display, and speed ordering. Built for high-volume counter service. From £499 + VAT.',
+    `Order Counter POS System for counter-service restaurants, fast food, queue management, kitchen display, and speed ordering. Built for high-volume counter service. From ${posso.posPrice} + VAT.`,
   keywords: [
     'order counter pos system',
     'counter pos system',
@@ -124,14 +126,14 @@ export default function OrderCounterPosPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> One-tap speed ordering clears queues fast</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Kitchen display eliminates lost tickets</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Counter POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Counter POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -190,7 +192,7 @@ export default function OrderCounterPosPage() {
                   For multi-site operators, the <strong className="text-white">cloud dashboard</strong> provides real-time visibility across all locations. Compare order volumes, average wait times, and revenue between sites. Standardise menus or run location-specific specials. Each counter operates independently, but data rolls up to a single management view.
                 </p>
                 <p>
-                  Add a <strong className="text-white">self-ordering kiosk</strong> from £699 + VAT and customers place their own orders. The kiosk handles the queue while your staff focus on food preparation. Kiosk orders go straight to the kitchen display alongside counter orders — one unified workflow, two ordering channels.
+                  Add a <strong className="text-white">self-ordering kiosk</strong> from {posso.kioskPrice} + VAT and customers place their own orders. The kiosk handles the queue while your staff focus on food preparation. Kiosk orders go straight to the kitchen display alongside counter orders — one unified workflow, two ordering channels.
                 </p>
               </div>
             </div>
@@ -204,7 +206,7 @@ export default function OrderCounterPosPage() {
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <Link href="/self-order-kiosks" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Self Service ePOS</p>
-                  <p className="text-slate-400 text-sm mt-1">Kiosks from £699 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">Kiosks from {posso.kioskPrice} + VAT</p>
                 </Link>
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS Systems</p>
@@ -223,13 +225,15 @@ export default function OrderCounterPosPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="Order Counter POS — Frequently Asked Questions" faqs={[
           { question: 'How fast is the speed ordering system?', answer: 'The POS screen shows large, colour-coded buttons for your most popular items. One tap per item, one tap for combos. A trained cashier can process a complete order — items, payment, and receipt — in under 15 seconds. During peak service, this translates to 3 to 4 transactions per minute per till.' },
           { question: 'How does the kitchen display system work?', answer: 'When an order is placed at the counter or kiosk, it appears instantly on the kitchen display screen. Each order shows the items, any modifications, the order number, and a timer. The kitchen works through orders in sequence, tapping to mark items as complete. Completed orders trigger the collection display to show the order number as ready.' },
           { question: 'Can customers see their order status?', answer: 'Yes. A customer-facing display shows order numbers that are being prepared and those that are ready for collection. Customers watch for their number instead of crowding the counter. Some businesses also display estimated wait times. The system reduces counter enquiries and keeps the collection area organised.' },
           { question: 'Does it support meal deals and combos?', answer: 'Yes. Configure unlimited meal deals and combo options. When a customer orders a main item, the POS can prompt the cashier to offer a combo upgrade — for example, add a drink and side for a set price. Combos can also be configured as single buttons for the fastest possible ordering during peak times.' },
-          { question: 'Can I add self-ordering kiosks?', answer: 'Yes. Self-ordering kiosks from £699 + VAT integrate directly with the same kitchen display. Kiosk orders appear alongside counter orders in the kitchen queue. This gives you two ordering channels without needing extra counter staff. Kiosks handle the queue while your team focuses on food preparation.' },
-          { question: 'How much does a counter POS system cost?', answer: 'The complete order counter POS system starts from £499 + VAT including touchscreen terminal, kitchen display software, and customer-facing order screen. Self-ordering kiosks available from £699 + VAT. Finance from £24.92 per week. Free setup, menu configuration, and staff training included with a 2-year warranty.' },
+          { question: 'Can I add self-ordering kiosks?', answer: `Yes. Self-ordering kiosks from ${posso.kioskPrice} + VAT integrate directly with the same kitchen display. Kiosk orders appear alongside counter orders in the kitchen queue. This gives you two ordering channels without needing extra counter staff. Kiosks handle the queue while your team focuses on food preparation.` },
+          { question: 'How much does a counter POS system cost?', answer: `The complete order counter POS system starts from ${posso.posPrice} + VAT including touchscreen terminal, kitchen display software, and customer-facing order screen. Self-ordering kiosks available from ${posso.kioskPrice} + VAT. Finance from ${posso.financeWeekly} per week. Free setup, menu configuration, and staff training included with a ${posso.warrantyYears}-year warranty.` },
         ]} />
 
         <Contact />

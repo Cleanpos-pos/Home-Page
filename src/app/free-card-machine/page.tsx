@@ -7,11 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Gift, CreditCard, ShieldCheck, Zap, Settings, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Free Card Machine',
   description:
-    'Free Card Machine with payment processing agreement. Teya terminal included at no upfront cost, low transaction fees, next-day settlement, contactless payments, and POS integration. From £499 + VAT.',
+    `Free Card Machine with payment processing agreement. Teya terminal included at no upfront cost, low transaction fees, next-day settlement, contactless payments, and POS integration. From ${posso.posPrice} + VAT.`,
   keywords: [
     'free card machine',
     'free card machine uk',
@@ -124,14 +125,14 @@ export default function FreeCardMachinePage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Free Teya card machine — no upfront cost</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Next-day settlement, low transaction fees</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> ePOS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> ePOS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get Your Free Machine <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -226,9 +227,9 @@ export default function FreeCardMachinePage() {
         <FAQSection title="Free Card Machine — FAQ" faqs={[
           { question: 'Is the card machine really free?', answer: 'Yes. The Teya card terminal is provided at no upfront cost when you sign a payment processing agreement. There is no hidden purchase price, no lease fee, and no hardware deposit. You pay only the per-transaction fee when you process card payments. If you process zero transactions in a month, you pay nothing.' },
           { question: 'What is included with the free card machine?', answer: 'You receive a current-generation Teya card terminal, a charging dock, a power cable, and a quick-start guide. The terminal arrives pre-configured with your merchant details. It supports contactless, chip-and-pin, and mobile wallets out of the box. If you have a Posso ePOS, the integration is pre-configured.' },
-          { question: 'What are the transaction fees?', answer: 'Transaction fees are competitive and depend on your business type and projected volume. There are no monthly minimums, no statement fees, and no PCI compliance surcharges. Contact us on 0808 175 3956 for a quote tailored to your business. The rate is transparent and does not increase without notice.' },
+          { question: 'What are the transaction fees?', answer: `Transaction fees are competitive and depend on your business type and projected volume. There are no monthly minimums, no statement fees, and no PCI compliance surcharges. Contact us on ${posso.phone} for a quote tailored to your business. The rate is transparent and does not increase without notice.` },
           { question: 'What happens if the terminal breaks?', answer: 'If the terminal develops a fault, report it and a replacement is shipped at no charge. You are not responsible for hardware repairs or replacement costs during the agreement. The goal is to keep you trading — a broken card machine means lost sales, so replacements are prioritised.' },
-          { question: 'Do I need a Posso ePOS to get the free card machine?', answer: 'No. The free card machine is available as a standalone device. However, pairing it with a Posso ePOS system from £499 + VAT gives you integrated payments — amounts transfer automatically from till to terminal, eliminating manual entry. The standalone terminal works independently if you do not need a full POS.' },
+          { question: 'Do I need a Posso ePOS to get the free card machine?', answer: `No. The free card machine is available as a standalone device. However, pairing it with a Posso ePOS system from ${posso.posPrice} + VAT gives you integrated payments — amounts transfer automatically from till to terminal, eliminating manual entry. The standalone terminal works independently if you do not need a full POS.` },
           { question: 'How long does it take to start accepting payments?', answer: 'Apply online in under 10 minutes. Most applications are approved within 24–48 hours. The terminal is shipped pre-configured and typically arrives within 3–5 working days. Unbox it, charge or plug it in, and run a test transaction. You can be accepting card payments the same day it arrives.' },
         ]} />
 

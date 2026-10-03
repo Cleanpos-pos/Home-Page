@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { FAQSection } from '@/components/sections/faq-section';
 import { DemoEnquiry } from '@/components/sections/demo-enquiry';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, BookOpen, Check, Phone } from 'lucide-react';
 import {
@@ -25,6 +27,38 @@ import {
  * pageSchema script, referencing the sitewide Organization by @id.
  */
 
+/**
+ * Inline links in content strings: "[anchor text](/path)" renders as a <Link>,
+ * "[anchor text](https://…)" as an external link. Lets typed guides carry
+ * contextual in-prose links (docs/seo.md §5) without dropping to JSX.
+ */
+const INLINE_LINK = /\[([^\]]+)\]\(((?:\/|https?:\/\/)[^)\s]*)\)/g;
+
+function renderInline(text: string): ReactNode {
+  if (!text.includes('](')) return text;
+  const out: ReactNode[] = [];
+  let last = 0;
+  for (const m of text.matchAll(INLINE_LINK)) {
+    const [whole, label, href] = m;
+    const at = m.index ?? 0;
+    if (at > last) out.push(text.slice(last, at));
+    out.push(
+      href.startsWith('/') ? (
+        <Link key={at} href={href} className="text-primary hover:underline">
+          {label}
+        </Link>
+      ) : (
+        <a key={at} href={href} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+          {label}
+        </a>
+      ),
+    );
+    last = at + whole.length;
+  }
+  if (last < text.length) out.push(text.slice(last));
+  return out;
+}
+
 function SectionBlock({ section, shaded }: { section: Section; shaded: boolean }) {
   const bg = shaded ? ' bg-slate-900/30' : '';
 
@@ -45,14 +79,14 @@ function SectionBlock({ section, shaded }: { section: Section; shaded: boolean }
               )}
               <h2 className="text-3xl sm:text-4xl font-bold gradient-text">{section.heading}</h2>
               {section.intro && (
-                <p className="text-slate-400 mt-3 text-lg max-w-2xl mx-auto">{section.intro}</p>
+                <p className="text-slate-400 mt-3 text-lg max-w-2xl mx-auto">{renderInline(section.intro)}</p>
               )}
             </div>
             <div className={`grid ${cols} gap-8 max-w-5xl mx-auto`}>
               {section.items.map((item) => (
                 <div key={item.title} className="glass-card rounded-xl p-6 border border-slate-700/50">
                   <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
-                  <p className="text-slate-400">{item.body}</p>
+                  <p className="text-slate-400">{renderInline(item.body)}</p>
                 </div>
               ))}
             </div>
@@ -76,7 +110,7 @@ function SectionBlock({ section, shaded }: { section: Section; shaded: boolean }
               </div>
               <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                 {section.paragraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
+                  <p key={i}>{renderInline(p)}</p>
                 ))}
               </div>
             </div>
@@ -92,7 +126,7 @@ function SectionBlock({ section, shaded }: { section: Section; shaded: boolean }
               <div className="text-center mb-10">
                 <h2 className="text-3xl sm:text-4xl font-bold gradient-text">{section.heading}</h2>
                 {section.intro && (
-                  <p className="text-slate-400 mt-3 text-lg max-w-2xl mx-auto">{section.intro}</p>
+                  <p className="text-slate-400 mt-3 text-lg max-w-2xl mx-auto">{renderInline(section.intro)}</p>
                 )}
               </div>
               <div className="glass-card rounded-2xl border border-slate-700/50 p-4 sm:p-6">
@@ -121,7 +155,7 @@ function SectionBlock({ section, shaded }: { section: Section; shaded: boolean }
                               </th>
                             ) : (
                               <td key={j} className="py-3 pr-4 text-slate-300">
-                                {cell}
+                                {renderInline(cell)}
                               </td>
                             )
                           )}
@@ -132,7 +166,7 @@ function SectionBlock({ section, shaded }: { section: Section; shaded: boolean }
                 </div>
               </div>
               {section.caption && (
-                <p className="mt-4 text-sm text-slate-500 text-center">{section.caption}</p>
+                <p className="mt-4 text-sm text-slate-500 text-center">{renderInline(section.caption)}</p>
               )}
             </div>
           </div>
@@ -151,7 +185,7 @@ function SectionBlock({ section, shaded }: { section: Section; shaded: boolean }
               }`}
             >
               {section.title && <p className="mb-2 font-semibold text-white">{section.title}</p>}
-              <p className="text-slate-300 leading-relaxed">{section.body}</p>
+              <p className="text-slate-300 leading-relaxed">{renderInline(section.body)}</p>
             </div>
           </div>
         </section>
@@ -194,7 +228,10 @@ export default function GuidePage({
   enquiryHeading?: string;
   enquiryIntro?: string;
 }) {
-  const pageSchema = [breadcrumbSchema(guide), articleSchema(guide, updated)];
+  const pageSchema =
+    guide.schema === 'faq-breadcrumb'
+      ? [breadcrumbSchema(guide)]
+      : [breadcrumbSchema(guide), articleSchema(guide, updated)];
 
   // Alternate section backgrounds on the substantial blocks only, so a
   // callout or link cluster does not break the light/dark rhythm.
@@ -293,6 +330,9 @@ export default function GuidePage({
             />
           );
         })}
+
+        {/* Up-link to the /pos pillar and the price list (docs/seo.md §9) */}
+        <EposClusterLinks />
 
         <FAQSection
           title={guide.faqHeading}

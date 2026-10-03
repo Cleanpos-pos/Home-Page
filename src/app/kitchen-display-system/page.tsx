@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, Search, CheckCheck, Layers, Inbox, Split, Timer, WifiOff } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Kitchen Display System',
@@ -128,14 +129,14 @@ export default function KitchenDisplaySystemPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Six things that matter in a real kitchen</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> What to test before you sign anything</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Part of Posso One — POS from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Part of Posso One — POS from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Get a Free Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -147,8 +148,8 @@ export default function KitchenDisplaySystemPage() {
           live order in one queue, ages each ticket so late orders stand out, tracks items as they are made, and
           shows production totals so the kitchen can batch. The test that matters is peak service — whether
           delivery-app, website, kiosk and counter orders all land in the same queue, and whether it keeps working
-          offline. On Posso they do: a 21-inch kitchen screen is £399 + VAT with no per-screen licence, running on
-          the Posso EPOS from £499 + VAT.
+          offline. On Posso they do: a 21-inch kitchen screen is {posso.kdsPrice} + VAT with no per-screen licence, running on
+          the Posso EPOS from {posso.posPrice} + VAT.
         </QuickAnswer>
 
         <section className="py-20 bg-slate-900/30">
@@ -217,7 +218,7 @@ export default function KitchenDisplaySystemPage() {
                   The whole system is <strong className="text-white">offline-first</strong>. If the broadband drops mid-service, orders keep reaching the kitchen from the till and nothing on the board is lost — everything syncs when the connection returns.
                 </p>
                 <p>
-                  The kitchen display is part of Posso One, with the POS from <strong className="text-white">£499 + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a two-year warranty. On-site installation is quoted separately if you want it. Screen count depends on how your kitchen is laid out.
+                  The kitchen display is part of Posso One, with the POS from <strong className="text-white">{posso.posPrice} + VAT</strong>. Setup is free — your menu is built and your equipment configured before you go live — and every system carries a {posso.warrantyYearsWord}-year warranty. On-site installation for larger sites is priced on application. Screen count depends on how your kitchen is laid out.
                 </p>
               </div>
             </div>
@@ -232,7 +233,7 @@ export default function KitchenDisplaySystemPage() {
               </h2>
               <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                 <p>
-                  A 21-inch kitchen display screen is <strong className="text-white">£399 + VAT</strong>, one-off, per screen, running on the Posso EPOS from <strong className="text-white">£499 + VAT</strong>. There is <strong className="text-white">no separate per-screen licence</strong> — screens run under the standard software fee from £25 + VAT a month, however many you add. The twin-screen upgrade is +£150, and on-site installation is quoted separately.
+                  A 21-inch kitchen display screen is <strong className="text-white">{posso.kdsPrice} + VAT</strong>, one-off, per screen, running on the Posso EPOS from <strong className="text-white">{posso.posPrice} + VAT</strong>. There is <strong className="text-white">no separate per-screen licence</strong> — screens run under the standard software fee from {posso.softwareMonthly} + VAT a month, however many you add. The twin-screen upgrade is +{posso.twinScreenPrice}, and on-site installation for larger sites is priced on application.
                 </p>
                 <p>
                   <Link href="/kitchen-display-system-cost" className="text-primary hover:underline">Full kitchen display system costs</Link>{' '}
@@ -250,7 +251,7 @@ export default function KitchenDisplaySystemPage() {
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <Link href="/pos" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">ePOS System</p>
-                  <p className="text-slate-400 text-sm mt-1">30+ features, from £499 + VAT</p>
+                  <p className="text-slate-400 text-sm mt-1">30+ features, from {posso.posPrice} + VAT</p>
                 </Link>
                 <Link href="/delivery-integrations" className="glass-card rounded-xl p-4 text-center hover:border-primary/50 transition-colors border border-slate-700/50">
                   <p className="font-semibold text-white">Delivery Integrations</p>
@@ -281,10 +282,10 @@ export default function KitchenDisplaySystemPage() {
 
         <FAQSection title="Kitchen Display System — Frequently Asked Questions" faqs={[
           { question: 'What is a kitchen display system?', answer: 'A kitchen display system, or KDS, is a screen in the kitchen that replaces or supplements printed tickets. It shows every live order in one queue with the items still to make, tracks completion at item level, ages each ticket so the longest-waiting order is obvious, and can route items to the station responsible for them.' },
-          { question: 'Does a kitchen display replace kitchen printers?', answer: 'It can, but it usually does not have to. Most kitchens run both: the screen manages the queue while the printer produces the ticket that travels with a collection bag or a driver order. A 21-inch screen is £399 + VAT and an extra printer is £99, so the printer is cheaper upfront. Posso routes either by menu category.' },
+          { question: 'Does a kitchen display replace kitchen printers?', answer: `It can, but it usually does not have to. Most kitchens run both: the screen manages the queue while the printer produces the ticket that travels with a collection bag or a driver order. A 21-inch screen is ${posso.kdsPrice} + VAT and an extra printer is ${posso.printerPrice}, so the printer is cheaper upfront. Posso routes either by menu category.` },
           { question: 'What are production totals and why do they matter?', answer: 'Production totals show how many of each item are outstanding across every live order at once, rather than order by order. Six portions of chips spread across four tickets is one fryer basket rather than four. In a kitchen running a fryer or grill at capacity during peak, batching from that view is usually the largest efficiency gain available without adding staff.' },
           { question: 'Do delivery app orders appear on the kitchen display?', answer: 'On Posso, yes. Just Eat, Uber Eats and Deliveroo orders arrive in the same queue as counter, phone and website orders, so the kitchen works one list rather than a printer plus three marketplace tablets. Ask any supplier this specifically — a KDS that only shows orders typed at the till leaves the tablets on your counter.' },
-          { question: 'How many screens does a kitchen need?', answer: 'A single busy counter operation often runs on one, at £399 + VAT per screen. A kitchen with distinct stations — grill, fryer, wok, cold — typically wants one per station, sometimes with another at the pass. Posso charges no per-screen licence, so adding a screen is hardware only; check that before comparing quotes, because per-screen pricing is where real costs diverge.' },
+          { question: 'How many screens does a kitchen need?', answer: `A single busy counter operation often runs on one, at ${posso.kdsPrice} + VAT per screen. A kitchen with distinct stations — grill, fryer, wok, cold — typically wants one per station, sometimes with another at the pass. Posso charges no per-screen licence, so adding a screen is hardware only; check that before comparing quotes, because per-screen pricing is where real costs diverge.` },
           { question: 'Does the kitchen display work if the internet goes down?', answer: 'Yes. Posso One is offline-first, so orders continue to reach the kitchen display and the kitchen printers from the till without a connection, and everything syncs to the cloud once you are back online. Cloud-only systems stop dead in the same situation.' },
         ]} />
 

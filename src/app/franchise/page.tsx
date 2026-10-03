@@ -9,6 +9,7 @@ import { Contact } from '@/components/sections/contact';
 import { BreadcrumbNav } from '@/components/breadcrumb-nav';
 import { FAQSection } from '@/components/sections/faq-section';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
 
 export const metadata: Metadata = {
   title: 'Franchise ePOS Systems | Multi-Site Management & Kiosks',
@@ -84,14 +85,8 @@ const pageSchema = [
     width: 1200,
     height: 1200,
     encodingFormat: 'image/png',
-    creator: {
-      '@type': 'Organization',
-      name: 'Posso Ltd',
-    },
-    copyrightHolder: {
-      '@type': 'Organization',
-      name: 'Posso Ltd',
-    },
+    creator: { '@id': 'https://www.posso.co.uk/#organization' },
+    copyrightHolder: { '@id': 'https://www.posso.co.uk/#organization' },
   },
   {
     '@context': 'https://schema.org',
@@ -121,7 +116,7 @@ export default function FranchisePage() {
           { question: 'How do I manage menus and prices across multiple locations?', answer: 'Posso gives you centralised menu and price control. You build your master menu once at head office and push it to every site instantly. You can set regional price bands, lock down items so franchisees cannot change core products, and roll out new menus or limited-time offers across all locations in seconds — keeping pricing consistent brand-wide.' },
           { question: 'Can I see real-time reporting and royalties across all my franchise sites?', answer: 'Yes. The Posso franchise dashboard gives you real-time, multi-site reporting — total group sales, performance by location, best-selling products, and peak trading hours. Royalty and franchise-fee tracking is calculated automatically from each franchisee’s turnover, so head office always has an accurate, up-to-date view of what is owed.' },
           { question: 'How does Posso help maintain brand consistency across franchisees?', answer: 'Brand consistency is enforced from head office. You control the menu structure, product names, pricing rules, receipt branding, and kiosk and online ordering layouts centrally. Franchisees work within the template you set, so every customer gets the same experience — whether they visit your flagship site or your newest location.' },
-          { question: 'How quickly can I onboard a new franchise location?', answer: 'New sites can go live in under 24 hours. Because your master menu, branding, and settings already exist centrally, onboarding a new franchisee is mostly a case of cloning your template, shipping pre-configured hardware, and running staff training. There is no need to rebuild the menu from scratch for every site.' },
+          { question: 'How quickly can I onboard a new franchise location?', answer: `${posso.goLiveStatement} Because your master menu, branding, and settings already exist centrally, onboarding a new franchisee is mostly a case of cloning your template, shipping pre-configured hardware, and running staff training. There is no need to rebuild the menu from scratch for every site.` },
           { question: 'Does the franchise POS handle stock control and integrations across sites?', answer: 'Yes. Posso provides unified stock and inventory control so you can monitor stock levels across locations and standardise suppliers. It also integrates with self-order kiosks, online ordering, delivery apps, and integrated card payments — all reporting back into the same central multi-site account.' },
         ]} />
 

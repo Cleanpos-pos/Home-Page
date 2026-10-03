@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Phone, ArrowRight, CreditCard, Zap, ShieldCheck, Link2, Clock, BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { posso } from '@/lib/possoFacts';
+import { EposClusterLinks } from '@/components/epos-cluster-links';
 
 export const metadata: Metadata = {
   title: 'ePOS Credit Card Application',
   description:
-    'ePOS Credit Card Application — apply for a card machine integrated with your ePOS system. Teya partnership, quick approval, low transaction fees, next-day settlement. From £499 + VAT.',
+    `ePOS Credit Card Application — apply for a card machine integrated with your ePOS system. Teya partnership, quick approval, low transaction fees, next-day settlement. From ${posso.posPrice} + VAT.`,
   keywords: [
     'epos credit card application',
     'epos card machine application',
@@ -124,14 +126,14 @@ export default function EposCreditCardApplicationPage() {
               <ul className="space-y-3 text-slate-300 text-lg text-left">
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Teya card machine integrated with your POS</li>
                 <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> Quick approval, next-day settlement</li>
-                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> ePOS system from £499 + VAT</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-green-400 shrink-0" /> ePOS system from {posso.posPrice} + VAT</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 text-lg px-8 py-3 font-medium">
                   Apply Now <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <a href="tel:+448081753956" className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
-                  <Phone className="mr-2 h-5 w-5" /> 0808 175 3956
+                <a href={posso.phoneHref} className="inline-flex items-center justify-center rounded-md border border-slate-700 bg-transparent text-white hover:bg-slate-800 text-lg px-8 py-3 font-medium transition-colors">
+                  <Phone className="mr-2 h-5 w-5" /> {posso.phone}
                 </a>
               </div>
             </div>
@@ -190,7 +192,7 @@ export default function EposCreditCardApplicationPage() {
                   Most applications are <strong className="text-white">approved within 24–48 hours</strong>. Once approved, your Teya card terminal is shipped pre-configured. It arrives paired with your Posso ePOS — unbox it, plug it in, and run a test transaction. You are taking card payments the same day it arrives.
                 </p>
                 <p>
-                  There are <strong className="text-white">no long-term contracts locking you in</strong>. Transaction fees are transparent and competitive. Next-day settlement is standard. Your monthly statement shows every transaction, every fee, and your net settlement — complete clarity on what you pay and what you receive.
+                  There are <strong className="text-white">no long-term contracts locking you in{/* TODO: PAUL — confirm the card-processing contract terms (Teya / Posso Pay) before keeping this no-lock-in claim. */}</strong>. Transaction fees are transparent and competitive. Next-day settlement is standard. Your monthly statement shows every transaction, every fee, and your net settlement — complete clarity on what you pay and what you receive.
                 </p>
               </div>
             </div>
@@ -223,13 +225,15 @@ export default function EposCreditCardApplicationPage() {
           </div>
         </section>
 
+        <EposClusterLinks />
+
         <FAQSection title="ePOS Credit Card Application — FAQ" faqs={[
           { question: 'How long does the application take?', answer: 'The online application takes under 10 minutes. You need your business details, bank account information, and a form of identification. Most applications are reviewed and approved within 24–48 hours. Once approved, the card terminal is shipped pre-configured and ready to use.' },
           { question: 'What card types can I accept?', answer: 'The Teya terminal accepts Visa, Mastercard, American Express, Apple Pay, Google Pay, Samsung Pay, and all major contactless payment methods. Chip-and-pin is supported for customers who prefer it. You can accept payments from virtually any customer, regardless of their preferred payment method.' },
           { question: 'What are the transaction fees?', answer: 'Transaction fees are competitive and transparent. The rate depends on your business type and projected volume. There are no hidden charges, no monthly minimums, and no surprise increases. Your monthly statement itemises every transaction and fee. Contact us for a personalised quote.' },
           { question: 'How does next-day settlement work?', answer: 'Card payments processed today are settled into your bank account the next working day. This is standard — not a premium feature. Weekend transactions settle on Monday. You always know when to expect the funds, making cash flow planning straightforward.' },
-          { question: 'Do I need a Posso ePOS to apply?', answer: 'The integrated experience works best with a Posso ePOS system — amounts transfer automatically from till to terminal with zero manual entry. If you do not yet have a Posso ePOS, you can apply for the complete package: POS system from £499 + VAT plus the integrated Teya card machine.' },
-          { question: 'Is there a long-term contract?', answer: 'No. There are no long-term lock-in contracts. You can review and cancel the payment processing agreement with reasonable notice. We believe you should stay because the service is excellent, not because a contract forces you to. Terms are straightforward and clearly explained before you sign.' },
+          { question: 'Do I need a Posso ePOS to apply?', answer: `The integrated experience works best with a Posso ePOS system — amounts transfer automatically from till to terminal with zero manual entry. If you do not yet have a Posso ePOS, you can apply for the complete package: POS system from ${posso.posPrice} + VAT plus the integrated Teya card machine.` },
+          { question: 'Is there a long-term contract?', answer: 'No. There are no long-term lock-in contracts. You can review and cancel the payment processing agreement with reasonable notice. We believe you should stay because the service is excellent, not because a contract forces you to. Terms are straightforward and clearly explained before you sign.' /* TODO: PAUL — confirm the card-processing contract terms before keeping this no-lock-in claim. */ },
         ]} />
 
         <Contact />

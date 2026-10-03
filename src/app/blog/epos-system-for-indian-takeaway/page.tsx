@@ -48,7 +48,7 @@ export default function IndianTakeawayBlog() {
                         </p>
                         <div className="mt-10 flex justify-center gap-4">
                             <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-10 h-14" asChild>
-                                <Link href="/epos-system-for-indian-takeaway">View Specialised System</Link>
+                                <Link href="/pos-for-indian-takeaway">View Specialised System</Link>
                             </Button>
                         </div>
                     </div>

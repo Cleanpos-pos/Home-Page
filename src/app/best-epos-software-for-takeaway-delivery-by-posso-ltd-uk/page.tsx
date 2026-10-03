@@ -32,10 +32,7 @@ const schema = {
     "operatingSystem": "Web, iOS, Android, Windows",
     "applicationCategory": "Delivery Management System",
     "description": "The best EPOS software for takeaway delivery in the UK. Integrated driver tracking, low-commission ordering, and real-time delivery management by Posso Ltd.",
-    "author": {
-        "@type": "Organization",
-        "name": "Posso Ltd"
-    },
+    "author": { '@id': 'https://www.posso.co.uk/#organization' },
     "offers": {
         "@type": "Offer",
         "priceCurrency": "GBP",

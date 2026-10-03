@@ -58,6 +58,11 @@ const Logo = () => (
 
 const hospitalityLinks = [
   { href: '/pos', label: 'ePOS Systems' },
+  { href: '/pos-systems', label: 'POS Packages & Quotes' },
+  { href: '/small-business-pos-system', label: 'Small Business POS' },
+  // The five competitor pages are linked from this one section of /pos (and the
+  // footer) rather than added to the dropdown one by one.
+  { href: '/pos#compare-pos-systems', label: 'Compare POS Systems' },
   { href: '/cashless-catering-colleges-universities', label: 'Cashless Catering (Education)' },
   { href: '/tablemaestro', label: 'TableMaestro Booking' },
   { href: '/self-order-kiosks', label: 'Self-Order Kiosks' },
@@ -93,6 +98,7 @@ const solutionsLinks = [
 ]
 
 const retailLinks = [
+  { href: '/retail-pos-system', label: 'Retail POS System' },
   { href: '/digital-signage', label: 'Digital Signage' },
   { href: '/dry-cleaning-pickup-delivery-app', label: 'Dry Cleaning App' },
   { href: '/shop-fitting', label: 'Shop Fitting' },
