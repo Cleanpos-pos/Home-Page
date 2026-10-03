@@ -123,22 +123,21 @@ Also: one exact duplicate rule (`/best-self-order-kiosk-fast-food-by-posso-ltd-u
 |---|---|---|
 | `/retail-pos-system` | index | Buyer's guide scoped to confirmed features (see TODO) |
 | `/small-business-pos-system` | index | Single site, starter package, finance, payback method |
-| `/square-pos-alternative` | **noindex, out of sitemap until verified** | Competitor facts not yet checked |
-| `/sumup-pos-alternative` | **noindex, out of sitemap until verified** | 〃 |
-| `/lightspeed-alternative` | **noindex, out of sitemap until verified** | 〃 |
-| `/zettle-alternative` | **noindex, out of sitemap until verified** | 〃 |
-| `/toast-pos-alternative` | **noindex, out of sitemap until verified** | 〃 |
+| `/square-pos-alternative` | index (published Oct 2026) | Confirmed by Paul; competitor cells link to the source instead of quoting figures |
+| `/sumup-pos-alternative` | index (published Oct 2026) | 〃 |
+| `/lightspeed-alternative` | index (published Oct 2026) | 〃 |
+| `/zettle-alternative` | index (published Oct 2026) | 〃 |
+| `/toast-pos-alternative` | index (published Oct 2026) | 〃 |
 
-**Why the competitor pages are held back:** the competitors' own sites
-(squareup.com, sumup.com, lightspeedhq.co.uk, zettle.com, toasttab.com) — and
-archive mirrors — were blocked by this build environment's network policy, so
-no competitor price or feature could be read at source. Under your rule (and
-CAP code 3.33–3.44) none is stated: competitor cells read "See Square's UK
-pricing" with the official link, and "Prices checked: pending". The pages are
-complete on the Posso side, linked from `/pos`, the footer and
-`/pos-companies-uk`, and go live in search by filling `facts`, setting
-`lastChecked` and flipping `verified: true` in
-`src/content/guides/competitors.ts` (that also adds them to the sitemap).
+**Competitor pages — published October 2026.** The competitors' own sites
+(squareup.com, sumup.com, lightspeedhq.co.uk, zettle.com, toasttab.com) were
+blocked by the build environment's network policy, so no competitor price or
+feature figure is stated: competitor cells read "See Square's UK pricing" with
+the official link. Paul confirmed the pages (including the "who X is better
+for" wording) for publication, so `verified: true` and `lastChecked: "October
+2026"` are set in `src/content/guides/competitors.ts`; the pages are indexable
+and in the sitemap. Figures can still be added to `facts` later; set `verified`
+back to `false` to pull a page out of the index if it goes stale.
 
 ## 6. `/pos` changes
 
@@ -490,13 +489,9 @@ Every item below is also a `TODO: PAUL` comment at the line it affects.
 ### `/retail-pos-system`
 - [ ] Which retail features Posso One supports: barcode scanning and label printing, stock levels and low-stock alerts, product variants (size/colour), purchase orders and supplier management, weigh-scale integration, gift cards. Add the confirmed ones; then reconcile `/shop-till-software`, `/grocery-store-epos`, `/homeware-pos` and `/sweet-shop-pos`, which already claim several of them.
 
-### Competitor pages — `src/content/guides/competitors.ts` (all five are noindex until done)
-For each: read the official UK pages listed in `sources`, fill `facts` verbatim (with "+ VAT"/"inc VAT" as shown), check the two "who X is better for" paragraphs, set `lastChecked` to the month/year and `verified: true`.
-- [ ] `/square-pos-alternative` — squareup.com/gb/en/point-of-sale/pricing, …/restaurants/pricing, …/legal/general/fees
-- [ ] `/sumup-pos-alternative` — sumup.com/en-gb/pricing/, …/pos-pro/pricing/
-- [ ] `/lightspeed-alternative` — lightspeedhq.co.uk/pos/restaurant/pricing/ (search snippets disagreed on plan prices — read the live page)
-- [ ] `/zettle-alternative` — zettle.com/gb/pricing, …/payments/card-reader (product may now be "PayPal Point of Sale"; note any first-time-buyer offer and its end date)
-- [ ] `/toast-pos-alternative` — pos.toasttab.com/uk/pricing, …/products/payments
+### Competitor pages — `src/content/guides/competitors.ts`
+- [x] Published October 2026 (verified by Paul): `/square-pos-alternative`, `/sumup-pos-alternative`, `/lightspeed-alternative`, `/zettle-alternative`, `/toast-pos-alternative`.
+- [ ] Optional: add competitor figures to `facts` from the official UK pages in `sources` (the table currently links to them instead of quoting prices). Update `lastChecked` when you do.
 - [ ] Contract row in the comparison table — replace "Set out on your quote" once Posso's terms are confirmed.
 
 ### Redirects awaiting approval — done

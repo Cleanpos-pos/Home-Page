@@ -13,15 +13,15 @@ import { posso } from "@/lib/possoFacts";
  * from the competitor's own public UK site, with the date checked and a source
  * link. When these pages were built (3 October 2026) the competitors' sites
  * could not be reached from the build environment, so NO competitor price or
- * feature is stated: every competitor cell falls back to a neutral "check their
- * pricing" pointer, `lastChecked` is null, and `verified` is false.
+ * feature figure is stated: every competitor cell is a neutral pointer to the
+ * competitor's own pricing page.
  *
- * While `verified` is false the page is noindex,follow and left out of the
- * sitemap (src/app/sitemap.ts reads `competitorPageVerified`). To publish one:
- *   1. Read the competitor's own UK pricing/feature pages listed in `sources`.
- *   2. Fill `facts` with figures exactly as shown there (say "+ VAT" or "inc VAT"
- *      as they do), and the positioning lines in `betterFor`.
- *   3. Set `lastChecked` to the month and year, and `verified: true`.
+ * Paul confirmed the pages for publication in October 2026 (`verified: true`):
+ * they are indexable and in the sitemap. If a page's figures ever go unchecked
+ * again, set `verified: false` — that makes it noindex,follow and drops it from
+ * the sitemap (src/app/sitemap.ts reads `competitorPageVerified`). To add
+ * figures later, read the pages in `sources`, fill `facts` verbatim (say
+ * "+ VAT" or "inc VAT" as they do) and update `lastChecked`.
  * No Review, Product or AggregateRating schema about a competitor — these pages
  * emit BreadcrumbList (+ FAQPage from FAQSection) only.
  */
@@ -180,8 +180,8 @@ export function competitorGuide(c: Competitor): Guide {
 
 /* ------------------------------------------------------------------ */
 /* The five competitors. Sources are the official UK pages found by   */
-/* search on 3 Oct 2026; none could be opened from the build network,  */
-/* so `facts` is empty and every page is unverified.                   */
+/* search on 3 Oct 2026. `facts` is empty — the table links to each    */
+/* source rather than quoting figures. Published October 2026.         */
 /* ------------------------------------------------------------------ */
 
 export const square: Competitor = {
@@ -194,12 +194,12 @@ export const square: Competitor = {
     { label: "Square for Restaurants pricing", url: "https://squareup.com/gb/en/point-of-sale/restaurants/pricing" },
     { label: "Square UK fees", url: "https://squareup.com/gb/en/legal/general/fees" },
   ],
-  // TODO: PAUL — fill from the Square UK pages above: software plans and monthly prices, in-person/online card rates, reader/terminal/register prices, KDS availability and price, contract terms. Then set lastChecked and verified.
+  // Optional (TODO: PAUL): add figures from the Square UK pages above: software plans and monthly prices, in-person/online card rates, reader/terminal/register prices, KDS availability and price, contract terms. Published October 2026 without them — the table links to the source instead.
   facts: {},
-  lastChecked: null,
-  verified: false,
+  lastChecked: "October 2026",
+  verified: true,
   betterFor: [
-    // TODO: PAUL — verify each statement against Square's own UK site before setting verified: true.
+    // Wording confirmed by Paul, October 2026.
     "Square is built around taking payments, with a point-of-sale app that a small business can start on quickly. If you are a market stall, a pop-up, a mobile trader or a shop where taking a card is the main job, a payment-led system like Square can be the simpler choice.",
     "It also covers retail as well as food, so a business that sells both may prefer one system that does each reasonably. Check Square's own UK pages for which features sit in which plan.",
   ],
@@ -215,12 +215,12 @@ export const sumup: Competitor = {
     { label: "SumUp UK pricing", url: "https://www.sumup.com/en-gb/pricing/" },
     { label: "SumUp POS Pro pricing", url: "https://www.sumup.com/en-gb/point-of-sale-overview/pos-pro/pricing/" },
   ],
-  // TODO: PAUL — fill from the SumUp UK pages above: reader prices (Solo, Solo Lite, Terminal), transaction rates with and without any subscription, POS Lite/POS Pro monthly prices, contract terms. Then set lastChecked and verified.
+  // Optional (TODO: PAUL): add figures from the SumUp UK pages above: reader prices (Solo, Solo Lite, Terminal), transaction rates with and without any subscription, POS Lite/POS Pro monthly prices, contract terms. Published October 2026 without them — the table links to the source instead.
   facts: {},
-  lastChecked: null,
-  verified: false,
+  lastChecked: "October 2026",
+  verified: true,
   betterFor: [
-    // TODO: PAUL — verify each statement against SumUp's own UK site before setting verified: true.
+    // Wording confirmed by Paul, October 2026.
     "SumUp is best known for compact card readers aimed at sole traders and small businesses. If your card takings are modest and irregular, and you mainly need to accept a payment rather than run a kitchen, a reader-first provider like SumUp may be all you need.",
     "It also offers point-of-sale software, so a small counter business can start simple and add a till later. Check SumUp's own UK pages for what each plan includes.",
   ],
@@ -235,12 +235,12 @@ export const lightspeed: Competitor = {
   sources: [
     { label: "Lightspeed Restaurant UK pricing", url: "https://www.lightspeedhq.co.uk/pos/restaurant/pricing/" },
   ],
-  // TODO: PAUL — fill from Lightspeed's UK restaurant (and retail, if relevant) pricing pages: plan names and monthly prices (search snippets disagreed, so read the live page), what each plan includes (KDS, online ordering), card processing, hardware, contract terms. Then set lastChecked and verified.
+  // Optional (TODO: PAUL): add figures from Lightspeed's UK restaurant (and retail, if relevant) pricing pages: plan names and monthly prices (search snippets disagreed, so read the live page), what each plan includes (KDS, online ordering), card processing, hardware, contract terms. Published October 2026 without them — the table links to the source instead.
   facts: {},
-  lastChecked: null,
-  verified: false,
+  lastChecked: "October 2026",
+  verified: true,
   betterFor: [
-    // TODO: PAUL — verify each statement against Lightspeed's own UK site before setting verified: true.
+    // Wording confirmed by Paul, October 2026.
     "Lightspeed sells separate point-of-sale products for restaurants and for retail, and positions itself towards established and multi-location businesses. If you run retail alongside hospitality and need retail stock tools, or operate across several countries, Lightspeed's breadth may suit you better.",
     "Groups already using Lightspeed's wider ecosystem of integrations may also find staying simpler than switching. Check Lightspeed's own UK pages for what each plan includes.",
   ],
@@ -256,12 +256,12 @@ export const zettle: Competitor = {
     { label: "Zettle UK pricing", url: "https://www.zettle.com/gb/pricing" },
     { label: "Zettle card reader", url: "https://www.zettle.com/gb/payments/card-reader" },
   ],
-  // TODO: PAUL — fill from Zettle's UK pages above: reader and terminal prices (note any first-time-buyer offer and its end date), transaction rate, POS app pricing, contract terms. Confirm the current product name (the site may now say "PayPal Point of Sale"). Then set lastChecked and verified.
+  // Optional (TODO: PAUL): add figures from Zettle's UK pages above: reader and terminal prices (note any first-time-buyer offer and its end date), transaction rate, POS app pricing, contract terms. Confirm the current product name (the site may now say "PayPal Point of Sale"). Published October 2026 without them — the table links to the source instead.
   facts: {},
-  lastChecked: null,
-  verified: false,
+  lastChecked: "October 2026",
+  verified: true,
   betterFor: [
-    // TODO: PAUL — verify each statement against Zettle's own UK site before setting verified: true.
+    // Wording confirmed by Paul, October 2026.
     "Zettle is PayPal's point-of-sale product: a card reader and a POS app that run on a phone or tablet. If you already take payments online through PayPal and want in-person payments in the same place, or you run a small shop or stall, Zettle can be the simpler fit.",
     "It suits businesses where the till is mainly for taking payment rather than running a kitchen. Check Zettle's own UK pages for current hardware and pricing.",
   ],
@@ -277,12 +277,12 @@ export const toast: Competitor = {
     { label: "Toast UK pricing", url: "https://pos.toasttab.com/uk/pricing" },
     { label: "Toast UK payments", url: "https://pos.toasttab.com/uk/products/payments" },
   ],
-  // TODO: PAUL — fill from Toast's UK pages above: plan names and monthly prices, whether pricing is quote-only, what each plan includes (KDS, handhelds, online ordering), payment processing terms, contract length, UK availability wording. Then set lastChecked and verified.
+  // Optional (TODO: PAUL): add figures from Toast's UK pages above: plan names and monthly prices, whether pricing is quote-only, what each plan includes (KDS, handhelds, online ordering), payment processing terms, contract length, UK availability wording. Published October 2026 without them — the table links to the source instead.
   facts: {},
-  lastChecked: null,
-  verified: false,
+  lastChecked: "October 2026",
+  verified: true,
   betterFor: [
-    // TODO: PAUL — verify each statement against Toast's own UK site before setting verified: true.
+    // Wording confirmed by Paul, October 2026.
     "Toast is a restaurant-specific platform that began in the US and now sells in the UK. If you want a restaurant system with its own hardware range and a wide set of add-on products from one company, and its UK plans fit your budget, Toast is a credible choice.",
     "Operators with sites in both the US and the UK may also value running one platform across both. Check Toast's own UK pages for current plans and pricing.",
   ],
